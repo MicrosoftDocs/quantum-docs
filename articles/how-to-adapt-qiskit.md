@@ -68,7 +68,7 @@ Most samples are configured to run by default against the `aer_simulator`, which
     ```
 
     > [!NOTE]
-    > Azure Quantum defaults to QIR for the backends. To specify a passthrough backend, use the `is_passthrough` parameter when calling `get_backend`. For example, `ionq_qpu_backend = provider.get_backend("ionq.qpu.aria-1", is_passthrough=True)`.
+    > Azure Quantum defaults to QIR for the backends. If you need to use a passthrough backend, use the `gateset` parameter with the `get_backend` method. For more information, see [Native gates support and usage](xref:microsoft.quantum.providers.ionq#native-gates-support-and-usage).
 
 
     > [!NOTE]
