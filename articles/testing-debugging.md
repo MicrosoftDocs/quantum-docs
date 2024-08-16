@@ -3,7 +3,7 @@ title: How to Debug and Test Quantum Programs in Azure Quantum
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: bradben
 ms.author: brbenefield
-ms.date: 06/03/2024
+ms.date: 08/07/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: how-to
@@ -28,20 +28,15 @@ The following example demonstrates the basic features of the debugger. For compl
 In VS Code, create and save a new .qs file with the following code:
 
 ```qsharp
-namespace Sample {
+import Microsoft.Quantum.Arrays.*;
+import Microsoft.Quantum.Convert.*;
 
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Convert;
-
-    @EntryPoint()
-    operation Superposition() : Result {
-
-        use qubit = Qubit();
-        H(qubit);
-        let result = M(qubit);
-        Reset(qubit);
-        return result;
-    }
+operation Main() : Result {
+    use qubit = Qubit();
+    H(qubit);
+    let result = M(qubit);
+    Reset(qubit);
+    return result;
 }
 ```
 
@@ -64,19 +59,16 @@ The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression
 Consider this simple example that validates a parameter value:
 
 ```python
-import qsharp 
 # import qsharp package to access the %%qsharp magic command
+import qsharp 
 ```
 
 ```qsharp
-%%qsharp 
 // use the %%qsharp magic command to change the cell type from Python to Q#
-
+%%qsharp 
 function PositivityFact(value : Int) : Unit {
-
     if value <= 0 {
-
-            fail $"{value} isn't a positive number.";
+        fail $"{value} isn't a positive number.";
     }   
 }
 PositivityFact(0);
@@ -107,19 +99,14 @@ You can implement the same behavior as the previous example using the `Fact()` f
 
 ```python
 import qsharp 
-# import qsharp package to access the %%qsharp magic command
 ```
 
 ```qsharp
 %%qsharp
-// use the %%qsharp magic command to change the cell type from Python to Q#
-
-    function PositivityFact(value : Int) : Unit {
-
+function PositivityFact(value : Int) : Unit {
     Fact(value > 0, "Expected a positive number."); 
-
-    }
-    PositivityFact(4);
+}
+PositivityFact(4);
 ```
 
 ```output
@@ -155,37 +142,32 @@ import qsharp
 
 ```qsharp
 %%qsharp
-
-open Microsoft.Quantum.Diagnostics;
-
+import Microsoft.Quantum.Diagnostics.*;
 operation MultiQubitDumpMachineDemo() : Unit {
     use qubits = Qubit[2];
     X(qubits[1]);
     H(qubits[1]);
-    
     DumpMachine();
 
     R1Frac(1, 2, qubits[0]);
     R1Frac(1, 3, qubits[1]);
-    
     DumpMachine();
     
     ResetAll(qubits);
-      }
-
+}
 MultiQubitDumpMachineDemo();
 ```
 
 ```output
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
 |00⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-|10⟩	−0.7071+0.0000𝑖	 50.0000%	↑	-3.1416
+|01⟩	−0.7071+0.0000𝑖	 50.0000%	↓	-3.1416
 
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
-|00⟩	0.5879−0.3928𝑖	 50.0000%	↑	-0.5890
-|10⟩	−0.6935+0.1379𝑖	 50.0000%	↑	2.9452
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+|00⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
+|01⟩	−0.6533−0.2706𝑖	 50.0000%	↙	-2.7489   
 ```
 
 ### dump_machine() function
@@ -194,13 +176,10 @@ Basis State
 
 ```python
 import qsharp 
-# import qsharp package to access the %%qsharp magic command
 ```
 
 ```qsharp
 %%qsharp
-// use the %%qsharp magic command to change the cell type from Python to Q#
-
 use qubits = Qubit[2];
 X(qubits[0]);
 H(qubits[1]);
@@ -214,9 +193,9 @@ dump
 ```output
 
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+|10⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
 |11⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-|01⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
 ```
 
 
@@ -233,9 +212,9 @@ dump
 
 ```output
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
-|11⟩	0.5879+0.3928𝑖	 50.0000%	↑	0.5890
-|01⟩	0.6935+0.1379𝑖	 50.0000%	↑	0.1963
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+|10⟩	0.5000+0.5000𝑖	 50.0000%	↗	0.7854
+|11⟩	0.2706+0.6533𝑖	 50.0000%	↗	1.1781    
 ```
 
 ```python
@@ -245,8 +224,8 @@ print(dump)
 
 ```output
 STATE:
-|11⟩: 0.5879+0.3928𝑖
-|01⟩: 0.6935+0.1379𝑖
+|10⟩: 0.5000+0.5000𝑖
+|11⟩: 0.2706+0.6533𝑖
 ```
 
 ```python
@@ -259,12 +238,12 @@ dump.qubit_count
 ```
 
 ```python
-# you can access individal states by their index
-dump[1]
+# you can access individual states by their index
+dump[2]
 ```
 
 ```output
-(0.6935199226610738, 0.1379496896414715)
+(0.5+0.5000000000000001j)
 ```
 
 ```python
@@ -272,5 +251,105 @@ dump[3]
 ```
 
 ```output
-(0.5879378012096794, 0.3928474791935511)
+(0.27059805007309845+0.6532814824381883j)
 ```
+
+### CheckZero() and CheckAllZero() operations
+
+`CheckZero()` and `CheckAllZero()` are Q# operations that can check whether the current state of a qubit or qubit array is $\ket{0}$. `CheckZero()` returns `true` if the qubit is in the $\ket{0}$ state, and `false` if it is in any other state. `CheckAllZero()` returns `true` if all qubits in the array are in the $\ket{0}$ state, and `false` if the qubits are in any other state. 
+
+```qsharp
+import Microsoft.Quantum.Diagnostics.*;
+
+operation Main() : Unit {
+    use qs = Qubit[2];
+    X(qs[0]); 
+    if CheckZero(qs[0]) {
+        Message("X operation failed");
+    }
+    else {
+        Message("X operation succeeded");
+    }
+    ResetAll(qs);
+    if CheckAllZero(qs) {
+        Message("Reset operation succeeded");
+    }
+    else {
+        Message("Reset operation failed");
+    }
+}
+```
+
+### dump_operation() function
+
+`dump_operation` is a Python function that takes an operation, or operation definition, and a number of qubits to use, and returns a square matrix of complex numbers representing the output of the operation. 
+
+You import `dump_operation` from `qsharp.utils`.
+
+```python
+import qsharp
+from qsharp.utils import dump_operation
+```
+
+This example prints the matrix of a single-qubit identity gate and the Hadamard gate.
+
+```python
+res = dump_operation("qs => ()", 1)
+print(res)
+res = dump_operation("qs => H(qs[0])", 1)
+print(res)
+```
+
+```output
+[[(1+0j), 0j], [0j, (1+0j)]]
+[[(0.707107+0j), (0.707107+0j)], [(0.707107+0j), (-0.707107-0j)]]
+```
+
+You can also define a function or operation using `qsharp.eval()` and then reference it from `dump_operation`. The single qubit represented earlier can also be represented as
+
+```python
+qsharp.eval("operation SingleQ(qs : Qubit[]) : Unit { }")
+
+res = dump_operation("SingleQ", 1)
+print(res)
+```
+
+```output
+[[(1+0j), 0j], [0j, (1+0j)]]
+```
+
+This example uses a `Controlled Ry` gate to apply a rotation to the second qubit
+
+```python
+qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit {qs[0]; Controlled Ry([qs[0]], (0.5, qs[1]));}")
+
+res = dump_operation("ControlRy", 2)
+print(res)
+```
+
+```output
+[[(1+0j), 0j, 0j, 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, (0.968912+0j), (-0.247404+0j)], [0j, 0j, (0.247404+0j), (0.968912+0j)]]
+```
+
+
+The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation. 
+
+```python
+qsharp.eval("operation ApplySWAP(qs : Qubit[]) : Unit is Ctl + Adj { SWAP(qs[0], qs[1]); }")
+
+res = dump_operation("qs => ()", 2)
+print(res)
+res = dump_operation("ApplySWAP", 2)
+print(res)
+```
+
+```output
+[[(1+0j), 0j, 0j, 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, (1+0j), 0j], [0j, 0j, 0j, (1+0j)]]
+[[(1+0j), 0j, 0j, 0j], [0j, 0j, (1+0j), 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, 0j, (1+0j)]]
+```
+
+More examples of testing operations using `dump_operation()` can be found on the samples page [Testing Operations in the QDK](https://github.com/microsoft/qsharp/tree/main/samples/testing/operations).
+
+
+
+
