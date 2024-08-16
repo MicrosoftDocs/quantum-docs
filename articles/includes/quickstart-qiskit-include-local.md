@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 08/09/2024
+ms.date: 08/14/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -37,6 +37,7 @@ In the first cell of your notebook, run the following code to load the required 
 
 ```python
 import azure.quantum
+from azure.quantum import Workspace 
 from qiskit import QuantumCircuit
 from qiskit.visualization import plot_histogram
 from azure.quantum.qiskit import AzureQuantumProvider
@@ -78,6 +79,7 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
+- ionq.qpu
 - ionq.qpu.aria-1
 - ionq.simulator
 - microsoft.estimator
@@ -150,7 +152,7 @@ result. The following cell submits a job that runs the circuit with
 100 shots:
 
 ```python
-job = simulator_backend.run(circuit, shots=100)
+job = simulator_backend.run(circuit, shots=8)
 job_id = job.id()
 print("Job id", job_id)
 ```
@@ -167,7 +169,7 @@ print(result)
 ```
 
 ```output
-Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 50, '111': 50}, probabilities={'000': 0.5, '111': 0.5}), header=QobjExperimentHeader(meas_map='[0, 1, 2]', name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
+Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=8, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 4, '111': 4}, memory=['000', '000', '000', '000', '111', '111', '111', '111'], probabilities={'000': 0.5, '111': 0.5}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
 ```
 
 Because the result is an object native to the Qiskit package, you can use
@@ -183,19 +185,31 @@ plot_histogram(counts)
 ```
 
 ```output
-{'000': 50, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 50}
+{'000': 4, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 4}
 ```
 
 ![Qiskit circuit result on IonQ Simulator](../media/azure-quantum-qiskit-ionq-result-1.png)
 
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '111', '111', '111', '111']
+```
+
+> [!NOTE]
+> On IonQ targets, if you submit a job with an odd number of shots, the results will be rounded down to the next even number. For example, if you specify 9 shots, the results will display data for 8 shots. 
 
 #### Estimate job cost
 
 Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.IonQ) method:
 
 ```python
-backend = provider.get_backend("ionq.qpu.aria-1")
-cost = backend.estimate_cost(circuit, shots=1024)
+backend = provider.get_backend("ionq.qpu")
+cost = backend.estimate_cost(circuit, shots=100)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
@@ -223,7 +237,7 @@ Submit the circuit to run on Azure Quantum, get the results, and run `plot_histo
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=1024)
+job = qpu_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -239,7 +253,7 @@ plot_histogram(counts)
 ```output
 Job id 00000000-0000-0000-0000-000000000000
 Job Status: job has successfully run
-Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'0': 505, '1': 6, '2': 1, '3': 1, '4': 1, '5': 10, '6': 11, '7': 488}, probabilities={'0': 0.4932, '1': 0.0059, '2': 0.001, '3': 0.001, '4': 0.001, '5': 0.0098, '6': 0.0117, '7': 0.4766}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
+Result(backend_name='ionq.qpu.aria-1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'0': 505, '1': 6, '2': 1, '3': 1, '4': 1, '5': 10, '6': 11, '7': 488}, probabilities={'0': 0.4932, '1': 0.0059, '2': 0.001, '3': 0.001, '4': 0.001, '5': 0.0098, '6': 0.0117, '7': 0.4766}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits='3', qiskit='True'))])
 {'000': 505, '001': 6, '010': 1, '011': 1, '100': 1, '101': 10, '110': 11, '111': 488}
 ```
 
@@ -249,7 +263,7 @@ Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sampl
 
 #### Run on the syntax checker 
 
-To test the program before running it on the hardware, first run it on the Quantinuum Syntax Checker. Use the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method to create a `Backend` object to connect to the Quantinuum Syntax Checkerbackend:
+To test the program before running it on the hardware, first run it on the Quantinuum Syntax Checker. Use the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method to create a `Backend` object to connect to the Quantinuum Syntax Checker backend:
 
 ```python
 # Get Quantinuum's syntax checker backend:
@@ -258,11 +272,11 @@ syntax_backend = provider.get_backend("quantinuum.sim.h1-1sc")
 
 You can now run the program via the Azure Quantum service and get the
 result. The following cell submits a job that runs the circuit with
-1024 shots:
+eight shots:
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = syntax_backend.run(circuit, shots=1024)
+job = syntax_backend.run(circuit, shots=8)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -276,10 +290,8 @@ plot_histogram(counts)
 ```
 
 ```output
-Job id 00000000-0000-0000-0000-000000000000
-Job Status: job has successfully run
-Result(backend_name='quantinuum.qpu.h1-1sc', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-{'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
+Result(backend_name='quantinuum.sim.h1-1sc', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=8, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 8}, memory=['000', '000', '000', '000', '000', '000', '000', '000'], probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
+{'000': 8, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
 ![Qiskit circuit result on Quantinuum API validator](../media/azure-quantum-qiskit-hw-result-1.png)
@@ -287,13 +299,23 @@ Result(backend_name='quantinuum.qpu.h1-1sc', backend_version='1', qobj_id='Qiski
 > [!NOTE]
 > While the [Quantinuum syntax checker](xref:microsoft.quantum.providers.quantinuum#api-validator) ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true quantum measurement, you need to run your circuit on quantum hardware.
 
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '000', '000', '000', '000', '000', '000', '000']
+```
+
 #### Estimate job cost
 
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.Quantinuum) method:
 
 ```python
 qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
-cost = qpu_backend.estimate_cost(circuit, shots=1024)
+cost = qpu_backend.estimate_cost(circuit, shots=100)
 
 print(f"Estimated cost: {cost.estimated_total}")
 ```
@@ -317,7 +339,7 @@ qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=1024)
+job = qpu_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
 ```
@@ -353,11 +375,11 @@ qvm_backend = provider.get_backend("rigetti.sim.qvm")
 
 You can now run the program via the Azure Quantum service and get the
 result. The following cell submits a job that runs the circuit with
-1024 shots:
+eight shots:
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qvm_backend.run(circuit, shots=1024)
+job = qvm_backend.run(circuit, shots=8)
 job_id = job.id()
 print("Job id", job_id)
 
@@ -371,13 +393,22 @@ plot_histogram(counts)
 ```
 
 ```output
-Job id 00000000-0000-0000-0000-000000000000
-Job Status: job has successfully run
-Result(backend_name='rigetti.sim.qvm"', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 1024}, probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-{'000': 1024, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
+Result(backend_name='rigetti.sim.qvm', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=8, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 4, '111': 4}, memory=['000', '111', '111', '000', '000', '000', '111', '111'], probabilities={'000': 0.5, '111': 0.5}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
+{'000': 4, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 4}
+
 ```
 
-![Qiskit circuit result on Rigetti QVM simulator](../media/azure-quantum-qiskit-rigetti-qvm-result.png)
+![Qiskit circuit result on Rigetti QVM simulator](../media/azure-quantum-qiskit-rigetti-result-1.png)
+
+You can also use the `get_memory()` function to display individual shot data from the job
+
+```python
+result.get_memory(circuit)
+```
+
+```output
+['000', '111', '111', '000', '000', '000', '111', '111']
+```
 
 #### Run on a Rigetti QPU 
 
@@ -393,7 +424,7 @@ qpu_backend = provider.get_backend("rigetti.qpu.ankaa-2")
 
 ```python
 # Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=500)
+job = qpu_backend.run(circuit, shots=100)
 job_id = job.id()
 print("Job id", job_id)
 ```
@@ -409,11 +440,11 @@ plot_histogram(counts)
 ```
 
 ```output
-Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=1024, success=True, meas_level=2, data=ExperimentResultData(counts={'011': 16, '010': 5, '001': 1, '000': 500, '111': 471, '101': 6, '100': 17, '110': 8}, probabilities={'011': 0.015625, '010': 0.0048828125, '001': 0.0009765625, '000': 0.48828125, '111': 0.4599609375, '101': 0.005859375, '100': 0.0166015625, '110': 0.0078125}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
-{'000': 500, '001': 1, '010': 5, '011': 16, '100': 17, '101': 6, '110': 8, '111': 471}
+.....Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='dd72c9c7-5a88-11ef-a183-a91b61633c2f', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'001': 5, '100': 6, '111': 30, '000': 51, '110': 4, '101': 1, '010': 1, '011': 2}, memory=['001', '100', '111', '000', '000', '000', '001', '000', '000', '110', '000', '111', '111', '111', '000', '000', '000', '000', '101', '111', '111', '010', '000', '000', '000', '000', '000', '000', '001', '011', '111', '000', '000', '111', '000', '111', '000', '000', '111', '111', '110', '111', '000', '000', '111', '111', '111', '100', '111', '000', '111', '000', '000', '000', '111', '000', '000', '001', '000', '100', '111', '000', '011', '000', '111', '000', '111', '111', '111', '000', '111', '111', '000', '111', '111', '000', '111', '000', '000', '000', '000', '000', '110', '000', '000', '110', '111', '100', '000', '111', '000', '100', '001', '000', '000', '000', '000', '100', '000', '000'], probabilities={'001': 0.05, '100': 0.06, '111': 0.3, '000': 0.51, '110': 0.04, '101': 0.01, '010': 0.01, '011': 0.02}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
+
 ```
 
-![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-hw-result-2.png)
+![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-rigetti-result-2.png)
 
 ***
 
