@@ -321,7 +321,7 @@ print(res)
 This example uses a `Controlled Ry` gate to apply a rotation to the second qubit
 
 ```python
-qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit { qs[0); Controlled Ry([qs[0]], (0.5, qs[1]));}")
+qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit {qs[0]; Controlled Ry([qs[0]], (0.5, qs[1]));}")
 
 res = dump_operation("ControlRy", 2)
 print(res)
