@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 06/03/2024
+ms.date: 08/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -78,7 +78,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.qpu.aria-1
 - ionq.simulator
 - microsoft.estimator
@@ -195,7 +194,7 @@ plot_histogram(counts)
 Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.IonQ) method:
 
 ```python
-backend = provider.get_backend("ionq.qpu")
+backend = provider.get_backend("ionq.qpu.aria-1")
 cost = backend.estimate_cost(circuit, shots=1024)
 
 print(f"Estimated cost: {cost.estimated_total}")
@@ -209,10 +208,10 @@ For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.
 #### Run on IonQ QPU
 
 To connect to real hardware (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)), simply
-provide the name of the target `"ionq.qpu"` to the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method:
+provide the name of the target `"ionq.qpu.aria-1"` to the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method:
 
 ```python
-qpu_backend = provider.get_backend("ionq.qpu")
+qpu_backend = provider.get_backend("ionq.qpu.aria-1")
 ```
 
 Submit the circuit to run on Azure Quantum, get the results, and run `plot_histogram` to plot the results.

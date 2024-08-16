@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit specific formatted quantum circuits with QIR, OpenQASM, or Pulser SDK to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 06/03/2024
+ms.date: 08/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -258,7 +258,7 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
 1. Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU,you can use the `estimate_cost` method:
 
     ```python
-    target = workspace.get_targets(name="ionq.qpu")
+    target = workspace.get_targets(name="ionq.qpu.aria-1")
     cost = target.estimate_cost(circuit, shots=500)
     
     print(f"Estimated cost: {cost.estimated_total}")

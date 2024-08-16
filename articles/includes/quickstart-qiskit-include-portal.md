@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 03/15/2024
+ms.date: 08/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -97,7 +97,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
@@ -177,7 +176,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
@@ -191,7 +189,7 @@ This workspace's targets:
 Next, create an object to represent the [IonQ quantum computer](xref:microsoft.quantum.providers.ionq#quantum-computer):
 
 ```python
-qpu_backend = provider.get_backend("ionq.qpu")
+qpu_backend = provider.get_backend("ionq.qpu.aria-1")
 ```
 
 To estimate the cost of running a job on the QPU, add and run a new cell using the [`estimate_cost`](xref:azure.quantum.target.IonQ) method of the target:
@@ -310,7 +308,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
@@ -450,7 +447,6 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
