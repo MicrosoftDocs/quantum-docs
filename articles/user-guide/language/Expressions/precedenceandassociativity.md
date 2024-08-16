@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about operator precedence in Q#.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -66,7 +66,7 @@ This artificial precedence is listed in the following table, along with how the 
 | [Adjoint functor](xref:microsoft.quantum.qsharp.callstatements#call-expressions) | `Adjoint` | prefix | right | 18 |
 | [Controlled functor](xref:microsoft.quantum.qsharp.callstatements#call-expressions) | `Controlled` | prefix | right | 18 |
 | [Unwrap application](xref:microsoft.quantum.qsharp.itemaccessexpression#item-access-for-user-defined-types) | `!` | postfix | left | 19 |
-| [Named item access](xref:microsoft.quantum.qsharp.itemaccessexpression#item-access-for-user-defined-types) | `::` | n/a | left | 20 |  
+| [Named item access](xref:microsoft.quantum.qsharp.itemaccessexpression#item-access-for-struct-types) | `.` | n/a | left | 20 |  
 | [Array item access](xref:microsoft.quantum.qsharp.itemaccessexpression#array-item-access-and-array-slicing) | `[` `]` | n/a | left | 20 |
 | [Function lambda](xref:microsoft.quantum.qsharp.closures#lambda-expressions) | `->` | n/a | right | 21 |
 | [Operation lambda](xref:microsoft.quantum.qsharp.closures#lambda-expressions) | `=>` | n/a | right | 21 |
@@ -74,14 +74,14 @@ This artificial precedence is listed in the following table, along with how the 
 To illustrate the implications of the assigned precedences, suppose you have a unitary operation `DoNothing` (as defined in [Specialization declarations](xref:microsoft.quantum.qsharp.specializationdeclarations#specialization-declarations)), a callable `GetStatePrep` that returns a unitary operation, and an array `algorithms` that contains items of type `Algorithm` defined as follows
 
 ```qsharp
-    newtype Algorithm = (
+    struct Algorithm {
         Register : Qubit[],
         Initialize : Transformation,
-        Apply : Transformation
-    );
+        Apply : Transformation,
+    }
 
     newtype Transformation =
-        Qubit[] => Unit is Adj + Ctl;
+        Qubit[] => Unit is Adj + Ctl;        <!-- SCOTT: Not sure how to update this example...BB >
 ```
 
 The following expressions, then, are all valid:
@@ -91,8 +91,8 @@ The following expressions, then, are all valid:
     (Transformation(GetStatePrep()))!(arg)
     Adjoint DoNothing()
     Controlled Adjoint DoNothing(cs, ())
-    Controlled algorithms[0]::Apply!(cs, _)
-    algorithms[0]::Register![i]
+    Controlled algorithms[0].Apply!(cs, _)
+    algorithms[0].Register![i]
 ```
 
 Looking at the precedences defined in the table above, you can see that the parentheses around `(Transformation(GetStatePrep()))` are necessary for the subsequent unwrap operator to be applied to the `Transformation` value rather than the returned operation.
