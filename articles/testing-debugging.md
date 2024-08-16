@@ -160,14 +160,14 @@ MultiQubitDumpMachineDemo();
 
 ```output
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
 |00⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-|10⟩	−0.7071+0.0000𝑖	 50.0000%	↑	-3.1416
+|01⟩	−0.7071+0.0000𝑖	 50.0000%	↓	-3.1416
 
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
-|00⟩	0.5879−0.3928𝑖	 50.0000%	↑	-0.5890
-|10⟩	−0.6935+0.1379𝑖	 50.0000%	↑	2.9452
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+|00⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
+|01⟩	−0.6533−0.2706𝑖	 50.0000%	↙	-2.7489   
 ```
 
 ### dump_machine() function
@@ -193,9 +193,9 @@ dump
 ```output
 
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+|10⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
 |11⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-|01⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
 ```
 
 
@@ -212,9 +212,9 @@ dump
 
 ```output
 Basis State
-(|𝜓ₙ…𝜓₁⟩)	Amplitude	Measurement Probability	Phase
-|11⟩	0.5879+0.3928𝑖	 50.0000%	↑	0.5890
-|01⟩	0.6935+0.1379𝑖	 50.0000%	↑	0.1963
+(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+|10⟩	0.5000+0.5000𝑖	 50.0000%	↗	0.7854
+|11⟩	0.2706+0.6533𝑖	 50.0000%	↗	1.1781    
 ```
 
 ```python
@@ -224,8 +224,8 @@ print(dump)
 
 ```output
 STATE:
-|11⟩: 0.5879+0.3928𝑖
-|01⟩: 0.6935+0.1379𝑖
+|10⟩: 0.5000+0.5000𝑖
+|11⟩: 0.2706+0.6533𝑖
 ```
 
 ```python
@@ -239,11 +239,11 @@ dump.qubit_count
 
 ```python
 # you can access individual states by their index
-dump[1]
+dump[2]
 ```
 
 ```output
-(0.6935199226610738 + 0.1379496896414715)
+(0.5+0.5000000000000001j)
 ```
 
 ```python
@@ -251,7 +251,7 @@ dump[3]
 ```
 
 ```output
-(0.5879378012096794 + 0.3928474791935511)
+(0.27059805007309845+0.6532814824381883j)
 ```
 
 ### CheckZero() and CheckAllZero() operations
@@ -321,11 +321,16 @@ print(res)
 This example uses a `Controlled Ry` gate to apply a rotation to the second qubit
 
 ```python
-qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit { H(qs[0]); Controlled Ry([qs[0]], (0.5, qs[1]));}")
+qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit { qs[0); Controlled Ry([qs[0]], (0.5, qs[1]));}")
 
 res = dump_operation("ControlRy", 2)
 print(res)
 ```
+
+```output
+[[(1+0j), 0j, 0j, 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, (0.968912+0j), (-0.247404+0j)], [0j, 0j, (0.247404+0j), (0.968912+0j)]]
+```
+
 
 The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation. 
 
