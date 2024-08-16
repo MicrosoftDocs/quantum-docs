@@ -81,7 +81,7 @@ To illustrate the implications of the assigned precedences, suppose you have a u
     }
 
     newtype Transformation =
-        Qubit[] => Unit is Adj + Ctl;        <!-- SCOTT: Not sure how to update this example...BB >
+        Qubit[] => Unit is Adj + Ctl;       
 ```
 
 The following expressions, then, are all valid:
