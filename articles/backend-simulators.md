@@ -70,7 +70,7 @@ For more information about all the Quantinuum emulators, see the [Quantinuum pro
 
 ## Rigetti
 
-Riggeti provides their Quantum Virtual Machine (QVM), an open-source simulator for Quil. The QVM target accepts a Quil program as text and runs that program on QVM hosted in the cloud, returning simulated results.
+Rigetti provides their Quantum Virtual Machine (QVM), an open-source simulator for Quil. The QVM target accepts a Quil program as text and runs that program on QVM hosted in the cloud, returning simulated results.
 
 - Job Type: `Simulation`
 - Data Formats: `rigetti.quil.v1`, `rigetti.qir.v1`
