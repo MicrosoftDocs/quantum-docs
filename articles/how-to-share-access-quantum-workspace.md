@@ -1,8 +1,8 @@
 ---
-author: aviviano
+author: bradben
 description: Learn how to share access to your Azure Quantum workspace.
-ms.author: amvivian
-ms.date: 09/22/2022
+ms.author: brbenefield
+ms.date: 08/19/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
