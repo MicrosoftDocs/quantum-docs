@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to use comments in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -29,7 +29,7 @@ formatted as [Markdown](https://daringfireball.net/projects/markdown/syntax),
 with different parts of the documentation indicated by specially-named
 headers.
 As an extension to Markdown, cross-references to operations, functions, and
-user-defined types in Q# can be included using `@"<ref target>,"`
+struct types in Q# can be included using `@"<ref target>,"`
 where `<ref target>` is replaced by the fully qualified name of the
 code object being referenced.
 Optionally, a documentation engine may also support additional
@@ -80,11 +80,11 @@ Q# recognizes the following names as documentation comment headers.
 - **Output**: A description of the tuple returned by an operation or function.
 - **Type Parameters**: An empty section that contains one additional
   subsection for each generic type parameter.
-- **Named Items**: A description of the named items in a user-defined type.
+- **Named Items**: A description of the named items in a struct type.
   May contain additional Markdown subsections with the description for each named item.
 - **Example**: A short example of the operation, function, or type in use.
 - **Remarks**: Miscellaneous prose describing some aspect of the operation,
   function, or type.
 - **See Also**: A list of fully qualified names indicating related functions,
-  operations, or user-defined types.
+  operations, or struct types.
 - **References**: A list of references and citations for the documented item.

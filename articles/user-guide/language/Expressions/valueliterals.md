@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the different types of literals in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -140,11 +140,30 @@ Tuples containing a single item are treated as identical to the item itself, bot
 
 Tuples are used to bundle values together into a single value, making it easier to pass them around. This makes it possible for every callable to take exactly one input and return exactly one output.
 
-## Literals for user-defined types
+## Literals for struct types
 
-Values of a [user-defined type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types) are constructed by invoking their constructor. A default constructor is automatically generated when [declaring the type](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations). It is currently not possible to define custom constructors.
+Values of a [struct type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types) are assigned when you create a new instance, using either the `new` statement or the constructor created by the compiler.
 
-For instance, if `IntPair` has two items of type `Int`, then `IntPair(2, 3)` creates a new instance by invoking the default constructor.
+For example, if `IntPair` is a `struct` defined as 
+
+```qsharp
+struct IntPair {
+    num1 : Int,
+    num2 : Int,    
+}
+```
+
+then you create a new instance and assign values using
+
+```qsharp
+let MyPair = new IntPair { num1 = 5, num2 = 7 };
+```
+
+or 
+
+```qsharp
+let MyPair = IntPair(5, 7);
+```
 
 ## Operation and function literals
 
