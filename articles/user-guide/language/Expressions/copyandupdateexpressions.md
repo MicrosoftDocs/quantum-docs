@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to use copy-and-update expressions in Q#.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -13,8 +13,7 @@ uid: microsoft.quantum.qsharp.copyandupdateexpressions
 
 # Copy-and-update expressions
 
-To reduce the need for mutable bindings, Q# supports copy-and-update expressions for value types with item access. User-defined types and arrays both are immutable and fall into this category.
-User-defined types allow you to access items via name, whereas arrays allow you to access items via an index or range of indices.
+To reduce the need for mutable bindings, Q# supports copy-and-update expressions for arrays, which allow you to access items via an index or range of indices.
 
 Copy-and-update expressions instantiate a new value with all items set to the corresponding value in the original expression, except certain specified items, which are set to the ones defined on the right-hand side of the expression.
 They are constructed using a ternary operator `w/` `<-`; the syntax `w/` should be read as the commonly used short notation for "with":
@@ -23,7 +22,7 @@ They are constructed using a ternary operator `w/` `<-`; the syntax `w/` should 
     original w/ itemAccess <- modification
 ```
 
-where `original` is either an expression of user-defined type or an array expression. For the corresponding requirements for `itemAccess` and `modification`, see [Copy-and-update of user-defined types](#copy-and-update-of-user-defined-types) and [Copy-and-update of arrays](#copy-and-update-of-arrays).
+where `original` is either an expression of user-defined type or an array expression. For the corresponding requirements for `itemAccess` and `modification`, see [Copy-and-update of struct types](#copy-and-update-of-struct-types) and [Copy-and-update of arrays](#copy-and-update-of-arrays).
 
 In terms of precedence, the copy-and-update operator is left-associative and has lowest precedence, and, in particular, lower precedence than the range operator (`..`) or the ternary conditional operator (`?` `|`).
 The chosen left associativity allows easy chaining of copy-and-update expressions:
@@ -44,19 +43,6 @@ The two following statements, for example, achieve the following: The first stat
 ```
 
 The second statement is just short-hand for the more verbose syntax `set arr = arr w/ 0 <- 10;`.
-
-## Copy-and-update of user-defined types
-
-If the value `original` is a user-defined type, then `itemAccess` denotes the name of the item that diverges from the original value. This is not just another expression, like `original` and `modification`, because the ability to use the item name without any further qualification is limited to this context; it is one of two [contextual expressions](xref:microsoft.quantum.qsharp.contextualexpressions#contextual-and-omitted-expressions) in Q#.
-
-The type of the `modification` expression needs to match the type of the named item that diverges.
-For instance, if `complex` contains the value `Complex(0., 0.)`, where the type `Complex` is defined [here](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations), then
-
-```qsharp
-complex w/ Re <- 1. 
-```
-
-is an expression of type `Complex` that evaluates to `Complex(1., 0.)`.
 
 ## Copy-and-update of arrays
 
@@ -80,4 +66,18 @@ the following expression, for example, evaluates to an array with all items set 
 
 ```qsharp
 [PauliI, size = n] w/ i <- PauliZ
+```
+
+## Copy-and-update of struct types
+
+To copy and update `struct` types, you use a copy constructor to declare a new `struct` from an existing one. For example, if `MyPair` is an instance of the struct `IntPair`, with the values `5` and `7`, you can create a new struct with the same values using the `new` keyword and the name of the existing `struct`.  For more information on defining a `struct` type, see [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
+
+```qsharp
+let ThisPair = new IntPair { ...MyPair };
+```
+
+Or you can modify one or more of the values when you create it
+
+```qsharp
+let ThisPair = new IntPair { ...MyPair, Int1 = 8, Int2 = 10 };
 ```
