@@ -65,7 +65,7 @@ This artificial precedence is listed in the following table, along with how the 
 | [Call combinator](xref:microsoft.quantum.qsharp.callstatements#call-expressions) | `(` `)` | n/a | left | 17 |
 | [Adjoint functor](xref:microsoft.quantum.qsharp.callstatements#call-expressions) | `Adjoint` | prefix | right | 18 |
 | [Controlled functor](xref:microsoft.quantum.qsharp.callstatements#call-expressions) | `Controlled` | prefix | right | 18 |
-| [Unwrap application](xref:microsoft.quantum.qsharp.itemaccessexpression#item-access-for-user-defined-types) | `!` | postfix | left | 19 |
+| [Unwrap application](xref:microsoft.quantum.qsharp.itemaccessexpression#item-access-for-struct-types) | `!` | postfix | left | 19 |
 | [Named item access](xref:microsoft.quantum.qsharp.itemaccessexpression#item-access-for-struct-types) | `.` | n/a | left | 20 |  
 | [Array item access](xref:microsoft.quantum.qsharp.itemaccessexpression#array-item-access-and-array-slicing) | `[` `]` | n/a | left | 20 |
 | [Function lambda](xref:microsoft.quantum.qsharp.closures#lambda-expressions) | `->` | n/a | right | 21 |
@@ -78,17 +78,13 @@ To illustrate the implications of the assigned precedences, suppose you have a u
         Register : Qubit[],
         Initialize : Transformation,
         Apply : Transformation,
-    }
-
-    newtype Transformation =
-        Qubit[] => Unit is Adj + Ctl;       
+    } 
 ```
 
 The following expressions, then, are all valid:
 
 ```qsharp
     GetStatePrep()(arg)
-    (Transformation(GetStatePrep()))!(arg)
     Adjoint DoNothing()
     Controlled Adjoint DoNothing(cs, ())
     Controlled algorithms[0].Apply!(cs, _)

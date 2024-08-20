@@ -42,41 +42,35 @@ An exception is thrown at runtime if the index or one of the indices used for sl
 
 ## Item access for struct types
 
-The contained items can be accessed via their name or by deconstruction, illustrated by the following statements that may be used as part of an operation or function implementation:
+The contained items in a `struct` can be accessed two ways:
 
+- By reference, using a period (`.`)
+- By deconstruction, using the `unwrap` (`!`) operator. 
 
-```qsharp
-    let complex = new Complex {Real = 1., Imaginary = 0.}; // create a value of type Complex
-    let (re, _) = complex!;       // item access via deconstruction
-    let im = complex.Imaginary;  // item access via name
-```
-
-You can use a period (`.`) to reference named items in the struct, as in the following example:
+For example, given the struct `Complex`
 
 ```qsharp
-struct TwoStrings {
-    str1 : String,
-    str2 : String,
+struct Complex {
+    Real : Double,
+    Imaginary : Double,
 }
 
-operation LinkTwoStrings(str : TwoStrings) : String {
-    let s1 = str.str1;
-    let s2 = str.str2;
-    return s1 + s2;
-}
+```qsharp
+// create an instance of type Complex
+let complex = Complex(1., 0.);
+
+// item access via deconstruction
+let (re, _) = complex!;
+
+// item access via name reference
+let im = complex.Imaginary;
 ```
 
 Access via deconstruction makes use of the unwrap operator (`!`). The unwrap operator returns a tuple of all contained items, where the shape of the tuple matches the one defined in the declaration, and a single item tuple is equivalent to the item itself (see [this section](xref:microsoft.quantum.qsharp.singletontupleequivalence#singleton-tuple-equivalence)).
 
-For instance, in the previous example, for the instance `MyStrings` of type `TwoStrings`, the expression `MyStrings!` returns a value of type `(String, String)`. Individual values can be accessed using deconstruction syntax. For example, to retrieve just the first value in this example
-
-```qsharp
-let (S1, _) = MyStrings!;
-```
+The `!` operator has lower [precedence](xref:microsoft.quantum.qsharp.precedenceandassociativity#modifiers-and-combinators) than both item access operators, but higher precedence than any other operator. For a complete list of precedences, see [Precedence and associativity](xref:microsoft.quantum.qsharp.precedenceandassociativity#precedence-and-associativity).
 
 For more information on deconstruction syntax, see [Variable declarations and reassignments](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments).
-
-The `!` operator has lower [precedence](xref:microsoft.quantum.qsharp.precedenceandassociativity#modifiers-and-combinators) than both item access operators, but higher precedence than any other operator. For a complete list of precedences, see [Precedence and associativity](xref:microsoft.quantum.qsharp.precedenceandassociativity#precedence-and-associativity).
 
 
 

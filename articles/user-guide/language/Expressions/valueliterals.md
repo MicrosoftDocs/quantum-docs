@@ -142,7 +142,7 @@ Tuples are used to bundle values together into a single value, making it easier 
 
 ## Literals for struct types
 
-Values of a [struct type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types) are constructed by using the `new` statement. 
+Values of a [struct type](xref:microsoft.quantum.qsharp.typesystem-overview#available-types) are assigned when you create a new instance, using either the `new` statement or the constructor created by the compiler.
 
 For example, if `IntPair` is a `struct` defined as 
 
@@ -156,7 +156,13 @@ struct IntPair {
 then you create a new instance and assign values using
 
 ```qsharp
-let MyPair = new IntPair {num1 = 5, num2 = 7};
+let MyPair = new IntPair { num1 = 5, num2 = 7 };
+```
+
+or 
+
+```qsharp
+let MyPair = IntPair(5, 7);
 ```
 
 ## Operation and function literals
