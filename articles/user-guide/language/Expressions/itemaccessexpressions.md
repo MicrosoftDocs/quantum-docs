@@ -55,7 +55,6 @@ struct Complex {
     Imaginary : Double,
 }
 
-```qsharp
 // create an instance of type Complex
 let complex = Complex(1., 0.);
 
