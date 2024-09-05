@@ -42,9 +42,6 @@ In order to allow the resource to access your Azure Quantum workspace:
 1. On the **Members** tab, in **Assign access to**, select **Managed Identity**, and then select **+ Select members**.
 1. In the **Select managed identities** popup, select a category from the **Managed identity** dropdown.
 1. Select the desired resource from the list and click **Select**.
-
-    :::image type="content" source="media/how-to-publish-qio-job-as-azurefunction/prepare-cloud-env-4.png" alt-text="Screenshot showing how to add your Function App as a Contributor to your Azure Quantum workspace":::
-
 1. Select **Next** and then select **Review and assign**.
 
 ## Logging in to your Azure Quantum workspace

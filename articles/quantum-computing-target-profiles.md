@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: This document provides an overview of target profile types available in Azure Quantum and their limitations. 
-ms.date: 05/29/2024
+ms.date: 08/09/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -80,7 +80,7 @@ Currently, these :::no-loc text="QIR Base"::: targets are available for Azure Qu
 
 - **Provider:** IonQ
   - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
-  - [IonQ QPU](xref:microsoft.quantum.providers.ionq##quantum-computer) (`ionq.qpu`)
+  - [IonQ QPU](xref:microsoft.quantum.providers.ionq##quantum-computer) (`ionq.qpu.*`)
 
 - **Provider:** Rigetti
   - [Rigetti Simulator](xref:microsoft.quantum.providers.rigetti#simulators) (`rigetti.sim.*`)

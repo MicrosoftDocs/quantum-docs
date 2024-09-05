@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about type-parameterized operations and functions in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -22,7 +22,7 @@ To motivate the concept of type parameterizations, consider the example of the f
 Any operation or function declaration may specify one or more type parameters that can be used as the types, or part of the types, of the callable's input or output, or both. The exceptions are entry points, which must be concrete and cannot be type-parametrized. Type parameter names start with a tick (') and may appear multiple times in the input and output types. 
 All arguments that correspond to the same type parameter in the callable signature must be of the same type.
 
-A type-parametrized callable needs to be concretized, that is, it must be provided with the necessary type arguments before it can be assigned or passed as argument, such that all type parameters can be replaced with concrete types. A type is considered to be concrete if it is one of the built-in types, a user-defined type, or if it is concrete within the current scope. The following example illustrates what it means for a type to be concrete within the current scope, and is explained in more detail below:
+A type-parametrized callable needs to be concretized, that is, it must be provided with the necessary type arguments before it can be assigned or passed as argument, such that all type parameters can be replaced with concrete types. A type is considered to be concrete if it is one of the built-in types, a `struct` type, or if it is concrete within the current scope. The following example illustrates what it means for a type to be concrete within the current scope, and is explained in more detail below:
 
 ```qsharp
     function Mapped<'T1, 'T2> (

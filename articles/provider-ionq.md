@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 08/07/2024
+ms.date: 09/03/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
@@ -14,7 +14,7 @@ uid: microsoft.quantum.providers.ionq
 # IonQ provider
 
 > [!IMPORTANT]
-> IonQ is retiring their Harmony-2 quantum computer effective September 1, 2024. They will stop taking job submissions for the Harmony-2 platform from the Azure Quantum service on August 15, 2024. Any jobs in the queue as of August 15th will be processed by September 1st. 
+> IonQ has retired their Harmony-2 quantum computer effective September 1, 2024. 
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -28,7 +28,6 @@ The following targets are available from this provider:
 |Target name |	Target ID|	Number of qubits|	Description|
 |---|---|---|---|
 |[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
-|[IonQ Harmony](#ionq-harmony-quantum-computer) |	ionq.qpu	|11 qubits	|IonQ's trapped-ion quantum computer.|
 |[IonQ Aria 1](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 |[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 |[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte	|32 qubits	|IonQ's Forte trapped-ion quantum computer. Available in Private Preview only.|
@@ -43,42 +42,6 @@ GPU-accelerated idealized simulator supporting up to 29 qubits, using the same s
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
-
-## IonQ Harmony quantum computer
-
-The IonQ Harmony is a trapped ion quantum computer and is dynamically reconfigurable in software to use up to 11 qubits. All qubits are fully connected, meaning you can run a two-qubit gate between any pair.
-
-- Job type: `Quantum Program`
-- Data Format: `ionq.circuit.v1`
-- Target ID: `ionq.qpu`
-- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
-
-| Parameter Name | Type     | Required | Description |
-|----------------|----------|----------|-------------|
-| `shots`   | int    | No | Number of experimental shots. Defaults to 500. |
-
-### System timing
-
-| Measure | Average time duration (µs) |
-|---------|----------------------------|
-| T1 | >10^7 |
-| T2 | 200,000 | 
-| Single-qubit gate | 10 | 
-| Two-qubit gate | 210 | 
-| Readout | 100 | 
-| Register reset | 25 | 
-| Coherence time / gate duration | 1667 | 
-
-### System fidelity
-
-| Operation | Average fidelity |
-|-----------|------------------|
-| Single-qubit gate | 99.35% (SPAM corrected) |
-| Two-qubit gate | 96.02% (not SPAM corrected) |
-| SPAM* | 99.3 - 99.8% |
-| Geometric mean op | 98.34% |
-
-\* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
 ## IonQ Aria quantum computer
 
@@ -168,7 +131,7 @@ For more information, see [Debiasing and Sharpening](https://ionq.com/resources/
 #### Enabling error mitigation
 
 > [!NOTE]
-> *Debiasing* is enabled by default on Aria and Forte systems, and disabled by default on Harmony systems.
+> *Debiasing* is enabled by default on Aria and Forte systems.
 
 On Azure Quantum, error mitigation can be enabled or disabled for jobs submitted with Q# or with Qiskit.
 
@@ -203,7 +166,7 @@ option_params = {
 >         "debias": False
 >     },
 >     "noise": {
->     "model": "harmony",
+>     "model": "aria-1",
 >     "seed": 100
 >     }
 > }
@@ -253,7 +216,7 @@ MyWorkspace = azure.quantum.Workspace(
     location = ""
 )
 
-MyTarget = MyWorkspace.get_targets("ionq.qpu")
+MyTarget = MyWorkspace.get_targets("ionq.qpu.aria-1")
 
 ```
 
@@ -286,8 +249,7 @@ job = backend.run(circuit, shots=500)
 ```
 
 > [!NOTE]
-> If you do not pass in the `error-mitigation` parameter, the target machine will use its default setting: *enabled* for Aria and Forte systems, and *disabled* for Harmony systems.
-
+> If you do not pass in the `error-mitigation` parameter, the target machine will use its default setting, which is *enabled* for Aria and Forte systems.
 <!--
 When you run a job with error mitigation enabled, IonQ makes both aggregate results, Sharpened and Averaged, available. The Average result is returned by default. To view the Sharpened result, pass `sharpen=True` with the `job_result()` call:
 
@@ -308,7 +270,7 @@ In order to use the native gate set when submitting Qiskit jobs to Azure Quantum
 
 ```python
 # Here 'provider' is an instance of AzureQuantumProvider
-backend = provider.get_backend("ionq.qpu", gateset="native")
+backend = provider.get_backend("ionq.qpu.aria-1", gateset="native")
 ```
 
 | Parameter Name | Type     | Required | Description |
@@ -326,16 +288,16 @@ Even the best of today's quantum hardware has inherent noise, and knowing the no
 | Parameter Name | Values     | Description |
 |----------------|------------|-------------|
 | `noise`        | `model`, `seed` |  Enables the noise model simulation  |
-| `model`        | `ideal`, `harmony`, `aria-1` | Specifies the noise model for the target hardware.<ul><li>`ideal` - No noise is introduced into the circuit. This is the same as not enabling the noise simulation.</li><li>`harmony` - Uses the noise model for the IonQ Harmony quantum computer.</li><li>`aria-1` - Uses the noise model for the IonQ Aria quantum computer. |
+| `model`        | `ideal`, `aria-1` | Specifies the noise model for the target hardware.<ul><li>`ideal` - No noise is introduced into the circuit. This is the same as not enabling the noise simulation.</li><li>`aria-1` - Uses the noise model for the IonQ Aria quantum computer. |
 | `seed`        | Integer between 1 and $2^{31}$ (2,147,483,648) | Allows you to specify a seed value for pseudo-random noise and shot-sampling, creating reproducible noisy results. If the parameter is not specified, a random `seed` value is created. |
 
 #### Shot awareness
 
-Noise model simulation is *shot-aware*; that is, it samples measurements from the output state based on the number of shots provided. In Azure Quantum, the `shots` parameter is submitted with the job, and is required for `harmony` and `aria-1` noise models. If no `shot` value is specified, a default value of `1000` is used. If the `ideal` noise model is used, the `shots` parameter is ignored.
+Noise model simulation is *shot-aware*; that is, it samples measurements from the output state based on the number of shots provided. In Azure Quantum, the `shots` parameter is submitted with the job, and is required for `aria-1` noise models. If no `shot` value is specified, a default value of `1000` is used. If the `ideal` noise model is used, the `shots` parameter is ignored.
 
 #### Qubit capacity
 
-While the `ideal` noise model allows you to simulate up to 29 qubits with the IonQ quantum simulator, the hardware specific noise models are limited to the actual qubit capacity of the target hardware: 11 qubits for the `harmony` noise model and 25 qubits for the `aria-1` noise model.
+While the `ideal` noise model allows you to simulate up to 29 qubits with the IonQ quantum simulator, the hardware specific noise models are limited to the actual qubit capacity of the target hardware, which is 25 qubits for the `aria-1` noise model.
 
 #### Enabling noise model simulation
 
@@ -347,7 +309,7 @@ To enable noise model simulation, add an optional parameter for the target machi
 
 option_params = {
     "noise": {
-        "model": "harmony",   # targets the Harmony quantum computer
+        "model": "aria-1",   # targets the Aria quantum computer
         "seed" : 1000         # If seed isn't specified, a random value is used  
     }
 }
@@ -363,7 +325,7 @@ option_params = {
 >         "debias": False
 >     },
 >     "noise": {
->     "model": "harmony",
+>     "model": "aria-1",
 >     "seed": 1000
 >     }
 > }

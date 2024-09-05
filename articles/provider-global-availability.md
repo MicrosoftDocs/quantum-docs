@@ -1,7 +1,8 @@
 ---
+ms.author: brbenefield
 author: bradben
 description: Check out the list of countries and regions where each of the Azure Quantum providers are available.
-ms.date: 06/12/2024
+ms.date: 08/19/2024
 ms.service: azure-quantum
 ms.subservice: core  
 ms.topic: feature-availability
