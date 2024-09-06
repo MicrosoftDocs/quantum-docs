@@ -4,6 +4,8 @@ jobs:
   status_checker_job:
     runs-on: ubuntu-latest
     name: Checks the OpenPublishing.Build status check for build warnings
+    permissions:
+      statuses: read
     steps:
     - name: Harden Runner
       uses: step-security/harden-runner@main
