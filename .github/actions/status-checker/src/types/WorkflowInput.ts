@@ -11,12 +11,12 @@ export class WorkflowInput {
 
   get docsPath(): string {
     const val = getInput("docs_path", { required: true });
-    return val || "quantum-docs-private";
+    return val || "docs";
   }
 
   get urlBasePath(): string {
     const val = getInput("url_base_path", { required: true });
-    return val || "MicrosoftDocs";
+    return val || "dotnet";
   }
 
   get repoToken(): string {
