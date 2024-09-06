@@ -247,8 +247,8 @@ function getPullRequest(token, cursor = null) {
       2. Paste the query string value into the query window.
       3. Replace the $name, $owner, and $number variables with the values from your repository, or use the following JSON:
         {
-          "name": "docs",
-          "owner": "dotnet",
+          "name": "quantum-docs-private",
+          "owner": "MicrosoftDocs",
           "number": 36636,
           "cursor": null
         }
@@ -577,11 +577,11 @@ class WorkflowInput {
     }
     get docsPath() {
         const val = (0, core_1.getInput)("docs_path", { required: true });
-        return val || "docs";
+        return val || "quantum-docs-private";
     }
     get urlBasePath() {
         const val = (0, core_1.getInput)("url_base_path", { required: true });
-        return val || "dotnet";
+        return val || "MicrosoftDocs";
     }
     get repoToken() {
         const val = (0, core_1.getInput)("repo_token", { required: true });
