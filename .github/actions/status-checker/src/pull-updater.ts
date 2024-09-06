@@ -127,8 +127,8 @@ You can verify the query below, by running the following in the GraphQL Explorer
 2. Paste the query string value into the query window.
 3. Replace the $name, $owner, and $number variables with the values from your repository, or use the following JSON:
   {
-    "name": "quantum-docs-private",
-    "owner": "MicrosoftDocs",
+    "name": "docs",
+    "owner": "dotnet",
     "number": 36636,
     "cursor": null
   }

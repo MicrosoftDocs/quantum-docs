@@ -16,7 +16,7 @@ const {
 } = exportedForTesting;
 
 beforeAll(() => {
-  process.env["GITHUB_REPOSITORY"] = "MicrosoftDocs/quantum-docs-private";
+  process.env["GITHUB_REPOSITORY"] = "dotnet/docs";
 });
 
 describe("pull-updater", () => {
@@ -82,8 +82,8 @@ ${PREVIEW_TABLE_END}`;
   });
 
   it("buildMarkdownPreviewTable builds preview table correctly", async () => {
-    setInput("DOCS_PATH", "quantum-docs-private");
-    setInput("URL_BASE_PATH", "MicrosoftDocs");
+    setInput("DOCS_PATH", "docs");
+    setInput("URL_BASE_PATH", "dotnet");
 
     const actual = await buildMarkdownPreviewTable(
       7,
@@ -142,8 +142,8 @@ ${PREVIEW_TABLE_END}`;
 
   it("buildMarkdownPreviewTable builds preview table correctly with collapsible HTML elements.", async () => {
     setInput("COLLAPSIBLE_AFTER", "3");
-    setInput("DOCS_PATH", "quantum-docs-private");
-    setInput("URL_BASE_PATH", "MicrosoftDocs");
+    setInput("DOCS_PATH", "docs");
+    setInput("URL_BASE_PATH", "dotnet");
 
     const actual = await buildMarkdownPreviewTable(
       7,

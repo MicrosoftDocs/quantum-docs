@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Checks the OpenPublishing.Build status check for build warnings
     steps:
-    - uses: MicrosoftDocs/quantum-docs-private/.github/actions/status-checker@main
+    - uses: dotnet/samples/.github/actions/status-checker@main
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
