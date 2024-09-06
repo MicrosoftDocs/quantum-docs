@@ -6,10 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Checks the OpenPublishing.Build status check for build warnings
     steps:
-    - name: Harden Runner
-      uses: step-security/harden-runner@main
-      with:
-        egress-policy: audit
     - uses: MicrosoftDocs/quantum-docs-private/.github/actions/status-checker@main
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
