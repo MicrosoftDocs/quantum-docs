@@ -1,14 +1,22 @@
 name: Check for build warnings
-on: [pull_request_target]
+on: 
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
 jobs:
   status_checker_job:
     runs-on: ubuntu-latest
     permissions:
-      actions: read
-      pull-requests: read
+        statuses: read
+        pull-requests: write
     name: Checks the OpenPublishing.Build status check for build warnings
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@main
+      with:
+        egress-policy: audit
     - uses: MicrosoftDocs/quantum-docs-private/.github/actions/status-checker@main
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
+        docs_path: "quantum-docs-private"
+        url_base_path: "MicrosoftDocs"
