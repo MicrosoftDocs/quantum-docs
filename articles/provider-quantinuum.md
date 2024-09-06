@@ -220,7 +220,7 @@ open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Measurement;
 open Microsoft.Quantum.Arrays;
 
-operation ContinueComputationAfterReset(theta : Double) : Result[] {
+operation ArbitraryAngleZZExample(theta : Double) : Result[] {
     
     // Set up circuit with 2 qubits
     use qubits = Qubit[2];
@@ -267,6 +267,65 @@ circuit.x(1)
 circuit.rzz(theta, 0, 1)
 
 circuit.measure_all()
+```
+
+***
+
+### General SU(4) Entangling Gate
+
+Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+
+#### [General SU(4) Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
+
+In Q\#, the SU(4) gate is not implemented directly in a gate function, but is a gate implemented in Quantinuum's QIR profile. To implement the gate in your code in Q#, a function for the gate is first defined using a customer intrinsic matching the signature in Quantinuum's QIR profile. This is then used within the `SU4Example` operation when creating the circuit. To submit the circuit and ensure the circuit is run using the General SU(4) Entangling gate, options need to be passed to specify this. Specifically, `noreduce: True` will ensure the gates as used in the circuit are what will run on the hardware.
+
+```qsharp
+%%qsharp
+open Microsoft.Math;
+
+operation __quantum__qis__rxxyyzz__body(a1 : Double, a2 : Double, a3 : Double, q1 : Qubit, q2 : Qubit) : Unit {
+    body intrinsic;
+}
+
+operation SU4Example() : Result[] {
+    use qs = Qubit[2];
+    
+    // Add SU(4) gate
+    __quantum__qis__rxxyyzz__body(PI(), PI(), PI(), qs[0], qs[1]);
+    
+    MResetEachZ(qs)
+}
+
+```
+
+Now compile the operation:
+
+```python
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
+
+# Update TKET optimization level desired
+option_params = {
+    "noreduce": True
+}
+
+```
+
+Pass in the `noreduce` option when submitting the job:
+
+```python
+job = MyTarget.submit(MyProgram, "Submit a program with SU(4) gate", shots = 10, input_params = option_params)
+job.get_results()
 ```
 
 ***
