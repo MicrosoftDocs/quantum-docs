@@ -15,6 +15,7 @@ jobs:
       uses: step-security/harden-runner@main
       with:
         egress-policy: audit
+        
     - uses: MicrosoftDocs/quantum-docs-private/.github/actions/status-checker@main
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
