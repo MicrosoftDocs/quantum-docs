@@ -1,7 +1,5 @@
 name: Check for build warnings
-on: 
-  pull_request_target:
-    types: [opened, synchronize, reopened]
+on: [pull_request_target]
 
 jobs:
   status_checker_job:
@@ -19,5 +17,3 @@ jobs:
     - uses: MicrosoftDocs/quantum-docs-private/.github/actions/status-checker@main
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        docs_path: "quantum-docs-private"
-        url_base_path: "MicrosoftDocs"
