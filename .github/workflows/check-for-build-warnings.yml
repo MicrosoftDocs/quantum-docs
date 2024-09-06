@@ -4,6 +4,9 @@ on: [pull_request_target]
 jobs:
   status_checker_job:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pull-requests: read
     name: Checks the OpenPublishing.Build status check for build warnings
     steps:
     - uses: MicrosoftDocs/quantum-docs-private/.github/actions/status-checker@main
