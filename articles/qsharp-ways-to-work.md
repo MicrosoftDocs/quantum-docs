@@ -2,7 +2,7 @@
 author: haileytap
 description: This article describes the environment options for developing quantum programs with Q# and the Quantum Development Kit.
 ms.author: sonialopez
-ms.date: 06/17/2024
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: get-started
@@ -48,7 +48,7 @@ The option you choose for running Q# programs depends on your coding experience,
 
 On the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q# programs in an online code editor—no installation or Azure account required. Write your own Q# code, explore the built-in Q# samples, or prompt Copilot to code for you.
 
-The Azure Quantum website also features blogs, articles, and videos from quantum experts and enthusiasts. The [Quantum Katas](https://quantum.microsoft.com/en-us/experience/quantum-katas) deepen your knowledge with self-paced tutorials on the fundamentals of quantum computing and Q#.
+The Azure Quantum website also features blogs, articles, and videos from quantum experts and enthusiasts. The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) deepen your knowledge with self-paced tutorials on the fundamentals of quantum computing and Q#.
 
 For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
@@ -122,7 +122,7 @@ The following table shows what you can and can't do in VS Code:
 To learn and explore the Q# programming language, use the following resources:
 
 - [**Azure Quantum learning path**](/training/paths/quantum-computing-fundamentals)**:** If you're interested in quantum computing but don't know where to start, take this learning path. Through a series of interactive modules, you learn about quantum computing and how to develop quantum solutions using Q# and the QDK.
-- [**Quantum Katas**](https://quantum.microsoft.com/experience/quantum-katas)**:** Learn quantum computing and programming simultaneously with these self-paced tutorials, each with relevant theory and Q# exercises to test your knowledge.
+- [**Quantum Katas**](https://quantum.microsoft.com/tools/quantum-katas)**:** Learn quantum computing and programming simultaneously with these self-paced tutorials, each with relevant theory and Q# exercises to test your knowledge.
 - [**Q# code samples**](https://github.com/microsoft/qsharp/tree/main/samples)**:** Build your first quantum solution with these ready-to-use Q# samples. They cover four areas: quantum algorithms, resource estimation, language constructs, and Jupyter Notebooks.
 - [**QDK playground**](https://vscode.dev/quantum/playground/)**:** Explore common quantum algorithms written in Q#. The playground is hosted on VS Code for the Web and comes preconfigured with the QDK, so you don't need to install anything.
 

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs problems in the cloud.
-ms.date: 06/03/2024
+ms.date: 09/10/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -28,7 +28,7 @@ There are different ways to get started with Azure Quantum. You can start by exp
 
 [Azure Quantum (quantum.microsoft.com)](https://quantum.microsoft.com/) is a central resource for exploring quantum computing. You can engage with the Copilot in Azure Quantum, a quantum-focused chatbot that helps you write code and better understand quantum concepts. You can also learn from experts and enthusiasts through blogs, articles and videos.
 
-Try out Q# code samples in the online code editor, [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding), submit your job the to the cloud-based Quantinuum H-Series Emulator, or with one click in the online code editor, open your code in [VS Code for the Web](https://vscode.dev/quantum) and continue working in a pre-configure quantum environment.
+Try out Q# code samples in the online code editor, [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), submit your job the to the cloud-based Quantinuum H-Series Emulator, or with one click in the online code editor, open your code in [VS Code for the Web](https://vscode.dev/quantum) and continue working in a pre-configure quantum environment.
 
 The Azure Quantum website is **free** of charge and **doesn't require** an Azure account. To get started, all you need is a Microsoft (MSA) email account. For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
@@ -60,7 +60,7 @@ Azure Quantum offers the **Azure Quantum Development Kit (QDK)**. With the QDK, 
 
 The QDK offers two ways to run your quantum programs on Azure Quantum:
 
-- Online development: Write your quantum code in the [online code editor](https://quantum.microsoft.com/experience/quantum-coding), and in [Visual Studio Code for the Web](https://vscode.dev/quantum).
+- Online development: Write your quantum code in the [online code editor](https://quantum.microsoft.com/tools/quantum-coding), and in [Visual Studio Code for the Web](https://vscode.dev/quantum).
 - Local development: Install the  QDK extension for Visual Studio Code and write your quantum code locally. For more information, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 Besides supporting for Q#, the QDK offers support for Qiskit and Cirq for quantum computing, so if you are already working in other development languages, you can also run your circuits on Azure Quantum.

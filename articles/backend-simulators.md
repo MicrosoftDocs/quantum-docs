@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: brbenefield
-ms.date: 06/18/2024
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: conceptual
@@ -64,7 +64,7 @@ Quantinuum provides two emulator tools:
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
 - Target Execution Profile: QIR Adaptive RI
 
-The H-Series Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) page. For more information, see the [H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) page.
+The H-Series Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page. For more information, see the [H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) page.
 
 For more information about all the Quantinuum emulators, see the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) page.
 
