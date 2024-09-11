@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: sonialopez
-ms.date: 08/09/2024
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -141,7 +141,7 @@ where:
 
 To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
 
-All new Azure customers benefit from USD500 in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides four plans: **Standard**, **Premium**, **Standard H1 + H2**, and **Premium H1 + H2**.
+All new Azure customers benefit from USD500 in free credits towards the Quantinuum provider. Besides Azure Quantum credits, Quantinuum provides four subscription plans: **Standard**, **Premium**, **Standard H1 + H2**, and **Premium H1 + H2**. Also, Quantinuum offers a **Pay as You Go** offering.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcreditsQ)
 
@@ -162,13 +162,10 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 The H1 Subscriptions are monthly subscription plans available through queued access providing access to the H1-1 quantum computer.
 
-|Standard Pricing| Includes access to |
+|Plans and Pricing| Includes access to |
 |---|---|
-|USD125,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
-
-|Premium Pricing| Includes access to |
-|---|---|
-|USD175,000/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on the System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
+|**Standard Plan**: USD125,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
+|**Premium Plan**: USD175,000/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on the System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -176,27 +173,21 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 The Standard H1 + H2 Subscriptions are monthly subscription plans available through queued access.
 
-|Standard Pricing|  Includes access to  |
+|Plans and Pricing|  Includes access to  |
 |---|---|
-|USD135,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
-
-|Premium Pricing | Includes access to  |
-|---|---|
-|USD185,000/Month + Azure infrastructure costs| <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+|**Standard Plan**: USD135,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+|**Premium Plan**: USD185,000/Month + Azure infrastructure costs| <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ### [Pay as You Go](#tab/tabid-PAYG)
 
-The Pay as You Go plan provides queued access to either the H1 series quantum computers or H2 series quantum computers and is charged per HQC usage.
+The Pay as You Go plan provides queued access to either the H1 series quantum computers or H2 series quantum computers and is charged per HQC usage. To get additional information on Pay as You Go pricing please contact Quantinuum sales at Sales@Quantinuum.com.
 
-|H1 Pricing| Includes access to |
+|PAYG Pricing| Includes access to |
 |---|---|
-|Per HQC usage + Azure infrastructure costs | <ul><li>H1 series quantum computers and emulator|
-
-|H2 Pricing| Includes access to |
-|---|---|
-|Per HQC usage + Azure infrastructure costs | <ul><li>H2 series quantum computers and emulator|
+|**System Model H1** Per HQC usage + Azure infrastructure costs | <ul><li>System Model H1 quantum computers and emulator|
+|**System Model H2** Per HQC usage + Azure infrastructure costs | <ul><li>System Model H2 quantum computers and emulator|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
