@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: brbenefield
-ms.date: 07/05/2024
+ms.date: 09/12/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -79,8 +79,8 @@ To test your setup, see [Submit Q# jobs with Python](xref:microsoft.quantum.subm
 The Azure CLI is an optional method for submitting quantum jobs using a terminal window in Visual Studio Code.
 
 1. Install the [Azure CLI](/cli/azure/install-azure-cli).
-1. Open the command line.
-1. Install the latest Azure CLI `quantum` extension:
+1. Open a Windows command prompt.
+1. In the command prompt, run the following command to update to the latest Azure CLI `quantum` extension:
 
     ```cmd
     az extension add \
