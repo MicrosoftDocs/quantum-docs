@@ -2,7 +2,7 @@
 author: bradben
 description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
 ms.author: brbenefield
-ms.date: 07/09/2024
+ms.date: 09/12/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
@@ -89,8 +89,13 @@ To update the azure-quantum package:
     
 ## Update the Azure CLI quantum extension
 
-1. Update or install the latest Azure CLI `quantum` extension. From a Windows command prompt, run
+Update or install the latest Azure CLI `quantum` extension. 
+
+1. Open a Windows command prompt.
+1. From the command prompt, run
 
     ```azurecli
-    az extension add --upgrade --name quantum
+    az extension add \
+        --upgrade \
+        --name quantum
     ```
