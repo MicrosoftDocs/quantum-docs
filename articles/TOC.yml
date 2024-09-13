@@ -9,22 +9,22 @@
   - name: Microsoft's quantum machine
     href: overview-microsoft-quantum-machine.md
 - name: Get started
-  expanded: true
   items:
   - name: Explore Copilot in Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
-  - name: Get started with Azure Quantum notebooks 
+  - name: Get started with Azure Quantum notebooks
     href: get-started-jupyter-notebook.md
   - name: Set up the Quantum Development Kit
     href: install-overview-qdk.md
   - name: Ways to run Q# programs
     href: qsharp-ways-to-work.md
+  expanded: true
 - name: Manage Azure Quantum
   items:
   - name: Users and workspaces
-    items:  
+    items:
     - name: Work with Azure Quantum notebooks
       href: how-to-run-notebooks-workspace.md
     - name: Work with Azure Quantum workspaces
@@ -39,19 +39,19 @@
         href: how-to-share-access-quantum-workspace.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
-    - name: Work with Azure Quantum using the Azure CLI 
+    - name: Work with Azure Quantum using the Azure CLI
       href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
     - name: Azure CLI commands >>
       href: /cli/azure/quantum
-    - name: Work with Azure Quantum using the Azure Resource Manager 
+    - name: Work with Azure Quantum using the Azure Resource Manager
       href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
   - name: Pricing, invoicing, credits and quota
-    items: 
+    items:
     - name: Azure Quantum Credits
       href: azure-quantum-credits.md
     - name: Azure Quantum Credits program FAQ
       href: credits-faq.md
-    - name: Azure Quantum pricing 
+    - name: Azure Quantum pricing
       href: pricing.md
     - name: Azure Quantum invoicing
       href: invoicing.md
@@ -60,7 +60,7 @@
     - name: Understanding job costs in Azure Quantum
       href: azure-quantum-job-costs.md
   - name: Security
-    items:  
+    items:
     - name: Authenticate using a service principal
       href: optimization-authenticate-service-principal.md
     - name: Authenticate using a managed identity
@@ -70,7 +70,7 @@
     - name: Protect Azure Quantum with resource locks
       href: how-to-set-resource-locks.md
   - name: Maintenance
-    items:  
+    items:
     - name: Update the QDK
       href: install-update-qdk.md
     - name: Add or remove a provider
@@ -82,9 +82,9 @@
     - name: Quantum computing integration with classical apps
       href: /azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
 - name: Quantum programming
-  items: 
+  items:
   - name: Get started with Q#
-    items: 
+    items:
     - name: Introduction to Q#
       href: qsharp-overview.md
     - name: Create your first Q# program
@@ -128,7 +128,7 @@
     - name: Language reference for Q#
       href: user-guide/language/toc.yml
 - name: Hybrid quantum computing (QC)
-  items: 
+  items:
   - name: Introduction to hybrid QC
     href: hybrid-computing-overview.md
   - name: Sessions
@@ -136,7 +136,7 @@
     - name: Get started with sessions
       href: hybrid-computing-interactive.md
     - name: Manage sessions
-      href: how-to-work-with-sessions.md    
+      href: how-to-work-with-sessions.md
   - name: Run hybrid QC jobs
     href: hybrid-computing-integrated.md
   - name: Concepts for hybrid QC
@@ -144,26 +144,26 @@
 - name: Resource Estimation
   items:
   - name: Get started
-    items: 
+    items:
     - name: Introduction to the Resource Estimator
       href: intro-to-resource-estimation.md
     - name: Run your first resource estimate
       href: quickstart-microsoft-resources-estimator.md
     - name: Different ways to run the Resource Estimator
-      href: how-to-submit-re-jobs.md  
+      href: how-to-submit-re-jobs.md
     - name: Customize the target parameters for the Resource Estimator
       href: overview-resources-estimator.md
     - name: Understand the results of the Resource Estimator
       href: overview-resource-estimator-output-data.md
   - name: Work with the Resource Estimator
-    items: 
+    items:
     - name: Run multiple configurations
       href: resource-estimator-batching.md
     - name: Use known estimates
       href: resource-estimator-known-estimates.md
     - name: Handle large programs
       href: resource-estimator-handle-large-programs.md
-    - name: Analyze cryptographic protocols 
+    - name: Analyze cryptographic protocols
       href: resource-estimator-quantum-safe-planning.md
   - name: Tutorials with the Resource Estimator
     items:
@@ -182,7 +182,7 @@
   - name: Quantum computing providers list
     href: qc-target-list.md
   - name: QIR target profiles
-    href: quantum-computing-target-profiles.md 
+    href: quantum-computing-target-profiles.md
   - name: Azure Quantum provider global availability
     href: provider-global-availability.md
   - name: IonQ
@@ -215,32 +215,32 @@
       href: provider-support-rigetti.md
 - name: Key concepts of quantum computing
   items:
-    - name: Vectors and matrices
-      href: concepts-vectors-and-matrices.md
-    - name: Advanced matrix concepts
-      href: concepts-advanced-matrices.md
-    - name: The qubit
-      href: concepts-the-qubit.md
-    - name: Multiple qubits
-      href: concepts-multiple-qubits.md
-    - name: Dirac notation
-      href: concepts-dirac-notation.md
-    - name: Pauli measurements
-      href: concepts-pauli-measurements.md
-    - name: Grover's algorithm
-      href: concepts-grovers.md
-    - name: Quantum circuits conventions
-      href: concepts-circuits.md
-    - name: Quantum entanglement
-      href: concepts-entanglement.md
-    - name: Quantum error correction 
-      href: concepts-error-correction.md
-    - name: Quantum Intermediate Representation
-      href: concepts-qir.md
-    - name: Quantum oracles
-      href: concepts-oracles.md
-    - name: T gates & T factories
-      href: concepts-tfactories.md
+  - name: Vectors and matrices
+    href: concepts-vectors-and-matrices.md
+  - name: Advanced matrix concepts
+    href: concepts-advanced-matrices.md
+  - name: The qubit
+    href: concepts-the-qubit.md
+  - name: Multiple qubits
+    href: concepts-multiple-qubits.md
+  - name: Dirac notation
+    href: concepts-dirac-notation.md
+  - name: Pauli measurements
+    href: concepts-pauli-measurements.md
+  - name: Grover's algorithm
+    href: concepts-grovers.md
+  - name: Quantum circuits conventions
+    href: concepts-circuits.md
+  - name: Quantum entanglement
+    href: concepts-entanglement.md
+  - name: Quantum error correction
+    href: concepts-error-correction.md
+  - name: Quantum Intermediate Representation
+    href: concepts-qir.md
+  - name: Quantum oracles
+    href: concepts-oracles.md
+  - name: T gates & T factories
+    href: concepts-tfactories.md
 - name: Troubleshooting
   items:
   - name: Troubleshooting issues
@@ -250,7 +250,7 @@
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
   - name: Contributing to Azure Quantum
-    href: contributing-overview.md    
+    href: contributing-overview.md
   - name: Further reading
     href: further-reading-qdk.md
 - name: Release notes
