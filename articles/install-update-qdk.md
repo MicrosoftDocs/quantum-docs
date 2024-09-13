@@ -96,6 +96,6 @@ Update or install the latest Azure CLI `quantum` extension.
 
     ```azurecli
     az extension add \
-        --upgrade 
+        --upgrade \
         --name quantum
     ```
