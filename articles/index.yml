@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: bradben
   ms.author: brbenefield
-  ms.date: 08/13/2024
+  ms.date: 09/10/2024
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -71,7 +71,7 @@ landingContent:
           - text: Training path - Get started with Azure Quantum
             url: /training/paths/quantum-computing-fundamentals/
           - text: Learn quantum computing with Copilot in Azure Quantum 
-            url: https://quantum.microsoft.com/experience/quantum-coding
+            url: https://quantum.microsoft.com/tools/quantum-coding
           - text: Learn Q# with the Quantum Katas
-            url: https://quantum.microsoft.com/experience/quantum-katas
+            url: https://quantum.microsoft.com/tools/quantum-katas
 

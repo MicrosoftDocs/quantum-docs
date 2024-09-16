@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 06/18/2024
+ms.date: 09/10/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -94,7 +94,7 @@ To get started, see [Run your first resource estimate](xref:microsoft.quantum.qu
 
 Quantum mechanics is the underlying "operating system" of our universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For simulating intrinsically quantum mechanical systems, such as molecules, quantum computing is promising, because [qubits](xref:microsoft.quantum.concepts.qubit) (quantum bits) can be used to represent the natural states in question. Examples of quantum systems that we can model include photosynthesis, superconductivity, and complex molecular formations.
 
-[Azure Quantum Elements](https://quantum.microsoft.com/en-us/our-story/quantum-elements-overview) is purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows optimized for scaling on Azure High-Performance Computing (HPC) clusters, AI-accelerated computing, augmented reasoning using AI, integration with quantum tools to start experimenting with existing quantum hardware, and access in the future to Microsoft’s quantum supercomputer. For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
+[Azure Quantum Elements](https://quantum.microsoft.com/solutions/azure-quantum-elements) is purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows optimized for scaling on Azure High-Performance Computing (HPC) clusters, AI-accelerated computing, augmented reasoning using AI, integration with quantum tools to start experimenting with existing quantum hardware, and access in the future to Microsoft’s quantum supercomputer. For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
 
 ### Quantum speedups
 

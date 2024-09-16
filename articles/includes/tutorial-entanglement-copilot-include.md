@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 04/18/2024
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -10,7 +10,7 @@ no-loc: [Quantum Development Kit, target, targets]
 
 ## Prerequisites
 
-To run the code sample in the [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding), you need:
+To run the code sample in the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), you need:
 
 - A Microsoft (MSA) email account.
 
@@ -20,7 +20,7 @@ For more information about the Copilot, see [Explore Azure Quantum](xref:microso
 
 The first step is to define a Q# operation that will initialize a qubit to a known state. This can be called to set a qubit to a classical state, meaning that, when measured, it either returns `Zero` 100% of the time or returns `One` 100% of the time. Measuring a qubit returns a Q# type `Result`, which can only have a value of `Zero` or `One`.
 
-Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) and copy the following code into the code editor window. Don't click **Run** yet; you'll run the code later in the tutorial.
+Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) and copy the following code into the code editor window. Don't click **Run** yet; you'll run the code later in the tutorial.
 
 ```qsharp
    namespace Bell {
@@ -170,7 +170,7 @@ namespace Bell {
 
 ```
 
-Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) code window, set the slide for the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
+Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slide for the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
 
 ```output
 Q1 - Zeros: 0
