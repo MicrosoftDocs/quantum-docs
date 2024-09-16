@@ -2,10 +2,10 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 09/10/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [QIR Adaptive RI, target, targets]
 title: Quantinuum provider
 uid: microsoft.quantum.providers.quantinuum

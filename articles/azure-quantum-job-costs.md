@@ -2,10 +2,10 @@
 author: sonialopezbravo
 description: Understand how job costs are calculated in Azure Quantum and how to estimate the cost of running your quantum programs.
 ms.author: sonialopez
-ms.date: 06/17/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: get-started
+ms.topic: concept-article
 title: Understanding Job Costs in Azure Quantum
 uid: microsoft.quantum.azure.job-costs
 

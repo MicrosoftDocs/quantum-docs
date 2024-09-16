@@ -5,7 +5,7 @@ ms.author: sonialopez
 ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [target, targets]
 title: Pricing Plans for Azure Quantum Providers
 uid: microsoft.quantum.providers-pricing
