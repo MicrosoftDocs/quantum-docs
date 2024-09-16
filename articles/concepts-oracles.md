@@ -20,9 +20,9 @@ Often, such operations are defined using a classical function $f : \\{0, 1\\}^n 
 To do so, consider a particular binary input $x = (x_{0}, x_{1}, \dots, x_{n-1})$.
 You can label qubit states as $\ket{\vec{x}} = \ket{x_{0}} \otimes \ket{x_{1}} \otimes \cdots \otimes \ket{x_{n-1}}$.
 
-You may first attempt to define $O$ so that $O\ket{x} = \ket{f(x)}$, but this method has a couple of problems.
-First, $f$ may have a different size of input and output ($n \ne m$), such that applying $O$ would change the number of qubits in the register.
-Second, even if $n = m$, the function may not be invertible:
+You might first attempt to define $O$ so that $O\ket{x} = \ket{f(x)}$, but this method has a couple of problems.
+First, $f$ might have a different size of input and output ($n \ne m$), such that applying $O$ would change the number of qubits in the register.
+Second, even if $n = m$, the function might not be invertible:
 if $f(x) = f(y)$ for some $x \ne y$, then $O\ket{x} = O\ket{y}$ but $O^\dagger O\ket{x} \ne O^\dagger O\ket{y}$.
 This means you can't construct the adjoint operation $O^\dagger$, and oracles have to have an adjoint defined for them.
 
@@ -59,8 +59,8 @@ When defining the oracle $O$, you can similarly use that any state $\ket{\psi}$ 
 
 $$
 \begin{align}
-\ket{\psi} & = \sum_{x \in \\{0, 1\\}^n, y \in \\{0, 1\\}^m} \alpha(x, y) \ket{x} \ket{y}
-\end{align},
+\ket{\psi} & = \sum_{x \in \\{0, 1\\}^n, y \in \\{0, 1\\}^m} \alpha(x, y) \ket{x} \ket{y},
+\end{align}
 $$
 
 where $\alpha : \\{0, 1\\}^n \times \\{0, 1\\}^m \to \mathbb{C}$ represents the coefficients of the state $\ket{\psi}$. Thus,
