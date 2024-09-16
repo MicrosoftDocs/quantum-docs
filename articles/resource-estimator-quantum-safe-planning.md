@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to use the Resource Estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm.
-ms.date: 08/01/2024
+ms.date: 09/10/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -15,10 +15,10 @@ uid: microsoft.quantum.resource-estimator-cryptography
 
 # Analyze cryptographic protocols with the Resource Estimator
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available in [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available on the [Azure Quantum website (quantum.microsoft.com)](https://quantum.microsoft.com/tools/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
 
 > [!NOTE]
-> To access the Resource Estimator in [quantum.microsoft.com](https://quantum.microsoft.com/experience/quantum-cryptography) you only need a Microsoft account.
+> To access the Resource Estimator on the [Azure Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) you only need a Microsoft account.
 
 The Resource Estimator for quantum-safe planning takes a set of four target parameters as input:
 
@@ -29,7 +29,7 @@ The Resource Estimator for quantum-safe planning takes a set of four target para
 
 ## Use the Resource Estimator for quantum-safe planning
 
-To use the Resource Estimator for quantum-safe planning, go to [Azure Quantum website (quantum.microsoft.com)](https://quantum.microsoft.com/experience/quantum-cryptography). 
+To use the Resource Estimator for quantum-safe planning, go to [Azure Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography). 
 
 1. Click on the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
 1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
