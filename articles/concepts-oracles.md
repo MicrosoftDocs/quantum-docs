@@ -59,11 +59,11 @@ When defining the oracle $O$, you can similarly use that any state $\ket{\psi}$ 
 
 $$
 \begin{align}
-\ket{\psi} & = \sum_{x \in \\{0, 1\\}^n, y \in \\{0, 1\\}^m} \alpha(x, y) \ket{x} \ket{y},
+\ket{\psi} & = \sum_{x \in \\{0, 1\\}^n, y \in \\{0, 1\\}^m} \alpha(x, y) \ket{x} \ket{y}.
 \end{align}
 $$
 
-where $\alpha : \\{0, 1\\}^n \times \\{0, 1\\}^m \to \mathbb{C}$ represents the coefficients of the state $\ket{\psi}$. Thus,
+Here, $\alpha : \\{0, 1\\}^n \times \\{0, 1\\}^m \to \mathbb{C}$ represents the coefficients of the state $\ket{\psi}$. Thus,
 
 $$
 \begin{align}
