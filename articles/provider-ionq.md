@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 09/03/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [QIR Base, target, targets]
 title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq

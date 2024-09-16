@@ -2,10 +2,10 @@
 author: bradben
 description: Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 08/19/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: overview
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access

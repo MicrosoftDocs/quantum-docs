@@ -2,10 +2,10 @@
 author: bradben
 description: This document provides a guide to working with jobs in Azure Quantum, including properties, lifecycle, and monitoring. 
 ms.author: brbenefield
-ms.date: 08/19/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [Quantum Development Kit, target, targets]
 title: Introduction to jobs
 uid: microsoft.quantum.work-with-jobs

@@ -6,7 +6,7 @@ ms.date: 09/12/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
-ms.topic: how-to
+ms.topic: install-set-up-deploy
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Update the Quantum Development Kit (QDK)
 uid: microsoft.quantum.update-qdk

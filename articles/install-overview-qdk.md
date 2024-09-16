@@ -5,7 +5,7 @@ ms.author: brbenefield
 ms.date: 09/12/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: how-to
+ms.topic: install-set-up-deploy
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Set up the Quantum Development Kit Extension
 uid: microsoft.quantum.install-qdk.overview
