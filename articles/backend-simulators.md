@@ -19,12 +19,12 @@ This article describes the backend simulators available from quantum providers. 
 
 ## IonQ
 
-IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates that IonQ provides on its quantum hardware — a great place to preflight jobs before running them on an actual quantum computer.
+IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates that IonQ provides on its quantum hardware. The simulator is a great place to preflight jobs before running them on an actual quantum computer.
 
 - Job type: `Simulation`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
-- Target Execution Profile: QIR Base
+- Target Execution Profile: QIR Base (Quantum Intermediate Representation)
 
 For more information, see the [IonQ provider](xref:microsoft.quantum.providers.ionq) page.
 
@@ -32,7 +32,7 @@ For more information, see the [IonQ provider](xref:microsoft.quantum.providers.i
 
 PASQAL's Emu-TN emulator simulates the time-evolution of a quantum state using the Schrödinger's equation corresponding to the actions that the lasers perform.
 
-Emu-TN emulator runs on a cluster of DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of PASQAL’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU . Up to 100 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
+Emu-TN emulator runs on a cluster of NVIDIA DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of PASQAL’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU (quantum processing unit). Up to 100 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
 
 - Job Type: `Simulation`
 - Data Format: `application/json`
