@@ -24,7 +24,7 @@ You may first attempt to define $O$ so that $O\ket{x} = \ket{f(x)}$, but this me
 First, $f$ may have a different size of input and output ($n \ne m$), such that applying $O$ would change the number of qubits in the register.
 Second, even if $n = m$, the function may not be invertible:
 if $f(x) = f(y)$ for some $x \ne y$, then $O\ket{x} = O\ket{y}$ but $O^\dagger O\ket{x} \ne O^\dagger O\ket{y}$.
-This means you won't be able to construct the adjoint operation $O^\dagger$, and oracles have to have an adjoint defined for them.
+This means you can't construct the adjoint operation $O^\dagger$, and oracles have to have an adjoint defined for them.
 
 ## Define an oracle by its effect on computational basis states
 
@@ -37,7 +37,7 @@ $$
 \end{align}
 $$
 
-Now $O = O^\dagger$ by construction and you've resolved both of the earlier problems.
+Now $O = O^\dagger$ by construction and you resolved both of the earlier problems.
 
 > [!TIP]
 > To see that $O = O^{\dagger}$, note that $O^2 = \mathbf{1}$ since $a \oplus b \oplus b = a$ for all $a, b \in \{0, 1\}$.
@@ -45,7 +45,7 @@ Now $O = O^\dagger$ by construction and you've resolved both of the earlier prob
 
 Importantly, defining an oracle this way for each computational basis state $\ket{x}\ket{y}$ also defines how $O$ acts for any other state.
 This behavior follows immediately from the fact that $O$, like all quantum operations, is linear in the state that it acts on.
-Consider the Hadamard operation, for example, which is defined by $H \ket{0} = \ket{+}$ and $H \ket{1} = \ket{-}$.
+Consider the Hadamard operation, for example, which is defined $H \ket{0} = \ket{+}$ and $H \ket{1} = \ket{-}$.
 If you wish to know how $H$ acts on $\ket{+}$, you can use that $H$ is linear,
 
 $$
@@ -60,7 +60,7 @@ When defining the oracle $O$, you can similarly use that any state $\ket{\psi}$ 
 $$
 \begin{align}
 \ket{\psi} & = \sum_{x \in \\{0, 1\\}^n, y \in \\{0, 1\\}^m} \alpha(x, y) \ket{x} \ket{y}
-\end{align}
+\end{align},
 $$
 
 where $\alpha : \\{0, 1\\}^n \times \\{0, 1\\}^m \to \mathbb{C}$ represents the coefficients of the state $\ket{\psi}$. Thus,
@@ -105,7 +105,7 @@ More generally, both views of oracles can be broadened to represent classical fu
 Choosing the best way to implement an oracle depends heavily on how this oracle is to be used within a given algorithm.
 For example, [Deutsch-Jozsa algorithm](https://en.wikipedia.org/wiki/Deutsch%E2%80%93Jozsa_algorithm) relies on the oracle implemented in the first way, while [Grover's algorithm](https://en.wikipedia.org/wiki/Grover's_algorithm) relies on the oracle implemented in the second way.
 
-For more information, see the discussion in [Gilyén *et al*. 1711.00465](https://arxiv.org/abs/1711.00465).
+For more information, see the discussion in [Gilyén 1711.00465](https://arxiv.org/abs/1711.00465).
 
 ## Related content
 
