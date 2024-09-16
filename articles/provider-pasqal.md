@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 ms.author: sonialopez
 description: This document provides the technical details of the simulators and QPU of the PASQAL quantum provider.
-ms.date: 11/13/2023
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 title: PASQAL quantum computing provider    
 uid: microsoft.quantum.providers.pasqal     
 ---

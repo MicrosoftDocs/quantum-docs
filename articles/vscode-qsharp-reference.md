@@ -1,11 +1,11 @@
 ---
 author: bradben
 description: Learn about the features that are included with the Azure Quantum Development Kit extension for VS Code. 
-ms.date: 06/19/2024
+ms.date: 09/16/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: reference
+ms.topic: conceptual
 title: Q# features in Visual Studio Code
 uid: microsoft.quantum.reference.vscode
 #customer intent: As a quantum programmer, I want to know how to access the Q# related features in VS Code.  

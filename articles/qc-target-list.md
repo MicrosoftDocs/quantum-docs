@@ -1,11 +1,11 @@
 ---
 author: SoniaLopezBravo
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
-ms.date: 08/09/2024
+ms.date: 09/16/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: [Quantum Intermediate Representation, target, targets]
 title: List of quantum computing providers on Azure Quantum
 uid: microsoft.quantum.reference.qc-target-list

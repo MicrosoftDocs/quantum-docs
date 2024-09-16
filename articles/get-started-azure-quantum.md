@@ -2,10 +2,10 @@
 author: bradben
 description: Learn about the resources available on the Azure Quantum website.
 ms.author: brbenefield
-ms.date: 09/10/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: get-started
 no-loc: ['Q#', '$$v', target, targets]
 title: Copilot in Azure Quantum
 uid: microsoft.quantum.get-started.azure-quantum

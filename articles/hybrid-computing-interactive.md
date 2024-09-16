@@ -1,11 +1,11 @@
 ---
 author: SoniaLopezBravo
 description: Understand the architecture of sessions in hybrid quantum computing and learn how to create a new session.
-ms.date: 07/22/2024
+ms.date: 09/16/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: get-started
+ms.topic: how-to
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, target, targets]
 title: Get Started with Sessions
 uid: microsoft.quantum.hybrid.interactive
