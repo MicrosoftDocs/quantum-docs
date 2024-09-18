@@ -4,7 +4,7 @@ title: Azure Quantum documentation
 summary: Learn about quantum computing with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to create and submit quantum programs in the Azure portal, or set up your own local development environment with the Quantum Development Kit (QDK) to write quantum programs. 
 metadata:
   title: Azure Quantum documentation, QDK & Q# API reference
-  description: Learn about quantum computing with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to write your first quantum program. 
+  description: Learn quantum computing and develop your quantum programs with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to write your quantum programs and submit them to the real quantum hardware available in Azure Quantum. With the Quantum Development Kit (QDK), you can set up your local development environment and benefit from several tools and libraries to write your quantum programs.
   ms.service: azure-quantum
   ms.topic: landing-page
   ms.collection: collection
