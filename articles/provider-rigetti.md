@@ -2,10 +2,10 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 02/06/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [Quantum Intermediate Representation, QIR Base, target, targets]
 title: Rigetti provider
 uid: microsoft.quantum.providers.rigetti

@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: Learn how to read a quantum circuit diagram and how to represent quantum operations and measurements in a circuit diagram.
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, targets]
 title: Quantum Circuit Diagram Conventions
 uid: microsoft.quantum.concepts.circuits

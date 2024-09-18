@@ -4,8 +4,8 @@ description: Microsoft Quantum Development Kit third party software notices and 
 keywords: Don’t add or edit keywords without consulting your SEO champ.
 author: bradben
 ms.author: brbenefield
-ms.date: 10/09/2017
-ms.topic: conceptual
+ms.date: 09/16/2024
+ms.topic: concept-article
 ms.service: azure-quantum
 no-loc: ['Q#', '$$v', Quantum Development Kit]
 ---
