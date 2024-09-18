@@ -68,12 +68,6 @@ landingContent:
         links:
           - text: Ways to run Q# programs
             url: qsharp-ways-to-work.md
-      - linkListType: get-started
-        links:
-          - text: Get started with Azure Quantum notebooks
-            url: get-started-jupyter-notebook.md
-          - text: Submit Q# jobs with Visual Studio Code
-            url: how-to-submit-jobs.md
       - linkListType: tutorial
         links:
           - text: Create a quantum random number generator
@@ -86,8 +80,12 @@ landingContent:
             url: tutorial-qdk-qubit-level-program.md
       - linkListType: how-to-guide
         links:
+          - text: Run a Q# program in Visual Studio Code
+            url: how-to-submit-jobs.md
           - text: Work with Q# projects
             url: how-to-work-with-qsharp-projects.md
+          - text: Run hybrid quantum computing programs
+            url: hybrid-computing-integrated.md
           - text: Submit a circuit with Qiskit
             url: quickstart-microsoft-qiskit.md
           - text: Submit a circuit with Cirq
