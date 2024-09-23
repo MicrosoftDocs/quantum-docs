@@ -3,11 +3,7 @@ title: 'Tutorial: Quantum Fourier Transform in Q\#'
 description: In this tutorial, learn how to write and simulate a quantum program that operates at the individual qubit level.
 author: SoniaLopezBravo
 ms.author: sonialopez
-<<<<<<< Updated upstream
 ms.date: 09/10/2024
-=======
-ms.date: 08/23/2024
->>>>>>> Stashed changes
 ms.service: azure-quantum
 ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit

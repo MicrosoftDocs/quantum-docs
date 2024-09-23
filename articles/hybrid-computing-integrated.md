@@ -1,11 +1,7 @@
 ---
 author: bradben
 description: Understand the implementation of integrated hybrid quantum computing, and how to submit jobs to Azure Quantum using the Adaptive RI target profile.
-<<<<<<< Updated upstream
 ms.date: 09/09/2024
-=======
-ms.date: 08/22/2024
->>>>>>> Stashed changes
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk

@@ -2,11 +2,7 @@
 author: bradben
 description: Learn about the resources available on the Azure Quantum website.
 ms.author: brbenefield
-<<<<<<< Updated upstream
 ms.date: 09/16/2024
-=======
-ms.date: 08/21/2024
->>>>>>> Stashed changes
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: get-started
