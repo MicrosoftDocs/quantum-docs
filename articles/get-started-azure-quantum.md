@@ -23,7 +23,7 @@ The Azure Quantum website features:
 
 - **Copilot in Azure Quantum:** AI meets the world of quantum. Copilot in Azure Quantum is a generative AI assistant to help you learn and explore quantum computing.
 - **Code in Azure Quantum:** Explore and run Q# code directly in your browser using the built-in code window and compiler, and submit your jobs to the in-memory simulator or the free [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based). Use Copilot in Azure Quantum to explain Q# code and also generate code from your prompts.
-- **Quantum Elements:** One of the most important applications of quantum computing will be in the field of chemistry. Currently in private preview, Quantum Elements uses the Copilot in Azure Quantum to design, code, and render molecular models.
+- **Quantum Elements:** One of the most important applications of quantum computing is in the field of chemistry. Currently available in preview, Quantum Elements uses the Copilot in Azure Quantum to design, code, and render molecular models.
 - **Quantum Katas:** [Hands-on tutorials](https://quantum.microsoft.com/tools/quantum-katas) that teach quantum computing concepts and the Q# programming language.
 - **Code samples:** The Azure Quantum code library is a rich set of samples using Q#, Python, and Qiskit code to demonstrate quantum scenarios.
 - **Quantum concepts:** From the basics of quantum theory to advanced techniques of quantum computing, the Concepts library is a crash course to bring you up to speed on quantum computing. 
@@ -90,7 +90,7 @@ To run your program again using a different simulator:
 1. Select the number of shots (currently limited to 20) and select **Run**. 
 
 - The job status is displayed at the top of the code window.
-- A histogram of the results is displayed below the code window. Results for each shot is not currently available with the Quantinuum H-Series Emulator.  
+- A histogram of the results is displayed below the code window. Results for each shot aren't currently available with the Quantinuum H-Series Emulator.  
 
 ### Prompting the Copilot
 
@@ -104,7 +104,7 @@ You can prompt the Copilot in Azure Quantum for almost anything quantum related,
 
 ### Open your code sample on VS Code for the Web
 
-To explore the sample code further, you can open the code in [VS Code for the Web](https://vscode.dev/quantum) with one click and take advantage of features such as improved error messaging, Q# syntax highlighting, and integrated debugging. If you already have an Azure account set up, you can connect directly to your Azure Quantum workspaces from VS Code. 
+To explore the sample code further, you can easily open the code in [VS Code for the Web](https://vscode.dev/quantum) and take advantage of features such as improved error messaging, Q# syntax highlighting, and integrated debugging. If you already have an Azure account set up, you can connect directly to your Azure Quantum workspaces from VS Code. 
 
 To open your code in VS Code for the Web:
 
