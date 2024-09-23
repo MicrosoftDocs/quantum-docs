@@ -1,7 +1,11 @@
 ---
 author: bradben
 ms.author: brbenefield
+<<<<<<< Updated upstream
 ms.date: 09/10/2024
+=======
+ms.date: 08/22/2024
+>>>>>>> Stashed changes
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -23,16 +27,14 @@ The first step is to define a Q# operation that will initialize a qubit to a kno
 Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) and copy the following code into the code editor window. Don't click **Run** yet; you'll run the code later in the tutorial.
 
 ```qsharp
-   namespace Bell {
-       open Microsoft.Quantum.Intrinsic;
-       open Microsoft.Quantum.Canon;
+import Microsoft.Quantum.Intrinsic.*;
+import Microsoft.Quantum.Canon.*;
 
-       operation SetQubitState(desired : Result, target : Qubit) : Unit {
-           if desired != M(target) {
-               X(target);
-           }
-       }
-   }
+operation SetQubitState(desired : Result, target : Qubit) : Unit {
+    if desired != M(target) {
+        X(target);
+    }
+}
 ```
 
 The code example introduces two standard operations, `M` and `X`, which transform the state of a qubit.
@@ -45,12 +47,12 @@ The `SetQubitState` operation:
 
 ## Write a test operation to test the Bell state
 
-Next, to demonstrate the effect of the `SetQubitState` operation, create another operation named `TestBellState`. This operation will allocate two qubits, call `SetQubitState` to set the first qubit to a known state, and then measure the qubits to see the results.
+Next, to demonstrate the effect of the `SetQubitState` operation, create another operation named `Main`. This operation will allocate two qubits, call `SetQubitState` to set the first qubit to a known state, and then measure the qubits to see the results.
 
 Copy the following code into the code editor window, below the `SetQubitState` operation. 
 
 ```qsharp
-operation TestBellState() : (Int, Int, Int, Int) {
+operation Main() : (Int, Int, Int, Int) {
     mutable numOnesQ1 = 0;
     mutable numOnesQ2 = 0;
     let count = 1000;
@@ -86,13 +88,12 @@ operation TestBellState() : (Int, Int, Int, Int) {
     Message($"Q2 - Zeros: {count - numOnesQ2}");
     Message($"Q2 - Ones: {numOnesQ2}");
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
-
 }
 ```
 
 In the code, the `count` and `initial` variables are set to `1000` and `One` respectively. This initializes the first qubit to `One` and measures each qubit 1000 times.
 
-The `TestBellState`operation:
+The `Main`operation:
 
 1. Sets variables for the counter and the initial qubit state.
 1. Calls the `use` statement to initialize two qubits.
@@ -109,65 +110,58 @@ allocate the qubits in a known state. This is required by the `use` statement.
 
 Before moving on to the procedures for superposition and entanglement, you can test the code up to this point to see the initialization and measurement of the qubits.
 
-In order to run the code as a standalone program, the Q# compiler in the Copilot needs to know *where* to start the program. This is done in the Q# file by adding an `@EntryPoint()` directly preceding the operation that you want to run first. For example, in this case is the `TestBellState` operation.
+In order to run the code as a standalone program, the Q# compiler in the Copilot needs to know *where* to start the program. Because no namespace is specified, the compiler recognizes the default entry point as the `Main` operation. For more information, see [TBD](xref:).
 
-> [!NOTE]
-> `@EntryPoint()` is only required for standalone Q# programs. When running a Q# program in Jupyter Notebooks, or calling a Q# program from a Python host file, it isn't required and will throw an error if included.
-
-Add the `@EntryPoint()` immediately before `TestBellState` operation and your Q# program up to this point should now look like this:
+Your Q# program up to this point should now look like this:
 
 ```qsharp
-namespace Bell {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Canon;
+import Microsoft.Quantum.Intrinsic.*;
+import Microsoft.Quantum.Canon.*;
 
-    operation SetQubitState(desired : Result, target : Qubit) : Unit {
-        if desired != M(target) {
-            X(target);
-        }
-    }
-
-    @EntryPoint()
-    operation TestBellState() : (Int, Int, Int, Int) {
-        mutable numOnesQ1 = 0;
-        mutable numOnesQ2 = 0;
-        let count = 1000;
-        let initial = One;
-
-        // allocate the qubits
-        use (q1, q2) = (Qubit(), Qubit());   
-        for test in 1..count {
-            SetQubitState(initial, q1);
-            SetQubitState(Zero, q2);
-            
-            // measure each qubit
-            let resultQ1 = M(q1);            
-            let resultQ2 = M(q2);           
-    
-            // Count the number of 'Ones' returned:
-            if resultQ1 == One {
-                set numOnesQ1 += 1;
-            }
-            if resultQ2 == One {
-                set numOnesQ2 += 1;
-            }
-        }
-    
-        // reset the qubits
-        SetQubitState(Zero, q1);             
-        SetQubitState(Zero, q2);
-        
-    
-        // Display the times that |0> is returned, and times that |1> is returned
-        Message($"Q1 - Zeros: {count - numOnesQ1}");
-        Message($"Q1 - Ones: {numOnesQ1}");
-        Message($"Q2 - Zeros: {count - numOnesQ2}");
-        Message($"Q2 - Ones: {numOnesQ2}");
-        return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
-
+operation SetQubitState(desired : Result, target : Qubit) : Unit {
+    if desired != M(target) {
+        X(target);
     }
 }
 
+operation Main() : (Int, Int, Int, Int) {
+    mutable numOnesQ1 = 0;
+    mutable numOnesQ2 = 0;
+    let count = 1000;
+    let initial = One;
+
+    // allocate the qubits
+    use (q1, q2) = (Qubit(), Qubit());   
+    for test in 1..count {
+        SetQubitState(initial, q1);
+        SetQubitState(Zero, q2);
+        
+        // measure each qubit
+        let resultQ1 = M(q1);            
+        let resultQ2 = M(q2);           
+
+        // Count the number of 'Ones' returned:
+        if resultQ1 == One {
+            set numOnesQ1 += 1;
+        }
+        if resultQ2 == One {
+            set numOnesQ2 += 1;
+        }
+    }
+
+    // reset the qubits
+    SetQubitState(Zero, q1);             
+    SetQubitState(Zero, q2);
+        
+    
+    // Display the times that |0> is returned, and times that |1> is returned
+    Message($"Q1 - Zeros: {count - numOnesQ1}");
+    Message($"Q1 - Ones: {numOnesQ1}");
+    Message($"Q2 - Zeros: {count - numOnesQ2}");
+    Message($"Q2 - Ones: {numOnesQ2}");
+    return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
+
+}
 ```
 
 Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slide for the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
@@ -190,13 +184,16 @@ Q2 - Zeros: 1000
 Q2 - Ones: 0
 ```
 
+> [!TIP]
+> Select **Ctrl-Z** or **Edit > Undo** and save your file whenever you introduce a test change to the code before running it again.
+
 ## Put a qubit in superposition
 
 Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you will put the first qubit into a **superposition state**, where a measurement of the qubit will return `Zero` ~50% of the time and `One` ~50% of the time. Conceptually, the qubit can be thought of as having an equal probability of measuring either `Zero` or `One`.
 
 To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit to a known state](#initialize-a-qubit-to-a-known-state) procedure earlier, which flipped a qubit from 0 to 1 (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
-Modify the code in the `TestBellState` operation by resetting the initial value to `One` and inserting a line for the `H` operation:
+Modify the code in the `Main` operation by resetting the initial value to `One` and inserting a line for the `H` operation:
 
 ```qsharp
 for test in 1..count {
@@ -252,59 +249,57 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
 Add the `CNOT` operation to your program immediately after the `H` operation. Your full program should look like this:
 
 ```qsharp
-namespace Bell {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Canon;
+import Microsoft.Quantum.Intrinsic.*;
+import Microsoft.Quantum.Canon.*;
 
-       operation SetQubitState(desired : Result, target : Qubit) : Unit {
-           if desired != M(target) {
-               X(target);
-           }
-       }
-
-    @EntryPoint()
-    operation TestBellState() : (Int, Int, Int, Int) {
-        mutable numOnesQ1 = 0;
-        mutable numOnesQ2 = 0;
-        let count = 1000;
-        let initial = Zero;
-
-        // allocate the qubits
-        use (q1, q2) = (Qubit(), Qubit());   
-        for test in 1..count {
-            SetQubitState(initial, q1);
-            SetQubitState(Zero, q2);
-        
-            H(q1);            
-            CNOT(q1, q2);      // Add the CNOT operation after the H operation
-
-            // measure each qubit
-            let resultQ1 = M(q1);            
-            let resultQ2 = M(q2);           
-    
-            // Count the number of 'Ones' returned:
-            if resultQ1 == One {
-                set numOnesQ1 += 1;
-            }
-            if resultQ2 == One {
-                set numOnesQ2 += 1;
-            }
+    operation SetQubitState(desired : Result, target : Qubit) : Unit {
+        if desired != M(target) {
+            X(target);
         }
-    
-        // reset the qubits
-        SetQubitState(Zero, q1);             
+    }
+
+operation Main() : (Int, Int, Int, Int) {
+    mutable numOnesQ1 = 0;
+    mutable numOnesQ2 = 0;
+    let count = 1000;
+    let initial = Zero;
+
+    // allocate the qubits
+    use (q1, q2) = (Qubit(), Qubit());   
+    for test in 1..count {
+        SetQubitState(initial, q1);
         SetQubitState(Zero, q2);
-        
     
-        // Display the times that |0> is returned, and times that |1> is returned
-        Message($"Q1 - Zeros: {count - numOnesQ1}");
-        Message($"Q1 - Ones: {numOnesQ1}");
-        Message($"Q2 - Zeros: {count - numOnesQ2}");
-        Message($"Q2 - Ones: {numOnesQ2}");
-        return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
+        H(q1);            
+        CNOT(q1, q2);      // Add the CNOT operation after the H operation
+
+        // measure each qubit
+        let resultQ1 = M(q1);            
+        let resultQ2 = M(q2);           
+
+        // Count the number of 'Ones' returned:
+        if resultQ1 == One {
+            set numOnesQ1 += 1;
+        }
+        if resultQ2 == One {
+            set numOnesQ2 += 1;
+        }
+    }
+
+    // reset the qubits
+    SetQubitState(Zero, q1);             
+    SetQubitState(Zero, q2);
+    
+
+    // Display the times that |0> is returned, and times that |1> is returned
+    Message($"Q1 - Zeros: {count - numOnesQ1}");
+    Message($"Q1 - Ones: {numOnesQ1}");
+    Message($"Q2 - Zeros: {count - numOnesQ2}");
+    Message($"Q2 - Ones: {numOnesQ2}");
+    return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
 
     }
-}
+
 ```
 
 Now when you run the program you should see something like:

@@ -2,7 +2,11 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
+<<<<<<< Updated upstream
 ms.date: 09/10/2024
+=======
+ms.date: 09/04/2024
+>>>>>>> Stashed changes
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -49,7 +53,7 @@ Quantum computers, on the other hand, can generate truly random numbers. This is
 
 A qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement. 
 
-You start by taking a qubit in a basis state, for example zero. The first step of the random number generator is to use a Hadamard operation to put the qubit into an equal superposition. The measurement of this state results in a zero or a one with 50% probability of each outcome, a truly random bit.
+You start by taking a qubit in a basis state, for example zero. The first step of the random number generator is to use a *Hadamard* operation to put the qubit into an equal superposition. The measurement of this state results in a zero or a one with 50% probability of each outcome, a truly random bit.
 
 There's no way of knowing what you will get after the measurement of the qubit in superposition, and the result is a different value each time the code is invoked. But how can you use this behavior to generate larger random numbers?
 
@@ -61,21 +65,21 @@ If you concatenate, or combine, these bits into a bit string, you can form a lar
 
 $${0110_{\ binary} \equiv 6_{\ decimal}}$$
 
-If you repeat this process many times, you can combine multiple bits to form any large number. Now you can provide your superior with that number as a secure password, since you can be sure that no space hacker could determine the results of the sequence of measurements.
+If you repeat this process many times, you can combine multiple bits to form any large number. Using this method, you can create a number to use as a secure password, since you can be sure that no hacker could determine the results of the sequence of measurements.
 
 ### Define the random number generator logic
 
-Let's outline what the logic of a random number generator should be, provided we have a random bit generator:
+Let's outline what the logic of a random number generator should be:
 
 1. Define `max` as the maximum number you want to generate.
-1. Define the number of random bits that you need to generate. This is done by calculating how many bits, `nBits`, we need to express integers up to `max`.
+1. Define the number of random bits that you need to generate. This is done by calculating how many bits, `nBits`, you need to express integers up to `max`.
 1. Generate a random bit string that's `nBits` in length.
 1. If the bit string represents a number greater than `max`, go back to step three.
 1. Otherwise, the process is complete. Return the generated number as an integer.
 
-As an example, let's set `max` to 12. That is, 12 is the largest number you want to use as a secure password.
+As an example, let's set `max` to 12. That is, 12 is the largest number you want to use as a password.
 
-You need ${\lfloor ln(12) / ln(2) + 1 \rfloor}$, or 4 bits to represent a number between 0 and 12. (For brevity, we'll skip how to derive this equation.)
+You need ${\lfloor ln(12) / ln(2) + 1 \rfloor}$, or 4 bits to represent a number between 0 and 12. We can use the built-in function `BitSizeI`, which takes any integer and returns the number of bits required to represent it. 
 
 Let's say you generate the bit string ${1101_{\ binary}}$, which is equivalent to ${13_{\ decimal}}$. Because 13 is greater than 12, you repeat the process.
 
@@ -113,7 +117,7 @@ operation GenerateRandomBit() : Result {
 Now take a look at new code.
 
 - You define the `GenerateRandomBit` operation, which takes no input and produces a value of type `Result`. The `Result` type represents the result of a measurement and can have two possible values: `Zero` or `One`.  
-- You allocate a single qubit with the `use` keyword. When it gets allocated, a qubit is always in the `Zero` state.
+- You allocate a single qubit with the `use` keyword. When it gets allocated, a qubit is always in the |0〉 state.
 - You use the `H` operation to place the qubit in an equal superposition.
 - You use the `M` operation to measure the qubit, return the measured value (`Zero` or `One`).
 - You use the `Reset` operation to reset the qubit to the |0〉 state.
@@ -129,7 +133,7 @@ In the Bloch sphere, the north pole represents the classical value **0** and the
 
 You can use this representation to visualize what the code is doing:
 
-1. First, start with a qubit initialized in the state **0** and apply an `H` operation to create an equal superposition in which the probabilities for **0** and **1** are the same.
+1. First, start with a qubit initialized in the |0〉 state and apply an `H` operation to create an equal superposition in which the probabilities for **0** and **1** are the same.
 
     <img src="~/media/qrng-H.png" width="450" alt="A diagram showing the preparation of a qubit in superposition by applying the hadamard gate.">
 
@@ -141,75 +145,16 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
 ### Write a complete random number generator
 
-1. First, you need to add the required Q# namespaces to the program. For the complete random number generator, you need to include three Q# namespaces: `Microsoft.Quantum.Math`, `Microsoft.Quantum.Intrinsic`, and `Microsoft.Quantum.Convert`.
+1. First, you need to import the required namespaces from the Q# standard library to the program. The Q# compiler loads many common functions and operations automatically, however for the complete random number generator, you need some additional functions and operations from two Q# namespaces: `Microsoft.Quantum.Math`and `Microsoft.Quantum.Convert`.
 
     ```qsharp
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Math;
+    import Microsoft.Quantum.Convert.*;
+    import Microsoft.Quantum.Math.*;
     ```
 
 1. Next, you define the `GenerateRandomNumberInRange` operation. This operation repeatedly calls the `GenerateRandomBit` operation to build a string of bits.
 
     ```qsharp
-        /// Generates a random number between 0 and `max`.
-        operation GenerateRandomNumberInRange(max : Int) : Int {
-            // Determine the number of bits needed to represent `max` and store it
-            // in the `nBits` variable. Then generate `nBits` random bits which will
-            // represent the generated random number.
-            mutable bits = [];
-            let nBits = BitSizeI(max);
-            for idxBit in 1..nBits {
-                set bits += [GenerateRandomBit()];
-            }
-            let sample = ResultArrayAsInt(bits);
-    
-            // Return random number if it is within the requested range.
-            // Generate it again if it is outside the range.
-            return sample > max ? GenerateRandomNumberInRange(max) | sample;
-        }
-    
-    ```
-
-    Let's take a moment to review the new code.
-
-    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Microsoft.Quantum.Math` namespace converts an integer to the number of bits needed to represent it.
-    * The `SampleRandomNumberInRange` operation uses a `for` loop to generate random numbers until it generates one that's equal to or less than `max`. The `for` loop works exactly the same as a `for` loop in other programming languages.
-    * The variable `bits` is a mutable variable. A mutable variable is one that can change during the computation. You use the `set` directive to change a mutable variable's value.
-    * The `ResultArrayAsInt` function comes from the `Microsoft.Quantum.Convert` namespace. This function converts the bit string to a positive integer.
-
-1. Finally, you add an entry point. In this example, the `Main` operation is the entry point of the program. It calls the `GenerateRandomNumberInRange` operation to generate a random number between 0 and 100.
-
-    ```qsharp
-        @EntryPoint()
-        operation Main() : Int {
-            let max = 100;
-            Message($"Sampling a random number between 0 and {max}: ");
-    
-            // Generate random number in the 0..max range.
-            return GenerateRandomNumberInRange(max);
-        }
-    ```
-
-    The `let` directive declares variables that don't change during the computation. Here we define the maximum value as 100.
-
-1. The complete code for the random number generator is as follows:
-
-```qsharp
-namespace QuantumRandomNumberGenerator {
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Math;
-
-    @EntryPoint()
-    operation Main() : Int {
-        let max = 100;
-        Message($"Sampling a random number between 0 and {max}: ");
-
-        // Generate random number in the 0..max range.
-        return GenerateRandomNumberInRange(max);
-    }
-
     /// Generates a random number between 0 and `max`.
     operation GenerateRandomNumberInRange(max : Int) : Int {
         // Determine the number of bits needed to represent `max` and store it
@@ -226,33 +171,92 @@ namespace QuantumRandomNumberGenerator {
         // Generate it again if it is outside the range.
         return sample > max ? GenerateRandomNumberInRange(max) | sample;
     }
+    
+    ```
 
-    operation GenerateRandomBit() : Result {
-        // Allocate a qubit.
-        use q = Qubit();
+    Let's take a moment to review the new code.
 
-        // Set the qubit into superposition of 0 and 1 using the Hadamard 
-        H(q);
+    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Microsoft.Quantum.Math` namespace converts an integer to the number of bits needed to represent it.
+    * The `SampleRandomNumberInRange` operation uses a `for` loop to generate random numbers until it generates one that's equal to or less than `max`. The `for` loop works exactly the same as a `for` loop in other programming languages.
+    * The variable `bits` is a mutable variable. A mutable variable is one that can change during the computation. You use the `set` directive to change a mutable variable's value.
+    * The `ResultArrayAsInt` function, from the default `Microsoft.Quantum.Convert` namespace, converts the bit string to a positive integer.
 
-        // At this point the qubit `q` has 50% chance of being measured in the
-        // |0〉 state and 50% chance of being measured in the |1〉 state.
-        // Measure the qubit value using the `M` operation, and store the
-        // measurement value in the `result` variable.
-        let result = M(q);
+1. Finally, you add an entry point to the program. By default, the Q# compiler looks for a `Main` operation and starts processing there. It calls the `GenerateRandomNumberInRange` operation to generate a random number between 0 and 100.
 
-        // Reset qubit to the |0〉 state.
-        // Qubits must be in the |0〉 state by the time they are released.
-        Reset(q);
+    ```qsharp
+    operation Main() : Int {
+        let max = 100;
+        Message($"Sampling a random number between 0 and {max}: ");
 
-        // Return the result of the measurement.
-        return result;
+        // Generate random number in the 0..max range.
+        return GenerateRandomNumberInRange(max);
     }
+    ```
+
+    The `let` directive declares variables that don't change during the computation. Here you define the maximum value as 100.    
+
+    For more information about the `Main` operation, see [Entry Points](xref:microsoft.quantum.qsharp-overview#entry-points).
+
+1. The complete code for the random number generator is as follows:
+
+```qsharp
+import Microsoft.Quantum.Convert.*;
+import Microsoft.Quantum.Math.*;
+
+operation Main() : Int {
+    let max = 100;
+    Message($"Sampling a random number between 0 and {max}: ");
+
+    // Generate random number in the 0..max range.
+    return GenerateRandomNumberInRange(max);
+}
+
+/// Generates a random number between 0 and `max`.
+operation GenerateRandomNumberInRange(max : Int) : Int {
+    // Determine the number of bits needed to represent `max` and store it
+    // in the `nBits` variable. Then generate `nBits` random bits which will
+    // represent the generated random number.
+    mutable bits = [];
+    let nBits = BitSizeI(max);
+    for idxBit in 1..nBits {
+        set bits += [GenerateRandomBit()];
+    }
+    let sample = ResultArrayAsInt(bits);
+
+    // Return random number if it is within the requested range.
+    // Generate it again if it is outside the range.
+    return sample > max ? GenerateRandomNumberInRange(max) | sample;
+}
+
+operation GenerateRandomBit() : Result {
+    // Allocate a qubit.
+    use q = Qubit();
+
+    // Set the qubit into superposition of 0 and 1 using a Hadamard operation
+    H(q);
+
+    // At this point the qubit `q` has 50% chance of being measured in the
+    // |0〉 state and 50% chance of being measured in the |1〉 state.
+    // Measure the qubit value using the `M` operation, and store the
+    // measurement value in the `result` variable.
+    let result = M(q);
+
+    // Reset qubit to the |0〉 state.
+    // Qubits must be in the |0〉 state by the time they are released.
+    Reset(q);
+
+    // Return the result of the measurement.
+    return result;
 }
 ```
 
 ## Run the random number generator program
 
+<<<<<<< Updated upstream
 You can run the program in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), and in Visual Studio Code as a standalone Q# application or using a Python host program.
+=======
+You can run the program in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding), or in Visual Studio Code as a standalone Q# application or using a Python host program.
+>>>>>>> Stashed changes
 
 ### [Copilot in Azure Quantum](#tab/tabid-copilot)
 

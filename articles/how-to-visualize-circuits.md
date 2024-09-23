@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
-ms.date: 06/13/2024
+ms.date: 08/22/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -132,8 +132,8 @@ You can generate a circuit diagram for any program with an **entry expression** 
     ```qsharp
     %%qsharp
     
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Measurement;
+    import Microsoft.Quantum.Diagnostics.*;
+    import Microsoft.Quantum.Measurement.*;
     
     operation GHZSample(n: Int) : Result[] {
         use qs = Qubit[n];
@@ -212,24 +212,21 @@ Specifically, gate decompositions are applied that would make the resulting circ
 1. For example, consider the following Q# program that measures a qubit and an array of qubits.
 
     ```qsharp
-    namespace Sample {
-        open Microsoft.Quantum.Measurement;
-    
-        @EntryPoint()
-        operation Main() : (Result, Result[]) {
-            // The `M` operation performs a measurement of a single qubit in the
-            // computational basis, also known as the Pauli Z basis.
-            use q = Qubit();
-            let result = M(q);
-            Reset(q);
-    
-            // The `MeasureEachZ` operation measures each qubit in an array in the
-            // computational basis and returns an array of `Result` values.
-            use qs = Qubit[2];
-            let results = MeasureEachZ(qs);
-    
-            return (result, results);
-        }
+    import Microsoft.Quantum.Measurement.*;
+
+    operation Main() : (Result, Result[]) {
+        // The `M` operation performs a measurement of a single qubit in the
+        // computational basis, also known as the Pauli Z basis.
+        use q = Qubit();
+        let result = M(q);
+        Reset(q);
+
+        // The `MeasureEachZ` operation measures each qubit in an array in the
+        // computational basis and returns an array of `Result` values.
+        use qs = Qubit[2];
+        let results = MeasureEachZ(qs);
+
+        return (result, results);
     }
     ```
 

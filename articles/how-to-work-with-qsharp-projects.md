@@ -538,7 +538,7 @@ For this example, you'll use the same teleportation program as the earlier examp
 
 ### Projects and implicit namespaces
 
-In Q# projects, if a namespace is not specified in a *.qs program, then the compiler uses the file name as the namespace. Referencing a callable from a external dependency then uses the syntax \<dependencyName>.\<namespace>.\<callable>. However, if the file is named "Main.qs", then the compiler assumes the namespace and the calling syntax is \<dependencyName>.\<callable>, as in the previous example, `import MyTeleportLib.Teleport`. 
+In Q# projects, if a namespace is not specified in a *.qs program, then the compiler uses the file name as the namespace. Referencing a callable from an external dependency then uses the syntax \<dependencyName>.\<namespace>.\<callable>. However, if the file is named "Main.qs", then the compiler assumes the namespace and the calling syntax is \<dependencyName>.\<callable>, as in the previous example, `import MyTeleportLib.Teleport`. 
 
 Since it is not uncommon to have multiple project files, you need to account for the correct syntax when referencing callables. For example, in a project with the following file structure
 

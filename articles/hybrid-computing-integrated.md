@@ -1,7 +1,11 @@
 ---
 author: bradben
 description: Understand the implementation of integrated hybrid quantum computing, and how to submit jobs to Azure Quantum using the Adaptive RI target profile.
+<<<<<<< Updated upstream
 ms.date: 09/09/2024
+=======
+ms.date: 08/22/2024
+>>>>>>> Stashed changes
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -124,25 +128,21 @@ The QDK provides target-specific feedback when Q# language features aren't suppo
 To see the supported features in action, copy the following code into a Q# file and add the subsequent code snippets.
 
 ```qsharp
-namespace HybridIntegrated {
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Convert;
+import Microsoft.Quantum.Measurement.*;
+import Microsoft.Quantum.Math.*;
+import Microsoft.Quantum.Convert.*;
 
-    @EntryPoint()
-    operation Main() : Result {
-        use (q0, q1) = (Qubit(), Qubit());
-        H(q0);
-        let r0 = MResetZ(q0);
+operation Main() : Result {
+    use (q0, q1) = (Qubit(), Qubit());
+    H(q0);
+    let r0 = MResetZ(q0);
 
-        // Copy here the code snippets below to see the supported features 
-        // in action.
-        // Supported features include dynamic values, classically-bounded loops, 
-        // arbitrary control flow, and mid-circuit measurement.
+    // Copy here the code snippets below to see the supported features 
+    // in action.
+    // Supported features include dynamic values, classically-bounded loops, 
+    // arbitrary control flow, and mid-circuit measurement.
 
-        r0
-    }
-
+    r0
 }
 ```
 

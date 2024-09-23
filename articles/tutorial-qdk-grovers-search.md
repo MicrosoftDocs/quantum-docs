@@ -2,7 +2,11 @@
 author: SoniaLopezBravo
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: sonialopez
+<<<<<<< Updated upstream
 ms.date: 09/10/2024
+=======
+ms.date: 08/23/2024
+>>>>>>> Stashed changes
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -190,13 +194,13 @@ Now you have all the ingredients to implement a particular instance of Grover's 
 
 ```qsharp
 operation Main() : Result[] {
-let nQubits = 5;
-let iterations = CalculateOptimalIterations(nQubits);
-Message($"Number of iterations: {iterations}");
-
-// Use Grover's algorithm to find a particular marked state.
-let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
-return results;
+    let nQubits = 5;
+    let iterations = CalculateOptimalIterations(nQubits);
+    Message($"Number of iterations: {iterations}");
+    
+    // Use Grover's algorithm to find a particular marked state.
+    let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
+    return results;
 }
 ```
 
@@ -213,108 +217,105 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
-    namespace GroversTutorial {
-        open Microsoft.Quantum.Convert;
-        open Microsoft.Quantum.Math;
-        open Microsoft.Quantum.Arrays;
-        open Microsoft.Quantum.Measurement;
-        open Microsoft.Quantum.Diagnostics;
+    import Microsoft.Quantum.Convert.*;
+    import Microsoft.Quantum.Math.*;
+    import Microsoft.Quantum.Arrays.*;
+    import Microsoft.Quantum.Measurement.*;
+    import Microsoft.Quantum.Diagnostics.*;
     
-        @EntryPoint()
-        operation Main() : Result[] {
+    operation Main() : Result[] {
         let nQubits = 5;
         let iterations = CalculateOptimalIterations(nQubits);
         Message($"Number of iterations: {iterations}");
-    
+        
         // Use Grover's algorithm to find a particular marked state.
         let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
         return results;
+    }
+    
+    operation GroverSearch(
+        nQubits : Int,
+        iterations : Int,
+        phaseOracle : Qubit[] => Unit) : Result[] {
+    
+        use qubits = Qubit[nQubits];
+    
+        PrepareUniform(qubits);
+    
+        for _ in 1..iterations {
+            phaseOracle(qubits);
+            ReflectAboutUniform(qubits);
         }
     
-        operation GroverSearch(
-            nQubits : Int,
-            iterations : Int,
-            phaseOracle : Qubit[] => Unit) : Result[] {
+        // Measure and return the answer.
+        return MResetEachZ(qubits);
+    }
     
-            use qubits = Qubit[nQubits];
+    function CalculateOptimalIterations(nQubits : Int) : Int {
+        if nQubits > 63 {
+            fail "This sample supports at most 63 qubits.";
+        }
+        let nItems = 1 <<< nQubits; // 2^nQubits
+        let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
+        let iterations = Round(0.25 * PI() / angle - 0.5);
+        return iterations;
+    }
     
-            PrepareUniform(qubits);
-    
-            for _ in 1..iterations {
-                phaseOracle(qubits);
-                ReflectAboutUniform(qubits);
+    operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
+        Message("Reflecting about marked state...");
+        use outputQubit = Qubit();
+        within {
+            // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
+            // toggling it results in a (-1) phase.
+            X(outputQubit);
+            H(outputQubit);
+            // Flip the outputQubit for marked states.
+            // Here, we get the state with alternating 0s and 1s by using the X
+            // operation on every other qubit.
+            for q in inputQubits[...2...] {
+                X(q);
             }
-    
-            // Measure and return the answer.
-            return MResetEachZ(qubits);
+        } apply {
+            Controlled X(inputQubits, outputQubit);
         }
+    }
     
-        function CalculateOptimalIterations(nQubits : Int) : Int {
-            if nQubits > 63 {
-                fail "This sample supports at most 63 qubits.";
-            }
-            let nItems = 1 <<< nQubits; // 2^nQubits
-            let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
-            let iterations = Round(0.25 * PI() / angle - 0.5);
-            return iterations;
+    operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+        for q in inputQubits {
+            H(q);
         }
+    }
     
-        operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
-            Message("Reflecting about marked state...");
-            use outputQubit = Qubit();
-            within {
-                // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
-                // toggling it results in a (-1) phase.
-                X(outputQubit);
-                H(outputQubit);
-                // Flip the outputQubit for marked states.
-                // Here, we get the state with alternating 0s and 1s by using the X
-                // operation on every other qubit.
-                for q in inputQubits[...2...] {
-                    X(q);
-                }
-            } apply {
-                Controlled X(inputQubits, outputQubit);
-            }
-        }
+    operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
+        Controlled Z(Most(inputQubits), Tail(inputQubits));
+    }
     
-        operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+    operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
+        within {
+            // Transform the uniform superposition to all-zero.
+            Adjoint PrepareUniform(inputQubits);
+            // Transform the all-zero state to all-ones
             for q in inputQubits {
-                H(q);
+                X(q);
             }
-        }
-    
-        operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
-            Controlled Z(Most(inputQubits), Tail(inputQubits));
-        }
-    
-        operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
-            within {
-                // Transform the uniform superposition to all-zero.
-                Adjoint PrepareUniform(inputQubits);
-                // Transform the all-zero state to all-ones
-                for q in inputQubits {
-                    X(q);
-                }
-            } apply {
-                // Now that we've transformed the uniform superposition to the
-                // all-ones state, reflect about the all-ones state, then let the
-                // within/apply block transform us back.
-                ReflectAboutAllOnes(inputQubits);
-            }
+        } apply {
+            // Now that we've transformed the uniform superposition to the
+            // all-ones state, reflect about the all-ones state, then let the
+            // within/apply block transform us back.
+            ReflectAboutAllOnes(inputQubits);
         }
     }
     ```
 
 > [!TIP]
-> From Copilot in Azure Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by clicking on the VS Code logo button in the right-hand corner of the code editor.
+> From Copilot in Azure Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
 
 ### Run the program using the in-memory simulator
 
 1. Select **In-memory Simulator**.
-1. Select the number of shots to run, and click **Run**.
+1. Select the number of shots to run, and select **Run**.
 1. The results are displayed in the histogram and in the **Results** fields.
-1. Click **Explain code** to prompt Copilot to explain the code to you.
+1. Select **Explain code** to prompt Copilot to explain the code to you.
 
 ### Run the program using the Quantinuum H-Series Emulator
 
@@ -327,18 +328,18 @@ You can also submit your program to the free [Quantinuum H-Series Emulator](xref
 
 1. Open Visual Studio Code and select **File > New Text File** to create a new file.
 1. Save the file as `GroversAlgorithm.qs`. This file will contain the Q# code for your program.
-1. Copy the following code in the `GroversAlgorithm.qs` file.
+1. Copy the following code into the `GroversAlgorithm.qs` file.
 
     ```qsharp
-    namespace GroversTutorial {
-        open Microsoft.Quantum.Convert;
-        open Microsoft.Quantum.Math;
-        open Microsoft.Quantum.Arrays;
-        open Microsoft.Quantum.Measurement;
-        open Microsoft.Quantum.Diagnostics;
-    
-        @EntryPoint()
-        operation Main() : Result[] {
+  
+    import Microsoft.Quantum.Convert.*;
+    import Microsoft.Quantum.Math.*;
+    import Microsoft.Quantum.Arrays.*;
+    import Microsoft.Quantum.Measurement.*;
+    import Microsoft.Quantum.Diagnostics.*;
+
+
+    operation Main() : Result[] {
         let nQubits = 5;
         let iterations = CalculateOptimalIterations(nQubits);
         Message($"Number of iterations: {iterations}");
@@ -346,86 +347,85 @@ You can also submit your program to the free [Quantinuum H-Series Emulator](xref
         // Use Grover's algorithm to find a particular marked state.
         let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
         return results;
+    }
+
+    operation GroverSearch(
+        nQubits : Int,
+        iterations : Int,
+        phaseOracle : Qubit[] => Unit) : Result[] {
+
+        use qubits = Qubit[nQubits];
+
+        PrepareUniform(qubits);
+
+        for _ in 1..iterations {
+            phaseOracle(qubits);
+            ReflectAboutUniform(qubits);
         }
-    
-        operation GroverSearch(
-            nQubits : Int,
-            iterations : Int,
-            phaseOracle : Qubit[] => Unit) : Result[] {
-    
-            use qubits = Qubit[nQubits];
-    
-            PrepareUniform(qubits);
-    
-            for _ in 1..iterations {
-                phaseOracle(qubits);
-                ReflectAboutUniform(qubits);
+
+        // Measure and return the answer.
+        return MResetEachZ(qubits);
+    }
+
+    function CalculateOptimalIterations(nQubits : Int) : Int {
+        if nQubits > 63 {
+            fail "This sample supports at most 63 qubits.";
+        }
+        let nItems = 1 <<< nQubits; // 2^nQubits
+        let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
+        let iterations = Round(0.25 * PI() / angle - 0.5);
+        return iterations;
+    }
+
+    operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
+        Message("Reflecting about marked state...");
+        use outputQubit = Qubit();
+        within {
+            // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
+            // toggling it results in a (-1) phase.
+            X(outputQubit);
+            H(outputQubit);
+            // Flip the outputQubit for marked states.
+            // Here, we get the state with alternating 0s and 1s by using the X
+            // operation on every other qubit.
+            for q in inputQubits[...2...] {
+                X(q);
             }
-    
-            // Measure and return the answer.
-            return MResetEachZ(qubits);
+        } apply {
+            Controlled X(inputQubits, outputQubit);
         }
-    
-        function CalculateOptimalIterations(nQubits : Int) : Int {
-            if nQubits > 63 {
-                fail "This sample supports at most 63 qubits.";
-            }
-            let nItems = 1 <<< nQubits; // 2^nQubits
-            let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
-            let iterations = Round(0.25 * PI() / angle - 0.5);
-            return iterations;
+    }
+
+    operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+        for q in inputQubits {
+            H(q);
         }
-    
-        operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
-            Message("Reflecting about marked state...");
-            use outputQubit = Qubit();
-            within {
-                // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
-                // toggling it results in a (-1) phase.
-                X(outputQubit);
-                H(outputQubit);
-                // Flip the outputQubit for marked states.
-                // Here, we get the state with alternating 0s and 1s by using the X
-                // operation on every other qubit.
-                for q in inputQubits[...2...] {
-                    X(q);
-                }
-            } apply {
-                Controlled X(inputQubits, outputQubit);
-            }
-        }
-    
-        operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+    }
+
+    operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
+        Controlled Z(Most(inputQubits), Tail(inputQubits));
+    }
+
+    operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
+        within {
+            // Transform the uniform superposition to all-zero.
+            Adjoint PrepareUniform(inputQubits);
+            // Transform the all-zero state to all-ones
             for q in inputQubits {
-                H(q);
+                X(q);
             }
-        }
-    
-        operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
-            Controlled Z(Most(inputQubits), Tail(inputQubits));
-        }
-    
-        operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
-            within {
-                // Transform the uniform superposition to all-zero.
-                Adjoint PrepareUniform(inputQubits);
-                // Transform the all-zero state to all-ones
-                for q in inputQubits {
-                    X(q);
-                }
-            } apply {
-                // Now that we've transformed the uniform superposition to the
-                // all-ones state, reflect about the all-ones state, then let the
-                // within/apply block transform us back.
-                ReflectAboutAllOnes(inputQubits);
-            }
+        } apply {
+            // Now that we've transformed the uniform superposition to the
+            // all-ones state, reflect about the all-ones state, then let the
+            // within/apply block transform us back.
+            ReflectAboutAllOnes(inputQubits);
         }
     }
     ```
 
-1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
-1. To run your program, click on **Run** from the list of commands below `@EntryPoint()`, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
-1. Your output will appear in the debug console.
+1. Before running the program, ensure the target profile is set to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
+1. To run your program, select **Run** from the list of commands above the `Main` operation, or press **Ctrl+F5**. By default, the compiler runs the `Main` operation or function on the default simulator.
+1. Your output will appear in the debug console in the terminal.
 
 > [!NOTE]
 > If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
