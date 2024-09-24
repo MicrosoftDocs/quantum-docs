@@ -18,7 +18,7 @@ For more information about the Copilot, see [Explore Azure Quantum](xref:microso
 
 ## Initialize a qubit to a known state
 
-The first step is to define a Q# operation that will initialize a qubit to a known state. This can be called to set a qubit to a classical state, meaning that, when measured, it either returns `Zero` 100% of the time or returns `One` 100% of the time. Measuring a qubit returns a Q# type `Result`, which can only have a value of `Zero` or `One`.
+The first step is to define a Q# operation that initializes a qubit to a known state. This operation can be called to set a qubit to a classical state, meaning that, when measured, it either returns `Zero` 100% of the time or returns `One` 100% of the time. Measuring a qubit returns a Q# type `Result`, which can only have a value of `Zero` or `One`.
 
 Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) and copy the following code into the code editor window. Don't click **Run** yet; you'll run the code later in the tutorial.
 
@@ -99,7 +99,7 @@ The `Main`operation:
     1. Uses the `M` operation to measure each qubit.
     1. Stores the number of measurements for each qubit that return `One`.
 1. After the loop completes, it calls `SetQubitState` again to reset the qubits to a known state (`Zero`) to allow others to
-allocate the qubits in a known state. This is required by the `use` statement.
+allocate the qubits in a known state. Resetting is required by the `use` statement.
 1. Finally, it uses the `Message` function to print results to the Copilot output windows before returning the results.
 
 ## Run the code in the Copilot for Azure Quantum
@@ -185,7 +185,7 @@ Q2 - Ones: 0
 
 ## Put a qubit in superposition
 
-Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you will put the first qubit into a **superposition state**, where a measurement of the qubit will return `Zero` ~50% of the time and `One` ~50% of the time. Conceptually, the qubit can be thought of as having an equal probability of measuring either `Zero` or `One`.
+Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you put the first qubit into a **superposition state**, where a measurement of the qubit returns `Zero` ~50% of the time and `One` ~50% of the time. Conceptually, the qubit can be thought of as having an equal probability of measuring either `Zero` or `One`.
 
 To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit to a known state](#initialize-a-qubit-to-a-known-state) procedure earlier, which flipped a qubit from 0 to 1 (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
@@ -209,13 +209,13 @@ for test in 1..count {
 Now when you run the program, you can see the results of the first qubit in superposition. 
 
 ```output
-Q1 - Zeros: 523            // results will vary
+Q1 - Zeros: 523            // results vary
 Q1 - Ones: 477
 Q2 - Zeros: 1000
 Q2 - Ones: 0
 ```
 
-Every time you run the program, the results for the first qubit will vary slightly, but will be close to 50% `One` and 50% `Zero`, while the results for the second qubit will remain `Zero` all the time.
+Every time you run the program, the results for the first qubit vary slightly, but will be close to 50% `One` and 50% `Zero`, while the results for the second qubit remain `Zero` all the time.
 
 ```output
 Q1 - Zeros: 510           
