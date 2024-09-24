@@ -248,11 +248,7 @@ operation GenerateRandomBit() : Result {
 
 ## Run the random number generator program
 
-<<<<<<< Updated upstream
 You can run the program in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), and in Visual Studio Code as a standalone Q# application or using a Python host program.
-=======
-You can run the program in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding), or in Visual Studio Code as a standalone Q# application or using a Python host program.
->>>>>>> Stashed changes
 
 ### [Copilot in Azure Quantum](#tab/tabid-copilot)
 

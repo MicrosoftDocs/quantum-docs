@@ -63,7 +63,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
 1. Next, add code to define the Q# project root folder and test run the target operation on the local simulator. The operation is called by *\<namespace>.\<operation_name( )>*, and in this case, you are passing in the number of random bits to return. 
     
     > [!NOTE]
-    > Because no namespace was specified in `Source.qs`, the compiler uses the file name as the default namespace - `Source.RandomNBits()`. For more information, see [TBD](xref:).
+    > Because no namespace was specified in `Source.qs`, the compiler uses the file name as the default namespace - `Source.RandomNBits()`. For more information, see [Projects and implicit namespaces](xref:microsoft.quantum.qsharp-projects#projects-and-implicit-namespaces).
 
     ```python
     qsharp.init(project_root = '../MyProjectRootFolder')

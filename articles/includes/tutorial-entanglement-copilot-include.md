@@ -1,11 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-<<<<<<< Updated upstream
 ms.date: 09/10/2024
-=======
-ms.date: 08/22/2024
->>>>>>> Stashed changes
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -110,7 +106,7 @@ allocate the qubits in a known state. This is required by the `use` statement.
 
 Before moving on to the procedures for superposition and entanglement, you can test the code up to this point to see the initialization and measurement of the qubits.
 
-In order to run the code as a standalone program, the Q# compiler in the Copilot needs to know *where* to start the program. Because no namespace is specified, the compiler recognizes the default entry point as the `Main` operation. For more information, see [TBD](xref:).
+In order to run the code as a standalone program, the Q# compiler in the Copilot needs to know *where* to start the program. Because no namespace is specified, the compiler recognizes the default entry point as the `Main` operation. For more information, see [Projects and implicit namespaces](xref:microsoft.quantum.qsharp-projects#projects-and-implicit-namespaces).
 
 Your Q# program up to this point should now look like this:
 
