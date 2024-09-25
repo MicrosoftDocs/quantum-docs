@@ -1062,7 +1062,7 @@
 			"redirect_document_id": false
 		},
 		{
-			"source_path": "articles/azure-quantum-job-cost.md",
+			"source_path": "articles/azure-quantum-job-costs.md",
 			"redirect_url": "/azure/quantum/azure-quantum-job-cost-billing",
 			"redirect_document_id": false
 		},
