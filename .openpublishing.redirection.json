@@ -1052,6 +1052,11 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/concepts-advanced-matrices.md",
+			"redirect_url": "/azure/quantum/concepts-vectors-and-matrices",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/invoicing.md",
 			"redirect_url": "/azure/quantum/azure-quantum-job-cost-billing",
 			"redirect_document_id": false
