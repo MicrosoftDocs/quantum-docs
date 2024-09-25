@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: faq
 title: 'FAQ: Understanding Job Costs and Billing'
-uid: microsoft.quantum.azure.job-costs-billing
+uid: microsoft.quantum.azure.job-cost-billing
 
 #customer intent: As a quantum developer, I want to understand how to view the job cost report, and how to manage my invoices so that I can track my spending and manage my budget.
 ---
