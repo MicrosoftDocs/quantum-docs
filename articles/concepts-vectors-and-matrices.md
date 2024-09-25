@@ -17,7 +17,6 @@ uid: microsoft.quantum.concepts.vectors
 
 Some familiarity with linear algebra is essential to understand quantum computing. This article introduces the basic concepts of linear algebra and how to work with vectors and matrices in quantum computing.
 
-
 ## Vectors
 
 A column vector, or vector for short, $v$ of dimension (or size) $n$ is a collection of $n$ complex numbers $(v_1,v_2,\ldots,v_n)$ arranged as a column:
@@ -240,9 +239,32 @@ $$
 	\end{bmatrix}.
 $$
 
+## Eigenvalues and eigenvectors 
+
+Consider a square matrix $M$ and a vector $v$. The vector $v$ is an [*eigenvector*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) of $M$ if $Mv = cv$ for some number $c$. The integer $c$ is the [*eigenvalue*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) corresponding to the eigenvector $v$. 
+
+In general, a matrix $M$ may transform a vector into any other vector. An eigenvector is special because it's unchanged except for being multiplied by a number. If $v$ is an eigenvector with eigenvalue $c$, then $av$ is also an eigenvector (for any nonzero $a$) with the same eigenvalue. For example, for the identity matrix, every vector $v$ is an eigenvector with eigenvalue $1$.
+
+As another example, consider a *diagonal matrix* $D$, which only has non-zero entries on the diagonal:
+
+$$
+\begin{bmatrix}
+d_1 & 0 & 0 \\\\ 0 & d_2 & 0 \\\\ 0 & 0 & d_3
+\end{bmatrix}.
+$$
+
+The vectors
+
+$$\begin{bmatrix}1 \\\\ 0 \\\\ 0 \end{bmatrix}, \begin{bmatrix}0 \\\\ 1 \\\\ 0\end{bmatrix} \text{and} \begin{bmatrix}0 \\\\ 0 \\\\ 1\end{bmatrix}$$
+
+are eigenvectors of this matrix with eigenvalues  $d_1$, $d_2$, and $d_3$, respectively. If $d_1$, $d_2$, and $d_3$ are distinct numbers, then these vectors (and their multiples) are the only eigenvectors of the matrix $D$.
+ 
+In general, for a diagonal matrix it's easy to read off the eigenvalues and eigenvectors. The eigenvalues are all the numbers appearing on the diagonal, and their respective eigenvectors are the unit vectors with one entry equal to $1$ and the remaining entries equal to $0$.
+
+Note in the example that the eigenvectors of $D$ form a basis for $3$-dimensional vectors. A basis is a set of vectors such that any vector can be written as a linear combination of them. More explicitly, $v_1$, $v_2$, and $v_3$ form a basis if any vector $v$ can be written as $v=a_1 v_1 + a_2 v_2 + a_3 v_3$ for some numbers $a_1$, $a_2$, and $a_3$.
+
 ## Related content
 
-- [Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced)
 - [The qubit](xref:microsoft.quantum.concepts.qubit)
 - [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
 - [Dirac notation](xref:microsoft.quantum.concepts.dirac)
