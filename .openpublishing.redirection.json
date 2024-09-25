@@ -1051,6 +1051,16 @@
 			"redirect_url": "/azure/quantum/user-guide/program-structure",
 			"redirect_document_id": false
 		},
+		{
+			"source_path": "articles/invoicing.md",
+			"redirect_url": "/azure/quantum/azure-quantum-job-cost-billing",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/azure-quantum-job-cost.md",
+			"redirect_url": "/azure/quantum/azure-quantum-job-cost-billing",
+			"redirect_document_id": false
+		},
     	{
 			"source_path": "articles/how-to-migrate-to-modern.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
