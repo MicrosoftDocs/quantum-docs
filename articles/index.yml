@@ -3,75 +3,149 @@
 title: Azure Quantum documentation
 summary: Learn about quantum computing with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to create and submit quantum programs in the Azure portal, or set up your own local development environment with the Quantum Development Kit (QDK) to write quantum programs. 
 metadata:
-  title: Azure Quantum documentation, QDK & Q# API reference
-  description: Learn about quantum computing with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to write your first quantum program. 
+  title: Azure Quantum documentation, QDK & Q# programming language
+  description: Learn quantum computing and develop your quantum programs with the Azure Quantum service. Use Python and Q#, a language for quantum programming, to write your quantum programs and submit them to the real quantum hardware available in Azure Quantum. With the Quantum Development Kit (QDK), you can set up your local development environment and benefit from several tools and libraries to write your quantum programs.
   ms.service: azure-quantum
   ms.topic: landing-page
   ms.collection: collection
   author: bradben
   ms.author: brbenefield
-  ms.date: 09/10/2024
+  ms.date: 09/11/2024
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
 
-  # Get started
-  - title: Get started with Azure Quantum
+  # About Azure Quantum
+  - title: About Azure Quantum
     linkLists:
       - linkListType: overview
         links:
           - text: What is Azure Quantum?
             url: overview-azure-quantum.md
-          - text: Introduction to the quantum programming language Q#
-            url: qsharp-overview.md
-          - text: Azure Quantum Resource Estimator
-            url: intro-to-resource-estimation.md
-          - text: Hybrid quantum computing
-            url: hybrid-computing-overview.md
-          - text: List of quantum hardware providers
-            url: qc-target-list.md
-
- 
-  # Computing
-  - title: Develop your quantum programs with Q# 
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Set up the Quantum Development Kit
-            url: install-overview-qdk.md
-          - text: Create your first Q# program 
-            url: qsharp-quickstart.md
-          - text: Get started with Q# and Visual Studio Code
-            url: how-to-submit-jobs.md
-          - text: Get started with the Q# libraries
-            url: /qsharp/api/
-
-  # Management
-  - title: Manage Azure Quantum resources
-    linkLists:
-      - linkListType: how-to-guide
+      - linkListType: deploy
         links:
           - text: Create a quantum workspace
             url: how-to-create-workspace.md
+      - linkListType: reference
+        links:
+          - text: List of quantum hardware providers
+            url: qc-target-list.md
+          - text: Types of quantum targets
+            url: quantum-computing-target-profiles.md
+      - linkListType: training
+        links:
+          - text: Training path - Get started with Azure Quantum
+            url: /training/paths/quantum-computing-fundamentals/
+
+  # Get started
+  - title: Get started with Q# and the Quantum Development Kit
+    linkLists:
+      - linkListType: download
+        links:
+          - text: Set up the Quantum Development Kit
+            url: install-overview-qdk.md
+      - linkListType: overview
+        links:
+          - text: What is Q#?
+            url: qsharp-overview.md
+      - linkListType: quickstart
+        links:
+          - text: Create your first Q# program 
+            url: qsharp-quickstart.md
+      - linkListType: training
+        links:
+          - text: Learn Q# with Copilot 
+            url: https://quantum.microsoft.com/experience/quantum-coding
+          - text: Learn Q# with the Quantum Katas
+            url: https://quantum.microsoft.com/experience/quantum-katas
+
+# Develop with QDK
+  - title: Develop quantum programs with the Quantum Development Kit
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Ways to run Q# programs
+            url: qsharp-ways-to-work.md
+      - linkListType: tutorial
+        links:
+          - text: Create a quantum random number generator
+            url: tutorial-qdk-quantum-random-number-generator.md
+          - text: Explore quantum entanglement
+            url: tutorial-qdk-explore-entanglement.md
+          - text: Implement Grover's algorithm
+            url: tutorial-qdk-grovers-search.md
+          - text: Implement the Quantum Fourier Transform
+            url: tutorial-qdk-qubit-level-program.md
+      - linkListType: how-to-guide
+        links:
+          - text: Run a Q# program in Visual Studio Code
+            url: how-to-submit-jobs.md
+          - text: Work with Q# projects
+            url: how-to-work-with-qsharp-projects.md
+          - text: Run hybrid quantum computing programs
+            url: hybrid-computing-integrated.md
+          - text: Submit a circuit with Qiskit
+            url: quickstart-microsoft-qiskit.md
+          - text: Submit a circuit with Cirq
+            url: quickstart-microsoft-cirq.md
+          - text: Adapt a Qiskit sample to Azure Quantum
+            url: how-to-adapt-qiskit.md
+ 
+
+  # Resource Estimation
+  - title: Azure Quantum Resource Estimator
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the Azure Quantum Resource Estimator?
+            url: intro-to-resource-estimation.md
+      - linkListType: quickstart
+        links:
+          - text: Run your first resource estimation program
+            url: quickstart-microsoft-resources-estimator.md
+      - linkListType: reference
+        links:
+          - text: Target parameters of the Resource Estimator
+            url: overview-resources-estimator.md
+          - text: Result data of the Resource Estimator
+            url: overview-resource-estimator-output-data.md
+      - linkListType: how-to-guide
+        links:
+          - text: Run multiple configurations of parameters in a single job
+            url: resource-estimator-batching.md
+          - text: Use known estimates to optimize resource estimation
+            url: resource-estimator-known-estimates.md
+          - text: Perform manual caching to optimize resource estimation
+            url: resource-estimator-handle-large-programs.md
+      - linkListType: tutorial
+        links:
+          - text: Estimate resources of a quantum chemistry problem
+            url: tutorial-resource-estimator-chemistry.md
+          - text: Estimate resources of a QIR program
+            url: tutorial-resource-estimator-qir.md
+
+
+  # Management
+  - title: Manage your Azure Quantum resources
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Azure Quantum Credits
+            url: azure-quantum-credits.md
+          - text: Limits and quotas
+            url: azure-quantum-quotas.md
+      - linkListType: how-to-guide
+        links:
           - text: Connect to your quantum workspace
             url: how-to-connect-workspace.md
           - text: Share access to your quantum workspace
             url: how-to-share-access-quantum-workspace.md
-          - text: Manage your Azure Quantum Credits
-            url: azure-quantum-credits.md
+          - text: Add a group to your quantum workspace
+            url: bulk-add-users-to-a-workspace.md
+          - text: Authenticate using a Manage Key
+            url: security-manage-access-keys.md
 
 
-  # Learn
-  - title: Learn by building
-    linkLists:
-      - linkListType: learn
-        links:
-          - text: Training path - Get started with Azure Quantum
-            url: /training/paths/quantum-computing-fundamentals/
-          - text: Learn quantum computing with Copilot in Azure Quantum 
-            url: https://quantum.microsoft.com/tools/quantum-coding
-          - text: Learn Q# with the Quantum Katas
-            url: https://quantum.microsoft.com/tools/quantum-katas
 
