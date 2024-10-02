@@ -45,7 +45,7 @@
       href: /cli/azure/quantum
     - name: Work with Azure Quantum using the Azure Resource Manager
       href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
-  - name: Pricing, invoicing, credits and quota
+  - name: Credits, quotas, and billing information
     items:
     - name: Azure Quantum Credits
       href: azure-quantum-credits.md
@@ -53,12 +53,10 @@
       href: credits-faq.md
     - name: Azure Quantum pricing
       href: pricing.md
-    - name: Azure Quantum invoicing
-      href: invoicing.md
     - name: Azure Quantum quotas
       href: azure-quantum-quotas.md
-    - name: Understanding job costs in Azure Quantum
-      href: azure-quantum-job-costs.md
+    - name: Billing and job costs in Azure Quantum
+      href: azure-quantum-job-cost-billing.md
   - name: Security
     items:
     - name: Authenticate using a service principal
@@ -217,8 +215,6 @@
   items:
   - name: Vectors and matrices
     href: concepts-vectors-and-matrices.md
-  - name: Advanced matrix concepts
-    href: concepts-advanced-matrices.md
   - name: The qubit
     href: concepts-the-qubit.md
   - name: Multiple qubits

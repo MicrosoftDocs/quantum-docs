@@ -252,6 +252,7 @@ If you are not using an Azure Quantum Credits plan, then you can request quota i
 
 ## Related content
 
-- [Azure Quantum Credits](xref:microsoft.quantum.credits)
+- [FAQ: Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)
+- [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing)
 
