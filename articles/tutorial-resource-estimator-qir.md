@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, learn how to create and submit a QIR program to the Azure Quantum Resource Estimator target.
 ms.author: sonialopez
-ms.date: 04/15/2024
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
@@ -186,4 +186,4 @@ Continue to explore other quantum algorithms and techniques:
 
 - The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
 - The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
-- The [Quantum Katas](https://quantum.microsoft.com/en-us/experience/quantum-katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

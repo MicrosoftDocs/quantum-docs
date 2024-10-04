@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: Learn the rules used to build multi-qubit states out of single-qubit states. Also learn about gate operations needed to form a many-qubit quantum computer.
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Multiple-qubit Operations
 uid: microsoft.quantum.concepts.multiple-qubits
