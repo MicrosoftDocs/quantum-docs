@@ -275,9 +275,14 @@ circuit.measure_all()
 
 Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
 
-#### [General SU(4) Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
+#### [General SU(4) Entangling Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
 
-In Q\#, the SU(4) gate is not implemented directly in a gate function, but is a gate implemented in Quantinuum's QIR profile. To implement the gate in your code in Q#, a function for the gate is first defined using a customer intrinsic matching the signature in Quantinuum's QIR profile. This is then used within the `SU4Example` operation when creating the circuit. To submit the circuit and ensure the circuit is run using the General SU(4) Entangling gate, options need to be passed to specify this. Specifically, `noreduce: True` will ensure the gates as used in the circuit are what will run on the hardware.
+In Q\#, the General SU(4) Entangling gate is implemented via Quantinuum's QIR profile. To use it, define a function with a custom intrinsic matching the QIR profile signature, and use this function within the `SU4Example` operation.
+
+To ensure the circuit runs with the General SU(4) Entangling gate, pass the following options in the H-Series stack:
+
+- `nativetq: Rxxyyzz` to prevent rebasing to other native gates.
+- `noreduce: True` to avoid additional compiler optimizations (optional).
 
 ```qsharp
 %%qsharp
@@ -316,6 +321,7 @@ MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
 
 # Update TKET optimization level desired
 option_params = {
+    "nativetq": `Rxxyyzz`,
     "noreduce": True
 }
 
