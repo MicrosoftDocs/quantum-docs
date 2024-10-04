@@ -93,7 +93,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1sc
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
-- rigetti.qpu.ankaa-2
 ```
 
 ## Run a simple circuit
@@ -364,9 +363,12 @@ Result(backend_name='quantinuum.qpu.h1-1', backend_version='1', qobj_id='Qiskit 
 
 ### [Rigetti](#tab/tabid-rigetti)
 
+> [!NOTE]
+> Currently, Rigetti only offers their quantum simulator, `rigetti.sim.qvm`, through the Azure Quantum service.
+
 #### Run on the QVM simulator
 
-To test the program before running it on the hardware, first run it on the Rigetti QVM simulator. Use the `provider.get_backend` method to create a `Backend` object to connect to the Rigetti QVM simulator backend:
+Use the `provider.get_backend` method to create a `Backend` object to connect to the Rigetti QVM simulator backend:
 
 ```python
 # Get Rigetti's QVM simulator backend:
@@ -409,42 +411,6 @@ result.get_memory(circuit)
 ```output
 ['000', '111', '111', '000', '000', '000', '111', '111']
 ```
-
-#### Run on a Rigetti QPU 
-
-After running successfully on the QVM simulator, you can run your job on one of Rigetti's hardware processors (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)).
-
-> [!NOTE] 
-> The time required to run a circuit on the QPU may vary depending on current queue times.
-
-```python
-# Get Rigetti's QPU backend:
-qpu_backend = provider.get_backend("rigetti.qpu.ankaa-2")
-```
-
-```python
-# Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=100)
-job_id = job.id()
-print("Job id", job_id)
-```
-
-```python
-# Get the job results (this method waits for the Job to complete):
-result = job.result()
-print(result)
-counts = {format(n, "03b"): 0 for n in range(8)}
-counts.update(result.get_counts(circuit))
-print(counts)
-plot_histogram(counts)
-```
-
-```output
-.....Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='dd72c9c7-5a88-11ef-a183-a91b61633c2f', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'001': 5, '100': 6, '111': 30, '000': 51, '110': 4, '101': 1, '010': 1, '011': 2}, memory=['001', '100', '111', '000', '000', '000', '001', '000', '000', '110', '000', '111', '111', '111', '000', '000', '000', '000', '101', '111', '111', '010', '000', '000', '000', '000', '000', '000', '001', '011', '111', '000', '000', '111', '000', '111', '000', '000', '111', '111', '110', '111', '000', '000', '111', '111', '111', '100', '111', '000', '111', '000', '000', '000', '111', '000', '000', '001', '000', '100', '111', '000', '011', '000', '111', '000', '111', '111', '111', '000', '111', '111', '000', '111', '111', '000', '111', '000', '000', '000', '000', '000', '110', '000', '000', '110', '111', '100', '000', '111', '000', '100', '001', '000', '000', '000', '000', '100', '000', '000'], probabilities={'001': 0.05, '100': 0.06, '111': 0.3, '000': 0.51, '110': 0.04, '101': 0.01, '010': 0.01, '011': 0.02}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
-
-```
-
-![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-rigetti-result-2.png)
 
 ***
 
