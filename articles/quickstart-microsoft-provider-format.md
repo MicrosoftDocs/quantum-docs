@@ -517,11 +517,11 @@ You can also construct Quil programs manually and submit them using the `azure-q
     from pyquil_for_azure_quantum import get_qpu, get_qvm
     ```
 
-1. Use the `get_qvm` or `get_qpu` function to get a connection to the QVM or QPU.
+1. Use the `get_qvm` or `get_qpu` function to get a connection to the QVM.
 
     ```python
     qc = get_qvm()  # For simulation
-    # qc = get_qpu("Ankaa-2") for submitting to a QPU
+
     ```
 
 1. Create a Quil program. Any valid Quil program is accepted, but the readout **must** be named `ro`.
@@ -566,12 +566,12 @@ You can also construct Quil programs manually and submit them using the `azure-q
     from azure.quantum.target.rigetti import Result, Rigetti, RigettiTarget, InputParams
     ```
 
-1. Create a `target` object and select the name of the Rigetti's target. For example, the following code selects the `Ankaa-2` target. 
+1. Create a `target` object and select the name of the Rigetti's target. For example, the following code selects the `QVM` target. 
 
     ```python
     target = Rigetti(
         workspace=workspace,
-        name=RigettiTarget.ANKAA_2,  # Defaults to RigettiTarget.QVM for simulation
+        name=RigettiTarget.QVM,
     )
     ```
 
