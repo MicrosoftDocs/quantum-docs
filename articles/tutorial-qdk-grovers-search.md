@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: sonialopez
-ms.date: 06/03/2024
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -26,7 +26,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding):
+- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding):
   - A Microsoft (MSA) email account.
 
 - To develop and run the code sample in Visual Studio Code:
@@ -209,7 +209,7 @@ Select the desired platform to run your program.
 
 You can test your Q# code with the Copilot in Azure Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot in Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
-1. Open the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) in your browser.
+1. Open the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
@@ -439,4 +439,4 @@ Explore other Q# tutorials:
 * [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
 * [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
 * [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The [Quantum Katas](https://quantum.microsoft.com/en-us/experience/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+* The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

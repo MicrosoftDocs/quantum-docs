@@ -2,10 +2,10 @@
 author: bradben
 description: This document provides information about the Microsfot quantum computing Resource Estimation provider
 ms.author: brbenefield
-ms.date: 10/01/2023
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [QIR Base, target, targets]
 title: Microsoft quantum computing provider
 uid: microsoft.quantum.providers.microsoft

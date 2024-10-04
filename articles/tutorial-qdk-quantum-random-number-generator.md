@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 06/03/2024
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -29,7 +29,7 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding):
+- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding):
   - A Microsoft (MSA) email account.
 
 - To develop and run the code sample in Visual Studio Code:
@@ -252,13 +252,13 @@ namespace QuantumRandomNumberGenerator {
 
 ## Run the random number generator program
 
-You can run the program in the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding), and in Visual Studio Code as a standalone Q# application or using a Python host program.
+You can run the program in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), and in Visual Studio Code as a standalone Q# application or using a Python host program.
 
 ### [Copilot in Azure Quantum](#tab/tabid-copilot)
 
 You can test your Q# code with the Copilot in Azure Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot in Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
-1. Open the [Copilot in Azure Quantum](https://quantum.microsoft.com/en-us/experience/quantum-coding) in your browser.
+1. Open the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
@@ -520,4 +520,4 @@ Explore other Q# tutorials:
 * [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
 * [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
 * [Quantum Fourier Transforms](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The [Quantum Katas](https://quantum.microsoft.com/en-us/experience/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+* The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

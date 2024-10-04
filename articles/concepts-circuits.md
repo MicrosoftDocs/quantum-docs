@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: Learn how to read a quantum circuit diagram and how to represent quantum operations and measurements in a circuit diagram.
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', target, targets]
 title: Quantum Circuit Diagram Conventions
 uid: microsoft.quantum.concepts.circuits
@@ -139,7 +139,7 @@ Let's break down the steps of the teleportation protocol:
 1. A **CNOT gate** is applied to **Alice and Bob's qubits**. Alice's qubit is the control qubit, and Bob's qubit is the target qubit. The resulting state is $\frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$. Alice and Bob now share an entangled state.
 1. A **CNOT gate** is applied to the **message qubit and Alice's qubit**. Since Alice's qubit is also entangled with Bob's qubit, the resulting state is a three-qubit entangled state.
 1. A **Hadamard gate** is applied to the **message qubit**.
-1. Alice **measures** her two qubits and tells the measurement results to Bob, which isn't reflected in the circuit. The measurement results are two classical bits, which can take the values 00, 01, 10, or 1
+1. Alice **measures** her two qubits and tells the measurement results to Bob, which isn't reflected in the circuit. The measurement results are two classical bits, which can take the values 00, 01, 10, or 11.
 1. Two classically controlled **Pauli gates** X and Z are applied to **Bob's qubit**, depending on the result bit being value $1$. The resulting state is the original message qubit state.
 
 ## Related content

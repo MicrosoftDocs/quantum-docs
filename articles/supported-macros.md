@@ -3,8 +3,8 @@ title: Supported LaTeX macros for authoring
 description: List of all supported LaTeX macros for formulas used in the Microsoft Quantum Development Kit documentation. 
 author: bradben
 ms.author: brbenefield
-ms.date: 09/04/2019
-ms.topic: conceptual
+ms.date: 09/16/2024
+ms.topic: concept-article
 uid: microsoft.quantum.contribute.macros
 no-loc: ['Q#', '$$v', Quantum Development Kit]
 ---

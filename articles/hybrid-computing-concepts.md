@@ -1,11 +1,11 @@
 ---
 author: bradben
 description: Learn about classical and quantum registers, mid-circuit measurement, qubit reuse, error mitigation, error correction, and fault tolerance.
-ms.date: 03/06/2023
+ms.date: 09/16/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm]
 title: Hybrid Quantum Computing Concepts
 uid: microsoft.quantum.concepts.hybrid

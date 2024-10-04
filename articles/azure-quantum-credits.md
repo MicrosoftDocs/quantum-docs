@@ -133,4 +133,4 @@ The **Period** column indicates the period when your quota is renewed. For Azure
 - [FAQ: Applications to the Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq)
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing)
-- [Azure Quantum job cost](xref:microsoft.quantum.azure.job-costs)
+- [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing)

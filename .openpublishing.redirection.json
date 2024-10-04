@@ -1,5 +1,45 @@
 {
 	"redirections": [
+    {
+      "source_path": "articles/release-notes-2017.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2017",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/release-notes-2018.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2018",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/release-notes-2019.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2019",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/release-notes-2020.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2020",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/release-notes-2021.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2021",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/release-notes-2022.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2022",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/release-notes-2023.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2023",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/release-notes-2024.md",
+      "redirect_url": "/archive/azure/quantum/release-notes-2024",
+      "redirect_document_id": false
+    },
 		{
 			"source_path": "articles/install-jupyter-qkd.md",
 			"redirect_url": "/azure/quantum/install-overview-qdk",
@@ -1009,6 +1049,21 @@
 		{
 			"source_path": "articles/user-guide/index.md",
 			"redirect_url": "/azure/quantum/user-guide/program-structure",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/concepts-advanced-matrices.md",
+			"redirect_url": "/azure/quantum/concepts-vectors-and-matrices",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/invoicing.md",
+			"redirect_url": "/azure/quantum/azure-quantum-job-cost-billing",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/azure-quantum-job-costs.md",
+			"redirect_url": "/azure/quantum/azure-quantum-job-cost-billing",
 			"redirect_document_id": false
 		},
     	{
