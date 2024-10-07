@@ -50,7 +50,7 @@ On the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q# p
 
 The Azure Quantum website also features blogs, articles, and videos from quantum experts and enthusiasts. The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) deepen your knowledge with self-paced tutorials on the fundamentals of quantum computing and Q#.
 
-For more information, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+For more information, see [Explore Copilot in Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 ### Is the Azure Quantum website right for me?
 
