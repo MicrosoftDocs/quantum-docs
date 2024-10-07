@@ -14,7 +14,7 @@ uid: microsoft.quantum.azure-quantum-overview
 
 # What is Azure Quantum?
 
-Azure Quantum is the cloud quantum computing service of Azure. Azure Quantum provides an open, flexible, and future-proofed path to quantum computing that adapts to your way of working, accelerates your progress, and protects your technology investments.
+Azure Quantum is the cloud quantum computing service of Azure. Azure Quantum provides an open, flexible, and future-proofed path to quantum computing that adapts to your way of working.
 
 Azure Quantum offers a range of quantum computing solutions, including quantum hardware from industry-leading providers, quantum software, and quantum services. With Azure Quantum, you can run quantum programs on real quantum hardware, simulate quantum algorithms, and estimate the resources needed to run your quantum programs on future scaled quantum machines.
 
