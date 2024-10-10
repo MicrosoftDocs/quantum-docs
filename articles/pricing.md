@@ -40,12 +40,13 @@ New Azure Quantum customers can benefit from a one-time USD500 free Azure Quantu
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model. The cost of use is deducted from your Azure Quantum Credits based on the number of QGSs executed. To learn more about credits, see [FAQ: Azure Quantum Credits](xref:microsoft.quantum.credits).
 
-|Pricing | Includes access to  |
+|Includes access to| Pricing |
 |---|---|  
-|Use is deducted from the Azure Quantum Credits based on the number of QGSs executed| <ul><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
+|IonQ simulator| Free of charge|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 2 |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 |IonQ Forte (Private preview) |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
 > [!NOTE]
@@ -57,24 +58,26 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
  
 ### [Pay As You Go](#tab/tabid-paygo)
 
-The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 25-qubit quantum computer and the IonQ simulator, charged on a resource-usage model.  
+The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 and Aria 2 25-qubit quantum computers, and the IonQ simulator. The use of the quantum computers is charged based on the number of QGSs executed + Azure infrastructure costs.
 
-|Pricing | Includes access to|
+|Includes access to| Pricing|
 |---|---|  
-| Use is charged based on the number of QGSs executed + Azure infrastructure costs | <ul><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
+|IonQ simulator| Free of charge|
 |IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 2 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 |IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ### [Aria plan](#tab/tabid-aria)
 
-The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-qubit quantum computer, as well as access to the IonQ simulator.
+The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 and Aria 2 25-qubit quantum computers, and the IonQ simulator. The Aria plan consists of USD25,000/Month + Azure infrastructure costs.
 
-|Pricing |  Includes access to |
+|Includes access to | Pricing |
 |---|---|  
-|USD25,000/Month + Azure infrastructure costs| <ul><li>IonQ Aria 1 QPU</li><li>IonQ Simulator (free)</li></ul>|
-|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
+|IonQ simulator| Free of charge|
+|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 2 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
 |IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
 
 > [!NOTE]
@@ -194,36 +197,9 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 ***
 ## Rigetti
 
-[Rigetti](https://rigetti.com) charges for job execution time on their quantum processor, the 84-bit Ankaa-2. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
+The [Quantum Virtual Machine (QVM)](https://pyquil-docs.rigetti.com/en/1.9/qvm.html) simulator is free for all users.
 
 To learn more about Rigetti, visit the [Rigetti provider page](xref:microsoft.quantum.providers.rigetti).
-
-All new Azure Quantum customers benefit from USD500 free Azure Quantum credits to use specifically for Rigetti targets. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
-
-In addition to the Azure Quantum Credits plan, Rigetti offers a pay-as-you-go plan for live quantum processors, so you pay only for what you use.
-
-### [Azure Quantum Credits](#tab/tabid-AQcreditsRigetti)
-
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
-
-|Pricing | Includes access to  |
-|---|---|  
-|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti QVM simulator (free)</li></ul>|
-
-> [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t charge you when you reach your credit limit.
-
-> [!IMPORTANT]
-> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
-> For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
- 
-### [Pay As You Go](#tab/tabid-paygoRigetti)
-
-The Pay-as-you-go plan consists of *a la carte* access to the Ankaa-2. The usage is charged based on the job execution time only
-
-|Pricing | Includes access to   |
-|---|---|  
-|USD0.02 per 10-millisecond increment of job execution time| <ul><li>Rigetti 84-bit Ankaa-2</li><li>Rigetti QVM simulator (free)</li></ul>|
 
 ***
 

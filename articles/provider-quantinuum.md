@@ -220,7 +220,7 @@ open Microsoft.Quantum.Intrinsic;
 open Microsoft.Quantum.Measurement;
 open Microsoft.Quantum.Arrays;
 
-operation ContinueComputationAfterReset(theta : Double) : Result[] {
+operation ArbitraryAngleZZExample(theta : Double) : Result[] {
     
     // Set up circuit with 2 qubits
     use qubits = Qubit[2];
@@ -267,6 +267,71 @@ circuit.x(1)
 circuit.rzz(theta, 0, 1)
 
 circuit.measure_all()
+```
+
+***
+
+### General SU(4) Entangling Gate
+
+Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+
+#### [General SU(4) Entangling Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
+
+In Q\#, the General SU(4) Entangling gate is implemented via Quantinuum's QIR profile. To use it, define a function with a custom intrinsic matching the QIR profile signature, and use this function within the `SU4Example` operation.
+
+To ensure the circuit runs with the General SU(4) Entangling gate, pass the following options in the H-Series stack:
+
+- `nativetq: Rxxyyzz` to prevent rebasing to other native gates.
+- `noreduce: True` to avoid additional compiler optimizations (optional).
+
+```qsharp
+%%qsharp
+open Microsoft.Math;
+
+operation __quantum__qis__rxxyyzz__body(a1 : Double, a2 : Double, a3 : Double, q1 : Qubit, q2 : Qubit) : Unit {
+    body intrinsic;
+}
+
+operation SU4Example() : Result[] {
+    use qs = Qubit[2];
+    
+    // Add SU(4) gate
+    __quantum__qis__rxxyyzz__body(PI(), PI(), PI(), qs[0], qs[1]);
+    
+    MResetEachZ(qs)
+}
+
+```
+
+Now compile the operation:
+
+```python
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
+
+# Update TKET optimization level desired
+option_params = {
+    "nativetq": `Rxxyyzz`,
+    "noreduce": True
+}
+
+```
+
+Pass in the `noreduce` option when submitting the job:
+
+```python
+job = MyTarget.submit(MyProgram, "Submit a program with SU(4) gate", shots = 10, input_params = option_params)
+job.get_results()
 ```
 
 ***
