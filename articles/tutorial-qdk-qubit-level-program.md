@@ -58,18 +58,15 @@ You can view the [full Q# code](#the-complete-qft-operation) for this section as
 
 ### Namespaces to access other Q# operations
 
-Inside your Q# file, define the namespace `NamespaceQFT`, which is accessed by the compiler.
-For this operation to make use of existing Q# operations, open the relevant `Microsoft.Quantum.*` namespaces.
+Inside your Q# file, import the relevant `Microsoft.Quantum.*` namespaces.
 
 ```qsharp
-namespace NamespaceQFT {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Arrays;
 
-    // operations go here
-}
+import Microsoft.Quantum.Diagnostics.*;
+import Microsoft.Quantum.Math.*;
+import Microsoft.Quantum.Arrays.*;
+
+// operations go here
 ```
 
 ### Define operations with arguments and returns
@@ -82,7 +79,7 @@ operation Main() : Unit {
 }
 ```
 
-For now, the operation takes no arguments and returns a `Unit` object, which is analogous to returning `void` in C# or an empty tuple, `Tuple[()]`, in Python.
+The `Main()` operation never takes arguments, and for now returns a `Unit` object, which is analogous to returning `void` in C# or an empty tuple, `Tuple[()]`, in Python.
 Later, you will modify the operation to return an array of measurement results.
 
 ### Allocate qubits 
@@ -100,7 +97,7 @@ As in real quantum computations, Q# does not allow you to directly access qubit 
 
 ### Apply single-qubit and controlled operations
 
-Next, you apply the operations that comprise the `Main` operation itself. Q# already contains these and many other basic quantum operations in the `Microsoft.Quantum.Intrinsic` namespace.
+Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Microsoft.Quantum.Intrinsic` namespace. Note that `Microsoft.Quantum.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
@@ -177,41 +174,39 @@ ResetAll(qs); // deallocate qubits
 The Q# program is completed. Your **QFTcircuit.qs** file should now look like this:
 
 ```qsharp
-namespace NamespaceQFT {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Arrays;
+import Microsoft.Quantum.Intrinsic.*;
+import Microsoft.Quantum.Diagnostics.*;
+import Microsoft.Quantum.Math.*;
+import Microsoft.Quantum.Arrays.*;
 
-    operation Main() : Unit {
+operation Main() : Unit {
 
-        use qs = Qubit[3]; // allocate three qubits
+    use qs = Qubit[3]; // allocate three qubits
 
-        Message("Initial state |000>:");
-        DumpMachine();
+    Message("Initial state |000>:");
+    DumpMachine();
 
-        //QFT:
-        //first qubit:
-        H(qs[0]);
-        Controlled R1([qs[1]], (PI()/2.0, qs[0]));
-        Controlled R1([qs[2]], (PI()/4.0, qs[0]));
+    //QFT:
+    //first qubit:
+    H(qs[0]);
+    Controlled R1([qs[1]], (PI()/2.0, qs[0]));
+    Controlled R1([qs[2]], (PI()/4.0, qs[0]));
 
-        //second qubit:
-        H(qs[1]);
-        Controlled R1([qs[2]], (PI()/2.0, qs[1]));
+    //second qubit:
+    H(qs[1]);
+    Controlled R1([qs[2]], (PI()/2.0, qs[1]));
 
-        //third qubit:
-        H(qs[2]);
+    //third qubit:
+    H(qs[2]);
 
-        SWAP(qs[2], qs[0]);
+    SWAP(qs[2], qs[0]);
 
-        Message("After:");
-        DumpMachine();
+    Message("After:");
+    DumpMachine();
 
-        ResetAll(qs); // deallocate qubits
+    ResetAll(qs); // deallocate qubits
 
-    }
-}                                                                                                                                                                                   
+}                                                                                                                                                                               
 ```
 
 ## Run the QFT circuit
@@ -277,11 +272,11 @@ For now, the `Main` operation doesn't return any value - the operation returns `
     ```python
     results = qsharp.run("Main()", shots=10)
     print(results)
-  ```
+    ```
 
 The `Message` and `DumpMachine` outputs are displayed in an output cell.
-***
 
+***
 
 If you are curious about how other input states are affected, you are encouraged to experiment with applying other qubit operations before the transform.
 
