@@ -3,7 +3,7 @@ title: 'Tutorial: Quantum Fourier Transform in Q\#'
 description: In this tutorial, learn how to write and simulate a quantum program that operates at the individual qubit level.
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 09/10/2024
+ms.date: 10/10/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
@@ -50,7 +50,7 @@ In this tutorial, you'll learn how to:
 
 ## Write a QFT circuit in Q\#
 
-The first part of this tutorial consists of defining the Q# operation `Perform3qubitQFT`, which performs the quantum Fourier transform on three qubits. The `DumpMachine` function is used to observe how the simulated wavefunction of the three-qubit system evolves across the operation. In the second part of the tutorial, you will add measurement functionality and compare the pre- and post-measurement states of the qubits.
+The first part of this tutorial consists of defining the Q# operation `Main`, which performs the quantum Fourier transform on three qubits. The `DumpMachine` function is used to observe how the simulated wavefunction of the three-qubit system evolves across the operation. In the second part of the tutorial, you will add measurement functionality and compare the pre- and post-measurement states of the qubits.
 
 You will build the operation step by step. Copy and paste the code in the following sections into the **QFTcircuit.qs** file.
 
@@ -74,10 +74,10 @@ namespace NamespaceQFT {
 
 ### Define operations with arguments and returns
 
-Next, define the `Perform3qubitQFT` operation:
+Next, define the `Main` operation:
 
 ```qsharp
-operation Perform3qubitQFT() : Unit {
+operation Main() : Unit {
     // do stuff
 }
 ```
@@ -100,7 +100,7 @@ As in real quantum computations, Q# does not allow you to directly access qubit 
 
 ### Apply single-qubit and controlled operations
 
-Next, you apply the operations that comprise the `Perform3qubitQFT` operation itself. Q# already contains these and many other basic quantum operations in the `Microsoft.Quantum.Intrinsic` namespace.
+Next, you apply the operations that comprise the `Main` operation itself. Q# already contains these and many other basic quantum operations in the `Microsoft.Quantum.Intrinsic` namespace.
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
@@ -183,7 +183,7 @@ namespace NamespaceQFT {
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Arrays;
 
-    operation Perform3qubitQFT() : Unit {
+    operation Main() : Unit {
 
         use qs = Qubit[3]; // allocate three qubits
 
@@ -211,28 +211,18 @@ namespace NamespaceQFT {
         ResetAll(qs); // deallocate qubits
 
     }
-}
+}                                                                                                                                                                                   
 ```
 
 ## Run the QFT circuit
 
-For now, the `Perform3qubitQFT` operation doesn't return any value - the operation returns `Unit` value. Later, you'll modify the operation to return an array of measurement results (`Result[]`).
+For now, the `Main` operation doesn't return any value - the operation returns `Unit` value. Later, you'll modify the operation to return an array of measurement results (`Result[]`).
 
 ### [Q# standalone program](#tab/tabid-qsharp)
 
-1. When running a Q# program, you need to add an `EntryPoint` to the Q# file. This attribute tells the compiler that this operation is the entry point to the program. Add the following line to the top of your Q# file before the `Perform3qubitQFT` operation :
-
-    ```qsharp
-    @EntryPoint()
-    operation Perform3qubitQFT() : Unit {
-    ```
-
-1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
-1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
+1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the `Main()` operation on the default simulator.
 1. The `Message` and `DumpMachine` outputs appear in the debug console.
-
-> [!NOTE]
-> If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
 
 ### [Jupyter Notebook](#tab/tabid-python)
 
@@ -243,7 +233,7 @@ For now, the `Perform3qubitQFT` operation doesn't return any value - the operati
     import qsharp
     ```
 
-1. Add the Q# program with the `Perform3qubitQFT` operation. To do so, you use the `%%qhsarp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`. Copy this code into the second cell. 
+1. Add the Q# program with the `Main` operation. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`. Copy this code into the second cell. 
 
     ```qsharp
     %%qsharp
@@ -252,7 +242,7 @@ For now, the `Perform3qubitQFT` operation doesn't return any value - the operati
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Arrays;
     
-    operation Perform3qubitQFT() : Unit {
+    operation Main() : Unit {
     
         use qs = Qubit[3]; // allocate three qubits
     
@@ -285,50 +275,13 @@ For now, the `Perform3qubitQFT` operation doesn't return any value - the operati
 1. Finally, run the code. You can run the same simulation a number of times, independently. Each independent simulation is called a "shot". For example, let's run the simulation, 10 times.
 
     ```python
-    results = qsharp.run("Perform3qubitQFT()", shots=10)
+    results = qsharp.run("Main()", shots=10)
     print(results)
-    ```
+  ```
+
+The `Message` and `DumpMachine` outputs are displayed in an output cell.
 ***
 
-### Understand the output of the QFT circuit
-
-When called on the full-state simulator, `DumpMachine()` provides these multiple representations of the quantum state's wavefunction.
-The possible states of an $n$-qubit system can be represented by $2^n$ computational basis states, each with a corresponding complex coefficient (an amplitude and a phase).
-The computational basis states correspond to all the possible binary strings of length $n$, that is, all the possible combinations of qubit states $\ket{0}$ and $\ket{1}$, where each binary digit corresponds to an individual qubit.
-
-The first row provides a comment with the IDs of the corresponding qubits in their significant order.
-Qubit `2` being the "most significant" means that in the binary representation of basis state vector $\ket{i}$, the state of qubit `2` corresponds to the left-most digit.
-For example, $\ket{6} = \ket{110}$ comprises qubits `2` and `1` both in $\ket{1}$ and qubit `0` in $\ket{0}$.
-
-The rest of the rows describe the probability amplitude of measuring the basis state vector $\ket{i}$ in both Cartesian and polar formats.
-Examining the first row for the input state $\ket{000}$:
-
-* **`|0>:`** This row corresponds to the `0` computational basis state (given that the initial state post-allocation was $\ket{000}$, this is expected to be the only state with probability amplitude at this point).
-* **`1.000000 +  0.000000 i`**: The probability amplitude in Cartesian format.
-* **` == `**: the `equal` sign separates both equivalent representations.
-* **`********************`**: A graphical representation of the magnitude. The number of `*` is proportionate to the probability of measuring this state vector.
-* **`[ 1.000000 ]`**: The numeric value of the magnitude.
-* **`    ---`**: A graphical representation of the amplitude's phase.
-* **`[ 0.0000 rad ]`**: The numeric value of the phase (in radians).
-
-Both the magnitude and the phase are displayed with a graphical representation. The magnitude representation is straightforward: it shows a bar of `*` and the higher the probability, the longer the bar will be. 
-
-The displayed output illustrates that the programmed operations transformed the state from
-
-$$
-\ket{\psi}\_{initial} = \ket{000}
-$$
-
-to
-
-$$
-\begin{align}
-    \ket{\psi}\_{final} &= \frac{1}{\sqrt{8}} \left( \ket{000} + \ket{001} + \ket{010} + \ket{011} + \ket{100} + \ket{101} + \ket{110} + \ket{111}  \right) \\\\
-    &= \frac{1}{\sqrt{2^n}}\sum\_{j=0}^{2^n-1} \ket{j},
-\end{align}
-$$
-
-which is precisely the behavior of the three-qubit Fourier transform.
 
 If you are curious about how other input states are affected, you are encouraged to experiment with applying other qubit operations before the transform.
 
@@ -344,10 +297,10 @@ Upon measurement in a given basis (for example, the computational basis $ \{ \ke
 
 To implement measurements within a Q# program, use the `M` operation, which returns a `Result` type.
 
-First, modify the `Perform3QubitQFT` operation to return an array of measurement results, `Result[]`, instead of `Unit`.
+First, modify the `Main` operation to return an array of measurement results, `Result[]`, instead of `Unit`.
 
 ```qsharp
-operation Perform3QubitQFT() : Result[] {
+operation Main() : Result[] {
 ```
 
 ### Define and initialize `Result[]` array
@@ -400,7 +353,7 @@ namespace NamespaceQFT {
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Arrays;
 
-    operation Perform3QubitQFT() : Result[] {
+    operation Main() : Result[] {
 
         mutable resultArray = [Zero, size = 3];
 
@@ -440,20 +393,15 @@ namespace NamespaceQFT {
 ```
 
 > [!TIP]
-> Recall to save your file every time you introduce a change to the code before running it again.
+> Remember to save your file every time you introduce a change to the code before running it again.
 
 ### [Q# standalone program](#tab/tabid-qsharp2)
 
-1. Add an `EntryPoint` before the `Perform3qubitQFT` operation :
-
-    ```qsharp
-    @EntryPoint()
-    operation Perform3qubitQFT() : Unit {
-    ```
-
 1. Set the target profile to **Unrestricted**. Click on the **QIR: Base** button in the bottom of the VS Code window and select **Unrestricted** from the dropdown menu. If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
-1. To run your program, select **Run Q# file** from the play icon drop-down in the top-right, or press **Ctrl+5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
+1. To run your program, select **Run Q# file** from the play icon drop-down in the top-right, or press **Ctrl+5**. The program runs the `Main()` operation on the default simulator.
 1. The `Message` and `DumpMachine` outputs appear in the debug console.
+
+<!-- UPDATE THIS OUTPUT -->
 
 Your output should look similar to the output:
 
@@ -495,7 +443,7 @@ open Microsoft.Quantum.Diagnostics;
 open Microsoft.Quantum.Math;
 open Microsoft.Quantum.Arrays;
 
-operation Perform3QubitQFT() : Result[] {
+operation Main() : Result[] {
 
     mutable resultArray = [Zero, size = 3];
 
@@ -536,7 +484,7 @@ operation Perform3QubitQFT() : Result[] {
 1. Run the code.
 
     ```python
-    results = qsharp.run("Perform3QubitQFT()", shots=10)
+    results = qsharp.run("Main()", shots=10)
     print(results)
     ```
 
