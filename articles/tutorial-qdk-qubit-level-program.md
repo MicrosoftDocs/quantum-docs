@@ -174,7 +174,6 @@ ResetAll(qs); // deallocate qubits
 The Q# program is completed. Your **QFTcircuit.qs** file should now look like this:
 
 ```qsharp
-import Microsoft.Quantum.Intrinsic.*;
 import Microsoft.Quantum.Diagnostics.*;
 import Microsoft.Quantum.Math.*;
 import Microsoft.Quantum.Arrays.*;
@@ -232,10 +231,9 @@ For now, the `Main` operation doesn't return any value - the operation returns `
 
     ```qsharp
     %%qsharp
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Arrays;
+    import Microsoft.Quantum.Diagnostics.*;
+    import Microsoft.Quantum.Math.*;
+    import Microsoft.Quantum.Arrays.*;
     
     operation Main() : Unit {
     
@@ -342,49 +340,48 @@ Now change the placement of the `DumpMachine` functions to output the state befo
 Your final Q# code should look like this:
 
 ```qsharp
-namespace NamespaceQFT {
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Arrays;
 
-    operation Main() : Result[] {
+import Microsoft.Quantum.Diagnostics.*;
+import Microsoft.Quantum.Math.*;
+import Microsoft.Quantum.Arrays.*;
 
-        mutable resultArray = [Zero, size = 3];
+operation Main() : Result[] {
 
-        use qs = Qubit[3];
+    mutable resultArray = [Zero, size = 3];
 
-        //QFT:
-        //first qubit:
-        H(qs[0]);
-        Controlled R1([qs[1]], (PI()/2.0, qs[0]));
-        Controlled R1([qs[2]], (PI()/4.0, qs[0]));
+    use qs = Qubit[3];
 
-        //second qubit:
-        H(qs[1]);
-        Controlled R1([qs[2]], (PI()/2.0, qs[1]));
+    //QFT:
+    //first qubit:
+    H(qs[0]);
+    Controlled R1([qs[1]], (PI()/2.0, qs[0]));
+    Controlled R1([qs[2]], (PI()/4.0, qs[0]));
 
-        //third qubit:
-        H(qs[2]);
+    //second qubit:
+    H(qs[1]);
+    Controlled R1([qs[2]], (PI()/2.0, qs[1]));
 
-        SWAP(qs[2], qs[0]);
+    //third qubit:
+    H(qs[2]);
 
-        Message("Before measurement: ");
-        DumpMachine();
+    SWAP(qs[2], qs[0]);
 
-        for i in IndexRange(qs) {
-            set resultArray w/= i <- M(qs[i]);
-        }
+    Message("Before measurement: ");
+    DumpMachine();
 
-        Message("After measurement: ");
-        DumpMachine();
-
-        ResetAll(qs);
-        Message("Post-QFT measurement results [qubit0, qubit1, qubit2]: ");
-        return resultArray;
-
+    for i in IndexRange(qs) {
+        set resultArray w/= i <- M(qs[i]);
     }
+
+    Message("After measurement: ");
+    DumpMachine();
+
+    ResetAll(qs);
+    Message("Post-QFT measurement results [qubit0, qubit1, qubit2]: ");
+    return resultArray;
+
 }
+
 ```
 
 > [!TIP]
@@ -402,28 +399,28 @@ Your output should look similar to the output:
 
 ```Output
 Before measurement: 
-# wave function for qubits with ids (least to most significant): 0;1;2
-|0>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-|1>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-|2>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-|3>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-|4>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-|5>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-|6>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-|7>:     0.353553 +  0.000000 i  ==     ***                  [ 0.125000 ]     --- [  0.00000 rad ]
-After measurement:
-# wave function for qubits with ids (least to most significant): 0;1;2
-|0>:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]
-|1>:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]
-|2>:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]
-|3>:     1.000000 +  0.000000 i  ==     ******************** [ 1.000000 ]     --- [  0.00000 rad ]
-|4>:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]
-|5>:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]
-|6>:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]
-|7>:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]
+
+ Basis | Amplitude      | Probability | Phase
+ -----------------------------------------------
+ |000⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+ |001⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+ |010⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+ |011⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+ |100⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+ |101⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+ |110⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+ |111⟩ |  0.3536+0.0000𝑖 |    12.5000% |   0.0000
+
+After measurement: 
+
+ Basis | Amplitude      | Probability | Phase
+ -----------------------------------------------
+ |010⟩ |  1.0000+0.0000𝑖 |   100.0000% |   0.0000
 
 Post-QFT measurement results [qubit0, qubit1, qubit2]: 
-[One,One,Zero]
+
+[Zero, One, Zero]
+
 ```
 
 ### [Jupyter Notebook](#tab/tabid-python2)
@@ -433,10 +430,9 @@ Post-QFT measurement results [qubit0, qubit1, qubit2]:
 ```qsharp
 %%qsharp
 
-open Microsoft.Quantum.Intrinsic;
-open Microsoft.Quantum.Diagnostics;
-open Microsoft.Quantum.Math;
-open Microsoft.Quantum.Arrays;
+import Microsoft.Quantum.Diagnostics.*;
+import Microsoft.Quantum.Math.*;
+import Microsoft.Quantum.Arrays.*;
 
 operation Main() : Result[] {
 
@@ -498,22 +494,47 @@ The latter is not an issue in this example, but you would see relative phases ap
 ## Use the Q# operations to simplify the QFT circuit
 
 As mentioned in the introduction, much of Q#'s power rests in the fact that it allows you to abstract-away the worries of dealing with individual qubits.
-Indeed, if you want to develop full-scale, applicable quantum programs, worrying about whether an `H` operation goes before or after a particular rotation would only slow you down.
+Indeed, if you want to develop full-scale, applicable quantum programs, worrying about whether an `H` operation goes before or after a particular rotation would only slow you down. Azure Quantum provides the `ApplyQFT` operation, which you can use and apply for any number of qubits.
 
-The Q# namespace `Microsoft.Quantum.Canon` contains the `ApplyQFT` operation, which you can use and apply for any number of qubits.
-
-1. To access the `ApplyQFT` operation, add `open` statement for the `Microsoft.Quantum.Canon` namespace at the beginning of the Q# file:
-
-    ```qsharp
-    open Microsoft.Quantum.Canon;
-    ```
-
-1. Replace everything from the first `H` to the `SWAP` replaced by:
+1. Replace everything from the first `H` operation to the `SWAP` operation, inclusive, with:
 
     ```qsharp
     ApplyQFT(qs);
     ```
+1. Your code should now look like this
 
+    ```qsharp
+    import Microsoft.Quantum.Diagnostics.*;
+    import Microsoft.Quantum.Math.*;
+    import Microsoft.Quantum.Arrays.*;
+    
+    operation Main() : Result[] {
+    
+        mutable resultArray = [Zero, size = 3];
+    
+        use qs = Qubit[3];
+    
+        //QFT:
+        //first qubit:
+       
+        ApplyQFT(qs);
+    
+        Message("Before measurement: ");
+        DumpMachine();
+    
+        for i in IndexRange(qs) {
+            set resultArray w/= i <- M(qs[i]);
+        }
+    
+        Message("After measurement: ");
+        DumpMachine();
+    
+        ResetAll(qs);
+        Message("Post-QFT measurement results [qubit0, qubit1, qubit2]: ");
+        return resultArray;
+    
+    }
+    ```
 1. Run the Q# program again and notice that the output is the same as before.
 1. To see the real benefit of using Q# operations, change the number of qubits to something other than `3`:
 
@@ -525,7 +546,7 @@ use qs = Qubit[4];
 
 ```
 
-You can thus apply the proper QFT for any given number of qubits, without having to worry about the mess of new `H` operations and rotations on each qubit.
+You can thus apply the proper QFT for any given number of qubits, without having to worry about adding new `H` operations and rotations on each qubit.
 
 ## Related content
 
