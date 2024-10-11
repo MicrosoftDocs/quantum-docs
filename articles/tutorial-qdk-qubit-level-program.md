@@ -61,7 +61,6 @@ You can view the [full Q# code](#the-complete-qft-operation) for this section as
 Inside your Q# file, import the relevant `Microsoft.Quantum.*` namespaces.
 
 ```qsharp
-
 import Microsoft.Quantum.Diagnostics.*;
 import Microsoft.Quantum.Math.*;
 import Microsoft.Quantum.Arrays.*;
@@ -97,7 +96,10 @@ As in real quantum computations, Q# does not allow you to directly access qubit 
 
 ### Apply single-qubit and controlled operations
 
-Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Microsoft.Quantum.Intrinsic` namespace. Note that `Microsoft.Quantum.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
+Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Microsoft.Quantum.Intrinsic` namespace. 
+
+> [!NOTE]
+> Note that `Microsoft.Quantum.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
@@ -340,7 +342,6 @@ Now change the placement of the `DumpMachine` functions to output the state befo
 Your final Q# code should look like this:
 
 ```qsharp
-
 import Microsoft.Quantum.Diagnostics.*;
 import Microsoft.Quantum.Math.*;
 import Microsoft.Quantum.Arrays.*;
@@ -389,13 +390,11 @@ operation Main() : Result[] {
 
 ### [Q# standalone program](#tab/tabid-qsharp2)
 
-1. Set the target profile to **Unrestricted**. Click on the **QIR: Base** button in the bottom of the VS Code window and select **Unrestricted** from the dropdown menu. If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
 1. To run your program, select **Run Q# file** from the play icon drop-down in the top-right, or press **Ctrl+5**. The program runs the `Main()` operation on the default simulator.
 1. The `Message` and `DumpMachine` outputs appear in the debug console.
 
-<!-- UPDATE THIS OUTPUT -->
-
-Your output should look similar to the output:
+Your output should look similar to this:
 
 ```Output
 Before measurement: 
@@ -479,6 +478,29 @@ operation Main() : Result[] {
     print(results)
     ```
 
+1. Your output should look similar to this:
+
+    ```output
+    Before measurement: 
+    Basis State
+    (|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+    |000⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    |001⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    |010⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    |011⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    |100⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    |101⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    |110⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    |111⟩	0.3536+0.0000𝑖	 12.5000%	↑	0.0000
+    
+    After measurement: 
+    Basis State
+    (|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
+    |011⟩	1.0000+0.0000𝑖	 100.0000%	↑	0.0000
+    
+    Post-QFT measurement results [qubit0, qubit1, qubit2]: 
+    [[Zero, One, One]]
+```
 ***
 
 This output illustrates a few different things:
