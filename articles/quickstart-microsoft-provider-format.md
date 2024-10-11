@@ -517,11 +517,11 @@ You can also construct Quil programs manually and submit them using the `azure-q
     from pyquil_for_azure_quantum import get_qpu, get_qvm
     ```
 
-1. Use the `get_qvm` or `get_qpu` function to get a connection to the QVM.
+1. Use the `get_qvm` or `get_qpu` function to get a connection to the QVM or QPU.
 
     ```python
     qc = get_qvm()  # For simulation
-
+    # qc = get_qpu("Ankaa-9Q-3") for submitting to a QPU
     ```
 
 1. Create a Quil program. Any valid Quil program is accepted, but the readout **must** be named `ro`.
