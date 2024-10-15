@@ -269,9 +269,9 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
     > [!NOTE]
     > For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
-### Submit a job to PASQAL using Pulser SDK
+### Submit a circuit to PASQAL using Pulser SDK
 
-To submit a job to PASQAL, you can use the Pulser SDK to create pulse sequences and submit them to the PASQAL target.
+To submit a circuit to PASQAL, you can use the Pulser SDK to create pulse sequences and submit them to the PASQAL target.
 
 #### Install the Pulser SDK
 
@@ -309,7 +309,7 @@ except ImportError:
     ]
     layout.draw()
     ````
-    :::image type="content" source="media/provider-format-pasqal-layout.png" alt-text="":::
+    :::image type="content" source="media/provider-format-pasqal-layout.png" alt-text="Trap layout":::
 
 3. In this example we will select 7 traps using their ids to define a quantum register of 7 qubits.
 
@@ -317,7 +317,7 @@ except ImportError:
     reg = layout.define_register(*[30, 21, 26, 35, 39, 34, 25])
     reg.draw()
     ```
-    :::image type="content" source="media/provider-format-pasqal-register.png" alt-text="":::
+    :::image type="content" source="media/provider-format-pasqal-register.png" alt-text="Quantum register":::
 
 #### Write a pulse sequence
 
@@ -351,7 +351,7 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
 
     seq.draw()
     ```
-    :::image type="content" source="media/provider-format-pasqal-sequence.png" alt-text="":::
+    :::image type="content" source="media/provider-format-pasqal-sequence.png" alt-text="Pulse sequence":::
 
 #### Convert the sequence to a JSON string
 
@@ -437,7 +437,7 @@ Organize your register in a custom way without any limitations from the pre-cali
 
     seq = Sequence(custom_reg, QPU)
     ```
-    :::image type="content" source="media/provider-format-pasqal-array.png" alt-text="":::
+    :::image type="content" source="media/provider-format-pasqal-array.png" alt-text="Plot of a 4x4 square lattice with 16 qubits.":::
 
 After defining a custom register, you can follow the exact same steps outlined in the previous section to send a specified sequence on our emulator.
 
