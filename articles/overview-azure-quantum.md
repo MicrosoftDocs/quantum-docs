@@ -95,12 +95,14 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 
 Choose the provider that best suits the characteristics of your problem and your needs. 
 
-- [IONQ](https://ionq.com/): Dynamically reconfigurable trapped-ion quantum computers for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
-- [PASQAL](https://pasqal.io/) (Private Preview): Neutral atom-based quantum processors operating at room temperature, with long coherence times and impressive qubit connectivity. 
-- [Quantinuum](https://www.quantinuum.com): Trapped-ion systems with high-fidelity, fully connected qubits, low error rates, qubit reuse, and the ability to perform mid-circuit measurements.
-- [Rigetti](https://www.rigetti.com/): Rigetti's systems are powered by superconducting qubit-based quantum processors. They offer fast gate times, low-latency conditional logic, and fast program execution times.
+- [IONQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable trapped-ion quantum computers for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
+- [PASQAL](xref:microsoft.quantum.providers.pasqal) (Private Preview): Neutral atom-based quantum processors operating at room temperature, with long coherence times and impressive qubit connectivity. 
+- [Quantinuum](xref:microsoft.quantum.providers.quantinuum): Trapped-ion systems with high-fidelity, fully connected qubits, low error rates, qubit reuse, and the ability to perform mid-circuit measurements.
+- [Rigetti](xref:microsoft.quantum.providers.rigetti): Rigetti's systems are powered by superconducting qubit-based quantum processors. They offer fast gate times, low-latency conditional logic, and fast program execution times.
 
-For more information on the specifications of each provider, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list). For information about job cost, see [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing).
+For more information on the specifications of each provider, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list). 
+
+For information about job cost, see [Pricing in Azure Quantum](xref:microsoft.quantum.providers-pricing) and [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing).
 
 ### Providers coming soon
 
