@@ -269,11 +269,11 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
     > [!NOTE]
     > For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
-### Submit a circuit to PASQAL using Pulser SDK
+### Submit a job to PASQAL using Pulser SDK
 
-To submit a circuit to PASQAL, you can use the Pulser SDK to create pulse sequences and submit them to the PASQAL target.
+To submit a job to PASQAL, you can use the Pulser SDK to create pulse sequences and submit them to the PASQAL target.
 
-#### Install the Pulser SDK 
+#### Install the Pulser SDK
 
 [Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. It's designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
 
@@ -284,83 +284,74 @@ try:
     import pulser
 except ImportError:
     !pip -q install pulser
-    !pip -q install pulser-core
 ```
 
 #### Create a quantum register
 
-1. First, load the required imports:
+1. Fresnel is the first PASQAL commercial neutral atoms quantum computer that you can target for your quantum jobs. To configure your quantum registers, you arrange an array of qubits. FRESNEL provides predefined trap layouts that you must utilize to create your quantum register.
 
     ```python
-    import numpy as np
-    import pulser
-    from pprint import pprint
-    from pulser import Pulse, Sequence, Register
+    from pulser_pasqal import PasqalCloud
+
+    devices = PasqalCloud().fetch_available_devices()
+    QPU = devices["FRESNEL"]
+
+    # List all available calibrated register layouts
+    for calibrated_register_layout in QPU.calibrated_register_layouts.keys():
+        print(calibrated_register_layout)
     ```
 
-1. PASQAL's QPU is made of neutral atoms trapped at well-defined positions in a lattice. To define your quantum registers you create an array of qubits on a lattice. For example, the following code creates a 4x4 square lattice of qubits:
+2. In this example, we will be using `TriangularLatticeLayout(61, 5.0µm)` as the trap layout. You can visualize the chosen layout.
 
     ```python
-    L = 4
-    square = np.array([[i, j] for i in range(L) for j in range(L)], dtype=float)
-    square -= np.mean(square, axis=0)
-    square *= 5
-    
-    qubits = dict(enumerate(square))
-    reg = Register(qubits)
+    layout = QPU.calibrated_register_layouts[
+        "TriangularLatticeLayout(61, 5.0µm)"
+    ]
+    layout.draw()
+    ````
+    :::image type="content" source="media/provider-format-pasqal-layout.png" alt-text="":::
+
+3. In this example we will select 7 traps using their ids to define a quantum register of 7 qubits.
+
+    ```python
+    reg = layout.define_register(*[30, 21, 26, 35, 39, 34, 25])
     reg.draw()
     ```
-
-    :::image type="content" source="media/provider-format-pasqal-array.png" alt-text="Plot of a 4x4 square lattice with 16 qubits.":::
+    :::image type="content" source="media/provider-format-pasqal-register.png" alt-text="":::
 
 #### Write a pulse sequence
 
 The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the quantum register.
 
-1. First, you need to set up a pulse sequence, and declare the channels that will be used to control the atoms. For example, the following code declares two channels: `ch0` and `ch1`.
+1. Define the pulse sequence attributes by declaring the channels that will be used to control the atoms. For example, the following code declares one channel: `ch0`.
+
+- To create a Sequence, you need to provide a Register instance along with the device where the sequence will be executed. You can use the Fresnel QPU device we created earlier or import a virtual device from Pulser for more flexibility. The use of a VirtualDevice allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, refer to the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
 
     ```python
-    from pulser.devices import Chadoq2
-    
-    seq = Sequence(reg, Chadoq2)
-    
-    seq.declare_channel("ch0", "raman_local")
-    print("Available channels after declaring 'ch0':")
-    pprint(seq.available_channels)
-    
-    seq.declare_channel("ch1", "rydberg_local", initial_target=4)
-    print("\nAvailable channels after declaring 'ch1':")
-    pprint(seq.available_channels)
+    from pulser import Sequence
+
+    seq = Sequence(reg, QPU)
+    # print the available channels for your sequence
+    print(seq.available_channels)
+    # Declare a channel. In this example we will be using `rydberg_global`
+    seq.declare_channel("ch0", "rydberg_global")
     ```
 
-    A few things to consider:
-    - A `Sequence` in Pulser is a series of operations that are to be executed on a quantum register.
-    - The code sets up a sequence of operations to be executed on an `AnalogDevice` device. `AnalogDevice` is a predefined device in Pulser that represents a Fresnel1-equivalent quantum computer.
-
-1. Create a pulse sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a simple pulse and adds it to channel `ch0`, and then creates a complex pulse and adds it to channel `ch1`.
+2. Add pulses to your sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a pulse and adds it to channel `ch0`.
 
     ```python
-    seq.target(1, "ch0") # Target qubit 1 with channel "ch0"
-    simple_pulse = Pulse.ConstantPulse(200, 2, -10, 0)
-    seq.add(simple_pulse, "ch0") # Add the pulse to channel "ch0"
-    seq.delay(100, "ch1")
+    from pulser import Pulse
     from pulser.waveforms import RampWaveform, BlackmanWaveform
-    
-    duration = 1000
-    # Create a Blackman waveform with a duration of 1000 ns and an area of pi/2 rad
-    amp_wf = BlackmanWaveform(duration, np.pi / 2)  
-    # Create a ramp waveform with a duration of 1000 ns and a linear sweep from -20 to 20 rad/µs
-    detuning_wf = RampWaveform(duration, -20, 20) 
+    import numpy as np
 
-    # Create a pulse with the amplitude waveform amp_wf, the detuning waveform detuning_wf, and a phase of 0 rad.
-    complex_pulse = Pulse(amp_wf, detuning_wf, phase=0) 
-    complex_pulse.draw()
-    seq.add(complex_pulse, "ch1") # Add the pulse to channel "ch1"
+    amp_wf = BlackmanWaveform(1000, np.pi)
+    det_wf = RampWaveform(1000, -5, 5)
+    pulse = Pulse(amp_wf, det_wf, 0)
+    seq.add(pulse, "ch0")
+
+    seq.draw()
     ```
-
-The image shows the simple and the complex pulse.
-
-:::image type="content" source="media/provider-format-pasqal-pulser.png" alt-text="Plot of the simple and the complex pulse.":::
+    :::image type="content" source="media/provider-format-pasqal-sequence.png" alt-text="":::
 
 #### Convert the sequence to a JSON string
 
@@ -374,7 +365,6 @@ def prepare_input_data(seq):
     input_data = {}
     input_data["sequence_builder"] = json.loads(seq.to_abstract_repr())
     to_send = json.dumps(input_data)
-    #print(json.dumps(input_data, indent=4, sort_keys=True))
     return to_send
 ```
 
@@ -384,39 +374,72 @@ def prepare_input_data(seq):
 
     ```python
     # Submit the job with proper input and output data formats
-    def submit_job(target, seq):
+    def submit_job(target, seq, shots):
         job = target.submit(
             input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
-            input_data_format="pasqal.pulser.v1", 
+            input_data_format="pasqal.pulser.v1",
             output_data_format="pasqal.pulser-results.v1",
             name="PASQAL sequence",
-            shots=100 # Number of shots
+            shots=shots # Number of shots
         )
-    
+
         print(f"Queued job: {job.id}")
-        job.wait_until_completed()
-        print(f"Job completed with state: {job.details.status}")
-        result = job.get_results()
-    
-        return result
+        return job
     ```
 
     > [!NOTE]
-    > The time required to run a circuit on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
+    > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-1. Submit the program to PASQAL. For example, you can submit the program to [PASQAL Emu-TN target](xref:microsoft.quantum.providers.pasqal#emu-tn).
+2. Submit the program to PASQAL.
+If this is your first time submitting a job, we encourage you to test your code using the emulator as a target.
+
+- QPU target name = `pasqal.qpu.fresnel`
+- Emulator target name = `pasqal.sim.emu-tn`
 
     ```python
     target = workspace.get_targets(name="pasqal.sim.emu-tn")
-    submit_job(target, seq)
+    job = submit_job(target, seq, 10)
+
+    job.wait_until_completed()
+    print(f"Job completed with state: {job.details.status}")
+    result = job.get_results()
+    print(result)
     ```
 
-    ```ouput
-    {'0000000000000000': 59,
-     '0000100000000000': 39,
-     '0100000000000000': 1,
-     '0100100000000000': 1}
+    ```output
+    {
+        "1000000": 3, 
+        "0010000": 1, 
+        "0010101": 1
+    }
     ```
+
+#### Explore Advanced Emulator Features
+Our emulators offer advanced features that are not yet supported by Pasqal's QPU:
+
+##### Custom register
+Organize your register in a custom way without any limitations from the pre-calibrated layouts. Note that this feature will soon be available on FRESNEL.
+
+- For example, the following code creates a 4x4 square lattice of qubits:
+
+    ```python
+    import numpy as np
+    from pulser import Register, Sequence
+
+    L = 4
+    square = np.array([[i, j] for i in range(L) for j in range(L)], dtype=float)
+    square -= np.mean(square, axis=0)
+    square *= 5
+
+    qubits = dict(enumerate(square))
+    custom_reg = Register(qubits)
+    custom_reg.draw()
+
+    seq = Sequence(custom_reg, QPU)
+    ```
+    :::image type="content" source="media/provider-format-pasqal-array.png" alt-text="":::
+
+After defining a custom register, you can follow the exact same steps outlined in the previous section to send a specified sequence on our emulator.
 
 ### Submit a circuit to Quantinuum using OpenQASM
 
