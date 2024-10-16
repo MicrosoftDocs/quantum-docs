@@ -421,7 +421,8 @@ def prepare_input_data(seq):
 Our emulators offer advanced features that are not yet supported by Pasqal's QPU:
 
 ##### Custom register
-Organize your register in a custom way without any limitations from the pre-calibrated layouts. Note that this feature will soon be available on FRESNEL.
+
+You can organize your register in a custom way without any limitations from the pre-calibrated layouts. For example, the following code creates a 4x4 square lattice of qubits: 
 
 - For example, the following code creates a 4x4 square lattice of qubits:
 
