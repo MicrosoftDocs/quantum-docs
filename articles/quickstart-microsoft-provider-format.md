@@ -424,7 +424,6 @@ Our emulators offer advanced features that are not yet supported by Pasqal's QPU
 
 You can organize your register in a custom way without any limitations from the pre-calibrated layouts. For example, the following code creates a 4x4 square lattice of qubits: 
 
-- For example, the following code creates a 4x4 square lattice of qubits:
 
     ```python
     import numpy as np
