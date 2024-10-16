@@ -398,7 +398,6 @@ def prepare_input_data(seq):
 
 1. Submit the program to PASQAL. Before submitting your code to real quantum hardware, you can test your code using the emulator  `pasqal.sim.emu-tn` as a target.
 
-- Emulator target name = `pasqal.sim.emu-tn`
 
     ```python
     target = workspace.get_targets(name="pasqal.sim.emu-tn") # Change to "pasqal.qpu.fresnel" to use Fresnel QPU
