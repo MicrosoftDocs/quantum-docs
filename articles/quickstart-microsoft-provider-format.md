@@ -421,24 +421,23 @@ def prepare_input_data(seq):
 
 [PASQAL's emulator](xref:microsoft.quantum.providers.pasqal#emulator) offers advanced features that are not yet supported by Fresnel QPU. You can organize your register in a custom way without any limitations from the pre-calibrated layouts. For example, the following code creates a 4x4 square lattice of qubits:
 
+```python
+import numpy as np
+from pulser import Register, Sequence
 
+L = 4
+square = np.array([[i, j] for i in range(L) for j in range(L)], dtype=float)
+square -= np.mean(square, axis=0)
+square *= 5
 
-    ```python
-    import numpy as np
-    from pulser import Register, Sequence
+qubits = dict(enumerate(square))
+custom_reg = Register(qubits)
+custom_reg.draw()
 
-    L = 4
-    square = np.array([[i, j] for i in range(L) for j in range(L)], dtype=float)
-    square -= np.mean(square, axis=0)
-    square *= 5
+seq = Sequence(custom_reg, QPU)
+```
 
-    qubits = dict(enumerate(square))
-    custom_reg = Register(qubits)
-    custom_reg.draw()
-
-    seq = Sequence(custom_reg, QPU)
-    ```
-    :::image type="content" source="media/provider-format-pasqal-array.png" alt-text="Plot of a 4x4 square lattice with 16 qubits.":::
+:::image type="content" source="media/provider-format-pasqal-array.png" alt-text="Plot of a 4x4 square lattice with 16 qubits.":::
 
 After defining a custom register, you can follow the exact same steps outlined in the previous section to send a specified sequence on our emulator.
 
