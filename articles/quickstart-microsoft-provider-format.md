@@ -337,7 +337,7 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
     seq.declare_channel("ch0", "rydberg_global")
     ```
 
-2. Add pulses to your sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a pulse and adds it to channel `ch0`.
+1. Add pulses to your sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a pulse and adds it to channel `ch0`.
 
     ```python
     from pulser import Pulse
