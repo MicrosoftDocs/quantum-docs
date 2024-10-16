@@ -397,7 +397,6 @@ def prepare_input_data(seq):
     > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
 2. Submit the program to PASQAL.
-If this is your first time submitting a job, we encourage you to test your code using the emulator as a target.
 
 - QPU target name = `pasqal.qpu.fresnel`
 - Emulator target name = `pasqal.sim.emu-tn`
