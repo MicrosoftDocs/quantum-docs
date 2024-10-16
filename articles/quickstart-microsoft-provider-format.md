@@ -317,7 +317,9 @@ except ImportError:
     reg = layout.define_register(*[30, 21, 26, 35, 39, 34, 25])
     reg.draw()
     ```
-    :::image type="content" source="media/provider-format-pasqal-register.png" alt-text="Quantum register":::
+    The following image shows the final display of the qubit register.
+    
+    :::image type="content" source="media/provider-format-pasqal-register.png" alt-text="Diagram showing the final quantum register after selecting 7 points from the 60 point-layout.":::
 
 #### Write a pulse sequence
 
