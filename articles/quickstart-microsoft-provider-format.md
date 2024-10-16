@@ -325,7 +325,8 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
 
 1. Define the pulse sequence attributes by declaring the channels that will be used to control the atoms. For example, the following code declares one channel: `ch0`.
 
-- To create a Sequence, you need to provide a Register instance along with the device where the sequence will be executed. You can use the Fresnel QPU device we created earlier or import a virtual device from Pulser for more flexibility. The use of a VirtualDevice allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, refer to the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
+   > [!NOTE]
+   > You can use the `QPU = devices["FRESNEL"]`  device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
 
     ```python
     from pulser import Sequence
