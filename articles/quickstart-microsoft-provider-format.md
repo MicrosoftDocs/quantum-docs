@@ -351,6 +351,7 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
 
     seq.draw()
     ```
+    The following image shows the pulse sequence. 
     :::image type="content" source="media/provider-format-pasqal-sequence.png" alt-text="Pulse sequence":::
 
 #### Convert the sequence to a JSON string
