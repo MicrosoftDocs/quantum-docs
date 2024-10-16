@@ -323,7 +323,7 @@ except ImportError:
 
 The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the quantum register.
 
-1. Define the pulse sequence attributes by declaring the channels that will be used to control the atoms. For example, the following code declares one channel: `ch0`.
+1. First,  you define the pulse sequence attributes by declaring the channels that will be used to control the atoms. To create a `Sequence`, you need to provide a `Register` instance along with the device where the sequence will be executed. For example, the following code declares one channel: `ch0`.
 
    > [!NOTE]
    > You can use the `QPU = devices["FRESNEL"]`  device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
