@@ -311,7 +311,7 @@ except ImportError:
     ````
     :::image type="content" source="media/provider-format-pasqal-layout.png" alt-text="Trap layout":::
 
-3. In this example we will select 7 traps using their ids to define a quantum register of 7 qubits.
+1. Then, you define the qubit register selecting a set of traps from the layout. In this example, the layout has 60 traps and you select 7 traps using their ids to define a quantum register of 7 qubits.
 
     ```python
     reg = layout.define_register(*[30, 21, 26, 35, 39, 34, 25])
