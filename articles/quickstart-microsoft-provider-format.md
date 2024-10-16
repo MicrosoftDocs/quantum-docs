@@ -396,7 +396,7 @@ def prepare_input_data(seq):
     > [!NOTE]
     > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-1. Submit the program to PASQAL. Before submitting your code to real quantum hardware, you can test your code using the emulator  `pasqal.sim.emu-tn` as a target.
+1. Submit the program to PASQAL. Before submitting your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-tn` as a target.
 
 
     ```python
