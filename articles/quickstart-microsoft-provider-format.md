@@ -401,7 +401,7 @@ def prepare_input_data(seq):
 - Emulator target name = `pasqal.sim.emu-tn`
 
     ```python
-    target = workspace.get_targets(name="pasqal.sim.emu-tn")
+    target = workspace.get_targets(name="pasqal.sim.emu-tn") # Change to "pasqal.qpu.fresnel" to use Fresnel QPU
     job = submit_job(target, seq, 10)
 
     job.wait_until_completed()
