@@ -418,6 +418,7 @@ def prepare_input_data(seq):
     ```
 
 #### Explore Advanced Emulator Features
+
 [PASQAL's emulator](xref:microsoft.quantum.providers.pasqal#emulator) offers advanced features that are not yet supported by Fresnel QPU:
 
 
