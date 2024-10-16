@@ -422,7 +422,6 @@ def prepare_input_data(seq):
 [PASQAL's emulator](xref:microsoft.quantum.providers.pasqal#emulator) offers advanced features that are not yet supported by Fresnel QPU:
 
 
-You can organize your register in a custom way without any limitations from the pre-calibrated layouts. For example, the following code creates a 4x4 square lattice of qubits: 
 
     ```python
     import numpy as np
