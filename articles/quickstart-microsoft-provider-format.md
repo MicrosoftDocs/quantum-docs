@@ -419,7 +419,7 @@ def prepare_input_data(seq):
 
 #### Explore Advanced Emulator Features
 
-[PASQAL's emulator](xref:microsoft.quantum.providers.pasqal#emulator) offers advanced features that are not yet supported by Fresnel QPU:
+[PASQAL's emulator](xref:microsoft.quantum.providers.pasqal#emulator) offers advanced features that are not yet supported by Fresnel QPU. You can organize your register in a custom way without any limitations from the pre-calibrated layouts. For example, the following code creates a 4x4 square lattice of qubits:
 
 
 
