@@ -288,7 +288,7 @@ except ImportError:
 
 #### Create a quantum register
 
-1. Fresnel is the first PASQAL commercial neutral atoms quantum computer that you can target for your quantum jobs. To configure your quantum registers, you arrange an array of qubits. FRESNEL provides predefined trap layouts that you must utilize to create your quantum register.
+1. First, you create a 'devices' object to import the PASQAL quantum computer target, Fresnel. FRESNEL provides predefined trap layouts that you can utilize to create your quantum register. To configure your quantum registers, you arrange an array of qubits.
 
     ```python
     from pulser_pasqal import PasqalCloud
