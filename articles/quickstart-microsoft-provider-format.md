@@ -444,6 +444,9 @@ You can organize your register in a custom way without any limitations from the 
 
 After defining a custom register, you can follow the exact same steps outlined in the previous section to send a specified sequence on our emulator.
 
+> [!NOTE]
+> Custom register feature will soon be available on FRESNEL.
+
 ### Submit a circuit to Quantinuum using OpenQASM
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
