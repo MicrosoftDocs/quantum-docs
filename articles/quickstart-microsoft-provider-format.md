@@ -301,7 +301,7 @@ except ImportError:
         print(calibrated_register_layout)
     ```
 
-2. In this example, we will be using `TriangularLatticeLayout(61, 5.0µm)` as the trap layout. You can visualize the chosen layout.
+1. Next, you define the layout for your qubit register. In this example, you use a `TriangularLatticeLayout(61, 5.0µm)` as the trap layout. 
 
     ```python
     layout = QPU.calibrated_register_layouts[
