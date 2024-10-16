@@ -309,7 +309,9 @@ except ImportError:
     ]
     layout.draw()
     ````
-    :::image type="content" source="media/provider-format-pasqal-layout.png" alt-text="Trap layout":::
+    The following image shows the display of the chosen layout. 
+    
+    :::image type="content" source="media/provider-format-pasqal-layout.png" alt-text="Diagram of the layout chosen for the qubit register. The layout shows 60 points in an array of 40 times 30 micrometers.":::
 
 1. Then, you define the qubit register selecting a set of traps from the layout. In this example, the layout has 60 traps and you select 7 traps using their ids to define a quantum register of 7 qubits.
 
