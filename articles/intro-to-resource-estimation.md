@@ -48,7 +48,7 @@ You can use pre-defined qubit parameters and quantum error correction (QEC) sche
 
 ### Flexibility
 
-You can bring your own code and compilation tools to the Resource Estimator. The Resource Estimator supports any language that translates to QIR, for example, Q# and Qiskit. See [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+You can bring your own code and compilation tools to the Resource Estimator. The Resource Estimator supports Q# and Qiskit languages. See [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ### Batch multiple estimates
 
@@ -66,7 +66,7 @@ You can also inspect the distribution of physical qubits used for the algorithm 
 
 ## Get started with the Resource Estimator
 
-The Resource Estimator is part of the Azure Quantum Development Kit (QDK). To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+The Resource Estimator is part of the Quantum Development Kit (QDK) and doesn't require an Azure account. To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
 The following table shows different user scenarios and the recommended articles to start with the Resource Estimator.
 
@@ -78,8 +78,6 @@ The following table shows different user scenarios and the recommended articles 
 |I'm interested in large-scale quantum computing| You can use the Resource Estimator to analyze the resources of real-world problems that are expected to be solved by large-scale fault-tolerant quantum computers. See how in [Resource estimation for large-scale quantum computing](#resource-estimation-for-large-scale-quantum-computing). |
 |I'm developing quantum-safe cryptography|You can use the Resource Estimator to compare the performance of different encryption algorithms, key strengths, qubit types, and error rates, and their resilience to quantum attacks. See [Resource estimation and cryptography](xref:microsoft.quantum.resource-estimator-cryptography). |
 
-> [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
 
 ## Resource estimation for large-scale quantum computing
 

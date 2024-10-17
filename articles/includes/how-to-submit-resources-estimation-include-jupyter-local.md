@@ -20,7 +20,7 @@ no-loc: [target, targets]
     ```
 
 > [!TIP]
-> You don't need to have an Azure account to run the local Resource Estimator.
+> You don't need to have an Azure account to run the Resource Estimator.
 
 ## Create the quantum algorithm
 

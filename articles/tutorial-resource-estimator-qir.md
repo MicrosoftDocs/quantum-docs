@@ -24,7 +24,7 @@ In this tutorial, you'll learn how to:
 > * Create a QIR bitcode using PyQIR generator
 > * Submit a QIR job to the Resource Estimator
 
-Sign up for a [free Azure trial subscription for 30 days](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+
 
 ## Prerequisites
 
