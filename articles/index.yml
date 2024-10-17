@@ -123,8 +123,7 @@ landingContent:
         links:
           - text: Estimate resources of a quantum chemistry problem
             url: tutorial-resource-estimator-chemistry.md
-          - text: Estimate resources of a QIR program
-            url: tutorial-resource-estimator-qir.md
+
 
 
   # Management

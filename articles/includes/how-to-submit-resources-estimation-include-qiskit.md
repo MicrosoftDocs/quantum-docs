@@ -8,9 +8,6 @@ ms.topic: include
 no-loc: [target, targets]
 ---
 
-> [!WARNING]
-> The Resource Estimator in Azure portal will be deprecated starting from **January 2025**. From this date, you won't be able to submit resource estimation jobs via Azure portal. We recommend that you transition to the local Resource Estimator in Visual Studio Code provided in the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). 
-
 ## Prerequisites for Qiskit in VS Code
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.

@@ -1102,6 +1102,11 @@
 			"redirect_document_id": false
 		},
 		{
+			"source_path": "articles/tutorial-resource-estimator-qir.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
 			"source_path": "articles/overview-what-is-qsharp-and-qdk.md",
 			"redirect_url": "/azure/quantum/qsharp-overview",
 			"redirect_document_id": false

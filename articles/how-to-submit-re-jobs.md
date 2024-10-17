@@ -28,6 +28,8 @@ The following table shows the different ways to run the Resource Estimator.
 |Estimate the resources of a Qiskit program|Jupyter Notebook in Visual Studio Code|Select **Qiskit program** at the top of the page|
 |Use FCIDUMP files as argument parameters (advanced)| Visual Studio Code| [Submit a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)|
 
+> [!WARNING]
+> The Resource Estimator in Azure portal will be deprecated starting from **January 2025**. From this date, you won't be able to submit resource estimation jobs via Azure portal. We recommend that you transition to the local Resource Estimator in Visual Studio Code provided in the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). 
 
 ::: zone pivot="platform-local"
 
