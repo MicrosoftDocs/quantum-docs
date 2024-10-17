@@ -90,7 +90,7 @@ def submit_job(target, seq):
     )
 ```
 
-For more information about how to submit jobs to the PASQAL provider, see [Submit a circuit with a provider-specific format to PASQAL](xref:microsoft.quantum.quickstarts.computing.provider#platform-pasqal).
+For more information about how to submit jobs to the PASQAL provider, see [Submit a circuit to PASQAL using Pulser SDK](xref:microsoft.quantum.quickstarts.computing.provider#submit-a-circuit-to-pasqal-using-pulser-sdk).
 
 ## Pricing
 
