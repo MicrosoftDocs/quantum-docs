@@ -24,7 +24,7 @@ The following targets available from this provider:
 |Target name| Target ID|Number of qubits | Description |
 |---|---|---|---|
 |[Emu-TN](#emulator) | pasqal.sim.emu-tn| 100 qubits 1D and 2D networks| Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
-|[Fresnel1](#fresnel1) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
+|[Fresnel](#fresnel) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
 
 > [!NOTE]
 > PASQAL quantum provider is currently available in Private Preview. You can request access to the Private Preview by following [this link](https://aka.ms/AQ/PrivatePreviewRequest).
@@ -40,9 +40,9 @@ Emu-TN emulator runs on a cluster of DGX nodes, each equipped with NVIDIA A100 G
 - Target ID: `pasqal.sim.emu-tn`
 - Target Execution Profile: N/A
 
-## Fresnel1
+## Fresnel
 
-Fresnel1 is PASQAL's quantum computer based on neutral atoms. The neutral atoms, controlled by optical tweezers, compose an array of 100 qubits.
+Fresnel is PASQAL's quantum computer based on neutral atoms. The neutral atoms, controlled by optical tweezers, compose an array of 100 qubits.
 
 Neutral atoms quantum devices use highly focused lasers, so-called optical tweezers, to trap and manipulate neutral atoms individually to create 1D or 2D  qubit arrays  in arbitrary configurations. Current PASQAL generation of devices use around 100 rubidium atoms for computations. Each qubit is represented by a two-level energy state in a Rubidium atom, usually a ground state and a Rydberg state which is a high energy state.  
 
@@ -103,4 +103,4 @@ PASQAL quotas are tracked based on the usage of the Emu-TN emulator. Quotas depe
 - Azure Quantum Credits plan: up to 20 hours
 - Pay-as-you-go plan: up to 100 hours
 
-The quotas are only applied to the Emu-TN emulator. There are no quotas for the Fresnel1 QPU.
+The quotas are only applied to the Emu-TN emulator. There are no quotas for the Fresnel QPU.
