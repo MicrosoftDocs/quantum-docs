@@ -17,19 +17,10 @@ zone_pivot_groups: ide-local-jupyter-qiskit
 
 In this article, you learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator helps you estimate the resources required to run a quantum program on a quantum computer. You can use the Resource Estimator to estimate the number of qubits, the number of gates, and the depth of the circuit required to run a quantum program.
 
-The Resource Estimator is available in Visual Studio Code with the [Quantum Development Kit extension](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code). 
-
-The following table shows the different ways to run the Resource Estimator.
-
-|User scenario|Platform| Tutorial|
-|---|---|---|
-|Estimate the resources of a Q# program|Visual Studio Code| Select **Q# program** at the top of the page|
-|Estimate the resources of a Q# program (advanced)|Jupyter Notebook in Visual Studio Code| Select **Q# program in Jupyter Notebook** at the top of the page|
-|Estimate the resources of a Qiskit program|Jupyter Notebook in Visual Studio Code|Select **Qiskit program** at the top of the page|
-|Use FCIDUMP files as argument parameters (advanced)| Visual Studio Code| [Submit a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)|
+The Resource Estimator is available in Visual Studio Code with the Quantum Development Kit extension. For more information, see [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 > [!WARNING]
-> The Resource Estimator in Azure portal will be deprecated starting from **January 2025**. From this date, you won't be able to submit resource estimation jobs via Azure portal. We recommend that you transition to the local Resource Estimator in Visual Studio Code provided in the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). 
+> The Resource Estimator in Azure portal will be deprecated starting from **January 2025**. From this date, you won't be able to submit resource estimation jobs via Azure portal. We recommend that you transition to the local Resource Estimator in Visual Studio Code provided in the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 ::: zone pivot="platform-local"
 

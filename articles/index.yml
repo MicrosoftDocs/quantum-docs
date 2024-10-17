@@ -97,19 +97,21 @@ landingContent:
   # Resource Estimation
   - title: Azure Quantum Resource Estimator
     linkLists:
-      - linkListType: overview
-        links:
-          - text: What is the Azure Quantum Resource Estimator?
-            url: intro-to-resource-estimation.md
       - linkListType: quickstart
         links:
           - text: Run your first resource estimation program
             url: quickstart-microsoft-resources-estimator.md
+      - linkListType: overview
+        links:
+          - text: What is the Azure Quantum Resource Estimator?
+            url: intro-to-resource-estimation.md
+          - text: Ways to use the Resource Estimator
+            url: how-to-submit-re-jobs.md
       - linkListType: reference
         links:
           - text: Target parameters of the Resource Estimator
             url: overview-resources-estimator.md
-          - text: Result data of the Resource Estimator
+          - text: Understand the result data of the Resource Estimator
             url: overview-resource-estimator-output-data.md
       - linkListType: how-to-guide
         links:
@@ -117,13 +119,10 @@ landingContent:
             url: resource-estimator-batching.md
           - text: Use known estimates to optimize resource estimation
             url: resource-estimator-known-estimates.md
-          - text: Perform manual caching to optimize resource estimation
-            url: resource-estimator-handle-large-programs.md
       - linkListType: tutorial
         links:
           - text: Estimate resources of a quantum chemistry problem
             url: tutorial-resource-estimator-chemistry.md
-
 
 
   # Management
@@ -145,8 +144,10 @@ landingContent:
             url: how-to-share-access-quantum-workspace.md
           - text: Add a group to your quantum workspace
             url: bulk-add-users-to-a-workspace.md
-          - text: Authenticate using a Manage Key
+          - text: Authenticate using an Access Key
             url: security-manage-access-keys.md
+          - text: Authenticate using a service principal
+            url: optimization-authenticate-service-principal.md
 
 
 
