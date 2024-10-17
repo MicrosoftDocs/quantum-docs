@@ -288,7 +288,7 @@ except ImportError:
 
 #### Create a quantum register
 
-1. First, you create a 'devices' object to import the PASQAL quantum computer target, Fresnel. FRESNEL provides predefined trap layouts that you can utilize to create your quantum register. To configure your quantum registers, you arrange an array of qubits.
+1. First, you create a 'devices' object to import the PASQAL quantum computer target, Fresnel. [Fresnel QPU](xref:microsoft.quantum.providers.pasqal#fresnel) provides predefined trap layouts that you can utilize to create your quantum register. To configure your quantum registers, you arrange an array of qubits. 
 
     ```python
     from pulser_pasqal import PasqalCloud
