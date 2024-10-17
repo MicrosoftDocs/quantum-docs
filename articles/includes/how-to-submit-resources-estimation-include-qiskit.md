@@ -81,9 +81,16 @@ job = backend.run(circ, params)
 result = job.result()
 ```
 
+The `result` object contains the output of the resource estimation job. You can use the `EstimateDetails` function to display the results in a more readable format.
 
+```python
+from qsharp_widgets import EstimateDetails
+EstimateDetails(result)
+```
 
-For example, if you collapse the *Logical qubit parameters* group, you can more easily see that the error correction code distance is 15. 
+`EstimateDetails` function displays a table with the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
+
+For example, if you collapse the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 15. 
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -101,8 +108,6 @@ In the *Physical qubit parameters* group you can see the physical qubit properti
 
 > [!TIP]
 > You can also access the output of the Resource Estimator as a Python dictionary using the [result.data()](xref:qsharp.estimator.EstimatorResult) method. For example, to access the physical counts `result.data()["physicalCounts"]`.
-
-For more information, see [the full list of output data](xref:microsoft.quantum.overview.resources-estimator-output.data) for the Resource Estimator.
 
 #### Space diagrams
 
