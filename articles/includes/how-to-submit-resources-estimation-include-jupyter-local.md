@@ -16,7 +16,7 @@ no-loc: [target, targets]
 - The latest Azure Quantum `qsharp` and `qsharp-widgets` packages.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets 
+    !pip install --upgrade qsharp qsharp-widgets 
     ```
 
 > [!TIP]
@@ -406,9 +406,9 @@ result = qsharp.estimate("RunProgram()")
 result
 ```
 
-The `qsharp.estimate` function creates a result object, which can be used to display a table with the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
+The `qsharp.estimate` function creates a result object, which can be used to display a table with the overall physical resource counts. You can inspect cost details by expanding the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
 
-For example, collapse the **Logical qubit parameters** group to see that the code distance is 21 and the number of physical qubits is 882.
+For example, expand the **Logical qubit parameters** group to see that the code distance is 21 and the number of physical qubits is 882.
 
 |Logical qubit parameter| Value |
 |----|---|

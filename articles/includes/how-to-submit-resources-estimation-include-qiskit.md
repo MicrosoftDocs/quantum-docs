@@ -16,7 +16,7 @@ no-loc: [target, targets]
 - The latest Azure Quantum `qsharp` and `qsharp-widgets`, and `qiskit` packages.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets qiskit
+    !pip install --upgrade qsharp qsharp-widgets qiskit
     ```
 
 > [!TIP]
@@ -27,6 +27,7 @@ no-loc: [target, targets]
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
 1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
+
 
 ### Create the quantum algorithm
 
@@ -46,7 +47,7 @@ def create_algorithm(bitwidth):
 ```
   
 > [!NOTE]
-> You can submit physical resource estimation jobs for algorithms that have no T states, but that have at least one measurement. 
+> If you select a Python kernel and the `qiskit` module isn't recognized, try selecting a different Python environment in the kernel picker.
 
 ### Estimate the quantum algorithm
   
@@ -88,9 +89,9 @@ from qsharp_widgets import EstimateDetails
 EstimateDetails(result)
 ```
 
-`EstimateDetails` function displays a table with the overall physical resource counts. You can inspect cost details by collapsing the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
+`EstimateDetails` function displays a table with the overall physical resource counts. You can inspect cost details by expanding the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
 
-For example, if you collapse the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 15. 
+For example, if you expand the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 15. 
 
 |Logical qubit parameter | Value |
 |----|---|
@@ -104,7 +105,7 @@ For example, if you collapse the **Logical qubit parameters** group, you can mor
 |Logical cycle time formula | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance`|
 |Physical qubits formula	      | 2 * `codeDistance` * `codeDistance`|
 
-In the *Physical qubit parameters* group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
+In the **Physical qubit parameters** group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
 > [!TIP]
 > You can also access the output of the Resource Estimator as a Python dictionary using the [result.data()](xref:qsharp.estimator.EstimatorResult) method. For example, to access the physical counts `result.data()["physicalCounts"]`.
@@ -121,7 +122,7 @@ SpaceChart(result)
 
 :::image type="content" source="../media/resource-estimator-space-diagram-qiskit.PNG" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
-The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 28, contributes to the number of physical qubits for T factories as $\text{T factories} \cdot \text{physical qubit per T factory}= 28 \cdot 18,000 = 504,000$.
+The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 19, contributes to the number of physical qubits for T factories as $\text{T factories} \cdot \text{physical qubit per T factory}= 19 \cdot 18,000 = 342,000$.
 
 For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).
 
