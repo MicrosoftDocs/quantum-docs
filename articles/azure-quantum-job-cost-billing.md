@@ -42,18 +42,6 @@ You can modify your current usage plan for each provider and see the different b
 
 The billing plans are set by the quantum hardware providers. For more information about the pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page.
 
-## How can I estimate the cost of a job before running it?
-
-Before running a job on actual [quantum hardware](xref:microsoft.quantum.target-profiles), you can estimate how much the job cost to run. 
-
-To estimate the cost of running a job, use the `estimate_cost` Python method. The `currency_code` method will tell you the currency unit of the estimated cost.
-
-```python
-cost = qpu_backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total} {cost.currency_code}")
-```
-
 ## How can I view the job cost report after running?
 
 After you run a job, you can check the detailed cost estimates and use this information to understand the cost of individual jobs. This cost is the cost billed by the provider; refer to your final bill for the exact charges including relevant taxes. For more information, see [How do I receive my invoices?](#how-do-i-receive-my-invoices).
