@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-description: Learn about how to estimate the cost of running quantum programs in Azure Quantum, how to view the job cost report, and how to manage your invoices.
+description: Learn about how to view job cost reports for running quantum programs in Azure Quantum and how to manage your invoices.
 ms.date: 09/25/2024
 ms.service: azure-quantum
 ms.subservice: computing
