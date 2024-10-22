@@ -48,7 +48,7 @@ You can use pre-defined qubit parameters and quantum error correction (QEC) sche
 
 ### Flexibility
 
-You can bring your own code and compilation tools to the Resource Estimator. The Resource Estimator supports Q# and Qiskit languages. See [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+You can bring your own code and compilation tools to the Resource Estimator. The Resource Estimator supports Q# and Qiskit as input. See [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ### Batch multiple estimates
 
