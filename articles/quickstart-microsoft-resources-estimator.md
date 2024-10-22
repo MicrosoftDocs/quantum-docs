@@ -6,7 +6,7 @@ ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
+no-loc: ['Python', '$$v', target, targets]
 title: 'Quickstart: Learn to use the Resource Estimator'
 uid: microsoft.quantum.quickstarts.computing.resources-estimator
 #customer intent: As a quantum programmer, I want to write programs that use the Resource Estimator. 
