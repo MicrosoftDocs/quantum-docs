@@ -144,23 +144,7 @@ pl.xlabel("Result")
 
 #### Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
-
-```python
-cost = service.estimate_cost(
-    program=circuit,
-    repetitions=100,
-    target="ionq.qpu.aria-1"
-)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-```output
-Estimated cost: 1
-```
-
-This prints the estimated cost in US dollars.
+Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it will cost to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
@@ -291,23 +275,7 @@ Looking at the histogram, you may notice that the random number generator return
 
 #### Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
-
-```python
-cost = service.estimate_cost(
-    program=circuit,
-    repetitions=100,
-    target="quantinuum.qpu.h1-1"
-)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-```output
-Estimated cost: 5.42
-```
-
-This prints the estimated cost in H-System Quantum Credits (HQCs).
+Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it will cost to run.
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 

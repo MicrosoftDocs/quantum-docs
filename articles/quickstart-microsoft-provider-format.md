@@ -255,16 +255,7 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
 
     ![IonQ job output](media/ionq-results.png)
 
-1. Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU,you can use the `estimate_cost` method:
-
-    ```python
-    target = workspace.get_targets(name="ionq.qpu.aria-1")
-    cost = target.estimate_cost(circuit, shots=500)
-    
-    print(f"Estimated cost: {cost.estimated_total}")
-    ```
-
-    This prints the estimated cost in US dollars.
+1. Before running a job on the QPU, you should estimate how much it will cost to run.
 
     > [!NOTE]
     > For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
@@ -509,19 +500,7 @@ After defining a custom register, you can follow the exact same steps outlined i
 
     Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
-1. Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method.
-
-    ```python
-    target = workspace.get_targets(name="quantinuum.qpu.h1-1")
-    cost = target.estimate_cost(circuit, shots=500)
-    
-    print(f"Estimated cost: {cost.estimated_total}")
-    ```
-
-    This prints the estimated cost in H-System Quantum Credits (HQCs).
-
-    > [!NOTE]
-    > To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter, and ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
+1. Before running a job on the QPU, you should estimate how much it will cost to run.
 
     > [!NOTE]
     > For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).

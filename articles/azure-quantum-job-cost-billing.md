@@ -1,7 +1,7 @@
 ---
 author: sonialopezbravo
 ms.author: sonialopez
-description: Learn about how to estimate the cost of running quantum programs in Azure Quantum, how to view the job cost report, and how to manage your invoices.
+description: Learn about how to view job cost reports for running quantum programs in Azure Quantum and how to manage your invoices.
 ms.date: 09/25/2024
 ms.service: azure-quantum
 ms.subservice: computing
@@ -41,18 +41,6 @@ You can modify your current usage plan for each provider and see the different b
      :::image type="content" source="media/azure-portal-billing-plans.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace." lightbox="media/azure-portal-billing-plans.png":::
 
 The billing plans are set by the quantum hardware providers. For more information about the pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page.
-
-## How can I estimate the cost of a job before running it?
-
-Before running a job on actual [quantum hardware](xref:microsoft.quantum.target-profiles), you can estimate how much the job cost to run. 
-
-To estimate the cost of running a job, use the `estimate_cost` Python method. The `currency_code` method will tell you the currency unit of the estimated cost.
-
-```python
-cost = qpu_backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total} {cost.currency_code}")
-```
 
 ## How can I view the job cost report after running?
 
