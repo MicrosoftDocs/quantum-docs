@@ -20,7 +20,7 @@ In this article, you learn to work with the [Azure Quantum Resource Estimator](x
 The Resource Estimator is available in Visual Studio Code with the Quantum Development Kit extension. For more information, see [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 > [!WARNING]
-> The Resource Estimator in Azure portal will be deprecated starting from **January 2025**. From this date, you won't be able to submit resource estimation jobs via Azure portal. We recommend that you transition to the local Resource Estimator in Visual Studio Code provided in the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
+> The Resource Estimator in Azure portal is deprecated. We recommend that you transition to the local Resource Estimator in Visual Studio Code provided in the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 ::: zone pivot="platform-local"
 
