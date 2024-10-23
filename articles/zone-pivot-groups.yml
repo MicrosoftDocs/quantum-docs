@@ -69,8 +69,8 @@ groups:
   prompt: Select your quantum programming language
   pivots:
   - id: platform-local
-    title: Q# program
+    title: Q# in VS Code
   - id: platform-local-jupyter
-    title: Q# program in Jupyter Notebook
+    title: Q# in Jupyter Notebook (Advanced)
   - id: platform-qiskit
-    title: Qiskit program
+    title: Qiskit in VS Code
