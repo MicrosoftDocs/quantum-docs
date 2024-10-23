@@ -21,7 +21,15 @@ For a practical implementation of Grover's algorithm to solve mathematical probl
 
 ## Statement of the problem
 
-Any search task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The *search problem* consists of finding any item $x_0$ such that $f(x_0)=1$.
+Grover's algorithm speeds up the solution to unstructured data searches (or *search problem*), running the search in fewer steps than any classical algorithm could. Any search task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The *search problem* consists of finding any item $x_0$ such that $f(x_0)=1$.
+
+Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
+
+- Boolean satisfiability problem: Is the set of Boolean values $x$ an interpretation (an assignment of values to variables) that satisfies the given Boolean formula?
+- Traveling salesman problem: Does $x$ describe the shortest possible loop that connects all cities?
+- Database search problem: Does the database table contain a record $x$?
+- Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
+
 
 The task that Grover's algorithm aims to solve can be expressed as follows: given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$. The complexity of the algorithm is measured by the number of uses of the function $f(x)$. Classically, in the worst-case scenario, $f(x)$ has to be evaluated a total of $N-1$ times, where $N=2^n$, trying out all the possibilities. After $N-1$ elements, it must be the last element. Grover's quantum algorithm can solve this problem much faster, providing a quadratic speed up. Quadratic here implies that only about $\sqrt{N}$ evaluations would be required, compared to $N$.
 
@@ -176,7 +184,7 @@ If you want to continue learning about Grover's algorithm, you can check any of 
 
 ## Related content
 
-- [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir)
+- [Entanglement in quantum computing](xref:microsoft.quantum.concepts.entanglement)
 - [Vectors and matrices](xref:microsoft.quantum.concepts.vectors)
 - [T gates and T factories](xref:microsoft.quantum.concepts.tfactories)
 - [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits)
