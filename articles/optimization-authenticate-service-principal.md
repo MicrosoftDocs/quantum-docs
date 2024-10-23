@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.authenticate-service-principal
 #customer intent: As a quantum developer, I want to understand how to authenticate using a service principal to submit jobs to Azure Quantum.
 ---
 
-# How to use a service principal to authenticate in your Azure Quantum workspace
+# Authenticate in your workspace using a service principal 
 
 Sometimes it's unsuitable to use interactive authentication or to authenticate
 as a user account. These cases may arise when you want to submit jobs from a

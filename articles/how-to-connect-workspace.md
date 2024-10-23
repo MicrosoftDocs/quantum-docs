@@ -9,13 +9,13 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Connect to your Azure Quantum workspace
 uid: microsoft.quantum.how-to.connect-workspace
+
+#customer intent: As a quantum developer, I want to connect to my Azure Quantum workspace so I can submit my quantum programs to the Azure Quantum service.
 ---
 
-# Different ways to connect to your Azure Quantum workspace
+# Connect to your Azure Quantum workspace with the azure-quantum Python package
 
-Once you have created an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace), you can connect to it and submit your code using the `azure-quantum` Python package. The `azure-quantum` package provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace.
-
-For other ways to access to your workspace, see [Authenticate using a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal) or [Authenticate using a managed identity](xref:microsoft.quantum.optimization.authenticate-managed-identity).
+Once you have created an Azure Quantum workspace, you can connect to it and submit your code using the `azure-quantum` Python package. The `azure-quantum` package provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ For other ways to access to your workspace, see [Authenticate using a service pr
 - The latest version of the Azure Quantum `azure-quantum` package.
 
     ```bash
-    python -m pip install --upgrade azure-quantum
+    !pip install --upgrade azure-quantum
     ```
 
 - If you use Azure CLI, you must have the latest version. For the installation instructions, see:
@@ -33,7 +33,7 @@ For other ways to access to your workspace, see [Authenticate using a service pr
     - [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
     - [Install Azure CLI on macOS](/cli/azure/install-azure-cli-macos)
 
-## Connect with a connection string
+## Connect using a connection string
 
 You can use a connection string to specify the connection parameters to an Azure Quantum Workspace. You might use a connection string in the following scenarios:
 
@@ -56,7 +56,7 @@ You can use a connection string to specify the connection parameters to an Azure
 > [!WARNING]
 > Storing your account access keys or connection string in clear text presents a security risk and is **not** recommended. Store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
 
-### Use a connection string to access your Azure Quantum workspace
+### Use the connection string to access your Azure Quantum workspace
 
 Once you copied the connection string, you can use it to connect to your Azure Quantum workspace. 
 
@@ -110,7 +110,7 @@ For more information about how to enable/disable and regenerate your keys, see [
 > [!IMPORTANT]
 > When Access Keys are disabled, all request using connection strings or access keys are unauthorized. You can still use the workspace parameters to connect to your workspace.
 
-## Connect with workspace parameters
+## Connect using the workspace parameters
 
 Every Azure Quantum workspace has a unique set of parameters that you can use to connect to it. You can use the following parameters to connect to your Azure Quantum workspace:
 
@@ -186,7 +186,7 @@ You can use the Azure Command-Line Interface (Azure CLI) to connect t your works
 ***
 
 
-## Next steps
+## Related content
 
 - [Manage quantum workspaces with Azure CLI](xref:microsoft.quantum.workspaces-cli)
 - [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace)
