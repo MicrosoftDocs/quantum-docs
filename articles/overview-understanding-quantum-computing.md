@@ -19,8 +19,6 @@ Quantum computing holds the promise of solving some of our planet's biggest chal
 
 This article explains the principles of quantum computing, how it compares to classical computing, and how it uses the principles of quantum mechanics.
 
-[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
-
 ## History of quantum computing
 
 The idea of a quantum computer was born out of the difficulty of simulating quantum systems on a classical computer. In the 1980s, Richard Feynman and Yuri Manin independently suggested that hardware based on quantum phenomena might be more efficient for the simulation of quantum systems than conventional computers.
@@ -71,7 +69,7 @@ A good quantum computer should have these five features:
 
 These five criteria are often known as the [Di Vincenzo criteria](https://en.wikipedia.org/wiki/DiVincenzo%27s_criteria) for quantum computation.
 
-Building devices that meet these five criteria is one of the most demanding engineering challenges ever faced by humankind. Azure Quantum offers a variety of quantum computing solutions with different qubit technologies. For more information, see the full list of [Azure Quantum providers](xref:microsoft.quantum.reference.qc-target-list).
+Building devices that meet these five criteria is one of the most demanding engineering challenges ever faced by humankind. Azure Quantum offers a variety of quantum computing solutions with different qubit technologies. For more information, see [the full list of Azure Quantum providers](xref:microsoft.quantum.reference.qc-target-list).
 
 ## Understand quantum phenomena
 
@@ -88,7 +86,7 @@ quantum state: $\text{qubit state}=\alpha A + \beta B$. This linear combination 
 
 Only quantum systems like ions, electrons or superconducting circuits can exist in the superposition states that enable the power of quantum computing. A quantum particle such as an electron has its own “facing left or facing right” property, namely *spin*, referred to as either up or down, so the quantum state of an electron is a superposition of "spin up" and "spin down".
 
-If you want to learn more and practice with superposition, see [Training module: Explore superposition with Q#](training/modules/explore-superposition/).
+If you want to learn more and practice with superposition, see [Training module: Explore superposition with Q#](/training/modules/explore-superposition/).
 
 ### Entanglement
 
