@@ -16,7 +16,7 @@ uid: microsoft.quantum.providers.rigetti
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 > [!NOTE]
-> The Ankaa-2 QPU is deprecated from the Azure Quantum service as of October 4, 2024. 
+> The Ankaa-2 QPU is retired from the Azure Quantum service as of October 4, 2024. 
 
 [Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
 
@@ -28,11 +28,25 @@ The Rigetti provider makes the following targets available:
 |Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
+|[Ankaa-9Q-3](#ankaa-9q-3) |rigetti.qpu.ankaa-9q-3 | 9 qubits|  |
 
 > [!NOTE]
 > Rigetti simulators and hardware targets do not support Cirq programs. 
 
-Rigetti's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
+Rigetti's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets).
+
+## Quantum computers
+
+All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change without advance notice.
+
+### Ankaa-9Q-3
+
+A 9-qubit quantum processor.
+
+- Job Type: `Quantum Program`
+- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
+- Target ID: `rigetti.qpu.ankaa-9q-3`
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
 ## Simulators
 
@@ -129,7 +143,7 @@ workspace = Workspace(
 
 target = Rigetti(
     workspace=workspace,
-    name=RigettiTarget.ANKAA_2,  # Defaults to RigettiTarget.QVM for simulation
+    name=RigettiTarget.ANKAA_9Q_3,  # Defaults to RigettiTarget.QVM for simulation
 )
 
 # Any valid Quil program is accepted, but the readout must be named `ro`

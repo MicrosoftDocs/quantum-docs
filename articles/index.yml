@@ -134,6 +134,8 @@ landingContent:
         links:
           - text: Azure Quantum Credits
             url: azure-quantum-credits.md
+          - text: Azure Quantum pricing plans
+            url: pricing.md
           - text: Limits and quotas
             url: azure-quantum-quotas.md
       - linkListType: how-to-guide

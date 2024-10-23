@@ -4,7 +4,7 @@
   items:
   - name: What is Azure Quantum?
     href: overview-azure-quantum.md
-  - name: Understand quantum computing
+  - name: What is quantum computing?
     href: overview-understanding-quantum-computing.md
   - name: Microsoft's quantum machine
     href: overview-microsoft-quantum-machine.md
@@ -27,11 +27,11 @@
     items:
     - name: Work with Azure Quantum notebooks
       href: how-to-run-notebooks-workspace.md
-    - name: Work with Azure Quantum workspaces
+    - name: Manage your Azure Quantum workspaces
       items:
       - name: Connect to your Azure Quantum workspace
         href: how-to-connect-workspace.md
-      - name: Understanding Azure Quantum workspace access
+      - name: Manage the access to your Azure Quantum workspace
         href: manage-workspace-access.md
       - name: Add a group to your Azure Quantum workspace
         href: bulk-add-users-to-a-workspace.md
@@ -45,7 +45,7 @@
       href: /cli/azure/quantum
     - name: Work with Azure Quantum using the Azure Resource Manager
       href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
-  - name: Credits, quotas, and billing information
+  - name: Credits, quotas, and pricing information
     items:
     - name: Azure Quantum Credits
       href: azure-quantum-credits.md
@@ -57,7 +57,7 @@
       href: azure-quantum-quotas.md
     - name: Billing and job costs in Azure Quantum
       href: azure-quantum-job-cost-billing.md
-  - name: Security
+  - name: Authentication and security
     items:
     - name: Authenticate using a service principal
       href: optimization-authenticate-service-principal.md

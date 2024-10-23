@@ -57,6 +57,7 @@ Most samples are configured to run by default against the `aer_simulator`, which
 
     # Create Rigetti simulator backend
     rigetti_simulator_backend = provider.get_backend("rigetti.sim.qvm")
+    rigetti_qpu_backend = provider.get_backend("rigetti.qpu.ankaa-9q-3")
 
     # Create Quantinuum simulator and QPU backends
     quantinuum_simulator_backend = provider.get_backend("quantinuum.sim.h1-1e")
