@@ -119,6 +119,8 @@ landingContent:
             url: resource-estimator-batching.md
           - text: Use known estimates to optimize resource estimation
             url: resource-estimator-known-estimates.md
+          - text: Perform manual caching to optimize resource estimation
+            url: resource-estimator-handle-large-programs.md
       - linkListType: tutorial
         links:
           - text: Estimate resources of a quantum chemistry problem
