@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
-ms.date: 08/22/2024
+ms.date: 10/23/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -49,7 +49,7 @@ Follow these steps to visualize quantum circuits of Q# programs in Visual Studio
 ### Viewing circuit diagrams for a Q# program
 
 1. Open a Q# file in Visual Studio Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program). 
-1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
+1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands preceding `Main()`.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
 
@@ -67,7 +67,7 @@ You can visualize the quantum circuit for a single Q# operation. To do this, cli
 
 When **debugging** a Q# program, you can visualize the quantum circuit based on the current state of the program.
 
-1. Select the **Debug** button from the list of code lens commands below `@EntryPoint()`.
+1. Select the **Debug** button from the list of code lens commands preceding `Main()`.
 1. In the **Run and debug** view on the left side, expand the **Quantum Circuit** section under **Variables** pane to show the circuit as you step through the program.
 
     :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program." lightbox="media/circuit-codelens-debug.png":::
@@ -132,8 +132,8 @@ You can generate a circuit diagram for any program with an **entry expression** 
     ```qsharp
     %%qsharp
     
-    import Microsoft.Quantum.Diagnostics.*;
-    import Microsoft.Quantum.Measurement.*;
+    import Std.Diagnostics.*;
+    import Std.Measurement.*;
     
     operation GHZSample(n: Int) : Result[] {
         use qs = Qubit[n];
@@ -212,7 +212,7 @@ Specifically, gate decompositions are applied that would make the resulting circ
 1. For example, consider the following Q# program that measures a qubit and an array of qubits.
 
     ```qsharp
-    import Microsoft.Quantum.Measurement.*;
+    import Std.Measurement.*;
 
     operation Main() : (Result, Result[]) {
         // The `M` operation performs a measurement of a single qubit in the

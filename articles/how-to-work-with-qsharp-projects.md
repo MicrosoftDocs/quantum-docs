@@ -465,6 +465,7 @@ import MyMathFunctions.MyFunction, MyMathFunctions.AnotherFunction as Multiply;
 
 > [!NOTE]
 > The currently used `open` statement in Q#, which is used to reference libraries and namespaces, is still supported but will be deprecated eventually. In the meantime, you can optionally update your current files to use the `import` statement. For example, `open Microsoft.Quantum.Diagnostics;` can be replaced with `import Microsoft.Quantum.Diagnostics.*;`.
+> Also note that when using the `import` statement with the standard Q# libraries, you can shorten the root namespace to `Std`. For example, `import Microsoft.Quantum.Diagnostics.*;` can be written as `import Std.Diagnostics.*;`.
 
 ### Example external project
 

@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 09/10/2024
+ms.date: 10/23/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -258,72 +258,69 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
-    namespace Tutorial {
-        open Microsoft.Quantum.Convert;
-        open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Math;
-    
-        @EntryPoint()
-        operation Main() : Int {
-            let max = 100;
-            Message($"Sampling a random number between 0 and {max}: ");
-    
-            // Generate random number in the 0..max range.
-            return GenerateRandomNumberInRange(max);
-        }
-    
-        /// # Summary
-        /// Generates a random number between 0 and `max`.
-        operation GenerateRandomNumberInRange(max : Int) : Int {
-            // Determine the number of bits needed to represent `max` and store it
-            // in the `nBits` variable. Then generate `nBits` random bits which will
-            // represent the generated random number.
-            mutable bits = [];
-            let nBits = BitSizeI(max);
-            for idxBit in 1..nBits {
-                set bits += [GenerateRandomBit()];
-            }
-            let sample = ResultArrayAsInt(bits);
-    
-            // Return random number if it is within the requested range.
-            // Generate it again if it is outside the range.
-            return sample > max ? GenerateRandomNumberInRange(max) | sample;
-        }
-    
-        /// # Summary
-        /// Generates a random bit.
-        operation GenerateRandomBit() : Result {
-            // Allocate a qubit.
-            use q = Qubit();
-    
-            // Set the qubit into superposition of 0 and 1 using the Hadamard 
-            // operation `H`.
-            H(q);
-    
-            // At this point the qubit `q` has 50% chance of being measured in the
-            // |0〉 state and 50% chance of being measured in the |1〉 state.
-            // Measure the qubit value using the `M` operation, and store the
-            // measurement value in the `result` variable.
-            let result = M(q);
-    
-            // Reset qubit to the |0〉 state.
-            // Qubits must be in the |0〉 state by the time they are released.
-            Reset(q);
-    
-            // Return the result of the measurement.
-            return result;
-    
-            // Note that Qubit `q` is automatically released at the end of the block.
-        }
+    import Microsoft.Quantum.Convert.*;
+    import Microsoft.Quantum.Math.*;
+
+    operation Main() : Int {
+        let max = 100;
+        Message($"Sampling a random number between 0 and {max}: ");
+
+        // Generate random number in the 0..max range.
+        return GenerateRandomNumberInRange(max);
     }
+
+    /// # Summary
+    /// Generates a random number between 0 and `max`.
+    operation GenerateRandomNumberInRange(max : Int) : Int {
+        // Determine the number of bits needed to represent `max` and store it
+        // in the `nBits` variable. Then generate `nBits` random bits which will
+        // represent the generated random number.
+        mutable bits = [];
+        let nBits = BitSizeI(max);
+        for idxBit in 1..nBits {
+            set bits += [GenerateRandomBit()];
+        }
+        let sample = ResultArrayAsInt(bits);
+
+        // Return random number if it is within the requested range.
+        // Generate it again if it is outside the range.
+        return sample > max ? GenerateRandomNumberInRange(max) | sample;
+    }
+
+    /// # Summary
+    /// Generates a random bit.
+    operation GenerateRandomBit() : Result {
+        // Allocate a qubit.
+        use q = Qubit();
+
+        // Set the qubit into superposition of 0 and 1 using the Hadamard 
+        // operation `H`.
+        H(q);
+
+        // At this point the qubit `q` has 50% chance of being measured in the
+        // |0〉 state and 50% chance of being measured in the |1〉 state.
+        // Measure the qubit value using the `M` operation, and store the
+        // measurement value in the `result` variable.
+        let result = M(q);
+
+        // Reset qubit to the |0〉 state.
+        // Qubits must be in the |0〉 state by the time they are released.
+        Reset(q);
+
+        // Return the result of the measurement.
+        return result;
+
+        // Note that Qubit `q` is automatically released at the end of the block.
+    }
+
     ```
 
-1. Select the number of shots to run, and click **Run**.
+1. Select the number of shots to run, and select **Run**.
 1. The results are displayed in the histogram and in the **Results** fields.
-1. Click **Explain code** to prompt Copilot to explain the code to you.
+1. Select **Explain code** to prompt Copilot to explain the code to you.
 
 > [!TIP]
-> From Copilot in Azure Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by clicking on the VS Code logo button in the right-hand corner of the code editor.
+> From Copilot in Azure Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
 
 ### [Q# program in Visual Studio Code](#tab/tabid-vscode)
 
@@ -332,68 +329,66 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Copy the following code in the `RandomNumberGenerator.qs` file.
 
     ```qsharp
-    namespace Tutorial {
-        open Microsoft.Quantum.Convert;
-        open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Math;
-    
-        @EntryPoint()
-        operation Main() : Int {
-            let max = 100;
-            Message($"Sampling a random number between 0 and {max}: ");
-    
-            // Generate random number in the 0..max range.
-            return GenerateRandomNumberInRange(max);
-        }
-    
-        /// # Summary
-        /// Generates a random number between 0 and `max`.
-        operation GenerateRandomNumberInRange(max : Int) : Int {
-            // Determine the number of bits needed to represent `max` and store it
-            // in the `nBits` variable. Then generate `nBits` random bits which will
-            // represent the generated random number.
-            mutable bits = [];
-            let nBits = BitSizeI(max);
-            for idxBit in 1..nBits {
-                set bits += [GenerateRandomBit()];
-            }
-            let sample = ResultArrayAsInt(bits);
-    
-            // Return random number if it is within the requested range.
-            // Generate it again if it is outside the range.
-            return sample > max ? GenerateRandomNumberInRange(max) | sample;
-        }
-    
-        /// # Summary
-        /// Generates a random bit.
-        operation GenerateRandomBit() : Result {
-            // Allocate a qubit.
-            use q = Qubit();
-    
-            // Set the qubit into superposition of 0 and 1 using the Hadamard 
-            // operation `H`.
-            H(q);
-    
-            // At this point the qubit `q` has 50% chance of being measured in the
-            // |0〉 state and 50% chance of being measured in the |1〉 state.
-            // Measure the qubit value using the `M` operation, and store the
-            // measurement value in the `result` variable.
-            let result = M(q);
-    
-            // Reset qubit to the |0〉 state.
-            // Qubits must be in the |0〉 state by the time they are released.
-            Reset(q);
-    
-            // Return the result of the measurement.
-            return result;
-    
-            // Note that Qubit `q` is automatically released at the end of the block.
-        }
+
+    import Microsoft.Quantum.Convert.*;
+    import Microsoft.Quantum.Math.*;
+
+    operation Main() : Int {
+        let max = 100;
+        Message($"Sampling a random number between 0 and {max}: ");
+
+        // Generate random number in the 0..max range.
+        return GenerateRandomNumberInRange(max);
     }
+    
+    /// # Summary
+    /// Generates a random number between 0 and `max`.
+    operation GenerateRandomNumberInRange(max : Int) : Int {
+        // Determine the number of bits needed to represent `max` and store it
+        // in the `nBits` variable. Then generate `nBits` random bits which will
+        // represent the generated random number.
+        mutable bits = [];
+        let nBits = BitSizeI(max);
+        for idxBit in 1..nBits {
+            set bits += [GenerateRandomBit()];
+        }
+        let sample = ResultArrayAsInt(bits);
+
+        // Return random number if it is within the requested range.
+        // Generate it again if it is outside the range.
+        return sample > max ? GenerateRandomNumberInRange(max) | sample;
+    }
+
+    /// # Summary
+    /// Generates a random bit.
+    operation GenerateRandomBit() : Result {
+        // Allocate a qubit.
+        use q = Qubit();
+
+        // Set the qubit into superposition of 0 and 1 using the Hadamard 
+        // operation `H`.
+        H(q);
+
+        // At this point the qubit `q` has 50% chance of being measured in the
+        // |0〉 state and 50% chance of being measured in the |1〉 state.
+        // Measure the qubit value using the `M` operation, and store the
+        // measurement value in the `result` variable.
+        let result = M(q);
+
+        // Reset qubit to the |0〉 state.
+        // Qubits must be in the |0〉 state by the time they are released.
+        Reset(q);
+
+        // Return the result of the measurement.
+        return result;
+
+        // Note that Qubit `q` is automatically released at the end of the block.
+    }
+
     ```
 
 1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
-1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, click on **Run** from the list of commands below `@EntryPoint()`, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
+1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, select **Run** from the list of commands preceding `Main()`, or press **Ctrl+F5**. The program runs the `Main()` operation on the default simulator.
 
     :::image type="content" source="media/codelens-run-QRNG.png" alt-text="Screenshot of Visual Studio Code showing where to find the run command in the code lens.":::
 
@@ -408,7 +403,7 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 
 Let's visualize the distribution of results obtained from running the quantum program multiple times. The frequency histogram helps visualize the probability distribution of these outcomes.
 
-1. Select **View -> Command Palette** and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also click on **Histogram** from the list of commands below `@EntryPoint()`. Select this option to open the Q# histogram window.
+1. Select **View -> Command Palette** and type “histogram” which brings up the **Q#: Run file and show histogram** option. You can also select **Histogram** from the list of commands preceding `Main()`. Select this option to open the Q# histogram window.
 
     :::image type="content" source="media/codelens-histogram-QRNG.png" alt-text="Screenshot of Visual Studio Code showing where to find the histogram command in the code lens.":::
 
@@ -420,8 +415,8 @@ Let's visualize the distribution of results obtained from running the quantum pr
     > [!TIP]
     > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
 
-1. Click on a bar to display the **percentage** of that outcome.
-1. Click the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
+1. Select a bar to display the **percentage** of that outcome.
+1. Select the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
 
     :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 
@@ -435,16 +430,14 @@ Let's visualize the distribution of results obtained from running the quantum pr
     import qsharp
     ```
 
-1. Add the Q# code for the quantum random number generator program. To do so, you use the `%%qhsarp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`.  Copy this code into the second cell. 
+1. Add the Q# code for the quantum random number generator program. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`.  Copy this code into the second cell. 
 
     ```qsharp
     %%qsharp
     
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Math;
+    import Microsoft.Quantum.Convert.*;
+    import Microsoft.Quantum.Math.*;
     
-    @EntryPoint()
     operation Main() : Int {
         let max = 100;
     

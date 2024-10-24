@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
-ms.date: 07/22/2024
+ms.date: 10/24/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -192,8 +192,8 @@ When passing arguments as parameters to the job, they are formatted as Q# code w
 Consider the following Q# program, which takes an integer, `n`, and an array of angles, `angle`, as input.
 
 ```qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
+import Std.Measurement.*;
+import Std.Arrays.*;
 
 operation GenerateRandomBits(n: Int, angle: Double[]) : Result[] {
    use qubits = Qubit[n]; // n parameter as the size of the qubit array

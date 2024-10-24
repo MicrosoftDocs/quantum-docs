@@ -27,15 +27,14 @@ Copy the following code into the `ShorRE.qs` file:
 
 ```qsharp
 
-    import Microsoft.Quantum.Arrays.*;
-    import Microsoft.Quantum.Canon.*;
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Diagnostics.*;
-    import Microsoft.Quantum.Intrinsic.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Measurement.*;
+    import Std.Arrays.*;
+    import Std.Canon.*;
+    import Std.Convert.*;
+    import Std.Diagnostics.*;
+    import Std.Math.*;
+    import Std.Measurement.*;
     import Microsoft.Quantum.Unstable.Arithmetic.*;
-    import Microsoft.Quantum.ResourceEstimation.*;
+    import Std.ResourceEstimation.*;
 
     operation Main() : Unit {
         let bitsize = 31;
