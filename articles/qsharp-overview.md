@@ -82,7 +82,7 @@ The Q# standard library has predefined namespaces that contain functions and ope
 
 By default, the Q# compiler starts executing a program from the `Main()` operation, if available, which can be located anywhere in the program. Optionally, you can use the `@EntryPoint()` attribute to specify any operation in the program as the point of execution. 
 
-In the `Superposition` program, the more descriptive`MeasureOneQubit()` operation is the entry point of the program. 
+In the `Superposition` program, the more descriptive `MeasureOneQubit()` operation is the entry point of the program. 
 
 ```qsharp
 @EntryPoint()
