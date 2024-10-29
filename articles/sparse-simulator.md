@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Azure Quantum Development Kit sparse simulator.
 ms.author: sonialopez
-ms.date: 10/10/2024
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
@@ -24,8 +24,8 @@ The sparse simulator is the default local simulator in Visual Studio Code with t
 | Scenario | Method |
 |----------|--------|
 |**In a Q# program in VS Code**  | Select **Run Q# file** |
-|**In a Python notebook cell**  | `result=qsharp.eval("EntryPointOperation()")`<br>or<br>`result=qsharp.run("EntryPointOperation()", shots=##)` |
-|**In a `%%qsharp` notebook cell**  | `EntryPointOperation()` |
+|**In a Python notebook cell**  | `result=qsharp.eval("Program_Entry_Operation()")`<br>or<br>`result=qsharp.run("Program_Entry_Operation()", shots=##)` |
+|**In a `%%qsharp` notebook cell**  | `Program_Entry_Operation()` |
 
 
 

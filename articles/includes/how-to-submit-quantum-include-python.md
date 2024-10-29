@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 07/10/2024
+ms.date: 08/22/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -30,31 +30,26 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
 
 
 1. Follow the steps to create a [Q# project](xref:microsoft.quantum.qsharp-projects#steps-for-creating-a-q-project).
-1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the */src* directory in your project as `source.qs`. 
-
-    > [!NOTE]
-    > Note that this Q# code doesn't have an `@EntryPoint` function like a Q# program (see [Submitting Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp)), but it does require a namespace, unlike a Jupyter Notebook (see [Submitting Jupyter Notebook jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter)).
+1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the */src* directory in your project as `Source.qs`. 
 
     ```qsharp
-   namespace Sample {
-   
-      operation Random() : Result {
-            use q = Qubit();
-            H(q);
-            let result = M(q);
-            Reset(q);
-            return result
-      }
-   
-      operation RandomNBits(N: Int): Result[] {
-            mutable results = [];
-            for i in 0 .. N - 1 {
-               let r = Random();
-               set results += [r];
-            }
-            return results
-      }
-   }
+
+        operation Random() : Result {
+        use q = Qubit();
+        H(q);
+        let result = M(q);
+        Reset(q);
+        return result
+    }
+
+    operation RandomNBits(N: Int): Result[] {
+        mutable results = [];
+        for i in 0 .. N - 1 {
+            let r = Random();
+            set results += [r];
+        }
+        return results
+    }
     ```
 
 1. In the project root folder (with the *qsharp.json* file), open another file and save it as `randomNum.py`.
@@ -66,10 +61,13 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
     ```
 
 1. Next, add code to define the Q# project root folder and test run the target operation on the local simulator. The operation is called by *\<namespace>.\<operation_name( )>*, and in this case, you are passing in the number of random bits to return. 
+    
+    > [!NOTE]
+    > Because no namespace was specified in `Source.qs`, the compiler uses the file name as the default namespace - `Source.RandomNBits()`. For more information, see [Projects and implicit namespaces](xref:microsoft.quantum.qsharp-projects#projects-and-implicit-namespaces).
 
     ```python
     qsharp.init(project_root = '../MyProjectRootFolder')
-    print(qsharp.eval("Sample.RandomNBits(4)"))
+    print(qsharp.eval("Source.RandomNBits(4)"))
     ```
 
     ```output
@@ -79,7 +77,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
 1. You can also test the operation with the `run` method, which passes an additional `shots` parameter, and returns the results in a Python list. In `randomNum.py`, replace the previous print statement with the following:
 
     ```python
-    result = qsharp.run("Sample.RandomNBits(4)", shots=10)
+    result = qsharp.run("Source.RandomNBits(4)", shots=10)
     for x in result:
         print(x)
     ```
@@ -116,7 +114,7 @@ When you run programs on the local quantum simulator, you can submit any type of
 1. Then use the `compile` method to specify the operation or function that is the entry point to your program. The compiled program can then be submitted to any quantum hardware:
 
     ```python
-    MyProgram = qsharp.compile("Sample.RandomNBits(4)")
+    MyProgram = qsharp.compile("Source.RandomNBits(4)")
     ```
 
 ## Connect to Azure Quantum and submit your job
