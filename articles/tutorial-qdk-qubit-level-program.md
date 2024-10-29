@@ -9,7 +9,7 @@ ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
 ms.topic: tutorial
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-#customer intent: As a quantum programmer, 
+#customer intent: As a quantum programmer, I want to understand how to work with the Quantum Fourier Transform.
 ---
 
 # Tutorial: Implement the Quantum Fourier Transform in Q\#
@@ -56,7 +56,7 @@ You will build the operation step by step. Copy and paste the code in the follow
 
 You can view the [full Q# code](#the-complete-qft-operation) for this section as reference.
 
-### Namespaces to access other Q# operations
+### Import required Q# libraries
 
 Inside your Q# file, import the relevant `Microsoft.Quantum.*` namespaces.
 
@@ -511,7 +511,6 @@ This output illustrates a few different things:
 If you repeat this operation many times, you will see the result statistics begin to illustrate the equally weighted superposition of the post-QFT state that gives rise to a random result on each shot.
 _However_, besides being inefficient and still imperfect, this would nevertheless only reproduce the relative amplitudes of the basis states, not the relative phases between them.
 The latter is not an issue in this example, but you would see relative phases appear if given a more complex input to the QFT than $\ket{000}$.
-
 
 ## Use the Q# operations to simplify the QFT circuit
 

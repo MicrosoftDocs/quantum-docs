@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 09/16/2024
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -146,8 +146,7 @@ In Q#, the `MResetZ` function can be used both to measure a qubit and reset it. 
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Intrinsic;
-open Microsoft.Quantum.Measurement;
+import Std.Measurement.*;
 
 operation ContinueComputationAfterReset() : Result[] {
     // Set up circuit with 2 qubits
@@ -216,9 +215,9 @@ In Q\#, the arbitrary angle ZZ gate is implemented with the `Rzz` operation.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Intrinsic;
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
+import Std.Intrinsic.*;
+import Std.Measurement.*;
+import Std.Arrays.*;
 
 operation ArbitraryAngleZZExample(theta : Double) : Result[] {
     
@@ -286,7 +285,7 @@ To ensure the circuit runs with the General SU(4) Entangling gate, pass the foll
 
 ```qsharp
 %%qsharp
-open Microsoft.Math;
+import Std.Math.*;
 
 operation __quantum__qis__rxxyyzz__body(a1 : Double, a2 : Double, a3 : Double, q1 : Qubit, q2 : Qubit) : Unit {
     body intrinsic;
@@ -356,9 +355,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();
@@ -507,9 +506,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();

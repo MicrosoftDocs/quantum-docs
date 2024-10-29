@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Understand the architecture of sessions in hybrid quantum computing and learn how to create a new session.
-ms.date: 09/16/2024
+ms.date: 10/24/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -95,8 +95,8 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 
     ```qsharp
     %%qsharp
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Arrays;
+    import Std.Measurement.*;
+    import Std.Arrays.*;
 
     operation GenerateRandomBits(n: Int, angle: Double[]) : Result[] {
        use qubits = Qubit[n]; // n parameter as the size of the qubit array

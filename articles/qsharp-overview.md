@@ -2,7 +2,7 @@
 author: haileytap
 description: This article introduces Q#, a programming language for developing and running quantum algorithms, and the structure of a Q# program.
 ms.author: sonialopez
-ms.date: 06/17/2024
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -49,7 +49,7 @@ Based on the comments (`//`), the `Superposition` program first allocates a qubi
 
 ### User namespaces
 
-Q# programs start with a user-defined [namespace](xref:microsoft.quantum.qsharp.namespaces), such as:
+Q# programs can optionally start with a user-defined [namespace](xref:microsoft.quantum.qsharp.namespaces), such as:
 
 ```qsharp
 namespace Superposition {
@@ -57,18 +57,57 @@ namespace Superposition {
 }
 ```
 
-Namespaces help you organize related functionality. Each Q# program can have only one `namespace`.
+Namespaces can help you organize related functionality. Each Q# program can have only one `namespace`. If a namespace isn't specified, the Q# compiler uses the filename as the namespace.  For example, the the `Superposition` program could be written as:
+
+```qsharp
+@EntryPoint()
+operation MeasureOneQubit() : Result {
+    // Allocate a qubit. By default, it's in the 0 state.  
+    use q = Qubit();  
+    // Apply the Hadamard operation, H, to the state.
+    // It now has a 50% chance of being measured as 0 or 1.
+    H(q);      
+    // Measure the qubit in the Z-basis.
+    let result = M(q);
+    // Reset the qubit before releasing it.
+    Reset(q);
+    // Return the result of the measurement.
+    return result;
+}
+```
 
 The Q# standard library has predefined namespaces that contain functions and operations you can use in quantum programs. For more information, see [Built-in namespaces](#built-in-namespaces).
 
 ### Entry points
 
-The `@EntryPoint()` attribute tells the Q# compiler where to start executing the program. In a program with multiple functions and operations, you can place `@EntryPoint()` before any of them to make the program start there and continue sequentially.
+By default, the Q# compiler starts executing a program from the `Main()` operation, if available, which can be located anywhere in the program. Optionally, you can use the `@EntryPoint()` attribute to specify any operation in the program as the point of execution. 
+
+In the `Superposition` program, the more descriptive `MeasureOneQubit()` operation is the entry point of the program. 
 
 ```qsharp
 @EntryPoint()
 operation MeasureOneQubit() : Result {
     ...
+```
+
+However, the program could also be written without the `@EntryPoint()` attribute by renaming the `MeasureOneQubit()` operation to `Main()`:
+
+```qsharp
+// The Q# compiler automatically detects the Main() operation as the entry point. 
+
+operation Main() : Result {
+    // Allocate a qubit. By default, it's in the 0 state.  
+    use q = Qubit();  
+    // Apply the Hadamard operation, H, to the state.
+    // It now has a 50% chance of being measured as 0 or 1.
+    H(q);      
+    // Measure the qubit in the Z-basis.
+    let result = M(q);
+    // Reset the qubit before releasing it.
+    Reset(q);
+    // Return the result of the measurement.
+    return result;
+}
 ```
 
 ### Types
@@ -159,36 +198,46 @@ Reset(q);
 
 The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Microsoft.Quantum.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.  
 
-To call a function or operation, you can specify the full namespace or use an `open` statement, which makes all the functions and operations for that namespace available and makes your code more readable. The following examples call the same operation:
+To call a function or operation, you can specify the full namespace or use an `import` statement, which makes all the functions and operations for that namespace available and makes your code more readable. The following examples call the same operation:
 
 ```qsharp
 Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
 ```
 
 ```qsharp
-open Microsoft.Quantum.Intrinsic;
+// imports all functions and operations from the Microsoft.Quantum.Intrinsic namespace.
+import Microsoft.Quantum.Intrinsic.*;
+Message("Hello quantum world!");
+
+// imports just the `Message` function from the Microsoft.Quantum.Intrinsic namespace.
+import Microsoft.Quantum.Intrinsic.Message;
 Message("Hello quantum world!");
 ```
 
-The `Superposition` program doesn't have any `open` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
+```qsharp
+// namespaces in the standard library may be imported using `Std` instead of `Microsoft.Quantum`. 
+import Std.Intrinsic.*;
+Message("Hello quantum world!");
+```
+
+
+The `Superposition` program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
 
 You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
 ```qsharp
-namespace Superposition {
-    // Open the namespace for the MResetZ operation.
-    open Microsoft.Quantum.Measurement;
+// Import the namespace for the MResetZ operation.
+import Microsoft.Quantum.Measurement.*;
 
-    @EntryPoint()
-    operation MeasureOneQubit() : Result {
-        // Allocate a qubit. By default, it's in the 0 state.      
-        use q = Qubit();  
-        // Apply the Hadamard operation, H, to the state.
-        // It now has a 50% chance of being measured as 0 or 1. 
-        H(q);   
-        // Measure and reset the qubit, and then return the result value.
-        return MResetZ(q);
-    }
+@EntryPoint()
+operation MeasureOneQubit() : Result {
+    // Allocate a qubit. By default, it's in the 0 state.      
+    use q = Qubit();  
+    // Apply the Hadamard operation, H, to the state.
+    // It now has a 50% chance of being measured as 0 or 1. 
+    H(q);   
+    // Measure and reset the qubit, and then return the result value.
+    return MResetZ(q);
 }
 ```
 
