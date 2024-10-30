@@ -27,7 +27,7 @@ An external Q# project is a standard Q# project that resides in another director
 - Visual Studio Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
 - A GitHub account, if you are planning to publish your external project to a public GitHub repository. 
 
-For running Python programs, you will also need:
+For running Python programs, you also need:
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
 - The Azure Quantum `qsharp` and `azure-quantum` packages. 
 
@@ -152,9 +152,9 @@ The following are some examples of how manifest files can define the scope of yo
 
 The following requirements and configurations apply to all Q# projects.
 
-- All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the Q# project root folder. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
+- All *.qs files that you want to be included in the project must be under a folder named **src**, which must be under the root folder of the Q#. When you create a Q# project in VS Code, the `/src` folder is created automatically. 
 - The manifest file should be at the same level as the **src** folder. When you create a Q# project in VS Code, a minimal file is created automatically.
-- Operations and functions from source files in the project can be accessed by other files in the project by using `import` statements
+- Use `import` statements to reference operations and functions from other files in the project. 
 
     ```qsharp
     import MyMathLib.*;  //imports all the callables in the MyMathLib namespace
@@ -171,14 +171,14 @@ The following requirements and configurations apply to all Q# projects.
 * Only one *.qs file in a Q# project can have an entry point defined, defined by a single `Main()` operation. 
 * The *.qs file with the entry point definition can be located at any level below the manifest file.
 * Any operation or function that is cached from a *.qs file anywhere in the Q# project displays in predictive text in VS Code.
-* If the namespace for a selected operation or function hasn't been explicitly added yet, VS Code automatically adds the necessary `import` statement.
+* If the namespace for a selected operation or function isn't imported yet, VS Code automatically adds the necessary `import` statement.
 
 
 ## Steps for creating a Q# project
 
 These steps apply to all Q# projects.
 
-1. In the VS Code file explorer, right-click the folder you want to use for the Q# project root folder and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
+1. In the VS Code file explorer, right-click the folder you want to use for the root folder of the Q# project and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
 1. VS Code creates a minimal manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file. 
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder. 
@@ -187,7 +187,7 @@ These steps apply to all Q# projects.
     ```python
     qsharp.init(project_root = '../Teleportation_project')
     ```
-1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for a manifest file, determines the project root folder, and then scans the subfolder for \*.qs files. 
+1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for a manifest file, determines the root folder of the project, and then scans the subfolder for \*.qs files. 
 
 > [!NOTE]
 > You can also manually create the manifest file and the `/src` folder in step 2. 
@@ -465,6 +465,7 @@ import MyMathFunctions.MyFunction, MyMathFunctions.AnotherFunction as Multiply;
 
 > [!NOTE]
 > The currently used `open` statement in Q#, which is used to reference libraries and namespaces, is still supported but will be deprecated eventually. In the meantime, you can optionally update your current files to use the `import` statement. For example, `open Microsoft.Quantum.Diagnostics;` can be replaced with `import Microsoft.Quantum.Diagnostics.*;`.
+> Also note that when using the `import` statement with the standard Q# libraries, you can shorten the root namespace to `Std`. For example, `import Microsoft.Quantum.Diagnostics.*;` can be written as `import Std.Diagnostics.*;`.
 
 ### Example external project
 
@@ -538,7 +539,7 @@ For this example, you'll use the same teleportation program as the earlier examp
 
 ### Projects and implicit namespaces
 
-In Q# projects, if a namespace is not specified in a *.qs program, then the compiler uses the file name as the namespace. Referencing a callable from a external dependency then uses the syntax \<dependencyName>.\<namespace>.\<callable>. However, if the file is named "Main.qs", then the compiler assumes the namespace and the calling syntax is \<dependencyName>.\<callable>, as in the previous example, `import MyTeleportLib.Teleport`. 
+In Q# projects, if a namespace is not specified in a *.qs program, then the compiler uses the file name as the namespace. Referencing a callable from an external dependency then uses the syntax \<dependencyName>.\<namespace>.\<callable>. However, if the file is named "Main.qs", then the compiler assumes the namespace and the calling syntax is \<dependencyName>.\<callable>, as in the previous example, `import MyTeleportLib.Teleport`. 
 
 Since it is not uncommon to have multiple project files, you need to account for the correct syntax when referencing callables. For example, in a project with the following file structure
 

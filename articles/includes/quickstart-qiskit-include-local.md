@@ -204,16 +204,7 @@ result.get_memory(circuit)
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.IonQ) method:
-
-```python
-backend = provider.get_backend("ionq.qpu")
-cost = backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This prints the estimated cost in US dollars.
+Before running a job on the QPU, you should estimate how much it costs to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
@@ -310,16 +301,7 @@ result.get_memory(circuit)
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.Quantinuum) method:
-
-```python
-qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
-cost = qpu_backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This prints the estimated cost in H-System Quantum Credits (HQCs).
+Before running a job on the QPU, you should estimate how much it will cost to run.
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the **Provider** tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 10/07/2024
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -36,15 +36,14 @@ no-loc: [target, targets]
 
     ```qsharp
     %%qsharp
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Unstable.Arithmetic;
-    open Microsoft.Quantum.ResourceEstimation;
+    import Std.Arrays.*;
+    import Std.Canon.*;
+    import Std.Convert.*;
+    import Std.Diagnostics.*;
+    import Std.Math.*;
+    import Std.Measurement.*;
+    import Microsoft.Quantum.Unstable.Arithmetic.*;
+    import Std.ResourceEstimation.*;
     
     operation RunProgram() : Unit {
         let bitsize = 31;

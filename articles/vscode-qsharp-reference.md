@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Learn about the features that are included with the Azure Quantum Development Kit extension for VS Code. 
-ms.date: 09/16/2024
+ms.date: 10/24/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
@@ -43,11 +43,11 @@ The following commands are available when a .qs file is active.
 | Command | Action | Notes  | Alternate user action |
 |---------|--------|--------|--------------|
 | **Q#: Set the Azure Quantum QIR target profile** |  Sets the QIR, or quantum intermediate representation, target profile for your Q# programs. | For more information about target profiles, see [Target profiles](xref:microsoft.quantum.target-profiles#target-profiles-and-their-limitations).| The current target profile is displayed in the bottom toolbar. Select the target profile on the toolbar to open the selection dropdown.  |
-| **Q#: Show circuit** | Displays a circuit diagram for the Q# program before it runs.  | For more information, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits). | Select the code lens option **Circuit** below the `@EntryPoint()` operation or above each user-defined operation in the program. |
-| **Q#: Run file and show histogram** | Runs the current Q# program and displays a histogram of the results in the right pane.  | To access sort and filter options for the histogram display, select the filter icon in the histogram pane. | Select the code lens option **Histogram** below the `@EntryPoint()` operation.  |
+| **Q#: Show circuit** | Displays a circuit diagram for the Q# program before it runs.  | For more information, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits). | Select the code lens option **Circuit** from the menu next to the entry point operation or above each user-defined operation in the program. |
+| **Q#: Run file and show histogram** | Runs the current Q# program and displays a histogram of the results in the right pane.  | To access sort and filter options for the histogram display, select the filter icon in the histogram pane. | Select the code lens option **Histogram** from the menu next to the entry point operation.  |
 | **Q#: Get QIR for current Q# program** | Opens the QIR source for the current Q# code in a new edit window. Your program must use the Base or Adaptive RI target profile to export QIR source. | For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir), and the Q# [developer blog](https://github.com/microsoft/qsharp/wiki/QIR). | N/A  |
-| **Debug: Debug Q# file** | Opens the current Q# program in the debugger. | For more information, see [Debugging and testing your quantum code](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).  | * Select **F5**<br>* Select the code lens option **Debug** below the `@EntryPoint()` operation.<br>* Select the **Run** icon in the upper right, and select **Debug Q# file**.  |
-| **Debug: Run Q# file** | Runs the current Q# program in the default quantum simulator. | For more information, see [Get started with Q# programs](xref:microsoft.quantum.submit-jobs).| * Select **Ctrl+F5**<br>* Select the code lens option **Run** below the `@EntryPoint()` operation.<br>* Select the **Run** icon in the upper right, and select **Run Q# file**. | 
+| **Debug: Debug Q# file** | Opens the current Q# program in the debugger. | For more information, see [Debugging and testing your quantum code](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).  | * Select **F5**<br>* Select the code lens option **Debug** from the menu next to the entry point operation.<br>* Select the **Run** icon in the upper right, and select **Debug Q# file**.  |
+| **Debug: Run Q# file** | Runs the current Q# program in the default quantum simulator. | For more information, see [Get started with Q# programs](xref:microsoft.quantum.submit-jobs).| * Select **Ctrl+F5**<br>* Select the code lens option **Run** from the menu next to the entry point operation.<br>* Select the **Run** icon in the upper right, and select **Run Q# file**. | 
 | **Q#: Calculate Resource Estimates** | Invokes the built-in version of the Resource Estimator. | For more information, see [Introduction to the Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). | N/A  |
 | **Q#: Help** | A brief overview of the QDK extension in VS Code. | For complete Azure Quantum documentation, see [Azure Quantum documentation](/azure/quantum/). | N/A  |
 | **Q#: Run file and show circuit diagram** | Runs the current Q# program and displays a circuit of the program with outputs. | For more information, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits). | N/A |
@@ -87,7 +87,7 @@ Most of the common code editing features in VS Code are available when working w
 
 ### Connecting to Azure Quantum 
 
-| Task | Action  | Notes | Alernate user action |
+| Task | Action  | Notes | Alternate user action |
 |-----------------|-----------|----------------|--------------| 
 | **Connect to an Azure Quantum workspace** | In File Explorer, expand **Quantum workspaces** and select **Add an existing workspace**. Follow the prompts to select a subscription and workspace. | * You can connect to multiple workspaces. Select **"+"** next to **Quantum workspaces** to connect another workspace.<br>Workspace connections persist between your VS Code sessions.<br>* To remove a workspace connection, right-click the workspace and select **Remove workspace connection**.  | From the Command Palette, select **Connect to an Azure Quantum workspace**. |
 | **Connect programmatically with a Python program** | Right-click an existing workspace connection and select **Copy Python code to connect to workspace**. Paste the resulting code into your Python program. | For more information, see [Submitting Python with Q# jobs to Azure Quantum](/azure/quantum/how-to-submit-jobs?tabs=tabid-python&pivots=ide-python#submitting-python-with-q-jobs-to-azure-quantum). | N/A |
@@ -96,10 +96,10 @@ Most of the common code editing features in VS Code are available when working w
 
 ### Running programs
 
-| Task | Action  | Notes | Alernate user action |
+| Task | Action  | Notes | Alternate user action |
 |-----------------|-----------|----------------|--------------| 
-| **Run a Q# program on the local quantum simulator** | In a Q# program, select the **Run** icon in the upper right, and select **Run Q# file**.  | For more information on the quantum simulator, see the [Sparse quantum simulator](xref:microsoft.quantum.machines.overview.sparse-simulator).  | * Select **Ctrl-F5**<br>* From the Command Palette, select **Q#: Run file and show histogram** or **Q#: Run file and show circuit diagram**<br>* Select the code lens option **Run** below the `@EntryPoint()` operation.  | 
-| **Debug a program** | In a Q# program, select the **Run** icon in the upper right, and select **Debug Q# file**. | For more information about the Q# debugger in VS Code, see [Debugging and testing your quantum code](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging). | * Select **F5**<br>* Select the code lens option **Debug** below the `@EntryPoint()` operation.  |  
+| **Run a Q# program on the local quantum simulator** | In a Q# program, select the **Run** icon in the upper right, and select **Run Q# file**.  | For more information on the quantum simulator, see the [Sparse quantum simulator](xref:microsoft.quantum.machines.overview.sparse-simulator).  | * Select **Ctrl-F5**<br>* From the Command Palette, select **Q#: Run file and show histogram** or **Q#: Run file and show circuit diagram**<br>* Select the code lens option **Run** from the menu next to the entry point operation.  | 
+| **Debug a program** | In a Q# program, select the **Run** icon in the upper right, and select **Debug Q# file**. | For more information about the Q# debugger in VS Code, see [Debugging and testing your quantum code](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging). | * Select **F5**<br>* Select the code lens option **Debug** from the menu next to the entry point operation.  |  
 | **View providers and targets in your workspaces** | In File Explorer, select **Quantum workspaces**, expand the workspace and then expand **Providers** to see the available providers in the workspace. Expand an individual provider to view the available targets. | **Note**: Hover over a target name to view its **Status** and **Queue time** before submitting a job.| N/A | 
 | **Submit a job to Azure Quantum** | In a Q# program, select a workspace, provider, and target. To submit the current Q# program, select the arrow next to the target. | For more information, see [Submitting  Q# jobs to Azure Quantum](/azure/quantum/how-to-submit-jobs#submitting-q-jobs-to-azure-quantum). | N/A |   
 | **View job results** | Expand the workspace and then expand **Jobs**.  To open the job output from Azure Storage, select the cloud icon next to the job name. | Jobs are listed with the most recent on top.  |N/A  |          

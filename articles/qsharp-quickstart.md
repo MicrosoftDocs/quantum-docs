@@ -2,7 +2,7 @@
 author: haileytap
 description: This article explains how to create your first Q# program using the Quantum Development Kit and Visual Studio Code.
 ms.author: sonialopez
-ms.date: 06/17/2024
+ms.date: 08/23/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: quickstart
@@ -34,47 +34,37 @@ In this quickstart, you:
 
 1. Open Visual Studio Code.
 1. Select **File** > **New Text File**.
-1. Save the file as `Entanglement.qs`. The .qs extension denotes a Q# program.
+1. Save the file as `Main.qs`. The .qs extension denotes a Q# program.
 
 ## Write your Q# code
 
-In your `Entanglement.qs` file, follow these steps to entangle and measure a pair of qubits.
+In your `Main.qs` file, follow these steps to entangle and measure a pair of qubits.
 
-### Define a namespace
+### Import a quantum library
 
-Each Q# program starts with a user-defined namespace, which helps you organize related functionality. For this quickstart, your namespace is `BellPair`:
+The QDK includes the Q# standard library with predefined functions and operations for your quantum programs. To use them, you must first import the relevant library.
 
-```qsharp
-namespace BellPair {
-    // Your code goes here.
-}
-```
-
-### Open a quantum library
-
-The QDK includes the Q# standard library with predefined functions and operations for your quantum programs. To use them, you must first open the relevant library.
-
-In your `BellPair` namespace, use an `open` statement to import the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the entangled state.
+In your program, use an `import` statement to open the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the entangled state.
 
 ```qsharp
-    open Microsoft.Quantum.Diagnostics;
+    import Microsoft.Quantum.Diagnostics.*;
 ```
 
 ### Define an operation
 
-After opening the relevant libraries, define your quantum operation and its input and output values. For this quickstart, your operation is `EntangleQubits`. This is where you'll write the remaining Q# code to allocate, manipulate, and measure two qubits.
+After importing the relevant libraries, define your quantum operation and its input and output values. For this quickstart, your operation is `Main`. This is where you'll write the remaining Q# code to allocate, manipulate, and measure two qubits.
 
-`EntangleQubits` takes no parameters and returns two `Result` values, `Zero` or `One`, which represent the results of the qubit measurements:
+`Main` takes no parameters and returns two `Result` values, either `Zero` or `One`, which represent the results of the qubit measurements:
 
 ```qsharp
-    operation EntangleQubits() : (Result, Result) {
+    operation Main() : (Result, Result) {
         // Your entanglement code goes here.
 }
 ```
 
 ### Allocate two qubits
 
-The `EntangleQubits` operation is currently empty, so the next step is to allocate two qubits, `q1` and `q2`. In Q#, you allocate qubits using the `use` keyword:
+The `Main` operation is currently empty, so the next step is to allocate two qubits, `q1` and `q2`. In Q#, you allocate qubits using the `use` keyword:
 
 ```qsharp
         // Allocate two qubits, q1 and q2, in the 0 state.
@@ -88,7 +78,7 @@ The `EntangleQubits` operation is currently empty, so the next step is to alloca
 
 The qubits `q1` and `q2` are in the $\ket{0}$ state. To prepare the qubits for entanglement, you must put one of them into an even superposition, where it has a 50% chance of being measured as $\ket{0}$ or $\ket{1}$.
 
-You put a qubit into superposition by applying the Hadamard, `H`, operation:
+You put a qubit into superposition by applying the *Hadamard*, `H`, operation:
 
 ```qsharp
         // Put q1 into an even superposition.
@@ -145,7 +135,7 @@ Before being released at the end of each Q# program, qubits must be in the $\ket
 
 ### Return the measurement results
 
-Finally, to complete the `EntangleQubits` operation and observe the entangled state, return the measurement results of `m1` and `m2`:
+Finally, to complete the `Main` operation and observe the entangled state, return the measurement results of `m1` and `m2`:
 
 ```qsharp
         // Return the measurement results.
@@ -159,43 +149,40 @@ Finally, to complete the `EntangleQubits` operation and observe the entangled st
 
 ## Run your Q# code
 
-Congratulations! You wrote a Q# program that entangles two qubits and creates a Bell pair. Before running your program, use the `@EntryPoint()` attribute to tell the Q# compiler where to start executing the program. Every Q# program must contain one `@EntryPoint()`. In this case, place `@EntryPoint()` before the `EntangleQubits` operation.
+Congratulations! You wrote a Q# program that entangles two qubits and creates a Bell pair. 
 
 Your final Q# program should look like this:
 
 ```qsharp
-namespace BellPair {
-    open Microsoft.Quantum.Diagnostics;
-        
-    @EntryPoint()
-    operation EntangleQubits() : (Result, Result) {  
-        // Allocate two qubits, q1 and q2, in the 0 state.
-        use (q1, q2) = (Qubit(), Qubit());
+import Microsoft.Quantum.Diagnostics.*;
 
-        // Put q1 into an even superposition.
-        // It now has a 50% chance of being measured as 0 or 1.
-        H(q1);
-
-        // Entangle q1 and q2, making q2 depend on q1.
-        CNOT(q1, q2);
-
-        // Show the entangled state of the qubits.
-        DumpMachine();
-
-        // Measure q1 and q2 and store the results in m1 and m2.
-        let (m1, m2) = (M(q1), M(q2));
-
-        // Reset q1 and q2 to the 0 state.
-        Reset(q1);
-        Reset(q2);
-
-        // Return the measurement results.
-        return (m1, m2);
-    }
+operation Main() : (Result, Result) {  
+    // Allocate two qubits, q1 and q2, in the 0 state.
+    use (q1, q2) = (Qubit(), Qubit());
+    
+    // Put q1 into an even superposition.
+    // It now has a 50% chance of being measured as 0 or 1.
+    H(q1);
+    
+    // Entangle q1 and q2, making q2 depend on q1.
+    CNOT(q1, q2);
+    
+    // Show the entangled state of the qubits.
+    DumpMachine();
+    
+    // Measure q1 and q2 and store the results in m1 and m2.
+    let (m1, m2) = (M(q1), M(q2));
+    
+    // Reset q1 and q2 to the 0 state.
+    Reset(q1);
+    Reset(q2);
+    
+    // Return the measurement results.
+    return (m1, m2);
 }
 ```
 
-To run your program and view the result of both qubits, select **Run** under `@EntryPoint()` or press **Ctrl+F5**:
+To run your program and view the result of both qubits, select **Run** above the `Main` operation or press **Ctrl+F5**
 
 :::image type="content" source="media/qsharp-quickstart-run.png" alt-text="Screenshot of the Q# file in Visual Studio Code showing where to find the 'Run' command.":::
 

@@ -69,9 +69,11 @@ Q# is a standalone language offering a high level of abstraction. There is no no
 
 For more information, see [Introduction to Q#](xref:microsoft.quantum.qsharp-overview). To start writing Q# code, see [Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).
 
-## What else can I do with Azure Quantum?
+## What can I do with Azure Quantum?
 
-Azure Quantum offers a wide range of services and tools to help you develop quantum solutions. Here are some of the key features:
+Azure Quantum offers a wide range of services and tools to help you develop quantum solutions.
+
+For the latest information about Microsoft's quantum computing research, see the [Microsoft Research Quantum Computing](https://www.microsoft.com/research/research-area/quantum-computing/?) page.
 
 ### Hybrid quantum computing
 
@@ -88,6 +90,24 @@ The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-res
 To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
 :::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations.":::
+
+### Quantum simulation with Azure Quantum Elements
+
+Quantum mechanics is the underlying "operating system" of the universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For simulating intrinsically quantum mechanical systems, such as molecules, quantum computing is promising, because qubits can be used to represent the natural states in question. Examples of quantum systems that quantum computing can model are photosynthesis, superconductivity, and complex molecular formations.
+
+[Azure Quantum Elements](https://quantum.microsoft.com/solutions/azure-quantum-elements) is purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows optimized for scaling on Azure High-Performance Computing (HPC) clusters, AI-accelerated computing, augmented reasoning using AI, integration with quantum tools to start experimenting with existing quantum hardware, and access in the future to Microsoft’s quantum supercomputer. 
+
+For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
+
+### Quantum speedups
+
+Quantum computers do exceptionally well with problems that require calculating a large number of possible combinations. These types of problems can be found in many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
+
+One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be. One well-known example is the Grover's algorithm, which yield a polynomial speedup over the classical counterparts. 
+
+[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. 
+
+For an implementation of Grover's algorithm, see [Tutorial: Implement Grover's search algorithm in Q#](xref:microsoft.quantum.tutorial-qdk.grovers).
 
 ## Quantum providers available on Azure Quantum
 

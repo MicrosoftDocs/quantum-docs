@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: sonialopez
-ms.date: 09/16/2024
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -190,9 +190,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();

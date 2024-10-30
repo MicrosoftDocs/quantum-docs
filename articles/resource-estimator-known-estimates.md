@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to use pre-calculated estimates for your Q# programs with the Azure Quantum Resource Estimator.
-ms.date: 08/13/2024
+ms.date: 10/24/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -51,7 +51,7 @@ You can use the `AccountForEstimates` Q# operation to pass known estimates to th
 For example, consider the following Q# operation called `FactoringFromLogicalCounts` that takes a list of known estimates and a list of qubits.
 
 ```qsharp
-open Microsoft.Quantum.ResourceEstimation;
+import Microsoft.Quantum.ResourceEstimation.*;
 
 operation FactoringFromLogicalCounts() : Unit {
     use qubits = Qubit[12581];

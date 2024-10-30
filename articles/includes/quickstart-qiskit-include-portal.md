@@ -176,42 +176,7 @@ result.get_memory(circuit)
 
 #### Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it costs to run. 
-
-First, get the list of available providers again:
-
-```python
-print("This workspace's targets:")
-for backend in provider.backends():
-    print("- " + backend.name())
-```
-
-```output
-This workspace's targets:
-- ionq.simulator
-- ionq.qpu.aria-1
-- microsoft.estimator
-- quantinuum.qpu.h1-1
-- quantinuum.sim.h1-1sc
-- quantinuum.sim.h1-1e
-- rigetti.sim.qvm
-```
-
-Next, create an object to represent the [IonQ quantum computer](xref:microsoft.quantum.providers.ionq#quantum-computer):
-
-```python
-qpu_backend = provider.get_backend("ionq.qpu.aria-1")
-```
-
-To estimate the cost of running a job on the QPU, add and run a new cell using the [`estimate_cost`](xref:azure.quantum.target.IonQ) method of the target:
-
-```python
-cost = qpu_backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This displays the estimated cost in US dollars.
+Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it costs to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers-pricing#ionq), or find your workspace and view pricing options in the **Providers** blade of your workspace.
 
@@ -318,47 +283,7 @@ result.get_memory(circuit)
 
 #### Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. 
-
-First, get the list of available providers again:
-
-```python
-print("This workspace's targets:")
-for backend in provider.backends():
-    print("- " + backend.name())
-```
-
-```output
-This workspace's targets:
-- ionq.simulator
-- ionq.qpu.aria-1
-- microsoft.estimator
-- quantinuum.qpu.h1-1
-- quantinuum.sim.h1-1sc
-- quantinuum.sim.h1-1e
-- rigetti.sim.qvm
-```
-
-
-Next, create an object to represent the [Quantinuum System Model H1](xref:microsoft.quantum.providers.quantinuum#system-model-h1):
-
-```python
-qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
-```
-
-To estimate the cost of running a job on the QPU, add and run a new cell using the [`estimate_cost`](xref:azure.quantum.target.Quantinuum) method of the target:
-
-```python
-cost = qpu_backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-```output
-Estimated cost: 5.72
-```
-
-The output displays the estimated cost in H-System Quantum Credits (HQCs).
+Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it will cost to run.
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
