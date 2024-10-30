@@ -6,8 +6,8 @@ ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
-title: 'Quickstart: Use the Local Resource Estimator'
+no-loc: ['Python', '$$v', target, targets]
+title: 'Quickstart: Learn to use the Resource Estimator'
 uid: microsoft.quantum.quickstarts.computing.resources-estimator
 #customer intent: As a quantum programmer, I want to write programs that use the Resource Estimator. 
 --- 
@@ -19,10 +19,10 @@ In this quickstart, you learn how to use the Azure Quantum Resource Estimator to
 ## Prerequisites
 
 * The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-* The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+* The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 > [!TIP]
-> You don't need to have an Azure account to run the local Resource Estimator. 
+> You don't need to have an Azure account to run the Resource Estimator. 
 
 ## Load a Q# sample program
 
