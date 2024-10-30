@@ -167,8 +167,6 @@
     items:
     - name: Double-factorized chemistry
       href: tutorial-resource-estimator-chemistry.md
-    - name: Resource estimation with QIR
-      href: tutorial-resource-estimator-qir.md
 - name: Quantum simulators
   items:
   - name: Sparse simulator

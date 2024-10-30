@@ -33,7 +33,7 @@ The option you choose for running Q# programs depends on your coding experience,
 | Built-in Q# support | &#10004; |  &#10004;  |  &nbsp; &#10004; * |
 | QPU access | &#10004; |  &#10004;  |  &nbsp; &nbsp; &#10004; **  |
 | Jupyter  Notebooks  | &nbsp; |  &#10004;  |  &#10004;  |
-| Resource Estimator  | &nbsp; |  &#10004;  |  &#10004;  |
+| Resource Estimator  | &nbsp; |  &nbsp;  |  &#10004;  |
 | Python support  | &nbsp; |  &#10004;  |  &#10004;  |
 | Cirq and Qiskit support  |  &nbsp;  |  &#10004;  |  &#10004;  |
 | Integrated hybrid  | &nbsp; |  &nbsp;  |  &#10004;  |
@@ -69,8 +69,6 @@ The [Azure portal](https://portal.azure.com) is the main interface of the Micros
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 Quantum workspaces include [Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks), which are web-based Jupyter Notebooks in the Azure portal. Use Azure notebooks to create, upload, store, and run Q# and Python programs on quantum simulators or hardware. From your quantum workspace, you can use sample notebooks to get started with quantum programming.
-
-You can also use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) in Azure notebooks to estimate the physical resources required to run your Qiskit and QIR programs. For more information, see [Run the Resource Estimator in the Azure portal](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ### Is the Azure portal right for me?
 
