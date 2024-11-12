@@ -279,41 +279,86 @@ except ImportError:
 
 #### Create a quantum register
 
-1. First, you create a 'devices' object to import the PASQAL quantum computer target, Fresnel. [Fresnel QPU](xref:microsoft.quantum.providers.pasqal#fresnel) provides predefined trap layouts that you can utilize to create your quantum register. To configure your quantum registers, you arrange an array of qubits. 
+You need to define both a register and a layout before proceeding. The register specify where atoms will be arranged, while the layout specifies the positioning of traps necessary to capture and structure these atoms within the register. 
+
+For details on layouts, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html).
+
+- First, you create a 'devices' object to import the PASQAL quantum computer target, [Fresnel](xref:microsoft.quantum.providers.pasqal#fresnel).
 
     ```python
     from pulser_pasqal import PasqalCloud
 
     devices = PasqalCloud().fetch_available_devices()
     QPU = devices["FRESNEL"]
-
-    # List all available calibrated register layouts
-    for calibrated_register_layout in QPU.calibrated_register_layouts.keys():
-        print(calibrated_register_layout)
     ```
 
-1. Next, you define the layout for your qubit register. In this example, you use a `TriangularLatticeLayout(61, 5.0µm)` as the trap layout. 
+##### Pre-calibrated layouts
+
+The device defines a list of [pre-calibrated layouts](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Devices-with-pre-calibrated-layouts). You can build your register out of one of these layouts.
+
+This is the recommended option because it will improve the performance of the QPU
+
+* Option 1: Define your register using pre-calibrated layouts:
+
+    Inspect the layouts available on Fresnel and define your register from this layout. Check the pulser documentation for more information on how to do that.
+        
+    Example:
 
     ```python
-    layout = QPU.calibrated_register_layouts[
-        "TriangularLatticeLayout(61, 5.0µm)"
-    ]
-    layout.draw()
-    ````
-    The following image shows the display of the chosen layout. 
-    
-    :::image type="content" source="media/provider-format-pasqal-layout.png" alt-text="Diagram of the layout chosen for the qubit register. The layout shows 60 points in an array of 40 times 30 micrometers.":::
-
-1. Then, you define the qubit register selecting a set of traps from the layout. In this example, the layout has 60 traps and you select 7 traps using their ids to define a quantum register of 7 qubits.
-
-    ```python
-    reg = layout.define_register(*[30, 21, 26, 35, 39, 34, 25])
+    # let's say we are interested in the first layout available on the device
+    layout = QPU.pre_calibrated_layouts[0]
+    # Select traps 1, 3 and 5 of the layout to define the register
+    traps = [1,3,5]
+    reg = layout.define_register(*traps)
+    # You can draw the resulting register to verify it matches your expectations
     reg.draw()
     ```
-    The following image shows the final display of the qubit register.
-    
-    :::image type="content" source="media/provider-format-pasqal-register.png" alt-text="Diagram showing the final quantum register after selecting 7 points from the 60 point-layout.":::
 
+##### Arbitrary layouts
+
+If pre-calibrated layouts do not satisfy the requirements of your experiment, you can create a custom layout.
+
+For any given arbitrary register, a neutral-atom QPU will place traps according to the layout, which must then undergo calibration. Since each calibration requires time, it is generally advisable to reuse an existing calibrated layout whenever possible
+
+* Option 2: Automatically derive a layout from your defined register
+
+    This option allows for the automatic generation of a layout based on a specified register. However, for large registers, this process may yield sub-optimal solutions due to limitations in the algorithm used to create the layout.
+    
+    ```python
+    qubits = {
+        "q0": (0, 0),
+        "q1": (0, 10),
+        "q2": (8, 2),
+        "q3": (1, 15),
+        "q4": (-10, -3),
+        "q5": (-8, 5),
+    }
+
+    reg = Register(qubits).with_automatic_layout(device) 
+    ```
+
+* Option 3: Define your register using a manually defined layout
+
+    - Create an arbitrary layout with 20 traps randomly positioned in a 2D plane
+
+    ```python
+    import numpy as np
+
+    # Generating random coordinates
+    np.random.seed(301122)  # Keeps results consistent between runs
+    traps = np.random.randint(0, 30, size=(20, 2))
+    traps = traps - np.mean(traps, axis=0)
+    # Creating the layout
+    layout = RegisterLayout(traps, slug="random_20")
+    ```
+    
+    - Define your register with specific trap IDs
+
+    ```python
+    trap_ids = [4, 8, 19, 0]
+    reg = layout.define_register(*trap_ids, qubit_ids=["a", "b", "c", "d"])
+    reg.draw()
+    ```
 #### Write a pulse sequence
 
 The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the quantum register.
