@@ -8,7 +8,8 @@
       "monikers": [],
       "moniker_ranges": [],
       "xref_query_tags": [
-        "/qsharp-lang",
+        "/qsharp",
+        "/dotnet",
         "/python"
       ],
       "enable_xrefmap_share": true,
