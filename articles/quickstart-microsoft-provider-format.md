@@ -296,9 +296,9 @@ For details on layouts, see the [Pulser documentation](https://pulser.readthedoc
 
 The device defines a list of [pre-calibrated layouts](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Devices-with-pre-calibrated-layouts). You can build your register out of one of these layouts.
 
-This is the recommended option because it will improve the performance of the QPU
+This is the recommended option because it will improve the performance of the QPU.
 
-* Option 1: Define your register using pre-calibrated layouts:
+* Option 1: Define your register using pre-calibrated layouts
 
     Inspect the layouts available on Fresnel and define your register from this layout. Check the pulser documentation for more information on how to do that.
         
