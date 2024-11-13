@@ -1,24 +1,20 @@
 ---
 author: bradben
-description: This article describes how to define a Q# project that makes use of multiple Q# source files, and create an externally available custom library.  
+description: Learn how to define a Q# project that uses multiple source files, and use your projects as reusable custom libraries.  
 ms.author: brbenefield
-ms.date: 07/30/2024
+ms.date: 11/13/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
-title: "How to Work With Q# Projects"
+title: "Develop and Manage Q# Projects and Custom Libraries"
 uid: microsoft.quantum.qsharp-projects
 #customer intent: As a quantum developer, I want to understand how to use Q# projects to develop quantum programs and custom libraries
 ---
 
-# How to work with Q# projects
+# How to create and manage Q# projects and custom libraries
 
-With the Azure Quantum Development Kit, you can define *Q# projects*, which are folder structures with multiple Q# files that can access each other's operations and functions. Projects are helpful for logically organizing your source code. You can also use projects as external dependencies, or custom libraries, that can be accessed from external sources.
-
-A Q# project contains a Q# manifest file, named qsharp.json, and one or more *.qs files in a specified folder structure. When a user opens a *.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode.  A Q# project can be created manually or directly in VS Code. 
-
-An external Q# project is a standard Q# project that resides in another directory or on a public GitHub repository and uses `export` statements to define which functions and operations can be accessed by external programs. Programs define the external project as a dependency in their manifest file, and use `import` statements to access the items (operations, functions, structs, and namespaces) in the external project. For more information, see [Using projects as external dependencies](#configuring-q-projects-as-external-dependencies). 
+In this article, you'll learn how to create, manage, and share *Q# projects*. Q# projects are folder structures with multiple Q# files that can access each other's operations and functions. Projects are helpful for logically organizing your source code. You can also use projects as custom libraries that can be accessed from external sources.
 
 ## Prerequisites
 
@@ -31,11 +27,17 @@ For running Python programs, you also need:
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
 - The Azure Quantum `qsharp` and `azure-quantum` packages. 
 
+## How Q# projects work
+
+A Q# project contains a Q# manifest file, named **qsharp.json**, and one or more *.qs files in a specified folder structure. When a user opens a *.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode.  You can create a Q# project manually or directly in VS Code. 
+
+An external Q# project is a standard Q# project that resides in another directory or on a public GitHub repository and acts as a custom library. An external project uses `export` statements to define which functions and operations can be accessed by external programs. Programs define the external project as a dependency in their manifest file, and use `import` statements to access the items (operations, functions, structs, and namespaces) in the external project. For more information, see [Using projects as external dependencies](#configuring-q-projects-as-external-dependencies). 
+
 ## Define a Q# project
 
-A Q# project is defined by the presence of a manifest file, named qsharp.json, and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs and external projects, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must specify the Q# project folder with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
+A Q# project is defined by the presence of a manifest file, named **qsharp.json**, and a **src** folder (which contains the Q# source files), both of which must be in the root folder of the project. For Q# programs and external projects, the Q# compiler detects the project folder automatically. For Python programs and Jupyter Notebooks, you must [specify the Q# project folder](#defining-the-project-folder-python-and-jupyter-notebook-programs) with a `qsharp.init` call. The folder structure for a Q# project, however, remains the same for all types of programs.
 
-:::image type="content" source="media/multi-file-art.png" alt-text="Picture showing the folder hierarchy for a Q# project.":::
+:::image type="content" source="media/multi-file-art.png" alt-text="The folder structure and hierarchy for a Q# project.":::
 
 ### [Using a Q# program](#tab/tabid-qsharp)
 
@@ -385,7 +387,8 @@ To add a dependency to a project that is published to a public GitHub repository
 }
 ```
 
-- For GitHub dependencies, "ref" refers to a GitHub [refspec](https://git-scm.com/book/en/v2/Git-Internals-The-Refspec). Microsoft recommends always using a commit hash, so you can rely on a specific version of your dependency.
+> [!NOTE]
+> For GitHub dependencies, "ref" refers to a GitHub [refspec](https://git-scm.com/book/en/v2/Git-Internals-The-Refspec). Microsoft recommends always using a commit hash, so you can rely on a specific version of your dependency.
  
 #### The external project manifest file
 
@@ -537,7 +540,7 @@ For this example, you'll use the same teleportation program as the earlier examp
 
 1. To run the program, open /Project_A/Main.qs in VS Code and select **Run**. 
 
-### Projects and implicit namespaces
+## Projects and implicit namespaces
 
 In Q# projects, if a namespace is not specified in a *.qs program, then the compiler uses the file name as the namespace. Referencing a callable from an external dependency then uses the syntax \<dependencyName>.\<namespace>.\<callable>. However, if the file is named "Main.qs", then the compiler assumes the namespace and the calling syntax is \<dependencyName>.\<callable>, as in the previous example, `import MyTeleportLib.Teleport`. 
 
