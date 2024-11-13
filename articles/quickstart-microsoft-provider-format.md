@@ -453,33 +453,6 @@ def prepare_input_data(seq):
     }
     ```
 
-#### Explore Advanced Emulator Features
-
-[PASQAL's emulator](xref:microsoft.quantum.providers.pasqal#emulator) offers advanced features that are not yet supported by Fresnel QPU. You can organize your register in a custom way without any limitations from the pre-calibrated layouts. For example, the following code creates a 4x4 square lattice of qubits:
-
-```python
-import numpy as np
-from pulser import Register, Sequence
-
-L = 4
-square = np.array([[i, j] for i in range(L) for j in range(L)], dtype=float)
-square -= np.mean(square, axis=0)
-square *= 5
-
-qubits = dict(enumerate(square))
-custom_reg = Register(qubits)
-custom_reg.draw()
-
-seq = Sequence(custom_reg, QPU)
-```
-
-:::image type="content" source="media/provider-format-pasqal-array.png" alt-text="Plot of a 4x4 square lattice with 16 qubits.":::
-
-After defining a custom register, you can follow the exact same steps outlined in the previous section to send a specified sequence on our emulator.
-
-> [!NOTE]
-> Custom register feature will soon be available on FRESNEL.
-
 ### Submit a circuit to Quantinuum using OpenQASM
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
