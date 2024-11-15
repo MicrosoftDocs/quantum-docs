@@ -10,7 +10,7 @@ no-loc: [target, targets]
 
 ## Prerequisites
 
-For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+For installation details, see [Installing the Quantum Development Kit on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
@@ -23,9 +23,9 @@ For installation details, see [Installing the QDK on VS Code](xref:microsoft.qua
     > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
 
-## Run a simple circuit
+## Run a basic circuit
 
-In VS Code, open a new Python file to define and run a simple circuit using the built-in sparse simulator in the Qsharp package.  
+In VS Code, open a new Python file to define and run a basic circuit using the built-in sparse simulator in the Qsharp package.  
 
 ```python
 # load the required imports 
