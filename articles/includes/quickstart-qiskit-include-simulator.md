@@ -25,7 +25,7 @@ For installation details, see [Installing the QDK on VS Code](xref:microsoft.qua
 
 ## Run a simple circuit
 
-Define and run a simple circuit using the built-in sparse simulator in the Qsharp package.  
+In VS Code, open a new Python file to define and run a simple circuit using the built-in sparse simulator in the Qsharp package.  
 
 ```python
 # load the required imports 
@@ -43,6 +43,9 @@ counts = job.result().get_counts()
 
 print(counts)
 ```
+
+To run the program, select the Run icon in the upper right, and select **Run Python file**. The output displays in a new terminal window. 
+
 
 ```html
                   ┌─────────────────────────┐┌─┐
