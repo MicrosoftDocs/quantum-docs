@@ -16,6 +16,8 @@ groups:
     title: Azure Quantum portal
   - id: platform-local
     title: Local computer
+  - id: platform-simulator
+    title: Local simulator
 - id: azurequantum-ide
   title: IDE for submitting jobs to AQ 
   prompt: Select the option for your development environment
