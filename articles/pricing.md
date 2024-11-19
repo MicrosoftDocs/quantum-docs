@@ -21,9 +21,7 @@ In Azure Quantum, hardware and software providers define and control the pricing
  
 ## IonQ 
 
-[IonQ](xref:microsoft.quantum.providers.ionq) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*.
-
-Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
+[IonQ](xref:microsoft.quantum.providers.ionq) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*. Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
 
 $$
 QGS = N · C
@@ -31,12 +29,26 @@ $$
 
 where:
 
+- $QGS$ is the number of quantum gate-shots
 - $N$ is the number of one- or two-qubit gates submitted
-- $C$ is the number of execution shots requested
+- $C$ is the number of execution shots 
+
+If you're an existing user of IonQ, in addition to the QGS units you may see another billing unit called *Azure Quantum Tokens*. The token-based pricing model is specific to Azure Quantum, being Azure Quantum Tokens (AQT) and Quantum Gate-Shots (QGS) equivalent. The number of Azure Quantum Tokens is calculated by the following formula:
+
+$$
+AQT = m + 0.000220 · (N_{1q} · C) + 0.000975 ·(N_{2q}· C)
+$$
+
+where:
+
+- $AQT$ is the number of Azure Quantum Tokens consumed by the program
+- $m$ is the minimum price per program execution, which is USD97.50 if error mitigation is on and USD12.4166 if error mitigation is off
+- $N_{1q}$ and $N_{2q}$ are the number of one- and two-qubit gates submitted, respectively
+- $C$ is the number of execution shots
 
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
-New Azure Quantum customers can benefit from a one-time USD500 free Azure Quantum credit toward the IonQ provider to use on IonQ's Aria QPU and their quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan with access to the quantum simulator and a **monthly subscription** plan which expands the access to the IonQ Aria 1 25-qubit quantum computer. 
+New Azure Quantum customers can benefit from a one-time USD500 free Azure Quantum credit toward the IonQ provider to use on IonQ's Aria QPU and their quantum simulator. Besides the Azure Quantum Credits plan, IonQ offers a **pay-as-you-go** plan and a **monthly subscription** plan with access to the quantum simulator and the Aria 1 25-qubit quantum computer.
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
@@ -45,9 +57,9 @@ Azure Quantum Credits consumption is based on a resource-usage model. The cost o
 |Includes access to| Pricing |
 |---|---|  
 |IonQ simulator| Free of charge|
-|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
-|IonQ Aria 2 |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
-|IonQ Forte (Private preview) |<ul><li>1-Qubit Gate Shot: USD0.000220 deducted from your credits</li><li>2-Qubit Gate Shot: USD0.000975 deducted from your credits</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 1 |<ul><li>USD0.000220 / 1-qubit-gate shot (deducted from your credits)</li><li> USD0.000975 / 2-qubit-gate shot (deducted from your credits)</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 2 |<ul><li>USD0.000220 / 1-qubit-gate shot (deducted from your credits)</li><li> USD0.000975 / 2-qubit-gate shot (deducted from your credits)</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Forte (Private preview) |<ul><li>USD0.000220 / 1-qubit-gate shot (deducted from your credits)</li><li> USD0.000975 / 2-qubit-gate shot (deducted from your credits)</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t charge you when you reach your credit limit.
@@ -63,9 +75,9 @@ The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 and Ar
 |Includes access to| Pricing|
 |---|---|  
 |IonQ simulator| Free of charge|
-|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
-|IonQ Aria 2 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
-|IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 1 |<ul><li>USD0.000220 / 1-qubit-gate shot</li><li>USD0.000975 / 2-qubit-gate shot</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 2 |<ul><li>USD0.000220 / 1-qubit-gate shot</li><li>USD0.000975 / 2-qubit-gate shot</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Forte (Private preview)|<ul><li>USD0.000220 / 1-qubit-gate shot</li><li>USD0.000975 / 2-qubit-gate shot</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -76,9 +88,9 @@ The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 and 
 |Includes access to | Pricing |
 |---|---|  
 |IonQ simulator| Free of charge|
-|IonQ Aria 1 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
-|IonQ Aria 2 |<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
-|IonQ Forte (Private preview)|<ul><li>1-Qubit Gate Shot: USD0.000220</li><li>2-Qubit Gate Shot: USD0.000975</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
+|IonQ Aria 1 |<ul><li>USD0.000220 / 1-qubit-gate shot</li><li>USD0.000975 / 2-qubit-gate shot</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
+|IonQ Aria 2 |<ul><li>USD0.000220 / 1-qubit-gate shot</li><li>USD0.000975 / 2-qubit-gate shot</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
+|IonQ Forte (Private preview)|<ul><li>USD0.000220 / 1-qubit-gate shot</li><li>USD0.000975 / 2-qubit-gate shot</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|  
 
 > [!NOTE]
 > Once you have consumed the equivalent cost of the monthly subscription, any overspending is charged as a pay-as-you-go plan.
