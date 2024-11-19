@@ -21,11 +21,19 @@ In Azure Quantum, hardware and software providers define and control the pricing
  
 ## IonQ 
 
-Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. This is called a *gate-shot*, which is equal to $N ·C$, where $N$ is the number of gates and $C$ is the number of shots.
+[IonQ](xref:microsoft.quantum.providers.ionq) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*. Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
 
-[IonQ](xref:microsoft.quantum.providers.ionq) uses a token-based pricing model, where the number of tokens consumed by a program is calculated based on the number of one- and two-qubit gates in the program, and the number of shots.
+$$
+QGS = N · C
+$$
 
-The number of Azure Quantum Tokens is calculated by the following formula:
+where:
+
+- $QGS$ is the number of quantum gate-shots
+- $N$ is the number of one- or two-qubit gates submitted
+- $C$ is the number of execution shots 
+
+If you're an existing user of IonQ, in addition to the QGS units you may see another billing unit called *Azure Quantum Tokens*. The token-based pricing model is specific to Azure Quantum, being Azure Quantum Tokens (AQT) and Quantum Gate-Shots (QGS) equivalent. The number of Azure Quantum Tokens is calculated by the following formula:
 
 $$
 AQT = m + 0.000220 · (N_{1q} · C) + 0.000975 ·(N_{2q}· C)
@@ -33,10 +41,10 @@ $$
 
 where:
 
-- $AQT$ is the number of Azure Quantum Tokens consumed by the program.
-- $m$ is the minimum price per program execution, which is USD97.50 if error mitigation is on and USD12.4166 if error mitigation is off.
-- $N_{1q}$ and $N_{2q}$ are the number of one- and two-qubit gates submitted, respectively.
-- $C$ is the number of execution shots.
+- $AQT$ is the number of Azure Quantum Tokens consumed by the program
+- $m$ is the minimum price per program execution, which is USD97.50 if error mitigation is on and USD12.4166 if error mitigation is off
+- $N_{1q}$ and $N_{2q}$ are the number of one- and two-qubit gates submitted, respectively
+- $C$ is the number of execution shots
 
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
