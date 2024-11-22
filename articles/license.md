@@ -3,7 +3,7 @@ title: Microsoft Quantum Development Kit license
 description: License terms, disclaimers and user rights for the Microsoft Quantum Development Kit.
 author: bradben
 ms.author: brbenefield
-ms.date: 07/27/2022
+ms.date: 11/22/2024
 no-loc: ['Q#', '$$v']
 ---
 
