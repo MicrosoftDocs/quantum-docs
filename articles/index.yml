@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: SoniaLopezBravo
   ms.author: sonialopez
-  ms.date: 09/11/2024
+  ms.date: 11/27/2024
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -32,7 +32,7 @@ landingContent:
         links:
           - text: List of quantum hardware providers
             url: qc-target-list.md
-          - text: Types of quantum targets
+          - text: Types of quantum target profiles
             url: quantum-computing-target-profiles.md
       - linkListType: training
         links:
@@ -54,20 +54,6 @@ landingContent:
         links:
           - text: Create your first Q# program 
             url: qsharp-quickstart.md
-      - linkListType: training
-        links:
-          - text: Learn Q# with Copilot 
-            url: https://quantum.microsoft.com/experience/quantum-coding
-          - text: Learn Q# with the Quantum Katas
-            url: https://quantum.microsoft.com/experience/quantum-katas
-
-# Develop with QDK
-  - title: Develop quantum programs with the Quantum Development Kit
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Ways to run Q# programs
-            url: qsharp-ways-to-work.md
       - linkListType: tutorial
         links:
           - text: Create a quantum random number generator
@@ -76,56 +62,49 @@ landingContent:
             url: tutorial-qdk-explore-entanglement.md
           - text: Implement Grover's algorithm
             url: tutorial-qdk-grovers-search.md
-          - text: Implement the Quantum Fourier Transform
-            url: tutorial-qdk-qubit-level-program.md
+
+# Develop with QDK
+  - title: Advanced development with the Quantum Development Kit
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Submit Q# programs to Azure Quantum with Visual Studio Code
+            url: how-to-submit-jobs.md
       - linkListType: how-to-guide
         links:
-          - text: Run a Q# program in Visual Studio Code
-            url: how-to-submit-jobs.md
           - text: Work with Q# projects
             url: how-to-work-with-qsharp-projects.md
+          - text: Debug and test Q# programs
+            url: testing-debugging.md
+          - text: Use sessions to group multiple jobs
+            url: hybrid-computing-interactive.md
           - text: Run hybrid quantum computing programs
             url: hybrid-computing-integrated.md
-          - text: Submit a circuit with Qiskit
-            url: quickstart-microsoft-qiskit.md
-          - text: Submit a circuit with Cirq
-            url: quickstart-microsoft-cirq.md
-          - text: Adapt a Qiskit sample to Azure Quantum
-            url: how-to-adapt-qiskit.md
+          - text: Visualize quantum circuit diagrams
+            url: how-to-visualize-circuits.md
  
 
   # Resource Estimation
   - title: Azure Quantum Resource Estimator
     linkLists:
-      - linkListType: quickstart
-        links:
-          - text: Run your first resource estimation program
-            url: quickstart-microsoft-resources-estimator.md
       - linkListType: overview
         links:
           - text: What is the Azure Quantum Resource Estimator?
             url: intro-to-resource-estimation.md
-          - text: Ways to use the Resource Estimator
-            url: how-to-submit-re-jobs.md
+      - linkListType: quickstart
+        links:
+          - text: Run your first resource estimation program
+            url: quickstart-microsoft-resources-estimator.md
       - linkListType: reference
         links:
-          - text: Target parameters of the Resource Estimator
+          - text: Customize the target parameters of the Resource Estimator
             url: overview-resources-estimator.md
-          - text: Understand the result data of the Resource Estimator
+          - text: Retrieve the output of the Resource Estimator
             url: overview-resource-estimator-output-data.md
       - linkListType: how-to-guide
         links:
-          - text: Run multiple configurations of parameters in a single job
+          - text: Compare multiple configurations of parameters in a single job
             url: resource-estimator-batching.md
-          - text: Use known estimates to optimize resource estimation
-            url: resource-estimator-known-estimates.md
-          - text: Perform manual caching to optimize resource estimation
-            url: resource-estimator-handle-large-programs.md
-      - linkListType: tutorial
-        links:
-          - text: Estimate resources of a quantum chemistry problem
-            url: tutorial-resource-estimator-chemistry.md
-
 
   # Management
   - title: Manage your Azure Quantum resources
@@ -144,12 +123,6 @@ landingContent:
             url: how-to-connect-workspace.md
           - text: Share access to your quantum workspace
             url: how-to-share-access-quantum-workspace.md
-          - text: Add a group to your quantum workspace
-            url: bulk-add-users-to-a-workspace.md
-          - text: Authenticate using an Access Key
-            url: security-manage-access-keys.md
-          - text: Authenticate using a service principal
-            url: optimization-authenticate-service-principal.md
 
 
 

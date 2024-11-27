@@ -14,7 +14,7 @@ uid: microsoft.quantum.resource-estimator-known-estimates
 
 # How to use known estimates with the Resource Estimator
 
-In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
+In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
 
 For information about how to run the Resource Estimator, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
@@ -33,8 +33,6 @@ If you want to use Python in VS Code, you also need the following:
     ```
 
 ## Use known estimates for an operation
-
-If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
 
 Some scenarios where you may want to perform estimation from pre-calculated estimates:
 
