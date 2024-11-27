@@ -82,13 +82,11 @@ The following table shows what you can and can't do in the Azure portal:
 
 ## Visual Studio Code
 
-[Visual Studio Code](https://code.visualstudio.com/) is a free, open-source code editor from Microsoft. With the QDK extension for VS Code, you can create Q# programs, load built-in Q# samples, and use features like error messaging, syntax highlighting, debugging, circuit diagram visualization, CodeLens, and IntelliSense—all in your local development environment.
+[Visual Studio Code](https://code.visualstudio.com/) is a free, open-source code editor from Microsoft. With the Quantum Development Kit extension for Visual Studio Code, you can create Q# programs, load built-in Q# samples, and use features like error messaging, syntax highlighting, debugging, circuit diagram visualization, CodeLens, and IntelliSense—all in your local development environment. To get started, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
-You can also use the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Q# programs on quantum computers. The Resource Estimator is part of the QDK, so you don't need an Azure subscription to use it. For more information, see [Run the Resource Estimator in Visual Studio Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
+With Visual Studio Code and the QDK you also have access to the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Q# programs on quantum computers. For more information, see [Run the Resource Estimator in Visual Studio Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
-You don't need an Azure account to use the QDK in VS Code. However, if you have an Azure account, you can connect to your Azure Quantum workspace from VS Code and run Q# programs on the quantum computers and simulators of your selected providers.
-
-To get started, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+You don't need an Azure account to use the QDK in Visual Studio Code. However, if you have an Azure account, you can connect to your Azure Quantum workspace from Visual Studio Code and run Q# programs on the quantum computers and simulators of your selected providers. For more information, see [How to submit Q# programs with Visual Studio Code](xref:microsoft.quantum.submit-jobs).
 
 > [!NOTE]
 > The QDK extension is also available for [VS Code for the Web](https://vscode.dev/quantum), which provides the same Azure connectivity and Q# language features as the desktop version. However, it doesn't support Python, Qiskit, or Cirq.

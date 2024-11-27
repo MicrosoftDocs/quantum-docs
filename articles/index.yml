@@ -54,20 +54,6 @@ landingContent:
         links:
           - text: Create your first Q# program 
             url: qsharp-quickstart.md
-      - linkListType: training
-        links:
-          - text: Learn Q# with Copilot 
-            url: https://quantum.microsoft.com/experience/quantum-coding
-          - text: Learn Q# with the Quantum Katas
-            url: https://quantum.microsoft.com/experience/quantum-katas
-
-# Develop with QDK
-  - title: Advanced development with the Quantum Development Kit
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Different ways to run Q# programs
-            url: qsharp-ways-to-work.md
       - linkListType: tutorial
         links:
           - text: Create a quantum random number generator
@@ -76,16 +62,26 @@ landingContent:
             url: tutorial-qdk-explore-entanglement.md
           - text: Implement Grover's algorithm
             url: tutorial-qdk-grovers-search.md
-          - text: Implement the Quantum Fourier Transform
-            url: tutorial-qdk-qubit-level-program.md
+
+# Develop with QDK
+  - title: Advanced development with the Quantum Development Kit
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Submit Q# programs to Azure Quantum with Visual Studio Code
+            url: how-to-submit-jobs.md
       - linkListType: how-to-guide
         links:
           - text: Work with Q# projects
             url: how-to-work-with-qsharp-projects.md
+          - text: Debug and test Q# programs
+            url: testing-debugging.md
           - text: Use sessions to group multiple jobs
             url: hybrid-computing-interactive.md
           - text: Run hybrid quantum computing programs
             url: hybrid-computing-integrated.md
+          - text: Visualize quantum circuit diagrams
+            url: how-to-visualize-circuits.md
  
 
   # Resource Estimation
@@ -127,8 +123,6 @@ landingContent:
             url: how-to-connect-workspace.md
           - text: Share access to your quantum workspace
             url: how-to-share-access-quantum-workspace.md
-          - text: Authenticate using an Access Key
-            url: security-manage-access-keys.md
 
 
 
