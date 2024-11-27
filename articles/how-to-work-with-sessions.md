@@ -14,7 +14,9 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 
 # How to manage your sessions 
 
-In this article, you learn how to manage your sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+In Azure Quantum you can group multiple jobs against a single target, which allows you to manage jobs effectively. This is called a *session*. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+
+In this article, you learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
 
 ## Prerequisites
 
@@ -29,7 +31,6 @@ In this article, you learn how to manage your sessions. With sessions, you can g
 
 > [!NOTE]
 > Sessions are managed with Python, even when running Q# inline code.
-
 
 ## Monitoring sessions
 

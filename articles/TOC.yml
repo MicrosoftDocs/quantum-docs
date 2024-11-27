@@ -151,17 +151,17 @@
       href: how-to-submit-re-jobs.md
     - name: Customize the target parameters for the Resource Estimator
       href: overview-resources-estimator.md
-    - name: Understand the results of the Resource Estimator
+    - name: Get the output of the Resource Estimator
       href: overview-resource-estimator-output-data.md
   - name: Work with the Resource Estimator
     items:
-    - name: Run multiple configurations
+    - name: Compare multiple configurations
       href: resource-estimator-batching.md
     - name: Use known estimates
       href: resource-estimator-known-estimates.md
-    - name: Handle large programs
+    - name: Optimize large programs
       href: resource-estimator-handle-large-programs.md
-    - name: Analyze cryptographic protocols
+    - name: Analyze cryptographic protocols 
       href: resource-estimator-quantum-safe-planning.md
   - name: Tutorials with the Resource Estimator
     items:
@@ -175,37 +175,37 @@
     href: backend-simulators.md
 - name: Quantum providers
   items:
-  - name: Quantum computing providers list
+  - name: List of quantum computing providers
     href: qc-target-list.md
-  - name: QIR target profiles
+  - name: Types of target profiles
     href: quantum-computing-target-profiles.md
   - name: Azure Quantum provider global availability
     href: provider-global-availability.md
   - name: IonQ
     items:
-    - name: IonQ provider & targets
+    - name: IonQ provider and targets
       href: provider-ionq.md
     - name: IonQ support policy
       href: provider-support-ionq.md
   - name: Microsoft
     items:
-    - name: Microsoft provider & targets
+    - name: Microsoft provider and targets
       href: provider-microsoft.md
   - name: PASQAL (Private preview)
     items:
-    - name: PASQAL provider & targets
+    - name: PASQAL provider and targets
       href: provider-pasqal.md
     - name: PASQAL support policy
       href: provider-support-pasqal.md
   - name: Quantinuum
     items:
-    - name: Quantinuum provider & targets
+    - name: Quantinuum provider and targets
       href: provider-quantinuum.md
     - name: Quantinuum support policy
       href: provider-support-quantinuum.md
   - name: Rigetti
     items:
-    - name: Rigetti provider & targets
+    - name: Rigetti provider and targets
       href: provider-rigetti.md
     - name: Rigetti support policy
       href: provider-support-rigetti.md

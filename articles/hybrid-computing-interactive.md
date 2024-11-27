@@ -15,7 +15,7 @@ uid: microsoft.quantum.hybrid.interactive
 
 # Get started with sessions
 
-Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together.
+Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together. A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. Sessions are useful when you want to run multiple quantum computing jobs in sequence, with the ability to run classical code between quantum jobs.
 
 This article explains the architecture of sessions in hybrid quantum computing and how to create a new session.
 
@@ -33,8 +33,6 @@ To create a session, you need the following prerequisites:
     ```
 
 ## What is a session?
-
-A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. 
 
 In sessions, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs. Although the qubit states don't persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
 
