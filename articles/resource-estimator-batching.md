@@ -7,14 +7,23 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Batching with the Resource Estimator
+title: Compare Multiple Configurations with the Resource Estimator
 uid: microsoft.quantum.resource-estimator-batching
-#customer intent: As a quantum programmer, I want to compare target parameters using the resource esitmator.
+#customer intent: As a quantum programmer, I want to compare target parameters using the resource estimator.
 ---
 
-# How to run multiple configurations of target parameters with the Resource Estimator
+# How to compare multiple configurations of target parameters with the Resource Estimator
 
-In this article, you learn how to run multiple configurations of target parameters and compare them using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
+In this article, you learn how to run multiple configurations of target parameters at the same time and compare them using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
+
+The Azure Quantum Resource Estimator allows you to run multiple configurations of [target parameters](xref:microsoft.quantum.overview.resources-estimator) as a single job to avoid rerunning multiple jobs on the same quantum program. 
+
+One job may consists of multiple items or configurations of target parameters. Some scenarios where you may want to run multiple items as a single job:
+
+- Run multiple target parameters with *same* operation arguments in all items.
+- Run multiple target parameters with *different* operation arguments in all items.
+- Easily compare multiple results in a tabular format.
+- Easily compare multiple results in a chart.
 
 For information about how to run the Resource Estimator, see [Different ways to use the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
@@ -29,27 +38,9 @@ For information about how to run the Resource Estimator, see [Different ways to 
     python -m pip install --upgrade qsharp 
     ```
 
-## Batching with the Resource Estimator
+## Running multiple configurations with the Resource Estimator
 
-The Azure Quantum Resource Estimator allows you to run jobs with multiple configurations of target parameters, also known as *batching*, as a single job to avoid rerunning multiple jobs on the same quantum program. 
-
-A resource estimation job consist of two types of job parameters:
-
-- [Target parameters](xref:microsoft.quantum.overview.resources-estimator): qubit model, QEC schemes, error budget, constraints on the component-level, and distillation units.
-- **Operation arguments**: arguments that can be passed to the program (if the QIR entry point contains arguments).
-
-One item consists of one configuration of job parameters, that is one configuration of target parameters and operation arguments. Several items are represented as an array of job parameters.
-
-Some scenarios where you may want to batch multiple items as a single job:
-
-- Run multiple target parameters with *same* operation arguments in all items.
-- Run multiple target parameters with *different* operation arguments in all items.
-- Easily compare multiple results in a tabular format.
-- Easily compare multiple results in a chart.
-
-## How to run batch estimation 
-
-Batching with Q# can be done in a [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs). You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. 
+Running multiple configurations of target parameters as a single job in Q# can be done in a [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs). You can pass a list of target parameters to the `params` parameter of the `qsharp.estimate` function. 
 
 The following example shows how to run two configurations of target parameters as a single job. The first configuration uses the default target parameters, and the second configuration uses the `qubit_maj_ns_e6` qubit parameter and the `floquet_code` QEC scheme.
 
