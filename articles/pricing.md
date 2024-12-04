@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: sonialopez
-ms.date: 09/10/2024
+ms.date: 12/05/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept-article
@@ -21,19 +21,7 @@ In Azure Quantum, hardware and software providers define and control the pricing
  
 ## IonQ 
 
-[IonQ](xref:microsoft.quantum.providers.ionq) charges based on the number of gates in your program, the complexity of the gates you use, and the number of shots. These units are called *gate-shots*. Every quantum program consists of $N$ quantum logical gates of one or more qubits, and is executed for a certain number of shots. The number of gate-shots is calculated by the following formula:
-
-$$
-QGS = N · C
-$$
-
-where:
-
-- $QGS$ is the number of quantum gate-shots
-- $N$ is the number of one- or two-qubit gates submitted
-- $C$ is the number of execution shots 
-
-If you're an existing user of IonQ, in addition to the QGS units you may see another billing unit called *Azure Quantum Tokens*. The token-based pricing model is specific to Azure Quantum, being Azure Quantum Tokens (AQT) and Quantum Gate-Shots (QGS) equivalent. The number of Azure Quantum Tokens is calculated by the following formula:
+[IonQ](xref:microsoft.quantum.providers.ionq) charges based on a token pricing model which billing unit is the *Azure Quantum Token (AQT)*. This model is specific to Azure Quantum. The number of Azure Quantum Tokens is calculated by the following formula:
 
 $$
 AQT = m + 0.000220 · (N_{1q} · C) + 0.000975 ·(N_{2q}· C)
@@ -43,8 +31,7 @@ where:
 
 - $AQT$ is the number of Azure Quantum Tokens consumed by the program
 - $m$ is the minimum price per program execution, which is USD97.50 if error mitigation is on and USD12.4166 if error mitigation is off
-- $N_{1q}$ and $N_{2q}$ are the number of one- and two-qubit gates submitted, respectively
-- $C$ is the number of execution shots
+- The units $N_{1q} · C$ and $N_{2q} · C$ are called *gate-shots*, where $N_{1q}$ and $N_{2q}$ are the number of one- and two-qubit gates submitted, respectively, and $C$ is the number of execution shots
 
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
@@ -52,7 +39,7 @@ New Azure Quantum customers can benefit from a one-time USD500 free Azure Quantu
 
 ### [Azure Quantum Credits](#tab/tabid-AQcredits)
 
-Azure Quantum Credits consumption is based on a resource-usage model. The cost of use is deducted from your Azure Quantum Credits based on the number of QGSs executed. To learn more about credits, see [FAQ: Azure Quantum Credits](xref:microsoft.quantum.credits).
+Azure Quantum Credits consumption is based on a resource-usage model. The cost of use is deducted from your Azure Quantum Credits based on the number of Azure Quantum Tokens (AQTs). To learn more about credits, see [FAQ: Azure Quantum Credits](xref:microsoft.quantum.credits).
 
 |Includes access to| Pricing |
 |---|---|  
@@ -70,7 +57,7 @@ Azure Quantum Credits consumption is based on a resource-usage model. The cost o
  
 ### [Pay As You Go](#tab/tabid-paygo)
 
-The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 and Aria 2 25-qubit quantum computers, and the IonQ simulator. The use of the quantum computers is charged based on the number of QGSs executed + Azure infrastructure costs.
+The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 and Aria 2 25-qubit quantum computers, and the IonQ simulator. The use of the quantum computers is charged based on the number of AQTs + Azure infrastructure costs.
 
 |Includes access to| Pricing|
 |---|---|  
@@ -80,6 +67,18 @@ The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 and Ar
 |IonQ Forte (Private preview)|<ul><li>USD0.000220 / 1-qubit-gate shot</li><li>USD0.000975 / 2-qubit-gate shot</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
+
+> [!NOTE]
+>  If you're an existing research grant or a Pay-as-you-go customer, you may see another billing unit in addition to AQT, called *Quantum Gate-Shots (QGS)*. The QGS units are equivalent to AQT units. The number of QGS is calculated by the following formula:
+> 
+> $$
+> QGS = N · C
+> $$
+> where:
+> 
+> - $QGS$ is the number of quantum gate-shots
+> - $N$ is the number of one- or two-qubit gates submitted
+> - $C$ is the number of execution shots 
 
 ### [Aria plan](#tab/tabid-aria)
 
