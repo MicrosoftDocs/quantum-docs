@@ -13,11 +13,18 @@ no-loc: [target, targets]
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [Visual Studio Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qsharp` and `qsharp-widgets`, and `qiskit` packages.  
+- The latest Azure Quantum `qsharp` and `qsharp_widgets`, and `qiskit` packages.  
 
     ```bash
-    !pip install --upgrade qsharp qsharp-widgets qiskit
+    python -m pip install --upgrade qsharp qsharp_widgets qiskit
     ```
+
+    or 
+    
+    ```bash
+    !pip install --upgrade qsharp qsharp_widgets qiskit
+    ```
+
 
 > [!TIP]
 > You don't need to have an Azure account to run the Resource Estimator.
