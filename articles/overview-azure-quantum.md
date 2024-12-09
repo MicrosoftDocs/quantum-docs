@@ -18,7 +18,7 @@ Azure Quantum is the cloud quantum computing service of Azure. Azure Quantum pro
 
 Azure Quantum offers a range of quantum computing solutions, including quantum hardware from industry-leading providers, quantum software, and quantum services. With Azure Quantum, you can run quantum programs on real quantum hardware, simulate quantum algorithms, and estimate the resources needed to run your quantum programs on future scaled quantum machines.
 
-To learn more about how you can use quantum computing and quantum algorithms, see [Understanding Quantum Computing](xref:microsoft.quantum.overview.understanding).
+To learn more about how you can use quantum computing and quantum algorithms, see [What is Quantum Computing](xref:microsoft.quantum.overview.understanding).
 
 ## How to get started with Azure Quantum?
 
@@ -33,8 +33,6 @@ To get started with Azure Quantum, you first need to determine your current setu
 You **don't need** to have an Azure account to use Azure Quantum. But, if you want to submit your quantum programs to real quantum hardware in Azure Quantum, you need an Azure account and an Azure Quantum workspace. 
 
 To have an Azure account, can register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
-
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ### The Azure Quantum website
 
