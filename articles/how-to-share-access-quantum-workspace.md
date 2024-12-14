@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to share access to your Azure Quantum workspace. This guide helps you grant access to team members or students efficiently.
 ms.author: brbenefield
-ms.date: 11/13/2024
+ms.date: 12/13/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.share-access-workspace
 
 # Share access to your Azure Quantum workspace
 
-Learn how to share access to your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). For example, you may need to grant your team members or students access to your workspace. 
+Learn how to share access to your [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). For example, you may need to grant your team members or students access to your workspace. You can assign roles to users to control their access to your workspace. For example, a **Contributor** role can create, delete, or modify a workspace, whereas a **Quantum Workspace Data Contributor** role has limited permissions and primarily just submit and view jobs.
 
 We recommend using the instructions in this article if you need to grant access to 10 or less users. For a larger number of users, it may be easier for you or your IT department to create a group of users and then grant it access to your workspace. For instructions, see [Add a group to your Azure Quantum workspace](xref:microsoft.quantum.how-to.bulk-add-users).
 
@@ -28,14 +28,14 @@ You need the following prerequisites to share access to your Azure Quantum works
 
 Each user must have an account in your organization's Azure Active Directory before you can grant them access to your workspace. To add new users, you must be at least a **User Administrator**. For instructions, see [Add a new user](/azure/active-directory/fundamentals/add-users-azure-active-directory#add-a-new-user).
 
-## Add users as contributors to your Azure Quantum workspace
+## Add users to your Azure Quantum workspace
 
 1. Sign in to the [Azure portal](https://portal.azure.com) and navigate to your Azure Quantum workspace. You must be an **Owner** of the workspace in order to add users.
 
 1. Select **Access control (IAM)** from the left-side menu. Select **Add**, and then **Add role assignment**.
     :::image type="content" source="media/bulk-invite-users-add-assignment.png" alt-text="Screen shot showing how to add a new role assignment to your Azure Quantum workspace.":::
 
-1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** and then select **Next**. 
+1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** or **Quantum Workspace Data Contributor** and then select **Next**. 
 
     :::image type="content" source="media/bulk-invite-users-add-contributor.png" alt-text="Screen shot showing how to create a contributor to your Azure Quantum workspace.":::
 

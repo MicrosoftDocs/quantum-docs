@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to bulk add users to your Azure Quantum workspace using a CSV file. This guide simplifies user management for large teams. 
 ms.author: brbenefield
-ms.date: 11/13/2024
+ms.date: 12/13/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -54,16 +54,19 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. Select **Create**. You should get a notification that you've successfully created your group.
 
-## Add your group as a contributor to your Quantum workspace
+## Add your group to your Quantum workspace
 
-1. Sign in to the [Azure portal](https://portal.azure.com). You must be an **Owner** of the workspace in order to add the group as a contributor.
+> [!NOTE]
+> You can add your group as a **Contributor** role or as a **Quantum Workspace Data Contributor** role. The Contributor role allows users to manage the workspace properties, whereas the Quantum Workspace Data Contributor role only allows users to submit and view jobs in the workspace. For more information, see [Manage access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.manage-access-workspace).
+
+1. Sign in to the [Azure portal](https://portal.azure.com). You must be an **Owner** of the workspace in order to add the group.
 
 1. Navigate to your Azure Quantum workspace.
 
 1. Allow your group to access your workspace. Select **Access control (IAM)** from the left-side menu. Select **Add**, and then **Add role assignment**.
     :::image type="content" source="media/bulk-invite-users-add-assignment.png" alt-text="Screen shot showing how to add a new role assignment to your Azure Quantum workspace.":::
 
-1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** and then select **Next**. 
+1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** or **Quantum Workspace Data Contributor** and then select **Next**. 
 
     :::image type="content" source="media/bulk-invite-users-add-contributor.png" alt-text="Screen shot showing how to create a contributor to your Azure Quantum workspace.":::
 
