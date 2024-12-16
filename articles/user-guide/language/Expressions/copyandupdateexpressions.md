@@ -15,7 +15,7 @@ uid: microsoft.quantum.qsharp.copyandupdateexpressions
 
 To reduce the need for mutable bindings, Q# supports copy-and-update expressions for arrays, which allow you to access items via an index or range of indices.
 
-Copy-and-update expressions instantiate a new array with all items set to the corresponding value in the original array, except the certain specified index, which is set to the value of the right-hand side of the expression.
+Copy-and-update expressions instantiate a new array with all items set to the corresponding value in the original array, except the certain specified items, which are set to the ones defined on the right-hand side of the expression.
 They are constructed using a ternary operator `w/` `<-`; the syntax `w/` should be read as the commonly used short notation for "with":
 
 ```qsharp
