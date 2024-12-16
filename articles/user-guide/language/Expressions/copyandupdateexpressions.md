@@ -13,26 +13,26 @@ uid: microsoft.quantum.qsharp.copyandupdateexpressions
 
 # Copy-and-update expressions
 
-To reduce the need for mutable bindings, Q# supports copy-and-update expressions for value types with item access. User-defined types and arrays both are immutable and fall into this category.
-User-defined types allow you to access items via name, whereas arrays allow you to access items via an index or range of indices.
+To reduce the need for mutable bindings, Q# supports copy-and-update expressions for array types, which are immutable
+and allow you to access items via an index or range of indices.
 
-Copy-and-update expressions instantiate a new value with all items set to the corresponding value in the original expression, except certain specified items, which are set to the ones defined on the right-hand side of the expression.
+Copy-and-update expressions instantiate a new array with all items set to the corresponding value in the original array, except the certain specified index, which is set to the value of the right-hand side of the expression.
 They are constructed using a ternary operator `w/` `<-`; the syntax `w/` should be read as the commonly used short notation for "with":
 
 ```qsharp
-    original w/ itemAccess <- modification
+    original w/ index <- modification
 ```
 
-where `original` is either an expression of user-defined type or an array expression. For the corresponding requirements for `itemAccess` and `modification`, see [Copy-and-update of user-defined types](#copy-and-update-of-user-defined-types) and [Copy-and-update of arrays](#copy-and-update-of-arrays).
+where `original` is an array expression. For the corresponding requirements for `itemAccess` and `modification`, see [Copy-and-update of user-defined types](#copy-and-update-of-user-defined-types) and [Copy-and-update of arrays](#copy-and-update-of-arrays).
 
 In terms of precedence, the copy-and-update operator is left-associative and has lowest precedence, and, in particular, lower precedence than the range operator (`..`) or the ternary conditional operator (`?` `|`).
 The chosen left associativity allows easy chaining of copy-and-update expressions:
 
 ```qsharp
-    let model = Default<SequentialModel>()
-        w/ Structure <- ClassifierStructure()
-        w/ Parameters <- parameters
-        w/ Bias <- bias;
+    let model = ArrayConstructor()
+        w/ 1 <- alpha
+        w/ 3 <- gamma
+        w/ 5 <- epsilon;
 ```
 
 As for any operator that constructs an expression of the same type as the left-most expression involved, the corresponding [evaluate-and-reassign statement](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements) is available.
@@ -40,23 +40,10 @@ The two following statements, for example, achieve the following: The first stat
 
 ```qsharp
     mutable arr = [0, size = 3]; // arr contains [0, 0, 0]
-    set arr w/= 0 <- 10;      // arr contains [10, 0, 0] 
+    arr w/= 0 <- 10;             // arr contains [10, 0, 0] 
 ```
 
-The second statement is just short-hand for the more verbose syntax `set arr = arr w/ 0 <- 10;`.
-
-## Copy-and-update of user-defined types
-
-If the value `original` is a user-defined type, then `itemAccess` denotes the name of the item that diverges from the original value. This is not just another expression, like `original` and `modification`, because the ability to use the item name without any further qualification is limited to this context; it is one of two [contextual expressions](xref:microsoft.quantum.qsharp.contextualexpressions#contextual-and-omitted-expressions) in Q#.
-
-The type of the `modification` expression needs to match the type of the named item that diverges.
-For instance, if `complex` contains the value `Complex(0., 0.)`, where the type `Complex` is defined [here](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations), then
-
-```qsharp
-complex w/ Re <- 1. 
-```
-
-is an expression of type `Complex` that evaluates to `Complex(1., 0.)`.
+The second statement is just short-hand for the more verbose syntax `arr = arr w/ 0 <- 10;`.
 
 ## Copy-and-update of arrays
 

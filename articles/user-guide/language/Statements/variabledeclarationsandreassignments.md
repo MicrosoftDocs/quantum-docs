@@ -21,16 +21,16 @@ This may be misleading because `let` statements define *single-assignment handle
 ```qsharp
     let var1 = 3; 
     mutable var2 = 3; 
-    set var2 = var2 + 1; 
+    var2 = var2 + 1; 
 ```
 
-In this example, the `let` statement declares a variable named `var1` that cannot be reassigned and always contains the value `3`. The `mutable` statement defines a variable `var2` that is temporarily bound to the value `3` but can be reassigned to a different value later on using a `set` statement, as shown in the last line. You can express the same statement with the shorter version `set var2 += 1;`, as is common in other languages. For more information, see [Evaluate and reassign statements](#evaluate-and-reassign-statements).
+In this example, the `let` statement declares a variable named `var1` that cannot be reassigned and always contains the value `3`. The `mutable` statement defines a variable `var2` that is temporarily bound to the value `3` but can be reassigned to a different value later on using an assignment expression, as shown in the last line. You can express the same statement with the shorter version `var2 += 1;`, as is common in other languages. For more information, see [Evaluate and reassign statements](#evaluate-and-reassign-statements).
 
 To summarize:
 
 * `let` is used to create an immutable binding.
 * `mutable` is used to create a mutable binding.
-* `set` is used to change the value of a mutable binding.
+* `=` without a `let` is used to change the value of a mutable binding.
 
 For all three statements, the left-hand side consists of a symbol or a symbol tuple.
 If the right-hand side of the binding is a tuple, then that tuple may be fully or partially deconstructed upon assignment. The only requirement for deconstruction is that the shape of the tuple on the right-hand side matches the shape of the symbol tuple on the left side.
@@ -40,12 +40,12 @@ For example:
 ```qsharp
 let (a, (_, b)) = (1, (2, 3)); // a is bound to 1, b is bound to 3
 mutable (x, y) = ((1, 2), [3, 4]); // x is bound to (1, 2), y is bound to [3, 4]
-set (x, _, y) = ((5, 6), 7, [8]);  // x is re-bound to (5,6), y is re-bound to [8]
+(x, _, y) = ((5, 6), 7, [8]);  // x is re-bound to (5,6), y is re-bound to [8]
 ```
 
 All assignments in Q# obey the same deconstruction rules, including, for example, qubit allocations and loop-variable assignments.
 
-For both kinds of bindings, the types of the variables are inferred from the right-hand side of the binding. The type of a variable always remains the same, and a `set` statement cannot change it.
+For both kinds of bindings, the types of the variables are inferred from the right-hand side of the binding. The type of a variable always remains the same, and an assignment expression cannot change it.
 Local variables can be declared as either being mutable or immutable. There are some exceptions, such as loop-variables in `for` loops, where the behavior is predefined and cannot be specified.
 Function and operation arguments are always immutably bound. In combination with the lack of reference types, as discussed in the [Immutability](xref:microsoft.quantum.qsharp.immutability#immutability) topic, this means that a called function or operation can never change any values on the caller side.
 
@@ -58,14 +58,14 @@ Changing the values accessed by array-type variables thus requires explicitly co
 
 ## Evaluate-and-reassign statements
 
-Statements of the form `set intValue += 1;` are common in many other languages. Here, `intValue` needs to be a mutably bound variable of type `Int`.
+Statements of the form `intValue += 1;` are common in many other languages. Here, `intValue` needs to be a mutably bound variable of type `Int`.
 Such statements provide a convenient way of concatenation if the right-hand side consists of applying a binary operator and the result is rebound to the left argument of the operator.
 For example, this code segment
 
 ```qsharp
 mutable counter = 0;
 for i in 1 .. 2 .. 10 {
-    set counter += 1;
+    counter += 1;
     // ...
 }
 ```
@@ -75,13 +75,13 @@ increments the value of the counter `counter` in each iteration of the `for` loo
 ```qsharp
 mutable counter = 0;
 for i in 1 .. 2 .. 10 {
-    set counter = counter + 1;
+    counter = counter + 1;
     // ...
 }
 ```
 
-Similar statements exist for a wide range of [operators](xref:microsoft.quantum.qsharp.precedenceandassociativity#operators). The `set` keyword in such evaluate-and-reassign statements must be followed by a single mutable variable, which is inserted as the left-most sub-expression by the compiler.
-Such evaluate-and-reassign statements exist for all operators where the type of the left-most sub-expression matches the expression type.
+Similar statements exist for a wide range of [operators](xref:microsoft.quantum.qsharp.precedenceandassociativity#operators).
+Such evaluate-and-reassign expressions exist for all operators where the type of the left-most sub-expression matches the expression type.
 More precisely, they are available for binary logical and bitwise operators including right and left shift, arithmetic expressions including exponentiation and modulus, and concatenations, as well as [copy-and-update expressions](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-expressions).
 
 The following function example computes the sum of an array of [`Complex`](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations) numbers:
@@ -90,8 +90,7 @@ The following function example computes the sum of an array of [`Complex`](xref:
 function ComplexSum(values : Complex[]) : Complex {
     mutable res = Complex(0., 0.);
     for complex in values {
-        set res w/= Re <- res::Re + complex::Re;
-        set res w/= Im <- res::Im + complex::Im;
+        res = { Re = res.Re + complex.Re, Im = res.Im + complex.Im };
     }
     return res;
 }
@@ -103,13 +102,10 @@ Similarly, the following function multiplies each item in an array with the give
 function Multiplied(factor : Double, array : Double[]) : Double[] {
     mutable res = new Double[Length(array)];
     for i in IndexRange(res) {
-        set res w/= i <- factor * array[i];
+        res w/= i <- factor * array[i];
     }
     return res;
 }
 ```
 
 For more information, see [Contextual expressions](xref:microsoft.quantum.qsharp.contextualexpressions#contextual-and-omitted-expressions), which contains other examples where expressions can be omitted in a specific context when a suitable expression can be inferred by the compiler.
-
-
-
