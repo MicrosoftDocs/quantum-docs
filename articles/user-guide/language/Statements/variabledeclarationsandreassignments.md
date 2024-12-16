@@ -92,7 +92,7 @@ The following function example computes the sum of an array of [`Complex`](xref:
 function ComplexSum(values : Complex[]) : Complex {
     mutable res = Complex(0., 0.);
     for complex in values {
-        res = { Re = res.Re + complex.Re, Im = res.Im + complex.Im };
+        res = new Complex { Re = res.Re + complex.Re, Im = res.Im + complex.Im };
     }
     return res;
 }
