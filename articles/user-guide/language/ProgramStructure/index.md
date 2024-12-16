@@ -48,7 +48,7 @@ operation Main() : (Result, Result)[] {
         prepare(register);
         Message($"Bell state {label}:");
         DumpMachine();
-        set measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
+        measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
     }
     return measurements;
 }
@@ -82,7 +82,7 @@ operation PreparePsiMinus(register : Qubit[]) : Unit {
 }
 ```
 
-This program implements the four basic Bell states of quantum entanglement, and is one of the sample programs included the [Azure Quantum Visual Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). 
+This program implements the four basic Bell states of quantum entanglement, and is one of the sample programs included the [Azure Quantum Visual Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 You can run the program from the built-in simulator in the VS Code QDK extension and get standard output
 
