@@ -2,7 +2,7 @@
 author: bradben
 description: Learn the components of a simple Q# program and how to run it in VS Code.
 ms.author: brbenefield
-ms.date: 02/08/2024
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -25,63 +25,60 @@ The following example gives a first glimpse at how a Q# program is implemented:
 ///
 /// This Q# program implements the four different Bell states.
 
-namespace Sample {
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Measurement;
+import Std.Diagnostics.*;
+import Std.Measurement.*;
 
-    @EntryPoint()
-    operation BellStates() : (Result, Result)[] {
-        // Allocate the two qubits that will be used to create a Bell state.
-        use register = Qubit[2];
+operation Main() : (Result, Result)[] {
+    // Allocate the two qubits that will be used to create a Bell state.
+    use register = Qubit[2];
 
-        // This array contains a label and a preparation operation for each one
-        // of the four Bell states.
-        let bellStateTuples = [
-            ("|Φ+〉", PreparePhiPlus),
-            ("|Φ-〉", PreparePhiMinus),
-            ("|Ψ+〉", PreparePsiPlus),
-            ("|Ψ-〉", PreparePsiMinus)
-        ];
+    // This array contains a label and a preparation operation for each one
+    // of the four Bell states.
+    let bellStateTuples = [
+        ("|Φ+〉", PreparePhiPlus),
+        ("|Φ-〉", PreparePhiMinus),
+        ("|Ψ+〉", PreparePsiPlus),
+        ("|Ψ-〉", PreparePsiMinus)
+    ];
 
-        // Prepare all Bell states, show them using the `DumpMachine` operation
-        // and measure the Bell state qubits.
-        mutable measurements = [];
-        for (label, prepare) in bellStateTuples {
-            prepare(register);
-            Message($"Bell state {label}:");
-            DumpMachine();
-            set measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
-        }
-        return measurements;
+    // Prepare all Bell states, show them using the `DumpMachine` operation
+    // and measure the Bell state qubits.
+    mutable measurements = [];
+    for (label, prepare) in bellStateTuples {
+        prepare(register);
+        Message($"Bell state {label}:");
+        DumpMachine();
+        set measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
     }
+    return measurements;
+}
 
-    operation PreparePhiPlus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 + |11〉)
-    }
+operation PreparePhiPlus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 + |11〉)
+}
 
-    operation PreparePhiMinus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        Z(register[0]);                 // |-0〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 - |11〉)
-    }
+operation PreparePhiMinus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    Z(register[0]);                 // |-0〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 - |11〉)
+}
 
-    operation PreparePsiPlus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        X(register[1]);                 // |+1〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 + |10〉)
-    }
+operation PreparePsiPlus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    X(register[1]);                 // |+1〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 + |10〉)
+}
 
-    operation PreparePsiMinus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        Z(register[0]);                 // |-0〉
-        X(register[1]);                 // |-1〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 - |10〉)
-    }
+operation PreparePsiMinus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    Z(register[0]);                 // |-0〉
+    X(register[1]);                 // |-1〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 - |10〉)
 }
 ```
 

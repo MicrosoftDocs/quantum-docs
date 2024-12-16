@@ -8,4 +8,4 @@ ms.date: 10/24/2022
 ---
 
 > [!TIP]
-> First-time users automatically get **USD500 free** [Azure Quantum Credits](xref:microsoft.quantum.credits) for use with each participating quantum hardware provider. If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
+> When you create an Azure Quantum workspace you automatically get **USD500 free** [Azure Quantum Credits](xref:microsoft.quantum.credits) for each quantum hardware provider. You can use the Azure Quantum Credits to submit your first quantum programs to real quantum hardware.

@@ -2,10 +2,10 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 03/21/2024
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [QIR Adaptive RI, target, targets]
 title: Quantinuum provider
 uid: microsoft.quantum.providers.quantinuum
@@ -71,7 +71,7 @@ System Model H1 Emulator usage is offered free-of-charge with a hardware subscri
 
 ## H-Series Emulator (cloud based)
 
-The H-Series Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum H-Series Emulator without an Azure account. The H-Series Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
+The H-Series Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum H-Series Emulator without an Azure account. The H-Series Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
 
 ## System Model H1
 
@@ -146,8 +146,7 @@ In Q#, the `MResetZ` function can be used both to measure a qubit and reset it. 
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Intrinsic;
-open Microsoft.Quantum.Measurement;
+import Std.Measurement.*;
 
 operation ContinueComputationAfterReset() : Result[] {
     // Set up circuit with 2 qubits
@@ -216,11 +215,11 @@ In Q\#, the arbitrary angle ZZ gate is implemented with the `Rzz` operation.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Intrinsic;
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
+import Std.Intrinsic.*;
+import Std.Measurement.*;
+import Std.Arrays.*;
 
-operation ContinueComputationAfterReset(theta : Double) : Result[] {
+operation ArbitraryAngleZZExample(theta : Double) : Result[] {
     
     // Set up circuit with 2 qubits
     use qubits = Qubit[2];
@@ -271,6 +270,71 @@ circuit.measure_all()
 
 ***
 
+### General SU(4) Entangling Gate
+
+Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+
+#### [General SU(4) Entangling Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
+
+In Q\#, the General SU(4) Entangling gate is implemented via Quantinuum's QIR profile. To use it, define a function with a custom intrinsic matching the QIR profile signature, and use this function within the `SU4Example` operation.
+
+To ensure the circuit runs with the General SU(4) Entangling gate, pass the following options in the H-Series stack:
+
+- `nativetq: Rxxyyzz` to prevent rebasing to other native gates.
+- `noreduce: True` to avoid additional compiler optimizations (optional).
+
+```qsharp
+%%qsharp
+import Std.Math.*;
+
+operation __quantum__qis__rxxyyzz__body(a1 : Double, a2 : Double, a3 : Double, q1 : Qubit, q2 : Qubit) : Unit {
+    body intrinsic;
+}
+
+operation SU4Example() : Result[] {
+    use qs = Qubit[2];
+    
+    // Add SU(4) gate
+    __quantum__qis__rxxyyzz__body(PI(), PI(), PI(), qs[0], qs[1]);
+    
+    MResetEachZ(qs)
+}
+
+```
+
+Now compile the operation:
+
+```python
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
+
+# Update TKET optimization level desired
+option_params = {
+    "nativetq": `Rxxyyzz`,
+    "noreduce": True
+}
+
+```
+
+Pass in the `noreduce` option when submitting the job:
+
+```python
+job = MyTarget.submit(MyProgram, "Submit a program with SU(4) gate", shots = 10, input_params = option_params)
+job.get_results()
+```
+
+***
+
 ### Emulator Noise Parameters
 
 Users have the option of experimenting with the noise parameters of the Quantinuum emulators. **Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
@@ -291,9 +355,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();
@@ -442,9 +506,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();

@@ -13,7 +13,7 @@ uid: microsoft.quantum.credits
 #customer intent: As a quantum developer, I want to understand what Azure Quantum Credits are, how to get them, and how to review my credit balance.
 ---
 
-# Understanding Azure Quantum Credits 
+# FAQ: Understanding Azure Quantum Credits 
 
 In this article, you'll find the guidelines to understand Azure Quantum Credits and how to use them to run your programs on quantum hardware.
 
@@ -133,4 +133,4 @@ The **Period** column indicates the period when your quota is renewed. For Azure
 - [FAQ: Applications to the Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq)
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing)
-- [Azure Quantum job cost](xref:microsoft.quantum.azure.job-costs)
+- [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing)

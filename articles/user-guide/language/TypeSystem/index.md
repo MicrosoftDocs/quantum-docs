@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the type system in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -36,7 +36,7 @@ Type | Description
  `Range` | Represents an ordered sequence of equally spaced `Int` values. [Values](xref:microsoft.quantum.qsharp.valueliterals#range-literals) may represent sequences in ascending or descending order.
  Array | Represents [values](xref:microsoft.quantum.qsharp.valueliterals#array-literals) that each contain a sequence of values of the same type.
  Tuple | Represents [values](xref:microsoft.quantum.qsharp.valueliterals#tuple-literals) that each contain a fixed number of items of different types. Tuples containing a single element are equivalent to the element they contain.
- User defined type | Represents a [user defined type](xref:microsoft.quantum.qsharp.typedeclarations#type-declarations) consisting of named and anonymous items of different types. [Values](xref:microsoft.quantum.qsharp.valueliterals#literals-for-user-defined-types) are instantiated by invoking the constructor. 
+ `struct` | Represents a [user defined type](xref:microsoft.quantum.qsharp.typedeclarations) consisting of named items of different types. [Values](xref:microsoft.quantum.qsharp.valueliterals#literals-for-struct-types) are instantiated when declaring a new instance. 
  Operation | Represents a non-deterministic [callable](xref:microsoft.quantum.qsharp.operationsandfunctions#operations-and-functions) that takes one (possibly tuple-valued) input argument returns one (possibly tuple-valued) output. Calls to operation [values](xref:microsoft.quantum.qsharp.valueliterals#operation-literals) may have side effects and the output may vary for each call even when invoked with the same argument.
  Function | Represents a deterministic [callable](xref:microsoft.quantum.qsharp.operationsandfunctions#operations-and-functions) that takes one (possibly tuple-valued) input argument returns one (possibly tuple-valued) output. Calls to function [values](xref:microsoft.quantum.qsharp.valueliterals#function-literals) do not have side effects and the output is will always be the same given the same input. 
 

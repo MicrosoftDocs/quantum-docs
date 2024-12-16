@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 ms.author: sonialopez
 description: This document provides details on the support policy for the PASQAL quantum provider in Azure Quantum.
-ms.date: 11/13/2023
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: reference
+ms.topic: troubleshooting-general
 title: Support Policy for PASQAL in Azure Quantum
 uid: microsoft.quantum.providers.pasqal.support
 ---

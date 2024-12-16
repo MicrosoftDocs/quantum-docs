@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: This article describes the quantum intermediate representation developed by the QIR Alliance for quantum computing, its relevance, and use cases.
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '\Bigg' ,'|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', '\rho', '\quad', '\sim', '\left\','\right\', '\%', '%', Quantum Intermediate Representation, target, targets]
 title: Quantum Intermediate Representation
 uid: microsoft.quantum.concepts.qir
@@ -100,10 +100,10 @@ Moreover, you could use the intermediate representation to generate code that is
 
 In terms of code optimization, there are optimization steps that can be performed at the intermediate level that can make the overall algorithm implementation more efficient. Investigating this optimization of your input code can help you get a better understanding of where to make algorithms more efficient and how to improve the quantum programming languages.
 
-Another application is to use the standard LLVM “pass” infrastructure to create quantum code optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort. 
+Another application is to use the standard LLVM “pass” infrastructure to create quantum code optimizers that operate on QIR. The language- and hardware-independent approach of QIR enables reusing those optimizers for different computation languages and computing platforms with almost no effort.
 
 ## Related content
 
-- [The Q# programming user guide](xref:microsoft.quantum.user-guide-qdk.overview.program-structure)
+- [Introduction to Q#](xref:microsoft.quantum.qsharp-overview)
 - [Introduction to resource estimation](xref:microsoft.quantum.overview.intro-resource-estimator)
 - [Rigetti provider](xref:microsoft.quantum.providers.rigetti)

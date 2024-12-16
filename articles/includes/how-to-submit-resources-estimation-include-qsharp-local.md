@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 06/03/2024
+ms.date: 08/22/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -11,10 +11,10 @@ no-loc: [target, targets]
 ## Prerequisites for VS Code
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension. For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+- The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 
 > [!TIP]
-> You don't need to have an Azure account to run the local Resource Estimator. 
+> You don't need to have an Azure account to run the Resource Estimator. 
 
 ## Create a new Q# file
 
@@ -26,19 +26,17 @@ no-loc: [target, targets]
 Copy the following code into the `ShorRE.qs` file:
 
 ```qsharp
-namespace Shors {
-    open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Canon;
-    open Microsoft.Quantum.Convert;
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Intrinsic;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Unstable.Arithmetic;
-    open Microsoft.Quantum.ResourceEstimation;
 
-    @EntryPoint()
-    operation RunProgram() : Unit {
+    import Std.Arrays.*;
+    import Std.Canon.*;
+    import Std.Convert.*;
+    import Std.Diagnostics.*;
+    import Std.Math.*;
+    import Std.Measurement.*;
+    import Microsoft.Quantum.Unstable.Arithmetic.*;
+    import Std.ResourceEstimation.*;
+
+    operation Main() : Unit {
         let bitsize = 31;
 
         // When choosing parameters for `EstimateFrequency`, make sure that
@@ -386,7 +384,6 @@ namespace Shors {
 
         controlled adjoint self;
     }
-}
 ```
 
 ## Run the Resource Estimator
@@ -395,7 +392,7 @@ The Resource Estimator offers [six predefined qubit parameters](xref:microsoft.q
 
 In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code. 
 
-1. Select **View -> Command Palette**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. You can also click on **Estimate** from the list of commands below `@EntryPoint()`. Select this option to open the Resource Estimator window.
+1. Select **View -> Command Palette**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. You can also click on **Estimate** from the list of commands displayed right before the `Main` operation. Select this option to open the Resource Estimator window.
 
     :::image type="content" source="../media/codelens-estimate-shorRE.png" alt-text="Screenshot showing how to select the estimate command from the code lens list.":::
 

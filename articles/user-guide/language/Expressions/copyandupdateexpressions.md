@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to use copy-and-update expressions in Q#.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -13,8 +13,7 @@ uid: microsoft.quantum.qsharp.copyandupdateexpressions
 
 # Copy-and-update expressions
 
-To reduce the need for mutable bindings, Q# supports copy-and-update expressions for array types, which are immutable
-and allow you to access items via an index or range of indices.
+To reduce the need for mutable bindings, Q# supports copy-and-update expressions for arrays, which allow you to access items via an index or range of indices.
 
 Copy-and-update expressions instantiate a new array with all items set to the corresponding value in the original array, except the certain specified index, which is set to the value of the right-hand side of the expression.
 They are constructed using a ternary operator `w/` `<-`; the syntax `w/` should be read as the commonly used short notation for "with":
@@ -23,7 +22,7 @@ They are constructed using a ternary operator `w/` `<-`; the syntax `w/` should 
     original w/ index <- modification
 ```
 
-where `original` is an array expression. For the corresponding requirements for `itemAccess` and `modification`, see [Copy-and-update of user-defined types](#copy-and-update-of-user-defined-types) and [Copy-and-update of arrays](#copy-and-update-of-arrays).
+where `original` is an array expression. For the corresponding requirements for `itemAccess` and `modification`, see [Copy-and-update of arrays](#copy-and-update-of-arrays).
 
 In terms of precedence, the copy-and-update operator is left-associative and has lowest precedence, and, in particular, lower precedence than the range operator (`..`) or the ternary conditional operator (`?` `|`).
 The chosen left associativity allows easy chaining of copy-and-update expressions:
@@ -67,4 +66,18 @@ the following expression, for example, evaluates to an array with all items set 
 
 ```qsharp
 [PauliI, size = n] w/ i <- PauliZ
+```
+
+## Copy-and-update of struct types
+
+To copy and update `struct` types, you use a copy constructor to declare a new `struct` from an existing one. For example, if `MyPair` is an instance of the struct `IntPair`, with the values `5` and `7`, you can create a new struct with the same values using the `new` keyword and the name of the existing `struct`.  For more information on defining a `struct` type, see [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
+
+```qsharp
+let ThisPair = new IntPair { ...MyPair };
+```
+
+Or you can modify one or more of the values when you create it
+
+```qsharp
+let ThisPair = new IntPair { ...MyPair, Int1 = 8, Int2 = 10 };
 ```

@@ -16,6 +16,8 @@ groups:
     title: Azure Quantum portal
   - id: platform-local
     title: Local computer
+  - id: platform-simulator
+    title: Local simulator
 - id: azurequantum-ide
   title: IDE for submitting jobs to AQ 
   prompt: Select the option for your development environment
@@ -54,16 +56,6 @@ groups:
     title: Copilot for Azure Quantum
   - id: ide-local
     title: Local computer
-- id: azurequantum-quantumcomputing-re-ide
-  title: IDE for submitting quantum computing jobs to RE 
-  prompt: Select the option for your language and development environment
-  pivots:
-  - id: ide-python-qsharp
-    title: Q# + Python in Azure Portal
-  - id: ide-portal-qiskit
-    title: Qiskit in Azure Portal
-  - id: ide-vscode-qsharp
-    title: Q# in VS Code
 - id: ide-local-portal-jupyter
   title: Local or online development environments
   prompt: Select your preferred development environment
@@ -74,3 +66,13 @@ groups:
     title: Q# in Jupyter Notebook
   - id: platform-portal-qiskit
     title: Qiskit in Azure portal
+- id: ide-local-jupyter-qiskit
+  title: Quantum programming languages
+  prompt: Select your quantum programming language
+  pivots:
+  - id: platform-local
+    title: Q# in VS Code
+  - id: platform-local-jupyter
+    title: Q# in Jupyter Notebook (Advanced)
+  - id: platform-qiskit
+    title: Qiskit in VS Code

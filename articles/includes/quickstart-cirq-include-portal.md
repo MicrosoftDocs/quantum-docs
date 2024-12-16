@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/05/2024
+ms.date: 08/09/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -95,7 +95,6 @@ This workspace's targets:
 <Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>
 <Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>
 <Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>
-<Target name="ionq.qpu", avg. queue time=229 s, Available>
 <Target name="ionq.simulator", avg. queue time=3 s, Available>
 <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>
 ```
@@ -145,36 +144,20 @@ pl.xlabel("Result")
 
 #### Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
-
-```python
-cost = service.estimate_cost(
-    program=circuit,
-    repetitions=100,
-    target="ionq.qpu"
-)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-```output
-Estimated cost: 1
-```
-
-This prints the estimated cost in US dollars.
+Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it will cost to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 
 #### Run on IonQ QPU
 
-The previous job ran on the default simulator, `ionq.simulator`. However, you can also run it on IonQ's hardware processor, or [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU). To run on the IonQ QPU, provide `ionq.qpu` as the
+The previous job ran on the default simulator, `ionq.simulator`. However, you can also run it on IonQ's hardware processor, or [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU). To run on the IonQ QPU, provide `ionq.qpu.aria-1` as the
 `target` argument:
 
 ```python
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="ionq.qpu",
+    target="ionq.qpu.aria-1",
     timeout_seconds=500 # Set timeout to accommodate queue time on QPU
 )
 ```
@@ -292,23 +275,7 @@ Looking at the histogram, you may notice that the random number generator return
 
 #### Estimate job cost
 
-Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
-
-```python
-cost = service.estimate_cost(
-    program=circuit,
-    repetitions=100,
-    target="quantinuum.qpu.h1-1"
-)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-```output
-Estimated cost: 5.42
-```
-
-This prints the estimated cost in H-System Quantum Credits (HQCs).
+Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it will cost to run.
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
 

@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
-ms.date: 06/13/2024
+ms.date: 10/23/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -12,9 +12,9 @@ uid: microsoft.quantum.how-to.visualize-circuits
 #customer intent: As a quantum programmer, I want to visually represent my quantum algorithms.
 ---
 
-# Visualize quantum circuit diagrams with Q#
+# How to visualize quantum circuit diagrams with Q#
 
-Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them. 
+Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them.
 
 In this article, you'll learn how to visually represent quantum algorithms with quantum circuit diagrams using Visual Studio Code or Jupyter Notebooks.
 
@@ -25,7 +25,7 @@ For more information about quantum circuit diagram conventions, see [Quantum cir
 **VS Code**
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
-- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
+- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 - The latest Azure Quantum `qsharp` and `azure-quantum` Python packages.
 
     ```bash
@@ -49,7 +49,7 @@ Follow these steps to visualize quantum circuits of Q# programs in Visual Studio
 ### Viewing circuit diagrams for a Q# program
 
 1. Open a Q# file in Visual Studio Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program). 
-1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
+1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands preceding `Main()`.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
 
@@ -67,7 +67,7 @@ You can visualize the quantum circuit for a single Q# operation. To do this, cli
 
 When **debugging** a Q# program, you can visualize the quantum circuit based on the current state of the program.
 
-1. Select the **Debug** button from the list of code lens commands below `@EntryPoint()`.
+1. Select the **Debug** button from the list of code lens commands preceding `Main()`.
 1. In the **Run and debug** view on the left side, expand the **Quantum Circuit** section under **Variables** pane to show the circuit as you step through the program.
 
     :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program." lightbox="media/circuit-codelens-debug.png":::
@@ -132,8 +132,8 @@ You can generate a circuit diagram for any program with an **entry expression** 
     ```qsharp
     %%qsharp
     
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Measurement;
+    import Std.Diagnostics.*;
+    import Std.Measurement.*;
     
     operation GHZSample(n: Int) : Result[] {
         use qs = Qubit[n];
@@ -212,24 +212,21 @@ Specifically, gate decompositions are applied that would make the resulting circ
 1. For example, consider the following Q# program that measures a qubit and an array of qubits.
 
     ```qsharp
-    namespace Sample {
-        open Microsoft.Quantum.Measurement;
-    
-        @EntryPoint()
-        operation Main() : (Result, Result[]) {
-            // The `M` operation performs a measurement of a single qubit in the
-            // computational basis, also known as the Pauli Z basis.
-            use q = Qubit();
-            let result = M(q);
-            Reset(q);
-    
-            // The `MeasureEachZ` operation measures each qubit in an array in the
-            // computational basis and returns an array of `Result` values.
-            use qs = Qubit[2];
-            let results = MeasureEachZ(qs);
-    
-            return (result, results);
-        }
+    import Std.Measurement.*;
+
+    operation Main() : (Result, Result[]) {
+        // The `M` operation performs a measurement of a single qubit in the
+        // computational basis, also known as the Pauli Z basis.
+        use q = Qubit();
+        let result = M(q);
+        Reset(q);
+
+        // The `MeasureEachZ` operation measures each qubit in an array in the
+        // computational basis and returns an array of `Result` values.
+        use qs = Qubit[2];
+        let results = MeasureEachZ(qs);
+
+        return (result, results);
     }
     ```
 

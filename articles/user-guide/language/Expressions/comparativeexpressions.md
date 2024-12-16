@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about equality comparison expressions in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -15,7 +15,7 @@ uid: microsoft.quantum.qsharp.comparativeexpressions
 
 ## Equality comparisons
 
-*Equality comparisons* (`==`) and *inequality comparisons* (`!=`) are currently limited to the following data types: `Int`, `BigInt`, `Double`, `String`, `Bool`, `Result`, `Pauli`, and `Qubit`. Equality comparisons of user-defined types and callables are currently not supported.
+*Equality comparisons* (`==`) and *inequality comparisons* (`!=`) are currently limited to the following data types: `Int`, `BigInt`, `Double`, `String`, `Bool`, `Result`, `Pauli`, and `Qubit`. Equality comparisons of `struct` types and callables are currently not supported.
 
 Equality comparison for values of type `Qubit` evaluates whether the two expressions identify the same qubit. There is no notion of a quantum state in Q#; equality comparison, in particular, does *not* access, measure, or modify the quantum state of the qubits.
 

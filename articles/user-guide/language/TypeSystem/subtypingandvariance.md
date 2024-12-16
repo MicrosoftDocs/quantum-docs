@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about type conversions in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -25,7 +25,7 @@ Currently, the only subtyping relation that exists applies to operations. Intuit
 
 where `A :> B` indicates that `B` is a subtype of `A`. Phrased differently, `B` is more restrictive than `A` such that a value of type `B` can be used wherever a value of type `A` is required. If a callable relies on an argument (item) of being of type `A`, then an argument of type `B` can safely be substituted since if provides all the necessary capabilities. 
 
-This kind of polymorphism extends to tuples in that a tuple of type `B` is a subtype of a tuple type `A` if it contains the same number of items and the type of each item is a subtype of the corresponding item type in `A`. This is known as *depth subtyping*. There is currently no support for *width subtyping*, that is, there is no subtype relation between any two user-defined types or a user-defined type and any built-in type. The existence of the `unwrap` operator, which allows you to extract a tuple containing all named and anonymous items, prevents this.  
+This kind of polymorphism extends to tuples in that a tuple of type `B` is a subtype of a tuple type `A` if it contains the same number of items and the type of each item is a subtype of the corresponding item type in `A`. This is known as *depth subtyping*. There is currently no support for *width subtyping*, that is, there is no subtype relation between any two `struct` types or a `struct` type and any built-in type. The existence of the `unwrap` operator, which allows you to extract a tuple containing all named items, prevents this.  
 
 >[!NOTE]
 >In regards to callables, if a callable processes an argument of type `A`, then it is also capable of processing an argument of type `B`. If a callable is passed as an argument to another callable, then it has to be capable of processing anything that the type signature may require. This means that if the callable needs to be able to process an argument of type `B`, any callable that is capable of processing a more general argument of type `A` can be passed safely. Conversely, we expect that if we require that the passed callable returns a value of type `A`, then the promise to return a value of type `B` is sufficient, since that value will provide all necessary capabilities.

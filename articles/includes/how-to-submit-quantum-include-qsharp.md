@@ -19,7 +19,7 @@ For installation details, see [Installing the QDK on VS Code](xref:microsoft.qua
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
-- The latest version of the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) extension.
+- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 ## Load a Q# sample program
 
@@ -33,8 +33,8 @@ For installation details, see [Installing the QDK on VS Code](xref:microsoft.qua
 
 ## Run a Q# program
 
-1. To test run your program locally on the built-in simulator, click on **Run** from the list of commands below `@EntryPoint()`, or press **Ctrl+F5**. Your output will appear in the debug console.
-1. To debug your program before submitting it to Azure Quantum, click on **Debug** from the list of commands below `@EntryPoint()`, or press **F5**. Use the debugging controls at the top to step over, into, and out of the code. For more information about debugging Q# programs, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
+1. To test run your program locally on the built-in simulator, click on **Run** from the list of commands next to the entry point operation, or press **Ctrl+F5**. Your output will appear in the debug console.
+1. To debug your program before submitting it to Azure Quantum, click on **Debug** from the list of commands next to the entry point operation, or press **F5**. Use the debugging controls at the top to step over, into, and out of the code. For more information about debugging Q# programs, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
     :::image type="content" source="../media/codelens-run-debug.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens with run and debug commands.":::
 
@@ -42,7 +42,7 @@ For installation details, see [Installing the QDK on VS Code](xref:microsoft.qua
 
 The frequency histogram represents the distribution of results obtained from running a quantum program multiple times, or "shots". Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The frequency histogram helps visualize the probability distribution of these outcomes.
 
-1. Select **View -> Command Palette** and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also click on **Histogram** from the list of commands below `@EntryPoint()`. Select this option to open the Q# histogram window.
+1. Select **View -> Command Palette** and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also click on **Histogram** from the list of commands next to the entry point operation. Select this option to open the Q# histogram window.
 
     :::image type="content" source="../media/codelens-histogram.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens with histogram command.":::
 
@@ -62,7 +62,7 @@ The frequency histogram represents the distribution of results obtained from run
 
 Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them. For more information, see [Quantum circuit diagrams in Visual Studio Code](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
 
-1. Select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands below `@EntryPoint()`.
+1. Select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands next to the entry point operation.
 
     :::image type="content" source="../media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
 

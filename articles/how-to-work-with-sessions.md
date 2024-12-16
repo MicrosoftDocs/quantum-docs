@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
-ms.date: 04/09/2024
+ms.date: 10/24/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -12,14 +12,40 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 #customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
 ---
 
-# How to manage sessions
+# How to manage your sessions 
 
-In this article, you learn how to work with sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Interactive quantum computing: sessions](xref:microsoft.quantum.hybrid.interactive).
+In Azure Quantum you can group multiple jobs against a single target, which allows you to manage jobs effectively. This is called a *session*. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+
+In this article, you learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
+
+## Prerequisites
+
+- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- The Azure Quantum `azure-quantum` package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the \[qiskit\] or \[cirq\] tags. 
+
+    ```bash
+    pip install --upgrade azure-quantum[qiskit] 
+    ```
 
 > [!NOTE]
-> Sessions are managed with Python, even when running Q# inline code. For more information, see “Q# + Python” section of [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
+> Sessions are managed with Python, even when running Q# inline code.
 
-## Retrieve sessions, list sessions, and list jobs of sessions
+## Monitoring sessions
+
+You can use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
+
+1. Select the **Job management** blade in your Quantum workspace.
+1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. The states of a session are: 
+   - **Waiting**: Jobs within the session are being executed. 
+   - **Succeeded**: Session has ended successfully. 
+   - **TimeOut**: If no new job is submitted within the session for 10 minutes, that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
+   - **Failed**: If a job within a session fails, that session ends and reports a status of *Failed*. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
+1. Click on a session's name for more details.
+1. You can see the list of **All jobs** within the session and monitor their status.
+
+## Retrieving and listing sessions
 
 The following table shows the Python commands to get the list of all sessions and all jobs for a given session. 
 
@@ -50,7 +76,7 @@ for job in session_jobs[0:10]:
 
 ## Manual methods of opening/closing sessions
 
-We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. However,  you can manually create sessions.
+We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. You can also manually create sessions.
 
 ### [Q# + Python](#tab/tabid-pythonsdk)
 
@@ -158,7 +184,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
 
 ***
 
-## Passing arguments in Q#  
+## Passing arguments in Q\#  
 
 If your Q# operation takes input arguments, those arguments are passed during job submission, which is Python code. This means that you need to be careful to format your arguments as Q# objects.
 
@@ -167,8 +193,8 @@ When passing arguments as parameters to the job, they are formatted as Q# code w
 Consider the following Q# program, which takes an integer, `n`, and an array of angles, `angle`, as input.
 
 ```qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
+import Std.Measurement.*;
+import Std.Arrays.*;
 
 operation GenerateRandomBits(n: Int, angle: Double[]) : Result[] {
    use qubits = Qubit[n]; // n parameter as the size of the qubit array
@@ -247,7 +273,7 @@ with target.open_session(name="JobFailurePolicy Continue", job_failure_policy=Se
     target.submit(input_data=quil_program, name="Job 3")
 ```
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Integrated quantum computing](xref:microsoft.quantum.hybrid.integrated)
+- [Running hybrid quantum computing](xref:microsoft.quantum.hybrid.integrated)
+- [Get started with sessions](xref:microsoft.quantum.hybrid.interactive)

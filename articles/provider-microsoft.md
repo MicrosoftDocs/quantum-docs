@@ -2,10 +2,10 @@
 author: bradben
 description: This document provides information about the Microsfot quantum computing Resource Estimation provider
 ms.author: brbenefield
-ms.date: 10/01/2023
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [QIR Base, target, targets]
 title: Microsoft quantum computing provider
 uid: microsoft.quantum.providers.microsoft
@@ -15,7 +15,7 @@ uid: microsoft.quantum.providers.microsoft
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-Microsoft provides the Azure Quantum Resource Estimator target, along with several in-memory quantum simulators, as part of the [Quantum Development Kit](xref:microsoft.quantum.overview.q-sharp).
+Microsoft provides the Azure Quantum Resource Estimator target, along with several in-memory quantum simulators, as part of the [Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ## Resource estimator
 

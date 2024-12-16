@@ -1,11 +1,11 @@
 ---
-author: aviviano
+author: bradben
 description: Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
-ms.author: amvivian
-ms.date: 06/11/2024
+ms.author: brbenefield
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: overview
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access
@@ -17,7 +17,7 @@ uid: microsoft.quantum.how-to.manage-workspace-access
 
 Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
 
-## Azure role-based access control
+## Azure role-based access control (RBAC)
 
 [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources, such as a workspace. To grant access, you assign roles to a security principal. 
 
@@ -104,8 +104,10 @@ To assign roles for any resource at any scope, including the subscription level,
 
 ## Troubleshooting
 
+For solutions to common issues, see [Troubleshoot Azure Quantum: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
+
 - When you create a resource in Azure, such as a workspace, you're not directly the owner of the resource. Your role is inherited from the highest scope role that you're authorized against in that subscription. 
 
-- It can sometimes take up to one hour for new role assignments to take effect over cached permissions across the stack.
+- When you create new role assignments, they can sometimes take up to one hour to take effect over cached permissions across the stack.
 
-- For solutions to common issues, see [Troubleshoot Azure Quantum: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
+

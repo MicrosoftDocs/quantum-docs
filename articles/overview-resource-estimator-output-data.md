@@ -1,19 +1,19 @@
 ---
 author: SoniaLopezBravo
 description: This article shows how to interpret the report data of the Resource Estimator and access the output parameters.
-ms.date: 03/01/2024
+ms.date: 08/01/2024
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v', target, targets]
-title: Resource Estimator Output Parameters
+title: Output of the Resource Estimator
 uid: microsoft.quantum.overview.resources-estimator-output.data
 ---
 
-# Understand the result data of the Resource Estimator
+# Retrieving the output of the Resource Estimator
 
-Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in Jupyter Notebooks. If you run the Resource Estimator in Visual Studio Code from the command palette, the following commands doesn't apply.
+Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in Jupyter Notebooks in Visual Studio Code.
 
 ## Prerequisites
 
@@ -26,12 +26,15 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Re
     python -m pip install --upgrade qsharp qsharp-widgets 
     ```
 
+> [!NOTE]
+> If you run the Resource Estimator in Visual Studio Code from the command palette, the following commands doesn't apply. For more information, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+
 ## Output parameters
 
 The output data of the Resource Estimator is a report that is printed in the console and can be accessed programmatically. For example, the following code snippet shows how to access the resource estimation parameters.
 
 ```python
-result['job_params']
+result['jobParams']
 ```
 
 The following output data constitutes the possible entries that can be access programmatically.
@@ -39,116 +42,119 @@ The following output data constitutes the possible entries that can be access pr
 |Top-level output parameter|Data type|Description|
 |---|----|----|
 |`status`|string| The status of the job, it's always `Succeeded`.|
-|`job_params`| dictionary| The target parameters of the job that are passed as input.|
-|`physical_counts`| dictionary| The physical resource estimates. For more information, see [Physical counts](#physical-counts).|
-|`physical_counts_formatted`| dictionary| The physical resource estimates formatted for display in report data. For more information, see [Physical counts formatted](#physical-counts-formatted).|
-|`logical_qubit`| dictionary| The logical qubit properties. For more information, see [Logical qubit](#logical-qubit).|
+|`jobParams`| dictionary| The target parameters of the job that are passed as input.|
+|`physicalCounts`| dictionary| The physical resource estimates. For more information, see [Physical counts](#physical-counts).|
+|`physicalCountsFormatted`| dictionary| The physical resource estimates formatted for display in report data. For more information, see [Physical counts formatted](#physical-counts-formatted).|
+|`logicalQubit`| dictionary| The logical qubit properties. For more information, see [Logical qubit](#logical-qubit).|
 |`tfactory`| dictionary| The T factory properties.|
-|`logical_counts`| dictionary| The pre-layout logical resource estimates. For more information, see [Logical counts](#logical-counts).|
-|`report_data`| dictionary| Generation data for resource estimation report.|
+|`logicalCounts`| dictionary| The pre-layout logical resource estimates. For more information, see [Logical counts](#logical-counts).|
+|`reportData`| dictionary| Generation data for resource estimation report.|
 
 ### Physical counts
 
-The `physical_counts` dictionary contains the following entries:
+The `physicalCounts` dictionary contains the following entries:
 
 |Output parameter|Data type|Description|
 |---|----|----|
-|`physical_qubits`|number| The total number of physical qubits.|
+|`physicalQubits`|number| The total number of physical qubits.|
 |`runtime`|number| The total runtime to execute the algorithm in nanoseconds.|
 |`rqops`| number| The number of reliable quantum operations per second (QOPS).|
 | `breakdown` |dictionary |Breakdown of estimates. For more information, see [Physical counts breakdown](#physical-counts-breakdown).|
 
 #### Physical counts breakdown
 
-The `breakdown` dictionary of `physical_counts` contains the following entries:
+The `breakdown` dictionary of `physicalCounts` contains the following entries:
 
 |Output parameter|Data type|Description|
 |---|----|----|
-|`algorithmic_logical_qubits`| number| The logical qubits required for running the algorithm and do not include resources for T factories. |
-|`algorithmic_logical_depth`|  number | The logical cycles required for running the algorithm and do not include resources for T factories. |
-|`logical_depth`| number |The possibly adjusted number of cycles that is computed whenever the T factory execution time is faster then algorithm execution. |
-|`num_tstates`| number |The number of T states consumed by the algorithm.|
-|`clock_frequency`| number |The number of logical cycles per second.|
-|`num_tfactories`| number | The number of T factories (assuming uniform T factory design).|
-|`num_tfactory_runs`| number | The number of how often all parallel T factories should run.|
-|`physical_qubits_for_tfactories`| number| The number of physical qubits for all T factories.|
-|`physical_qubits_for_algorithm`| number| The number of physical qubits for algorithm layout.|
-|`required_logical_qubit_error_rate`| number| The required logical error rate.|
-|`required_logical_tstate_error_rate`| number| The required logical T state error rate.|
-|`num_ts_per_rotation`| number | The number of T gates per rotation.|
-|`clifford_error_rate`| number | The Clifford error rate based on the qubit parameters.|
+|`algorithmicLogicalQubits`| number| The logical qubits required for running the algorithm and do not include resources for T factories. |
+|`algorithmicLogicalDepth`|  number | The logical cycles required for running the algorithm and do not include resources for T factories. |
+|`logicalDepth`| number |The possibly adjusted number of cycles that is computed whenever the T factory execution time is faster then algorithm execution. |
+|`numTstates`| number |The number of T states consumed by the algorithm.|
+|`clockFrequency`| number |The number of logical cycles per second.|
+|`numTfactories`| number | The number of T factories (assuming uniform T factory design).|
+|`numTfactoryRuns`| number | The number of how often all parallel T factories should run.|
+|`physicalQubitsForTfactories`| number| The number of physical qubits for all T factories.|
+|`physicalQubitsForAlgorithm`| number| The number of physical qubits for algorithm layout.|
+|`requiredLogicalQubitErrorRate`| number| The required logical error rate.|
+|`requiredLogicalTstateErrorRate`| number| The required logical T state error rate.|
+|`numTsPerRotation`| number | The number of T gates per rotation.|
+|`cliffordErrorRate`| number | The Clifford error rate based on the qubit parameters.|
 
 ### Physical counts formatted
 
-The `physical_counts_formatted` dictionary contains the following entries:
+The `physicalCountsFormatted` dictionary contains the following entries:
 
 |Output parameter|Data type|Description|
 |---|----|----|
 |`runtime`|string| Total runtime as human friendly string.|
 |`rqops`|string | The number of reliable quantum operations per second (QOPS) formatted with metric suffix.|
-|`physical_qubits`|string| Total number of physical qubits with metric suffix.|
-|`algorithmic_logical_qubits`|string|Algorithmic logical qubits with metric suffix.|
-|`algorithmic_logical_depth`|string| Algorithmic logical depth with metric suffix.|
-|`logical_depth`|string|Possibly adjusted algorithmic logical depth with metric suffix.|
-|`num_tstates`|string|Number of T states with metric suffix.|
-|`num_tfactories`|string|Number of T factory copies with metric suffix.|
-|`num_tfactory_runs`|string|Number of T factory runs with metric suffix.|
-|`physical_qubits_for_algorithm`|string|Number of physical qubits for algorithm with metric suffix.|
-|`physical_qubits_for_tfactories`|string|Number of physical qubits for T factories with metric suffix.|
-|`physical_qubits_for_tfactories_percentage`|string|The number of physical qubits for all T factories in percentage to total.|
-|`required_logical_qubit_error_rate`|string|Truncated required logical qubit error rate.|
-|`required_logical_tstate_error_rate`|string|Truncated required T state error rate.|
-|`physical_qubits_per_logical_qubit`|string|Number of physical qubits per logical qubit with metric suffix.|
-|`logical_cycle_time`|string|The logical cycle time of a logical qubit as human friendly string.|
-|`clock_frequency`|string|The number of logical cycles per second as a human friendly string.|
-|`logical_error_rate`|string|Truncated logical error rate.|
-|`tfactory_physical_qubits`|string|Number of physical qubits in T factory with metric suffix (or message that there is no T factory).|
-|`tfactory_runtime`|string|The runtime of a single T factory as human friendly string (or message that there is no T factory).|
-|`num_input_tstates`|string|The number of input T states (or message that there is no T factory).|
-|`num_units_per_round`|string|The number of units per distillation round, comma separated in a string (or message that there is no T factory).|
-|`unit_name_per_round`|string|The unit names of each distillation round, comma separated in a string (or message that there is no T factory).|
-|`code_distance_per_round`|string|The code distances per distillation round, comma separated in a string (or message that there is no T factory).|
-|`physical_qubits_per_round`|string|The number of physical qubits per distillation round, comma separated in a string (or message that there is no T factory).|
-|`tfactory_runtime_per_round`|string|The runtime of each distillation round, displayed as comma separated human friendly strings (or message that there is no T factory).|
-|`tstate_logical_error_rate`|string|Truncated logical T state error rate (or message that there is no T factory).|
-|`logical_counts_num_qubits`|string|Number of qubits (pre-layout) with metric suffix.|
-|`logical_counts_t_count`|string|Number of T gates (pre-layout) with metric suffix.|
-|`logical_counts_rotation_count`|string|Number of rotation gates (pre-layout) with metric suffix.|
-|`logical_counts_rotation_depth`|string|Rotation depth (pre-layout) with metric suffix.|
-|`logical_counts_ccz_count`|string|Number of CCZ gates (pre-layout) with metric suffix.|
-|`logical_counts_ccix_count`|string|Number of CCiX gates (pre-layout) with metric suffix.|
-|`logical_counts_measurement_count`|string|Number of single-qubit measurements (pre-layout) with metric suffix.|
-|`error_budget`|string|Truncated total error budget.|
-|`error_budget_logical`|string|Truncated error budget for logical error.|
-|`error_budget_tstates`|string|Truncated error budget for faulty T state distillation.|
-|`error_budget_rotations`|string|Truncated error budget for faulty rotation synthesis.|
-|`num_ts_per_rotation`|string|Formatted number of Ts per rotation (might be None).|
+|`physicalQubits`|string| Total number of physical qubits with metric suffix.|
+|`algorithmicLogicalQubits`|string|Algorithmic logical qubits with metric suffix.|
+|`algorithmicLogicalDepth`|string| Algorithmic logical depth with metric suffix.|
+|`logicalDepth`|string|Possibly adjusted algorithmic logical depth with metric suffix.|
+|`numTstates`|string|Number of T states with metric suffix.|
+|`numTfactories`|string|Number of T factory copies with metric suffix.|
+|`numTfactoryRuns`|string|Number of T factory runs with metric suffix.|
+|`physicalQubitsForAlgorithm`|string|Number of physical qubits for algorithm with metric suffix.|
+|`physicalQubitsForTfactories`|string|Number of physical qubits for T factories with metric suffix.|
+|`physicalQubitsForTfactoriesPercentage`|string|The number of physical qubits for all T factories in percentage to total.|
+|`requiredLogicalQubitErrorRate`|string|Truncated required logical qubit error rate.|
+|`requiredLogicalTstateErrorRate`|string|Truncated required T state error rate.|
+|`physicalQubitsPerLogicalQubit`|string|Number of physical qubits per logical qubit with metric suffix.|
+|`logicalCycleTime`|string|The logical cycle time of a logical qubit as human friendly string.|
+|`clockFrequency`|string|The number of logical cycles per second as a human friendly string.|
+|`logicalErrorRate`|string|Truncated logical error rate.|
+|`tfactoryPhysicalQubits`|string|Number of physical qubits in T factory with metric suffix (or message that there is no T factory).|
+|`tfactoryRuntime`|string|The runtime of a single T factory as human friendly string (or message that there is no T factory).|
+|`numInputTstates`|string|The number of input T states (or message that there is no T factory).|
+|`numUnitsPerRound`|string|The number of units per distillation round, comma separated in a string (or message that there is no T factory).|
+|`unitNamePerRound`|string|The unit names of each distillation round, comma separated in a string (or message that there is no T factory).|
+|`codeDistancePerRound`|string|The code distances per distillation round, comma separated in a string (or message that there is no T factory).|
+|`physicalQubitsPerRound`|string|The number of physical qubits per distillation round, comma separated in a string (or message that there is no T factory).|
+|`tfactoryRuntimePerRound`|string|The runtime of each distillation round, displayed as comma separated human friendly strings (or message that there is no T factory).|
+|`tstateLogicalErrorRate`|string|Truncated logical T state error rate (or message that there is no T factory).|
+|`logicalCountsNumQubits`|string|Number of qubits (pre-layout) with metric suffix.|
+|`logicalCountsTCount`|string|Number of T gates (pre-layout) with metric suffix.|
+|`logicalCountsRotationCount`|string|Number of rotation gates (pre-layout) with metric suffix.|
+|`logicalCountsRotationDepth`|string|Rotation depth (pre-layout) with metric suffix.|
+|`logicalCountsCczCount`|string|Number of CCZ gates (pre-layout) with metric suffix.|
+|`logicalCountsCcixCount`|string|Number of CCiX gates (pre-layout) with metric suffix.|
+|`logicalCountsMeasurementCount`|string|Number of single-qubit measurements (pre-layout) with metric suffix.|
+|`errorBudget`|string|Truncated total error budget.|
+|`errorBudgetLogical`|string|Truncated error budget for logical error.|
+|`errorBudgetTstates`|string|Truncated error budget for faulty T state distillation.|
+|`errorBudgetRotations`|string|Truncated error budget for faulty rotation synthesis.|
+|`numTsPerRotation`|string|Formatted number of Ts per rotation (might be None).|
 
 ### Logical qubit
 
-The `logical_qubit` dictionary contains the following entries:
+The `logicalQubit` dictionary contains the following entries:
 
 |Output parameter|Data type|Description|
 |---|----|----|
-|`code_distance`|number|The computed code distance for the logical qubit.|
-|`physical_qubits`|number| The number of physical qubits for each logical qubit.|
-|`logical_cycle_time`|number| The time to execute one logical operation.|
-|`logical_error_rate`|number| The logical error rate of the logical qubit.|
+|`codeDistance`|number|The computed code distance for the logical qubit.|
+|`physicalQubits`|number| The number of physical qubits for each logical qubit.|
+|`logicalCycleTime`|number| The time to execute one logical operation.|
+|`logicalErrorRate`|number| The logical error rate of the logical qubit.|
 
 
 ### Logical counts
 
-The `logical_counts` dictionary contains the following entries:
+The `logicalCounts` dictionary contains the following entries:
 
 |Output parameter|Data type|Description|
 |---|----|----|
-|`num_qubits`|number| Pre-layout number of qubits.|
-|`t_count`|number| Pre-layout number of T gates.|
-|`rotation_count`|number| Pre-layout number of rotation gates.|
-|`rotation_depth`|number| Pre-layout rotation depth.|
-|`ccz_count`|number| Pre-layout number of CCZ gates.|
-|`ccix_count`|number| Pre-layout number of CCiX gates.|
-|`measurement_count`|number| Pre-layout number of single-qubit measurements.|
+|`numQubits`|number| Pre-layout number of qubits.|
+|`tCount`|number| Pre-layout number of T gates.|
+|`rotationCount`|number| Pre-layout number of rotation gates.|
+|`rotationDepth`|number| Pre-layout rotation depth.|
+|`cczCount`|number| Pre-layout number of CCZ gates.|
+|`ccixCount`|number| Pre-layout number of CCiX gates.|
+|`measurementCount`|number| Pre-layout number of single-qubit measurements.|
+
+> [!TIP]
+> If you want to use a pre-calculated set of logical counts for a resource estimation job, you can use the `LogicalCounts` Python operation to pass the known estimates to the Resource Estimator. For more information, see [How to use known estimates with the Resource Estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
 
 ## Space diagram
 

@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: Learn about Dirac notation and how to use it to represent quantum states and to simulate quantum operations.
 ms.author: sonialopez
-ms.date: 06/15/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: Dirac Notation in Quantum Computing
 uid: microsoft.quantum.concepts.dirac
@@ -21,7 +21,7 @@ This article introduce you to Dirac notation and show you how to use it to descr
 
 ## Limitations of column vector notation
 
-While column vector notation is common in [linear algebra](xref:microsoft.quantum.overview.algebra), it's often cumbersome in quantum computing, especially when dealing with multiple qubits.  For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
+While [column vector notation](xref:microsoft.quantum.concepts.vectors) is common in linear algebra, it's often used in quantum computing, especially when dealing with multiple qubits. For example, when you define $\psi$ to be a vector it's not explicitly clear whether $\psi$ is a row or a column vector.  Thus, if $\phi$ and $\psi$ are vectors, then it's equally unclear if $\phi \psi$ is even defined, because the shapes of $\phi$ and $\psi$ may be unclear in the context.  Beyond the ambiguity about the shapes of vectors, expressing even simple vectors using linear algebraic notation can be cumbersome. For example, if you wish to describe an $n$-qubit state where each qubit takes the value $0$, then you would formally express the state as 
 
 $$\begin{bmatrix}1 \\\\  0 \end{bmatrix}\otimes \cdots \otimes\begin{bmatrix}1 \\\\  0 \end{bmatrix}. $$  
 
@@ -155,32 +155,32 @@ $$
 Here the identity matrix can be conveniently written in Dirac notation as
 
 $$
-\mathbf{1} = \ket{0} \bra{0}+\ket{1} \bra{1}= \begin{bmatrix}1&0\\\\ 0&1 \end{bmatrix}.
+\mathbb{I} = \ket{0} \bra{0}+\ket{1} \bra{1}= \begin{bmatrix}1&0\\\\ 0&1 \end{bmatrix}.
 $$
 
 For the case where there are two-qubits the projector can be expanded as 
 
 $$
-\ket{1} \bra{1} \otimes \id = \ket{1}\bra{1} \otimes (\ket{0} \bra{0}+\ket{1} \bra{1})= \ket{10}\bra{10} + \ket{11}\bra{11}.
+\ket{1} \bra{1} \otimes \mathbb{I} = \ket{1}\bra{1} \otimes (\ket{0} \bra{0}+\ket{1} \bra{1})= \ket{10}\bra{10} + \ket{11}\bra{11}.
 $$
 
 you can then see that this is consistent with the discussion about measurement likelihoods for multiqubit states using column-vector notation:
 
 $$
-P(\text{first qubit = 1})= \psi^\dagger (e\_{10}e\_{10}^\dagger + e\_{11}e\_{11}^\dagger)\psi = |e\_{10}^\dagger \psi|^2 + |e\_{11}^\dagger \psi|^2,
+P(\text{first qubit = 1})= \psi^\dagger (e_{10}e_{10}^\dagger + e_{11}e_{11}^\dagger)\psi = |e_{10}^\dagger \psi|^2 + |e_{11}^\dagger \psi|^2,
 $$
 
 which matches the multi-qubit measurement discussion.  The generalization of this result to the multi-qubit case, however, is slightly more straightforward to express using Dirac notation than column-vector notation, and is entirely equivalent to the previous treatment.
 
 ## Density operators
 
-Another useful operator to express using Dirac notation is the *density operator*, sometimes also known as a *state operator*. As the quantum state vector, the density operator describes the quantum state of a system. However, while quantum state vectors can only represent *pure states*, density operators can also represent *mixed states*.
+Another useful operator to express using Dirac notation is the *density operator*, sometimes also known as a *state operator*. As the quantum state vector, the density operator describes the quantum state of a system. While quantum state vectors can only represent *pure states*, density operators can also represent *mixed states*.
 
 More generally, a given matrix $\rho$ is a valid density operator if the following conditions are fulfilled:
 
 - $\rho$ is a matrix of complex numbers
 - $\rho = \rho^{\dagger}$ (that is, $\rho$ is Hermitian)
-- Every eigenvalue $p$ of $\rho$ is $0 &lt;= p &lt;= 1$
+- Every eigenvalue $p$ of $\rho$ is non-negative
 - All the eigenvalues of $\rho$ sum to 1
 
 Together, these conditions guarantee that $\rho$ can be thought of as an ensemble. A density operator for a quantum state vector $\ket{\psi}$ takes the form $\rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i}$ is an eigenvalue decomposition of $\rho$, then $\rho$ describes the ensemble $\rho = \{ \ket{\psi_i} \text{with probability} p_i \}$.

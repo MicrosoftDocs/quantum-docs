@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about using the 'let' and 'mutable' statements to bind variables in Q#.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 08/20/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -42,6 +42,8 @@ let (a, (_, b)) = (1, (2, 3)); // a is bound to 1, b is bound to 3
 mutable (x, y) = ((1, 2), [3, 4]); // x is bound to (1, 2), y is bound to [3, 4]
 (x, _, y) = ((5, 6), 7, [8]);  // x is re-bound to (5,6), y is re-bound to [8]
 ```
+
+For more information on deconstruction using the unwrap (`!`) operator, see [Item access for struct types](xref:microsoft.quantum.qsharp.itemaccessexpression#item-access-for-struct-types).
 
 All assignments in Q# obey the same deconstruction rules, including, for example, qubit allocations and loop-variable assignments.
 

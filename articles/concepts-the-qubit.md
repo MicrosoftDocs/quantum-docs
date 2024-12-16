@@ -2,10 +2,10 @@
 author: SoniaLopezBravo
 description: Learn about qubits, the fundamental unit of information in quantum computing. This article examines the single qubit.
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: The Qubit in Quantum Computing
 uid: microsoft.quantum.concepts.qubit
@@ -21,7 +21,7 @@ Just as bits are the fundamental object of information in classical computing, [
 
 While a bit, or binary digit, can have a value either $0$ or $1$, a qubit can have a value that is either $0$, $1$  or a quantum superposition of $0$ and $1$.
 
-The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable. For the basics of vectors and matrices in quantum computing, see [Linear algebra for quantum computing](xref:microsoft.quantum.overview.algebra) and [Vector and matrices](xref:microsoft.quantum.concepts.vectors).
+The state of a single qubit can be described by a two-dimensional column vector of unit norm, that is, the magnitude squared of its entries must sum to $1$. This vector, called the quantum state vector, holds all the information needed to describe the one-qubit quantum system just as a single bit holds all of the information needed to describe the state of a binary variable. For the basics of vectors and matrices in quantum computing, see [Vector and matrices](xref:microsoft.quantum.concepts.vectors).
 
 Any two-dimensional column vector of real or complex numbers with norm $1$ represents a possible quantum state held by a qubit. Thus $\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ represents a qubit state if $\alpha$ and $\beta$ are complex numbers satisfying $|\alpha|^2 + |\beta|^2 = 1$. Some examples of valid quantum state vectors representing qubits include
 

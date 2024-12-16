@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: View Jupyter Notebooks with the device data from Microsoft's research into a scaled quantum machines using topological qubits.
-ms.date: 06/21/2023
+ms.date: 11/22/2024
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -24,6 +24,5 @@ The Azure Quantum team has created a set of Jupyter Notebooks on the [azure-quan
 ## Next Steps
 
 - [What is Azure Quantum?](xref:microsoft.quantum.azure-quantum-overview)
-- [What are the Q# programming language and Quantum Development Kit (QDK)?](xref:microsoft.quantum.overview.q-sharp)
+- [Introduction to Q#](xref:microsoft.quantum.qsharp-overview)
 - [Quickstart: Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit)
-
