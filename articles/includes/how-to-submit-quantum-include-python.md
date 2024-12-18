@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 08/22/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -46,7 +46,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
         mutable results = [];
         for i in 0 .. N - 1 {
             let r = Random();
-            set results += [r];
+            results += [r];
         }
         return results
     }

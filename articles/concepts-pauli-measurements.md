@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to work with single-qubit and multi-qubit Pauli measurement operations in quantum computing.
 ms.author: sonialopez
-ms.date: 09/16/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept-article
@@ -77,7 +77,7 @@ operation MeasureY(qubit : Qubit) : Result {
         Adjoint S(q);
         H(q);
     } apply {
-        set result = M(q);
+        result = M(q);
     }
     return result;
 }

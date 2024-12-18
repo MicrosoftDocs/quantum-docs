@@ -3,7 +3,7 @@ title: 'Tutorial: Quantum Fourier Transform in Q\#'
 description: In this tutorial, learn how to write and simulate a quantum program that operates at the individual qubit level.
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 10/10/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
@@ -314,7 +314,7 @@ After the QFT transform operations, insert the following code:
 
 ```qsharp
 for i in IndexRange(qs) {
-    set resultArray w/= i <- M(qs[i]);
+    resultArray w/= i <- M(qs[i]);
 }
 ```
 
@@ -371,7 +371,7 @@ operation Main() : Result[] {
     DumpMachine();
 
     for i in IndexRange(qs) {
-        set resultArray w/= i <- M(qs[i]);
+        resultArray w/= i <- M(qs[i]);
     }
 
     Message("After measurement: ");
@@ -458,7 +458,7 @@ Post-QFT measurement results [qubit0, qubit1, qubit2]:
         DumpMachine();
     
         for i in IndexRange(qs) {
-            set resultArray w/= i <- M(qs[i]);
+            resultArray w/= i <- M(qs[i]);
         }
     
         Message("After measurement: ");
@@ -544,7 +544,7 @@ Indeed, if you want to develop full-scale, applicable quantum programs, worrying
         DumpMachine();
     
         for i in IndexRange(qs) {
-            set resultArray w/= i <- M(qs[i]);
+            resultArray w/= i <- M(qs[i]);
         }
     
         Message("After measurement: ");
