@@ -18,7 +18,7 @@ This tutorial shows you how to write and simulate a basic quantum program that o
 
 Although Q# was primarily created as a high-level programming language for large-scale quantum programs, it can also be used to explore the lower level of quantum programming, that is, directly addressing specific qubits. Specifically, this tutorial takes a closer look at the [Quantum Fourier Transform (QFT)](https://en.wikipedia.org/wiki/Quantum_Fourier_transform), a subroutine that is integral to many larger quantum algorithms.
 
-In this tutorial, you'll learn how to:
+In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 > * Define quantum operations in Q#.
@@ -35,7 +35,7 @@ In this tutorial, you'll learn how to:
 ## Prerequisites
 
 * The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-* The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+* The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
 * If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qsharp` Python package. To do so, open a terminal and run the following command:
 
     ```bash
@@ -45,14 +45,14 @@ In this tutorial, you'll learn how to:
 ## Create a new Q# file
 
 1. In VS Code, select **File > New Text File** 
-1. Save the file as **QFTcircuit.qs**. This file will contain the Q# code for your program.
+1. Save the file as **QFTcircuit.qs**. This file contains the Q# code for your program.
 1. Open **QFTcircuit.qs**.
 
 ## Write a QFT circuit in Q\#
 
-The first part of this tutorial consists of defining the Q# operation `Main`, which performs the quantum Fourier transform on three qubits. The `DumpMachine` function is used to observe how the simulated wavefunction of the three-qubit system evolves across the operation. In the second part of the tutorial, you will add measurement functionality and compare the pre- and post-measurement states of the qubits.
+The first part of this tutorial consists of defining the Q# operation `Main`, which performs the quantum Fourier transform on three qubits. The `DumpMachine` function is used to observe how the simulated wavefunction of the three-qubit system evolves across the operation. In the second part of the tutorial, you add measurement functionality and compare the pre- and post-measurement states of the qubits.
 
-You will build the operation step by step. Copy and paste the code in the following sections into the **QFTcircuit.qs** file.
+You build the operation step by step. Copy and paste the code in the following sections into the **QFTcircuit.qs** file.
 
 You can view the [full Q# code](#the-complete-qft-operation) for this section as reference.
 
@@ -79,7 +79,7 @@ operation Main() : Unit {
 ```
 
 The `Main()` operation never takes arguments, and for now returns a `Unit` object, which is analogous to returning `void` in C# or an empty tuple, `Tuple[()]`, in Python.
-Later, you will modify the operation to return an array of measurement results.
+Later, you modify the operation to return an array of measurement results.
 
 ### Allocate qubits 
 
@@ -92,7 +92,7 @@ Message("Initial state |000>:");
 DumpMachine();
 ```
 
-As in real quantum computations, Q# does not allow you to directly access qubit states. However, the `DumpMachine` operation prints the target machine's current state, so it can provide valuable insight for debugging and learning when used in conjunction with the full state simulator.
+As in real quantum computations, Q# doesn't allow you to directly access qubit states. However, the `DumpMachine` operation prints the target machine's current state, so it can provide valuable insight for debugging and learning when used together with the full state simulator.
 
 ### Apply single-qubit and controlled operations
 
@@ -135,7 +135,7 @@ The `PI()` function is used to define the rotations in terms of pi radians.
 
 ### Apply SWAP operation
 
-After applying the relevant `H` operations and controlled rotations to the second and third qubits, the circuit looks like this:
+After you apply the relevant `H` operations and controlled rotations to the second and third qubits, the circuit looks like this:
 
 ```qsharp
 //second qubit:
@@ -146,7 +146,7 @@ Controlled R1([qs[2]], (PI()/2.0, qs[1]));
 H(qs[2]);
 ```
 
-Finally, you apply a `SWAP` operation to the first and third qubits to complete the circuit. This is necessary because the nature of the quantum Fourier transform outputs the qubits in reverse order, so the swaps allow for seamless integration of the subroutine into larger algorithms.
+Finally, you apply a `SWAP` operation to the first and third qubits to complete the circuit. This operation is necessary because the quantum Fourier transform outputs the qubits in reverse order, so the swaps allow for seamless integration of the subroutine into larger algorithms.
 
 ```qsharp
 SWAP(qs[2], qs[0]);
@@ -160,7 +160,7 @@ Now you have finished writing the qubit-level operations of the quantum Fourier 
 
 The last step is to call `DumpMachine()` again to see the post-operation state, and to deallocate the qubits. The qubits were in state $\ket{0}$ when you allocated them and need to be reset to their initial state using the `ResetAll` operation.
 
-Requiring that all qubits be explicitly reset to $\ket{0}$ is a basic feature of Q#, as it allows other operations to know their state precisely when they begin using those same qubits (a scarce resource). Additionally, this assures that they are not entangled with any other qubits in the system. If the reset is not performed at the end of a `use` allocation block, a runtime error might be thrown.
+Requiring that all qubits be explicitly reset to $\ket{0}$ is a basic feature of Q#, as it allows other operations to know their state precisely when they begin using those same qubits (a scarce resource). Additionally, resetting them assures that they aren't entangled with any other qubits in the system. If the reset isn't performed at the end of a `use` allocation block, a runtime error might be thrown.
 
 Add the following lines to your Q# file:
 
@@ -212,11 +212,11 @@ operation Main() : Unit {
 
 ## Run the QFT circuit
 
-For now, the `Main` operation doesn't return any value - the operation returns `Unit` value. Later, you'll modify the operation to return an array of measurement results (`Result[]`).
+For now, the `Main` operation doesn't return any value - the operation returns `Unit` value. Later, you modify the operation to return an array of measurement results (`Result[]`).
 
 ### [Q# standalone program](#tab/tabid-qsharp)
 
-1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile isn't set to **Unrestricted**, you get an error when you run the program.
 1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the `Main()` operation on the default simulator.
 1. The `Message` and `DumpMachine` outputs appear in the debug console.
 
@@ -267,7 +267,7 @@ For now, the `Main` operation doesn't return any value - the operation returns `
     }
     ```
 
-1. Finally, run the code. You can run the same simulation a number of times, independently. Each independent simulation is called a "shot". For example, let's run the simulation, 10 times.
+1. Finally, run the code. You can run the same simulation multiple times, independently. Each independent simulation is called a "shot". For example, let's run the simulation, 10 times.
 
     ```python
     results = qsharp.run("Main()", shots=10)
@@ -278,11 +278,11 @@ The `Message` and `DumpMachine` outputs are displayed in an output cell.
 
 ***
 
-If you are curious about how other input states are affected, you are encouraged to experiment with applying other qubit operations before the transform.
+If you're curious about how other input states are affected, you're encouraged to experiment with applying other qubit operations before the transform.
 
 ## Add measurements to the QFT circuit
 
-The display from the `DumpMachine` function showed the results of the operation, but unfortunately, a cornerstone of quantum mechanics states that a real quantum system cannot have such a `DumpMachine` function.
+The display from the `DumpMachine` function showed the results of the operation, but unfortunately, a cornerstone of quantum mechanics states that a real quantum system can't have such a `DumpMachine` function.
 Instead, the information is extracted through measurements, which in general not only fail to provide information on the full quantum state, but can also drastically alter the system itself.
 
 There are many sorts of quantum measurements, but the example here focuses on the most basic: projective measurements on single qubits.
@@ -319,7 +319,7 @@ for i in IndexRange(qs) {
 ```
 
 The `IndexRange` function called on an array (for example, the array of qubits, `qs`) returns a range over the indices of the array.
-Here, it is used in the `for` loop to sequentially measure each qubit using the `M(qs[i])` statement.
+Here, it's used in the `for` loop to sequentially measure each qubit using the `M(qs[i])` statement.
 Each measured `Result` type (either `Zero` or `One`) is then added to the corresponding index position in `resultArray` with an update-and-reassign statement.
 
 > [!NOTE]
@@ -329,7 +329,7 @@ The keyword `set` is always used to reassign variables bound using `mutable`.
 
 ### Return `resultArray`
 
-With all three qubits measured and the results added to `resultArray`, you are safe to reset and deallocate the qubits as before. To
+With all three qubits measured and the results added to `resultArray`, you're safe to reset and deallocate the qubits as before. To
 return the measurements, insert:
 
 ```qsharp
@@ -390,7 +390,7 @@ operation Main() : Result[] {
 
 ### [Q# standalone program](#tab/tabid-qsharp2)
 
-1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile isn't set to **Unrestricted**, you get an error when you run the program.
 1. To run your program, select **Run Q# file** from the play icon drop-down in the top-right, or press **Ctrl+5**. The program runs the `Main()` operation on the default simulator.
 1. The `Message` and `DumpMachine` outputs appear in the debug console.
 
@@ -505,12 +505,12 @@ Post-QFT measurement results [qubit0, qubit1, qubit2]:
 
 This output illustrates a few different things:
 
-1. Comparing the returned result to the pre-measurement `DumpMachine`, it clearly does _not_ illustrate the post-QFT superposition over basis states. A measurement only returns a single basis state, with a probability determined by the amplitude of that state in the system's wavefunction.
+1. When you compare the returned result to the pre-measurement `DumpMachine`, it clearly does _not_ illustrate the post-QFT superposition over basis states. A measurement only returns a single basis state, with a probability determined by the amplitude of that state in the system's wavefunction.
 2. From the post-measurement `DumpMachine`, you see that measurement _changes_ the state itself, projecting it from the initial superposition over basis states to the single basis state that corresponds to the measured value.
 
-If you repeat this operation many times, you will see the result statistics begin to illustrate the equally weighted superposition of the post-QFT state that gives rise to a random result on each shot.
+If you repeat this operation many times, you see the result statistics begin to illustrate the equally weighted superposition of the post-QFT state that gives rise to a random result on each shot.
 _However_, besides being inefficient and still imperfect, this would nevertheless only reproduce the relative amplitudes of the basis states, not the relative phases between them.
-The latter is not an issue in this example, but you would see relative phases appear if given a more complex input to the QFT than $\ket{000}$.
+The latter isn't an issue in this example, but you would see relative phases appear if given a more complex input to the QFT than $\ket{000}$.
 
 ## Use the Q# operations to simplify the QFT circuit
 

@@ -15,7 +15,7 @@ uid: microsoft.quantum.concepts.pauli
 
 # Single-qubit and multi-qubit Pauli measurements
 
-As you work with Q#, you find that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it is common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. For the basics of quantum measurement, see [The qubit](xref:microsoft.quantum.concepts.qubit) and [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
+As you work with Q#, you find that *Pauli measurements* are a common type of measurement. Pauli measurements generalize computational basis measurements to include measurements in other bases and of parity between different qubits. In such cases, it's common to discuss measuring a Pauli operator, which is an operator such as $X,Y,Z$ or $Z\otimes Z, X\otimes X, X\otimes Y$, and so forth. For the basics of quantum measurement, see [The qubit](xref:microsoft.quantum.concepts.qubit) and [Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
 Discussing measurement in terms of Pauli operators is common in the subfield of quantum error correction.  
 Q# guide follows a similar convention; this article explains this alternative view of measurements.
@@ -26,7 +26,7 @@ Q# guide follows a similar convention; this article explains this alternative vi
 > For example, to represent $X \otimes Z \otimes Y$, you can use the array `[PauliX, PauliZ, PauliY]`.
 
 
-Before delving into the details of how to think of a Pauli measurement, it is useful to think about what measuring a single qubit inside a quantum computer does to the quantum state.
+Before delving into the details of how to think of a Pauli measurement, it's useful to think about what measuring a single qubit inside a quantum computer does to the quantum state.
 Imagine a $n$-qubit quantum state; then measuring one qubit immediately rules out half of the $2^n$ possibilities that state could be in.
 In other words, the measurement projects the quantum state onto one of two half-spaces.
 You can generalize the way you think about measurement to reflect this intuition.
@@ -41,14 +41,14 @@ $$
 \end{align}
 $$
 
-By reading the diagonal elements of the Pauli-$Z$ matrix, one can see that $Z$ has two eigenvectors, $\ket{0}$ and $\ket{1}$, with corresponding eigenvalues $\pm 1$.
-Thus, if a measurement of the qubit results in `Zero` (corresponding to the state $\ket{0}$), it is known that the state of the qubit is a $+1$ eigenstate of the $Z$ operator.
-Similarly, if the result is `One`, it is known that the state of the qubit is a $-1$ eigenstate of $Z$.
+When you read the diagonal elements of the Pauli-$Z$ matrix, you can see that $Z$ has two eigenvectors, $\ket{0}$ and $\ket{1}$, with corresponding eigenvalues $\pm 1$.
+Thus, if a measurement of the qubit results in `Zero` (corresponding to the state $\ket{0}$), it's known that the state of the qubit is a $+1$ eigenstate of the $Z$ operator.
+Similarly, if the result is `One`, it's known that the state of the qubit is a $-1$ eigenstate of $Z$.
 This process is referred to in the language of Pauli measurements as "measuring Pauli $Z$," and is entirely equivalent to performing a computational basis measurement.
 
 Any $2\times 2$ matrix that is a unitary transformation of $Z$ also satisfies this criteria.
-That is, one could also use a matrix $A=U^\dagger Z U$, where $U$ is any other unitary matrix, to give a matrix that defines the two outcomes of a measurement in its $\pm 1$ eigenvectors.
-The notation of Pauli measurements references this unitary equivalence by identifying $X,Y,Z$ measurements as equivalent measurements that one could do to gain information from a qubit.
+That is, you could also use a matrix $A=U^\dagger Z U$, where $U$ is any other unitary matrix, to give a matrix that defines the two outcomes of a measurement in its $\pm 1$ eigenvectors.
+The notation of Pauli measurements references this unitary equivalence by identifying $X,Y,Z$ measurements as equivalent measurements that you could do to gain information from a qubit.
 These measurements are given here for convenience.
 
 
@@ -68,7 +68,7 @@ $$
 \end{align}
 $$
 
-It is also equivalent to applying $HS^\dagger$ to the quantum state vector and then measuring $Z$, such that the following operation is equivalent to `Measure([PauliY], [q])`:
+It's also equivalent to applying $HS^\dagger$ to the quantum state vector and then measuring $Z$, such that the following operation is equivalent to `Measure([PauliY], [q])`:
 
 ```Q#
 operation MeasureY(qubit : Qubit) : Result {
@@ -97,8 +97,8 @@ Z\otimes Z = \begin{bmatrix}1 &0 &0&0\\\\  0&-1&0&0\\\\ 0&0&-1&0\\\\ 0&0&0&1\end
 $$
 
 Thus the tensor products of two Pauli-$Z$ operators forms a matrix composed of two spaces consisting of $+1$ and $-1$ eigenvalues.
-As with the single-qubit case, both constitute a half-space meaning that half of the accessible vector space belongs to the $+1$ eigenspace and the remaining half to the $-1$ eigenspace.
-In general, it is easy to see from the definition of the tensor product that any tensor product of Pauli-$Z$ operators and the identity also obeys this.
+As with the single-qubit case, both constitute a *half-space*, meaning that half of the accessible vector space belongs to the $+1$ eigenspace and the remaining half to the $-1$ eigenspace.
+In general, it's easy to see from the definition of the tensor product that any tensor product of Pauli-$Z$ operators and the identity also obeys this.
 For example,
 
 $$
@@ -114,7 +114,7 @@ $$
 
 As before, any unitary transformation of such matrices also describes two half-spaces labeled with $\pm 1$ eigenvalues.
 For example, $X\otimes X = H\otimes H(Z\otimes Z)H\otimes H$  from the identity that $Z=HXH$.
-Similar to the one-qubit case, all two-qubit Pauli-measurements may be written as $U^\dagger (Z\otimes 1) U$ for $4\times 4$ unitary matrices $U$. 
+Similar to the one-qubit case, all two-qubit Pauli-measurements can be written as $U^\dagger (Z\otimes 1) U$ for $4\times 4$ unitary matrices $U$. 
 The transformations are enumerated in the following table.
 
 > [!NOTE]
@@ -151,21 +151,21 @@ The transformations are enumerated in the following table.
 | $Y\otimes Y$ | $\operatorname{CNOT}\_{10}(HS^\dagger\otimes HS^\dagger)$ |
 
 Here, the `CNOT` operation appears for the following reason.
-Each Pauli measurement that does not include the $\mathbf{1}$ matrix is equivalent up to a unitary to $Z\otimes Z$ by the earlier reasoning.
+Each Pauli measurement that doesn't include the $\mathbf{1}$ matrix is equivalent up to a unitary to $Z\otimes Z$ by the earlier reasoning.
 The eigenvalues of $Z\otimes Z$ only depend on the parity of the qubits that comprise each computational basis vector, and the controlled-not operations serve to compute this parity and store it in the first bit.
-Then once the first bit is measured, one can recover the identity of the resultant half-space, which is equivalent to measuring the Pauli operator.
+Then once the first bit is measured, you can recover the identity of the resultant half-space, which is equivalent to measuring the Pauli operator.
 
-Also, while it may be tempting to assume that measuring $Z\otimes Z$ is the same as sequentially measuring $Z\otimes \mathbb{1}$ and then $\mathbb{1} \otimes Z$, this assumption would be false.
+Also, while it can be tempting to assume that measuring $Z\otimes Z$ is the same as sequentially measuring $Z\otimes \mathbb{1}$ and then $\mathbb{1} \otimes Z$, this assumption would be false.
 The reason is that measuring $Z\otimes Z$ projects the quantum state into either the $+1$ or $-1$ eigenstate of these operators.
 Measuring $Z\otimes \mathbb{1}$ and then $\mathbb{1} \otimes Z$ projects the quantum state vector first onto a half space of $Z\otimes \mathbb{1}$ and then onto a half space of $\mathbb{1} \otimes Z$.
 As there are four computational basis vectors, performing both measurements reduces the state to a quarter-space and hence reduces it to a single computational basis vector.
 
 ## Correlations between qubits
 
-Another way of looking at measuring tensor products of Pauli matrices such as $X\otimes X$ or $Z\otimes Z$ is that these measurements let you look at information stored in the correlations between the two qubits.
+Another way of looking at measuring tensor products of Pauli matrices, such as $X\otimes X$ or $Z\otimes Z$, is that these measurements let you look at information stored in the correlations between the two qubits.
 Measuring $X\otimes 1$ lets you look at information that is locally stored in the first qubit.
 While both types of measurements are equally valuable in quantum computing, the former illuminates the power of quantum computing.
-It reveals that in quantum computing, often the information you wish to learn is not stored in any single qubit but rather stored non-locally in all the qubits at once, and therefore only by looking at it through a joint measurement (e.g. $Z\otimes Z$) does this information become manifest.
+It reveals that in quantum computing, often the information you wish to learn isn't stored in any single qubit but rather stored non-locally in all the qubits at once, and therefore only by looking at it through a joint measurement (e.g. $Z\otimes Z$) does this information become manifest.
 
 Arbitrary Pauli operators such as $X\otimes Y \otimes Z \otimes \mathbf{1}$ can also be measured.
 All such tensor products of Pauli operators have only two eigenvalues $\pm 1$ and both eigenspaces constitute half-spaces of the entire vector space.
@@ -221,11 +221,11 @@ While the key assumption that the cloner acts linearly on the input state can be
 The No-Cloning Theorem is important for qualitative understanding of quantum computing because if you could clone quantum states inexpensively then you would be granted a near-magical ability to learn from quantum states.
 Indeed, you could violate Heisenberg's vaunted uncertainty principle.
 Alternatively, you could use an optimal cloner to take a single sample from a complex quantum distribution and learn everything you could possibly learn about that distribution from just one sample.
-This would be like you flipping a coin and observing heads and then upon telling a friend about the result having them respond "Ah the distribution of that coin must be Bernoulli with $p=0.512643\ldots$!"  Such a statement would be nonsensical because one bit of information (the heads outcome) simply cannot provide the many bits of information needed to encode the distribution without substantial prior information.
-Similarly, without prior information one cannot perfectly clone a quantum state just as one cannot prepare an ensemble of such coins without knowing $p$.
+This would be like you flipping a coin and observing heads and then upon telling a friend about the result having them respond "Ah the distribution of that coin must be Bernoulli with $p=0.512643\ldots$!"  Such a statement would be nonsensical because one bit of information (the heads outcome) simply can't provide the many bits of information needed to encode the distribution without substantial prior information.
+Similarly, without prior information you can't perfectly clone a quantum state just as you can't prepare an ensemble of such coins without knowing $p$.
 
-Information is not free in quantum computing.
-Each qubit measured gives a single bit of information, and the No-Cloning Theorem shows that there is no backdoor that can be exploited to get around the fundamental tradeoff between information gained about the system and the disturbance invoked upon it.
+Information isn't free in quantum computing.
+Each qubit measured gives a single bit of information, and the No-Cloning Theorem shows that there's no backdoor that can be exploited to get around the fundamental tradeoff between information gained about the system and the disturbance invoked upon it.
 
 ## Related content
 
