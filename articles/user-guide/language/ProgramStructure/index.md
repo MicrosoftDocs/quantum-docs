@@ -48,7 +48,7 @@ operation Main() : (Result, Result)[] {
         prepare(register);
         Message($"Bell state {label}:");
         DumpMachine();
-        set measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
+        measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
     }
     return measurements;
 }
@@ -82,7 +82,7 @@ operation PreparePsiMinus(register : Qubit[]) : Unit {
 }
 ```
 
-This program implements the four basic Bell states of quantum entanglement, and is one of the sample programs included the [Azure Quantum Visual Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). 
+This program implements the four basic Bell states of quantum entanglement, and is one of the sample programs included the [Azure Quantum Visual Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 You can run the program from the built-in simulator in the VS Code QDK extension and get standard output
 
@@ -135,6 +135,3 @@ or run the simulator with a histogram output
 :::image type="content" source="../../../media/histogram-output.png" alt-text="The output of a quantum program as a histogram.":::
 
 To run the program on quantum hardware, the program first needs to be compiled and submitted to Azure Quantum, all of which can be done from inside VS Code. For the full end-to-end process, see [Get started with Q# programs and Visual Studio Code](xref:microsoft.quantum.submit-jobs).
-
-
-
