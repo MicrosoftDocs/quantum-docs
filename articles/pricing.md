@@ -220,7 +220,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Includes access to  |
 |---|---|  
-|Use is deducted from the Azure Quantum Credits based on the job execution time only| Rigetti Ankaa-9Q-3|
+|Use is deducted from the Azure Quantum Credits based on the job execution time only | Rigetti Ankaa-3 <br /> Rigetti Ankaa-9Q-3 |
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t charge you when you reach your credit limit.
@@ -235,7 +235,7 @@ The Pay-as-you-go plan consists of *a la carte* access to Rigetti QPUs. The usag
 
 |Pricing | Includes access to   |
 |---|---|  
-|USD 0.013 per 10-millisecond increment of job execution time| Rigetti 9-qubit Ankaa-9Q-3 |
+|USD 0.013 per 10-millisecond increment of job execution time | Rigetti Ankaa-3 <br /> Rigetti Ankaa-9Q-3 |
 
 
 ***
