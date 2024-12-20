@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 10/24/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -237,7 +237,7 @@ operation ArbitraryAngleZZExample(theta : Double) : Result[] {
 
     // Measure qubits and return results
     for i in IndexRange(qubits) {
-        set resultArray w/= i <- M(qubits[i]);  
+        resultArray w/= i <- M(qubits[i]);  
     }
     
     return resultArray;

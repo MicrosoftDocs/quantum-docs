@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 07/10/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -62,7 +62,7 @@ For installation details, see [Installing the QDK on VS Code](xref:microsoft.qua
         mutable results = [];
         for i in 0 .. N - 1 {
             let r = Random();
-            set results += [r];
+            results += [r];
         }
         return results
     }
@@ -144,7 +144,7 @@ To reinitialize the Q# interpreter and compile your program with the base profil
         mutable results = [];
         for i in 0 .. N - 1 {
             let r = Random();
-            set results += [r];
+            results += [r];
         }
         return results
     }
