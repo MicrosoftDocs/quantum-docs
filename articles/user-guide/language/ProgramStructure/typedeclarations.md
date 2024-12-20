@@ -49,7 +49,14 @@ Instances can also be defined by the user with the `new` keyword, for example
 let complexPair = new Complex { Real = 1.4, Imaginary = 2.1 };
 ```
 
-For more information about copying and updating structs, see [Copy and update of struct types](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-of-struct-types).
+You can also copy an existing struct with the `...` syntax
 
+```qsharp
+let copyPair = new Complex { ...complexPair };
+```
 
+When copying, you can specify individual fields to change
 
+```qsharp
+let updatedPair = new Complex { ...complexPair, Real = 3.5 };
+```

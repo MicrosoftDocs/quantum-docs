@@ -92,6 +92,3 @@ If there aren't enough qubits available to borrow, then qubits are allocated fro
 
 > [!NOTE]
 > Among the known use-cases of dirty qubits are implementations of multi-controlled CNOT gates that require very few qubits, and implementations of incrementers. This [paper on factoring with qubits](https://arxiv.org/abs/1611.07995) provides an example of an algorithm that utilizes borrowed qubits.
-
-
-
