@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: In this tutorial, write a quantum program in Q# that demonstrates the superposition and entanglement of qubits.
 ms.author: sonialopez
-ms.date: 09/10/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial

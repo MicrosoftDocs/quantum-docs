@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Build a Q# project that demonstrates fundamental quantum concepts like superposition by creating a quantum random number generator.
 ms.author: sonialopez
-ms.date: 10/23/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -159,7 +159,7 @@ Since the outcome of the measurement is random and the probabilities of measurin
         mutable bits = [];
         let nBits = BitSizeI(max);
         for idxBit in 1..nBits {
-            set bits += [GenerateRandomBit()];
+            bits += [GenerateRandomBit()];
         }
         let sample = ResultArrayAsInt(bits);
 
@@ -215,7 +215,7 @@ operation GenerateRandomNumberInRange(max : Int) : Int {
     mutable bits = [];
     let nBits = BitSizeI(max);
     for idxBit in 1..nBits {
-        set bits += [GenerateRandomBit()];
+        bits += [GenerateRandomBit()];
     }
     let sample = ResultArrayAsInt(bits);
 
@@ -278,7 +278,7 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
         mutable bits = [];
         let nBits = BitSizeI(max);
         for idxBit in 1..nBits {
-            set bits += [GenerateRandomBit()];
+            bits += [GenerateRandomBit()];
         }
         let sample = ResultArrayAsInt(bits);
 
@@ -350,7 +350,7 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
         mutable bits = [];
         let nBits = BitSizeI(max);
         for idxBit in 1..nBits {
-            set bits += [GenerateRandomBit()];
+            bits += [GenerateRandomBit()];
         }
         let sample = ResultArrayAsInt(bits);
 
@@ -454,7 +454,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
         mutable bits = [];
         let nBits = BitSizeI(max);
         for idxBit in 1..nBits {
-            set bits += [GenerateRandomBit()];
+            bits += [GenerateRandomBit()];
         }
         let sample = ResultArrayAsInt(bits);
     
