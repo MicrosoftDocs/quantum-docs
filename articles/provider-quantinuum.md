@@ -28,10 +28,13 @@ The following targets are available from this provider:
 |---|---|---|---|
 |[H1-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-1sc|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |56 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H2-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-2sc |56 qubits|Use this to validate quantum programs against the H2-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-1 Emulator](#system-model-h1-emulators) |quantinuum.sim.h1-1e | 20 qubits| Uses a realistic physical model and noise model of H1-1.|
-|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabalizer simulation|
+|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabilizer simulation|
+|[H2-2 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-2e | 56/32 qubits|Uses a realistic physical model and noise model of H2-2. 56 qubit simulation is only available as a stabilizer simulation|
 |[H1-1](#system-model-h1)|quantinuum.qpu.h1-1 |20 qubits|Quantinuum's H1-1 trapped ion device.|
 |[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-1 trapped ion device.|
+|[H2-2](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-2 trapped ion device.|
 
 Quantinuum's targets correspond to a **:::no-loc text="QIR Adaptive RI":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-qir-adaptive-ri-profile-targets).
 
@@ -51,6 +54,7 @@ We recommend that users first validate their code using a Syntax Checker. This i
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
+  - H2-2 Syntax Checker: `quantinuum.sim.h2-2sc`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
 Syntax Checkers usage is offered free-of-charge.
@@ -95,6 +99,7 @@ After validating the syntax of their code with the H2-1 Syntax Checker, users ca
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
+  - H2-2 Emulator: `quantinuum.sim.h2-2e`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
 System Model H2 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
@@ -111,6 +116,7 @@ System Model H2 hardware is continuously upgraded throughout it's product lifecy
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
   - H2-1: `quantinuum.qpu.h2-1`
+  - H2-2: `quantinuum.qpu.h2-2`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
 ## System Model H1 and H2 Technical Specifications 
