@@ -131,6 +131,7 @@ Additional capabilities available via the Quantinuum API are listed here.
 | ---- | ---- |
 | [Mid-Circuit Measurement and Reset (MCMR)](#mid-circuit-measurement-and-reset) | Measure qubits in the middle of a circuit and reuse them |
 | [Arbitrary Angle ZZ Gates](#arbitrary-angle-zz-gates) | Directly perform 2-qubit arbitrary angle gate rotations |
+| [General SU(4) Entangling Gate](#general-su4-entangling-gate) | Directly perform 2-qubit arbitrary angle gate rotations |
 | [Emulator Noise Parameters](#emulator-noise-parameters) | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
 | [TKET Optimizations in H-Series Stack](#tket-compilation-in-h-series-stack) | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
 
