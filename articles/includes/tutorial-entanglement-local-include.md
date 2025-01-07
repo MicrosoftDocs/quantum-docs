@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 08/23/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -71,10 +71,10 @@ operation Main() : (Int, Int, Int, Int) {
 
         // Count the number of 'Ones' returned:
         if resultQ1 == One {
-            set numOnesQ1 += 1;
+            numOnesQ1 += 1;
         }
         if resultQ2 == One {
-            set numOnesQ2 += 1;
+            numOnesQ2 += 1;
         }
     }
 
@@ -143,10 +143,10 @@ In order to run the code as a standalone program, the Q# compiler needs to know 
     
             // Count the number of 'Ones' returned:
             if resultQ1 == One {
-                set numOnesQ1 += 1;
+                numOnesQ1 += 1;
             }
             if resultQ2 == One {
-                set numOnesQ2 += 1;
+                numOnesQ2 += 1;
             }
         }
     
@@ -283,10 +283,10 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
     
             // Count the number of 'Ones' returned:
             if resultQ1 == One {
-                set numOnesQ1 += 1;
+                numOnesQ1 += 1;
             }
             if resultQ2 == One {
-                set numOnesQ2 += 1;
+                numOnesQ2 += 1;
             }
         }
     

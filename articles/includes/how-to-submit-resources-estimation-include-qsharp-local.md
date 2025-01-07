@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 08/22/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -104,7 +104,7 @@ Copy the following code into the `ShorRE.qs` file:
                 R1Frac(frequencyEstimate, bitsPrecision - 1 - idx, c);
             }
             if MResetZ(c) == One {
-                set frequencyEstimate += 1 <<< (bitsPrecision - 1 - idx);
+                frequencyEstimate += 1 <<< (bitsPrecision - 1 - idx);
             }
         }
 
@@ -349,8 +349,8 @@ Copy the following code into the `ShorRE.qs` file:
         mutable nZeroes = 0;
         mutable copy = number;
         while (copy % 2 == 0) {
-            set nZeroes += 1;
-            set copy /= 2;
+            nZeroes += 1;
+            copy /= 2;
         }
         return nZeroes;
     }
