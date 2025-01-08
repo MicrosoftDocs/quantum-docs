@@ -1,7 +1,7 @@
 ---
 author: bradben
 description: Learn about the features that are included with the Azure Quantum Development Kit extension for VS Code. 
-ms.date: 10/24/2024
+ms.date: 01/08/2025
 ms.author: brbenefield
 ms.service: azure-quantum
 ms.subservice: core
@@ -71,7 +71,7 @@ Most of the common code editing features in VS Code are available when working w
 - References
 - Function signatures
 - Parameter information
-- Completion suggestions
+- Completion suggestions, including context aware, namespace member, and type member completions. 
 - Linting - In Q# files, you configure linting per-project in the manifest file. For more information, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects#manifest-file-examples).
 
 
