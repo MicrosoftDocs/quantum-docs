@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
 ms.author: brbenefield
-ms.date: 12/13/2024
+ms.date: 01/08/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: conceptual
@@ -38,10 +38,10 @@ When you grant access to a security principal, you assign a [built-in role](/azu
 
 |Role|Access level|
 |--|--|
-|Owner|Grants full access to manage all resources, including the ability to assign roles in Azure RBAC.|
-|Contributor|Grants full access to manage all resources, but doesn't allow you to assign roles in Azure RBAC.|
-|Quantum Workspace Data Contributor|Grants access to submit and view jobs in the workspace, but doesn't allow you to create, delete, or modify a workspace.|
-|Reader|View all resources, but doesn't allow you to make any changes.|
+|[Owner](/azure/role-based-access-control/built-in-roles/privileged#owner)|Grants full access to manage all resources, including the ability to assign roles in Azure RBAC.|
+|[Contributor](/azure/role-based-access-control/built-in-roles/privileged#contributor)|Grants full access to manage all resources, but doesn't allow you to assign roles in Azure RBAC.|
+|[Quantum Workspace Data Contributor](/azure/role-based-access-control/built-in-roles/compute#quantum-workspace-data-contributor)|Grants access to submit and view jobs in the workspace, but doesn't allow you to create, delete, or modify a workspace.|
+|[Reader](/azure/role-based-access-control/built-in-roles/general#reader)|View all resources, but doesn't allow you to make any changes.|
 
 ### Scope
 
