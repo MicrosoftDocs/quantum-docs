@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 09/10/2024
+ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -20,7 +20,7 @@ For more information about the Copilot, see [Explore Azure Quantum](xref:microso
 
 The first step is to define a Q# operation that initializes a qubit to a known state. This operation can be called to set a qubit to a classical state, meaning that, when measured, it either returns `Zero` 100% of the time or returns `One` 100% of the time. Measuring a qubit returns a Q# type `Result`, which can only have a value of `Zero` or `One`.
 
-Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) and copy the following code into the code editor window. Don't click **Run** yet; you'll run the code later in the tutorial.
+Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) and copy the following code into the code editor window. Don't select **Run** yet; you'll run the code later in the tutorial.
 
 ```qsharp
 import Microsoft.Quantum.Intrinsic.*;
@@ -66,10 +66,10 @@ operation Main() : (Int, Int, Int, Int) {
 
         // Count the number of 'Ones' returned:
         if resultQ1 == One {
-            set numOnesQ1 += 1;
+            numOnesQ1 += 1;
         }
         if resultQ2 == One {
-            set numOnesQ2 += 1;
+            numOnesQ2 += 1;
         }
     }
 
@@ -138,10 +138,10 @@ operation Main() : (Int, Int, Int, Int) {
 
         // Count the number of 'Ones' returned:
         if resultQ1 == One {
-            set numOnesQ1 += 1;
+            numOnesQ1 += 1;
         }
         if resultQ2 == One {
-            set numOnesQ2 += 1;
+            numOnesQ2 += 1;
         }
     }
 
@@ -160,7 +160,7 @@ operation Main() : (Int, Int, Int, Int) {
 }
 ```
 
-Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slide for the number of shots to "1", and click **Run**. The results are displayed in the histogram and in the **Results** fields.
+Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slider for the number of shots to "1", and select **Run**. The results are displayed in the histogram and in the **Results** fields.
 
 ```output
 Q1 - Zeros: 0
@@ -275,10 +275,10 @@ operation Main() : (Int, Int, Int, Int) {
 
         // Count the number of 'Ones' returned:
         if resultQ1 == One {
-            set numOnesQ1 += 1;
+            numOnesQ1 += 1;
         }
         if resultQ2 == One {
-            set numOnesQ2 += 1;
+            numOnesQ2 += 1;
         }
     }
 

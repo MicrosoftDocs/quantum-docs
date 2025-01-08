@@ -171,25 +171,14 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 > There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
 > For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-### [H1 Subscriptions](#tab/tabid-H1)
+### [Subscriptions](#tab/tabid-H2)
 
-The H1 Subscriptions are monthly subscription plans available through queued access providing access to the H1-1 quantum computer.
-
-|Plans and Pricing| Includes access to |
-|---|---|
-|**Standard Plan**: USD125,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 hardware</li><li>100k eHQCs for use on the System Model H1 Emulator</li></ul>|
-|**Premium Plan**: USD175,000/Month + Azure infrastructure costs | <ul><li>17k HQCs for use on the System Model H1 hardware</li><li>170k eHQCs for use on the System Model H1 Emulator</li></ul>|
-
-For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
-
-### [H1 + H2 Subscriptions](#tab/tabid-H2)
-
-The Standard H1 + H2 Subscriptions are monthly subscription plans available through queued access.
+Subscriptions are monthly subscription plans available through queued access.
 
 |Plans and Pricing|  Includes access to  |
 |---|---|
-|**Standard Plan**: USD135,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on the System Model H1 and H2 hardware</li><li>100k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
-|**Premium Plan**: USD185,000/Month + Azure infrastructure costs| <ul><li>17k HQCs for use on System Model H1 and H2 hardware</li><li>170k eHQCs for use on the System Model H1 or H2 emulators</li></ul>|
+|**Standard Plan**: USD135,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on currently available Quantinuum hardware</li><li>100k eHQCs for use on the Quantinuum emulators</li></ul>|
+|**Premium Plan**: USD185,000/Month + Azure infrastructure costs  | <ul><li>17k HQCs for use on currently available Quantinuum hardware</li><li>170k eHQCs for use on the Quantinuum emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
