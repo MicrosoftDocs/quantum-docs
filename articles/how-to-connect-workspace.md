@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to connect and access to your Azure Quantum workspace using connection string and workspace parameters.
 ms.author: sonialopez
-ms.date: 03/04/2024
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to

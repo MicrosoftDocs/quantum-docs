@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 11/15/2024
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -10,7 +10,7 @@ no-loc: [target, targets]
 
 ## Prerequisites
 
-For installation details, see [Installing the Quantum Development Kit on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
