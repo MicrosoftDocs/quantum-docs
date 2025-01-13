@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Learn how to run multiple configurations of target parameters and compare them using the Resource Estimator.
-ms.date: 10/16/2024
+ms.date: 01/13/2025
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -30,7 +30,7 @@ For information about how to run the Resource Estimator, see [Different ways to 
 ## Prerequisites
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+- The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
 - The latest Azure Quantum `qsharp` package.  
 

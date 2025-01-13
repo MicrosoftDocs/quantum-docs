@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs problems in the cloud.
-ms.date: 10/04/2024
+ms.date: 01/13/2025
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -48,7 +48,7 @@ The Azure Quantum website is **free** of charge and **doesn't require** an Azure
 
 Azure Quantum offers the **Quantum Development Kit (QDK)**. With the QDK, you can write Q# quantum programs, debug your code, get real-time code feedback, and choose your target machine. The QDK is the only development kit ready for Fault-Tolerant Quantum Computing (FTQC). Besides supporting for Q#, the QDK also supports Qiskit and Cirq programs for quantum computing, so if you're already working in other development languages, you can also run your circuits on Azure Quantum.
 
-The Quantum Development Kit is **free** of charge and available in Visual Studio Code. For more information, see [Install the QDK in Visual Studio Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+The Quantum Development Kit is **free** of charge and available in Visual Studio Code. For more information, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!NOTE]
 > An Azure Quantum workspace is required to run your local quantum programs on Azure Quantum providers. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
