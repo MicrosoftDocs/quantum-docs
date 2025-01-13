@@ -57,3 +57,109 @@ c: 2/═════════════════════════
                                               0  1
 {'11': 680, '00': 344}
 ```
+## Generate QIR for the circuit
+
+Using that same circuit, you can generate QIR which is used to run on quantum hardware.
+
+> [!NOTE]
+> When generating QIR, all registers must have been measured into. If there are any unused registers, an error will be raised. Additionally, attempting to generate QIR when the profile is set to `Unrestricted` raises an error. The `Unrestricted` profile is only valid for simulation. Either TargetProfile.Base or `TargetProfile.Adaptive_RI` must be used. The `target_profile` can be overridden in the `backend.qir(...)` call to switch profiles.
+
+1. Import `QSharpError` and `TargetProfile`
+
+    ```python
+    from qsharp import QSharpError, TargetProfile
+    ```
+
+2. Modify the output to generate QIR
+
+    ```python
+        print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
+    ```
+Your code should now look like this:
+
+```python
+# load the required imports 
+from qiskit.circuit.random import random_circuit
+from qsharp.interop.qiskit import QSharpBackend
+from qsharp import QSharpError, TargetProfile
+
+# define and display the circuit
+circuit = random_circuit(2, 2, measure=True)
+print(circuit)
+
+# generate QIR for the circuit
+print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
+```
+
+with the output:
+
+```html
+     ┌────────────┐             ┌─┐   
+q_0: ┤ Rx(2.7195) ├─■───────────┤M├───
+     └──┬─────┬───┘ │U1(5.5924) └╥┘┌─┐
+q_1: ───┤ Tdg ├─────■────────────╫─┤M├
+        └─────┘                  ║ └╥┘
+c: 2/════════════════════════════╩══╩═
+                                 0  1
+%Result = type opaque
+%Qubit = type opaque
+
+define void @ENTRYPOINT__main() #0 {
+block_0:
+  call void @__quantum__qis__rx__body(double 2.7194945105768586, %Qubit* inttoptr (i64 0 to %Qubit*))
+  call void @__quantum__qis__rz__body(double 2.796204066686262, %Qubit* inttoptr (i64 0 to %Qubit*))
+  call void @__quantum__qis__t__adj(%Qubit* inttoptr (i64 1 to %Qubit*))
+  call void @__quantum__qis__cx__body(%Qubit* inttoptr (i64 0 to %Qubit*), %Qubit* inttoptr (i64 1 to %Qubit*))
+  call void @__quantum__qis__rz__body(double -2.796204066686262, %Qubit* inttoptr (i64 1 to %Qubit*))
+  call void @__quantum__qis__cx__body(%Qubit* inttoptr (i64 0 to %Qubit*), %Qubit* inttoptr (i64 1 to %Qubit*))
+  call void @__quantum__qis__rz__body(double 2.796204066686262, %Qubit* inttoptr (i64 1 to %Qubit*))
+  call void @__quantum__qis__m__body(%Qubit* inttoptr (i64 0 to %Qubit*), %Result* inttoptr (i64 0 to %Result*))
+  call void @__quantum__qis__m__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Result* inttoptr (i64 1 to %Result*))
+  call void @__quantum__rt__array_record_output(i64 2, i8* null)
+  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 1 to %Result*), i8* null)
+  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 0 to %Result*), i8* null)
+  ret void
+}
+
+declare void @__quantum__qis__rx__body(double, %Qubit*)
+
+declare void @__quantum__qis__rz__body(double, %Qubit*)
+
+declare void @__quantum__qis__t__adj(%Qubit*)
+
+declare void @__quantum__qis__cx__body(%Qubit*, %Qubit*)
+
+declare void @__quantum__qis__m__body(%Qubit*, %Result*) #1
+
+declare void @__quantum__rt__array_record_output(i64, i8*)
+
+declare void @__quantum__rt__result_record_output(%Result*, i8*)
+
+attributes #0 = { "entry_point" "output_labeling_schema" "qir_profiles"="adaptive_profile" "required_num_qubits"="2" "required_num_results"="2" }
+attributes #1 = { "irreversible" }
+
+; module flags
+
+!llvm.module.flags = !{!0, !1, !2, !3, !4, !5, !6, !7, !8, !9, !10}
+
+!0 = !{i32 1, !"qir_major_version", i32 1}
+!1 = !{i32 7, !"qir_minor_version", i32 0}
+!2 = !{i32 1, !"dynamic_qubit_management", i1 false}
+!3 = !{i32 1, !"dynamic_result_management", i1 false}
+!4 = !{i32 1, !"classical_ints", i1 true}
+!5 = !{i32 1, !"qubit_resetting", i1 true}
+!6 = !{i32 1, !"classical_floats", i1 false}
+!7 = !{i32 1, !"backwards_branching", i1 false}
+!8 = !{i32 1, !"classical_fixed_points", i1 false}
+!9 = !{i32 1, !"user_functions", i1 false}
+!10 = !{i32 1, !"multiple_target_branching", i1 false}
+```
+
+Not all programs can run on all hardware. Here you can try to target the `Base` profile, but we will get detailed errors on which parts of the program aren't supported.
+
+```python
+try:
+    backend.qir(qc, target_profile=TargetProfile.Base)
+except QSharpError as e:
+    print(e)
+```
