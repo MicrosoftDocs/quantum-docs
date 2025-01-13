@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to submit a Q# sample to the Azure Quantum Resource Estimator to estimate the resources of a Q# program.
 ms.author: sonialopez
-ms.date: 06/03/2024
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
@@ -19,7 +19,7 @@ In this quickstart, you learn how to use the Azure Quantum Resource Estimator to
 ## Prerequisites
 
 * The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-* The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+* The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!TIP]
 > You don't need to have an Azure account to run the Resource Estimator. 

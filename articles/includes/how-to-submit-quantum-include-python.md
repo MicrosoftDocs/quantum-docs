@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/18/2024
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
@@ -15,7 +15,7 @@ Learn how to use VS Code to write a Python program that calls Q# operations, con
 
 ## Prerequisites
 
-For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
