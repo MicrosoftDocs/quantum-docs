@@ -2,7 +2,7 @@
 author: bradben
 description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
 ms.author: brbenefield
-ms.date: 09/12/2024
+ms.date: 12/20/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
@@ -34,6 +34,11 @@ By default, Visual Studio Code updates extensions automatically. After any updat
   
     ```cmd
     pip install --upgrade qsharp>=1.0
+    ```
+    To add support for the analysis, transformation, code generation, and simulation of Qiskit circuits, install the `qiskit` and `widget` packages as well.
+
+    ```cmd
+    pip install --upgrade qsharp[qiskit,widgets]>=1.0
     ```
 
     ```cmd
