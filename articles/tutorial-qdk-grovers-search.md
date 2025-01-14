@@ -313,11 +313,11 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. The results are displayed in the histogram and in the **Results** fields.
 1. Select **Explain code** to prompt Copilot to explain the code to you.
 
-### Run the program using the Quantinuum H-Series Emulator
+### Run the program using the Quantinuum Emulator
 
-You can also submit your program to the free [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based). The emulator simulates a quantum computer with 20 qubits.
+You can also submit your program to the free [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based). The emulator simulates a quantum computer with 20 qubits.
 
-1. Select the **In-Memory Simulator** dropdown and select **Quantinuum H-Series Emulator**.
+1. Select the **In-Memory Simulator** dropdown and select **Quantinuum Emulator**.
 1. Select the number of shots (currently limited to 20) and select Run.
 
 ### [Visual Studio Code](#tab/tabid-vscode)

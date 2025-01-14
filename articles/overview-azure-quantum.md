@@ -40,7 +40,7 @@ To have an Azure account, can register for free and sign up for a [pay-as-you-go
 
 [Azure Quantum (quantum.microsoft.com)](https://quantum.microsoft.com/) is a central resource for exploring quantum computing. You can engage with the Copilot in Azure Quantum, a quantum-focused chatbot that helps you write code and better understand quantum concepts. You can also learn from experts and enthusiasts through blogs, articles and videos.
 
-You can try out Q# code samples in the [online code editor](https://quantum.microsoft.com/tools/quantum-coding), submit your job the to the cloud-based Quantinuum H-Series Emulator, and open your code in [VS Code for the Web](https://vscode.dev/quantum) and continue working in a pre-configure quantum environment.
+You can try out Q# code samples in the [online code editor](https://quantum.microsoft.com/tools/quantum-coding), submit your job the to the cloud-based Quantinuum Emulator, and open your code in [VS Code for the Web](https://vscode.dev/quantum) and continue working in a pre-configure quantum environment.
 
 The Azure Quantum website is **free** of charge and **doesn't require** an Azure account. To get started, all you need is a Microsoft (MSA) email account. For more information, see [Explore Copilot in Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
