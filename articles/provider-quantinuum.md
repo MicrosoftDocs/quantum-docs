@@ -73,9 +73,9 @@ More information can be found in the *System Model H1 Emulator Product Data Shee
 
 System Model H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
-## H-Series Emulator (cloud based)
+## Quantinuum Emulator (cloud based)
 
-The H-Series Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum H-Series Emulator without an Azure account. The H-Series Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
+The Quantinuum Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
 
 ## System Model H1
 
@@ -132,8 +132,8 @@ Additional capabilities available via the Quantinuum API are listed here.
 | [Mid-Circuit Measurement and Reset (MCMR)](#mid-circuit-measurement-and-reset) | Measure qubits in the middle of a circuit and reuse them |
 | [Arbitrary Angle ZZ Gates](#arbitrary-angle-zz-gates) | Directly perform 2-qubit arbitrary angle gate rotations |
 | [General SU(4) Entangling Gate](#general-su4-entangling-gate) | Directly perform 2-qubit arbitrary angle gate rotations |
-| [Emulator Noise Parameters](#emulator-noise-parameters) | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
-| [TKET Optimizations in H-Series Stack](#tket-compilation-in-h-series-stack) | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
+| [Emulator Noise Parameters](#emulator-noise-parameters) | Experiment with the noise parameters used in the Quantinuum emulators |
+| [TKET Optimizations in Quantinuum Stack](#tket-compilation-in-quantinuum-stack) | Experiment with turning on different levels of TKET optimizations in the Quantinuum stack |
 
 Users can take advantage of these additional capabilities via circuit functions or pass-through parameters in the Azure Quantum Q# and Qiskit providers.
 
@@ -145,7 +145,7 @@ Due to the internal level structure of trapped-ion qubits, a mid-circuit measure
 
 When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage.
 
-For information on MCMR in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+For information on MCMR in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [MCMR with Q# Provider](#tab/tabid-mcmr-with-q-provider)
 
@@ -214,7 +214,7 @@ circuit.draw()
 
 ### Arbitrary Angle ZZ Gates
 
-Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
@@ -279,13 +279,13 @@ circuit.measure_all()
 
 ### General SU(4) Entangling Gate
 
-Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [General SU(4) Entangling Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
 
 In Q\#, the General SU(4) Entangling gate is implemented via Quantinuum's QIR profile. To use it, define a function with a custom intrinsic matching the QIR profile signature, and use this function within the `SU4Example` operation.
 
-To ensure the circuit runs with the General SU(4) Entangling gate, pass the following options in the H-Series stack:
+To ensure the circuit runs with the General SU(4) Entangling gate, pass the following options in the Quantinuum stack:
 
 - `nativetq: Rxxyyzz` to prevent rebasing to other native gates.
 - `noreduce: True` to avoid additional compiler optimizations (optional).
@@ -346,7 +346,7 @@ job.get_results()
 
 Users have the option of experimenting with the noise parameters of the Quantinuum emulators. **Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
 
-For more information on the full set of noise parameters available, see the H-series emulator product data sheets on the [System Model H1] and [System Model H2] pages.
+For more information on the full set of noise parameters available, see the Quantinuum emulator product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
@@ -482,13 +482,13 @@ option_params = {
 
 ***
 
-### TKET Compilation in H-Series Stack
+### TKET Compilation in Quantinuum Stack
 
-Circuits submitted to Quantinuum H-Series systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for H-Series hardware. This enables circuits to be automatically optimized for H-Series systems and run more efficiently.
+Circuits submitted to Quantinuum Quantinuum systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for Quantinuum hardware. This enables circuits to be automatically optimized for Quantinuum systems and run more efficiently.
 
 More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section.
 
-In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series systems is optimization level 2.*
+In the Quantinuum software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to Quantinuum systems is optimization level 2.*
 
 Users who would like to experiment with the TKET compilation passes and see what optimizations would apply to their circuits *before* submitting any jobs can see the *Quantinuum_compile_without_api.ipynb* notebook in the [`pytket-quantinuum` Examples] folder.
 
@@ -582,7 +582,7 @@ Technical details for the System Model H1 and H2 and System Model H1 and H2 Emul
 
 ## Target Availability
 
-The Quantinuum H-Series quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed.
+The Quantinuum quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed.
 
 Quantinuum hardware cycles through commercial periods and development periods. During commercial periods, the hardware is available to process jobs via a queue system. During development periods, the hardware is offline as upgrades are applied.
 
@@ -604,7 +604,7 @@ To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.
 
 ## Limits and quotas
 
-Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to Quantinuum quantum computers, and emulator HQCs (eHQCs) for jobs submitted to emulators.
+Quantinuum's quotas are tracked based on the QPU usage credit unit, *Hardware Quantum Credit (HQC)*, for jobs submitted to Quantinuum quantum computers, and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
