@@ -328,9 +328,6 @@ Result(backend_name='quantinuum.qpu.h1-1', backend_version='1', qobj_id='Qiskit 
 
 ### [Rigetti](#tab/tabid-rigetti)
 
-> [!NOTE]
-> Currently, Rigetti only offers their quantum simulator, `rigetti.sim.qvm`, through the Azure Quantum service.
-
 Add a new cell and create an object to represent the Rigetti quantum simulator target:
 
 ```python
