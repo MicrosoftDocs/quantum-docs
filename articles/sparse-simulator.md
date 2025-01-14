@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Azure Quantum Development Kit sparse simulator.
 ms.author: sonialopez
-ms.date: 10/24/2024
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
@@ -28,4 +28,18 @@ The sparse simulator is the default local simulator in Visual Studio Code with t
 |**In a `%%qsharp` notebook cell**  | `Program_Entry_Operation()` |
 
 
+## Adding Pauli noise to the sparse simulator
 
+The sparse simulator supports the addition of Pauli noise to the simulation. This feature allows users to simulate the effects of noise on quantum operations and measurements. The noise model is specified using a dictionary of Pauli noise probabilities, where the keys are the Pauli operators `X`, `Y`, and `Z`, and the values are the probabilities of applying the corresponding Pauli operator. The noise model can be applied to each qubit independently and can be called from Q# programs, Python programs, or configured in the VS Code settings. 
+
+### Adding Pauli noise to Q# programs
+
+Using ConfigurePauliNoise, BitFlipNoise, PhaseFlipNoise, and DepolarizingNoise operations, users can add Pauli noise to their Q# programs. Also NoNoise and ApplyIdleNoise opes. 
+
+### Adding Pauli noise to Python programs or Jupyter Notebooks
+
+All parameters for the qsharp.run() method.
+
+### Adding Pauli noise using the VS Code settings
+
+Only combinations of X, Y, and Z are allowed. Apply to all qubits?
