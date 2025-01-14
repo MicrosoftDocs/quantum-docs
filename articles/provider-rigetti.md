@@ -15,9 +15,6 @@ uid: microsoft.quantum.providers.rigetti
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
-> [!NOTE]
-> The Ankaa-2 QPU is retired from the Azure Quantum service as of October 4, 2024. 
-
 [Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
 
 - Publisher: [Rigetti](https://rigetti.com)
