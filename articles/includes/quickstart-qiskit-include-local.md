@@ -93,6 +93,8 @@ This workspace's targets:
 - quantinuum.sim.h1-1sc
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
+- rigetti.qpu.ankaa-9q-3
+- rigetti.qpu.ankaa-3
 ```
 
 ## Run a simple circuit
