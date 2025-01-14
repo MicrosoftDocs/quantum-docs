@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: brbenefield
-ms.date: 09/16/2024
+ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
@@ -55,7 +55,7 @@ Quantinuum provides two emulator tools:
 - Target Execution Profile: QIR Adaptive RI
 - Pricing: Free ($0)
 
-**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine - the H1-1 and H2-1 - along with cloud-based H-Series Emulator.
+**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine - the H1-1 and H2-1 - along with cloud-based Quantinuum Emulator.
  
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1, honeywell.qir.v1`
@@ -64,7 +64,7 @@ Quantinuum provides two emulator tools:
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
 - Target Execution Profile: QIR Adaptive RI
 
-The H-Series Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page. For more information, see the [H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) page.
+The Quantinuum Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page. For more information, see the [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based) page.
 
 For more information about all the Quantinuum emulators, see the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) page.
 

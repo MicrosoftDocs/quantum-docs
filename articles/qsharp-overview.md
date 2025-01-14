@@ -2,7 +2,7 @@
 author: haileytap
 description: This article introduces Q#, a programming language for developing and running quantum algorithms, and the structure of a Q# program.
 ms.author: sonialopez
-ms.date: 10/24/2024
+ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
@@ -301,7 +301,7 @@ You can submit your Q# programs (also known as jobs) to Azure Quantum through yo
 Azure Quantum offers some of the most compelling and diverse quantum hardware available today from industry leaders. See [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list) for the current list of supported hardware providers.
 
 > [!NOTE]
-> The cloud-based [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) target is available without an Azure account. To submit a job to the rest of the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+> The cloud-based [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based) target is available without an Azure account. To submit a job to the rest of the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 The following diagram shows the basic workflow after you submit your job:
 
