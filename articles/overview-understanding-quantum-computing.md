@@ -27,7 +27,7 @@ There are many ways to understand why quantum mechanics is hard to simulate. The
 
 ### Quantum states grows exponentially
 
-Consider a system of electrons where there are $40$ possible locations, where each location can either have or not have an electron. The system therefore might be in any of $2^{40}$ configurations (since each location has two possible configurations, either having an electron or being empty). To store the quantum state of the electrons in a conventional computer memory would require in excess of $130$ GB of memory! If you increase the number of possible locations to $41$, there would be twice as many configurations at $2^{41}$ which in turn would require more than $260$ GB of memory to store the quantum state.
+Consider a system of electrons where there are 40 possible locations, where each location can either have or not have an electron. The system therefore might be in any of $2^{40}$ configurations (since each location has two possible configurations, either having an electron or being empty). To store the quantum state of the electrons in a conventional computer memory would require in excess of 130 GB of memory! If you increase the number of possible locations to 41, there would be twice as many configurations at $2^{41}$ which in turn would require more than 260 GB of memory to store the quantum state.
 
 This game of increasing the number of locations can't be played indefinitely. At a few hundred electrons the memory required to store the system exceeds the number of particles in the universe; thus there is no hope with conventional computers to ever simulate quantum dynamics.
 
@@ -80,9 +80,6 @@ Quantum phenomena are the fundamental principles that differentiate quantum comp
 Imagine that you are exercising in your living room. You turn all the way to your left and then all the way to your right. Now turn to your left and your right at the same time. You can’t do it (not without splitting yourself in two, at least). Obviously, you can’t be in both of those states at once – you can’t be facing left and facing right at the same time.
 
 However, if you are a quantum particle, then you can have a certain probability of *facing left* AND a certain probability of *facing right* due to a phenomenon known as *superposition* (also known as *coherence*).
-
-Unlike classical particles, if two states $A$ and $B$ are valid quantum states of a quantum particle, then any linear combination of the states is also a valid
-quantum state: $\text{qubit state}=\alpha A + \beta B$. This linear combination of quantum states $A$ and $B$ is called superposition. Here, $\alpha$ and $\beta$ are the probability amplitudes of $A$ and $B$, respectively, such that $|\alpha|^{2} + |\beta|^{2} = 1$. 
 
 Only quantum systems like ions, electrons or superconducting circuits can exist in the superposition states that enable the power of quantum computing. A quantum particle such as an electron has its own “facing left or facing right” property, namely *spin*, referred to as either up or down, so the quantum state of an electron is a superposition of "spin up" and "spin down".
 
