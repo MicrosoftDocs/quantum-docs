@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to read a quantum circuit diagram and how to represent quantum operations and measurements in a circuit diagram.
 ms.author: sonialopez
-ms.date: 09/16/2024
+ms.date: 01/16/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept-article
@@ -63,9 +63,9 @@ Perhaps the most useful property of such abstract circuit diagrams is that they 
 
 Quantum controlled gates are two-qubit gates that apply a single-qubit gate to a target qubit if a control qubit is in a specific state.
 
-For example, consider a quantum controlled gate, denoted $\Lambda(G)$, where a single qubit's value controls the application of the $G$ operation,. The controlled gate $\Lambda(G)$ can be understood by looking at the following example of a product state input:
+For example, consider a quantum controlled gate, denoted $\Lambda(G)$, where a single qubit's value controls the application of the $G$ operation. The controlled gate $\Lambda(G)$ can be understood by looking at the following example of a product state input:
 
-$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$
+$$\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$$
 
 That is to say, the controlled gate applies $G$ to the register containing $\psi$ if and only if the control qubit takes the value $1$. In general, such controlled operations are described in circuit diagrams by the following symbol:
 
@@ -107,10 +107,10 @@ In Q#, the `Measure` operator implements the measurement operation.
 
 ## Example: Unitary transformation
 
-Consider the unitary transformation $\text{ CNOT}_{01}(H\otimes 1)$.
+Consider the unitary transformation $\text{CNOT}_{01}(H\otimes 1)$.
 This gate sequence is of fundamental significance to quantum computing because it creates a maximally entangled two-qubit state:
 
-$\mathrm{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} \left(\ket{00} + \ket{11} \right),$
+$$\text{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} (\ket{00} + \ket{11})$$
 
 Operations with this or greater complexity are ubiquitous in quantum algorithms and quantum error correction.
 
