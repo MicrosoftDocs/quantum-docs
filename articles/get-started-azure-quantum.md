@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about the resources available on the Azure Quantum website.
 ms.author: brbenefield
-ms.date: 09/16/2024
+ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: get-started
@@ -18,7 +18,7 @@ Get started with quantum computing, discover the latest quantum breakthroughs, a
 The Azure Quantum website features:
 
 - **Copilot in Azure Quantum:** AI meets the world of quantum. Copilot in Azure Quantum is a generative AI assistant to help you learn and explore quantum computing.
-- **Code in Azure Quantum:** Explore and run Q# code directly in your browser using the built-in code window and compiler, and submit your jobs to the in-memory simulator or the free [Quantinuum H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based). Use Copilot in Azure Quantum to explain Q# code and also generate code from your prompts.
+- **Code in Azure Quantum:** Explore and run Q# code directly in your browser using the built-in code window and compiler, and submit your jobs to the in-memory simulator or the free [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based). Use Copilot in Azure Quantum to explain Q# code and also generate code from your prompts.
 - **Quantum Elements:** One of the most important applications of quantum computing is in the field of chemistry. Currently available in preview, Quantum Elements uses the Copilot in Azure Quantum to design, code, and render molecular models.
 - **Quantum Katas:** [Hands-on tutorials](https://quantum.microsoft.com/tools/quantum-katas) that teach quantum computing concepts and the Q# programming language.
 - **Code samples:** The Azure Quantum code library is a rich set of samples using Q#, Python, and Qiskit code to demonstrate quantum scenarios.
@@ -82,11 +82,11 @@ To start exploring the Copilot and coding in Azure Quantum, use one of the sampl
 
 To run your program again using a different simulator:
 
-1. Select the **In-Memory Simulator** dropdown and select **Quantinuum H-Series Emulator**. 
+1. Select the **In-Memory Simulator** dropdown and select **Quantinuum Emulator**. 
 1. Select the number of shots (currently limited to 20) and select **Run**. 
 
 - The job status is displayed at the top of the code window.
-- A histogram of the results is displayed below the code window. Results for each shot aren't currently available with the Quantinuum H-Series Emulator.  
+- A histogram of the results is displayed below the code window. Results for each shot aren't currently available with the Quantinuum Emulator.  
 
 ### Prompting the Copilot
 

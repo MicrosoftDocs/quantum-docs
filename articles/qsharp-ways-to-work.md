@@ -2,7 +2,7 @@
 author: haileytap
 description: This article describes the environment options for developing quantum programs with Q# and the Quantum Development Kit.
 ms.author: sonialopez
-ms.date: 09/10/2024
+ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: get-started
@@ -60,7 +60,7 @@ The following table shows what you can and can't do on the Azure Quantum website
 
 | You can: | You can't: | You need: |
 | --- | --- | --- |
-| <ul><li>Run Q# programs online.</li><li>Simulate your programs in the Quantinuum H-Series Emulator.</li><li>Ask Copilot to explain quantum computing concepts or generate Q# programs.</li><li>Learn quantum programming using tutorials in the Quantum Katas.</li></ul> | <ul><li>Debug your programs.</li><li>Save your programs and results.</li><li> Select any quantum computing provider.</li><li>Run Python code.</li><li>Manage your quantum jobs.</li></ul> | <ul><li>No installation required.</li><li>No Azure account required.</li><ul> |
+| <ul><li>Run Q# programs online.</li><li>Simulate your programs in the Quantinuum Emulator.</li><li>Ask Copilot to explain quantum computing concepts or generate Q# programs.</li><li>Learn quantum programming using tutorials in the Quantum Katas.</li></ul> | <ul><li>Debug your programs.</li><li>Save your programs and results.</li><li> Select any quantum computing provider.</li><li>Run Python code.</li><li>Manage your quantum jobs.</li></ul> | <ul><li>No installation required.</li><li>No Azure account required.</li><ul> |
 
 ## Azure portal
 
