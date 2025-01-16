@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn the basics concepts of linear algebra and how to work with vectors and matrices in quantum computing.
 ms.author: sonialopez
-ms.date: 09/16/2024
+ms.date: 01/16/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept-article
@@ -26,28 +26,29 @@ v_1\\\\
 v_2\\\\
 \vdots\\\\
 v_n
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 The norm of a vector $v$ is defined as $\sqrt{\sum_i |v_i|^2}$. A vector is called a *unit vector* if its norm is $1$. 
 
 The *adjoint* of a column vector $v$ is a row vector denoted as $v^\dagger$ and is defined as the conjugate transpose of $v$. For a column vector $v$ of dimension $n$, the adjoint is a row vector of dimension $1 \times n$:
 
-$$\begin{bmatrix}v_1 \\\\ \vdots \\\\ v_n \end{bmatrix}^\dagger = \begin{bmatrix}v_1^* & \cdots & v_n^* \end{bmatrix}$$
+$$\begin{bmatrix}v_1 \\ \vdots \\ v_n \end{bmatrix}^\dagger = \begin{bmatrix}v_1^* & \cdots & v_n^* \end{bmatrix}$$
 
 where $v_i^*$ denotes the complex conjugate of $v_i$.
 
-Using linear algebra, the state of a qubit $ \psi = a \ket{0} + b \ket{1}$ is described as a **quantum state vector** $\begin{bmatrix} a \\\\  b \end{bmatrix}$, where $|a|^2 + |b|^2 = 1$. For more information, see [The qubit](xref:microsoft.quantum.concepts.qubit).
+Using linear algebra, the state of a qubit $\psi = a \ket{0} + b \ket{1}$ is described as a **quantum state vector** $\begin{bmatrix} a \\  b \end{bmatrix}$, where $|a|^2 + |b|^2 = 1$. For more information, see [The qubit](xref:microsoft.quantum.concepts.qubit).
 
 ## Scalar product
 
-Two vectors can be multiplied together through the *scalar product*, also known as *dot product* or *inner product*. As the name implies, the result of the scalar product of two vectors is a scalar. The scalar product gives the projection of one vector onto another and is used to express one vector as a sum of other simpler vectors. The scalar product between two column vectors $u$ and $v$ is denoted as $\left\langle u, v\right\rangle = u^\dagger v $ and is defined as 
+Two vectors can be multiplied together through the *scalar product*, also known as *dot product* or *inner product*. As the name implies, the result of the scalar product of two vectors is a scalar. The scalar product gives the projection of one vector onto another and is used to express one vector as a sum of other simpler vectors. The scalar product between two column vectors $u$ and $v$ is denoted as $\langle u, v\rangle = u^\dagger v $ and is defined as 
 
 <!-- the next formula displays "\langleu" in some langs, or "missing \begin{matrix}.." in some others. I added the \left and \right prefixes     -->
 <!--  Portuguese now displays "Missing or unrecognized delimiter for \left" Remove the \left, \right and make a single $, as below -->
 <!-- Portugues now works, fr-fr and zn-ch still show "Missing or unrecognized delimiter for \left" -->
 
 $$
-\left\langle u, v\right\rangle = u^\dagger v= \begin{bmatrix}u_1^* & \cdots & u_n^* \end{bmatrix} \begin{bmatrix}v_1\\\\ \vdots\\\\ v_n \end{bmatrix} =  u_1^* v_1 + \cdots + u_n^* v_n.
+\langle u, v\rangle = u^\dagger v= \begin{bmatrix}u_1^* & \cdots & u_n^* \end{bmatrix} \begin{bmatrix}v_1\\\\ \vdots\\\\ v_n \end{bmatrix} =  u_1^* v_1 + \cdots + u_n^* v_n.
 $$
 
 With the scalar product, the norm of a vector $v$ can be written as $\sqrt{\langle v, v\rangle}$.
@@ -56,18 +57,7 @@ You can multiply a vector with a number $a$ to form a new vector whose entries a
 
 <!-- this formula displays okay in all langs so far   -->
 
-$$\mathrm{If}~u =\begin{bmatrix}
-u_1\\\\
-u_2\\\\
-\vdots\\\\
-u_n
-\end{bmatrix}~\mathrm{and}~
-v =\begin{bmatrix}
-	v_1\\\\
-	v_2\\\\
-	\vdots\\\\
-	v_n
-\end{bmatrix},~\mathrm{then}~
+$$
 au+bv =\begin{bmatrix}
 au_1+bv_1\\\\
 au_2+bv_2\\\\
@@ -93,8 +83,7 @@ M_{m1} ~~ M_{m2} ~~ \cdots ~~ M_{mn}\\\\
 -->
 <!-- Still raw LaTeX in Portuguese -->
 
-
-$M = \begin{bmatrix} M_{11} ~~ M_{12} ~~ \cdots ~~ M_{1n}\\\\ M_{21} ~~ M_{22} ~~ \cdots ~~ M_{2n}\\\\ \ddots\\\\ M_{m1} ~~ M_{m2} ~~ \cdots ~~ M_{mn}\\\\ \end{bmatrix}$
+$$M = \begin{bmatrix} M_{11}  M_{12}  \cdots  M_{1n}\\\\ M_{21}  M_{22}  \cdots  M_{2n}\\\\ \ddots\\\\ M_{m1}  M_{m2} \cdots  M_{mn}\\\\ \end{bmatrix}$$
 
 > [!NOTE]
 > Note that a vector of dimension $n$ is simply a matrix of size $n \times 1$.
@@ -113,30 +102,29 @@ As with vectors, you can multiply a matrix with a number $c$ to obtain a new mat
 
 ## Matrix multiplication
 
-You can also multiply a matrix $M$ of dimension $m\times n$ and a matrix $N$ of dimension $n \times p$ to get a new matrix $P$ of dimension $m \times p$ as follows:
+You can also multiply a matrix $M$ of dimension $m \times n$ and a matrix $N$ of dimension $n \times p$ to get a new matrix $P$ of dimension $m \times p$ as follows:
 
 <!-- for some reason this works without any $$ in english... other langs is either raw code (with different translations), "double subscripts, use braces to clarify", or "missing \begin{matrix}.."  I'm adding the dollar signs -->
 <!--  Portuguese still raw code, english is okay -->
 
-
 $$
 \begin{align}
 &\begin{bmatrix}
-	M_{11} ~~ M_{12} ~~ \cdots ~~ M_{1n}\\\\
-	M_{21} ~~ M_{22} ~~ \cdots ~~ M_{2n}\\\\
-	\ddots\\\\
-	M_{m1} ~~ M_{m2} ~~ \cdots ~~ M_{mn}
+M_{11} M_{12}  \cdots  M_{1n}\\\\
+M_{21}  M_{22}  \cdots  M_{2n}\\\\
+\ddots\\\\
+M_{m1}  M_{m2}  \cdots  M_{mn}
 \end{bmatrix}
 \begin{bmatrix}
-N_{11} ~~ N_{12} ~~ \cdots ~~ N_{1p}\\\\
-N_{21} ~~ N_{22} ~~ \cdots ~~ N_{2p}\\\\
+N_{11}  N_{12}  \cdots  N_{1p}\\\\
+N_{21}  N_{22}  \cdots  N_{2p}\\\\
 \ddots\\\\
-N_{n1} ~~ N_{n2} ~~ \cdots ~~ N_{np}
+N_{n1}  N_{n2}  \cdots  N_{np}
 \end{bmatrix}=\begin{bmatrix}
-P_{11} ~~ P_{12} ~~ \cdots ~~ P_{1p}\\\\
-P_{21} ~~ P_{22} ~~ \cdots ~~ P_{2p}\\\\
+P_{11}  P_{12}  \cdots  P_{1p}\\\\
+P_{21}  P_{22}  \cdots  P_{2p}\\\\
 \ddots\\\\
-P_{m1} ~~ P_{m2} ~~ \cdots ~~ P_{mp}
+P_{m1}  P_{m2}  \cdots  P_{mp}
 \end{bmatrix}
 \end{align}
 $$
@@ -150,7 +138,7 @@ One special square matrix is the *identity matrix*, denoted $\mathbb{I}$, which 
 <!-- this displays almost correctly in all langs, but the alignment is off. Set to single $ to test -->
 <!-- Port aligns now but doesn't recognize the \mathbb{I} (raw code)-->
 
-$\mathbb{I}=\begin{bmatrix} 1 ~~ 0 ~~ \cdots ~~ 0\\\\ 0 ~~ 1 ~~ \cdots ~~ 0\\\\ ~~ \ddots\\\\ 0 ~~ 0 ~~ \cdots ~~ 1 \end{bmatrix}.$
+$\mathbb{I}=\begin{bmatrix} 1 0  \cdots  0\\\\ 0  1  \cdots  0\\\\  \ddots\\\\ 0 0  \cdots  1 \end{bmatrix}.$
 
 <!-- Port chokes on this next one now-->
 
@@ -167,12 +155,12 @@ A matrix $U$ is *unitary* if $UU^\dagger = U^\dagger U = \mathbb{I}$ or equivale
 <!-- doesn't resolve in any lang. making this a single $. Compare to inner product example where I added the \left and \right -->
 <!-- Port works now! Try fix in Inner Product -->
 
-$\langle v,v \rangle=v^\dagger v = v^\dagger U^{-1} U v = v^\dagger U^\dagger U v = \langle U v, U v\rangle.$
+$\langle v,v \rangle=v^{\dagger} v = v^{\dagger} U^{-1} U v = v^{\dagger} U^{\dagger} U v = \langle U v, U v\rangle.$
 
 > [!NOTE]
 > Quantum operations are represented by unitary matrices, which are squared matrices whose adjoint is equal to their inverse.
 
-A matrix $M$ is called *Hermitian* if $M=M^\dagger$.
+A matrix $M$ is called *Hermitian* if $M=M^{\dagger}$.
 
 In quantum computing, there are essentially only two matrices that you encounter: Hermitian and unitary.
 
@@ -191,7 +179,6 @@ $$
 	\end{bmatrix} =
 	\begin{bmatrix}
 		a \begin{bmatrix} c \\\\ d  \end{bmatrix}
-		\\\\[1.5em]
 		b \begin{bmatrix} c \\\\ d \end{bmatrix}
 	\end{bmatrix}
 	= \begin{bmatrix} a c \\\\ a d \\\\  b c \\\\ b d \end{bmatrix}
@@ -202,66 +189,6 @@ $$
 
 The tensor product is used to represent the combined state of multiple qubits. The real power of quantum computing comes from leveraging multiple qubits to perform computations. For more, see [Operations on multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
-The tensor product of two square matrices $M$ and $N$ of size $n\times n$ is a larger matrix $P=M\otimes N$ of size $n^2 \times n^2$. For example:
-
-<!-- this works in portuguese, not fr-fr or zn-ch  -->
-
-$$
-	\begin{bmatrix}
-		a\ b \\\\ c\ d
-	\end{bmatrix}
-	\otimes 
-	\begin{bmatrix}
-		e\ f\\\\ g\ h
-	\end{bmatrix}
-	 =
-	\begin{bmatrix}
-	a\begin{bmatrix}
-	e\ f\\\\ g\ h
-	\end{bmatrix}
-	b\begin{bmatrix}
-	e\ f\\\\ g\ h
-	\end{bmatrix}
-	\\\\[1em]
-	c\begin{bmatrix}
-	e\ f\\\\ g\ h
-	\end{bmatrix}
-	d\begin{bmatrix}
-	e\ f\\\\ g\ h
-	\end{bmatrix}
-	\end{bmatrix}
-	=
-	\begin{bmatrix}
-	ae\ af\ be\ bf \\\\
-	ag\ ah\ bg\ bh \\\\
-	ce\ cf\ de\ df \\\\
-	cg\ ch\ dg\ dh
-	\end{bmatrix}.
-$$
-
-## Eigenvalues and eigenvectors 
-
-Consider a square matrix $M$ and a vector $v$. The vector $v$ is an [*eigenvector*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) of $M$ if $Mv = cv$ for some number $c$. The integer $c$ is the [*eigenvalue*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) corresponding to the eigenvector $v$. 
-
-In general, a matrix $M$ may transform a vector into any other vector. An eigenvector is special because it's unchanged except for being multiplied by a number. If $v$ is an eigenvector with eigenvalue $c$, then $av$ is also an eigenvector (for any nonzero $a$) with the same eigenvalue. For example, for the identity matrix, every vector $v$ is an eigenvector with eigenvalue $1$.
-
-As another example, consider a *diagonal matrix* $D$, which only has non-zero entries on the diagonal:
-
-$$
-\begin{bmatrix}
-d_1 & 0 & 0 \\\\ 0 & d_2 & 0 \\\\ 0 & 0 & d_3
-\end{bmatrix}.
-$$
-
-The vectors
-
-$$\begin{bmatrix}1 \\\\ 0 \\\\ 0 \end{bmatrix}, \begin{bmatrix}0 \\\\ 1 \\\\ 0\end{bmatrix} \text{and} \begin{bmatrix}0 \\\\ 0 \\\\ 1\end{bmatrix}$$
-
-are eigenvectors of this matrix with eigenvalues  $d_1$, $d_2$, and $d_3$, respectively. If $d_1$, $d_2$, and $d_3$ are distinct numbers, then these vectors (and their multiples) are the only eigenvectors of the matrix $D$.
- 
-In general, for a diagonal matrix it's easy to read off the eigenvalues and eigenvectors. The eigenvalues are all the numbers appearing on the diagonal, and their respective eigenvectors are the unit vectors with one entry equal to $1$ and the remaining entries equal to $0$.
-
-Note in the example that the eigenvectors of $D$ form a basis for $3$-dimensional vectors. A basis is a set of vectors such that any vector can be written as a linear combination of them. More explicitly, $v_1$, $v_2$, and $v_3$ form a basis if any vector $v$ can be written as $v=a_1 v_1 + a_2 v_2 + a_3 v_3$ for some numbers $a_1$, $a_2$, and $a_3$.
 
 ## Related content
 
