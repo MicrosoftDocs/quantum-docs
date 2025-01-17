@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: SoniaLopezBravo
   ms.author: sonialopez
-  ms.date: 11/27/2024
+  ms.date: 01/17/2025
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -32,8 +32,6 @@ landingContent:
         links:
           - text: List of quantum hardware providers
             url: qc-target-list.md
-          - text: Types of quantum target profiles
-            url: quantum-computing-target-profiles.md
       - linkListType: training
         links:
           - text: Training path - Get started with Azure Quantum
@@ -58,10 +56,7 @@ landingContent:
         links:
           - text: Create a quantum random number generator
             url: tutorial-qdk-quantum-random-number-generator.md
-          - text: Explore quantum entanglement
-            url: tutorial-qdk-explore-entanglement.md
-          - text: Implement Grover's algorithm
-            url: tutorial-qdk-grovers-search.md
+
 
 # Develop with QDK
   - title: Advanced development with the Quantum Development Kit
@@ -76,13 +71,14 @@ landingContent:
             url: how-to-work-with-qsharp-projects.md
           - text: Debug and test Q# programs
             url: testing-debugging.md
-          - text: Use sessions to group multiple jobs
-            url: hybrid-computing-interactive.md
-          - text: Run hybrid quantum computing programs
-            url: hybrid-computing-integrated.md
           - text: Visualize quantum circuit diagrams
             url: how-to-visualize-circuits.md
- 
+      - linkListType: tutorial
+        links:
+          - text: Explore quantum entanglement
+            url: tutorial-qdk-explore-entanglement.md
+          - text: Implement Grover's algorithm
+            url: tutorial-qdk-grovers-search.md
 
   # Resource Estimation
   - title: Azure Quantum Resource Estimator
@@ -95,24 +91,12 @@ landingContent:
         links:
           - text: Run your first resource estimation program
             url: quickstart-microsoft-resources-estimator.md
-      - linkListType: reference
-        links:
-          - text: Customize the target parameters of the Resource Estimator
-            url: overview-resources-estimator.md
-          - text: Retrieve the output of the Resource Estimator
-            url: overview-resource-estimator-output-data.md
-      - linkListType: how-to-guide
-        links:
-          - text: Compare multiple configurations of parameters in a single job
-            url: resource-estimator-batching.md
 
   # Management
   - title: Manage your Azure Quantum resources
     linkLists:
       - linkListType: overview
         links:
-          - text: Azure Quantum Credits
-            url: azure-quantum-credits.md
           - text: Azure Quantum pricing plans
             url: pricing.md
           - text: Limits and quotas
@@ -121,8 +105,6 @@ landingContent:
         links:
           - text: Connect to your quantum workspace
             url: how-to-connect-workspace.md
-          - text: Share access to your quantum workspace
-            url: how-to-share-access-quantum-workspace.md
 
 
 

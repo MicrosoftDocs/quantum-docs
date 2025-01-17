@@ -14,17 +14,20 @@ uid: microsoft.quantum.qsharp-overview
 
 # Introduction to the quantum programming language Q#
 
-Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programming language for developing and running quantum algorithms. Q# is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+Q# is a high-level, [open-source](https://github.com/microsoft/qsharp) programming language for developed by Microsoft for writing quantum programs. Q# is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
-As a quantum programming language, Q# meets the following language, compiler, and runtime requirements:
+As a quantum programming language, Q# meets the following requirements for language, compiler, and runtime:
 
-- **Hardware agnostic:** Qubits in quantum algorithms aren't tied to a specific quantum hardware or layout. The Q# compiler and runtime handle the mapping from program qubits to physical qubits.
-- **Integrates quantum and classical computing:** The ability to perform classical and quantum computations is essential in a universal quantum computer.
-- **Respects the laws of physics:** Q# and quantum algorithms follow the rules of quantum physics. For example, you can't directly copy or access the qubit state in Q#.
+- **Hardware agnostic:** Qubits in quantum algorithms aren't tied to a specific quantum hardware or layout. The Q# compiler and runtime handle the mapping from program qubits to physical qubits, allowing the same code to run on different quantum processors.
+- **Integration of quantum and classical computing:** Q# allows for the integration of quantum and classical computations, which is essential for universal quantum computing.
+- **Qubit management:** Q# provides built-in operations and functions for managing qubits, including creating superposition states, entangling qubits, and performing quantum measurements.
+- **Respect the laws of physics:** Q# and quantum algorithms must follow the rules of quantum physics. For example, you can't directly copy or access the qubit state in Q#.
+
+For more information about the origins of Q#, see the blog post [Why do we need Q#?](https://devblogs.microsoft.com/qsharp/why-do-we-need-q/).
 
 ## Structure of a Q# program
 
-Before you start writing quantum programs, it's important to understand their structure and components. Consider the following Q# program that creates a superposition state:
+Before you start writing Q# programs, it's important to understand their structure and components. Consider the following Q# program, named **Superposition**, that creates a superposition state:
 
 ```qsharp
 namespace Superposition {
@@ -45,7 +48,9 @@ namespace Superposition {
 }
 ```
 
-Based on the comments (`//`), the `Superposition` program first allocates a qubit, applies an operation to put the qubit in superposition, measures the qubit state, resets the qubit, and finally returns the result. Let's break this program down into its components.
+Based on the comments (`//`), the Q# program first allocates a qubit, applies an operation to put the qubit in superposition, measures the qubit state, resets the qubit, and finally returns the result. 
+
+Let's break this Q# program down into its components.
 
 ### User namespaces
 
@@ -57,7 +62,9 @@ namespace Superposition {
 }
 ```
 
-Namespaces can help you organize related functionality. Each Q# program can have only one `namespace`. If a namespace isn't specified, the Q# compiler uses the filename as the namespace.  For example, the the `Superposition` program could be written as:
+Namespaces can help you organize related functionality. Namespaces are optionaL in Q# programs, meaning that you can write a program without defining a namespace.
+
+For example, the **Superposition** program of the example could be also written without a namespace as:
 
 ```qsharp
 @EntryPoint()
@@ -76,21 +83,23 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
-The Q# standard library has predefined namespaces that contain functions and operations you can use in quantum programs. For more information, see [Built-in namespaces](#built-in-namespaces).
+> [!NOTE]
+> Each Q# program can have only one `namespace`. If you don't specify a namespace, the Q# compiler uses the filename as the namespace.
 
 ### Entry points
 
-By default, the Q# compiler starts executing a program from the `Main()` operation, if available, which can be located anywhere in the program. Optionally, you can use the `@EntryPoint()` attribute to specify any operation in the program as the point of execution. 
+Every Q# program must have an entry point, which is the starting point of the program. By default, the Q# compiler starts executing a program from the `Main()` operation, if available, which can be located anywhere in the program. Optionally, you can use the `@EntryPoint()` attribute to specify any operation in the program as the point of execution.
 
-In the `Superposition` program, the more descriptive `MeasureOneQubit()` operation is the entry point of the program. 
+For example, in the **Superposition** program, the `MeasureOneQubit()` operation is the entry point of the program because it has the `@EntryPoint()` attribute before the operation definition:
 
 ```qsharp
 @EntryPoint()
 operation MeasureOneQubit() : Result {
     ...
+}
 ```
 
-However, the program could also be written without the `@EntryPoint()` attribute by renaming the `MeasureOneQubit()` operation to `Main()`:
+However, the program could also be written without the `@EntryPoint()` attribute by renaming the `MeasureOneQubit()` operation to `Main()`, such as:
 
 ```qsharp
 // The Q# compiler automatically detects the Main() operation as the entry point. 
@@ -112,9 +121,11 @@ operation Main() : Result {
 
 ### Types
 
-Q# provides [built-in types](xref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have one of two values: `Zero` or `One`.
+Types are essential in any programming language because they define the data that a program can work with. Q# provides [built-in types](xref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that define ranges, arrays, and tuples. 
 
-In the `Superposition` program, the `MeasureOneQubit()` operation returns a `Result` type, which corresponds to the return type of the `M` operation. The measurement result is stored in a new variable that's defined using the `let` statement:
+Q# also provides types that are [specific to quantum computing](xref:microsoft.quantum.qsharp.quantumdatatypes). For example, the `Result` type represents the result of a qubit measurement and can have two values: `Zero` or `One`.
+
+In the **Superposition** program, the `MeasureOneQubit()` operation returns a `Result` type, which corresponds to the return type of the `M` operation. The measurement result is stored in a new variable that's defined using the `let` statement:
 
 ```qsharp
 // The operation definition returns a Result type.
@@ -123,15 +134,18 @@ operation MeasureOneQubit() : Result {
     // Measure the qubit in the Z-basis, returning a Result type.
     let result = M(q);
     ...
+}
 ```
 
-Q# also provides types that define ranges, arrays, and tuples. You can even define your own [custom types](xref:microsoft.quantum.qsharp.typedeclarations).
+Another example of a quantum-specific type is the `Qubit` type, which represents a quantum bit. 
+
+Q# also allows you to define your own custom types. For more information, see [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
 
 ### Allocating qubits
 
-In Q#, you allocate qubits using the `use` keyword. Qubits are always allocated in the $\ket{0}$ state.
+In Q#, you allocate qubits using the `use` keyword and the `Qubit` type. Qubits are always allocated in the $\ket{0}$ state.
 
-The `Superposition` program defines a single qubit:
+For example, the **Superposition** program defines a single qubit and stores it in the variable `q`:
 
 ```qsharp
 // Allocate a qubit.
@@ -150,9 +164,9 @@ For more information, see [Use statement](xref:microsoft.quantum.qsharp.quantumm
 
 ### Quantum operations
 
-After allocating a qubit, you can pass it to operations and functions, also known as [callables](xref:microsoft.quantum.qsharp.callabledeclarations). [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
+After allocating a qubit, you can pass it to operations and functions. [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
 
-To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation is essentially the entire program. It takes no parameters and returns a `Result` type:
+To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the **Superposition** program, the `MeasureOneQubit()` operation takes no parameters and returns a `Result` type:
 
 ```qsharp
 operation MeasureOneQubit() : Result {
@@ -178,7 +192,7 @@ In Q#, the `Measure` operation measures one or more qubits in the specified Paul
 
 To implement a measurement in the computational basis $\lbrace\ket{0},\ket{1}\rbrace$, you can also use the `M` operation, which measures a qubit in the Pauli Z-basis. This makes `M` equivalent to `Measure([PauliZ], [qubit])`.
 
-The `Superposition` program uses the `M` operation:
+For example, the **Superposition** program uses the `M` operation:
 
 ```qsharp
 // Measure the qubit in the Z-basis.
@@ -187,16 +201,16 @@ let result = M(q);
 
 ### Resetting qubits
 
-In Q#, qubits **must** be in the $\ket{0}$ state when they're released. Use the `Reset` operation to reset each qubit to the $\ket{0}$ state before releasing it at the end of the program. Failure to reset a qubit results in a runtime error.
+In Q#, qubits **must** be in the $\ket{0}$ state when they're released to avoid errors in the quantum hardware. You can reset a qubit to the $\ket{0}$ state using the `Reset` operation at the end of the program. Failure to reset a qubit results in a runtime error.
 
 ```qsharp
 // Reset a qubit.
 Reset(q);
 ```
 
-### Built-in namespaces
+### Standard library namespaces
 
-The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Microsoft.Quantum.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.  
+The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Microsoft.Quantum.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.
 
 To call a function or operation, you can specify the full namespace or use an `import` statement, which makes all the functions and operations for that namespace available and makes your code more readable. The following examples call the same operation:
 
@@ -220,10 +234,10 @@ import Std.Intrinsic.*;
 Message("Hello quantum world!");
 ```
 
+> [!NOTE]
+> The **Superposition** program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
 
-The `Superposition` program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
-
-You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
+You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the **Superposition** program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
 ```qsharp
 // Import the namespace for the MResetZ operation.
@@ -241,7 +255,7 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
-## Develop quantum programs with Q# and Azure Quantum
+## Learn to develop quantum programs with Q# and Azure Quantum
 
 Q# and Azure Quantum are a powerful combination for developing and running quantum programs. With Q# and Azure Quantum, you can write quantum programs, simulate their behavior, estimate resource requirements, and run them on real quantum hardware. This integration allows you to explore the potential of quantum computing and develop innovative solutions for complex problems. Whether you are a beginner or an experienced quantum developer, Q# and Azure Quantum provide the tools and resources you need to unlock the power of quantum computing.
 
@@ -263,7 +277,7 @@ Besides Q#, the QDK offers support for other languages for quantum computing, su
 
 ### Integrate with Python
 
-You can use Q# by itself or together with Python in various IDEs. For example, you can use a Q# project with a [Python host program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) to call Q# operations. You can also integrate Q# with Python in Jupyter Notebooks. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work#integration-of-q-and-python).
+You can use Q# by itself or together with Python in various IDEs. For example, you can use a Q# project with a Python host program to call Q# operations or integrate Q# with Python in Jupyter Notebooks. For more information, see [Integration of Q# and Python](xref:microsoft.quantum.qsharp-ways-to-work#integration-of-q-and-python).
 
 #### The %%qsharp command
 
@@ -276,12 +290,9 @@ When using `%%qsharp`, keep the following in mind:
 - You can't put a Python statement before or after `%%qsharp`.
 - Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
 
-> [!NOTE]
-> Azure notebooks in the Azure portal include the latest versions of the `qsharp` and `azure-quantum` Python packages, so you don't need to install anything. For more information, see [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks).
-
 ### Estimate resources
 
-Before running on real quantum hardware, you’ll need to figure out whether your program can run on existing hardware, and how many resources it'll consume.
+Before running on real quantum hardware, you need to figure out whether your program can run on existing hardware, and how many resources it'll consume.
 
 The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model.
 
@@ -296,16 +307,16 @@ When you compile and run a quantum program, the QDK creates an instance of the q
 
 ### Submit your program to real quantum hardware
 
-You can submit your Q# programs (also known as jobs) to Azure Quantum through your preferred development environment, both locally and online. For more information, see [how to submit Q# jobs](xref:microsoft.quantum.submit-jobs). You can also run and submit quantum circuits written in Qiskit and Cirq languages.
+You can submit your Q# programs to Azure Quantum to run on real quantum hardware. You can also run and submit quantum circuits written in Qiskit and Cirq languages. When you run a quantum program in Azure Quantum, you create and run a **job**.  For more information, see [how to submit Q# programs to Azure Quantum](xref:microsoft.quantum.submit-jobs). 
+
+xref:microsoft.quantum.work-with-jobs
 
 Azure Quantum offers some of the most compelling and diverse quantum hardware available today from industry leaders. See [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list) for the current list of supported hardware providers.
 
 > [!NOTE]
-> The cloud-based [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based) target is available without an Azure account. To submit a job to the rest of the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+> To submit a job to the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-The following diagram shows the basic workflow after you submit your job:
-
-:::image type="content" source="~/media/azure-quantum-flow-diagram.png" alt-text="Diagram showing the workflow after a job submission to Azure Quantum.":::
+Once you submit your job, Azure Quantum manages the job lifecycle, including job scheduling, execution, and monitoring. You can track the status of your job and view the results in the Azure Quantum portal. For more information, see [Work with Azure Quantum jobs](xref:microsoft.quantum.monitor-jobs).
 
 ## Related content
 
