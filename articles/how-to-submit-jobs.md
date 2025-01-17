@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a basic guide to submit and run Azure Quantum using the Azure portal, Python, Jupyter Notebooks, or the Azure CLI.
 ms.author: sonialopez
-ms.date: 03/18/2024
+ms.date: 01/17/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.custom: devx-track-azurecli
