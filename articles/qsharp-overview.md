@@ -316,7 +316,7 @@ Azure Quantum offers some of the most compelling and diverse quantum hardware av
 > [!NOTE]
 > To submit a job to the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-Once you submit your job, Azure Quantum manages the job lifecycle, including job scheduling, execution, and monitoring. You can track the status of your job and view the results in the Azure Quantum portal. For more information, see [Work with Azure Quantum jobs](xref:microsoft.quantum.monitor-jobs).
+Once you submit your job, Azure Quantum manages the job lifecycle, including job scheduling, execution, and monitoring. You can track the status of your job and view the results in the Azure Quantum portal. For more information, see [Work with Azure Quantum jobs](xref:microsoft.quantum.work-with-jobs).
 
 ## Related content
 
