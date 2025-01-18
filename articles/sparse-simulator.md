@@ -41,7 +41,7 @@ Pauli noise can be configured globally in Visual Studio Code by configuring the 
 
 The settings apply to all Q# programs run in VS Code, and to all gates,  measurements, and qubits referenced in the program. 
 
-Running a histogram of the following GHz sample program without noise configured would return |00000> roughly half the time and |11111> the other half. 
+Running a histogram of the following GHz sample program without noise configured would return $\ket{00000}$ roughly half the time and $\ket{11111}$ the other half. 
 
 ```qsharp
 import Std.Diagnostics.*;
@@ -146,7 +146,7 @@ operation GHzSample() : Result[] {
 This run of the program applies noise with 20% probability (bit-flip half the time and phase-flip half the time),
 
 ```python
-result = qsharp.run("GHzSample()", 20, noise=(0.1, 0., 0.1))
+result = qsharp.run("GHzSample()", 20, noise=(0.1, 0.0, 0.1))
 display(qsharp_widgets.Histogram(result))
 ```
 
