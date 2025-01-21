@@ -23,13 +23,12 @@ For a practical implementation of Grover's algorithm to solve mathematical probl
 
 Grover's algorithm speeds up the solution to unstructured data searches (or *search problem*), running the search in fewer steps than any classical algorithm could. Any search task can be expressed with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search task, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The *search problem* consists of finding any item $x_0$ such that $f(x_0)=1$.
 
-Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
+Any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. The following are some examples:
 
-- Boolean satisfiability problem: Is the set of Boolean values $x$ an interpretation (an assignment of values to variables) that satisfies the given Boolean formula?
-- Traveling salesman problem: Does $x$ describe the shortest possible loop that connects all cities?
-- Database search problem: Does the database table contain a record $x$?
-- Integer factorization problem: Is the fixed number $N$ divisible by the number $x$?
-
+- Boolean satisfiability problem: Given a set of Boolean values, does the set satisfy a given Boolean formula?
+- Traveling salesman problem: What is the shortest possible loop that connects all cities?
+- Database search problem: Does a database table contain the record $x$?
+- Integer factorization problem: Is the number $N$ divisible by the number $x$?
 
 The task that Grover's algorithm aims to solve can be expressed as follows: given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$. The complexity of the algorithm is measured by the number of uses of the function $f(x)$. Classically, in the worst-case scenario, $f(x)$ has to be evaluated a total of $N-1$ times, where $N=2^n$, trying out all the possibilities. After $N-1$ elements, it must be the last element. Grover's quantum algorithm can solve this problem much faster, providing a quadratic speed up. Quadratic here implies that only about $\sqrt{N}$ evaluations would be required, compared to $N$.
 
@@ -39,7 +38,7 @@ Suppose there are $N=2^n$ eligible items for the search task and they are index 
 
 1. Start with a register of $n$ qubits initialized in the state $\ket{0}$.
 1. Prepare the register into a uniform superposition by applying $H$ to each qubit of the register: $$|\text{register}\rangle=\frac{1}{\sqrt{N}} \sum_{x=0}^{N-1}|x\rangle$$
-1. Apply the following operations to the register $N_{\text{optimal}}$ times:
+1. Apply the following operations to the register $N_{\text{optimal}}$ number of times:
    1. The phase oracle $O_f$ that applies a conditional phase shift of $-1$ for the solution items.
    1. Apply $H$ to each qubit in the register.
    1. A conditional phase shift of $-1$ to every computational basis state except $\ket{0}$. This can be represented by the unitary operation $-O_0$, as $O_0$ represents the conditional phase shift to $\ket{0}$ only.
@@ -47,10 +46,10 @@ Suppose there are $N=2^n$ eligible items for the search task and they are index 
 1. Measure the register to obtain the index of a item that's a solution with very high probability.
 1. Check if it's a valid solution. If not, start again.
 
-$N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$ is the optimal number of iterations that maximizes the likelihood of obtaining the correct item by measuring the register.
+$N_{\text{optimal}} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$ is the optimal number of iterations that maximizes the likelihood of obtaining the correct item by measuring the register.
 
 > [!NOTE]
-> The joint application of the steps 3.b, 3.c and 3.d is usually known in the literature as Grover's diffusion operator.
+> The joint application of the steps 3.b, 3.c, and 3.d is usually known as *Grover's diffusion operator*.
 
 The overall unitary operation applied to the register is:
 
@@ -61,36 +60,42 @@ $$(-H^{\otimes n}O_0H^{\otimes n}O_f)^{N_{\text{optimal}}}H^{\otimes n}$$
 To illustrate the process, let's follow the mathematical transformations of the state of the register for a simple case in which there are only two qubits and the valid element is $\ket{01}.$
 
 1. The register starts in the state:
-   $$|\text{register}\rangle=|00\rangle$$
+
+   $$\ket{\text{register}}=\ket{00}$$
 
 1. After applying $H$ to each qubit the register's state transforms to:
-   $$|\text{register}\rangle = \frac{1}{\sqrt{4}} \sum_{i \in \\{0,1\\}^2}|i\rangle=\frac12(\ket{00}+\ket{01}+\ket{10}+\ket{11})$$
+
+   $$\ket{\text{register}}= \frac{1}{\sqrt{4}} \sum_{i \in \lbrace 0,1 \rbrace}^2\ket{i}=\frac12(\ket{00}+\ket{01}+\ket{10}+\ket{11})$$
 
 1. Then, the phase oracle is applied to get:
-   $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}+\ket{11})$$
+
+   $$\ket{\text{register}} = \frac12(\ket{00}-\ket{01}+\ket{10}+\ket{11})$$
 
 1. Then $H$ acts on each qubit again to give:
-   $$|\text{register}\rangle = \frac12(\ket{00}+\ket{01}-\ket{10}+\ket{11})$$
+
+   $$\ket{\text{register}} = \frac12(\ket{00}+\ket{01}-\ket{10}+\ket{11})$$
 
 1. Now the conditional phase shift is applied on every state except $\ket{00}$:
-   $$|\text{register}\rangle = \frac12(\ket{00}-\ket{01}+\ket{10}-\ket{11})$$
+
+   $$\ket{\text{register}} = \frac12(\ket{00}-\ket{01}+\ket{10}-\ket{11})$$
 
 1. Finally, the first Grover iteration ends by applying $H$ again to get:
-   $$|\text{register}\rangle = \ket{01}$$
 
-   By following the above steps, the valid item is found in a single iteration. As you will see later, this is because for N=4 and a single valid item, $N_\text{optimal}=1$.
+   $$\ket{\text{register}} = \ket{01}$$
+
+By following the above steps, the valid item is found in a single iteration. As you will see later, this is because for N=4 and a single valid item, the optimal number of times is $N_{\text{optimal}} =1$.
 
 ## Geometrical explanation
 
-To see why Grover's algorithm works, let's study the algorithm from a geometrical perspective. Let $\ket{\text{bad}}$ be the superposition of all states that aren't a solution to the search problem. Supposing there are $M$ valid solutions:
+To see why Grover's algorithm works, let's study the algorithm from a geometrical perspective. Supposing there are $M$ valid solutions, the superposition of all quantum states that *aren't* a solution to the search problem: 
 
 $$\ket{\text{bad}}=\frac{1}{\sqrt{N-M}}\sum_{x:f(x)=0}\ket{x}$$
 
-The state $\ket{\text{good}}$ is defined as the superposition of all states that *are* a solution to the search problem:
+The superposition of all states that *are* a solution to the search problem:
 
 $$\ket{\text{good}}=\frac{1}{\sqrt{M}}\sum_{x:f(x)=1}\ket{x}$$
 
-Since *good* and *bad* are mutually exclusive sets because an item cannot be valid and not valid, the states $\ket{\text{good}}$ and $\ket{\text{bad}}$ are orthogonal. Both states form the orthogonal basis of a plane in the vector space. One can use this plane to visualize the algorithm.
+Since *good* and *bad* are mutually exclusive sets because an item can't be valid and not valid, the states are orthogonal. Both states form the orthogonal basis of a plane in the vector space. One can use this plane to visualize the algorithm.
 
 :::image type="content" source="media/plane-grovers.png" alt-text="Plot of the plane in the Bloch sphere projected by the orthogonal good and bad vectors.":::
 
@@ -110,7 +115,7 @@ If one applies the operator $R_{\ket{\psi}}$ to $\ket{\xi}$:
 
 $$R_{\ket{\psi}}\ket{\xi}=\mu \ket{\psi} - \nu {\ket{\psi^{\perp}}}$$
 
-The operator $R_\ket{\psi}$ inverts the component orthogonal to $\ket{\psi}$ but leaves the $\ket{\psi}$ component unchanged. Therefore, $R_\ket{\psi}$ is a reflection about $\ket{\psi}$.
+The operator $R_{\ket{\psi}}$ inverts the component orthogonal to $\ket{\psi}$ but leaves the $\ket{\psi}$ component unchanged. Therefore, $R_{\ket{\psi}}$ is a reflection about $\ket{\psi}$.
 
 :::image type="content" source="media/reflection-operator.png" alt-text="Plot of the reflection operator about the quantum state visualized in the plane.":::
 
@@ -120,21 +125,21 @@ $$\ket{\text{all}} = \sqrt{\frac{M}{N}}\ket{\text{good}} + \sqrt{\frac{N-M}{N}}\
 
 :::image type="content" source="media/starting-state.png" alt-text="Plot of the starting state as a superposition of the good and bad states in the plane.":::
 
-And thus the state lives in the plane. Note that the probability of obtaining a correct result when measuring from the equal superposition is just $|\braket{\text{good}|{\text{all}}}|^2=M/N$, which is what you would expect from a random guess.
+And thus the state lives in the plane. Note that the probability of obtaining a correct result when measuring from the equal superposition is just $|\bra{\text{good}}\ket{\text{all}}|^2=M/N$, which is what you would expect from a random guess.
 
 The oracle $O_f$ adds a negative phase to any solution to the search problem. Therefore, it can be written as a reflection about the $\ket{\text{bad}}$ axis:
 
-$$O_f = R_{\ket{\text{bad}}} = 2\ket{\text{bad}}\bra{\text{bad}} - \mathcal{I}$$
+$$O_f = R_{\ket{\text{bad}}} = 2\ket{\text{bad}}\bra{\text{bad}} - \mathbb{I}$$
 
 Analogously, the conditional phase shift $O_0$ is just an inverted reflection about the state $\ket{0}$:
 
-$$O_0 = R_{\ket{0}}=  -2\ket{0}\bra{0} + \mathcal{I}$$
+$$O_{0} = R_{\ket{0}}=  -2\ket{0}\bra{0} + \mathbb{I}$$
 
-Knowing this fact, it's easy to check that the Grover diffusion operation $-H^{\otimes n} O_0 H^{\otimes n}$ is also a reflection about the state $\ket{all}$. Just do:
+Knowing this fact, it's easy to check that the Grover diffusion operation $-H^{\otimes n} O_{0} H^{\otimes n}$ is also a reflection about the state $\ket{all}$. Just do:
 
-$$-H^{\otimes n} O_0 H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n} -H^{\otimes n}\mathcal{I}H^{\otimes n} = 2\ket{\text{all}}\bra{\text{all}} - \mathcal{I} = R_{\ket{\text{all}}}$$
+$$-H^{\otimes n} O_{0} H^{\otimes n}=2H^{\otimes n}\ket{0}\bra{0}H^{\otimes n} -H^{\otimes n}\mathbb{I}H^{\otimes n} = 2\ket{\text{all}}\bra{\text{all}} - \mathbb{I} = R_{\ket{\text{all}}}$$
 
-It has been demonstrated that each iteration of Grover's algorithm is a composition of two reflections $R_\ket{\text{bad}}$ and $R_\ket{\text{all}}$.
+It has been demonstrated that each iteration of Grover's algorithm is a composition of two reflections $R_{\ket{\text{bad}}}$ and $R_{\ket{\text{all}}}$.
 
 :::image type="content" source="media/grovers-iteration.png" alt-text="Plot of the Grover iteration visualized as a sequence of two reflections in the plane.":::
 
@@ -142,9 +147,9 @@ The combined effect of each Grover iteration is a counterclockwise rotation of a
 
 $$\theta = \arccos{\left(\braket{\text{all}|\text{bad}}\right)}= \arccos{\left(\sqrt{\frac{N-M}{N}}\right)} $$
 
-The angle between the state of the register and the $\ket{\text{good}}$ state decreases with each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability, you just need to calculate $|\braket{\text{good}|\text{register}}|^2$. Denoting the angle between $\ket{\text{good}}$ and $\ket{\text{register}}$ $\gamma (k)$, where $k$ is the iteration count:
+The angle between the state of the register and the $\ket{\text{good}}$ state decreases with each iteration, resulting in a higher probability of measuring a valid result. To calculate this probability, you just need to calculate $|\braket{\text{good}|\text{register}}|^2$. The angle between $\ket{\text{good}}$ and $\ket{\text{register}}$ is denoted as $\gamma (k)$, where $k$ is the iteration count:
 
-$$\gamma (k) = \frac{\pi}{2}-\theta -k2\theta = \frac{\pi}{2} -(2k + 1) \theta $$
+$$\gamma = \frac{\pi}{2}-\theta -2k\theta = \frac{\pi}{2} -(2k + 1) \theta $$
 
 Therefore, the probability of success is:
 
@@ -158,7 +163,7 @@ As the probability of success can be written as a function of the number of iter
 
 It is known that $\sin^2{x}$ reaches its first maximum for $x=\frac{\pi}{2}$, so:
 
-$$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}}\right)$$
+$$\frac{\pi}{2}=(2k_{\text{optimal}} +1)\arccos \left( \sqrt{\frac{N-M}{N}} \right)$$
 
 This gives:
 
@@ -166,7 +171,7 @@ $$k_{\text{optimal}} = \frac{\pi}{4\arccos\left(\sqrt{1-M/N}\right)}-1/2 = \frac
 
 Where in the last step, $\arccos \sqrt{1-x} = \sqrt{x} + O(x^{3/2})$.
 
-Therefore, you can pick $N_\text{optimal}$ to be $N_\text{optimal} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$.
+Therefore, you can pick $N_{\text{optimal}} = \left\lfloor \frac{\pi}{4}\sqrt{\frac{N}{M}}-\frac{1}{2} \right\rfloor$.
 
 ## Complexity analysis
 
