@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Azure Quantum Development Kit sparse simulator.
 ms.author: sonialopez
-ms.date: 01/13/2025
+ms.date: 01/21/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
@@ -38,8 +38,7 @@ Pauli noise can be configured globally in Visual Studio Code by configuring the 
 
 :::image type="content" source="media/noisy-settings.png" alt-text="Screen shot showing settings for Q# noisy simulator.":::
 
-
-The settings apply to all Q# programs run in VS Code, and to all gates,  measurements, and qubits referenced in the program. 
+The settings apply to all Q# programs run in VS Code, and to all gates, measurements, and qubits referenced in the program. The settings are identical to using the `ConfigurePauliNoise()` function.
 
 Running a histogram of the following GHz sample program without noise configured would return $\ket{00000}$ roughly half the time and $\ket{11111}$ the other half. 
 
@@ -69,9 +68,12 @@ However, adding 1% bit-flip noise shows the state starting to diffuse, and with 
 
 ### Adding Pauli noise to Q# programs
 
-Use the `ConfigurePauliNoise()` function to set, or reset, the noise model for individual Q# programs.  Using the `ConfigurePauliNoise()` function, you can granularly control where noise is applied in your Q# programs. 
+You can use the `ConfigurePauliNoise()` function to set or modify the noise model for individual Q# programs.  Using `ConfigurePauliNoise()`, you can granularly control where noise is applied in your Q# programs. 
 
-For example, in the previous program (after clearing the VS Code noise settings), you can add noise immediately after qubit allocation:  
+> [!NOTE]
+> If you configure noise in the VS Code settings, it will be applied to all Q# programs. If you configure noise in a Q# program using `ConfigurePauliNoise()`, it will bypass any  VS Code settings during the run of that program.
+
+For example, in the previous program you can add noise immediately after qubit allocation:  
 
 ```qsharp
 ...
@@ -97,6 +99,30 @@ or just prior to the measurement operation.
     ...
 ```
 :::image type="content" source="media/noisy-measurement.png" alt-text="Screen shot showing results with noise added just before measurement.":::
+
+You can also use `ConfigurePauliNoise()` to reset or clear noise configurations. In this example, the noise settings are set after qubit allocation, and then cleared immediately after the Hadamard operation, so that noise is only applied to the `H();` operation.
+
+```qsharp
+...
+operation GHzSample(n: Int) : Result[] {
+    use qs = Qubit[n];
+    ConfigurePauliNoise(0.05, 0.0, 0.0); // noise applies to H() operation
+    H(qs[0]);
+    ConfigurePauliNoise(0.0, 0.0, 0.0); // clear noise settings
+...
+
+```
+
+The following functions are available in the `Qdk.Std.Diagnostics` library to configure noise in Q# programs:
+
+| Function | Description | Example |
+|----------|-------------|---------|
+| `ConfigurePauliNoise()` | Configures Pauli noise for a simulator run, with the parameters representing probabilities for the X, Y, and Z gates. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program. Bypasses any noise settings in VS Code and can be reset by subsequent `ConfigurePauliNoise()` calls. | `ConfigurePauliNoise(0.1, 0.0, 0.5)`<br>`ConfigurePauliNoise(BitFlipNoise(0.1))` |
+| `BitFlipNoise()` | Configures the probability of noise for the X gate, and returns zeroes for the Y and Z gates.  | `ConfigurePauliNoise(BitFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.1, 0.0, 0.0)`|
+| `PhaseFlipNoise()` |  Configures the probability of noise for the Z gate, and returns zeroes for the X and Y gates.    | `ConfigurePauliNoise(PhaseFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.1)`   |
+| `DepolarizingNoise()` |Configures depolarizing noise across all gates.   | `ConfigurePauliNoise(DepolarizingNoise(0.2))` $\equiv$ `ConfigurePauliNoise(0.2, 0.2, 0.2)`   |
+| `NoNoise()` | Configures the noise model for no noise. | `ConfigurePauliNoise(NoNoise())` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.0)`     |
+| `ApplyIdleNoise` | Applies configured noise to a single qubit during simulation.    | `...`<br>`use q = Qubit;`<br>`ConfigurePauliNoise(0.1, 0.0, 0.0);`<br>`ApplyIdleNoise(q);`<br>`...`     |
 
 
 ### Adding Pauli noise to Python programs or Jupyter Notebooks
