@@ -117,12 +117,12 @@ The following functions are available in the `Qdk.Std.Diagnostics` library to co
 
 | Function | Description | Example |
 |----------|-------------|---------|
-| `ConfigurePauliNoise()` | Configures Pauli noise for a simulator run, with the parameters representing probabilities for the X, Y, and Z gates. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program. Bypasses any noise settings in VS Code and can be reset by subsequent `ConfigurePauliNoise()` calls. | `ConfigurePauliNoise(0.1, 0.0, 0.5)`<br>`ConfigurePauliNoise(BitFlipNoise(0.1))` |
+| `ConfigurePauliNoise()` | Configures Pauli noise for a simulator run, with the parameters representing probabilities for the X, Y, and Z gates. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program. Bypasses any noise settings in VS Code and can be reset by subsequent `ConfigurePauliNoise()` calls. | `ConfigurePauliNoise(0.1, 0.0, 0.5)`<br>or<br>`ConfigurePauliNoise(BitFlipNoise(0.1))` |
 | `BitFlipNoise()` | Configures the probability of noise for the X gate, and returns zeroes for the Y and Z gates.  | `ConfigurePauliNoise(BitFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.1, 0.0, 0.0)`|
 | `PhaseFlipNoise()` |  Configures the probability of noise for the Z gate, and returns zeroes for the X and Y gates.    | `ConfigurePauliNoise(PhaseFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.1)`   |
 | `DepolarizingNoise()` |Configures depolarizing noise and returns the same specified value for each gate.   | `ConfigurePauliNoise(DepolarizingNoise(0.2))` $\equiv$ `ConfigurePauliNoise(0.2, 0.2, 0.2)`   |
 | `NoNoise()` | Configures the noise model for no noise. | `ConfigurePauliNoise(NoNoise())` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.0)`     |
-| `ApplyIdleNoise` | Applies configured noise to a single qubit during simulation.    | `...`<br>`use q = Qubit;`<br>`ConfigurePauliNoise(0.1, 0.0, 0.0);`<br>`ApplyIdleNoise(q);`<br>`...`     |
+| `ApplyIdleNoise` | Applies configured noise to a single qubit during simulation.    | `...`<br>`use q = Qubit[2];`<br>`ConfigurePauliNoise(0.1, 0.0, 0.0);`<br>`ApplyIdleNoise(q[0]);`<br>`...`     |
 
 
 ### Adding Pauli noise to Python programs or Jupyter Notebooks
