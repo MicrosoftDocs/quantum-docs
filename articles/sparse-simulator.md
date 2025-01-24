@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn how to run your Q# programs on the Azure Quantum Development Kit sparse simulator.
 ms.author: sonialopez
-ms.date: 01/21/2025
+ms.date: 01/24/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
@@ -118,9 +118,9 @@ The following functions are available in the `Qdk.Std.Diagnostics` library to co
 | Function | Description | Example |
 |----------|-------------|---------|
 | `ConfigurePauliNoise()` | Configures Pauli noise for a simulator run, with the parameters representing probabilities of the X, Y, and Z gates. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program. Bypasses any noise settings in VS Code and can be reset by subsequent `ConfigurePauliNoise()` calls. | `ConfigurePauliNoise(0.1, 0.0, 0.5)`<br>or<br>`ConfigurePauliNoise(BitFlipNoise(0.1))` |
-| `BitFlipNoise()` | Configures the probability of noise of the X gate only. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program. |10% bit-flip noise:<br>`ConfigurePauliNoise(BitFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.1, 0.0, 0.0)`|
-| `PhaseFlipNoise()` |  Configures the probability of noise of the Z gate only. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program.   | 10% phase-flip noise:<br> `ConfigurePauliNoise(PhaseFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.1)`   |
-| `DepolarizingNoise()` |Configures the probability of noise across all gates equally.   | 20% depolarizing noise:<br>`ConfigurePauliNoise(DepolarizingNoise(0.2))` $\equiv$ `ConfigurePauliNoise(0.06666666666666667, 0.06666666666666667, 0.06666666666666667)`   |
+| `BitFlipNoise()` | Configures noise to be the X gate only with specified probability. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program. |10% bit-flip noise:<br>`ConfigurePauliNoise(BitFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.1, 0.0, 0.0)`|
+| `PhaseFlipNoise()` |  Configures noise to be the Z gate only with specified probability. The noise configuration applies to all subsequent gates, measurements, and qubits in a Q# program.   | 10% phase-flip noise:<br> `ConfigurePauliNoise(PhaseFlipNoise(0.1))` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.1)`   |
+| `DepolarizingNoise()` |Configures noise to be X, Y or Z gate with equal probabilities.   | 6% depolarizing noise:<br>`ConfigurePauliNoise(DepolarizingNoise(0.06))` $\equiv$ `ConfigurePauliNoise(0.2, 0.2, 0.2)`   |
 | `NoNoise()` | Configures the noise model for no noise. | `ConfigurePauliNoise(NoNoise())` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.0)`     |
 | `ApplyIdleNoise` | Applies configured noise to a single qubit during simulation.    | `...`<br>`use q = Qubit[2];`<br>`ConfigurePauliNoise(0.1, 0.0, 0.0);`<br>`ApplyIdleNoise(q[0]);`<br>`...`     |
 
