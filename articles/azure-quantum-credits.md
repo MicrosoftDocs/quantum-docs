@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: faq
 no-loc: [target, targets]
-title: Azure Quantum Credits
+title: "FAQ: Azure Quantum Credits"
 uid: microsoft.quantum.credits
 
 #customer intent: As a quantum developer, I want to understand what Azure Quantum Credits are, how to get them, and how to review my credit balance.
@@ -17,8 +17,7 @@ uid: microsoft.quantum.credits
 
 In this article, you'll find the guidelines to understand Azure Quantum Credits and how to use them to run your programs on quantum hardware.
 
-> [!TIP]
-> If you don’t have an Azure account, register for **free** and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/).
+[!INCLUDE [Azure Quantum credits deprecation banner](includes/azure-quantum-credits.md)]
 
 ## How can I get Azure Quantum Credits?
 
@@ -34,6 +33,8 @@ No, Azure Quantum Credits are shared for all workspaces within a single subscrip
 ## How long are credits valid for?
 
 Azure Quantum Credits are valid six (6) months from the creation of your first Azure Quantum workspace. 
+
+[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ## How can I use my Azure Quantum Credits?
 
@@ -63,6 +64,7 @@ If your Azure Quantum credits have expired, or you consumed all and need more, y
 1. See the consumed and the remaining credits for each selected provider. Credits are expressed in US dollars. 
 
      :::image type="content" source="media/portal-credits-blade.png" alt-text="Screenshot of the credits blade in Azure portal." lightbox="media/portal-credits-blade.png":::
+
      
 > [!NOTE]
 > When using Azure Quantum Credits, the cost estimation in the **Job Management** blade within your Azure Quantum workspace is equal to $0. In this case, the estimated cost isn't reflected in the Job details because there’s no effective charge against your Azure bill.
