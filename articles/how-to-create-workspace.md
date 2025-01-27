@@ -26,6 +26,8 @@ A workspace is needed to [get started with Jupyter Notebooks in the Azure portal
 
 First-time users automatically get USD500 free [Azure Quantum Credits](xref:microsoft.quantum.credits) for use with each participating quantum hardware provider (see the [full quantum provider list](xref:microsoft.quantum.reference.qc-target-list)). Your free Azure Quantum Credits become available once you create a new Azure Quantum workspace. If you need more credits, you can apply to the [Azure Quantum Credits program](xref:microsoft.quantum.credits.credits-faq).
 
+[!INCLUDE [Azure Quantum credits deprecation banner](includes/azure-quantum-credits.md)]
+
 ## Prerequisites
 
 You need to have an Azure account with an active subscription to create an Azure Quantum workspace. If you don't have one, you can choose from one of the following subscriptions, or for a full list see [Microsoft Azure Offer Details](https://azure.microsoft.com/support/legal/offer-details/).

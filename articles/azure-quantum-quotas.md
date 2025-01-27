@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: faq
 no-loc: [target, targets]
-title: 'FAQ: Limits & Quotas'
+title: "FAQ: Limits & Quotas"
 uid: microsoft.quantum.quotas
 
 #customer intent: As a quantum developer, I want to understand the limits and quotas of Azure Quantum, how to review my remaining quotas, and how to apply to get more.

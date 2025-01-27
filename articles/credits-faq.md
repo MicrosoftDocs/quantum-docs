@@ -16,13 +16,13 @@ uid: microsoft.quantum.credits.credits-faq
 
 In this article you'll find the answer to the most common questions about the Azure Quantum Credits program.
 
-When you create a new Azure Quantum workspace, you automatically get [USD500 free Azure Quantum Credits](xref:microsoft.quantum.credits) for use on quantum hardware. In addition, Microsoft offers up to **USD10,000 extra Azure Quantum Credits**. To receive this credit, you can apply for the [Azure Quantum Credits program](https://aka.ms/aq/credits). 
+The Azure Quantum Credits program providesup to **USD10,000 extra Azure Quantum Credits** to access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
 
-The Azure Quantum Credits program provides sponsored access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
+[!INCLUDE [Azure Quantum credits deprecation banner](includes/azure-quantum-credits.md)]
 
 ## Who can apply for the Azure Quantum Credits program?
 
-Educational institutions, companies, and some other approved organizations may apply for Azure Quantum Credits. Applicants may be based in the United States, or in any other market that is currently served by Microsoft Azure. For more information, see the [Azure Quantum Credits program terms](https://aka.ms/aq/credits/terms).
+Educational institutions, companies, and some other approved organizations may apply for Azure Quantum Credits. Applicants may be based in the United States, or in any other market that is currently served by Microsoft Azure. For more information, see the [Azure Quantum Credits program application](https://aka.ms/aq/credits).
 
 ## What are the terms of use for Azure Quantum Credits?
 
@@ -33,6 +33,8 @@ To use Azure Quantum Credits you must also accept the relevant usage terms for M
 ## How long are credits valid for?
 
 Credits are valid six (6) months from your project start date. Extensions are optionally available on a case-by-case basis.
+
+[!INCLUDE [Azure Quantum credits deprecation banner](includes/azure-quantum-credits.md)]
 
 ## How long after I apply will it take to hear back on my application?
 
