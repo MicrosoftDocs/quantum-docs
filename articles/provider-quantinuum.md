@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides the technical details of the Quantinuum quantum provider
 ms.author: brbenefield
-ms.date: 12/18/2024
+ms.date: 01/28/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -634,7 +634,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html 
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
 [`pytket`]: https://cqcl.github.io/tket/pytket/api/#
-[`pytket` User Manual]: https://tket.quantinuum.com/user-manual/
+[`pytket` User Manual]: https://docs.quantinuum.com/tket/user-guide/
 [`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
 [`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com
