@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 10/03/2024
+ms.date: 02/04/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -25,7 +25,7 @@ The Rigetti provider makes the following targets available:
 |Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
-|[Ankaa-3](#ankaa-9q-3) |rigetti.qpu.ankaa-3 | 82 qubits|  |
+|[Ankaa-3](#ankaa-9q-3) |rigetti.qpu.ankaa-3 | 84 qubits|  |
 |[Ankaa-9Q-3](#ankaa-9q-3) |rigetti.qpu.ankaa-9q-3 | 9 qubits|  |
 
 > [!NOTE]
@@ -39,7 +39,7 @@ All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are ava
 
 ### Ankaa-3
 
-An 82-qubit quantum processor.
+An 84-qubit quantum processor.
 
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
