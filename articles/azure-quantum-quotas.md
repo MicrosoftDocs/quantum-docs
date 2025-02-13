@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 02/13/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: faq
@@ -38,7 +38,7 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 
 ## How can I viewing my remaining quota?
 
-Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas and will not have usage information to display.
+Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas and have no usage information to display.
 
 > [!NOTE]
 > If you are using an Azure Quantum Credits plan, and not a billing plan, the quota information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
@@ -62,13 +62,13 @@ In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are includ
 
 You can see your quotas by using the Azure Command-Line Interface (Azure CLI). For more information, see [How to manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
-1. Install the **Azure CLI `quantum`** extension. Open a command prompt and run the following command, which will also upgrade the extension if a previous version is already installed.
+1. Install the **Azure CLI `quantum`** extension. Open a command prompt and run the following command, which also upgrades the extension if a previous version is already installed.
 
     ```azurecli
     az extension add --upgrade -n quantum
     ```
 
-1. **Log in** to Azure using your credentials. You will see list of subscriptions associated with your account.
+1. **Log in** to Azure using your credentials. You see list of subscriptions associated with your account.
 
    ```azurecli
    az login
@@ -239,13 +239,13 @@ The `period` item indicates the period when your quota is renewed.
 
 ## How can I request additional quota?
 
-If you are not using an Azure Quantum Credits plan, then you can request quota increases by raising a support ticket.
+If you aren't using an Azure Quantum Credits plan, then you can request quota increases by raising a support ticket.
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select your **Azure Quantum workspace**.
 3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab. 
 4. Either press the **Increase** button on the quota page or select the **New support request** button on the side panel in the portal.
-5. A support ticket will open. Follow these steps to fill out the request.
+5. A support ticket opens. Follow these steps to fill out the request.
     1. Describe the issue as **Azure Quantum Quota Override Request**
     1. Select **Technical** for “Issue Type” 
     1. Select the subscription that the workspace is in 
