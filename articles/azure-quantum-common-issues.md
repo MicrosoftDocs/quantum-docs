@@ -2,7 +2,7 @@
 author: bradben
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 09/16/2024
+ms.date: 02/13/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting-known-issue
@@ -272,7 +272,7 @@ The following issues may occur when you use the Azure portal to create a workspa
 
 This issue occurs because you don't have an active subscription.
 
-For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes USD200 free Azure Credits to use on Azure services. Note that these Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you've consumed the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal will allow you to access the workspace creation form.
+For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes USD200 free Azure Credits to use on Azure services. Note that these Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you've consumed the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal allows you to access the workspace creation form.
 
 To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
 
@@ -319,7 +319,7 @@ After selecting **Notebooks** in your workspace, the list of your saved notebook
 
 This can happen for three reasons:
 
-1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
+1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you see a **404 - Not found** error.
 
 1. If the storage account is not enabled for public internet access. See [Authorization failure](#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation) for more information. 
 
