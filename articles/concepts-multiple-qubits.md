@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn the rules used to build multi-qubit states out of single-qubit states. Also learn about gate operations needed to form a many-qubit quantum computer.
 ms.author: sonialopez
-ms.date: 09/16/2024
+ms.date: 02/13/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept-article
@@ -69,7 +69,7 @@ For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{b
 
 $$\psi\otimes \phi = \begin{bmatrix} 1/\sqrt{2} \\\\  0 \\\\  0 \\\\  1/\sqrt{2} \end{bmatrix}.$$ 
 
-Such a two-qubit state, which cannot be written as the tensor product of single-qubit states, is called an "entangled state"; the two qubits are said to be [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Loosely speaking, because the quantum state cannot be thought of as a tensor product of single qubit states, the information that the state holds is not confined to either of the qubits individually.  Rather, the information is stored non-locally in the correlations between the two states.  This non-locality of information is one of the major distinguishing features of quantum computing over classical computing and is essential for a number of quantum protocols including quantum error correction.
+Such a two-qubit state, which cannot be written as the tensor product of single-qubit states, is called an "entangled state"; the two qubits are said to be [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Loosely speaking, because the quantum state cannot be thought of as a tensor product of single qubit states, the information that the state holds isn't confined to either of the qubits individually.  Rather, the information is stored non-locally in the correlations between the two states.  This non-locality of information is one of the major distinguishing features of quantum computing over classical computing and is essential for a number of quantum protocols including quantum error correction.
 
 ### Measuring two-qubit states 
 
@@ -111,7 +111,7 @@ To see this, consider measuring the first qubit of the following state, which is
 $$
 H^{\otimes 2} \left( \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} \right) = \frac{1}{2}\begin{bmatrix}1 & 1 & 1 & 1 \\\\ 1 & -1 & 1 & -1 \\\\ 1 & 1 & -1 & -1 \\\\ 1 & -1 & -1 & 1 \end{bmatrix}\begin{bmatrix}1\\\\ 0\\\\ 0\\\\ 0\end{bmatrix} = \frac{1}{2}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1\end{bmatrix} \mapsto \begin{cases}\text{outcome }=0 & \frac{1}{\sqrt{2}}\begin{bmatrix}1\\\\ 1\\\\ 0\\\\ 0 \end{bmatrix}\\\\ \text{outcome }=1 & \frac{1}{\sqrt{2}}\begin{bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{bmatrix}\\\\  \end{cases}.
 $$
-Both outcomes have a 50% probability of occurring.  That can be intuited from the fact that the quantum state before measurement does not change if $0$ is swapped with $1$ on the first qubit.
+Both outcomes have a 50% probability of occurring.  That can be intuited from the fact that the quantum state before measurement doesn't change if $0$ is swapped with $1$ on the first qubit.
 
 The mathematical rule for measuring the first or second qubit is simple.  Let <!-- Port strings all together from here... -->$e_k$ be the $k^{\rm th}$ computational basis vector and $S$ be the set of all $e_k$ such that the qubit in question takes the value $1$ for that value of $k$.  For example, if you are interested in measuring the first qubit then $S$ would consist of $e_1\equiv 10$ and $e_3\equiv 11$.  Similarly, if you are interested in the second qubit $S$ would consist of $e_2\equiv 01$ and $e_3 \equiv 11$.  Then the probability of measuring the chosen qubit to be $1$ is for state vector $\psi$<!-- to here-->
 
@@ -203,7 +203,7 @@ e\ f\\\\ g\ h
 
 Thus, you can form two-qubit gates by taking the tensor product of some known single-qubit gates. Some examples of two-qubit gates include $H \otimes H$, $X \otimes \mathbf{1}$, and $X \otimes Z$.
 
-Note that while any two single-qubit gates define a two-qubit gate by taking their tensor product, the converse is not true. Not all two-qubit gates can be written as the tensor product of single-qubit gates.  Such a gate is called an *entangling* gate. One example of an entangling gate is the CNOT gate.
+Note that while any two single-qubit gates define a two-qubit gate by taking their tensor product, the converse isn't true. Not all two-qubit gates can be written as the tensor product of single-qubit gates.  Such a gate is called an *entangling* gate. One example of an entangling gate is the CNOT gate.
 
 The intuition behind a controlled-not gate can be generalized to arbitrary gates.  A controlled gate in general is a gate that acts as identity unless a specific qubit is $1$.  You denote a controlled unitary, controlled in this case on the qubit labeled $x$, with a $\Lambda\_x(U)$.  As an example $\Lambda_0(U) e\_{1}\otimes {\psi}=e\_{1}\otimes U{\psi}$ and <!-- Port start choking here through.... --> $\Lambda\_0(U) e\_{0}\otimes {\psi}=e\_{0}\otimes{\psi}$, where $e\_0$ and $e\_1$ are the computational basis vectors for a single qubit corresponding to the values $0$ and $1$.  For example, consider the following controlled-$Z$ <!-- to here -->gate then you can express this as
 
@@ -214,7 +214,7 @@ $$
 
 Building controlled unitaries in an efficient manner is a major challenge.  The simplest way to implement this requires forming a database of controlled versions of fundamental gates and replacing every fundamental gate in the original unitary operation with its controlled counterpart.  This is often quite wasteful and clever insight often can be used to just replace a few gates with controlled versions to achieve the same impact.  For this reason, the framework provides the ability to perform either the naive method of controlling or allow the user to define a controlled version of the unitary if an optimized hand-tuned version is known.
 
-Gates can also be controlled using classical information.  A classically controlled not-gate, for example, is just an ordinary not-gate but it is only applied if a classical bit is $1$ as opposed to a quantum bit.  In this sense, a classically controlled gate can be thought of as an if statement in the quantum code wherein the gate is applied only in one branch of the code.
+Gates can also be controlled using classical information.  A classically controlled not-gate, for example, is just an ordinary not-gate but it's only applied if a classical bit is $1$ as opposed to a quantum bit.  In this sense, a classically controlled gate can be thought of as an if statement in the quantum code wherein the gate is applied only in one branch of the code.
 
 As in the single-qubit case, a two-qubit gate set is universal if any $4\times 4$ unitary matrix can be approximated by a product of gates from this set to arbitrary precision.
 One example of a universal gate set is the Hadamard gate, the T gate, and the CNOT gate. By taking products of these gates, you can approximate any unitary matrix on two qubits.
@@ -227,14 +227,14 @@ $$
 1011001 \equiv \begin{bmatrix} 0 \\\\  1 \end{bmatrix}\otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix}\otimes \begin{bmatrix} 0 \\\\  1 \end{bmatrix}\otimes \begin{bmatrix} 0 \\\\  1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix}\otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix}\otimes \begin{bmatrix} 0 \\\\  1 \end{bmatrix}.
 $$
 
-Quantum gates work in exactly the same way.  For example, if you wish to apply the $X$ gate to the first qubit and then perform a CNOT between the second and third qubits you may express this transformation as
+Quantum gates work in exactly the same way.  For example, if you wish to apply the $X$ gate to the first qubit and then perform a CNOT between the second and third qubits you can express this transformation as
 
 \begin{align}
 &(X \otimes \operatorname{CNOT}_{12}\otimes \mathbf{1}\otimes \mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1}) \begin{bmatrix} 0 \\\\  1 \end{bmatrix}\otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix}\otimes \begin{bmatrix} 0 \\\\  1 \end{bmatrix}\otimes \begin{bmatrix} 0 \\\\  1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix}\otimes \begin{bmatrix} 1 \\\\  0 \end{bmatrix}\otimes \begin{bmatrix} 0 \\\\  1 \end{bmatrix}\\\\
 &\qquad\qquad\equiv 0011001.
 \end{align}
 
-In many qubit systems, there is often a need to allocate and deallocate qubits that serve as temporary memory for the quantum computer.  Such a qubit is said to be _auxiliary_.  By default, you can assume the qubit state is initialized to $e_0$ upon allocation.  You can further assume that it is returned again to $e_0$ before deallocation.  This assumption is important because if an auxiliary qubit becomes entangled with another qubit register when it becomes deallocated then the process of deallocation will damage the auxiliary qubit.  For this reason, you always assume that such qubits are reverted to their initial state before being released.
+In many qubit systems, there's often a need to allocate and deallocate qubits that serve as temporary memory for the quantum computer.  Such a qubit is said to be _auxiliary_.  By default, you can assume the qubit state is initialized to $e_0$ upon allocation.  You can further assume that it's returned again to $e_0$ before deallocation.  This assumption is important because if an auxiliary qubit becomes entangled with another qubit register when it becomes deallocated, then the process of deallocation will damage the auxiliary qubit.  For this reason, you always assume that such qubits are reverted to their initial state before being released.
 
 Finally, although new gates needed to be added to our gate set to achieve universal quantum computing for two qubit quantum computers, no new gates need to be introduced in the multi-qubit case.  The gates $H$, $T$ and CNOT form a universal gate set on many qubits because any general unitary transformation can be broken into a series of two qubit rotations.  You then can leverage the theory developed for the two-qubit case and use it again here when you have many qubits.
 
