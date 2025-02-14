@@ -41,9 +41,9 @@ for contributors:
   
 ## Broken links prevention
 
-The URL of an article page on Microsoft Learn is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://learn.microsoft.com/azure/quantum/user-guide/programs`. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
+The URL of an article page on Microsoft Learn is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://learn.microsoft.com/azure/quantum/user-guide/programs`. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL changes accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, get a **404 Page not found** error. To avoid this:
 
-- If possible, do not rename or relocate articles.
+- If possible, don't rename or relocate articles.
 - If you need to rename, remove or relocate an article, you must add a *redirect* from the previous article location to the URL of the new article to avoid creating  broken links.
 
 ### Redirects
@@ -98,7 +98,7 @@ To prevent build errors that may delay the implementation of the redirect:
 
 - When you add a redirect, be sure to remove the old file as well.
 - Follow the formatting of the examples, ensuring that each entry is contained within braces { }, and that each entry is separated by a comma.
-- Do not include locale codes (for example, **en-us** or **fr-fr**) in the redirect_url for relative or absolute paths.
+- Don't include locale codes (for example, **en-us** or **fr-fr**) in the redirect_url for relative or absolute paths.
 
 ## Adding images
 
