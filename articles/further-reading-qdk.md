@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
 ms.author: sonialopez
-ms.date: 09/10/2024
+ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -53,7 +53,7 @@ The following resources are created and developed by the quantum community who i
 
 Check out the following quantum computing learning courses.
 
-* [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that will help you to learn quantum software development by creating end-to-end projects. You explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
+* [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that help you to learn quantum software development by creating end-to-end projects. You explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
 + [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's IQIM.
 + [Quantum Computing through Comics - HackadayU classes](https://hackaday.io/project/168554-introduction-to-quantum-computing): learn about quantum computing concepts and algorithm programming through classroom discussion and intuitive comics.
 
@@ -63,7 +63,7 @@ The following bibliography is a collection of publications that cover a wide ran
 
 ### Quantum computing for beginners 
 
-If you are a quantum enthusiast and want to start learning the theory behind quantum computing, the following publications will instruct you in topics such as quantum physics, computer science and linear algebra. 
+If you are a quantum enthusiast and want to start learning the theory behind quantum computing, the following resources offer topics such as quantum physics, computer science and linear algebra. 
 
 * Nielsen, M. A. & Chuang, I. L. *Quantum Computation and Quantum Information. Quantum Computation and Quantum Information.* UK: Cambridge University Press, 2010.
 * Kaye, P., Laﬂamme, R., & Mosca, M. *An introduction to quantum computing.* Oxford University Press, 2007.
@@ -86,7 +86,7 @@ If you are a quantum enthusiast and want to start learning the theory behind qua
 ### Resource Estimation
 
 * M. E. Beverland, P. Murali,1 M. Troyer, K. M. Svore, T. Hoefler, V. Kliuchnikov, G. H. Low, M. Soeken, A. Sundaram, and A. Vaschillo. *Assessing requirements to scale to practical quantum advantage*, arXiv:2211.07629v1, 2022.
-*  Isaac H. Kim, Ye-Hua Liu, Sam Pallister, William Pol, Sam Roberts, and Eunseok Lee. Fault-tolerant
+* Isaac H. Kim, Ye-Hua Liu, Sam Pallister, William Pol, Sam Roberts, and Eunseok Lee. Fault-tolerant
 resource estimate for quantum chemical simulations: Case study on li-ion battery electrolyte molecules.
 Phys. Rev. Research, 4:023019, Apr 2022.
 * Giulia Meuli, Mathias Soeken, Martin Roetteler, and Thomas H¨aner. *Enabling accuracy-aware quantum compilers using symbolic resource estimation*, Proc. ACM Program. Lang., 4(OOPSLA), 2020.
