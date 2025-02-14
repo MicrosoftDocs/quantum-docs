@@ -19,13 +19,13 @@ This article reviews the rules used to build multi-qubit states out of single-qu
 
 ## Single-qubit and multi-qubit gates
 
-The true power of quantum computing only becomes evident as you increase the number of qubits. Single qubits possess some counter-intuitive features, such as the ability to be in more than one state at a given time. However, if all you had in a quantum computer were single-qubit gates, then a calculator and certainly a classical supercomputer would dwarf its computational power. 
+The true power of quantum computing only becomes evident as you increase the number of qubits. Single qubits possess some counter-intuitive features, such as the ability to be in more than one state at a given time. However, if you only had single-qubit gates in a quantum computer, then a calculator and certainly a classical supercomputer would dwarf its computational power. 
 
 Quantum computing power arises, in part, because the dimension of the vector space of quantum state vectors grows exponentially with the number of qubits. This means that while a single qubit can be trivially modeled, simulating a fifty-qubit quantum computation would arguably push the limits of existing supercomputers. Increasing the size of the computation by only one extra qubit *doubles* the memory required to store the state and roughly *doubles* the computational time. This rapid doubling of computational power is why a quantum computer with a relatively small number of qubits can far surpass the most powerful supercomputers of today, tomorrow, and beyond for some computational tasks.
 
 ## Two-qubit states
 
-If you have two separate qubits, one in the state $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and the other in the state  $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$, the corresponding two-qubit state is given by the tensor product (or [Kronecker product](https://en.wikipedia.org/wiki/Kronecker_product)) of vectors, which is defined as follows 
+If you have two separate qubits, one in the state $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and the other in the state  $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$, the corresponding two-qubit state is the result of the tensor product, or [Kronecker product](https://en.wikipedia.org/wiki/Kronecker_product)), of vectors, which is defined as follows 
 
 <!-- works in Port -->
 
@@ -49,7 +49,7 @@ represents a quantum state on two qubits if
 
 $$|\alpha_{00}|^2+|\alpha_{01}|^2+|\alpha_{10}|^2+|\alpha_{11}|^2=1.$$
 
-More generally, you can see that the quantum state of $n$ qubits is represented by a unit vector $v_1 \otimes v_2 \otimes \cdots \otimes v_n$ of dimension $2 \cdot 2 \cdot 2 \cdots = 2^n$ using this construction. Just as with single qubits, the quantum state vector of multiple qubits holds all the information needed to describe the system's behavior. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors).
+More generally, you can see that the unit vector $v_1 \otimes v_2 \otimes \cdots \otimes v_n$ of dimension $2 \cdot 2 \cdot 2 \cdots = 2^n$ represents the quantum state of $n$ qubits using this construction. As with single qubits, the quantum state vector of multiple qubits holds all the information needed to describe the system's behavior. For more information about vectors and tensor products, see [Vectors and Matrices in Quantum Computing](xref:microsoft.quantum.concepts.vectors).
 
 The computational basis for two-qubit states is formed by the tensor products of one-qubit basis states. For example, you have
 
@@ -62,18 +62,18 @@ $$
 \end{align}
 $$
 
-Note that while you can always take the tensor product of two single-qubit states to form a two-qubit state, not all two-qubit quantum states can be written as the tensor product of two single-qubit states.
+While you can always take the tensor product of two single-qubit states to form a two-qubit state, not all two-qubit quantum states can be written as the tensor product of two single-qubit states.
 For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix}$ and $\phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix}$ <!-- this works in Port. Compare with earlier, same formula -->such that their tensor product is the state 
 
 <!-- this is just raw code in Port -->
 
 $$\psi\otimes \phi = \begin{bmatrix} 1/\sqrt{2} \\\\  0 \\\\  0 \\\\  1/\sqrt{2} \end{bmatrix}.$$ 
 
-Such a two-qubit state, which cannot be written as the tensor product of single-qubit states, is called an "entangled state"; the two qubits are said to be [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Loosely speaking, because the quantum state cannot be thought of as a tensor product of single qubit states, the information that the state holds isn't confined to either of the qubits individually.  Rather, the information is stored non-locally in the correlations between the two states.  This non-locality of information is one of the major distinguishing features of quantum computing over classical computing and is essential for a number of quantum protocols including quantum error correction.
+Such a two-qubit state, which cannot be written as the tensor product of single-qubit states, is called an "entangled state"; the two qubits are said to be [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Loosely speaking, because the quantum state cannot be thought of as a tensor product of single qubit states, the information that the state holds isn't confined to either of the qubits individually.  Rather, the information is stored non-locally in the correlations between the two states.  This non-locality of information is one of the major distinguishing features of quantum computing over classical computing, and is essential for many quantum protocols, including quantum error correction.
 
 ### Measuring two-qubit states 
 
-Measuring two-qubit states is very similar to single-qubit measurements. Measuring the state
+Measuring two-qubit states is similar to single-qubit measurements. Measuring the state
 
 <!-- testing localization -->
 <!-- Port is raw code -->
@@ -89,7 +89,7 @@ $$
 
 
 
-yields $00$ with probability <!--Port puts everything between $ from here... -->$|\alpha_{00}|^2$, $01$ with probability $|\alpha_{01}|^2$, $10$ with probability $|\alpha_{10}|^2$, and $11$ with probability $|\alpha_{11}|^2$. The variables $\alpha_{00}, \alpha_{01}, \alpha_{10},$ and $\alpha_{11}$ were deliberately named to make this connection clear. After the measurement, if the outcome is $00$ <!-- ... to here. -->then the quantum state of the two-qubit system has collapsed and is now
+yields $00$ with probability <!--Port puts everything between $ from here... -->$|\alpha_{00}|^2$, $01$ with probability $|\alpha_{01}|^2$, $10$ with probability $|\alpha_{10}|^2$, and $11$ with probability $|\alpha_{11}|^2$. The variables $\alpha_{00}, \alpha_{01}, \alpha_{10},$ and $\alpha_{11}$ were deliberately named to make this connection clear. After the measurement, if the outcome is $00$ <!-- ... to here. -->then the quantum state of the two-qubit system collapses and is now
 
 <!-- works in Port -->
 
@@ -103,28 +103,26 @@ $$
     \end{bmatrix}.
 $$
 
-It's also possible to measure just one qubit of a two-qubit quantum state. When you measure only one qubit of a two-qubit state, the impact of measurement is subtly different than measuring two qubits. This is because the entire state isn't collapsed to a computational basis state, rather it's collapsed to only one subsystem.  In other words, measuring one qubit of a two-qubit state only collapses the related subsystem to a computational basis state. 
+It's also possible to measure just one qubit of a two-qubit quantum state. When you measure only one qubit of a two-qubit state, the impact of measurement is subtly different than measuring two qubits. It's different because the entire state isn't collapsed to a computational basis state, rather it collapses to only one subsystem.  In other words, measuring one qubit of a two-qubit state only collapses the related subsystem to a computational basis state. 
 
 To see this, consider measuring the first qubit of the following state, which is formed by applying the Hadamard transform $H$ on two qubits initially set to the "0" state:
 
-<!-- all out of whack in Port -->
 $$
 H^{\otimes 2} \left( \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} \right) = \frac{1}{2}\begin{bmatrix}1 & 1 & 1 & 1 \\\\ 1 & -1 & 1 & -1 \\\\ 1 & 1 & -1 & -1 \\\\ 1 & -1 & -1 & 1 \end{bmatrix}\begin{bmatrix}1\\\\ 0\\\\ 0\\\\ 0\end{bmatrix} = \frac{1}{2}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1\end{bmatrix} \mapsto \begin{cases}\text{outcome }=0 & \frac{1}{\sqrt{2}}\begin{bmatrix}1\\\\ 1\\\\ 0\\\\ 0 \end{bmatrix}\\\\ \text{outcome }=1 & \frac{1}{\sqrt{2}}\begin{bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{bmatrix}\\\\  \end{cases}.
 $$
-Both outcomes have a 50% probability of occurring.  That can be intuited from the fact that the quantum state before measurement doesn't change if $0$ is swapped with $1$ on the first qubit.
+Both outcomes have a 50% probability of occurring.  That outcome can be intuited from the fact that the quantum state before measurement doesn't change if $0$ is swapped with $1$ on the first qubit.
 
 The mathematical rule for measuring the first or second qubit is simple.  Let <!-- Port strings all together from here... -->$e_k$ be the $k^{\rm th}$ computational basis vector and $S$ be the set of all $e_k$ such that the qubit in question takes the value $1$ for that value of $k$.  For example, if you are interested in measuring the first qubit then $S$ would consist of $e_1\equiv 10$ and $e_3\equiv 11$.  Similarly, if you are interested in the second qubit $S$ would consist of $e_2\equiv 01$ and $e_3 \equiv 11$.  Then the probability of measuring the chosen qubit to be $1$ is for state vector $\psi$<!-- to here-->
 
-<!-- this works in Port-->
 
 $$
 P(\text{outcome}=1)= \sum_{e_k \text{ in the set } S}\psi^\dagger e_k e_k^\dagger \psi.
 $$
 
 > [!NOTE]
-> This article uses the *little-endian* format to label the computational basis. In little endian format, the least significant bits come first. For example, the number four in little-endian format is represented by the string of bits 001.
+> This article uses the *little-endian* format to label the computational basis. In little-endian format, the least significant bits come first. For example, in little-endian format the string of bits 001 represents the number four.
 
-Since each qubit measurement can only yield $0$ or $1$, the probability of measuring $0$ is simply $1-P(\text{outcome}=1)$.  This is why you only need a formula for the probability of measuring $1$.
+Since each qubit measurement can only yield $0$ or $1$, the probability of measuring $0$ is $1-P(\text{outcome}=1)$, which is why you only need a formula for the probability of measuring $1$.
 
 The action that such a measurement has on the state can be expressed mathematically as
 
@@ -135,16 +133,15 @@ $$
 The cautious reader may worry about what happens if the denominator is zero.  While such state is undefined, you don't need to worry about such eventualities because the probability is zero! 
 
 
-If you take $\psi$ to be the uniform state vector given above and are interested in measuring the first qubit then 
+If you take $\psi$ to be the uniform state vector given previously and are interested in measuring the first qubit, then 
 
 $$
 P(\text{measurement of first qubit}=1) = (\psi^\dagger e_1)(e_1^\dagger \psi)+(\psi^\dagger e_3)(e_3^\dagger \psi)=|e_1^\dagger \psi|^2+|e_3^\dagger \psi|^2.
 $$
 
-Note that this is just the sum of the two probabilities that would be expected for measuring the results $10$ and $11$.
+This is just the sum of the two probabilities that would be expected for measuring the results $10$ and $11$.
 For our example, this evaluates to
 
-<!-- Port is out of whack -->
 
 $$
 \frac{1}{4}\left|\begin{bmatrix}0&0&1&0\end{bmatrix}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1\end{bmatrix} \right|^2+\frac{1}{4}\left|\begin{bmatrix}0&0&0&1\end{bmatrix}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1\end{bmatrix} \right|^2=\frac{1}{2}.
@@ -152,7 +149,6 @@ $$
 
 which perfectly matches our intuition.  Similarly, the state after the first qubit is measured as $1$ can be written as
 
-<!-- Port works fine with this one -->
 
 $$
 \frac{\frac{e_1}{2}+\frac{e_3}{2}}{\sqrt{\frac{1}{2}}}=\frac{1}{\sqrt{2}}\begin{bmatrix} 0\\\\ 0\\\\ 1\\\\ 1\end{bmatrix}
@@ -165,7 +161,6 @@ again in accordance with our intuition.
 As in the single-qubit case, any unitary transformation is a valid operation on qubits. In general, a unitary transformation on $n$ qubits is a matrix $U$ of size $2^n \times 2^n$ (so that it acts on vectors of size $2^n$), such that $U^{-1} = U^\dagger$.
 For example, the CNOT (controlled-NOT) gate is a commonly used two-qubit gate and is represented by the following unitary matrix:
 
-<!-- Port works -->
 
 $$
 \operatorname{CNOT} = \begin{bmatrix} 1\ 0\ 0\ 0  \\\\  0\ 1\ 0\ 0 \\\\  0\ 0\ 0\ 1 \\\\  0\ 0\ 1\ 0 \end{bmatrix}
@@ -239,7 +234,7 @@ In many qubit systems, there's often a need to allocate and deallocate qubits th
 Finally, although new gates needed to be added to our gate set to achieve universal quantum computing for two qubit quantum computers, no new gates need to be introduced in the multi-qubit case.  The gates $H$, $T$ and CNOT form a universal gate set on many qubits because any general unitary transformation can be broken into a series of two qubit rotations.  You then can leverage the theory developed for the two-qubit case and use it again here when you have many qubits.
 
 > [!NOTE]
-> While the linear algebraic notation that has been used thus far can certainly be used to describe multi-qubit states, it becomes increasingly cumbersome as you increase the size of the states.  The resulting column-vector for a length 7 bit string, for example, is $128$ dimensional, which makes expressing it using the notation described previously very cumbersome.  Instead, *Dirac notation*, a symbolic shorthand that simplifies the representation of quantum states, is used. For more information, see [Dirac notation](xref:microsoft.quantum.concepts.dirac).
+> While the linear algebraic notation that has been used thus far can certainly be used to describe multi-qubit states, it becomes increasingly cumbersome as you increase the size of the states.  The resulting column-vector for a length 7 bit string, for example, is $128$ dimensional, which makes it cumbersome to express it using the notation described earlier.  Instead, *Dirac notation*, a symbolic shorthand that simplifies the representation of quantum states, is used. For more information, see [Dirac notation](xref:microsoft.quantum.concepts.dirac).
 
 ## Related content
 
