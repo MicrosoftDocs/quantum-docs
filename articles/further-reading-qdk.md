@@ -18,7 +18,7 @@ This article compiles some of the most popular resources that you may find usefu
 
 ## Microsoft quantum computing resources
 
-Learn how to develop and apply quantum computing solutions with the Quantum Development Kit and Azure Quantum services.
+Learn how to develop and apply quantum computing solutions with the Quantum Development Kit (QDK) and Azure Quantum services.
 
 * [Azure Quantum training path](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules, you learn about quantum computing and how to develop quantum solutions using Q# and the Azure Quantum Development Kit.
 * [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas): a collection of self-paced Q# quantum programming tutorials.
@@ -54,7 +54,7 @@ The following resources are created and developed by the quantum community who i
 Check out the following quantum computing learning courses.
 
 * [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that help you to learn quantum software development by creating end-to-end projects. You explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
-+ [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's IQIM.
++ [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's Institute for Quantum Information and Matter (IQIM).
 + [Quantum Computing through Comics - HackadayU classes](https://hackaday.io/project/168554-introduction-to-quantum-computing): learn about quantum computing concepts and algorithm programming through classroom discussion and intuitive comics.
 
 ## Bibliography 
@@ -63,7 +63,7 @@ The following bibliography is a collection of publications that cover a wide ran
 
 ### Quantum computing for beginners 
 
-If you are a quantum enthusiast and want to start learning the theory behind quantum computing, the following resources offer topics such as quantum physics, computer science and linear algebra. 
+If you're a quantum enthusiast and want to start learning the theory behind quantum computing, the following resources offer topics such as quantum physics, computer science, and linear algebra. 
 
 * Nielsen, M. A. & Chuang, I. L. *Quantum Computation and Quantum Information. Quantum Computation and Quantum Information.* UK: Cambridge University Press, 2010.
 * Kaye, P., Laﬂamme, R., & Mosca, M. *An introduction to quantum computing.* Oxford University Press, 2007.
@@ -73,7 +73,7 @@ If you are a quantum enthusiast and want to start learning the theory behind qua
 
 * Sergey Bravyi, Oliver Dial, Jay M. Gambetta, Dario Gil, and Zaira Nazario. *The future of quantum computing with superconducting qubits*, 2022.
 * Microsoft Quantum. *InAs-Al Hybrid Devices Passing the Topological Gap Protocol*, arXiv:2207.02472 [cond-mat.mes-hall], (2022).
-* M Saffman. *Quantum computing with atomic qubits and rydberg interactions: progress and challenges*, Journal of Physics B: Atomic, Molecular and Optical Physics, 49(20):202001, (2016).
+* M Saffman. *Quantum computing with atomic qubits and rydberg interactions: progress and challenges*, Journal of Physics B: Atomic, Molecular, and Optical Physics, 49(20):202001, (2016).
 * J. I. Cirac and P. Zoller. *Quantum computations with cold trapped ions*, Phys. Rev. Lett., 74:4091–4094 (1995).
 
 ### Quantum Error Correction
