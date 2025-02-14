@@ -15,9 +15,9 @@ uid: microsoft.quantum.concepts.dirac
 
 # Dirac notation in quantum computing
 
-[*Dirac notation*](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) is a concise and powerful way to describe quantum states and operations. It was named after the physicist Paul Dirac, who developed the notation in the 1930s. Dirac notation is used in quantum computing to describe quantum states, quantum operations, and quantum measurements.  
+[*Dirac notation*](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) is a concise and powerful way to describe quantum states and operations. It was named after the physicist Paul Dirac, who developed the notation in the 1930s. Dirac notation is used in quantum computing to describe quantum states, quantum operations, and quantum measurements.
 
-This article introduce you to Dirac notation and show you how to use it to describe quantum states and operations.
+This article introduces you to Dirac notation and show you how to use it to describe quantum states and operations.
 
 ## Vectors in Dirac notation
 
@@ -65,13 +65,13 @@ $$
 \ket{1} = \frac{1}{\sqrt{2}}(\ket{+} - \ket{-})
 $$
 
-As an example of Dirac notation, consider the braket $\braket{0 | 1}$, which is the inner product between $0$ and $1$.  It can be written as
+As an example of Dirac notation, consider the braket $\braket{0 | 1}$, which is the inner product between $0$ and $1$. It can be written as
 
 $$
 \braket{0 | 1}=\begin{bmatrix} 1 & 0 \end{bmatrix}\begin{bmatrix}0\\\\ 1\end{bmatrix}=0.
 $$
 
-This example says that $\ket{0}$ and $\ket{1}$ are orthogonal vectors, meaning that $\braket{0 | 1} = \braket{1 | 0} =0$.  Also, by definition $\braket{0 | 0} = \braket{1 | 1}=1$, which means that the two computational basis vectors can also be called *orthonormal*.
+This example says that $\ket{0}$ and $\ket{1}$ are orthogonal vectors, meaning that $\braket{0 | 1} = \braket{1 | 0} =0$. Also, by definition $\braket{0 | 0} = \braket{1 | 1}=1$, which means that the two computational basis vectors can also be called *orthonormal*.
 
 These orthonormal properties are used in the following example. If you have a state $\ket{\psi} = {\frac{3}{5}} \ket{1} + {\frac{4}{5}} \ket{0}$, then because $\braket{1 | 0} =0$ the probability of measuring $1$ is
 
@@ -81,7 +81,7 @@ $$
 
 ## Tensor product notation
 
-Dirac notation is useful to express the [tensor product](xref:microsoft.quantum.concepts.vectors#tensor-product).  Tensor product is important in quantum computing because the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.
+Dirac notation is useful to express the [tensor product](xref:microsoft.quantum.concepts.vectors#tensor-product). Tensor product is important in quantum computing because the state vector described by two uncorrelated quantum registers is the tensor products of the two state vectors.
 
 The tensor product $\psi \otimes \phi$ for any two quantum state vectors $\phi$ and $\psi$ is written in Dirac notation as $\ket{\psi} \otimes \ket{\phi}$. By convention, you can also write the tensor product as $\ket{\psi} \ket{\phi} = \ket{\psi \phi}$.
 
@@ -95,8 +95,8 @@ $$
 H^{\otimes n} \ket{0} = \frac{1}{2^{n/2}} \sum_{j=0}^{2^n-1} \ket{j} = \ket{+}^{\otimes n}.
 $$
 
-Here you may wonder why the sum goes from $0$ to $2^{n}-1$ for $n$ bits.  First, note that there are $2^{n}$ different configurations that $n$ bits can take.  You can see this by noting that one bit can take $2$ values but two bits can take $4$ values, and so forth. In general, this means that there are $2^n$ different possible bit strings but the largest value encoded in any of them $1\cdots 1=2^n-1$ and hence it is the upper limit for the sum.
-Also, in this example you did not use $\ket{+}^{\otimes n}=\ket{+}$ in analogy to $\ket{0}^{\otimes n} = \ket{0}$. This notational convention is reserved for the computational basis state with every qubit initialized to zero.
+Here you may wonder why the sum goes from $0$ to $2^{n}-1$ for $n$ bits. First, there are $2^{n}$ different configurations that $n$ bits can take. You can see this configuration by noting that one bit can take $2$ values but two bits can take $4$ values, and so forth. In general, this means that there are $2^n$ different possible bit strings but the largest value encoded in any of them $1\cdots 1=2^n-1$ and hence it's the upper limit for the sum.
+Also, in this example you didn't use $\ket{+}^{\otimes n}=\ket{+}$ in analogy to $\ket{0}^{\otimes n} = \ket{0}$. This notational convention is reserved for the computational basis state with every qubit initialized to zero.
 
 ## Express linearity with Dirac notation
 
@@ -104,7 +104,7 @@ Another feature of Dirac notation is the fact that it's linear. For example, for
 
 $$ \ket{\psi} \otimes ( \alpha\ket{\phi} + \beta\ket{\chi})= \alpha\ket{\psi}\ket{\phi} + \beta\ket{\psi}\ket{\chi}.$$
 
-That is to say, you can distribute the tensor product notation in Dirac notation so that taking tensor products between state vectors ends up looking just like ordinary multiplication.
+You can distribute the tensor product notation in Dirac notation so that taking tensor products between state vectors ends up looking just like ordinary multiplication.
 
 Bra vectors follow a similar convention to ket vectors. For example, the vector $\bra{\psi}\bra{\phi}$ is equivalent to the state vector $\psi^\dagger \otimes \phi^\dagger=(\psi\otimes \phi)^\dagger$. If the ket vector $\ket{\psi}$ is $\alpha \ket{0} + \beta \ket{1}$, then the bra vector version of the vector is $\bra{\psi}=\ket{\psi}^\dagger = (\bra{0}\alpha^* +\bra{1}\beta^*)$.
 
@@ -116,17 +116,17 @@ The fact that the negative sign appears in the calculation of the probability is
 
 ## ketbra or outer product
 
-The final item worth discussing in Dirac notation is the *ketbra* or outer product. The outer product is represented within Dirac notations as $\ket{\psi} \bra{\phi}$.  The outer product is defined via matrix multiplication as $\ket{\psi} \bra{\phi} = \psi \phi^\dagger$ for quantum state vectors $\psi$ and $\phi$.  The simplest, and arguably most common example of this notation, is
+The final item worth discussing in Dirac notation is the *ketbra* or outer product. The outer product is represented within Dirac notations as $\ket{\psi} \bra{\phi}$. The outer product is defined via matrix multiplication as $\ket{\psi} \bra{\phi} = \psi \phi^\dagger$ for quantum state vectors $\psi$ and $\phi$. The simplest, and arguably most common example of this notation, is
 
 $$
 \ket{0} \bra{0} = \begin{bmatrix}1\\\\ 0 \end{bmatrix}\begin{bmatrix}1&0 \end{bmatrix}= \begin{bmatrix}1 &0\\\\ 0 &0\end{bmatrix} \qquad \ket{1} \bra{1} = \begin{bmatrix}0\\\\ 1 \end{bmatrix}\begin{bmatrix}0&1 \end{bmatrix}= \begin{bmatrix}0 &0\\\\ 0 &1\end{bmatrix}.
 $$
 
-Ketbras are often called projectors because they project a quantum state onto a fixed value. Since these operations aren't unitary (and do not even preserve the norm of a vector), a quantum computer cannot deterministically apply a projector. However projectors do a beautiful job of describing the action that measurement has on a quantum state. For example, if you measure a state $\ket{\psi}$ to be $0$, then the resulting transformation that the state experiences as a result of the measurement is
+Ketbras are often called projectors because they project a quantum state onto a fixed value. Since these operations aren't unitary (and do not even preserve the norm of a vector), a quantum computer can't deterministically apply a projector. However projectors do a beautiful job of describing the action that measurement has on a quantum state. For example, if you measure a state $\ket{\psi}$ to be $0$, then the resulting transformation that the state experiences as a result of the measurement is
 
 $$\ket{\psi} \rightarrow \frac{(\ket{0} \bra{0})\ket{\psi}}{|\braket{0 | \psi}|}= \ket{0},$$
 
-as you would expect if you measured the state and found it to be $\ket{0}$. To reiterate, such projectors cannot be applied on a state in a quantum computer deterministically. Instead, they can at best be applied randomly with the result $\ket{0}$ appearing with some fixed probability. The probability of such a measurement succeeding can be written as the expectation value of the quantum projector in the state
+as you would expect if you measured the state and found it to be $\ket{0}$. To reiterate, such projectors can't be applied on a state in a quantum computer deterministically. Instead, they can at best be applied randomly with the result $\ket{0}$ appearing with some fixed probability. The probability of such a measurement succeeding can be written as the expectation value of the quantum projector in the state
 
 $$
 \bra{\psi} (\ket{0} \bra{0})\ket{\psi} = |\braket{\psi | 0}|^2,
@@ -152,7 +152,7 @@ $$
 \ket{1} \bra{1} \otimes \mathbb{I} = \ket{1}\bra{1} \otimes (\ket{0} \bra{0}+\ket{1} \bra{1})= \ket{10}\bra{10} + \ket{11}\bra{11}.
 $$
 
-and you can see that this is consistent with the discussion about measurement likelihoods for multiqubit states using column-vector notation:
+and you can see that this projector is consistent with the discussion about measurement likelihoods for multiqubit states using column-vector notation:
 
 $$
 P(\text{first qubit = 1})= \psi^\dagger (e_{10}e_{10}^\dagger + e_{11}e_{11}^\dagger)\psi = |e_{10}^\dagger \psi|^2 + |e_{11}^\dagger \psi|^2,
@@ -175,9 +175,9 @@ Together, these conditions guarantee that $\rho$ can be thought of as an ensembl
 
 Pure quantum states are characterized by a single ket vector or wavefunction, and can't be written as a statistical mixture, or *convex combination*, of other quantum states. A mixed quantum state is a statistical ensemble of pure states. 
 
-A Bloch sphere represents pure states by a point on the surface of the sphere, whereas mixed states are represented by an interior point. The mixed state of a single qubit is represented by the center of the sphere, by symmetry. The purity of a state can be visualized as the degree in which it is close to the surface of the sphere.
+A Bloch sphere represents pure states by a point on the surface of the sphere, and mixed states by an interior point on the sphere. The center of the sphere represents a mixed state of a single qubit, by symmetry. The purity of a state can be visualized as the degree in which it's close to the surface of the sphere.
 
-This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations, and also allows you to describe both statistical uncertainty and quantum uncertainty within the same formalism.
+This concept of representing the state as a matrix, rather than a vector, is often convenient because it gives a convenient way of representing probability calculations. It also allows you to describe both statistical uncertainty and quantum uncertainty within the same formalism.
 
 A density operator $\rho$ represents a pure state if and only if: 
 
@@ -185,11 +185,11 @@ A density operator $\rho$ represents a pure state if and only if:
 - $\rho =\rho^2$
 - $tr(\rho^2)=1$
 
-To tell how close a given density operator $\rho$ is to being pure, you can look at the trace (that is, the sum of the diagonal elements) of $\rho^2$. A density operator represents a pure state if and only if $tr(\rho ^{2})=1$.
+To tell how close a given density operator $\rho$ is to being pure, you can look at the trace - the sum of the diagonal elements - of $\rho^2$. A density operator represents a pure state if and only if $tr(\rho ^{2})=1$.
 
 ## Q# gate sequences equivalent to quantum states
 
-A final point worth raising about quantum notation and the Q# programming language: earlier, this article mentioned that the quantum state is the fundamental object of information in quantum computing. It may then come as a surprise that in Q# there is no notion of a quantum state. Instead, Q# describes all states only by the operations used to prepare them. The previous example is an excellent illustration of this definition. Rather than expressing a uniform superposition over every quantum bit string in a register, you can represent the result as $H^{\otimes n} \ket{0}$. This exponentially shorter description of the state not only has the advantage that you can classically reason about it, but it also concisely defines the operations it needs to be propagated through the software stack to implement the algorithm. For this reason, Q# is designed to emit gate sequences rather than quantum states; however, at a theoretical level the two perspectives are equivalent.
+A final point worth raising about quantum notation and the Q# programming language: earlier, this article mentioned that the quantum state is the fundamental object of information in quantum computing. It may then come as a surprise that in Q# there's no notion of a quantum state. Instead, Q# describes all states only by the operations used to prepare them. The previous example is an excellent illustration of this definition. Rather than expressing a uniform superposition over every quantum bit string in a register, you can represent the result as $H^{\otimes n} \ket{0}$. This exponentially shorter description of the state has the advantage that you can classically reason about it. It also concisely defines the operations it needs to be propagated through the software stack to implement the algorithm. For this reason, Q# is designed to emit gate sequences rather than quantum states; however, at a theoretical level the two perspectives are equivalent.
 
 ## Related topics
 
