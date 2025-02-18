@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about equality comparison expressions in the Q# programming language.
 ms.author: brbenefield
-ms.date: 08/15/2024
+ms.date: 02/18/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
