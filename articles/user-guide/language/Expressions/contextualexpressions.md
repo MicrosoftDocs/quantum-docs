@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about types of expressions in Q# that only valid in certain contexts or that can be inferred automatically.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 02/18/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference

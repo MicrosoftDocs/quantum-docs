@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about using 'for' loops in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 02/18/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
