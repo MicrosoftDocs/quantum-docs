@@ -1,10 +1,10 @@
 # Quantum Development Kit documentation
 
-In this directory you can find the documentation for the Quantum
+In this directory, you can find the documentation for the Quantum
 Development Kit (QDK). This directory contains:
 
 - **Articles directories**: contain the articles for each section of
-  the documentation. In these directories you can find the following contents:
+  the documentation. In these directories, you can find the following contents:
   
   - Every directory contains a `toc.yml` file to display the content of the directory
     in the main Table Of Contents (TOC).
@@ -15,7 +15,7 @@ Development Kit (QDK). This directory contains:
 
     > :pencil: Although it's possible to refer the `*.md` files directly in the parent `TOC.yml` file, to keep things ordered we only refer them from the `toc.yml` of their current directory.
 
-- **Main table of contents (TOC) `TOC.yml` file**: in this file the sections of
+- **Main table of contents (TOC) `TOC.yml` file**: in this file, the sections of
   the website TOC are listed together with the reference to the main `toc.yml`
   file of the directory of each section.
 - **`index.yml`** YAML with the configuration of the landing page of the documentation.
@@ -41,16 +41,16 @@ for contributors:
   
 ## Broken links prevention
 
-The URL of an article page on Microsoft Learn is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://learn.microsoft.com/azure/quantum/user-guide/programs`. This means that any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL will change accordingly. If you don't redirect the original link to a working page, customers that have bookmarked the original article, and other pages that link to the original article, will get a **404 Page not found** error. To avoid this:
+The URL of an article page on Microsoft Learn is generated from the relative path to the **articles** folder on the GitHub repository where the source files are stored. For example, the article located at `https://github.com/MicrosoftDocs/quantum-docs/blob/main/articles/user-guide/programs.md` is assigned the URL `https://learn.microsoft.com/azure/quantum/user-guide/programs`. Any time you change an article's path, either because of a relocation, deletion, or change in the file name, the URL changes accordingly. If you don't redirect the original link to a working page, customers with bookmarks to the original article, and other pages that link to the original article, get a **404 Page not found** error. To avoid this:
 
-- If possible, do not rename or relocate articles.
+- If possible, don't rename or relocate articles.
 - If you need to rename, remove or relocate an article, you must add a *redirect* from the previous article location to the URL of the new article to avoid creating  broken links.
 
 ### Redirects
 
-A redirect captures a customer's request to a non-existent or outdated web location and redirects it to a working page, preventing **404 Page not found** errors. For example, if a customer has bookmarked the article  *<https://learn.microsoft.com/azure/quantum/old-article>*, a redirect can capture that URL and automatically redirect the user to *<https://learn.microsoft.com/azure/quantum/new-article>*.
+A redirect captures a customer's request to a non-existent or outdated web location and redirects it to a working page, preventing **404 Page not found** errors. For example, if a customer bookmarks the article  *<https://learn.microsoft.com/azure/quantum/old-article>*, a redirect can capture that URL and automatically redirect the user to *<https://learn.microsoft.com/azure/quantum/new-article>*.
 
-At the root of every repository there is a file named **.openpublishing.redirection.json**, which contains a `redirections` array:
+At the root of every repository, there is a file named **.openpublishing.redirection.json**, which contains a `redirections` array:
 
 ```json
 {
@@ -98,7 +98,7 @@ To prevent build errors that may delay the implementation of the redirect:
 
 - When you add a redirect, be sure to remove the old file as well.
 - Follow the formatting of the examples, ensuring that each entry is contained within braces { }, and that each entry is separated by a comma.
-- Do not include locale codes (for example, **en-us** or **fr-fr**) in the redirect_url for relative or absolute paths.
+- Don't include locale codes (for example, **en-us** or **fr-fr**) in the redirect_url for relative or absolute paths.
 
 ## Adding images
 
