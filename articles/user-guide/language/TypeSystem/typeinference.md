@@ -28,12 +28,12 @@ and this expression:
 Mapped(Length, [[], ["a"], ["b", "c"]])
 ```
 
-then the type argument to `Length` is inferred to be `Length<String[]>`, and the type arguments to `Mapped` are inferred to be `Mapped<String[], Int>`.
-It is not required to write these types explicitly.
+then the type argument to `Length` is inferred as `Length<String[]>`, and the type arguments to `Mapped` are inferred as `Mapped<String[], Int>`.
+It isn't required to write these types explicitly.
 
 ## Ambiguous types
 
-Sometimes there is not a single principal type that can be inferred for a type variable.
+Sometimes there isn't a single principal type that can be inferred for a type variable.
 In these cases, type inference fails with an error referring to an ambiguous type.
 For example, change the previous example slightly:
 
@@ -42,7 +42,7 @@ Mapped(Length, [[]])
 ```
 
 What is the type of `[[]]`?
-In some type systems, it's possible to give it the type `∀a. a[][]`, but this is not supported in Q#.
+In some type systems, it's possible to give it the type `∀a. a[][]`, but this isn't supported in Q#.
 A concrete type is required, but there are an infinite number of types that work: `String[][]`, `(Int, Int)[][]`, `Double[][][]`, and so on.
 You must explicitly say which type you meant.
 
