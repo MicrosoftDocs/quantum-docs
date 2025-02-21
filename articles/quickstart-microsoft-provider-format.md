@@ -273,8 +273,9 @@ To submit the pulse sequences, first install the Pulser SDK packages:
 ```python
 try:
     import pulser
+    import pulser_pasqal
 except ImportError:
-    !pip -q install pulser pulser-pasqal
+    !pip -q install pulser pulser-pasqal --index-url https://pypi.org/simple
 ```
 
 #### Create a quantum register
