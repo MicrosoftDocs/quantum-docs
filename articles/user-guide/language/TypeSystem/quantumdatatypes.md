@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about quantum data types in the Q# programming language.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 02/21/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
