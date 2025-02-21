@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about immutability and Q# types.
 ms.author: brbenefield
-ms.date: 02/01/2021
+ms.date: 02/21/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -13,7 +13,7 @@ uid: microsoft.quantum.qsharp.immutability
 
 # Immutability
 
-All types in Q# are *value types*. Q# does not have a concept of a reference or pointer. Instead, it allows you to reassign a new value to a previously declared variable via an assignment expression. For example, there is no distinction in behavior between reassignments for variables of type `Int` or variables of type `Int[]`. Consider the following sequence of statements:
+All types in Q# are *value types*. Q# doesn't have a concept of a reference or pointer. Instead, it allows you to reassign a new value to a previously declared variable via an assignment expression. For example, there's no distinction in behavior between reassignments for variables of type `Int` or variables of type `Int[]`. Consider the following sequence of statements:
 
 ```qsharp
     mutable arr1 = new Int[3];
@@ -30,4 +30,4 @@ Mutability within Q# is a concept that applies to a *symbol* rather than a type 
 it applies to the handle that allows you to access a value rather than to the value itself. It is *not* represented in the type system, implicitly or explicitly.
 
 Of course, this is merely a description of the formally defined behavior; under the hood, the actual implementation uses a reference counting scheme to avoid copying memory as much as possible.
-The modification is specifically done in place as long as there is only one currently valid handle that accesses a certain value.
+The modification is specifically done in place as long as there's only one currently valid handle that accesses a certain value.

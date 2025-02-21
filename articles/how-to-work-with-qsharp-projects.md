@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to define a Q# project that uses multiple source files, and use your projects as reusable custom libraries.  
 ms.author: brbenefield
-ms.date: 11/13/2024
+ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -21,7 +21,7 @@ In this article, you'll learn how to create, manage, and share *Q# projects*. Q#
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - Visual Studio Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
-- A GitHub account, if you are planning to publish your external project to a public GitHub repository.
+- A GitHub account, if you're planning to publish your external project to a public GitHub repository.
 
 For running Python programs, you also need:
 
@@ -30,7 +30,7 @@ For running Python programs, you also need:
 
 ## How Q# projects work
 
-A Q# project contains a Q# manifest file, named **qsharp.json**, and one or more *.qs files in a specified folder structure. When a user opens a \*.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode.  You can create a Q# project manually or directly in VS Code.
+A Q# project contains a Q# manifest file, named **qsharp.json**, and one or more *.qs files in a specified folder structure. When a user opens a \*.qs file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, the compiler operates in a single file mode. You can create a Q# project manually or directly in VS Code.
 
 An external Q# project is a standard Q# project that resides in another directory or on a public GitHub repository and acts as a custom library. An external project uses `export` statements to define which functions and operations can be accessed by external programs. Programs define the external project as a dependency in their manifest file, and use `import` statements to access the items (operations, functions, structs, and namespaces) in the external project. For more information, see [Using projects as external dependencies](#configuring-q-projects-as-external-dependencies).
 
@@ -93,7 +93,7 @@ qsharp.init(project_root = '../Teleportation_project')
 ```
 
 > [!NOTE]
-> If you are planning to compile your program to submit to the Azure Quantum service, you should also add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you may need to set the profile to `Base` or `Adaptive_RI`, for example, `qsharp.init(project_root = '../Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles).
+> If you're planning to compile your program to submit to the Azure Quantum service, you should also add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you may need to set the profile to `Base` or `Adaptive_RI`, for example, `qsharp.init(project_root = '../Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles).
 
 The path of the root folder is relative to the file that is setting it, meaning that your Q# project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
 
@@ -169,7 +169,7 @@ The following requirements and configurations apply to all Q# projects.
     or referencing them individually with the namespace
 
     ```qsharp
-    MyMathLib.Multiply(x,y);  
+    MyMathLib.Multiply(x,y); 
     ```
 
 **For Q# projects only**
@@ -187,13 +187,13 @@ These steps apply to all Q# projects.
 1. VS Code creates a minimal manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file.
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder.
-1. If you are accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the /src folder of the Q# project:
+1. If you're accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the /src folder of the Q# project:
 
     ```python
     qsharp.init(project_root = '../Teleportation_project')
     ```
 
-1. If you are using only Q# files in VS Code, when you open a Q# file, the compiler searches for a manifest file, determines the root folder of the project, and then scans the subfolder for \*.qs files.
+1. If you're using only Q# files in VS Code, when you open a Q# file, the compiler searches for a manifest file, determines the root folder of the project, and then scans the subfolder for \*.qs files.
 
 > [!NOTE]
 > You can also manually create the manifest file and the `/src` folder in step 2.
@@ -228,14 +228,14 @@ The main file, Main.qs, contains the entry point and references the `TeleportOpe
 
 ```qsharp
 
-    import TeleportOperations.TeleportLib.Teleport;   // references the Teleport operation from TeleportLib.qs
+    import TeleportOperations.TeleportLib.Teleport; // references the Teleport operation from TeleportLib.qs
 
     operation Main() : Unit {
         use msg = Qubit();
         use target = Qubit();
 
         H(msg);
-        Teleport(msg, target);    // calls the Teleport() operation from TeleportLib.qs
+        Teleport(msg, target); // calls the Teleport() operation from TeleportLib.qs
         H(target);
 
         if M(target) == Zero {
@@ -251,12 +251,12 @@ The main file, Main.qs, contains the entry point and references the `TeleportOpe
 
 ```qsharp
 
-    import TeleportOperations.PrepareState.PrepareStateLib.*;     // references the namespace in PrepareStateLib.qs
+    import TeleportOperations.PrepareState.PrepareStateLib.*; // references the namespace in PrepareStateLib.qs
  
     operation Teleport(msg : Qubit, target : Qubit) : Unit {
         use here = Qubit();
 
-        PrepareBellPair(here, target);      // calls the PrepareBellPair() operation from PrepareStateLib.qs
+        PrepareBellPair(here, target); // calls the PrepareBellPair() operation from PrepareStateLib.qs
         Adjoint PrepareBellPair(msg, here);
 
         if M(msg) == One { Z(target); }
@@ -278,7 +278,7 @@ The *PrepareStateLib.qs* file contains a standard reusable operation to create a
 
 ### Running the programs
 
-Select the tab for the environment in which you are running your program.
+Select the tab for the environment in which you're running your program.
 
 ### [Running a Q# program](#tab/tabid-qsharp-run)
 
@@ -421,13 +421,13 @@ operation Operation_B() : Unit  {
 }
 
 // makes just Operation_A available to calling programs
-export Operation_A;           
+export Operation_A;
 
-// makes Operation_A and Operation_B available to calling programs         
+// makes Operation_A and Operation_B available to calling programs 
 export Operation_A, Operation_B, etc.; 
 
 // makes Operation_A available as 'OpA'
-export Operation_A as OpA;             
+export Operation_A as OpA;
 ```
 
 ### Using the import statement
@@ -457,13 +457,13 @@ The `import` statement also supports wild card syntax and aliases
 
 ```qsharp
 // imports all items from the "MyMathFunctions" namespace
-import MyMathFunctions.*;        
+import MyMathFunctions.*; 
 
 // imports the namespace as "Math", all items are accessible via "Math.<callable>"
-import MyMathFunctions as Math;   
+import MyMathFunctions as Math;
 
 // imports a single item, available in the local scope as "Add"
-import MyMathFunctions.MyFunction as Add;        
+import MyMathFunctions.MyFunction as Add;
 
 // imports can be combined on one line
 import MyMathFunctions.MyFunction, MyMathFunctions.AnotherFunction as Multiply; 
@@ -496,14 +496,14 @@ For this example, you'll use the same teleportation program as the earlier examp
 1. In Project_A, copy the following code into Main.qs
 
     ```qsharp
-    import MyTeleportLib.Teleport;   // imports the Teleport operation from the MyTeleportLib namespace defined in the manifest file
+    import MyTeleportLib.Teleport; // imports the Teleport operation from the MyTeleportLib namespace defined in the manifest file
 
     operation Main() : Unit {
         use msg = Qubit();
         use target = Qubit();
 
         H(msg);
-        Teleport(msg, target);    // calls the Teleport() operation from the MyTeleportLib namespace
+        Teleport(msg, target); // calls the Teleport() operation from the MyTeleportLib namespace
         H(target);
 
         if M(target) == Zero {
