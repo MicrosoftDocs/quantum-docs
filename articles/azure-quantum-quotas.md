@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 02/24/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: faq
@@ -15,15 +15,13 @@ uid: microsoft.quantum.quotas
 
 # FAQ: Limits and quotas in Azure Quantum
 
-In this article, you'll find the guidelines to understand limits and quotas in the usage of Azure Quantum providers.
+In this article, you find the guidelines to understand limits and quotas in the usage of Azure Quantum providers.
 
 ## What are quotas in Azure Quantum?
 
-Quotas are provider-defined limits on the usage of QPUs targets. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. 
+Quotas are limits on the usage of QPUs targets defined by the providers. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. 
 
-Quotas are based on your provider plan selection and can usually be increased with a support ticket.  
-
-The usage tracked by quotas isn't necessarily tied to a cost or credit, but it might be correlated.
+Quotas are based on your provider plan selection and can usually be increased with a support ticket. The usage tracked by quotas isn't necessarily tied to a cost or credit, but it might be correlated.
 
 ## How are quotas defined in Azure Quantum?
 
@@ -38,10 +36,10 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 
 ## How can I view my remaining quota?
 
-Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas and will not have usage information to display.
+Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas and don't have usage information to display.
 
 > [!NOTE]
-> If you are using an Azure Quantum Credits plan, and not a billing plan, the quota information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
+> If you are using an Azure Quantum Credits plan, and not a billing plan, the quota information maps to your allocated credits. In that case, the quota lists the total number of credits you received.
 
 ### Track quota using Azure portal
 
@@ -56,19 +54,19 @@ Azure Quantum usage and quotas are measured in terms of each provider's unit of 
 
  :::image type="content" source="media/portal-quotas-blade.png" alt-text="Screenshot of the quotas blade in Azure portal." lightbox="media/portal-quotas-blade.png":::
 
-In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, as well as the interval associated.
+In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, and the interval associated.
 
 ### Track quota using Azure CLI
 
 You can see your quotas by using the Azure Command-Line Interface (Azure CLI). For more information, see [How to manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
 
-1. Install the **Azure CLI `quantum`** extension. Open a command prompt and run the following command, which will also upgrade the extension if a previous version is already installed.
+1. Install the **Azure CLI `quantum`** extension. Open a command prompt and run the following command, which also upgrades the extension if a previous version is already installed.
 
     ```azurecli
     az extension add --upgrade -n quantum
     ```
 
-1. **Log in** to Azure using your credentials. You will see list of subscriptions associated with your account.
+1. **Log in** to Azure using your credentials. You see list of subscriptions associated with your account.
 
    ```azurecli
    az login
@@ -103,7 +101,7 @@ You can see your quotas by using the Azure Command-Line Interface (Azure CLI). F
     |hqc      |  0.0  |  800.0     | Infinite | quantinuum  | Subscription | 0.0|
     ```
 
-See the above output as an example. In this case, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has a limit of `800` HQCs with Quantinuum, of which `0` have been used.
+    In this example, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has a limit of `800` HQCs with Quantinuum, of which `0` are used.
 
 The **Scope** column indicates whether the quota refers to the current workspace or the subscription.
 
@@ -119,7 +117,7 @@ The **Period** column indicates the period when your quota is renewed.
 
 1. Install the latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview).
 
-1. Open a new Python file. Instantiate a **`Workspace` object**, which allows you to connect to the workspace you've previously deployed in Azure.
+1. Open a new Python file. Instantiate a **`Workspace` object**, which allows you to connect to the workspace you previously deployed in Azure.
 
     ```python
     from azure.quantum import Workspace
@@ -149,7 +147,7 @@ The **Period** column indicates the period when your quota is renewed.
      {'dimension': 'combined_job_hours', 'scope': 'Subscription', 'provider_id': 'Microsoft', 'utilization': 0.011701412083333333, 'holds': 0.0, 'limit': 1000.0, 'period': 'Monthly'}]
     ```
 
-See the above output as an example. In this case, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The number of concurrent jobs is the number of jobs that can be queued per workspace at any one time.
+    In this example, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The number of concurrent jobs is the number of jobs that can be queued per workspace at any one time.
 
 The `scope` item indicates whether the quota refers to the current workspace or the subscription.
 
@@ -237,9 +235,9 @@ The `period` item indicates the period when your quota is renewed.
 > print('Quantinuum eHQC quota use in current workspace:', "{:,}".format(amount_utilized_quantinuum_ehqc), '/', "{:,}".format(quantinuum_ehqc_quota))
 > ```
 
-## How can I request additional quota?
+## How can I request more quota?
 
-If you are not using an Azure Quantum Credits plan, then you can request quota increases by raising a support ticket.
+If you aren't using an Azure Quantum Credits plan, then you can request quota increases by raising a support ticket.
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select your **Azure Quantum workspace**.
