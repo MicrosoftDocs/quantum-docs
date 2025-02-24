@@ -54,7 +54,7 @@ Let's break this Q# program down into its components.
 
 ### User namespaces
 
-Q# programs can optionally start with a user-defined [namespace](xref:microsoft.quantum.qsharp.namespaces), such as:
+Q# programs can optionally start with a user-defined namespace, such as:
 
 ```qsharp
 namespace Superposition {
@@ -121,9 +121,9 @@ operation Main() : Result {
 
 ### Types
 
-Types are essential in any programming language because they define the data that a program can work with. Q# provides [built-in types](xref:microsoft.quantum.qsharp.typesystem-overview) that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that define ranges, arrays, and tuples. 
+Types are essential in any programming language because they define the data that a program can work with. Q# provides built-in types that are common to most languages, including `Int`, `Double`, `Bool`, and `String`, and types that define ranges, arrays, and tuples.
 
-Q# also provides types that are [specific to quantum computing](xref:microsoft.quantum.qsharp.quantumdatatypes). For example, the `Result` type represents the result of a qubit measurement and can have two values: `Zero` or `One`.
+Q# also provides types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have two values: `Zero` or `One`.
 
 In the **Superposition** program, the `MeasureOneQubit()` operation returns a `Result` type, which corresponds to the return type of the `M` operation. The measurement result is stored in a new variable that's defined using the `let` statement:
 
@@ -160,11 +160,9 @@ H(qubits[0]); // Apply H to the first qubit.
 X(qubits[1]); // Apply X to the second qubit.
 ```
 
-For more information, see [Use statement](xref:microsoft.quantum.qsharp.quantummemorymanagement#use-statement).
-
 ### Quantum operations
 
-After allocating a qubit, you can pass it to operations and functions. [Operations](xref:microsoft.quantum.qsharp.operationsandfunctions) are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
+After allocating a qubit, you can pass it to operations and functions. Operations are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
 
 To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the **Superposition** program, the `MeasureOneQubit()` operation takes no parameters and returns a `Result` type:
 
@@ -307,16 +305,11 @@ When you compile and run a quantum program, the QDK creates an instance of the q
 
 ### Submit your program to real quantum hardware
 
-You can submit your Q# programs to Azure Quantum to run on real quantum hardware. You can also run and submit quantum circuits written in Qiskit and Cirq languages. When you run a quantum program in Azure Quantum, you create and run a **job**.  For more information, see [how to submit Q# programs to Azure Quantum](xref:microsoft.quantum.submit-jobs). 
+Once you've tested your program in simulation, you can run it on real quantum hardware. When you run a quantum program in Azure Quantum, you create and run a **job**. To submit a job to the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-xref:microsoft.quantum.work-with-jobs
+Azure Quantum offers some of the most compelling and diverse quantum hardware. See [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list) for the current list of supported hardware providers.
 
-Azure Quantum offers some of the most compelling and diverse quantum hardware available today from industry leaders. See [Quantum computing providers](xref:microsoft.quantum.reference.qc-target-list) for the current list of supported hardware providers.
-
-> [!NOTE]
-> To submit a job to the Azure Quantum providers, you need an Azure account and quantum workspace. If you don't have a quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-
-Once you submit your job, Azure Quantum manages the job lifecycle, including job scheduling, execution, and monitoring. You can track the status of your job and view the results in the Azure Quantum portal. For more information, see [Work with Azure Quantum jobs](xref:microsoft.quantum.work-with-jobs).
+Once you submit your job, Azure Quantum manages the job lifecycle, including job scheduling, execution, and monitoring. You can track the status of your job and view the results in the Azure Quantum portal.
 
 ## Related content
 

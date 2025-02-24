@@ -36,7 +36,7 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 > [!NOTE]
 > If a provider doesn't appear in the list, then that provider doesn't define any quotas.
 
-## How can I viewing my remaining quota?
+## How can I view my remaining quota?
 
 Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas and will not have usage information to display.
 
