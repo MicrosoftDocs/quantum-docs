@@ -2,7 +2,7 @@
 author: bradben
 description: This guide shows you how to create and delete quantum workspaces using the Azure command-line tool.
 ms.author: brbenefield
-ms.date: 08/19/2024
+ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.custom: devx-track-azurecli
@@ -57,11 +57,11 @@ To use the Azure Quantum service, you need:
 
 To create a new Azure Quantum workspace, you need to know:
 
-- The location or Azure region name where the resource will live. You can use the [list of regions and their resource manager codes](https://github.com/Azure/azure-extensions-cli#regions) supported by the Azure CLI tool, for example, **westus**.
+- The location or Azure region name to create the resource. You can use the [list of regions and their resource manager codes](https://github.com/Azure/azure-extensions-cli#regions) supported by the Azure CLI tool, for example, **westus**.
 - The resource group associated with the new workspace, for example, **MyResourceGroup**.
 - A storage account in the same resource group and subscription as the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](/cli/azure/storage/account#az_storage_account_create), for example, **MyStorageAccount**.
 - The name of the quantum workspace to create, for example, **MyQuantumWorkspace**.
-- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you need to specify the corresponding plan along with the providers, unless you want to start with the providers that offer free credit – they are automatically added to your workspace.
+- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you need to specify the corresponding plan along with the providers, unless you want to start with the providers that offer free credit – they're automatically added to your workspace.
 
 If you already know the provider and plan names to use in your workspace, you can skip to step four, below. If you want to start with the providers that offer free credit, you can enter the following command:
 
@@ -73,7 +73,7 @@ If you already know the provider and plan names to use in your workspace, you ca
       -a MyStorageAccount
    ```
 
-You might be prompted to accept terms of use.  Enter `Y` to accept the terms.  Note that the `-r` parameter shown in step four, below, was not required. 
+You might be prompted to accept terms of use. Enter `Y` to accept the terms. Note that the `-r` parameter shown in step four, below, wasn't required. 
 
 If you need to determine which providers and plans to use, proceed as follows:
 
@@ -88,7 +88,7 @@ If you need to determine which providers and plans to use, proceed as follows:
    > [!TIP]
    > If want to see which providers give free credit, use the `--autoadd-only` parameter, for example:<br />
    > `az quantum offerings list --autoadd-only -l westus -o table`<br />
-   > As mentioned previously, those providers are automatically added to your workspace. You do not need to specify them with the `-r` parameter.
+   > As mentioned previously, those providers are automatically added to your workspace. You don't need to specify them with the `-r` parameter.
 
 1. Once you determine the provider and plan to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MyPlan** as example values):
 
@@ -148,7 +148,7 @@ If you know the name and resource group of a quantum workspace you want to delet
    ```
 
 > [!TIP]
-> If you don't remember the exact name, you can view the entire list of quantum workspaces in your subscription using  `az quantum workspace list -o table`.
+> If you don't remember the exact name, you can view the entire list of quantum workspaces in your subscription using `az quantum workspace list -o table`.
 
 After you delete a workspace, it is still listed while it's being deleted in the cloud. However, the `provisioningState` property of the workspace changes immediately to indicate that it's being deleted. You can see this information by using the `show` command:
 

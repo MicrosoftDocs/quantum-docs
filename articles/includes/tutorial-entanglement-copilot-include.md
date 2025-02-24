@@ -1,7 +1,7 @@
 ---
 author: bradben
 ms.author: brbenefield
-ms.date: 12/18/2024
+ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -39,11 +39,11 @@ The `SetQubitState` operation:
 
 1. Takes two parameters: a type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types), named `desired`, that represents the desired state for the qubit to be in (`Zero` or `One`), and a type [`Qubit`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). 
 1. Performs a measurement operation, `M`, which measures the state of the qubit (`Zero` or `One`) and compares the result to the value specified in `desired`.
-1. If the measurement does not match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state. 
+1. If the measurement doesn't match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state. 
 
 ## Write a test operation to test the Bell state
 
-Next, to demonstrate the effect of the `SetQubitState` operation, create another operation named `Main`. This operation will allocate two qubits, call `SetQubitState` to set the first qubit to a known state, and then measure the qubits to see the results.
+Next, to demonstrate the effect of the `SetQubitState` operation, create another operation named `Main`. This operation allocates two qubits, call `SetQubitState` to set the first qubit to a known state, and then measure the qubits to see the results.
 
 Copy the following code into the code editor window, below the `SetQubitState` operation. 
 
@@ -185,7 +185,7 @@ Q2 - Ones: 0
 
 ## Put a qubit in superposition
 
-Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you put the first qubit into a **superposition state**, where a measurement of the qubit returns `Zero` ~50% of the time and `One` ~50% of the time. Conceptually, the qubit can be thought of as having an equal probability of measuring either `Zero` or `One`.
+Currently, the qubits in the program are all in a **classical state**, that is, they're either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them. Before entangling the qubits, you put the first qubit into a **superposition state**, where a measurement of the qubit returns `Zero` ~50% of the time and `One` ~50% of the time. Conceptually, the qubit can be thought of as having an equal probability of measuring either `Zero` or `One`.
 
 To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit to a known state](#initialize-a-qubit-to-a-known-state) procedure earlier, which flipped a qubit from 0 to 1 (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
@@ -215,7 +215,7 @@ Q2 - Zeros: 1000
 Q2 - Ones: 0
 ```
 
-Every time you run the program, the results for the first qubit vary slightly, but will be close to 50% `One` and 50% `Zero`, while the results for the second qubit remain `Zero` all the time.
+Every time you run the program, the results for the first qubit vary slightly, but are close to 50% `One` and 50% `Zero`, while the results for the second qubit remain `Zero` all the time.
 
 ```output
 Q1 - Zeros: 510           
@@ -240,7 +240,7 @@ Q2 - Ones: 0
 
 As mentioned earlier, entangled qubits are connected such that they cannot be described independently from each other. That is, whatever operation happens to one qubit, also happens to the entangled qubit. This allows you to know the resulting state of one qubit without measuring it, just by measuring the state of the other qubit. (This example uses two qubits; however, it is also possible to entangle three or more qubits).
 
-To enable entanglement, Q# provides the `CNOT` operation, which stands for *Controlled-NOT*.  The result of running this operation on two qubits is to flip the second qubit if the first qubit is `One`.
+To enable entanglement, Q# provides the `CNOT` operation, which stands for *Controlled-NOT*. The result of running this operation on two qubits is to flip the second qubit if the first qubit is `One`.
 
 Add the `CNOT` operation to your program immediately after the `H` operation. Your full program should look like this:
 

@@ -273,8 +273,9 @@ To submit the pulse sequences, first install the Pulser SDK packages:
 ```python
 try:
     import pulser
+    import pulser_pasqal
 except ImportError:
-    !pip -q install pulser
+    !pip -q install pulser pulser-pasqal --index-url https://pypi.org/simple
 ```
 
 #### Create a quantum register
@@ -325,6 +326,7 @@ For any given arbitrary register, a neutral-atom QPU will place traps according 
     This option allows for the automatic generation of a layout based on a specified register. However, for large registers, this process may yield sub-optimal solutions due to limitations in the algorithm used to create the layout.
     
     ```python
+    from pulser import Register
     qubits = {
         "q0": (0, 0),
         "q1": (0, 10),
@@ -343,6 +345,7 @@ For any given arbitrary register, a neutral-atom QPU will place traps according 
 
     ```python
     import numpy as np
+    from pulser.register.register_layout import RegisterLayout
 
     # Generating random coordinates
     np.random.seed(301122)  # Keeps results consistent between runs

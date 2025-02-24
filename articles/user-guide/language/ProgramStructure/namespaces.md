@@ -2,7 +2,7 @@
 author: bradben
 description: Learn about how namespaces are used in the Q# programming language.
 ms.author: brbenefield
-ms.date: 10/24/2024
+ms.date: 02/18/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference

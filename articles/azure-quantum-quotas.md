@@ -243,7 +243,7 @@ If you aren't using an Azure Quantum Credits plan, then you can request quota in
 2. Select your **Azure Quantum workspace**.
 3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab. 
 4. Either press the **Increase** button on the quota page or select the **New support request** button on the side panel in the portal.
-5. A support ticket will open. Follow these steps to fill out the request.
+5. A support ticket opens. Follow these steps to fill out the request.
     1. Describe the issue as **Azure Quantum Quota Override Request**
     1. Select **Technical** for “Issue Type” 
     1. Select the subscription that the workspace is in 
