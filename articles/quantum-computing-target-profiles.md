@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 description: This document provides an overview of target profile types available in Azure Quantum and their limitations. 
-ms.date: 11/18/2024
+ms.date: 01/24/2025
 ms.author: sonialopez
 ms.service: azure-quantum
 ms.subservice: core
@@ -9,21 +9,21 @@ ms.topic: how-to
 no-loc: [QIR Base, QIR Adaptive RI, target, targets, full]
 title: Target Profile Types 
 uid: microsoft.quantum.target-profiles
+
+# customer intent: As a quantum developer, I want to understand the different target profile types available in Azure Quantum and their limitations so that I can develop quantum programs that run on the appropriate quantum devices.
 ---
 
 # Different types of target profiles in Azure Quantum
 
-Quantum devices are still an emerging technology, and not all of them can run every Q# code. As such, you need to keep some restrictions in mind when developing quantum programs.
+Quantum devices are still an emerging technology and unfortunately not all of them can run every Q# code. As such, you need to keep some restrictions in mind when developing quantum programs. The target profile types are used to define the capabilities of the quantum devices that you can target with your Q# programs, that is, the capabilities of the current quantum devices available in Azure Quantum.
 
-The target profile types are used to define the capabilities of the quantum devices that you can target with your Q# programs. 
-
-This article discusses the different types of target profiles available in Azure Quantum, their limitations, and how to configure them in the Quantum Development Kit (QDK).
+This article discusses the different types of target profiles in Azure Quantum, their limitations, and how to configure them using the Quantum Development Kit (QDK).
 
 ## Target profiles and their limitations 
 
-Currently, Azure Quantum and the QDK manage three different target profiles:
+Currently, Azure Quantum and the QDK manage three different target profiles, depending on their ability to run [quantum intermediate representation (QIR) programs](xref:microsoft.quantum.concepts.qir).
 
-- [**:::no-loc text="Unrestricted":::**:](#create-and-run-programs-for--target-profile) This profile can run any [QIR program](xref:microsoft.quantum.concepts.qir), and thus any Q# program, within the limits of memory for simulators or the number of qubits for physical quantum computers.
+- [**:::no-loc text="Unrestricted":::**:](#create-and-run-programs-for--target-profile) This profile can run any QIR program, and thus any Q# program, within the limits of memory for simulators or the number of qubits for physical quantum computers.
 - [**:::no-loc text="QIR base":::**:](#create-and-run-programs-for--target-profile-1) This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
 - [**:::no-loc text="QIR Adaptive RI":::**:](#create-and-run-programs-for--target-profile-2) This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement.
 

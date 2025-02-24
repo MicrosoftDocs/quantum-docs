@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: SoniaLopezBravo
   ms.author: sonialopez
-  ms.date: 01/17/2025
+  ms.date: 02/24/2025
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -24,6 +24,8 @@ landingContent:
         links:
           - text: What is Azure Quantum?
             url: overview-azure-quantum.md
+          - text: Azure Quantum pricing plans
+            url: pricing.md
       - linkListType: deploy
         links:
           - text: Create a quantum workspace
@@ -56,55 +58,44 @@ landingContent:
         links:
           - text: Create a quantum random number generator
             url: tutorial-qdk-quantum-random-number-generator.md
+          - text: Explore quantum entanglement
+            url: tutorial-qdk-explore-entanglement.md
 
 
 # Develop with QDK
   - title: Advanced development with the Quantum Development Kit
     linkLists:
+      - linkListType: get-started
+        links:
+          - text: Different ways to run Q# programs
+            url: qsharp-ways-to-work.md
       - linkListType: overview
         links:
-          - text: Submit Q# programs to Azure Quantum with Visual Studio Code
-            url: how-to-submit-jobs.md
-      - linkListType: how-to-guide
-        links:
-          - text: Work with Q# projects
-            url: how-to-work-with-qsharp-projects.md
-          - text: Debug and test Q# programs
-            url: testing-debugging.md
-          - text: Visualize quantum circuit diagrams
-            url: how-to-visualize-circuits.md
-      - linkListType: tutorial
-        links:
-          - text: Explore quantum entanglement
-            url: tutorial-qdk-explore-entanglement.md
-          - text: Implement Grover's algorithm
-            url: tutorial-qdk-grovers-search.md
-
-  # Resource Estimation
-  - title: Azure Quantum Resource Estimator
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is the Azure Quantum Resource Estimator?
+          - text: Introduction to the Azure Quantum Resource Estimator
             url: intro-to-resource-estimation.md
-      - linkListType: quickstart
-        links:
-          - text: Run your first resource estimation program
-            url: quickstart-microsoft-resources-estimator.md
+          - text: Introduction to hybrid quantum computing
+            url: hybrid-computing-overview.md
 
-  # Management
-  - title: Manage your Azure Quantum resources
+
+
+  # Concepts
+  - title: Learn about quantum computing
     linkLists:
-      - linkListType: overview
+      - linkListType: learn
         links:
-          - text: Azure Quantum pricing plans
-            url: pricing.md
-          - text: Limits and quotas
-            url: azure-quantum-quotas.md
-      - linkListType: how-to-guide
-        links:
-          - text: Connect to your quantum workspace
-            url: how-to-connect-workspace.md
+          - text: What is quantum computing?
+            url: overview-understanding-quantum-computing.md
+          - text: The qubit
+            url: concepts-the-qubit.md
+          - text: Vectors and matrices
+            url: concepts-vectors-and-matrices.md
+          - text: Dirac notation
+            url: concepts-dirac-notation.md
+          - text: Quantum circuits
+            url: concepts-circuits.md
+          - text: Quantum error correction
+            url: concepts-error-correction.md
+          
 
 
 

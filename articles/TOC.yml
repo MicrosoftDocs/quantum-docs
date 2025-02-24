@@ -10,7 +10,7 @@
     href: overview-microsoft-quantum-machine.md
 - name: Get started
   items:
-  - name: Explore Copilot in Azure Quantum
+  - name: Explore with Copilot in Azure Quantum
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
