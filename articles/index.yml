@@ -81,7 +81,7 @@ landingContent:
   # Concepts
   - title: Learn about quantum computing
     linkLists:
-      - linkListType: learn
+      - linkListType: concept
         links:
           - text: What is quantum computing?
             url: overview-understanding-quantum-computing.md
