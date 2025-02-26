@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: This document provides instructions on how to authenticate in your Azure Quantum workspace using a service principal.
 ms.author: sonialopez
-ms.date: 06/18/2024
+ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -60,8 +60,8 @@ To create a service principal, assign access, and generate a credential:
 ## Authenticate as the service principal
 
 **Option 1: Using environment variables**:
-The default credential used in the `Workspace` object creation is the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential), which will attempt several types of authentication.
-The first one is the [EnvironmentCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.EnvironmentCredential), and with that you pass the Service Principal credentials via the following environment variables:
+The default credential used in the `Workspace` object creation is the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python), which will attempt several types of authentication.
+The first one is the [EnvironmentCredential](/python/api/azure-identity/azure.identity.environmentcredential?view=azure-python), and with that you pass the Service Principal credentials via the following environment variables:
 - **AZURE_TENANT_ID**: ID of the service principal’s tenant. Also called its ‘directory’ ID.
 - **AZURE_CLIENT_ID**: the service principal’s client ID.
 - **AZURE_CLIENT_SECRET**: one of the service principal’s client secrets.
@@ -80,6 +80,6 @@ workspace.credentials = credential
 ```
 
 > [!NOTE]
-> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-identity/1.6.0/azure.identity.html#azure.identity.DefaultAzureCredential).
+> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python).
 
 
