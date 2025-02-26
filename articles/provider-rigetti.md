@@ -2,7 +2,7 @@
 author: kalzoo
 ms.author: brbenefield
 description: This document provides the technical details of the Rigetti provider
-ms.date: 02/04/2025
+ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -25,8 +25,7 @@ The Rigetti provider makes the following targets available:
 |Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
-|[Ankaa-3](#ankaa-9q-3) |rigetti.qpu.ankaa-3 | 84 qubits|  |
-|[Ankaa-9Q-3](#ankaa-9q-3) |rigetti.qpu.ankaa-9q-3 | 9 qubits|  |
+|[Ankaa-3](#ankaa-3) |rigetti.qpu.ankaa-3 | 84 qubits|  |
 
 > [!NOTE]
 > Rigetti simulators and hardware targets do not support Cirq programs. 
@@ -46,14 +45,6 @@ An 84-qubit quantum processor.
 - Target ID: `rigetti.qpu.ankaa-3`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
-### Ankaa-9Q-3
-
-A 9-qubit quantum processor.
-
-- Job Type: `Quantum Program`
-- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
-- Target ID: `rigetti.qpu.ankaa-9q-3`
-- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
 ## Simulators
 
