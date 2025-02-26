@@ -60,8 +60,8 @@ To create a service principal, assign access, and generate a credential:
 ## Authenticate as the service principal
 
 **Option 1: Using environment variables**:
-The default credential used in the `Workspace` object creation is the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python), which will attempt several types of authentication.
-The first one is the [EnvironmentCredential](/python/api/azure-identity/azure.identity.environmentcredential?view=azure-python), and with that you pass the Service Principal credentials via the following environment variables:
+The default credential used in the `Workspace` object creation is the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential), which will attempt several types of authentication.
+The first one is the [EnvironmentCredential](/python/api/azure-identity/azure.identity.environmentcredential), and with that you pass the Service Principal credentials via the following environment variables:
 - **AZURE_TENANT_ID**: ID of the service principal’s tenant. Also called its ‘directory’ ID.
 - **AZURE_CLIENT_ID**: the service principal’s client ID.
 - **AZURE_CLIENT_SECRET**: one of the service principal’s client secrets.
@@ -80,6 +80,6 @@ workspace.credentials = credential
 ```
 
 > [!NOTE]
-> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there's a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python).
+> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there's a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential).
 
 
