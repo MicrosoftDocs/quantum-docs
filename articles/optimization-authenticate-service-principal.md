@@ -28,7 +28,7 @@ To create a service principal, assign access, and generate a credential:
 
 1. [Create an Azure AD application](/azure/active-directory/develop/howto-create-service-principal-portal):
     >[!NOTE]
-    > You do not need to set a redirect URI.
+    > You don't need to set a redirect URI.
 
     1. Once created, write down the *Application (client) ID* and the *Directory (tenant) ID*.
 
@@ -51,7 +51,7 @@ To create a service principal, assign access, and generate a credential:
     1. Assign either the **Contributor** or **Owner** role.
 
 > [!NOTE]
-> In order to create a role assignment on the resource group or workspace, you need to be an _owner_ or _user access administrator_ at the scope of the role assignment. If you do not have permissions to create the Service Principal in your subscription, you will need to request permission from the _owner_ or _administrator_ of the Azure subscription.
+> In order to create a role assignment on the resource group or workspace, you need to be an _owner_ or _user access administrator_ at the scope of the role assignment. If you don't have permissions to create the Service Principal in your subscription, you'll need to request permission from the _owner_ or _administrator_ of the Azure subscription.
 >
 > If you have permissions only at the resource group or workspace level, you can to create the service principal under the Contributor role using:
 >
@@ -80,6 +80,6 @@ workspace.credentials = credential
 ```
 
 > [!NOTE]
-> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there is a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python).
+> The `workspace.login()` method has been deprecated and is no longer necessary. The first time there's a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python).
 
 
