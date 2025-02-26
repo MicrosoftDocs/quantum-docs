@@ -2,7 +2,7 @@
 author: SoniaLopezBravo
 description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: sonialopez
-ms.date: 12/05/2024
+ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept-article
@@ -15,7 +15,7 @@ uid: microsoft.quantum.providers-pricing
 
 # Pricing plans for Azure Quantum providers
 
-In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information below is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
+In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information in this article is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you're using. 
 
 ## IonQ 
 
@@ -49,7 +49,7 @@ Azure Quantum Credits consumption is based on a resource-usage model. The cost o
 |IonQ Forte (Private preview) |<ul><li>USD0.000220 / 1-qubit-gate shot (deducted from your credits)</li><li> USD0.000975 / 2-qubit-gate shot (deducted from your credits)</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>|
 
 > [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum won’t charge you when you reach your credit limit.
+> Once you have consumed all the credits you need to switch to a different plan to continue using IonQ. Azure Quantum doesn't charge you when you reach your credit limit.
 
 > [!IMPORTANT]
 > There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
@@ -100,7 +100,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## PASQAL
 
-[PASQAL](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor, the 100-qubit Fresnel. There is no added charge per job or per shot. The Emu-TN simulator is free of charge for all users (subject to limit quotas depending on the plan).
+[PASQAL](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor, the 100-qubit Fresnel. There's no added charge per job or per shot. The Emu-TN simulator is free of charge for all users (subject to limit quotas depending on the plan).
 
 PASQAL offers two billing plans: **Azure Quantum Credits** and **Pay As You Go**.
 
@@ -137,7 +137,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 [Quantinuum](xref:microsoft.quantum.providers.quantinuum) uses a system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units defined by Quantinuum are*H-System Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
-HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
+HQCs and eHQCs are used to calculate the cost of running a job, and they're calculated based on the following formula:
 
 $$
 HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
@@ -196,7 +196,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 ***
 ## Rigetti
 
-[Rigetti](xref:microsoft.quantum.providers.rigetti) charges for job execution time on their quantum processors. There is no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://github.com/quil-lang/qvm) simulator is free for all users.
+[Rigetti](xref:microsoft.quantum.providers.rigetti) charges for job execution time on their quantum processors. There's no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://github.com/quil-lang/qvm) simulator is free for all users.
 
 Rigetti offers two billing plans: **Azure Quantum Credits** and **Pay As You Go**.
 
@@ -208,7 +208,7 @@ Azure Quantum Credits consumption is based on a resource-usage model and cost of
 
 |Pricing | Includes access to  |
 |---|---|  
-|Use is deducted from the Azure Quantum Credits based on the job execution time only | Rigetti Ankaa-3 <br /> Rigetti Ankaa-9Q-3 |
+|Use is deducted from the Azure Quantum Credits based on the job execution time only | Rigetti Ankaa-3|
 
 > [!NOTE]
 > Once you have consumed all the credits you need to switch to a different plan to continue using Rigetti. Azure Quantum won’t charge you when you reach your credit limit.
@@ -223,7 +223,7 @@ The Pay-as-you-go plan consists of *a la carte* access to Rigetti QPUs. The usag
 
 |Pricing | Includes access to   |
 |---|---|  
-|USD 0.013 per 10-millisecond increment of job execution time | Rigetti Ankaa-3 <br /> Rigetti Ankaa-9Q-3 |
+|USD 0.013 per 10-millisecond increment of job execution time | Rigetti Ankaa-3 |
 
 
 ***

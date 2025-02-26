@@ -1,7 +1,7 @@
 ---
 author: SoniaLopezBravo
 ms.author: sonialopez
-ms.date: 01/13/2025
+ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -93,7 +93,6 @@ This workspace's targets:
 - quantinuum.sim.h1-1sc
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
-- rigetti.qpu.ankaa-9q-3
 - rigetti.qpu.ankaa-3
 ```
 

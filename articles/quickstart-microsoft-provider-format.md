@@ -2,7 +2,7 @@
 author: bradben
 description: Learn how to submit specific formatted quantum circuits with QIR, OpenQASM, or Pulser SDK to the Azure Quantum service.
 ms.author: brbenefield
-ms.date: 08/09/2024
+ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -547,7 +547,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
 
     ```python
     qc = get_qvm()  # For simulation
-    # qc = get_qpu("Ankaa-9Q-3") for submitting to a QPU
+    # qc = get_qpu("Ankaa-3") for submitting to a QPU
     ```
 
 1. Create a Quil program. Any valid Quil program is accepted, but the readout **must** be named `ro`.
