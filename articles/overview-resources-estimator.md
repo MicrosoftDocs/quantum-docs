@@ -387,7 +387,7 @@ qsharp.estimate("RunProgram()", params=
 
 ### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `"errorCorrectionThreshold"` $p^\*$, and the `distanceCoefficientPower` $k$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
 
 You can use the following code as a template for QEC schemes:
 
