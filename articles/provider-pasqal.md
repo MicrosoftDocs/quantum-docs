@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
+author: bradben
+ms.author: brbenefield
 description: This document provides the technical details of the simulators and QPU of the PASQAL quantum provider.
-ms.date: 09/16/2024
+ms.date: 03/10/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -26,8 +26,6 @@ The following targets available from this provider:
 |[Emu-TN](#emulator) | pasqal.sim.emu-tn| 100 qubits 1D and 2D networks| Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
 |[Fresnel](#fresnel) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
 
-> [!NOTE]
-> PASQAL quantum provider is currently available in Private Preview. You can request access to the Private Preview by following [this link](https://aka.ms/AQ/PrivatePreviewRequest).
 
 ## Emulator
 

@@ -191,7 +191,7 @@
     items:
     - name: Microsoft provider and targets
       href: provider-microsoft.md
-  - name: PASQAL (Private preview)
+  - name: PASQAL
     items:
     - name: PASQAL provider and targets
       href: provider-pasqal.md
