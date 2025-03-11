@@ -100,26 +100,10 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## PASQAL
 
-[PASQAL](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor, the 100-qubit Fresnel. There's no added charge per job or per shot. The Emu-TN simulator is free of charge for all users (subject to limit quotas depending on the plan).
+[PASQAL](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor - the 100-qubit Fresnel - and its state of the art tensor networks emulator - EMU-TN.
 
-PASQAL offers two billing plans: **Azure Quantum Credits** and **Pay As You Go**.
+PASQAL offers one billing plan: **Pay As You Go**.
 
-### [Azure Quantum Credits](#tab/tabid-AQcreditsPasqal)
-
-Azure Quantum Credits consumption is based on a resource-usage model and cost of use is deducted from your credit balance. To learn more about credits, see [Azure Quantum Credits](xref:microsoft.quantum.credits).
-
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
-|Pricing | Includes access to   |
-|---|---|  
-|Use is deducted from the Azure Quantum Credits based on the job execution time only| <ul><li>PASQAL Fresnel QPU: USD3,000/QPU hour deducted from your credits</li><li>PASQAL Emu-TN (free up to 20 hours)</li></ul>|
-
-> [!NOTE]
-> Once you have consumed all the credits you need to switch to a different plan to continue using PASQAL. Azure Quantum won’t charge you when you reach your credit limit.
-
-> [!IMPORTANT]
-> There are no costs or charges for using your free credits. However, there may be some small storage costs, as the input and output of your credits jobs are stored in a storage account that you pay for. Job data is typically <1MB per job. 
-> For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygoPasqal)
 
@@ -127,7 +111,7 @@ In the Pay-as-you-go plan the usage is charged based on the job execution time o
 
 |Pricing | Includes access to  |
 |---|---|  
-|USD3,000/QPU hour + Azure infrastructure costs| <ul><li>PASQAL Fresnel QPU</li><li>PASQAL Emu-TN (free up to 100 hours)</li></ul>|
+|<ul><li>USD 300/QPU hour + Azure infrastructure costs</li><li>USD 15/EMU-TN hour + Azure infrastructure costs </li></ul> | <ul><li>PASQAL Fresnel QPU</li><li>PASQAL EMU-TN </li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -235,5 +219,3 @@ The Pay-as-you-go plan consists of *a la carte* access to Rigetti QPUs. The usag
 
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list)
-
- 
