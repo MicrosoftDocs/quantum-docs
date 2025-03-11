@@ -219,3 +219,4 @@ The Pay-as-you-go plan consists of *a la carte* access to Rigetti QPUs. The usag
 
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list)
+
