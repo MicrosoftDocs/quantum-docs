@@ -1125,6 +1125,11 @@
 			"source_path": "articles/user-guide/testing-debugging.md",
 			"redirect_url": "/azure/quantum/testing-debugging",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/provider-microsoft.md",
+			"redirect_url": "/azure/quantum/qc-target-list",
+			"redirect_document_id": false
 		}
 	]
 }
