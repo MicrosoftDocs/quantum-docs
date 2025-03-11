@@ -2,7 +2,7 @@
 author: haileytap
 description: This article introduces Q#, a programming language for developing and running quantum algorithms, and the structure of a Q# program.
 ms.author: sonialopez
-ms.date: 01/14/2025
+ms.date: 03/11/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
