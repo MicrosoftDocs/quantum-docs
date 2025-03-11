@@ -187,10 +187,6 @@
       href: provider-ionq.md
     - name: IonQ support policy
       href: provider-support-ionq.md
-  - name: Microsoft
-    items:
-    - name: Microsoft provider and targets
-      href: provider-microsoft.md
   - name: PASQAL
     items:
     - name: PASQAL provider and targets
