@@ -1,8 +1,8 @@
 ---
-author: quantumdocwriters
+author: azure-quantum-content
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: quantumdocwriters
-ms.date: 003/17/2025
+ms.date: 03/17/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting-known-issue
