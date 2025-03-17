@@ -2,7 +2,7 @@
 author: bradben
 description: This document provides a list of the available quantum computing providers on Azure Quantum.
 ms.date: 03/10/2025
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: concept-article
