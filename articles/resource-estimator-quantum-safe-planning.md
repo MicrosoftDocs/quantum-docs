@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to use the Resource Estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm.
 ms.date: 09/10/2024
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to

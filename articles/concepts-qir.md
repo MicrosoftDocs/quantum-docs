@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This article describes the quantum intermediate representation developed by the QIR Alliance for quantum computing, its relevance, and use cases.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: core

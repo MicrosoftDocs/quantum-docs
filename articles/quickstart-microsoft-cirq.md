@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to submit Cirq quantum circuits to the Azure Quantum service.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: qdk

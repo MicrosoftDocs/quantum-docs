@@ -1,7 +1,7 @@
 ---
-author: sonialopezbravo
+author: azure-quantum-content
 description: Learn about the Azure Quantum Credits program, how to apply for it, and how long credits are valid for.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core

@@ -1,6 +1,6 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
+author: azure-quantum-content
+ms.author: quantumdocwriters
 ms.date: 03/15/2024
 ms.service: azure-quantum
 ms.subservice: computing

@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to run a Q# and Python sample notebook in an Azure Quantum workspace.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: qdk

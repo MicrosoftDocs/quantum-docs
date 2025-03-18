@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about the different subscription plans available in Azure and how to create an Azure Quantum workspace.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: qdk

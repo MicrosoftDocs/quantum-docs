@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to run multiple configurations of target parameters and compare them using the Resource Estimator.
 ms.date: 01/13/2025
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to

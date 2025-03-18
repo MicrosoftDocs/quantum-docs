@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about using the 'let' and 'mutable' statements to bind variables in Q#.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 02/21/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

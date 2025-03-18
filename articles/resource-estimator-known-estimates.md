@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to use pre-calculated estimates for your Q# programs with the Azure Quantum Resource Estimator.
 ms.date: 01/13/2025
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to

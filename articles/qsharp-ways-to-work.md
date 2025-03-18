@@ -1,7 +1,7 @@
 ---
 author: haileytap
 description: This article describes the environment options for developing quantum programs with Q# and the Quantum Development Kit.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk

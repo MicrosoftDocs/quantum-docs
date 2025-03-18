@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to adapt any Qiskit sample so you can run your quantum programs on the Azure Quantum service.
 ms.date: 11/18/2024
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.topic: how-to
 no-loc: ['Q#', '$$v']

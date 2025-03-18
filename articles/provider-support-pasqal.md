@@ -1,6 +1,6 @@
 ---
-author: bradben
-ms.author: brbenefield
+author: azure-quantum-content
+ms.author: quantumdocwriters
 description: This document provides details on the support policy for the PASQAL quantum provider in Azure Quantum.
 ms.date: 03/10/2025
 ms.service: azure-quantum

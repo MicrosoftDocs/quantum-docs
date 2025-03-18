@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about classical and quantum registers, mid-circuit measurement, qubit reuse, error mitigation, error correction, and fault tolerance.
 ms.date: 09/16/2024
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concept-article
