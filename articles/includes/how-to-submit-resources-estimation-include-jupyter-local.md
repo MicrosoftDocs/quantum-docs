@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 ms.author: quantumdocwriters
-ms.date: 12/18/2024
+ms.date: 03/18/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -48,8 +48,8 @@ no-loc: [target, targets]
     import Std.Diagnostics.*;
     import Std.Math.*;
     import Std.Measurement.*;
-    import Microsoft.Quantum.Unstable.Arithmetic.*;
-    import Std.ResourceEstimation.*;
+    import Std.Arithmetic.*;
+    import Std.ResourceEstimation.*; 
     
     operation RunProgram() : Unit {
         let bitsize = 31;

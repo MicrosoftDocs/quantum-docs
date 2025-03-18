@@ -16,7 +16,7 @@ uid: microsoft.quantum.credits.credits-faq
 
 In this article you'll find the answer to the most common questions about the Azure Quantum Credits program.
 
-The Azure Quantum Credits program providesup to **USD10,000 extra Azure Quantum Credits** to access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
+The Azure Quantum Credits program provides up to **USD10,000 extra Azure Quantum Credits** to access to quantum hardware through Azure. You will not be charged for usage created under the credits program, up to the limit of your credit grant.
 
 [!INCLUDE [Azure Quantum credits deprecation banner](includes/azure-quantum-credits.md)]
 

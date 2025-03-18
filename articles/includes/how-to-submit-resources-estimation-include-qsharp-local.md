@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 ms.author: quantumdocwriters
-ms.date: 01/13/2025
+ms.date: 03/18/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -33,7 +33,7 @@ Copy the following code into the `ShorRE.qs` file:
     import Std.Diagnostics.*;
     import Std.Math.*;
     import Std.Measurement.*;
-    import Microsoft.Quantum.Unstable.Arithmetic.*;
+    import Std.Arithmetic.*;
     import Std.ResourceEstimation.*;
 
     operation Main() : Unit {
