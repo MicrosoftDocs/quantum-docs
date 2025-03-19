@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about using the 'return' and 'fail' statements in Q# to end a subroutine or program.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 02/18/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

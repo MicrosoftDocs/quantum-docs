@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to submit specific formatted quantum circuits with QIR, OpenQASM, or Pulser SDK to the Azure Quantum service.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: qdk

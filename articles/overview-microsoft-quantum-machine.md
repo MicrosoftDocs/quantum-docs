@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: View Jupyter Notebooks with the device data from Microsoft's research into a scaled quantum machines using topological qubits.
 ms.date: 11/22/2024
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview

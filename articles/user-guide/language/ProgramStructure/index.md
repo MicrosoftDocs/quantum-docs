@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn the components of a simple Q# program and how to run it in VS Code.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

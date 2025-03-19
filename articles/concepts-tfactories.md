@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn about the role of T gates and T factories in quantum computing and in the Azure Quantum Resource Estimator.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core

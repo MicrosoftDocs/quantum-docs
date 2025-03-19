@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk

@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to read a quantum circuit diagram and how to represent quantum operations and measurements in a circuit diagram.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 01/16/2025
 ms.service: azure-quantum
 ms.subservice: core

@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to submit a Q# sample to the Azure Quantum Resource Estimator to estimate the resources of a Q# program.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: computing

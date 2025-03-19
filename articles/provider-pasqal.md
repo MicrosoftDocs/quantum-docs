@@ -1,6 +1,6 @@
 ---
-author: bradben
-ms.author: brbenefield
+author: azure-quantum-content
+ms.author: quantumdocwriters
 description: This document provides the technical details of the simulators and QPU of the PASQAL quantum provider.
 ms.date: 03/10/2025
 ms.service: azure-quantum

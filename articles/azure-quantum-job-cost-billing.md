@@ -1,6 +1,6 @@
 ---
-author: sonialopezbravo
-ms.author: sonialopez
+author: azure-quantum-content
+ms.author: quantumdocwriters
 description: Learn about how to view job cost reports for running quantum programs in Azure Quantum and how to manage your invoices.
 ms.date: 09/25/2024
 ms.service: azure-quantum

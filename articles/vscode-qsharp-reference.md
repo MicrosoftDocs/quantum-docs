@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about the features that are included with the Azure Quantum Development Kit extension for VS Code. 
 ms.date: 01/08/2025
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual

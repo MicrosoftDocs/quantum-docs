@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about allocating and releasing quantum memory in a Q# program.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
