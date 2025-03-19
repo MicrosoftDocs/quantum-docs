@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to use functors with callables in Q#.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

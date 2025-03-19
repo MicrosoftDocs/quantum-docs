@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Understand the architecture of sessions in hybrid quantum computing and learn how to create a new session.
 ms.date: 10/24/2024
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to

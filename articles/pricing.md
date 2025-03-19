@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, PASQAL, Quantinuum, and Rigetti.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: core

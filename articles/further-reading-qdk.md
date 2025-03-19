@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: computing

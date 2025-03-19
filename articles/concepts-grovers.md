@@ -1,9 +1,9 @@
 ---
 title: Theory of Grover Search Algorithm 
 description: Learn about the theory behind Grover algorithm, a quantum algorithm that provides a quadratic speedup for searching unsorted databases.
-author: SoniaLopezBravo
+author: azure-quantum-content
 uid: microsoft.quantum.concepts.grovers
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core

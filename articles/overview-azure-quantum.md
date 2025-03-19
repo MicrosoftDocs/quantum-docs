@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs problems in the cloud.
 ms.date: 03/10/2025
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview

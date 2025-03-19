@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, PASQAL, Quantinuum, and Rigetti.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

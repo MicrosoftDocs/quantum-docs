@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to work with single-qubit and multi-qubit Pauli measurement operations in quantum computing.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.subservice: core

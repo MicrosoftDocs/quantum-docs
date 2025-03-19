@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to define a Q# project that uses multiple source files, and use your projects as reusable custom libraries.  
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk

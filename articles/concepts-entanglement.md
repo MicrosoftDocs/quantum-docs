@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn about entanglement, a fundamental concept in quantum computing that allows qubits to be correlated in ways that classical bits can't.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core

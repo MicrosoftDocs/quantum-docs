@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 09/12/2024
 ms.service: azure-quantum
 ms.subservice: qdk

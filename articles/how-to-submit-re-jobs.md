@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides a basic guide to run resource estimates both locally and online using different SDKs and IDEs.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.custom:

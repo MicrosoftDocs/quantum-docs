@@ -1,7 +1,7 @@
 ---
 author: haileytap
 description: This article explains how to create your first Q# program using the Quantum Development Kit and Visual Studio Code.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 08/23/2024
 ms.service: azure-quantum
 ms.subservice: qdk

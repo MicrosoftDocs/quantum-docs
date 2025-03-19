@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides instructions on how to authenticate in your Azure Quantum workspace using a managed identity.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core

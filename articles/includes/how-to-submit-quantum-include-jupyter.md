@@ -1,6 +1,6 @@
 ---
-author: bradben
-ms.author: brbenefield
+author: azure-quantum-content
+ms.author: quantumdocwriters
 ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: computing
