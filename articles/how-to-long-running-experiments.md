@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This articles explains techniques and methods to for how to run experiments with long runtimes on Azure Quantum 
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 06/03/2024
 ms.service: azure-quantum
 ms.subservice: core

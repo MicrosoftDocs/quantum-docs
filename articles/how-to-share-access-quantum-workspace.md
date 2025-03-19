@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to share access to your Azure Quantum workspace. This guide helps you grant access to team members or students efficiently.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 01/07/2025
 ms.service: azure-quantum
 ms.subservice: qdk

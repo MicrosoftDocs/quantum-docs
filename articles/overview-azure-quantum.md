@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs problems in the cloud.
-ms.date: 01/13/2025
-ms.author: sonialopez
+ms.date: 03/10/2025
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
@@ -114,7 +114,7 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 Choose the provider that best suits the characteristics of your problem and your needs. 
 
 - [IONQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable trapped-ion quantum computers for up to 11 fully connected qubits, that lets you run a two-qubit gate between any pair.
-- [PASQAL](xref:microsoft.quantum.providers.pasqal) (Private Preview): Neutral atom-based quantum processors operating at room temperature, with long coherence times and impressive qubit connectivity. 
+- [PASQAL](xref:microsoft.quantum.providers.pasqal): Neutral atom-based quantum processors operating at room temperature, with long coherence times and impressive qubit connectivity. 
 - [Quantinuum](xref:microsoft.quantum.providers.quantinuum): Trapped-ion systems with high-fidelity, fully connected qubits, low error rates, qubit reuse, and the ability to perform mid-circuit measurements.
 - [Rigetti](xref:microsoft.quantum.providers.rigetti): Rigetti's systems are powered by superconducting qubit-based quantum processors. They offer fast gate times, low-latency conditional logic, and fast program execution times.
 

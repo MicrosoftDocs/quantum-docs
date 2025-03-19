@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: This document provides a guide to working with jobs in Azure Quantum, including properties, lifecycle, and monitoring. 
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: core

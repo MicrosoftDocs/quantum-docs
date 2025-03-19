@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to bulk add users to your Azure Quantum workspace using a CSV file. This guide simplifies user management for large teams. 
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 01/07/2025
 ms.service: azure-quantum
 ms.subservice: qdk

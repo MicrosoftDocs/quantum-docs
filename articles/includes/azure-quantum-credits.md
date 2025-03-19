@@ -1,6 +1,6 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
+author: azure-quantum-content
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: include

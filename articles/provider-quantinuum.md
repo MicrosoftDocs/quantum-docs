@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: This document provides the technical details of the Quantinuum quantum provider
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 01/28/2025
 ms.service: azure-quantum
 ms.subservice: computing

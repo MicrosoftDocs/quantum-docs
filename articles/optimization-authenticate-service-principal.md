@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides instructions on how to authenticate in your Azure Quantum workspace using a service principal.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: core

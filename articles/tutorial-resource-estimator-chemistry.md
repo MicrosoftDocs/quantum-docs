@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: computing

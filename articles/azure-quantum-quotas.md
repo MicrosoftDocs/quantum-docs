@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides a basic guide of what Azure Quantum quotas are, how to review remaining quotas and how to apply to get more. 
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 02/24/2025
 ms.service: azure-quantum
 ms.subservice: core

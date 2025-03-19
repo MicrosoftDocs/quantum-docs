@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn about the Resource Estimator, an open-source tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 07/01/2024
 ms.service: azure-quantum
 ms.subservice: computing

@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about the resources available on the Azure Quantum website.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk

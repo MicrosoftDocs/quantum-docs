@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to manage, regenerate, enable, and disable the access keys and connection strings for your Azure Quantum workspace.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 10/22/2024
 ms.service: azure-quantum
 ms.subservice: qdk

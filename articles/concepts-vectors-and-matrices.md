@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn the basics concepts of linear algebra and how to work with vectors and matrices in quantum computing.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 01/16/2025
 ms.service: azure-quantum
 ms.subservice: core
