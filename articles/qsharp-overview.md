@@ -62,7 +62,7 @@ namespace Superposition {
 }
 ```
 
-Namespaces can help you organize related functionality. Namespaces are optionaL in Q# programs, meaning that you can write a program without defining a namespace.
+Namespaces can help you organize related functionality. Namespaces are optional in Q# programs, meaning that you can write a program without defining a namespace.
 
 For example, the **Superposition** program of the example could be also written without a namespace as:
 
