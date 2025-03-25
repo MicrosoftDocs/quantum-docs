@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Learn about the input parameters of the Resource Estimator in Azure Quantum and how to customized them.
-ms.date: 05/22/2024
+ms.date: 03/07/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -280,9 +280,9 @@ To execute practical-scale quantum applications, quantum operations should have 
 
 The Resource Estimator uses the following formula for modeling logical error rates using an exponential model,
 
-$$ P = a\left(\frac{p}{p^\*}\right)^{\frac{d+1}{2}} $$
+$$ P = ad^k\left(\frac{p}{p^\*}\right)^{\frac{d+1}{2}} $$
 
-where $a$ is a crossing pre-factor, $d$ is the code distance, $p$ is the physical error rate, and $p^\*$ is the quantum error correction threshold. The crossing pre-factor $a$ can be extracted numerically for simulations.
+where $a$ is a crossing pre-factor, $d$ is the code distance, $k$ is a distance coefficient power (typically set to 0), $p$ is the physical error rate, and $p^\*$ is the quantum error correction threshold. The crossing pre-factor $a$ can be extracted numerically for simulations.
 
 The code distance $d$ is a parameter that controls the number of errors that can be corrected. Thus, code distance defines the error rate of the logical qubits and the number of physical qubits that are required to encode them. Both accuracy and the number of physical qubits increase with code distance. The goal of a QEC scheme is to find the minimum code distance that can achieve the required error rate set for a particular application.
 
@@ -311,6 +311,7 @@ The exact parameters for each predefined QEC scheme are the following.
         "name": "surface_code",
         "errorCorrectionThreshold": 0.01,
         "crossingPrefactor": 0.03,
+        "distanceCoefficientPower": 0,
         "logicalCycleTime": "(4 * twoQubitGateTime + 2 * oneQubitMeasurementTime) * codeDistance",
         "physicalQubitsPerLogicalQubit": "2 * codeDistance * codeDistance"
     }
@@ -324,6 +325,7 @@ The exact parameters for each predefined QEC scheme are the following.
         "name": "surface_code",
         "errorCorrectionThreshold": 0.0015,
         "crossingPrefactor": 0.08,
+        "distanceCoefficientPower": 0,
         "logicalCycleTime": "20 * oneQubitMeasurementTime * codeDistance",
         "physicalQubitsPerLogicalQubit": "2 * codeDistance * codeDistance"
     }
@@ -337,6 +339,7 @@ The exact parameters for each predefined QEC scheme are the following.
         "name": "floquet_code",
         "errorCorrectionThreshold": 0.01,
         "crossingPrefactor": 0.07,
+        "distanceCoefficientPower": 0,
         "logicalCycleTime": "3 * oneQubitMeasurementTime * codeDistance",
         "physicalQubitsPerLogicalQubit": "4 * codeDistance * codeDistance + 8 * (codeDistance - 1)"
     }
@@ -384,7 +387,7 @@ qsharp.estimate("RunProgram()", params=
 
 ### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$ and the `"errorCorrectionThreshold"` $p^\*$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
 
 You can use the following code as a template for QEC schemes:
 
@@ -393,13 +396,14 @@ qsharp.estimate("RunProgram()", params=
                 {"qecScheme": {
                         "crossingPrefactor": <double>,
                         "errorCorrectionThreshold": <double>,
+                        "distanceCoefficientPower": <integer>,
                         "logicalCycleTime": <formula string>,
                         "physicalQubitsPerLogicalQubit": <formula string>
                     }
                 })                
 ```
 
-Inside the formulas, you can use the variables `one_qubit_gate_time`, `two_qubit_gate_time`, `one_qubit_measurement_time`, and `two_qubit_joint_measurement_time`, whose values are taken from the corresponding field from the [physical qubit parameters](#customize-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit` only the `eccDistance` can be used.
+Inside the formulas, you can use the variables `one_qubit_gate_time`, `two_qubit_gate_time`, `one_qubit_measurement_time`, and `two_qubit_joint_measurement_time`, whose values are taken from the corresponding field from the [physical qubit parameters](#customize-predefined-qubit-parameters), as well as the variable `eccDistance` for the code distance computed for the logical qubit, based on the physical qubit properties, the error correction threshold, and the crossing prefactor. The time variables and `eccDistance` can be used to describe the `logicalCycleTime` formula. For the formula `physicalQubitsPerLogicalQubit`, only the `eccDistance` can be used.
 
 ## Error budget
 
