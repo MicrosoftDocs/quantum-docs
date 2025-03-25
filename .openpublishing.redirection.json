@@ -1130,6 +1130,16 @@
 			"source_path": "articles/provider-microsoft.md",
 			"redirect_url": "/azure/quantum/qc-target-list",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/azure-quantum-credits.md",
+			"redirect_url": "/azure/quantum/pricing",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/credits-faq.md",
+			"redirect_url": "/azure/quantum/pricing",
+			"redirect_document_id": false
 		}
 	]
 }
