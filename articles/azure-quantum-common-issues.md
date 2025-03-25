@@ -270,7 +270,7 @@ The following issues may occur when you use the Azure portal to create a workspa
 
 This issue occurs because you don't have an active subscription.
 
-For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes USD200 free Azure Credits to use on Azure services. These Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you consume the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal allows you to access the workspace creation form.
+For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes USD200 free Azure Credits to use on Azure services. These Azure credits aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you consume the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal allows you to access the workspace creation form.
 
 To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
 
