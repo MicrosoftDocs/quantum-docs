@@ -29,7 +29,10 @@ You need to have an Azure account with an active subscription to create an Azure
 |Azure subscription | Description|
 |------|-------|
 |Pay-as-you-go (recommended) | You pay for the services you use, and you can cancel anytime.|
-<!-- |Free trial for 30 days| After 30 days of sign-up, you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). 
+<!-- 
+*** COMMENTED out UNTIL A BASIC EMULATOR PLAN IS CONFIRMED ***
+
+|Free trial for 30 days| After 30 days of sign-up, you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). 
 |Azure for Students| With the Azure Quantum Credits you'll have USD500 to use in each quantum hardware provider. Once you've consumed all your credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), and you can cancel anytime. Sign up [here](https://azure.microsoft.com/offers/ms-azr-0170p/). With Azure for Students you don't need a credit card to sign-up.|
 -->
 |Enterprise Agreement| If your organization has an Enterprise Agreement (EA) purchasing contract with Microsoft, your organization's Account Owners can create [Enterprise Dev/Test subscriptions](https://azure.microsoft.com/offers/ms-azr-0148p/) for active Visual Studio subscribers under the EA.|
