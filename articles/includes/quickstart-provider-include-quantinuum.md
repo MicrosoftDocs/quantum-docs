@@ -59,7 +59,7 @@ workspace = Workspace(
         circuit = f.read()
     ```
 
-1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-referenc).
+1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
 
     ```python
     target = workspace.get_targets(name="quantinuum.sim.h1-1sc")
