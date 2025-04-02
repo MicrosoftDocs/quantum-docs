@@ -26,7 +26,6 @@ The following targets available from this provider:
 |[Emu-TN](#emulator) | pasqal.sim.emu-tn| 100 qubits 1D and 2D networks| Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
 |[Fresnel](#fresnel) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
 
-
 ## Emulator
 
 PASQAL's Emu-TN emulator simulates the time-evolution of a quantum state using the Schrödinger's equation corresponding to the actions that the lasers perform.

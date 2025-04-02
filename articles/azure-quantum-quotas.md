@@ -38,9 +38,6 @@ In Azure Quantum, hardware and software providers define and control the quotas 
 
 Azure Quantum usage and quotas are measured in terms of each provider's unit of usage. Some providers don't define any quotas and don't have usage information to display.
 
-> [!NOTE]
-> If you are using an Azure Quantum Credits plan, and not a billing plan, the quota information maps to your allocated credits. In that case, the quota lists the total number of credits you received.
-
 ### Track quota using Azure portal
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
@@ -53,8 +50,6 @@ Azure Quantum usage and quotas are measured in terms of each provider's unit of 
   - *Cadence*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
 
  :::image type="content" source="media/portal-quotas-blade.png" alt-text="Screenshot of the quotas blade in Azure portal." lightbox="media/portal-quotas-blade.png":::
-
-In this view, [Azure Quantum Credits](xref:microsoft.quantum.credits) are included as quotas. This enables the user to see the credit information expressed in terms of the units that the provider tracks, and the interval associated.
 
 ### Track quota using Azure CLI
 
@@ -237,7 +232,7 @@ The `period` item indicates the period when your quota is renewed.
 
 ## How can I request more quota?
 
-If you aren't using an Azure Quantum Credits plan, then you can request quota increases by raising a support ticket.
+You can request quota increases by raising a support ticket.
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select your **Azure Quantum workspace**.
@@ -262,7 +257,5 @@ If you aren't using an Azure Quantum Credits plan, then you can request quota in
 
 ## Related content
 
-- [FAQ: Azure Quantum Credits](xref:microsoft.quantum.credits)
-- [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq)
 - [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing)
 

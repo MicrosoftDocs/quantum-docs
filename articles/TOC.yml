@@ -45,12 +45,8 @@
       href: /cli/azure/quantum
     - name: Work with Azure Quantum using the Azure Resource Manager
       href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
-  - name: Credits, quotas, and pricing information
+  - name: Pricing and quota information
     items:
-    - name: Azure Quantum Credits
-      href: azure-quantum-credits.md
-    - name: Azure Quantum Credits program FAQ
-      href: credits-faq.md
     - name: Azure Quantum pricing
       href: pricing.md
     - name: Azure Quantum quotas
