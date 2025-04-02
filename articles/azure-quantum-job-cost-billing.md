@@ -18,13 +18,11 @@ In this article, you'll find the guidelines to understand the cost of running qu
 
 ## How many usage plans are available in Azure Quantum?
 
-Azure Quantum makes solutions available from Microsoft and from our partner companies, so the billing details will depend on the provider and the pricing plan you select. In addition, Azure Quantum offers a free tier with a set of Azure Quantum Credits that you can use to run quantum programs. In the following table you can see the general pricing and credits guidance for using Azure Quantum.
+Azure Quantum makes solutions available from Microsoft and from our partner companies, so the billing details will depend on the provider and the pricing plan you select. In the following table you can see the general pricing guidance for using Azure Quantum.
 
 |Plan|Description|
 |---|---|
-|Free Azure Quantum Credits| When you create a new Azure Quantum workspace, you get USD500 free **Azure Quantum Credits** for use with each participating quantum hardware provider. For more information, see [FAQ: Azure Quantum credits](xref:microsoft.quantum.credits)|
-|Azure Quantum Credits program| If you have consumed all the credits and you need more, you can apply to the [Azure Quantum Credits program](https://aka.ms/aq/credits). Microsoft offers up to USD10,000 extra Azure Quantum Credits for use on quantum hardware. For more information,see [FAQ: Applications to the Azure Quantum Credits Program](xref:microsoft.quantum.credits.credits-faq).|
-|Billing plans| When you consumed all your Azure Quantum Credits, you have to switch to a billing plan. Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
+|Billing plans| Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -78,8 +76,6 @@ The following definitions help you understand the cost estimation table:
 
 Some Azure Quantum providers don't support reporting per-job costs, however you can still see your invoice under **Cost Management** in the Azure portal. For more information, see [How can I view my invoices?](#how-can-i-view-my-invoices).
 
-If you're using an Azure Quantum Credits plan, you'll see cost estimate equal to USD0. In this case, the estimated cost isn't reflected in the job details because there’s no effective charge against your Azure bill.
-
 ## How do I receive my invoices?
 
 The invoices are sent to the email address you used to sign up for Azure. If you need to change the email address, contact [Azure Support](https://azure.microsoft.com/support/create-ticket/).
@@ -119,5 +115,4 @@ You can filter by date, subscription, and status. You can also download the invo
 
 ## Related content
 
-- [Azure Quantum Credits](xref:microsoft.quantum.credits)
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)

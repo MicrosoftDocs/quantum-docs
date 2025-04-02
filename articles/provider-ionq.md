@@ -13,9 +13,6 @@ uid: microsoft.quantum.providers.ionq
 
 # IonQ provider
 
-> [!IMPORTANT]
-> IonQ has retired their Harmony-2 quantum computer effective September 1, 2024. 
-
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 IonQ’s quantum computers perform calculations by manipulating the hyperfine energy states of Ytterbium ions with lasers. Atoms are nature's qubits — every qubit is identical within and between programs. Logical operations can also be performed on any arbitrary pair of qubits, enabling complex quantum programs unhindered by physical connectivity. Want to learn more? Read IonQ’s [trapped ion quantum computer technology overview](https://ionq.com/technology).
@@ -78,7 +75,7 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 \* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
-IonQ Aria is available through Azure Quantum Credits plan and a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
+IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
 ## IonQ Forte quantum computer
 
@@ -386,9 +383,6 @@ where:
 - $C$ is the number of execution shots requested
 
 Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
-
-> [!NOTE]
-> If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
 ## IonQ status
 
