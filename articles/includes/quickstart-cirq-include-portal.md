@@ -146,7 +146,7 @@ pl.xlabel("Result")
 
 Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it will cost to run.
 
-For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
+For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or view pricing options in the **Providers** blade of your workspace.
 
 #### Run on IonQ QPU
 
@@ -277,7 +277,7 @@ Looking at the histogram, you may notice that the random number generator return
 
 Before running a job on actual quantum hardware, or a [quantum processing unit](xref:microsoft.quantum.target-profiles) (QPU), you should estimate how much it will cost to run.
 
-For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace. To see your current credit status and usage, select **Credits and quotas**.
+For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or view pricing options in the **Providers** blade of your workspace.
 
 #### Run on a Quantinuum QPU
 
