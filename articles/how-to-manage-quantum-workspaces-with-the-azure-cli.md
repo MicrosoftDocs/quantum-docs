@@ -61,7 +61,7 @@ To create a new Azure Quantum workspace, you need to know:
 - The resource group associated with the new workspace, for example, **MyResourceGroup**.
 - A storage account in the same resource group and subscription as the quantum workspace. It's possible to [create a new storage account from the Az CLI tool](/cli/azure/storage/account#az_storage_account_create), for example, **MyStorageAccount**.
 - The name of the quantum workspace to create, for example, **MyQuantumWorkspace**.
-- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you need to specify the corresponding plan along with the providers, unless you want to start with the providers that offer free credit – they're automatically added to your workspace.
+- The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you need to specify the corresponding plan along with the providers.
 
 If you already know the provider and plan names to use in your workspace, you can skip to step four, below. If you want to start with the providers that offer free credit, you can enter the following command:
 
