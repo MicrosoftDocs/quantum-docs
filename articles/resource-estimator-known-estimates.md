@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to use pre-calculated estimates for your Q# programs with the Azure Quantum Resource Estimator.
-ms.date: 08/13/2024
-ms.author: sonialopez
+ms.date: 01/13/2025
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -14,14 +14,14 @@ uid: microsoft.quantum.resource-estimator-known-estimates
 
 # How to use known estimates with the Resource Estimator
 
-In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
+In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
 
 For information about how to run the Resource Estimator, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+- The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 If you want to use Python in VS Code, you also need the following:
 
@@ -33,8 +33,6 @@ If you want to use Python in VS Code, you also need the following:
     ```
 
 ## Use known estimates for an operation
-
-If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
 
 Some scenarios where you may want to perform estimation from pre-calculated estimates:
 
@@ -51,7 +49,7 @@ You can use the `AccountForEstimates` Q# operation to pass known estimates to th
 For example, consider the following Q# operation called `FactoringFromLogicalCounts` that takes a list of known estimates and a list of qubits.
 
 ```qsharp
-open Microsoft.Quantum.ResourceEstimation;
+import Microsoft.Quantum.ResourceEstimation.*;
 
 operation FactoringFromLogicalCounts() : Unit {
     use qubits = Qubit[12581];
@@ -67,13 +65,13 @@ The `AccountForEstimates` operation can take the following parameters:
 
 |Functions with `AccountForEstimates`| Description|
 |---|---|
-|[`AuxQubitCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.AuxQubitCount)| Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of auxiliary qubits is equal to the `amount`.|
-|[`TCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.TCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of T gates is equal to the `amount`.|
-|[`MeasurementCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.MeasurementCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of measurements is equal to the `amount`.|
-|[`RotationCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.RotationCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of rotations is equal to the `amount`.|
-|[`RotationDepth(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.RotationDepth)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the rotation depth is equal to the `amount`.|
-|[`CczCount(amount : Int)`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.CczCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of CCZ gates is equal to the `amount`.|
-|[`PSSPCLayout()`](xref:Qdk.Microsoft.Quantum.ResourceEstimation.PSSPCLayout)| Indicate Parallel Synthesis Sequential Pauli Computation (PSSPC) layout. For more information, see [arXiv:2211.0769](https://arxiv.org/pdf/2211.07629.pdf).|
+|[`AuxQubitCount(amount : Int)`](xref:Qdk.Std.ResourceEstimation.AuxQubitCount)| Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of auxiliary qubits is equal to the `amount`.|
+|[`TCount(amount : Int)`](xref:Qdk.Std.ResourceEstimation.TCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of T gates is equal to the `amount`.|
+|[`MeasurementCount(amount : Int)`](xref:Qdk.Std.ResourceEstimation.MeasurementCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of measurements is equal to the `amount`.|
+|[`RotationCount(amount : Int)`](xref:Qdk.Std.ResourceEstimation.RotationCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of rotations is equal to the `amount`.|
+|[`RotationDepth(amount : Int)`](xref:Qdk.Std.ResourceEstimation.RotationDepth)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the rotation depth is equal to the `amount`.|
+|[`CczCount(amount : Int)`](xref:Qdk.Std.ResourceEstimation.CczCount)|Returns a tuple that can be passed to the `AccountForEstimates` operation to specify that the number of CCZ gates is equal to the `amount`.|
+|[`PSSPCLayout()`](xref:Qdk.Std.ResourceEstimation.PSSPCLayout)| Indicate Parallel Synthesis Sequential Pauli Computation (PSSPC) layout. For more information, see [arXiv:2211.0769](https://arxiv.org/pdf/2211.07629.pdf).|
 
 ### [Use Python](#tab/tabid-known-estimates-python)
 

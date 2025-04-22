@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to run a Q# and Python sample notebook in an Azure Quantum workspace.
-ms.author: brbenefield
-ms.date: 12/14/2023
+ms.author: quantumdocwriters
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: quickstart
+ms.topic: get-started
 no-loc: ['Q#', '$$v', target, targets]
 title: Run a Q# and Python notebook
 uid: microsoft.quantum.get-started.notebooks
@@ -45,7 +45,7 @@ To get started, copy a sample notebook from the notebook gallery.
 To run the sample notebook, follow these steps for your selected provider.
 
 > [!NOTE]
-> Q# programs in Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. Jupyter Notebooks also don't display program results by default, so you must use the `Message` statement. For more information, see [Structure of a Q# program](xref:microsoft.quantum.qsharp-overview#structure-of-a-q-program).
+> Jupyter Notebooks don't display program results by default, so you must use the `Message` statement. For more information, see [Structure of a Q# program](xref:microsoft.quantum.qsharp-overview#structure-of-a-q-program).
 
 ### [IonQ](#tab/tabid-ionq)
 

@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Understand the implementation of integrated hybrid quantum computing, and how to submit jobs to Azure Quantum using the Adaptive RI target profile.
-ms.date: 06/03/2024
-ms.author: brbenefield
+ms.date: 09/09/2024
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -124,25 +124,21 @@ The QDK provides target-specific feedback when Q# language features aren't suppo
 To see the supported features in action, copy the following code into a Q# file and add the subsequent code snippets.
 
 ```qsharp
-namespace HybridIntegrated {
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Math;
-    open Microsoft.Quantum.Convert;
+import Microsoft.Quantum.Measurement.*;
+import Microsoft.Quantum.Math.*;
+import Microsoft.Quantum.Convert.*;
 
-    @EntryPoint()
-    operation Main() : Result {
-        use (q0, q1) = (Qubit(), Qubit());
-        H(q0);
-        let r0 = MResetZ(q0);
+operation Main() : Result {
+    use (q0, q1) = (Qubit(), Qubit());
+    H(q0);
+    let r0 = MResetZ(q0);
 
-        // Copy here the code snippets below to see the supported features 
-        // in action.
-        // Supported features include dynamic values, classically-bounded loops, 
-        // arbitrary control flow, and mid-circuit measurement.
+    // Copy here the code snippets below to see the supported features 
+    // in action.
+    // Supported features include dynamic values, classically-bounded loops, 
+    // arbitrary control flow, and mid-circuit measurement.
 
-        r0
-    }
-
+    r0
 }
 ```
 
@@ -268,7 +264,7 @@ The circuit begins by encoding the pair of vectors on the target qubit and the a
 You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs). 
 
 > [!NOTE]
-> This sample code was written by members of [KPMG](https://kpmg.com/xx/en/home/services/advisory/management-consulting/technology-consulting/quantum-technologies.html) Quantum team in Australia and falls under an MIT License. It demonstrates expanded capabilities of :::no-loc text="QIR Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.
+> This sample code was written by members of [KPMG](https://kpmg.com/xx/en/what-we-do/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It demonstrates expanded capabilities of :::no-loc text="QIR Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.
 
 
 ## Related content

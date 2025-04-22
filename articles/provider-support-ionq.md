@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: This document provides details on the support policy for the IonQ provider in Azure Quantum
-ms.author: brbenefield
-ms.date: 04/13/2023
+ms.author: quantumdocwriters
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: troubleshooting
+ms.topic: troubleshooting-general
 no-loc: [target, targets]
 title: Support policy for IonQ in Azure Quantum
 uid: microsoft.quantum.providers.computing.ionq.support

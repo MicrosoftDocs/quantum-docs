@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about visibility of local variables in the Q# programming language.
-ms.author: brbenefield
-ms.date: 02/01/2021
+ms.author: quantumdocwriters
+ms.date: 02/18/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -19,13 +19,13 @@ In general, symbol bindings in Q# become inoperative at the end of the statement
 
 | Scope | Visibility |
 |------|-----|
-| Loop variables |Bindings of loop variables in a [`for`](xref:microsoft.quantum.qsharp.iterations#iterations) loop are defined only for the body of the loop. They are inoperative outside of the loop. |
-| [`use`](xref:microsoft.quantum.qsharp.quantummemorymanagement#quantum-memory-management) and [`borrow`](xref:microsoft.quantum.qsharp.quantummemorymanagement#quantum-memory-management) statements |Bindings of allocated qubits in `use` and `borrow` statements are defined for the body of the allocation, and are inoperative after the statement terminates. This only applies to `use` and `borrow` statements that have an associated statement block.|
-| [`repeat`](xref:microsoft.quantum.qsharp.conditionalloops#conditional-loops) expressions |For `repeat` expressions, both blocks, as well as the condition, are treated as a single scope, that is, symbols that are bound in the body are accessible in both the condition and in the `fixup` block. |
+| Loop variables |Bindings of loop variables in a [`for`](xref:microsoft.quantum.qsharp.iterations#iterations) loop are defined only for the body of the loop. They're inoperative outside of the loop. |
+| [`use`](xref:microsoft.quantum.qsharp.quantummemorymanagement#quantum-memory-management) and [`borrow`](xref:microsoft.quantum.qsharp.quantummemorymanagement#quantum-memory-management) statements |Bindings of allocated qubits in `use` and `borrow` statements are defined for the body of the allocation, and are inoperative after the statement terminates. This action only applies to `use` and `borrow` statements that have an associated statement block.|
+| [`repeat`](xref:microsoft.quantum.qsharp.conditionalloops#conditional-loops) expressions |For `repeat` expressions, both the blocks and the condition are treated as a single scope, that is, symbols that are bound in the body are accessible in both the condition and in the `fixup` block. |
 | Loops |Each iteration of a loop runs in its own scope, and all defined variables are bound anew for each iteration. |
 
 Bindings in outer blocks are visible and defined in inner blocks.
-A symbol may only be bound multiple times per block in which case the last binding in scope is the one used for logic. This is known as "shadowing".
+A symbol may only be bound multiple times per block in which case the last binding in scope is the one used for logic. This scenario is known as "shadowing."
 
 The following sequences are valid:
 
@@ -73,6 +73,6 @@ if a == b {
 ...                 // n is 8 again
 ```
 
-For more details, see [Variable Declarations and Reassignments](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#variable-declarations-and-reassignments).
+For more information, see [Variable Declarations and Reassignments](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#variable-declarations-and-reassignments).
 
 

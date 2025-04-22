@@ -1,11 +1,11 @@
 ---
-author: bradben
-ms.author: brbenefield
+author: azure-quantum-content
+ms.author: quantumdocwriters
 description: This document provides details on the support policy for the Rigetti provider in Azure Quantum
-ms.date: 04/13/2023
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: troubleshooting
+ms.topic: troubleshooting-general
 no-loc: [target, targets]
 title: Support Policy for Rigetti in Azure Quantum
 uid: microsoft.quantum.providers.rigetti.support

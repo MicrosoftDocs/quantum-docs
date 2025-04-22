@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about hybrid quantum computing, the different implementation types, and how to choose the best approach for your quantum computing needs.
 ms.date: 07/22/2024
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview

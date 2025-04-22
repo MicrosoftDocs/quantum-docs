@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Add or remove a provider in an existing Azure Quantum workspace
-ms.author: brbenefield
-ms.date: 05/01/2023
+ms.author: quantumdocwriters
+ms.date: 11/22/2024
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to

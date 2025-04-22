@@ -1,11 +1,11 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
+author: azure-quantum-content
+ms.author: quantumdocwriters
 description: This document provides the technical details of the simulators and QPU of the PASQAL quantum provider.
-ms.date: 11/13/2023
+ms.date: 03/10/2025
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 title: PASQAL quantum computing provider    
 uid: microsoft.quantum.providers.pasqal     
 ---
@@ -24,10 +24,7 @@ The following targets available from this provider:
 |Target name| Target ID|Number of qubits | Description |
 |---|---|---|---|
 |[Emu-TN](#emulator) | pasqal.sim.emu-tn| 100 qubits 1D and 2D networks| Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
-|[Fresnel1](#fresnel1) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
-
-> [!NOTE]
-> PASQAL quantum provider is currently available in Private Preview. You can request access to the Private Preview by following [this link](https://aka.ms/AQ/PrivatePreviewRequest).
+|[Fresnel](#fresnel) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
 
 ## Emulator
 
@@ -40,9 +37,9 @@ Emu-TN emulator runs on a cluster of DGX nodes, each equipped with NVIDIA A100 G
 - Target ID: `pasqal.sim.emu-tn`
 - Target Execution Profile: N/A
 
-## Fresnel1
+## Fresnel
 
-Fresnel1 is PASQAL's quantum computer based on neutral atoms. The neutral atoms, controlled by optical tweezers, compose an array of 100 qubits.
+Fresnel is PASQAL's quantum computer based on neutral atoms. The neutral atoms, controlled by optical tweezers, compose an array of 100 qubits.
 
 Neutral atoms quantum devices use highly focused lasers, so-called optical tweezers, to trap and manipulate neutral atoms individually to create 1D or 2D  qubit arrays  in arbitrary configurations. Current PASQAL generation of devices use around 100 rubidium atoms for computations. Each qubit is represented by a two-level energy state in a Rubidium atom, usually a ground state and a Rydberg state which is a high energy state.  
 
@@ -90,7 +87,7 @@ def submit_job(target, seq):
     )
 ```
 
-For more information about how to submit jobs to the PASQAL provider, see [Submit a circuit with a provider-specific format to PASQAL](xref:microsoft.quantum.quickstarts.computing.provider#platform-pasqal).
+For more information about how to submit jobs to the PASQAL provider, see [Submit a circuit to PASQAL using Pulser SDK](xref:microsoft.quantum.quickstarts.computing.provider#submit-a-circuit-to-pasqal-using-pulser-sdk).
 
 ## Pricing
 
@@ -98,9 +95,5 @@ To see the PASQAL billing plan, visit [Azure Quantum pricing](xref:microsoft.qua
 
 ## Limits and quotas
 
-PASQAL quotas are tracked based on the usage of the Emu-TN emulator. Quotas depend on the plan you are using:
-
-- Azure Quantum Credits plan: up to 20 hours
-- Pay-as-you-go plan: up to 100 hours
-
-The quotas are only applied to the Emu-TN emulator. There are no quotas for the Fresnel1 QPU.
+PASQAL quotas apply to the usage of the emulator and QPU and can be increased with a support ticket. 
+To check your current limits and quotas, navigate to the Credits and quotas section, then select the Quotas tab in your workspace on the [Azure portal](https://portal.azure.com). Refer to [Azure Quantum quotas](xref:microsoft.quantum.quotas) for more information.

@@ -1,29 +1,33 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides an overview of target profile types available in Azure Quantum and their limitations. 
-ms.date: 08/09/2024
-ms.author: sonialopez
+ms.date: 01/24/2025
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: [QIR Base, QIR Adaptive RI, target, targets, full]
-title: QIR Target Profile Types 
+title: Target Profile Types 
 uid: microsoft.quantum.target-profiles
+
+# customer intent: As a quantum developer, I want to understand the different target profile types available in Azure Quantum and their limitations so that I can develop quantum programs that run on the appropriate quantum devices.
 ---
 
-# QIR target profile types in Azure Quantum
+# Different types of target profiles in Azure Quantum
 
-This article discusses the different type of QIR target profile types available in the quantum computing providers in Azure Quantum. The QIR target profile types are used to define the capabilities of the quantum devices that you can target with your Q# programs.
+Quantum devices are still an emerging technology and unfortunately not all of them can run every Q# code. As such, you need to keep some restrictions in mind when developing quantum programs. The target profile types are used to define the capabilities of the quantum devices that you can target with your Q# programs, that is, the capabilities of the current quantum devices available in Azure Quantum.
+
+This article discusses the different types of target profiles in Azure Quantum, their limitations, and how to configure them using the Quantum Development Kit (QDK).
 
 ## Target profiles and their limitations 
 
-Quantum devices are still an emerging technology, and not all of them can run all Q# code. As such, you need to keep some restrictions in mind when developing programs for different targets. Currently, Azure Quantum and the QDK manage three different target profiles:
+Currently, Azure Quantum and the QDK manage three different target profiles, depending on their ability to run [quantum intermediate representation (QIR) programs](xref:microsoft.quantum.concepts.qir).
 
-- **:::no-loc text="Unrestricted":::**: This profile can run any QIR program within the limits of memory for simulators or the number of qubits for physical quantum computers.
-- **:::no-loc text="QIR base":::**: This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
-- **:::no-loc text="QIR Adaptive RI":::**: This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement.
+- [**:::no-loc text="Unrestricted":::**:](#create-and-run-programs-for--target-profile) This profile can run any QIR program, and thus any Q# program, within the limits of memory for simulators or the number of qubits for physical quantum computers.
+- [**:::no-loc text="QIR base":::**:](#create-and-run-programs-for--target-profile-1) This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, values of type `Result` don't support equality comparison.
+- [**:::no-loc text="QIR Adaptive RI":::**:](#create-and-run-programs-for--target-profile-2) This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement.
 
-## Create and run applications for :::no-loc text="Unrestricted"::: target profile
+## Create and run programs for :::no-loc text="Unrestricted"::: target profile
 
 :::no-loc text="Unrestricted"::: target profiles can run any program, meaning you can write Q# programs without functionality restrictions. Azure Quantum doesn't provide
 any target with this profile. However, you can run :::no-loc text="Unrestricted"::: Q# programs on simulators provided by the QDK.
@@ -41,7 +45,7 @@ In Python, you can set the target profile using the `qsharp.init` method.
 qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted) 
 ```
 
-## Create and run applications for :::no-loc text="QIR Base"::: target profile
+## Create and run programs for :::no-loc text="QIR Base"::: target profile
 
 :::no-loc text="QIR Base"::: target profiles can run a wide variety of Q# applications, with the constraint that they can't use results from qubit measurements to control
 the program flow. More specifically, values of type `Result` don't support equality comparison.
@@ -74,9 +78,9 @@ In Python, you can set the target profile using the `qsharp.init` method.
 qsharp.init(target_profile=qsharp.TargetProfile.Base) 
 ```
 
-### Supported targets
+### Supported targets for :::no-loc text="QIR Base"::: target profile
 
-Currently, these :::no-loc text="QIR Base"::: targets are available for Azure Quantum:
+Currently, the following :::no-loc text="QIR Base"::: targets are available in Azure Quantum:
 
 - **Provider:** IonQ
   - [IonQ simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator) (`ionq.simulator`)
@@ -86,7 +90,7 @@ Currently, these :::no-loc text="QIR Base"::: targets are available for Azure Qu
   - [Rigetti Simulator](xref:microsoft.quantum.providers.rigetti#simulators) (`rigetti.sim.*`)
   - [Rigetti QPU](xref:microsoft.quantum.providers.rigetti#quantum-computers) (`rigetti.qpu.*`)
 
-## Create and run applications for :::no-loc text="QIR Adaptive RI"::: profile targets
+## Create and run programs for :::no-loc text="QIR Adaptive RI"::: target profile
 
 :::no-loc text="QIR Adaptive RI"::: profile targets can run a wide variety of Q# applications, with some constraints. This profile type supposes an improvement over :::no-loc text="QIR Base"::: profiles, but still is subject to some limitations.
 
@@ -119,9 +123,9 @@ In Python, you can set the target profile using the `qsharp.init` method.
 qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI) 
 ```
 
-### Supported targets
+### Supported targets for :::no-loc text="QIR Adaptive RI"::: target profile
 
-Currently, these :::no-loc text="QIR Adaptive RI"::: targets are available for Azure Quantum:
+Currently, the following :::no-loc text="QIR Adaptive RI"::: targets are available in Azure Quantum:
 
 - **Provider:** Quantinuum
   - [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum) (`quantinuum.sim.h1-1e`, `quantinuum.sim.h2-1e`)

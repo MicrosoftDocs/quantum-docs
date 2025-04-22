@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
-ms.author: brbenefield
-ms.date: 07/08/2024
+ms.author: quantumdocwriters
+ms.date: 03/17/2025
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: troubleshooting
+ms.topic: troubleshooting-known-issue
 no-loc: [Quantum Development Kit, target, targets]
 title: Troubleshoot Issues with Azure Quantum
 uid: microsoft.quantum.azure.common-issues
@@ -42,7 +42,7 @@ os.environ["AZURE_QUANTUM_CONNECTION_STRING"] = connection_string
 
 ### Issue: Missing targets
 
-If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
+If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (QDK) for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
@@ -86,7 +86,7 @@ This error occurs when there's a problem with the Q# program that causes the com
 
 ### Issue: Compiler error "Wrong number of gate parameters"
 
-When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM translator (OPENQASM 2.0), you may encounter this error:
+When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM (OPENQASM 2.0) translator, you may encounter this error:
 
 ```cmd
 Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
@@ -114,7 +114,7 @@ When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter 
 <function name> not found. Found a matching item `<function name>' that is not available for the current compilation configuration
 ```
 
-This error indicates that the QIR target profile is set to **Basic** and the function in question requires the **Unrestricted** target profile. To set the target profile to **Unrestricted**:
+This error indicates that the QIR (quantum intermediate representation) target profile is set to **Basic** and the function in question requires the **Unrestricted** target profile. To set the target profile to **Unrestricted**:
 
 1. While in your Q# program in VS Code, select **Q#: QIR base** on the bottom status bar. 
 1. From the options displayed in the top status bar, select **Q#: unrestricted**.
@@ -134,7 +134,7 @@ You can verify that you're running into this role assignment issue by following 
 * In the left navigation bar, select **Access Control (IAM)**
 * Select **Role Assignments**
 * Verify that your workspace appears as a **Contributor**
-* If the workspace doesn't appear as a **Contributor** you can either:
+* If the workspace doesn't appear as a **Contributor**, you can either:
   * Create a new workspace and make sure to wait for the workspace creation to be completed before closing the web browser tab or window.
   * Add the proper role assignment under the storage account     
     * Access Control (IAM) > Add role assignments
@@ -152,7 +152,7 @@ Error code: QIRPreProcessingFailed
 Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
 ```
 
-This error may be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
+This error can be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
 
 ```Shell
 pip install --upgrade azure-quantum[qiskit]
@@ -164,7 +164,7 @@ After you submit a job to a hardware target, your job may sit in the queue for s
 
 To retrieve more information about the failure:
 
-- Use the [`get_results()`](xref:azure.quantum.job.Job) method with the job object to view the output or the returned error message:
+- To view the output or the returned error message, use the [`get_results()`](xref:azure.quantum.job.Job) method with the job object:
 
 ```python
 job.get_results()
@@ -175,15 +175,15 @@ job.get_results()
 
 ### Issue: I keep being asked to authenticate when programmatically connecting to my workspace
 
-If you are using the Azure Quantum Python SDK (within Jupyter notebooks for instance) and are connecting to your workspace using the AzureQuantumProvider class, you may experience a pop-up to authenticate to Azure every time you run your script.
+If you are using the Azure Quantum Python SDK, for example within Jupyter notebook, and are connecting to your workspace using the `AzureQuantumProvider` class, you may experience a pop-up to authenticate to Azure every time you run your script.
 
-This happens because your security token is being reset every time you run the script.
+This pop-up happens because your security token is being reset every time you run the script.
 
 You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index#az-login()).
 
 ### Issue: After updating the azure-quantum package, I get the error \"ModuleNotFoundError: No module named qiskit.tools\" when monitoring a job
 
-As of Qiskit 1.0, the `qiskit.tools` module, which is required for the `job_monitor()` function, has been deprecated. To monitor jobs, use the `wait_for_final_state()` or the `result` functions. 
+As of Qiskit 1.0, the `qiskit.tools` module, which is required for the `job_monitor()` function, is deprecated. To monitor jobs, use the `wait_for_final_state()` or the `result` functions. 
 
 ```python
 job = MyTarget.run(circuit, shots=100)
@@ -201,10 +201,8 @@ The following common scenarios may prevent resource estimation jobs to complete.
 
 ### Issue: Quantum algorithm must contain at least one T state or measurement
 
-To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that _Parallel Synthesis Sequential Pauli Computation (PSSPC)_ (see [arXiv:2211.07629, Appendix
-D](https://arxiv.org/pdf/2211.07629.pdf#page=25)) is performed on the inputprogram. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
-operation that can be efficiently evaluated classically. Therefore, a quantum program that contains neither T states, for example from T gates or rotation gates, nor measurement operations does not require any physical quantum computing
-resources.
+To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that _Parallel Synthesis Sequential Pauli Computation (PSSPC)_  is performed on the input program. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
+operation that can be efficiently evaluated classically. Therefore, a quantum program that does not contain T states, for example from T gates or rotation gates, or measurement operations does not require any physical quantum computing resources. For more information about Parallel Synthesis Sequential Pauli Computation, see [arXiv:2211.07629, Appendix D](https://arxiv.org/pdf/2211.07629.pdf#page=25).
 
 ```ouput
 Error message: Algorithm requires at least one T state or measurement to estimate resources
@@ -213,8 +211,8 @@ Error message: Algorithm requires at least one T state or measurement to estimat
 ### Issue: Physical T gate error rate is too high
 
 The _logical_ T state error rate depends on the error budget and the number of T states in the quantum program. [T factories](xref:microsoft.quantum.concepts.tfactories) are used to create T states with the
-required logical T state error rate from physical T gates, which have a _physical_ T gate error rate. Typically, the physical T gate error rate is much higher than the required logical T gate error rate. In some scenarios, the
-physical T gate error rate is that much higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
+required logical T state error rate from physical T gates, which have a _physical_ T gate error rate. Typically, the physical T gate error rate is higher than the required logical T gate error rate. In some scenarios, the
+physical T gate error rate is significantly higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
 
 ```ouput
 Error message: No T factory can be found, because the required logical T state error rate is too low
@@ -229,7 +227,7 @@ Here is what you could do in such a scenario:
 ### Issue: Physical T gate error rate is too low
 
 There is also the opposite scenario, in which the physical T gate error rate is lower than the required logical T state error rate. In such cases, no T factory is required, because the physical T gate error rate is already of sufficient
-quality. However, this requires a careful consideration of the impact of transfer units that transfer the physical T states from code distance 1 to the code distance of the algorithm (see [arXiv:2211.07629, Appendix
+quality. However, this scenario requires a careful consideration of the impact of transfer units that transfer the physical T states from code distance 1 to the code distance of the algorithm (see [arXiv:2211.07629, Appendix
 C](https://arxiv.org/pdf/2211.07629.pdf#page=21)). In general, in the presence of T factories, the cost of transfer units is negligible.
 
 ```ouput
@@ -259,7 +257,7 @@ The Resource Estimator accepts only one of [`maxDuration`](xref:qsharp.estimator
 
 This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`. 
 
-To avoid this error, do one of the following:
+To avoid this error, take one of the following actions:
 
 - Use the *azure_quantum* Python package to submit Qiskit circuits to Azure Quantum (recommended).
 - When using the *qiskit_qir* Python package, be sure to set the `record_output` parameter to `False` before submitting your circuit.
@@ -272,7 +270,7 @@ The following issues may occur when you use the Azure portal to create a workspa
 
 This issue occurs because you don't have an active subscription.
 
-For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes USD200 free Azure Credits to use on Azure services. Note that these Azure credits aren't the same as [Azure Quantum Credits](xref:microsoft.quantum.credits) and aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you've consumed the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal will allow you to access the workspace creation form.
+For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/free/), which includes USD200 free Azure Credits to use on Azure services. These Azure credits aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you consume the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal allows you to access the workspace creation form.
 
 To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
 
@@ -294,13 +292,13 @@ If access was recently granted, you may need to refresh the page. It can sometim
 
 ### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
-This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab won't list Rigetti as an available provider. For a list of providers and their availability by country/region, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
+This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab doesn't list Rigetti as an available provider. For a list of providers and their availability by country/region, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
 
 ### Issue: Workspace creation or adding/removing providers fails with "ResourceDeploymentFailure" or "ProviderDeploymentFailure"
 
 This issue may include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: \<*Name of the provider*>".
 
-This occurs because the tenant has not enabled Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
+This failure occurs because the tenant did not enable Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
 
 ### Issue: Deploying a quantum workspace or deploying a storage account fails with one of the following errors:
 
@@ -317,9 +315,9 @@ To resolve this, work with your subscription administrator to get an exception f
 
 After selecting **Notebooks** in your workspace, the list of your saved notebooks displays a progress bar but never loads.
 
-This can happen for three reasons:
+This scenario can happen for three reasons:
 
-1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you will see a **404 - Not found** error.
+1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you see a **404 - Not found** error.
 
 1. If the storage account is not enabled for public internet access. See [Authorization failure](#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation) for more information. 
 

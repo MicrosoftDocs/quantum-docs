@@ -1,36 +1,25 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides a basic guide to run resource estimates both locally and online using different SDKs and IDEs.
-ms.author: sonialopez
-ms.date: 01/07/2024
+ms.author: quantumdocwriters
+ms.date: 12/18/2024
 ms.service: azure-quantum
-ms.subservice: computing
 ms.custom:
 ms.topic: how-to
 title: Run the Resource Estimator
 uid: microsoft.quantum.submit-resource-estimation-jobs
 no-loc: [target, targets]
-zone_pivot_groups: ide-local-portal-jupyter
+zone_pivot_groups: ide-local-jupyter-qiskit
 ---
 
 # Different ways to run the Resource Estimator
 
-In this article, you learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator is part of the Quantum Development Kit and is available in different platforms and IDEs. 
+In this article, you learn to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator helps you estimate the resources required to run a quantum program on a quantum computer. You can use the Resource Estimator to estimate the number of qubits, the number of gates, and the depth of the circuit required to run a quantum program.
 
-If you run a Q# program, the Resource Estimator is available in Visual Studio Code with the [Quantum Development Kit extension](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code). You don't neet to have an Azure subscription to use the Resource Estimator in Visual Studio Code. 
+The Resource Estimator is available in Visual Studio Code with the Quantum Development Kit extension. For more information, see [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
-If you run a Qiskit or QIR program, the Resource Estimator is available in the Azure portal, and you need an Azure subscription to use it.
-
-The following table shows the different ways to run the Resource Estimator.
-
-|User scenario|Platform| Tutorial|
-|---|---|---|
-|Estimate the resources of a Q# program|Visual Studio Code| Select **Q# in VS Code** at the top of the page|
-|Estimate the resources of a Q# program (advanced)|Jupyter Notebook in Visual Studio Code| Select **Q# in Jupyter Notebook** at the top of the page|
-|Estimate the resources of a Qiskit program|Azure portal|Select **Qiskit in Azure portal** at the top of the page|
-|Estimate the resources of a QIR program|Azure portal| [Submit QIR](xref:microsoft.quantum.tutorial.resource-estimator.qir)|
-|Use FCIDUMP files as argument parameters (advanced)| Visual Studio Code| [Submit a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)|
-
+> [!WARNING]
+> The Resource Estimator in Azure portal is deprecated. We recommend that you transition to the local Resource Estimator in Visual Studio Code provided in the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 ::: zone pivot="platform-local"
 
@@ -44,7 +33,7 @@ The following table shows the different ways to run the Resource Estimator.
 
 ::: zone-end
 
-::: zone pivot="platform-portal-qiskit"
+::: zone pivot="platform-qiskit"
 
 [!INCLUDE [portal-qiskit-procedure](includes/how-to-submit-resources-estimation-include-qiskit.md)]
 

@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa.
-ms.author: sonialopez
-ms.date: 06/03/2024
+ms.author: quantumdocwriters
+ms.date: 09/10/2024
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: tutorial
@@ -26,7 +26,7 @@ In this tutorial, you will:
 ## Prerequisites 
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
+- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
 - The latest Azure Quantum `qsharp` package, and `numpy` and `scipy` packages.  
 
     ```bash
@@ -34,7 +34,7 @@ In this tutorial, you will:
     ```
 
 > [!TIP]
-> You don't need to have an Azure account to run the local Resource Estimator. 
+> You don't need to have an Azure account to run the Resource Estimator. 
 
 ## Describe the problem
 
@@ -143,4 +143,4 @@ If you want to deepen your knowledge, here are some experiments you can try:
 - The tutorial [Implement Grover’s search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm to solve a graph coloring problem.
 - The tutorial [Write and simulate qubit-level programs in Q#](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
 - The tutorial [Explore quantum entanglement with Q#](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to operate on qubits with Q# to change their state, and demonstrates the effects of superposition and entanglement.
-- The [Quantum Katas](https://quantum.microsoft.com/en-us/experience/quantum-katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are Jupyter Notebook-based, self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
-ms.date: 08/09/2024
+author: azure-quantum-content
+ms.author: quantumdocwriters
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -10,7 +10,7 @@ no-loc: [target, targets]
 
 ## Prerequisites
 
-For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
@@ -129,19 +129,7 @@ print(result)
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
-
-```python
-cost = service.estimate_cost(
-    program=circuit,
-    repetitions=100,
-    target="ionq.qpu.aria-1"
-)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This prints the estimated cost in US dollars.
+Before running a job on the QPU, you should estimate how much it will cost to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
@@ -265,22 +253,7 @@ Looking at the histogram, you may notice that the random number generator return
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method.
-
-> [!NOTE]
-> To run a cost estimate against a Quantinuum target, you must first reload the *azure-quantum* Python package with the *\[qiskit\]* parameter, and ensure that you have the latest Qiskit version. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
-
-```python
-cost = service.estimate_cost(
-    program=circuit,
-    repetitions=100,
-    target="quantinuum.qpu.h1-1"
-)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This prints the estimated cost in H-System Credits (HQCs).
+Before running a job on the QPU, you should estimate how much it will cost to run.
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 

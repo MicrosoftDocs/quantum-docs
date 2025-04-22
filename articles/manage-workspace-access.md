@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
-ms.author: brbenefield
-ms.date: 08/19/2024
+ms.author: quantumdocwriters
+ms.date: 01/08/2025
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: overview
+ms.topic: conceptual
 no-loc: ['Q#', '$$v']
 title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access
@@ -17,7 +17,7 @@ uid: microsoft.quantum.how-to.manage-workspace-access
 
 Learn about the different security principals and roles you can use to manage access to your Azure Quantum workspace.
 
-## Azure role-based access control
+## Azure role-based access control (RBAC)
 
 [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources, such as a workspace. To grant access, you assign roles to a security principal. 
 
@@ -34,13 +34,14 @@ A security principal is an object that represents a user, group, service princip
 
 ### Role
 
-When you grant access to a security principal, you assign a [built-in role](/azure/role-based-access-control/built-in-roles) or create a [custom role](/azure/role-based-access-control/custom-roles). The most commonly used built-in roles are **Owner**, **Contributor**, and **Reader**.
+When you grant access to a security principal, you assign a [built-in role](/azure/role-based-access-control/built-in-roles) or create a [custom role](/azure/role-based-access-control/custom-roles). The most commonly used built-in roles are **Owner**, **Contributor**, **Quantum Workspace Data Contributor**,  and **Reader**.
 
 |Role|Access level|
 |--|--|
-|Owner|Grants full access to manage all resources, including the ability to assign roles in Azure RBAC.|
-|Contributor|Grants full access to manage all resources, but doesn't allow you to assign roles in Azure RBAC.|
-|Reader|View all resources, but doesn't allow you to make any changes.|
+|[Owner](/azure/role-based-access-control/built-in-roles/privileged#owner)|Grants full access to manage all resources, including the ability to assign roles in Azure RBAC.|
+|[Contributor](/azure/role-based-access-control/built-in-roles/privileged#contributor)|Grants full access to manage all resources, but doesn't allow you to assign roles in Azure RBAC.|
+|[Quantum Workspace Data Contributor](/azure/role-based-access-control/built-in-roles/compute#quantum-workspace-data-contributor)|Grants access to submit and view jobs in the workspace, but doesn't allow you to create, delete, or modify a workspace.|
+|[Reader](/azure/role-based-access-control/built-in-roles/general#reader)|View all resources, but doesn't allow you to make any changes.|
 
 ### Scope
 
@@ -64,7 +65,7 @@ When you [create a new workspace](xref:microsoft.quantum.how-to.workspace), you 
 
 ### Subscription Owner
 
-Subscription owners can create workspaces using either the **Quick create** or **Advanced create** options. You can either choose a resource group and storage account that already exist under the subscription or create new ones. You also have the ability to [assign roles](#assign-roles) to other users.
+Subscription owners can create workspaces using either the **Quick create** or **Advanced create** options. You can either choose a resource group and storage account that already exists under the subscription or create new ones. You also have the ability to [assign roles](#assign-roles) to other users.
 
 ### Subscription Contributor
 
@@ -104,8 +105,10 @@ To assign roles for any resource at any scope, including the subscription level,
 
 ## Troubleshooting
 
+For solutions to common issues, see [Troubleshoot Azure Quantum: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
+
 - When you create a resource in Azure, such as a workspace, you're not directly the owner of the resource. Your role is inherited from the highest scope role that you're authorized against in that subscription. 
 
-- It can sometimes take up to one hour for new role assignments to take effect over cached permissions across the stack.
+- When you create new role assignments, they can sometimes take up to one hour to take effect over cached permissions across the stack.
 
-- For solutions to common issues, see [Troubleshoot Azure Quantum: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
+

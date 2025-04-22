@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, PASQAL, Quantinuum, and Rigetti.
-ms.author: brbenefield
-ms.date: 06/18/2024
+ms.author: quantumdocwriters
+ms.date: 01/14/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_', Quantum Development Kit]
 title: Simulators from Quantum Providers
 uid: microsoft.quantum.machines.overview.backend-simulators
@@ -19,12 +19,12 @@ This article describes the backend simulators available from quantum providers. 
 
 ## IonQ
 
-IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates that IonQ provides on its quantum hardware — a great place to preflight jobs before running them on an actual quantum computer.
+IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, using the same set of gates that IonQ provides on its quantum hardware. The simulator is a great place to preflight jobs before running them on an actual quantum computer.
 
 - Job type: `Simulation`
 - Data Format: `ionq.circuit.v1`
 - Target ID: `ionq.simulator`
-- Target Execution Profile: QIR Base
+- Target Execution Profile: QIR Base (Quantum Intermediate Representation)
 
 For more information, see the [IonQ provider](xref:microsoft.quantum.providers.ionq) page.
 
@@ -32,7 +32,7 @@ For more information, see the [IonQ provider](xref:microsoft.quantum.providers.i
 
 PASQAL's Emu-TN emulator simulates the time-evolution of a quantum state using the Schrödinger's equation corresponding to the actions that the lasers perform.
 
-Emu-TN emulator runs on a cluster of DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of PASQAL’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU . Up to 100 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
+Emu-TN emulator runs on a cluster of NVIDIA DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of PASQAL’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU (quantum processing unit). Up to 100 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
 
 - Job Type: `Simulation`
 - Data Format: `application/json`
@@ -55,7 +55,7 @@ Quantinuum provides two emulator tools:
 - Target Execution Profile: QIR Adaptive RI
 - Pricing: Free ($0)
 
-**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine - the H1-1 and H2-1 - along with cloud-based H-Series Emulator.
+**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine - the H1-1 and H2-1 - along with cloud-based Quantinuum Emulator.
  
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1, honeywell.qir.v1`
@@ -64,7 +64,7 @@ Quantinuum provides two emulator tools:
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
 - Target Execution Profile: QIR Adaptive RI
 
-The H-Series Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) page. For more information, see the [H-Series Emulator](xref:microsoft.quantum.providers.quantinuum#h-series-emulator-cloud-based) page.
+The Quantinuum Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page. For more information, see the [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based) page.
 
 For more information about all the Quantinuum emulators, see the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) page.
 

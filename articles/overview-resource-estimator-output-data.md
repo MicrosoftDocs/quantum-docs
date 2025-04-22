@@ -1,19 +1,19 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This article shows how to interpret the report data of the Resource Estimator and access the output parameters.
 ms.date: 08/01/2024
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v', target, targets]
-title: Output Parameters of the Resource Estimator
+title: Output of the Resource Estimator
 uid: microsoft.quantum.overview.resources-estimator-output.data
 ---
 
-# Understanding the result data of the Resource Estimator
+# Retrieving the output of the Resource Estimator
 
-Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in Jupyter Notebooks. If you run the Resource Estimator in Visual Studio Code from the command palette, the following commands doesn't apply.
+Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in Jupyter Notebooks in Visual Studio Code.
 
 ## Prerequisites
 
@@ -25,6 +25,9 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Re
     ```bash
     python -m pip install --upgrade qsharp qsharp-widgets 
     ```
+
+> [!NOTE]
+> If you run the Resource Estimator in Visual Studio Code from the command palette, the following commands doesn't apply. For more information, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Output parameters
 

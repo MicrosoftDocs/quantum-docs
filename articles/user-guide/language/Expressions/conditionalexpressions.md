@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about conditional expressions in the Q# programming language.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 02/01/2021
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

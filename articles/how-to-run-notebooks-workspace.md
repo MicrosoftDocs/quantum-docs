@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to work with Q# or Python in a Jupyter notebook in an Azure Quantum workspace.
-ms.author: brbenefield
-ms.date: 12/14/2023
+ms.author: quantumdocwriters
+ms.date: 08/22/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -51,7 +51,7 @@ To run Q# or Python code in a Jupyter Notebook, follow these steps.
 Follow these steps to create a new Jupyter Notebook using Q# or Python.
 
 > [!NOTE]
-> Q# programs in Jupyter Notebooks don't require a `namespace` or `@EntryPoint()`. Instead, you call an operation or function directly. Jupyter Notebooks also don't display program results by default, so you must use the `Message` statement. For more information, see [Structure of a Q# program](xref:microsoft.quantum.qsharp-overview#structure-of-a-q-program).
+> Jupyter Notebooks don't display program results by default, so you must use the `Message` statement. For more information, see [Structure of a Q# program](xref:microsoft.quantum.qsharp-overview#structure-of-a-q-program).
 
 1. Select your Azure Quantum workspace in the [Azure portal](https://portal.azure.com).
 1. Select **Notebooks**.

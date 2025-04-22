@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to optimize the execution time when running large Q# programs with the Resource Estimator.
-ms.date: 06/03/2024
-ms.author: sonialopez
+ms.date: 01/13/2025
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -21,7 +21,7 @@ For information about how to run the Resource Estimator, see [Different ways to 
 ## Prerequisites
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+- The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 If you want to use Python in VS Code, you also need the following:
 
@@ -32,11 +32,9 @@ If you want to use Python in VS Code, you also need the following:
     python -m pip install --upgrade qsharp 
     ```
 
-## How to handle large Q# programs
+## Manual caching with Q# programs 
 
-When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called manual caching.
-
-## Manual caching
+When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called *manual caching*.
 
 The Resource Estimator target supports two Q# functions to perform manual caching: `BeginEstimateCaching(name: String, variant: Int): Bool` and `EndEstimateCaching(): Unit`. `BeginEstimateCaching` function takes as inputs a `name` which is the unique name of the code fragment for which you want to cache costs, and an integer `variant` that distinguishes different variants of cost for the same fragment.
 
@@ -76,8 +74,7 @@ In this case, the cache is different for odd and even values of `c`. In other wo
 
 ## Related content
 
-- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Retrieve the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
-- [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
-- [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)
+- [Customize the target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator)
 

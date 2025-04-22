@@ -1,11 +1,11 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
+author: azure-quantum-content
+ms.author: quantumdocwriters
 description: This document provides details on the support policy for the PASQAL quantum provider in Azure Quantum.
-ms.date: 11/13/2023
+ms.date: 03/10/2025
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: reference
+ms.topic: troubleshooting-general
 title: Support Policy for PASQAL in Azure Quantum
 uid: microsoft.quantum.providers.pasqal.support
 ---
@@ -14,11 +14,22 @@ uid: microsoft.quantum.providers.pasqal.support
 
 This article describes the Microsoft support policy that applies when you use the PASQAL provider in Azure Quantum. The article applies to any of the [targets](xref:microsoft.quantum.providers.pasqal) offered by PASQAL.
 
-If you're using PASQAL and experience unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
+## Azure support
+
+In general, problems using PASQAL on Microsoft Azure Quantum are best addressed with the Azure Quantum support team directly by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request). This team has all the necessary details to isolate the issue you're experiencing and direct the report to the right point of contact. The Azure support team also has the means to reach PASQAL support outside of business hours for the most urgent issues.
+
+
+## Pasqal support
 
 In some situations, the Azure Support team will need to redirect you to PASQAL's support team. You may receive a quicker response by reaching out to [PASQAL directly](mailto:help@pasqal.com).
 
-## Support points of contact
+## Support timeline
 
-In general, problems using PASQAL on Microsoft Azure Quantum are best addressed with the Azure Quantum support team directly by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request). This team has all the necessary details to isolate the issue you're experiencing and direct the report to the right point of contact. The Azure support team also has the means to reach PASQAL support outside of business hours for the most urgent issues.
+Pasqal will always attempt to resolve issues with the Microsoft Azure integration as quickly as practical. Some issues will take longer to address than others, but the tables below indicate the time you may expect for an initial response from Pasqal after an issue is reported.
+
+| Severity | Definition | Response SLA |
+|----------|-------------|-----------------------|    
+| High   | Failure in connectivity, complete performance degradation | One business day |
+| Medium | Performance degradation | Two business days |
+| Low    | Application related concerns and questions | Three business days |
 

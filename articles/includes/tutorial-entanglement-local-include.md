@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
-ms.date: 06/03/2024
+author: azure-quantum-content
+ms.author: quantumdocwriters
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -14,7 +14,7 @@ no-loc: [Quantum Development Kit, target, targets]
 To develop and run the code sample in your local development environment:
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 ## Create a new Q# file
 
@@ -23,21 +23,19 @@ To develop and run the code sample in your local development environment:
 
 ## Initialize a qubit to a known state
 
-The first step is to define a Q# operation that will initialize a qubit to a known state. This can be called to set a qubit to a classical state, meaning it either returns `Zero` 100% of the time or returns `One` 100% of the time. `Zero` and `One` are Q# values that represent the only two possible results of a measurement of a qubit.
+The first step is to define a Q# operation that initializes a qubit to a known state. This operation can be called to set a qubit to a classical state, meaning it either returns `Zero` 100% of the time or returns `One` 100% of the time. `Zero` and `One` are Q# values that represent the only two possible results of a measurement of a qubit.
 
 Open `CreateBellStates.qs` and copy the following code:
 
 ```qsharp
-   namespace Bell {
-       open Microsoft.Quantum.Intrinsic;
-       open Microsoft.Quantum.Canon;
+import Microsoft.Quantum.Intrinsic.*;
+import Microsoft.Quantum.Canon.*;
 
-       operation SetQubitState(desired : Result, target : Qubit) : Unit {
-           if desired != M(target) {
-               X(target);
-           }
-       }
-   }
+operation SetQubitState(desired : Result, target : Qubit) : Unit {
+    if desired != M(target) {
+        X(target);
+    }
+}
 ```
 
 The code example introduces two standard operations, `M` and `X`, which transform the state of a qubit.
@@ -50,12 +48,12 @@ The  `SetQubitState` operation:
 
 ## Write a test operation to test the Bell state
 
-Next, to demonstrate the effect of the `SetQubitState` operation, create another operation named `TestBellState`. This operation will allocate two qubits, call `SetQubitState` to set the first qubit to a known state, and then measure the qubits to see the results.
+Next, to demonstrate the effect of the `SetQubitState` operation, create another operation named `Main`. This operation allocates two qubits, call `SetQubitState` to set the first qubit to a known state, and then measure the qubits to see the results.
 
 Add the following operation to your `CreateBellStates.qs` file after the `SetQubitState` operation:
 
 ```qsharp
-operation TestBellState() : (Int, Int, Int, Int) {
+operation Main() : (Int, Int, Int, Int) {
     mutable numOnesQ1 = 0;
     mutable numOnesQ2 = 0;
     let count = 1000;
@@ -73,10 +71,10 @@ operation TestBellState() : (Int, Int, Int, Int) {
 
         // Count the number of 'Ones' returned:
         if resultQ1 == One {
-            set numOnesQ1 += 1;
+            numOnesQ1 += 1;
         }
         if resultQ2 == One {
-            set numOnesQ2 += 1;
+            numOnesQ2 += 1;
         }
     }
 
@@ -91,13 +89,12 @@ operation TestBellState() : (Int, Int, Int, Int) {
     Message($"Q2 - Zeros: {count - numOnesQ2}");
     Message($"Q2 - Ones: {numOnesQ2}");
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
-
 }
 ```
 
-In the code, the `count` and `initial` variables are set to `1000` and `One` respectively. This initializes the first qubit to `One` and measures each qubit 1000 times.
+In the code, the `count` and `initial` variables are set to `1000` and `One` respectively. This step initializes the first qubit to `One` and measures each qubit 1000 times.
 
-The `TestBellState`operation:
+The `Main`operation:
 
 1. Takes two parameters: `count`, the number of times to run a measurement, and `initial`, the desired state to initialize the qubit. 
 1. Calls the `use` statement to initialize two qubits.
@@ -107,80 +104,73 @@ The `TestBellState`operation:
     1. Uses the `M` operation to measure each qubit.
     1. Stores the number of measurements for each qubit that return `One`.
 1. After the loop completes, it calls `SetQubitState` again to reset the qubits to a known state (`Zero`) to allow others to
-allocate the qubits in a known state. This is required by the `use` statement. 
+allocate the qubits in a known state. Resetting the qubit is required by the `use` statement. 
 1. Finally, it uses the `Message` function to print a message to the console before returning the results.
 
 ## Run the code 
 
 Before moving on to the procedures for superposition and entanglement, test the code up to this point to see the initialization and measurement of the qubits.
 
-This is done in the Q# file by adding an `@EntryPoint()` directly preceding the operation that you want to run. For example, in this case is the `TestBellState` operation.
+In order to run the code as a standalone program, the Q# compiler needs to know *where* to start the program. Because no namespace is specified, the compiler recognizes the default entry point as the `Main` operation. For more information, see [Projects and implicit namespaces](xref:microsoft.quantum.qsharp-projects#projects-and-implicit-namespaces).
 
-> [!NOTE]
-> `@EntryPoint()` is only required for standalone Q# programs. When running a Q# program in Jupyter Notebooks, or calling a Q# program from a Python host file, it isn't required and will throw an error if included.
-
-1. Your `CreateBellStates.qs` file should now look like this:
+1. Your `CreateBellStates.qs` file up to this point should now look like this:
 
     ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Canon;
+    import Microsoft.Quantum.Intrinsic.*;
+    import Microsoft.Quantum.Canon.*;
     
-           operation SetQubitState(desired : Result, target : Qubit) : Unit {
-               if desired != M(target) {
-                   X(target);
-               }
-           }
+    operation SetQubitState(desired : Result, target : Qubit) : Unit {
+        if desired != M(target) {
+            X(target);
+        }
+    }
     
-        @EntryPoint()
-        operation TestBellState() : (Int, Int, Int, Int) {
-            mutable numOnesQ1 = 0;
-            mutable numOnesQ2 = 0;
-            let count = 1000;
-            let initial = One;
+    operation Main() : (Int, Int, Int, Int) {
+        mutable numOnesQ1 = 0;
+        mutable numOnesQ2 = 0;
+        let count = 1000;
+        let initial = One;
     
-            // allocate the qubits
-            use (q1, q2) = (Qubit(), Qubit());   
-            for test in 1..count {
-                SetQubitState(initial, q1);
-                SetQubitState(Zero, q2);
-                
-                // measure each qubit
-                let resultQ1 = M(q1);            
-                let resultQ2 = M(q2);           
-        
-                // Count the number of 'Ones' returned:
-                if resultQ1 == One {
-                    set numOnesQ1 += 1;
-                }
-                if resultQ2 == One {
-                    set numOnesQ2 += 1;
-                }
-            }
-        
-            // reset the qubits
-            SetQubitState(Zero, q1);             
+        // allocate the qubits
+        use (q1, q2) = (Qubit(), Qubit());   
+        for test in 1..count {
+            SetQubitState(initial, q1);
             SetQubitState(Zero, q2);
             
-        
-            // Display the times that |0> is returned, and times that |1> is returned
-            Message($"Q1 - Zeros: {count - numOnesQ1}");
-            Message($"Q1 - Ones: {numOnesQ1}");
-            Message($"Q2 - Zeros: {count - numOnesQ2}");
-            Message($"Q2 - Ones: {numOnesQ2}");
-            return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
+            // measure each qubit
+            let resultQ1 = M(q1);            
+            let resultQ2 = M(q2);           
     
+            // Count the number of 'Ones' returned:
+            if resultQ1 == One {
+                numOnesQ1 += 1;
+            }
+            if resultQ2 == One {
+                numOnesQ2 += 1;
+            }
         }
+    
+        // reset the qubits
+        SetQubitState(Zero, q1);             
+        SetQubitState(Zero, q2);
+            
+        
+        // Display the times that |0> is returned, and times that |1> is returned
+        Message($"Q1 - Zeros: {count - numOnesQ1}");
+        Message($"Q1 - Ones: {numOnesQ1}");
+        Message($"Q2 - Zeros: {count - numOnesQ2}");
+        Message($"Q2 - Ones: {numOnesQ2}");
+        return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
     }
     ```
 
-1. Before running the program, you need to set the target profile to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
+1. Before running the program, ensure that the target profile is set to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
 
     > [!NOTE]
-    > If the target profile isn't set to **Unrestricted**, you will get an error when you run the program.
+    > If the target profile isn't set to **Unrestricted**, you get an error when you run the program.
 
-1. To run the program, select **Run Q# File** from the play icon drop-down in the top-right, click on **Run** from the list of commands below `@EntryPoint()`, or press **Ctrl+F5**. The program runs the operation or function marked with the `@EntryPoint()` attribute on the default simulator.
-1. Your output appear in the debug console.
+1. To run the program, select **Run Q# File** from the play icon drop-down in the top-right, select **Run** from the list of commands preceding the `Main` operation, or press **Ctrl+F5**. The program runs the `Main` operation on the default simulator.
+1. Your output appears in the debug console.
 
     ```output
     Q1 - Zeros: 0
@@ -202,29 +192,29 @@ This is done in the Q# file by adding an `@EntryPoint()` directly preceding the 
     ```
 
 > [!TIP]
-> Recall to save your file every time you introduce a change to the code before running it again.
+> Select **Ctrl-Z** or **Edit > Undo** and save your file whenever you introduce a test change to the code before running it again.
 
 ## Put a qubit in superposition
 
-Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you will put the first qubit into a **superposition state**, where a measurement of the qubit will return `Zero` 50% of the time and `One` 50% of the time. Conceptually, the qubit can be thought of as halfway between the `Zero` and `One`.
+Currently, the qubits in the program are all in a **classical state**, that is, they are either 1 or 0. You know this because the program initializes the qubits to a known state, and you haven't added any processes to manipulate them.  Before entangling the qubits, you put the first qubit into a **superposition state**, where a measurement of the qubit returns `Zero` 50% of the time and `One` 50% of the time. Conceptually, the qubit can be thought of as halfway between the `Zero` and `One`.
 
 To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. Recall the `X` operation from the [Initialize a qubit to a known state](#initialize-a-qubit-to-a-known-state) procedure earlier, which flipped a qubit from `Zero` to `One` (or vice versa); the `H` operation flips the qubit *halfway* into a state of equal probabilities of `Zero` or `One`. When measured, a qubit in superposition should return roughly an equal number of `Zero` and `One` results.
 
-1. Modify the code in the `TestBellState` operation to include the `H` operation:
+1. Modify the code in the `Main` operation to include the `H` operation:
 
     ```qsharp
+    for test in 1..count {
+        use (q1, q2) = (Qubit(), Qubit());   
         for test in 1..count {
-            use (q1, q2) = (Qubit(), Qubit());   
-            for test in 1..count {
-                SetQubitState(initial, q1);
-                SetQubitState(Zero, q2);
-                
-                H(q1);                // Add the H operation after initialization and before measurement
+            SetQubitState(initial, q1);
+            SetQubitState(Zero, q2);
+            
+            H(q1);                // Add the H operation after initialization and before measurement
     
-                // measure each qubit
-                let resultQ1 = M(q1);            
-                let resultQ2 = M(q2); 
-                ...
+            // measure each qubit
+            let resultQ1 = M(q1);            
+            let resultQ2 = M(q2); 
+            ...
     ```
     
 1. Now when you run the program, you can see the results of the first qubit in superposition:
@@ -236,7 +226,7 @@ To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. 
     Q2 - Ones: 0
     ```
 
-1. Every time you run the program, the results for the first qubit will vary slightly, but will be close to 50% `One` and 50% `Zero`, while the results for the second qubit will remain `Zero` all the time.
+1. Every time you run the program, the results for the first qubit vary slightly, but will be close to 50% `One` and 50% `Zero`, while the results for the second qubit remain `Zero` all the time.
 
     ```output
     Q1 - Zeros: 510           
@@ -263,59 +253,56 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
 1. Add the `CNOT` operation to your program immediately after the `H` operation. Your full program should look like this:
 
     ```qsharp
-    namespace Bell {
-        open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Canon;
+    import Microsoft.Quantum.Intrinsic.*;
+    import Microsoft.Quantum.Canon.*;
     
-           operation SetQubitState(desired : Result, target : Qubit) : Unit {
-               if desired != M(target) {
-                   X(target);
-               }
-           }
-    
-        @EntryPoint()
-        operation TestBellState() : (Int, Int, Int, Int) {
-            mutable numOnesQ1 = 0;
-            mutable numOnesQ2 = 0;
-            let count = 1000;
-            let initial = One;
-    
-            // allocate the qubits
-            use (q1, q2) = (Qubit(), Qubit());   
-            for test in 1..count {
-                SetQubitState(initial, q1);
-                SetQubitState(Zero, q2);
-            
-                H(q1);            
-                CNOT(q1, q2);      // Add the CNOT operation after the H operation
-    
-                // measure each qubit
-                let resultQ1 = M(q1);            
-                let resultQ2 = M(q2);           
-        
-                // Count the number of 'Ones' returned:
-                if resultQ1 == One {
-                    set numOnesQ1 += 1;
-                }
-                if resultQ2 == One {
-                    set numOnesQ2 += 1;
-                }
+        operation SetQubitState(desired : Result, target : Qubit) : Unit {
+            if desired != M(target) {
+                X(target);
             }
-        
-            // reset the qubits
-            SetQubitState(Zero, q1);             
+        }
+    
+    operation Main() : (Int, Int, Int, Int) {
+        mutable numOnesQ1 = 0;
+        mutable numOnesQ2 = 0;
+        let count = 1000;
+        let initial = Zero;
+    
+        // allocate the qubits
+        use (q1, q2) = (Qubit(), Qubit());   
+        for test in 1..count {
+            SetQubitState(initial, q1);
             SetQubitState(Zero, q2);
-            
         
-            // Display the times that |0> is returned, and times that |1> is returned
-            Message($"Q1 - Zeros: {count - numOnesQ1}");
-            Message($"Q1 - Ones: {numOnesQ1}");
-            Message($"Q2 - Zeros: {count - numOnesQ2}");
-            Message($"Q2 - Ones: {numOnesQ2}");
-            return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
+            H(q1);            
+            CNOT(q1, q2);      // Add the CNOT operation after the H operation
+    
+            // measure each qubit
+            let resultQ1 = M(q1);            
+            let resultQ2 = M(q2);           
+    
+            // Count the number of 'Ones' returned:
+            if resultQ1 == One {
+                numOnesQ1 += 1;
+            }
+            if resultQ2 == One {
+                numOnesQ2 += 1;
+            }
+        }
+    
+        // reset the qubits
+        SetQubitState(Zero, q1);             
+        SetQubitState(Zero, q2);
+        
+    
+        // Display the times that |0> is returned, and times that |1> is returned
+        Message($"Q1 - Zeros: {count - numOnesQ1}");
+        Message($"Q1 - Ones: {numOnesQ1}");
+        Message($"Q2 - Zeros: {count - numOnesQ2}");
+        Message($"Q2 - Ones: {numOnesQ2}");
+        return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
     
         }
-    }
     
     ```
     
@@ -324,25 +311,26 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
     Q1 - Ones: 498       // results will vary
     Q2 - Zeros: 502
     Q2 - Ones: 498
+    Result: "(502, 498, 502, 498)"
     ```
 
-The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation has entangled the two qubits, so that whatever happens to one of them, happens to the other. 
+The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation entangled the two qubits, so that whatever happens to one of them, happens to the other. 
 
 ### Plot the frequency histogram
 
 Let's visualize the distribution of results obtained from running the quantum program multiple times. The frequency histogram helps visualize the probability distribution of these outcomes.
 
-1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also click on **Histogram** from the list of commands below `@EntryPoint()`. Select this option to open the Q# histogram window.
-1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
-1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. In this case, there are 50 different unique results. Note that for each outcome the measurement results for the first and the  second qubit are always the same. 
+1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also select **Histogram** from the list of commands preceding `Main`. Select this option to open the Q# histogram window.
+1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram displays in the Q# histogram window.
+1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. In this case, there are 50 different unique results. Note that for each outcome the measurement results for the first and the second qubit are always the same. 
 
     :::image type="content" source="../media/histogram-vscode-entanglement.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
 
     > [!TIP]
-    > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing 'Alt' while scrolling.
+    > You can zoom the histogram using the mouse scroll wheel or a trackpad gesture. When zoomed in, you can pan the chart by pressing **Alt** while scrolling.
 
-1. Click on a bar to display the **percentage** of that outcome.
-1. Click the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
+1. Select a bar to display the **percentage** of that outcome.
+1. Select the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
 
     :::image type="content" source="../media/histogram-vscode-entanglement-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 

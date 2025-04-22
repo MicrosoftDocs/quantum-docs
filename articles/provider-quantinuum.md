@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: This document provides the technical details of the Quantinuum quantum provider
-ms.author: brbenefield
-ms.date: 03/21/2024
+ms.author: quantumdocwriters
+ms.date: 01/28/2025
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [QIR Adaptive RI, target, targets]
 title: Quantinuum provider
 uid: microsoft.quantum.providers.quantinuum
@@ -28,10 +28,13 @@ The following targets are available from this provider:
 |---|---|---|---|
 |[H1-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-1sc|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |56 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
+|[H2-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-2sc |56 qubits|Use this to validate quantum programs against the H2-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H1-1 Emulator](#system-model-h1-emulators) |quantinuum.sim.h1-1e | 20 qubits| Uses a realistic physical model and noise model of H1-1.|
-|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabalizer simulation|
+|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabilizer simulation|
+|[H2-2 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-2e | 56/32 qubits|Uses a realistic physical model and noise model of H2-2. 56 qubit simulation is only available as a stabilizer simulation|
 |[H1-1](#system-model-h1)|quantinuum.qpu.h1-1 |20 qubits|Quantinuum's H1-1 trapped ion device.|
 |[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-1 trapped ion device.|
+|[H2-2](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-2 trapped ion device.|
 
 Quantinuum's targets correspond to a **:::no-loc text="QIR Adaptive RI":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-qir-adaptive-ri-profile-targets).
 
@@ -51,6 +54,7 @@ We recommend that users first validate their code using a Syntax Checker. This i
 - Target ID:
   - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
+  - H2-2 Syntax Checker: `quantinuum.sim.h2-2sc`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
 Syntax Checkers usage is offered free-of-charge.
@@ -69,9 +73,9 @@ More information can be found in the *System Model H1 Emulator Product Data Shee
 
 System Model H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
-## H-Series Emulator (cloud based)
+## Quantinuum Emulator (cloud based)
 
-The H-Series Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/experience/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum H-Series Emulator without an Azure account. The H-Series Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
+The Quantinuum Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
 
 ## System Model H1
 
@@ -95,6 +99,7 @@ After validating the syntax of their code with the H2-1 Syntax Checker, users ca
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
+  - H2-2 Emulator: `quantinuum.sim.h2-2e`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
 System Model H2 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
@@ -111,6 +116,7 @@ System Model H2 hardware is continuously upgraded throughout it's product lifecy
 - Data Format: `quantinuum.openqasm.v1`
 - Target ID:
   - H2-1: `quantinuum.qpu.h2-1`
+  - H2-2: `quantinuum.qpu.h2-2`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
 ## System Model H1 and H2 Technical Specifications 
@@ -125,8 +131,9 @@ Additional capabilities available via the Quantinuum API are listed here.
 | ---- | ---- |
 | [Mid-Circuit Measurement and Reset (MCMR)](#mid-circuit-measurement-and-reset) | Measure qubits in the middle of a circuit and reuse them |
 | [Arbitrary Angle ZZ Gates](#arbitrary-angle-zz-gates) | Directly perform 2-qubit arbitrary angle gate rotations |
-| [Emulator Noise Parameters](#emulator-noise-parameters) | Experiment with the noise parameters used in the Quantinuum H-Series emulators |
-| [TKET Optimizations in H-Series Stack](#tket-compilation-in-h-series-stack) | Experiment with turning on different levels of TKET optimizations in the H-Series stack |
+| [General SU(4) Entangling Gate](#general-su4-entangling-gate) | Directly perform 2-qubit arbitrary angle gate rotations |
+| [Emulator Noise Parameters](#emulator-noise-parameters) | Experiment with the noise parameters used in the Quantinuum emulators |
+| [TKET Optimizations in Quantinuum Stack](#tket-compilation-in-quantinuum-stack) | Experiment with turning on different levels of TKET optimizations in the Quantinuum stack |
 
 Users can take advantage of these additional capabilities via circuit functions or pass-through parameters in the Azure Quantum Q# and Qiskit providers.
 
@@ -138,7 +145,7 @@ Due to the internal level structure of trapped-ion qubits, a mid-circuit measure
 
 When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage.
 
-For information on MCMR in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+For information on MCMR in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [MCMR with Q# Provider](#tab/tabid-mcmr-with-q-provider)
 
@@ -146,8 +153,7 @@ In Q#, the `MResetZ` function can be used both to measure a qubit and reset it. 
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Intrinsic;
-open Microsoft.Quantum.Measurement;
+import Std.Measurement.*;
 
 operation ContinueComputationAfterReset() : Result[] {
     // Set up circuit with 2 qubits
@@ -208,7 +214,7 @@ circuit.draw()
 
 ### Arbitrary Angle ZZ Gates
 
-Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the H-series product data sheets on the [System Model H1] and [System Model H2] pages.
+Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
@@ -216,11 +222,11 @@ In Q\#, the arbitrary angle ZZ gate is implemented with the `Rzz` operation.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Intrinsic;
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
+import Std.Intrinsic.*;
+import Std.Measurement.*;
+import Std.Arrays.*;
 
-operation ContinueComputationAfterReset(theta : Double) : Result[] {
+operation ArbitraryAngleZZExample(theta : Double) : Result[] {
     
     // Set up circuit with 2 qubits
     use qubits = Qubit[2];
@@ -238,7 +244,7 @@ operation ContinueComputationAfterReset(theta : Double) : Result[] {
 
     // Measure qubits and return results
     for i in IndexRange(qubits) {
-        set resultArray w/= i <- M(qubits[i]);  
+        resultArray w/= i <- M(qubits[i]);  
     }
     
     return resultArray;
@@ -271,11 +277,76 @@ circuit.measure_all()
 
 ***
 
+### General SU(4) Entangling Gate
+
+Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
+
+#### [General SU(4) Entangling Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
+
+In Q\#, the General SU(4) Entangling gate is implemented via Quantinuum's QIR profile. To use it, define a function with a custom intrinsic matching the QIR profile signature, and use this function within the `SU4Example` operation.
+
+To ensure the circuit runs with the General SU(4) Entangling gate, pass the following options in the Quantinuum stack:
+
+- `nativetq: Rxxyyzz` to prevent rebasing to other native gates.
+- `noreduce: True` to avoid additional compiler optimizations (optional).
+
+```qsharp
+%%qsharp
+import Std.Math.*;
+
+operation __quantum__qis__rxxyyzz__body(a1 : Double, a2 : Double, a3 : Double, q1 : Qubit, q2 : Qubit) : Unit {
+    body intrinsic;
+}
+
+operation SU4Example() : Result[] {
+    use qs = Qubit[2];
+    
+    // Add SU(4) gate
+    __quantum__qis__rxxyyzz__body(PI(), PI(), PI(), qs[0], qs[1]);
+    
+    MResetEachZ(qs)
+}
+
+```
+
+Now compile the operation:
+
+```python
+MyProgram = qsharp.compile("GenerateRandomBit()")
+```
+
+Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
+
+```python
+MyWorkspace = azure.quantum.Workspace(
+    resource_id = "",
+    location = ""
+)
+
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
+
+# Update TKET optimization level desired
+option_params = {
+    "nativetq": `Rxxyyzz`,
+    "noreduce": True
+}
+
+```
+
+Pass in the `noreduce` option when submitting the job:
+
+```python
+job = MyTarget.submit(MyProgram, "Submit a program with SU(4) gate", shots = 10, input_params = option_params)
+job.get_results()
+```
+
+***
+
 ### Emulator Noise Parameters
 
 Users have the option of experimenting with the noise parameters of the Quantinuum emulators. **Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
 
-For more information on the full set of noise parameters available, see the H-series emulator product data sheets on the [System Model H1] and [System Model H2] pages.
+For more information on the full set of noise parameters available, see the Quantinuum emulator product data sheets on the [System Model H1] and [System Model H2] pages.
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
@@ -291,9 +362,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();
@@ -411,13 +482,13 @@ option_params = {
 
 ***
 
-### TKET Compilation in H-Series Stack
+### TKET Compilation in Quantinuum Stack
 
-Circuits submitted to Quantinuum H-Series systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for H-Series hardware. This enables circuits to be automatically optimized for H-Series systems and run more efficiently.
+Circuits submitted to Quantinuum Quantinuum systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for Quantinuum hardware. This enables circuits to be automatically optimized for Quantinuum systems and run more efficiently.
 
 More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section.
 
-In the H-Series software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to H-Series systems is optimization level 2.*
+In the Quantinuum software stack, the optimization level applied is set with the `tket-opt-level` parameter. *The default compilation setting for all circuits submitted to Quantinuum systems is optimization level 2.*
 
 Users who would like to experiment with the TKET compilation passes and see what optimizations would apply to their circuits *before* submitting any jobs can see the *Quantinuum_compile_without_api.ipynb* notebook in the [`pytket-quantinuum` Examples] folder.
 
@@ -442,9 +513,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();
@@ -511,7 +582,7 @@ Technical details for the System Model H1 and H2 and System Model H1 and H2 Emul
 
 ## Target Availability
 
-The Quantinuum H-Series quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed.
+The Quantinuum quantum computers are designed to be continuously upgraded, which allows customers to have access to the latest hardware capabilities as Quantinuum continually improves gate fidelities, memory errors, and system speed.
 
 Quantinuum hardware cycles through commercial periods and development periods. During commercial periods, the hardware is available to process jobs via a queue system. During development periods, the hardware is offline as upgrades are applied.
 
@@ -533,7 +604,7 @@ To see Quantinuum's billing plans, visit [Azure Quantum pricing](xref:microsoft.
 
 ## Limits and quotas
 
-Quantinuum's quotas are tracked based on the QPU usage credit unit, *H-System Quantum Credit (HQC)*, for jobs submitted to Quantinuum quantum computers, and emulator HQCs (eHQCs) for jobs submitted to emulators.
+Quantinuum's quotas are tracked based on the QPU usage credit unit, *Hardware Quantum Credit (HQC)*, for jobs submitted to Quantinuum quantum computers, and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
@@ -553,9 +624,6 @@ where:
 
 Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal]. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
-> [!NOTE]
-> If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
-
 [Quantinuum]: https://www.quantinuum.com
 [System Model H1]: https://www.quantinuum.com/hardware/h1
 [System Model H2]: https://www.quantinuum.com/hardware/h2
@@ -563,7 +631,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html 
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
 [`pytket`]: https://cqcl.github.io/tket/pytket/api/#
-[`pytket` User Manual]: https://tket.quantinuum.com/user-manual/
+[`pytket` User Manual]: https://docs.quantinuum.com/tket/user-guide/
 [`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
 [`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com

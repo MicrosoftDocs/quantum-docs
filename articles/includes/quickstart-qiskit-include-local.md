@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
-ms.author: sonialopez
-ms.date: 08/14/2024
+author: azure-quantum-content
+ms.author: quantumdocwriters
+ms.date: 02/26/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -10,7 +10,7 @@ no-loc: [target, targets]
 
 ## Prerequisites
 
-For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
@@ -93,7 +93,7 @@ This workspace's targets:
 - quantinuum.sim.h1-1sc
 - quantinuum.sim.h1-1e
 - rigetti.sim.qvm
-- rigetti.qpu.ankaa-2
+- rigetti.qpu.ankaa-3
 ```
 
 ## Run a simple circuit
@@ -205,16 +205,7 @@ result.get_memory(circuit)
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.IonQ) method:
-
-```python
-backend = provider.get_backend("ionq.qpu")
-cost = backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This prints the estimated cost in US dollars.
+Before running a job on the QPU, you should estimate how much it costs to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
@@ -311,16 +302,7 @@ result.get_memory(circuit)
 
 #### Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the [`estimate_cost`](xref:azure.quantum.target.Quantinuum) method:
-
-```python
-qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
-cost = qpu_backend.estimate_cost(circuit, shots=100)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This prints the estimated cost in H-System Quantum Credits (HQCs).
+Before running a job on the QPU, you should estimate how much it will cost to run.
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the **Provider** tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
@@ -366,7 +348,7 @@ Result(backend_name='quantinuum.qpu.h1-1', backend_version='1', qobj_id='Qiskit 
 
 #### Run on the QVM simulator
 
-To test the program before running it on the hardware, first run it on the Rigetti QVM simulator. Use the `provider.get_backend` method to create a `Backend` object to connect to the Rigetti QVM simulator backend:
+Use the `provider.get_backend` method to create a `Backend` object to connect to the Rigetti QVM simulator backend:
 
 ```python
 # Get Rigetti's QVM simulator backend:
@@ -409,42 +391,6 @@ result.get_memory(circuit)
 ```output
 ['000', '111', '111', '000', '000', '000', '111', '111']
 ```
-
-#### Run on a Rigetti QPU 
-
-After running successfully on the QVM simulator, you can run your job on one of Rigetti's hardware processors (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)).
-
-> [!NOTE] 
-> The time required to run a circuit on the QPU may vary depending on current queue times.
-
-```python
-# Get Rigetti's QPU backend:
-qpu_backend = provider.get_backend("rigetti.qpu.ankaa-2")
-```
-
-```python
-# Submit the circuit to run on Azure Quantum
-job = qpu_backend.run(circuit, shots=100)
-job_id = job.id()
-print("Job id", job_id)
-```
-
-```python
-# Get the job results (this method waits for the Job to complete):
-result = job.result()
-print(result)
-counts = {format(n, "03b"): 0 for n in range(8)}
-counts.update(result.get_counts(circuit))
-print(counts)
-plot_histogram(counts)
-```
-
-```output
-.....Result(backend_name='rigetti.qpu.ankaa-2', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='dd72c9c7-5a88-11ef-a183-a91b61633c2f', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'001': 5, '100': 6, '111': 30, '000': 51, '110': 4, '101': 1, '010': 1, '011': 2}, memory=['001', '100', '111', '000', '000', '000', '001', '000', '000', '110', '000', '111', '111', '111', '000', '000', '000', '000', '101', '111', '111', '010', '000', '000', '000', '000', '000', '000', '001', '011', '111', '000', '000', '111', '000', '111', '000', '000', '111', '111', '110', '111', '000', '000', '111', '111', '111', '100', '111', '000', '111', '000', '000', '000', '111', '000', '000', '001', '000', '100', '111', '000', '011', '000', '111', '000', '111', '111', '111', '000', '111', '111', '000', '111', '111', '000', '111', '000', '000', '000', '000', '000', '110', '000', '000', '110', '111', '100', '000', '111', '000', '100', '001', '000', '000', '000', '000', '100', '000', '000'], probabilities={'001': 0.05, '100': 0.06, '111': 0.3, '000': 0.51, '110': 0.04, '101': 0.01, '010': 0.01, '011': 0.02}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
-
-```
-
-![Qiskit circuit result on Rigetti QPU](../media/azure-quantum-qiskit-rigetti-result-2.png)
 
 ***
 

@@ -1,20 +1,17 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides the technical details of the IonQ quantum computing provider
-ms.author: sonialopez
-ms.date: 09/03/2024
+ms.author: quantumdocwriters
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: computing
-ms.topic: overview
+ms.topic: concept-article
 no-loc: [QIR Base, target, targets]
 title: IonQ quantum computing provider
 uid: microsoft.quantum.providers.ionq
 ---
 
 # IonQ provider
-
-> [!IMPORTANT]
-> IonQ has retired their Harmony-2 quantum computer effective September 1, 2024. 
 
 [!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
@@ -78,7 +75,7 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 \* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
-IonQ Aria is available through Azure Quantum Credits plan and a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
+IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
 ## IonQ Forte quantum computer
 
@@ -190,9 +187,9 @@ Next, define the function.
 
 ```qsharp
 %%qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
-open Microsoft.Quantum.Convert;
+import Std.Measurement.*;
+import Std.Arrays.*;
+import Std.Convert.*;
 
 operation GenerateRandomBit() : Result {
     use target = Qubit();
@@ -386,9 +383,6 @@ where:
 - $C$ is the number of execution shots requested
 
 Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
-
-> [!NOTE]
-> If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
 
 ## IonQ status
 

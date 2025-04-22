@@ -1,11 +1,11 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Understand the architecture of sessions in hybrid quantum computing and learn how to create a new session.
-ms.date: 07/22/2024
-ms.author: sonialopez
+ms.date: 10/24/2024
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: get-started
+ms.topic: how-to
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, target, targets]
 title: Get Started with Sessions
 uid: microsoft.quantum.hybrid.interactive
@@ -15,7 +15,7 @@ uid: microsoft.quantum.hybrid.interactive
 
 # Get started with sessions
 
-Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together.
+Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together. A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. Sessions are useful when you want to run multiple quantum computing jobs in sequence, with the ability to run classical code between quantum jobs.
 
 This article explains the architecture of sessions in hybrid quantum computing and how to create a new session.
 
@@ -33,8 +33,6 @@ To create a session, you need the following prerequisites:
     ```
 
 ## What is a session?
-
-A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. 
 
 In sessions, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs. Although the qubit states don't persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
 
@@ -95,8 +93,8 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 
     ```qsharp
     %%qsharp
-    open Microsoft.Quantum.Measurement;
-    open Microsoft.Quantum.Arrays;
+    import Std.Measurement.*;
+    import Std.Arrays.*;
 
     operation GenerateRandomBits(n: Int, angle: Double[]) : Result[] {
        use qubits = Qubit[n]; // n parameter as the size of the qubit array

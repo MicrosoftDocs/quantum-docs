@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
-ms.date: 07/22/2024
-ms.author: sonialopez
+ms.date: 10/24/2024
+ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -14,7 +14,9 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 
 # How to manage your sessions 
 
-In this article, you learn how to manage your sessions. With sessions, you can group one or more jobs against a single target, which allows you to manage jobs effectively. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+In Azure Quantum you can group multiple jobs against a single target, which allows you to manage jobs effectively. This is called a *session*. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+
+In this article, you learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
 
 ## Prerequisites
 
@@ -29,7 +31,6 @@ In this article, you learn how to manage your sessions. With sessions, you can g
 
 > [!NOTE]
 > Sessions are managed with Python, even when running Q# inline code.
-
 
 ## Monitoring sessions
 
@@ -192,8 +193,8 @@ When passing arguments as parameters to the job, they are formatted as Q# code w
 Consider the following Q# program, which takes an integer, `n`, and an array of angles, `angle`, as input.
 
 ```qsharp
-open Microsoft.Quantum.Measurement;
-open Microsoft.Quantum.Arrays;
+import Std.Measurement.*;
+import Std.Arrays.*;
 
 operation GenerateRandomBits(n: Int, angle: Double[]) : Result[] {
    use qubits = Qubit[n]; // n parameter as the size of the qubit array

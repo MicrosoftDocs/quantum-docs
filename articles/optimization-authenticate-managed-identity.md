@@ -1,7 +1,7 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides instructions on how to authenticate in your Azure Quantum workspace using a managed identity.
-ms.author: sonialopez
+ms.author: quantumdocwriters
 ms.date: 06/18/2024
 ms.service: azure-quantum
 ms.subservice: core
@@ -12,7 +12,7 @@ uid: microsoft.quantum.optimization.authenticate-managed-identity
 #customer intent: As a quantum developer, I want to understand how to authenticate using a managed identity to submit jobs to Azure Quantum.
 ---
 
-# How to use a managed identity to authenticate in your Azure Quantum workspace
+# Authenticate in your workspace using a managed identity
 
 There are several scenarios where it is unsuitable to use interactive authentication or to authenticate
 as a user account. For example, you may want to submit jobs from a virtual machine (VM), or from a Function App. One option is to [authenticate using a service principal](xref:microsoft.quantum.optimization.authenticate-service-principal), another option is to configure a managed identity, which this article will explain.

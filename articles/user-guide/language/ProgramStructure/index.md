@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn the components of a simple Q# program and how to run it in VS Code.
-ms.author: brbenefield
-ms.date: 02/08/2024
+ms.author: quantumdocwriters
+ms.date: 10/24/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -25,67 +25,64 @@ The following example gives a first glimpse at how a Q# program is implemented:
 ///
 /// This Q# program implements the four different Bell states.
 
-namespace Sample {
-    open Microsoft.Quantum.Diagnostics;
-    open Microsoft.Quantum.Measurement;
+import Std.Diagnostics.*;
+import Std.Measurement.*;
 
-    @EntryPoint()
-    operation BellStates() : (Result, Result)[] {
-        // Allocate the two qubits that will be used to create a Bell state.
-        use register = Qubit[2];
+operation Main() : (Result, Result)[] {
+    // Allocate the two qubits that will be used to create a Bell state.
+    use register = Qubit[2];
 
-        // This array contains a label and a preparation operation for each one
-        // of the four Bell states.
-        let bellStateTuples = [
-            ("|Φ+〉", PreparePhiPlus),
-            ("|Φ-〉", PreparePhiMinus),
-            ("|Ψ+〉", PreparePsiPlus),
-            ("|Ψ-〉", PreparePsiMinus)
-        ];
+    // This array contains a label and a preparation operation for each one
+    // of the four Bell states.
+    let bellStateTuples = [
+        ("|Φ+〉", PreparePhiPlus),
+        ("|Φ-〉", PreparePhiMinus),
+        ("|Ψ+〉", PreparePsiPlus),
+        ("|Ψ-〉", PreparePsiMinus)
+    ];
 
-        // Prepare all Bell states, show them using the `DumpMachine` operation
-        // and measure the Bell state qubits.
-        mutable measurements = [];
-        for (label, prepare) in bellStateTuples {
-            prepare(register);
-            Message($"Bell state {label}:");
-            DumpMachine();
-            set measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
-        }
-        return measurements;
+    // Prepare all Bell states, show them using the `DumpMachine` operation
+    // and measure the Bell state qubits.
+    mutable measurements = [];
+    for (label, prepare) in bellStateTuples {
+        prepare(register);
+        Message($"Bell state {label}:");
+        DumpMachine();
+        measurements += [(MResetZ(register[0]), MResetZ(register[1]))];
     }
+    return measurements;
+}
 
-    operation PreparePhiPlus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 + |11〉)
-    }
+operation PreparePhiPlus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 + |11〉)
+}
 
-    operation PreparePhiMinus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        Z(register[0]);                 // |-0〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 - |11〉)
-    }
+operation PreparePhiMinus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    Z(register[0]);                 // |-0〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|00〉 - |11〉)
+}
 
-    operation PreparePsiPlus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        X(register[1]);                 // |+1〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 + |10〉)
-    }
+operation PreparePsiPlus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    X(register[1]);                 // |+1〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 + |10〉)
+}
 
-    operation PreparePsiMinus(register : Qubit[]) : Unit {
-        ResetAll(register);             // |00〉
-        H(register[0]);                 // |+0〉
-        Z(register[0]);                 // |-0〉
-        X(register[1]);                 // |-1〉
-        CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 - |10〉)
-    }
+operation PreparePsiMinus(register : Qubit[]) : Unit {
+    ResetAll(register);             // |00〉
+    H(register[0]);                 // |+0〉
+    Z(register[0]);                 // |-0〉
+    X(register[1]);                 // |-1〉
+    CNOT(register[0], register[1]); // 1/sqrt(2)(|01〉 - |10〉)
 }
 ```
 
-This program implements the four basic Bell states of quantum entanglement, and is one of the sample programs included the [Azure Quantum Visual Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). 
+This program implements the four basic Bell states of quantum entanglement, and is one of the sample programs included the [Azure Quantum Visual Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 You can run the program from the built-in simulator in the VS Code QDK extension and get standard output
 
@@ -138,6 +135,3 @@ or run the simulator with a histogram output
 :::image type="content" source="../../../media/histogram-output.png" alt-text="The output of a quantum program as a histogram.":::
 
 To run the program on quantum hardware, the program first needs to be compiled and submitted to Azure Quantum, all of which can be done from inside VS Code. For the full end-to-end process, see [Get started with Q# programs and Visual Studio Code](xref:microsoft.quantum.submit-jobs).
-
-
-

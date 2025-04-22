@@ -1,13 +1,13 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: Learn how to submit a Q# sample to the Azure Quantum Resource Estimator to estimate the resources of a Q# program.
-ms.author: sonialopez
-ms.date: 06/03/2024
+ms.author: quantumdocwriters
+ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: quickstart
-no-loc: ['Python', '$$v', Quantum Intermediate Representation, target, targets]
-title: 'Quickstart: Use the Local Resource Estimator'
+no-loc: ['Python', '$$v', target, targets]
+title: 'Quickstart: Learn to use the Resource Estimator'
 uid: microsoft.quantum.quickstarts.computing.resources-estimator
 #customer intent: As a quantum programmer, I want to write programs that use the Resource Estimator. 
 --- 
@@ -19,21 +19,23 @@ In this quickstart, you learn how to use the Azure Quantum Resource Estimator to
 ## Prerequisites
 
 * The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-* The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Installing the QDK on VS Code](xref:microsoft.quantum.install-qdk.overview#installing-the-qdk-on-vs-code).
+* The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!TIP]
-> You don't need to have an Azure account to run the local Resource Estimator. 
+> You don't need to have an Azure account to run the Resource Estimator. 
 
 ## Load a Q# sample program
 
-1. In VS Code, select **File > New File** and save the file as **RandomNum.qs**. 
-1. Open **RandomNum.qs** and type `sample`, then select **Random Bit sample** and save the file.
+1. Open Visual Studio Code. 
+1. Select **File > New File** and save the file as **RandomNum.qs**. 
+1. Open **RandomNum.qs** and start typing `sample` to open the dropdown menu of Q# samples.
+1. Select **Random Bit sample** and save the file again. 
 
 ## Run the Resource Estimator
 
-The Resource Estimator offers [six pre-defined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four of which have gate-based instruction sets and two that have a Majorana instruction set. It also offers two [quantum error correction codes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-codes), `surface_code` and `floquet_code`.
+The Resource Estimator offers [six predefined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four of which have gate-based instruction sets and two that have a Majorana instruction set. It also offers two [quantum error correction codes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-codes), `surface_code` and `floquet_code`.
 
-In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code. For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
+In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code.
 
 1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. Select this option to open the Resource Estimator window.
 1. You can select one or more **Qubit parameter + Error Correction code** types to estimate the resources for. For this example, select **qubit_gate_us_e3** and click **OK**.
@@ -54,7 +56,7 @@ The Resource Estimator provides multiple estimates for the same algorithm, each 
     > [!NOTE]
     > If you select more than one qubit parameters and error correction codes in the configuration, the results are displayed in different rows in the **Results** tab. Clicking on a result from the table brings up the corresponding space diagram and report data.
 
-1. The **Space-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In this case, the Resource Estimator finds 1  optimal combination out of many thousands possible ones. You can hover over each {number of qubits, runtime} point to see the details of the resource estimation at that point. For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
+1. The **Space-time diagram** tab shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In this case, the Resource Estimator finds 1  optimal combination out of many thousands possible ones. You can hover over each {number of qubits, runtime} point to see the details of the resource estimation at that point. For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
 
     :::image type="content" source="media/vscode-estimates-local-diagram-space-time.png" alt-text="Screen shot showing the space-time diagram of the Resource Estimator .":::
 

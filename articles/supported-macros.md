@@ -1,10 +1,10 @@
 ---
 title: Supported LaTeX macros for authoring
 description: List of all supported LaTeX macros for formulas used in the Microsoft Quantum Development Kit documentation. 
-author: bradben
-ms.author: brbenefield
-ms.date: 09/04/2019
-ms.topic: conceptual
+author: azure-quantum-content
+ms.author: quantumdocwriters
+ms.date: 03/18/2025
+ms.topic: concept-article
 uid: microsoft.quantum.contribute.macros
 no-loc: ['Q#', '$$v', Quantum Development Kit]
 ---
@@ -22,7 +22,7 @@ no-loc: ['Q#', '$$v', Quantum Development Kit]
 <tr><td>variance</td><td>\variance (x)</td><td>$\variance (x)$</td></tr>
 </table>
 
-- [All](xref:Qdk.Microsoft.Quantum.Arrays.All) function (API)
-- [Math](xref:Qdk.Microsoft.Quantum.Unstable.Arithmetic.ApplyIfEqualL) new API
+- [All](xref:Qdk.Std.Arrays.All) function (API)
+- [Math](xref:Qdk.Std.Arithmetic.ApplyIfEqualL) new API
 - [Workspace](xref:azure.quantum.Workspace) Python class (azure-quantum)
 - [Pauli](xref:qsharp.Pauli) Python function (qsharp)

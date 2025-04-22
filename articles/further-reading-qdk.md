@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: A reference list with deep coverage of quantum computing topics if you want to learn more about quantum computer programming.
-ms.author: sonialopez
-ms.date: 05/31/2024
+ms.author: quantumdocwriters
+ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -18,11 +18,11 @@ This article compiles some of the most popular resources that you may find usefu
 
 ## Microsoft quantum computing resources
 
-Learn how to develop and apply quantum computing solutions with the Quantum Development Kit and Azure Quantum services.
+Learn how to develop and apply quantum computing solutions with the Quantum Development Kit (QDK) and Azure Quantum services.
 
 * [Azure Quantum training path](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules, you learn about quantum computing and how to develop quantum solutions using Q# and the Azure Quantum Development Kit.
-* [Quantum Katas](https://quantum.microsoft.com/experience/quantum-katas): a collection of self-paced Q# quantum programming tutorials.
-* [Azure Quantum videos](https://quantum.microsoft.com/explore/playlist): a playlist with videos of Azure Quantum announcements, demos, and discussions from *Quantum Innovator Series*.
+* [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas): a collection of self-paced Q# quantum programming tutorials.
+* [Azure Quantum videos](https://quantum.microsoft.com/insights/education): a playlist with videos of Azure Quantum announcements, demos, and discussions from *Quantum Innovator Series*.
 * [Q# code samples](https://github.com/microsoft/qsharp/tree/main/samples): start building your first quantum solution with this collection of ready-to-use code samples.
 * [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about the latest QDK and Q# insights, and find out about quantum challenges and hackathons announcements.
 * [Research publications](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-content-type%5D[]=3&facet%5Btax%5D%5Bmsr-research-area%5D[]=243138&sort_by=most-recent): read about the latest advancement in quantum hardware and algorithms developed by Microsoft researchers.
@@ -53,8 +53,8 @@ The following resources are created and developed by the quantum community who i
 
 Check out the following quantum computing learning courses.
 
-* [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that will help you to learn quantum software development by creating end-to-end projects. You explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
-+ [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's IQIM.
+* [Quantum Computing with Microsoft QDK](https://www.manning.com/liveprojectseries/quantum-computing-with-microsoft-qdk): a series of liveProjects that help you to learn quantum software development by creating end-to-end projects. You explore the full potential of quantum for cryptography, data transmission, data reconstruction, and more. 
++ [Quantum Computing - Brilliant Course](https://brilliant.org/courses/quantum-computing/): learn to build quantum algorithms from the ground up with a quantum computer simulated in your browser in this course, created in collaboration with quantum researchers and practitioners from Microsoft, X, and Caltech's Institute for Quantum Information and Matter (IQIM).
 + [Quantum Computing through Comics - HackadayU classes](https://hackaday.io/project/168554-introduction-to-quantum-computing): learn about quantum computing concepts and algorithm programming through classroom discussion and intuitive comics.
 
 ## Bibliography 
@@ -63,7 +63,7 @@ The following bibliography is a collection of publications that cover a wide ran
 
 ### Quantum computing for beginners 
 
-If you are a quantum enthusiast and want to start learning the theory behind quantum computing, the following publications will instruct you in topics such as quantum physics, computer science and linear algebra. 
+If you're a quantum enthusiast and want to start learning the theory behind quantum computing, the following resources offer topics such as quantum physics, computer science, and linear algebra. 
 
 * Nielsen, M. A. & Chuang, I. L. *Quantum Computation and Quantum Information. Quantum Computation and Quantum Information.* UK: Cambridge University Press, 2010.
 * Kaye, P., Laﬂamme, R., & Mosca, M. *An introduction to quantum computing.* Oxford University Press, 2007.
@@ -73,7 +73,7 @@ If you are a quantum enthusiast and want to start learning the theory behind qua
 
 * Sergey Bravyi, Oliver Dial, Jay M. Gambetta, Dario Gil, and Zaira Nazario. *The future of quantum computing with superconducting qubits*, 2022.
 * Microsoft Quantum. *InAs-Al Hybrid Devices Passing the Topological Gap Protocol*, arXiv:2207.02472 [cond-mat.mes-hall], (2022).
-* M Saffman. *Quantum computing with atomic qubits and rydberg interactions: progress and challenges*, Journal of Physics B: Atomic, Molecular and Optical Physics, 49(20):202001, (2016).
+* M Saffman. *Quantum computing with atomic qubits and rydberg interactions: progress and challenges*, Journal of Physics B: Atomic, Molecular, and Optical Physics, 49(20):202001, (2016).
 * J. I. Cirac and P. Zoller. *Quantum computations with cold trapped ions*, Phys. Rev. Lett., 74:4091–4094 (1995).
 
 ### Quantum Error Correction
@@ -86,7 +86,7 @@ If you are a quantum enthusiast and want to start learning the theory behind qua
 ### Resource Estimation
 
 * M. E. Beverland, P. Murali,1 M. Troyer, K. M. Svore, T. Hoefler, V. Kliuchnikov, G. H. Low, M. Soeken, A. Sundaram, and A. Vaschillo. *Assessing requirements to scale to practical quantum advantage*, arXiv:2211.07629v1, 2022.
-*  Isaac H. Kim, Ye-Hua Liu, Sam Pallister, William Pol, Sam Roberts, and Eunseok Lee. Fault-tolerant
+* Isaac H. Kim, Ye-Hua Liu, Sam Pallister, William Pol, Sam Roberts, and Eunseok Lee. Fault-tolerant
 resource estimate for quantum chemical simulations: Case study on li-ion battery electrolyte molecules.
 Phys. Rev. Research, 4:023019, Apr 2022.
 * Giulia Meuli, Mathias Soeken, Martin Roetteler, and Thomas H¨aner. *Enabling accuracy-aware quantum compilers using symbolic resource estimation*, Proc. ACM Program. Lang., 4(OOPSLA), 2020.

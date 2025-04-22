@@ -1,11 +1,11 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how to contribute to the Quantum Development Kit (QDK) and the quantum development community.
-ms.author: brbenefield
-ms.date: 02/13/2024
+ms.author: quantumdocwriters
+ms.date: 09/16/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: concept-article
 no-loc: ['Q#', '$$v']
 title: Contributing to the Quantum Development Kit
 uid: microsoft.quantum.contributing-qdk.overview

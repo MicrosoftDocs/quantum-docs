@@ -1,17 +1,17 @@
 ---
-author: bradben
-description: Learn how to add a group of users to your Azure Quantum workspace from a CSV file.
-ms.author: brbenefield
-ms.date: 08/19/2024
+author: azure-quantum-content
+description: Learn how to bulk add users to your Azure Quantum workspace using a CSV file. This guide simplifies user management for large teams. 
+ms.author: quantumdocwriters
+ms.date: 01/07/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
-title: Add a group to your workspace
+title: Bulk Add Users to Azure Quantum Workspace
 uid: microsoft.quantum.how-to.bulk-add-users
 ---
 
-# Add a group to your Azure Quantum workspace
+# Bulk add users to your Azure Quantum workspace
 
 Learn how to grant a group of users access to your Azure Quantum workspace. For example, you may need to grant your team members or students access to your workspace.
 
@@ -20,7 +20,7 @@ We recommend using the instructions in this article if you need to grant access 
 In this article you'll:
 
 1. [Create a group using the Azure Active Directory portal.](#create-a-group-in-the-azure-active-directory)
-1. [Add the group as a contributor to your Quantum workspace.](#add-your-group-as-a-contributor-to-your-quantum-workspace)
+1. [Add the group as a contributor to your Quantum workspace.](#add-your-group-to-your-quantum-workspace)
 1. [Bulk invite your users to the Azure Active Directory.](#bulk-invite-users-to-the-azure-active-directory)
 1. [Bulk import those users to your group.](#bulk-import-members-to-your-group)
 
@@ -34,7 +34,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 ## Create a group in the Azure Active Directory
 
-1. Sign in to the [Azure portal](https://portal.azure.com). You must be an **Owner** of the workspace in order to add the group in the next step.
+1. Sign in to the [Azure portal](https://portal.azure.com). You must be an **Owner** of the workspace, or have role assignment privileges, in order to add the group in the next section.
 
 1. Search for and select **Azure Active Directory**.
 
@@ -54,16 +54,17 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. Select **Create**. You should get a notification that you've successfully created your group.
 
-## Add your group as a contributor to your Quantum workspace
+## Add your group to your Quantum workspace
 
-1. Sign in to the [Azure portal](https://portal.azure.com). You must be an **Owner** of the workspace in order to add the group as a contributor.
+> [!NOTE]
+> You can add your group as a **Contributor** role or as a **Quantum Workspace Data Contributor** role. The Contributor role allows users to manage the workspace properties, whereas the Quantum Workspace Data Contributor role only allows users to submit and view jobs in the workspace. For more information, see [Manage access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.manage-workspace-access).
 
-1. Navigate to your Azure Quantum workspace.
+1. In the Azure portal, navigate to your Azure Quantum workspace.
 
 1. Allow your group to access your workspace. Select **Access control (IAM)** from the left-side menu. Select **Add**, and then **Add role assignment**.
     :::image type="content" source="media/bulk-invite-users-add-assignment.png" alt-text="Screen shot showing how to add a new role assignment to your Azure Quantum workspace.":::
 
-1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** and then select **Next**. 
+1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** or **Quantum Workspace Data Contributor** and then select **Next**. 
 
     :::image type="content" source="media/bulk-invite-users-add-contributor.png" alt-text="Screen shot showing how to create a contributor to your Azure Quantum workspace.":::
 

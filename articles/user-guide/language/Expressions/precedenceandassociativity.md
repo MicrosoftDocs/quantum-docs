@@ -1,7 +1,7 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn about operator precedence in Q#.
-ms.author: brbenefield
+ms.author: quantumdocwriters
 ms.date: 08/15/2024
 ms.service: azure-quantum
 ms.subservice: qsharp-guide

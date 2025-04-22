@@ -1,8 +1,8 @@
 ---
-author: bradben
+author: azure-quantum-content
 description: Learn how operations and functions, or callables, are declared in the Q# programming language.
-ms.author: brbenefield
-ms.date: 02/01/2021
+ms.author: quantumdocwriters
+ms.date: 02/18/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: reference
@@ -13,19 +13,19 @@ uid: microsoft.quantum.qsharp.callabledeclarations
 
 # Callable declarations
 
-Callable declarations, or *callables*, declared at a global scope are publicly visible by default; that is, they can be used anywhere in the same project and in a project that references the assembly in which they are declared. [Access modifiers](xref:microsoft.quantum.qsharp.programstructure-overview#access-modifiers) allow you to restrict their visibility to the current assembly only, such that implementation details can be changed later on without breaking code that relies on a specific library.
+Callable declarations, or *callables*, declared at a global scope are publicly visible by default; that is, they can be used anywhere in the same project and in a project that references the assembly in which they're declared. [Access modifiers](xref:microsoft.quantum.qsharp.programstructure-overview#access-modifiers) allow you to restrict their visibility to the current assembly only, such that implementation details can be changed later on without breaking code that relies on a specific library.
 
 Q# supports two kinds of callables: operations and functions. The topic [Operations and Functions](xref:microsoft.quantum.qsharp.operationsandfunctions#operations-and-functions) elaborates on the distinction between the two. Q# also supports defining *templates*; for example, type-parameterized implementations for a certain callable. For more information, see [Type parameterizations](xref:microsoft.quantum.qsharp.typeparameterizations#type-parameterizations).
 
 > [!NOTE]
-> Such type-parametrized implementations may not use any language constructs that rely on particular properties of the type arguments; there is currently no way to express type constraints in Q#, or to define specialized implementations for particular type arguments.
+> Such type-parametrized implementations may not use any language constructs that rely on particular properties of the type arguments; there's currently no way to express type constraints in Q#, or to define specialized implementations for particular type arguments.
 
 ## Callables and functors
 
 Q# allows specialized implementations for specific purposes; for example, operations in Q# can implicitly or explicitly define support for certain *functors*, and along with it the specialized implementations to invoke when a specific functor is applied to that callable.
 
 A functor, in a sense, is a factory that defines a new callable implementation that has a specific relation to the callable it was applied to.
-Functors are more than traditional higher-level functions in that they require access to the implementation details of the callable they have been applied to. In that sense, they are similar to other factories, such as templates. They can be applied to type-parameterized callables as well.
+Functors are more than traditional higher-level functions in that they require access to the implementation details of the callable they have been applied to. In that sense, they're similar to other factories, such as templates. They can be applied to type-parameterized callables as well.
 
 Consider the following operation, `ApplyQFT`:
 
@@ -68,12 +68,12 @@ is equivalent to
 
 Here, `body` specifies that the given implementation applies to the default body of the function `Hello`, meaning the implementation is invoked when no functors or other factory mechanisms have been applied prior to invocation. The three dots in `body ...` correspond to a compiler directive indicating that the argument items in the function declaration should be copy and pasted into this spot.  
 
-The reasons behind explicitly indicating where the arguments of the parent callable declaration are to be copied and pasted are twofold: one, it is unnecessary to repeat the argument declaration, and two, it ensures that functors that require additional arguments, like the `Controlled` functor, can be introduced in a consistent manner.
+The reasons behind explicitly indicating where the arguments of the parent callable declaration are to be copied and pasted are twofold: one, it's unnecessary to repeat the argument declaration, and two, it ensures that functors that require additional arguments, like the `Controlled` functor, can be introduced in a consistent manner.
 
-When there is exactly one specialization defining the implementation of the default body, the additional wrapping of the form `body ... { <implementation> }` may be omitted.
+When there's exactly one specialization defining the implementation of the default body, the additional wrapping of the form `body ... { <implementation> }` may be omitted.
 
 ## Recursion
 
 Q# callables can be directly or indirectly recursive and can be declared in any order; an operation or function may call itself, or it may call another callable that directly or indirectly calls the caller.
 
-When running on quantum hardware, stack space may be limited, and recursions that exceed that stack space limit result in a runtime error.
+Stack space may be limited when running on quantum hardware, and recursions that exceed that stack space limit result in a runtime error.

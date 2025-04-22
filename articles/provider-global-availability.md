@@ -1,6 +1,6 @@
 ---
-ms.author: brbenefield
-author: bradben
+ms.author: quantumdocwriters
+author: azure-quantum-content
 description: Check out the list of countries and regions where each of the Azure Quantum providers are available.
 ms.date: 08/19/2024
 ms.service: azure-quantum
@@ -19,7 +19,7 @@ The availability of the quantum computing providers IonQ, Pasqal, Quantinuum, an
 
 ## [IonQ](#tab/tabid-ionq)
 
-IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about IonQ resources on Azure Quantum, see [IonQ provider and targets](xref:microsoft.quantum.providers.ionq).
+IonQ offers a Pay-As-You-Go plan through Azure Quantum. For more information about IonQ resources on Azure Quantum, see [IonQ provider and targets](xref:microsoft.quantum.providers.ionq).
 
 ### IonQ is available in the following countries/regions:
 
@@ -170,7 +170,7 @@ IonQ offers two plans through Azure Quantum: the Azure Quantum Credits program a
 
 ## [PASQAL](#tab/tabid-pasqal)
 
-PASQAL offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
+PASQAL offers a Pay-As-You-Go plan through Azure Quantum. For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
 
 ### PASQAL is available in the following countries/regions:
 
@@ -322,7 +322,7 @@ PASQAL offers two plans through Azure Quantum: the Azure Quantum Credits program
 
 ## [Quantinuum](#tab/tabid-quantinuum)
 
-Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits program, Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
+Quantinuum offers four plans through Azure Quantum: Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
 
 ### Quantinuum is available in the following countries/regions:
 
@@ -473,7 +473,7 @@ Quantinuum offers five plans through Azure Quantum: the Azure Quantum Credits pr
 
 ## [Rigetti](#tab/tabid-rigetti)
 
-Rigetti offers two plans through Azure Quantum: the Azure Quantum Credits program and a Pay-As-You-Go plan. For more information about Rigetti resources on Azure Quantum, see [Rigetti provider and targets](xref:microsoft.quantum.providers.rigetti).
+Rigetti offers a Pay-As-You-Go plan through Azure Quantum. For more information about Rigetti resources on Azure Quantum, see [Rigetti provider and targets](xref:microsoft.quantum.providers.rigetti).
 
 ### Rigetti is available in the following countries/regions:
 
