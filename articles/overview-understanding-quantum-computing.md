@@ -33,7 +33,7 @@ This game of increasing the number of locations can't be played indefinitely. At
 
 ### Turning difficulty into opportunity
 
-The observation of this exponential growth led scientists to ask a powerful question: could we simulate quantum systems using a machine that exploits exactly the same laws of physics? And could we use those that machine to investigate other tasks that are crucial for us? These questions led to the genesis of **Quantum Computing**.
+The observation of this exponential growth led scientists to ask a powerful question: could we simulate quantum systems using a machine that exploits exactly the same laws of physics? And could we use that machine to investigate other tasks that are crucial for us? These questions led to the genesis of **Quantum Computing**.
 
 In 1985, David Deutsch showed that a quantum computer could efficiently simulate the behavior of any physical system. This discovery was the first indication that quantum computers could be used to solve problems that are intractable on classical computers.
 
