@@ -29,7 +29,7 @@ The following targets are available from this provider:
 |[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 |[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte	|32 qubits	|IonQ's Forte trapped-ion quantum computer. Available in Private Preview only.|
 
-IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
+IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets).
 
 ## Quantum simulator
 
@@ -61,9 +61,9 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 | Measure | Average time duration  |
 |---------|----------------------------|
 | T1 | 10-100 s  |
-| T2 | 1 s| 
-| Single-qubit gate | 135 µs | 
-| Two-qubit gate | 600 µs | 
+| T2 | 1 s|
+| Single-qubit gate | 135 µs |
+| Two-qubit gate | 600 µs |
 
 ### System fidelity
 
@@ -97,7 +97,7 @@ IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quan
 
 In Q#, the output of a quantum measurement is a value of type `Result`, which can only take the values `Zero` and `One`. When you define a Q# operation, it can only be submitted to IonQ hardware if the return type is a collection of `Result`s, that is, if the output of the operation is the result of a quantum measurement. The reason for this is because IonQ builds a histogram from the returned values, so it restricts the return type to `Result` to simplify creating this histogram.
 
-IonQ's targets correspond to the [:::no-loc text="QIR Base"::: profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow. 
+IonQ's targets correspond to the [:::no-loc text="QIR Base"::: profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow.
 
 ## Output format
 
@@ -117,11 +117,11 @@ Users can take advantage of these additional capabilities via pass-through param
 
 ### Error mitigation
 
-IonQ provides the option to enable *quantum error mitigation* when submitting jobs to IonQ hardware. Error mitigation is a compiler-level process that runs and executes multiple symmetric variations of a circuit, and then aggregates the outcomes while mitigating the impact of hardware errors and qubit decoherence. Unlike *quantum error correction* techniques, error mitigation does not require large gate and qubit overhead. 
+IonQ provides the option to enable *quantum error mitigation* when submitting jobs to IonQ hardware. Error mitigation is a compiler-level process that runs and executes multiple symmetric variations of a circuit, and then aggregates the outcomes while mitigating the impact of hardware errors and qubit decoherence. Unlike *quantum error correction* techniques, error mitigation does not require large gate and qubit overhead.
 
-*Debiasing* is the process of creating slight variations of a given circuit that *should* be identical on an ideal noiseless machine, using techniques such as different qubit assignments, gate decompositions, and pulse solutions, and then executing those variations. 
+*Debiasing* is the process of creating slight variations of a given circuit that *should* be identical on an ideal noiseless machine, using techniques such as different qubit assignments, gate decompositions, and pulse solutions, and then executing those variations.
 
-*Sharpening* and *Averaging* are options for aggregating the results of the variations. Averaging is based equally on all the variation results, whereas Sharpening filters out the erroneous results, and can be more reliable for certain types of algorithms. 
+*Sharpening* and *Averaging* are options for aggregating the results of the variations. Averaging is based equally on all the variation results, whereas Sharpening filters out the erroneous results, and can be more reliable for certain types of algorithms.
 
 For more information, see [Debiasing and Sharpening](https://ionq.com/resources/debiasing-and-sharpening). For error mitigation pricing, see [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq).
 
@@ -173,7 +173,7 @@ option_params = {
 
 #### Running a job on Azure Quantum with error mitigation
 
-This example uses a simple random number generator. 
+This example uses a simple random number generator.
 
 First, import the required packages and initiate the base profile:
 
@@ -382,11 +382,11 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 ## IonQ status
 
-For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/). 
+For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/).
 
 ## IonQ best practices and connectivity graph
 
