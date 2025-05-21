@@ -95,5 +95,4 @@ To see the PASQAL billing plan, visit [Azure Quantum pricing](xref:microsoft.qua
 
 ## Limits and quotas
 
-PASQAL quotas apply to the usage of the emulator and QPU and can be increased with a support ticket. 
-To check your current limits and quotas, navigate to the Credits and quotas section, then select the Quotas tab in your workspace on the [Azure portal](https://portal.azure.com). Refer to [Azure Quantum quotas](xref:microsoft.quantum.quotas) for more information.
+PASQAL quotas apply to the usage of the emulator and QPU and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). Refer to [Azure Quantum quotas](xref:microsoft.quantum.quotas) for more information.
