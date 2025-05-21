@@ -42,7 +42,7 @@ Azure Quantum usage and quotas are measured in terms of each provider's unit of 
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 1. Select your **Azure Quantum workspace**.
-1. In the left panel, under **Operations**, go to the **Quotas** tab.
+1. In the left panel, under **Operations**, go to the **Quotas** blade.
 1. See the consumed and the remaining quotas for each selected provider. Notice that quota information is displayed in three columns.
 
   - *Workspace usage*: The usage limit for the current workspace. Each Azure Quantum workspace has a usage limit.
@@ -234,7 +234,7 @@ You can request quota increases by raising a support ticket.
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select your **Azure Quantum workspace**.
-3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab.
+3. In the left panel, under **Operations**, go to the **Quotas** blade.
 4. Either press the **Increase** button on the quota page or select the **New support request** button on the side panel in the portal.
 5. A support ticket opens. Follow these steps to fill out the request.
     1. Describe the issue as **Azure Quantum Quota Override Request**
