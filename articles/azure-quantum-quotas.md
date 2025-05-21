@@ -19,7 +19,7 @@ In this article, you find the guidelines to understand limits and quotas in the 
 
 ## What are quotas in Azure Quantum?
 
-Quotas are limits on the usage of QPUs targets defined by the providers. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems. 
+Quotas are limits on the usage of QPUs targets defined by the providers. Quotas help prevent accidental cost overages for the user while also preserving the integrity of the provider's systems.
 
 Quotas are based on your provider plan selection and can usually be increased with a support ticket. The usage tracked by quotas isn't necessarily tied to a cost or credit, but it might be correlated.
 
@@ -42,14 +42,12 @@ Azure Quantum usage and quotas are measured in terms of each provider's unit of 
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 1. Select your **Azure Quantum workspace**.
-1. In the left panel, under **Operations**, go to the **Credits and quotas** tab and select the **Quotas** blade. 
+1. In the left panel, under **Operations**, go to the **Quotas** tab.
 1. See the consumed and the remaining quotas for each selected provider. Notice that quota information is displayed in three columns.
 
   - *Workspace usage*: The usage limit for the current workspace. Each Azure Quantum workspace has a usage limit.
-  - *Azure subscription usage*: The usage for all workspaces within the current region and subscription. Not all quotas are tracked at this level. 
+  - *Azure subscription usage*: The usage for all workspaces within the current region and subscription. Not all quotas are tracked at this level.
   - *Cadence*: The period when your quota is renewed. If monthly, the usage is reset on the 1st of every month. If one-time, usage is never reset.
-
- :::image type="content" source="media/portal-quotas-blade.png" alt-text="Screenshot of the quotas blade in Azure portal." lightbox="media/portal-quotas-blade.png":::
 
 ### Track quota using Azure CLI
 
@@ -103,7 +101,7 @@ The **Scope** column indicates whether the quota refers to the current workspace
 - *Workspace*: Quota is tracked for an individual workspace.
 - *Subscription*: Quota is tracked together for all workspaces within the same subscription/region.
 
-The **Period** column indicates the period when your quota is renewed. 
+The **Period** column indicates the period when your quota is renewed.
 
 - *Monthly*: The usage is reset on the 1st of every month.
 - *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure portal](https://portal.azure.com) view).
@@ -149,7 +147,7 @@ The `scope` item indicates whether the quota refers to the current workspace or 
 - *Workspace*: Quota is tracked for an individual workspace.
 - *Subscription*: Quota is tracked together for all workspaces within the same subscription/region.
 
-The `period` item indicates the period when your quota is renewed. 
+The `period` item indicates the period when your quota is renewed.
 
 - *Monthly*: The usage is reset on the 1st of every month.
 - *Infinite*: The usage is never reset (also referred as *one-time* in the [Azure portal](https://portal.azure.com) view).
@@ -236,23 +234,23 @@ You can request quota increases by raising a support ticket.
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select your **Azure Quantum workspace**.
-3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab. 
+3. In the left panel, under **Operations**, go to the **Credits and quotas** blade and select the **Quotas** tab.
 4. Either press the **Increase** button on the quota page or select the **New support request** button on the side panel in the portal.
 5. A support ticket opens. Follow these steps to fill out the request.
     1. Describe the issue as **Azure Quantum Quota Override Request**
-    1. Select **Technical** for “Issue Type” 
-    1. Select the subscription that the workspace is in 
-    1. Select **All services** 
-    1. Choose **Azure Quantum – Preview** as “Service Type” 
+    1. Select **Technical** for “Issue Type”
+    1. Select the subscription that the workspace is in
+    1. Select **All services**
+    1. Choose **Azure Quantum – Preview** as “Service Type”
     1. Choose the workspace you want to change quota for under **Resource**
-    1. Choose **Other** for problem type 
+    1. Choose **Other** for problem type
     1. Advance to **Solutions** and then again to **Details**
-    1. Fill out all fields. For **Description** include the following: 
+    1. Fill out all fields. For **Description** include the following:
 
-      - Name of the provider you want to change quotas for 
-      - Whether you want to change quotas for the subscription scope or workspace scope 
-      - Which quotas you want to change, and by how much 
-      - Any justification for why you are increasing your quota can help us to decide in some cases. 
+      - Name of the provider you want to change quotas for
+      - Whether you want to change quotas for the subscription scope or workspace scope
+      - Which quotas you want to change, and by how much
+      - Any justification for why you are increasing your quota can help us to decide in some cases.
 
 
 ## Related content
