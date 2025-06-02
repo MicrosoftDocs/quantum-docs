@@ -24,8 +24,6 @@ Azure Quantum makes solutions available from Microsoft and from our partner comp
 |---|---|
 |Billing plans| Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 ## How can I modify the usage plan for my Azure Quantum workspace?
 
 You can modify your current usage plan for each provider and see the different billing plans available in your local currency.

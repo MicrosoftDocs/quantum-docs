@@ -12,8 +12,6 @@ uid: microsoft.quantum.providers.pasqal
 
 # PASQAL provider
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 PASQAL's quantum computers control neutral atoms with optical tweezers, using laser light to manipulate quantum registers with up to a hundred qubits.
 
 - Publisher: [PASQAL](https://www.pasqal.com/)

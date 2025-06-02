@@ -13,8 +13,6 @@ uid: microsoft.quantum.providers.rigetti
 
 # Rigetti provider
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 [Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
 
 - Publisher: [Rigetti](https://rigetti.com)
