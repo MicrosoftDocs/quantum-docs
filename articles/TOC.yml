@@ -101,6 +101,8 @@
       href: how-to-work-with-qsharp-projects.md
     - name: Debug and test your Q# code
       href: testing-debugging.md
+    - name: Use VS Code agent in your QDK projects
+      href: qdk-vscode-agent-setup.md
     - name: Visualize Q# circuit diagrams
       href: how-to-visualize-circuits.md
     - name: Perform long-running experiments
