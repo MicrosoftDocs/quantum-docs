@@ -31,7 +31,7 @@ The Circuit Editor is the default view for `.qsc` files.
 
 Here's what you can do with the Circuit Editor:
 
-- **Insert circuit elements**: To insert circuit elements, such as gates and measurements, into your circuit, click-and-drag the icons from the toolbox into the circuit diagram.
+- **Insert circuit elements**: To insert circuit elements such as gates and measurements into your circuit, click-and-drag the icons from the toolbox into the circuit diagram.
 - **Remove circuit elements**: To remove an element from your circuit, click-and-drag the element's icon out of the circuit diagram. Or, right-click on the icon to bring up the context menu, and then choose **Delete**.
 - **Move elements within the circuit**: To rearrange the elements in your circuit, click-and-drag an icon to a new location in the diagram.
 - **Add or remove qubits**: To create a new qubit, place an icon from the toolbox to a new line in the circuit diagram. To remove a qubit, click-and-drag the qubit icon out of the circuit diagram. If you remove all circuit elements from the bottom-most qubit line, then that qubit is automatically deleted.
