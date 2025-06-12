@@ -2,13 +2,13 @@
 author: azure-quantum-content
 description: This document introduces the Circuit Editor feature in the QDK that allows users to build quantum circuits through a graphical interface and use the circuits in their Q# programs.
 ms.author: quantumdocwriters
-ms.date: 06/10/2025
+ms.date: 06/12/2025
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: get-started
+ms.topic: how-to
 no-loc: ['Circuit Editor', 'Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: How to use the Circuit Editor in the Quantum Development Kit
-uid: microsoft.quantum.get-started.qdk-circuit-editor
+uid: microsoft.quantum.how-to.qdk-circuit-editor
 
 #Customer intent: I want to learn how to use the Circuit Editor from the QDK to build quantum circuits and use them in my Q# program.
 ---
@@ -17,15 +17,11 @@ uid: microsoft.quantum.get-started.qdk-circuit-editor
 
 The Circuit Editor is a feature in the Quantum Development Kit (QDK) that provides a graphical interface where you can create, edit, and visualize quantum circuit diagrams inside your Q# projects. You can use the circuits that you build directly in your Q# programs as callable operations.
 
-Here's the Circuit Editor in action:
-
-:::image type="content" source="media/qdk-circuit-editor-example.gif" alt-text="Example of building a quantum circuit with the QDK Circuit Editor.":::
-
 ## How to access the Circuit Editor
 
 To get started with the Circuit Editor, follow these steps:
 
-1. [Create a new Q# project](https://learn.microsoft.com/en-us/azure/quantum/qsharp-quickstart), or open an existing project.
+1. Create a new Q# project in VS Code, or open an existing project.
 2. Create a new circuit file with the extension `.qsc`.
 3. Open the circuit file in VS Code.
 
@@ -35,14 +31,15 @@ The Circuit Editor is the default view for `.qsc` files.
 
 Here's what you can do with the Circuit Editor:
 
-- **Insert quantum operations**: To insert quantum gates and measurement operations into your circuit, click-and-drag the icons from the toolbox into the circuit diagram.
-- **Remove operations**: To remove operations from your circuit, click-and-drag the operation out of the circuit diagram. Or, right-click on the operation icon to bring up the context menu, and then choose **Delete**.
-- **Move operations within the circuit**: To rearrange the operations in your circuit, click-and-drag an operation icon to a new location in the diagram.
-- **Add or remove qubits**: To create a new qubit, drag an operation to a new line in the circuit diagram. To remove a qubit, move the qubit to the bottom of the diagram, and then remove all operations on the qubit. Click-and-drag the qubit icons to rearrange the order of the qubits.
+- **Insert circuit elements**: To insert circuit elements, such as gates and measurements, into your circuit, click-and-drag the icons from the toolbox into the circuit diagram.
+- **Remove circuit elements**: To remove an element from your circuit, click-and-drag the element's icon out of the circuit diagram. Or, right-click on the icon to bring up the context menu, and then choose **Delete**.
+- **Move elements within the circuit**: To rearrange the elements in your circuit, click-and-drag an icon to a new location in the diagram.
+- **Add or remove qubits**: To create a new qubit, place an icon from the toolbox to a new line in the circuit diagram. To remove a qubit, click-and-drag the qubit icon out of the circuit diagram. If you remove all circuit elements from the bottom-most qubit line, then that qubit is automatically deleted.
+- **Rearrange the order of qubits**: Click-and-drag the qubit icons to rearrange the order of the qubits.
 - **Add or remove controls on gates**: To add or remove controls on a gate, right-click the gate icon, choose either **Add control** or **Remove control** from the context menu, and then select the corresponding qubit line. Alternatively, right-click on the control icon and choose **Remove control** from the context menu, or click-and-drag the control icon off of the circuit diagram.
 - **Convert a gate to its adjoint**: To convert a gate between its standard form and its adjoint form, right-click on the gate icon and choose **Toggle Adjoint** from the context menu.
-- **Copy operations**: To copy an existing operation, click-and-drag the icon for the operation that you want to copy, and hold down the **Ctrl** key when you place the operation at a new location in the circuit diagram.
-- **Define arguments for gates**: When you place a gate that requires an argument, the Circuit Editor prompts you to enter a number or simple math expression that's used as the first-most argument to the gate. To change the argument value, right-click on the gate icon and choose **Edit Argument** from the context menu. Or, left-click on the argument text in the gate icon.
+- **Copy circuit elements**: To copy an existing element, click-and-drag the icon of the element that you want to copy, and hold down the **Ctrl** key when you place the icon at a new location in the circuit diagram.
+- **Define arguments for gates**: When you place a gate that requires an argument, the Circuit Editor prompts you to enter a number or simple math expression that's used as the argument to the gate. To change the argument value, right-click on the gate icon and choose **Edit Argument** from the context menu. Or, left-click on the argument text in the gate icon.
 
 ## How to use Circuit Editor circuits in your Q# projects
 
