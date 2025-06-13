@@ -17,7 +17,7 @@ uid: microsoft.quantum.how-to.qdk-vscode-agent-setup
 
 Use agent mode in VS Code, powered by GitHub Copilot, to enhance your builder experience with The Quantum Development Kit (QDK) extension.
 
-Agent mode is an AI-assisted development experience that helps you write and debug code, and complete other development tasks in VS Code. Although you can use agent mode for the QDK without any set up, follow these tips to get the most out of agent mode in your QDK projects:
+Agent mode is an AI-assisted development experience that helps you write and debug code, and complete other development tasks in VS Code. Although you can use agent mode for the QDK without any setup, follow these tips to get the most out of agent mode in your QDK projects:
 
 1. [Add Copilot instructions for Q# and OpenQASM](#tip-1-add-copilot-instructions-for-q-and-openqasm)
 2. [Use the QDK tools](#tip-2-use-the-qdk-tools)
@@ -29,7 +29,7 @@ The QDK comes with a set of instructions for Copilot that include best practices
 
 To add these instructions to your settings, follow these steps:
 
-1. Press **Ctrl+Shift+P** to open the command pallete.
+1. Press **Ctrl+Shift+P** to open the command palette.
 1. Enter and choose **QDK: Add Copilot instructions file for Q# and OpenQASM**.
 1. In the confirmation box that opens, choose **Yes**.
 
@@ -45,7 +45,7 @@ To activate the QDK tools for agent mode, follow these steps:
 1. If the chat is in **Ask** mode or **Edit** mode, then select the mode dropdown at the bottom of the chat input box and choose **Agent**.
 1. Select the Tools icon at the bottom of the chat input box.
 
-This brings up a list of all your available agent tools. Select all the tools under **Azure Quantum Development Kit (QDK)** to activate the QDK tools.
+A list pops up that contains all your available agent tools. Select all the tools under **Azure Quantum Development Kit (QDK)** to activate the QDK tools.
 
 :::image type="content" source="media\qdk-agent-tools-list.png" alt-text="Screenshot of the list of available QDK tools for agent mode in VS Code.":::
 
@@ -61,7 +61,7 @@ Now that you're all set up to make the most of AI-assisted building in the QDK, 
 
 To get started, here are a few prompts that you can try in your Q# projects:
 
-- Simulate this program for 1000 shots and show me a histogram.
+- Simulate this program for 1,000 shots and show me a histogram.
 - Submit this Q# program to Azure Quantum.
 - Add tests for this Q# code.
 - Show me my recent jobs on Azure Quantum.
