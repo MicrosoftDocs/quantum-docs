@@ -62,7 +62,11 @@ Now that you're set up to leverage AI in your Q# projects, try out some prompts 
 To get started, here are a few example prompts:
 
 > Simulate this program for 1,000 shots and show me a histogram.
+
 > Submit this Q# program to Azure Quantum.
+
 > Add tests for this Q# code.
+
 > Show me my recent jobs on Azure Quantum.
+
 > Hey, I've been meaning to learn a bit about quantum computing but I have no clue where to even start. Can you just help me write a very simple program, understand it, and maybe even run it on a real quantum computer?
