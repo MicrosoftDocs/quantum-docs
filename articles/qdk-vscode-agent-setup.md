@@ -19,15 +19,15 @@ Use agent mode in VS Code, powered by GitHub Copilot, to enhance your builder ex
 
 Agent mode is an AI-assisted development experience that helps you write and debug code, and complete other development tasks in VS Code. Although you can use agent mode for the QDK without any setup, follow these tips to get the most out of agent mode in your QDK projects:
 
-1. [Add Copilot instructions for Q# and OpenQASM](#tip-1-add-copilot-instructions-for-q-and-openqasm)
-2. [Use the QDK tools](#tip-2-use-the-qdk-tools)
-3. [Try different models](#tip-3-try-different-models)
+1. [Add Copilot instructions for Q# and OpenQASM](#add-copilot-instructions-for-q-and-openqasm)
+2. [Activate the QDK tools for agent mode](#activate-the-qdk-tools-for-agent-mode)
+3. [Try different agent models](#try-different-agent-models)
 
-## Tip 1: Add Copilot instructions for Q# and OpenQASM
+## Add Copilot instructions for Q# and OpenQASM
 
 The QDK comes with a set of instructions for Copilot that include best practices for building projects with Q#, OpenQASM, and Azure Quantum.
 
-To add these instructions to your settings, follow these steps:
+To add the QDK Copilot instructions to your settings, follow these steps:
 
 1. Press **Ctrl+Shift+P** to open the command palette.
 1. Enter and choose **QDK: Add Copilot instructions file for Q# and OpenQASM**.
@@ -35,7 +35,7 @@ To add these instructions to your settings, follow these steps:
 
 The QDK instructions are added to your context when you use GitHub Copilot Chat in Q# and OpenQASM files. You can manually configure this setting in `chat.instructionsFilesLocations`.
 
-## Tip 2: Activate the QDK tools for agent mode
+## Activate the QDK tools for agent mode
 
 The QDK extension includes a set of tools that tailors Copilot Chat to work with Q# and Azure Quantum. For example, you can simulate Q# code, visualize quantum circuit diagrams, and perform resource estimation directly from the Copilot Chat view. You can also do things like connect to your Azure Quantum workspace, submit jobs, and view job status and job results.
 
@@ -49,20 +49,20 @@ A list pops up that contains all your available agent tools. Select all the tool
 
 :::image type="content" source="media\qdk-agent-tools-list.png" alt-text="Screenshot of the list of available QDK tools for agent mode in VS Code.":::
 
-## Tip 3: Try different agent models
+## Try different agent models
 
 Copilot lets you choose from a set of different language models to use in agent mode. Different models have different strengths, so the best model for you depends on your use case.
 
 To explore different models, select the model dropdown menu at the bottom of the chat input box and choose one of the available models from the list.
 
-## Try some prompts
+### Try some prompts
 
-Now that you're all set up to make the most of AI-assisted building in the QDK, try out some prompts in the Copilot Chat!
+Now that you're set up to leverage AI in your Q# projects, try out some prompts in the Copilot Chat.
 
-To get started, here are a few prompts that you can try in your Q# projects:
+To get started, here are a few example prompts:
 
-- Simulate this program for 1,000 shots and show me a histogram.
-- Submit this Q# program to Azure Quantum.
-- Add tests for this Q# code.
-- Show me my recent jobs on Azure Quantum.
-- Hey, I've been meaning to learn a bit about quantum computing but I have no clue where to even start. Can you just help me write a very simple program, understand it, and maybe even run it on a real quantum computer?
+> Simulate this program for 1,000 shots and show me a histogram.
+> Submit this Q# program to Azure Quantum.
+> Add tests for this Q# code.
+> Show me my recent jobs on Azure Quantum.
+> Hey, I've been meaning to learn a bit about quantum computing but I have no clue where to even start. Can you just help me write a very simple program, understand it, and maybe even run it on a real quantum computer?
