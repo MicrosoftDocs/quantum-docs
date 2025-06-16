@@ -105,6 +105,8 @@
       href: qdk-vscode-agent-setup.md
     - name: Visualize Q# circuit diagrams
       href: how-to-visualize-circuits.md
+    - name: Create circuits with the Circuit Editor
+      href: qdk-circuit-editor.md
     - name: Perform long-running experiments
       href: how-to-long-running-experiments.md
     - name: Adapt Qiskit samples to Azure Quantum
