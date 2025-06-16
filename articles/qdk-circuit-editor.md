@@ -31,15 +31,19 @@ The Circuit Editor is the default view for `.qsc` files.
 
 Here's what you can do with the Circuit Editor:
 
-- **Insert circuit elements**: To insert circuit elements such as gates and measurements into your circuit, click-and-drag the icons from the toolbox into the circuit diagram.
-- **Remove circuit elements**: To remove an element from your circuit, click-and-drag the element's icon out of the circuit diagram. Or, right-click on the icon to bring up the context menu, and then choose **Delete**.
-- **Move elements within the circuit**: To rearrange the elements in your circuit, click-and-drag an icon to a new location in the diagram.
-- **Add or remove qubits**: To create a new qubit, place an icon from the toolbox to a new line in the circuit diagram. To remove a qubit, click-and-drag the qubit icon out of the circuit diagram. If you remove all circuit elements from the bottom-most qubit line, then that qubit is automatically deleted.
-- **Rearrange the order of qubits**: Click-and-drag the qubit icons to rearrange the order of the qubits.
-- **Add or remove controls on gates**: To add or remove controls on a gate, right-click the gate icon, choose either **Add control** or **Remove control** from the context menu, and then select the corresponding qubit line. Alternatively, right-click on the control icon and choose **Remove control** from the context menu, or click-and-drag the control icon off of the circuit diagram.
-- **Convert a gate to its adjoint**: To convert a gate between its standard form and its adjoint form, right-click on the gate icon and choose **Toggle Adjoint** from the context menu.
-- **Copy circuit elements**: To copy an existing element, click-and-drag the icon of the element that you want to copy, and hold down the **Ctrl** key when you place the icon at a new location in the circuit diagram.
-- **Define arguments for gates**: When you place a gate that requires an argument, the Circuit Editor prompts you to enter a number or simple math expression that's used as the argument to the gate. To change the argument value, right-click on the gate icon and choose **Edit Argument** from the context menu. Or, left-click on the argument text in the gate icon.
+| **Feature** | **How to Use** |
+|-------------|----------------|
+| **Insert a circuit element** | Click-and-drag the element from the toolbox into the circuit diagram. |
+| **Remove a circuit element** | Click-and-drag the element out of the circuit diagram. Or, right-click the element and choose **Delete** from the context menu. |
+| **Move a circuit element** | Click-and-drag the element to a new location in the circuit diagram. |
+| **Copy a circuit element** | Hold down the **Ctrl** key while you click-and-drag the element to a new location in the circuit diagram. |
+| **Add a qubit** | Place an element from the toolbox on a new wire in the circuit diagram. Or, move an existing element to a new wire in the diagram. |
+| **Remove a qubit** | Click-and-drag the qubit icon out of the circuit diagram. The bottom-most qubit is automatically deleted when you remove all circuit elements from that qubit. |
+| **Rearrange the qubit order** | Click-and-drag the qubit icons in the circuit diagram. |
+| **Add a control to a gate** | Right-click the gate icon, choose **Add Control** from the context menu, and then choose the control qubit wire. |
+| **Remove a control from a gate** | Right-click the gate icon, choose **Remove Control** from the context menu, and then select the icon for the control that you want to remove. You can also right-click the control icon directly and choose **Remove Control**, or drag the control icon off the diagram. |
+| **Convert a gate to its adjoint** | Right-click the gate icon and choose **Toggle Adjoint** from the context menu. |
+| **Define an argument for a gate** | When you place a gate that requires an argument, a prompt box appears. Enter a number or expression in the prompt box. To update the argument, right-click the gate and choose **Edit Argument**. Or, left-click the argument text on the gate icon. |
 
 ## How to use Circuit Editor circuits in your Q# projects
 
