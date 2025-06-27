@@ -21,7 +21,7 @@ as a user account. For example, you may want to submit jobs from a virtual machi
 
 A managed identity allows an application to access other Azure resources (such as your Azure Quantum workspace) and authenticate with these resources. 
 
-To configure a managed identity:
+To configure a Managed identity:
 
 1. Via the Azure portal, locate the resource that you wish to give access to. This resource may be a VM, a Function App, or other application.
 2. Select the resource, and view the overview page.
