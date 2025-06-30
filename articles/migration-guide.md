@@ -15,7 +15,7 @@ uid: microsoft.quantum.how-to.migrate-quantum-workspace-new-region
 
 # Migrate your Azure Quantum job data
 
-As of September 30th, 2025, the Azure Quantum service will be available in only the following Azure regions:
+As of September 30, 2025, the Azure Quantum service will be available in only the following Azure regions:
 
 - East US
 - West US
@@ -32,7 +32,7 @@ Azure Quantum will discontinue support for the following Azure regions:
 - Germany West Central
 - West Central US
 
-If your Azure Quantum workspace is deployed and hosted in any of the discontinued regions, then you'll lose access to your workspace on September 30th, 2025. You'll still be able to access and use Azure Quantum from all currently supported Azure geographies, and be able to associate storage accounts from any Azure region with your Quantum workspace. To continue using Azure Quantum, create a new Quantum workspace in one of the supported regions.
+If your Azure Quantum workspace is deployed and hosted in any of the discontinued regions, then you'll lose access to your workspace on September 30, 2025. You'll still be able to access and use Azure Quantum from all currently supported Azure geographies, and be able to associate storage accounts from any Azure region with your Quantum workspace. To continue using Azure Quantum, create a new Quantum workspace in one of the supported regions.
 
 To retain your Azure Quantum job information, migrate all the job data from your old workspace to your new workspace. When you do the migration, your job input and output data are available in your new workspace. But you can't see the job history for those jobs anymore in the Azure portal, Azure Quantum SDK, or the Azure CLI.
 
@@ -95,7 +95,7 @@ To generate a SAS for each storage account, follow these steps:
    For **Allowed resource types**, select **Service**, **Container**, and **Object**.
    For **Allowed permissions**, make sure that you select **Read** and **List**.
 1. To generate a SAS for your old workspace's storage account, choose **Generate SAS and connection string**. Copy and save the **Blob service SAS URL** text. You need this URL when you use AzCopy.
-1. To generate a SAS for you new workspace's storage account, go to **Quantum Workspaces** again, choose your new workspace, and then repeat the preceding steps. The only difference for the new workspace SAS is the allowed permissions.
+1. To generate a SAS for your new workspace's storage account, go to **Quantum Workspaces** again, choose your new workspace, and then repeat the preceding steps. The only difference for the new workspace SAS is the allowed permissions.
    For **Allowed permissions**, make sure that you select **Write**, **Add**, and **Create**.
    Copy and save the URL for this SAS too.
 1. Open a terminal and run the following AzCopy command:
@@ -123,7 +123,7 @@ The notebooks from your old workspace are now available in your new workspace.
 
 ## Delete your old Quantum workspace
 
-After you set up your new workspace and migrate all your data, delete your old workspace. Note that all workspaces in discontinued regions will be automatically deleted on September 30th, 2025.
+After you set up your new workspace and migrate all your data, delete your old workspace. Note that all workspaces in discontinued regions will be automatically deleted on September 30, 2025.
 
 > [!NOTE]
 > For questions about migration issues, email [azurequantuminfo@microsoft.com](mailto:azurequantuminfo@microsoft.com).
