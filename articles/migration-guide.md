@@ -39,7 +39,7 @@ To retain your Azure Quantum job information, migrate all the job data from your
 Migration instructions depend on whether your old workspace's storage account is managed or unmanaged.
 
 > [!IMPORTANT]
-> Before you migrate your job data, make sure that you don't have open jobs in the queue. To remove an open job from the queue, either wait for the job to finish running or cancel the job. Also, don't start any new jobs in your old Quantum workspace.
+> Don't delete your old workspace until after you migrate your data to your new workspace. Before you migrate your job data, make sure that you don't have open jobs in the queue. To remove an open job from the queue, either wait for the job to finish running or cancel the job.
 
 ## [Unmanaged storage](#tab/tabid-unmanaged)
 
@@ -66,9 +66,6 @@ If your old workspace uses a managed storage account, then create a new workspac
 
 > [!NOTE]
 > To use AzCopy to migrate your job data to a new managed storage account, you must have a role assignment in each storage account that allows you to generate a shared access signature (SAS), such as Contributor or Storage Account Contributor.
-
-[!WARNING]
-> Don't delete your old workspace until after you migrate your data to your new workspace.
 
 ### Create a new Quantum workspace with a managed storage account
 
