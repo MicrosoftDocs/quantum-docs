@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document gives instructions on how to migrate a Quantum Workspace to a new Azure region
 ms.author: quantumdocwriters
-ms.date: 06/30/2025
+ms.date: 07/01/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -13,7 +13,7 @@ uid: microsoft.quantum.how-to.migrate-quantum-workspace-new-region
 # Customer intent: I want to migrate my Azure Quantum Workspace data to a new Azure region because Azure Quantum will be retired in my current region.
 ---
 
-# Migrate your Azure Quantum workspace job data to a new Azure region
+# Migrate your Azure Quantum job data
 
 As of September 30th, 2025, the Azure Quantum service will be available in only the following Azure regions:
 
@@ -32,7 +32,7 @@ Azure Quantum will discontinue support for the following Azure regions:
 - Germany West Central
 - West Central US
 
-If your Azure Quantum workspace is deployed and hosted in any of the discontinued regions, then you'll lose access to your workspace on September 30th, 2025. You'll still be able to access and use Azure Quantum from all currently supported Azure geographies, and you'll still be able to associate storage accounts from any Azure region with your Quantum workspace. To continue using Azure Quantum, create a new Quantum workspace in one of the supported regions.
+If your Azure Quantum workspace is deployed and hosted in any of the discontinued regions, then you'll lose access to your workspace on September 30th, 2025. You'll still be able to access and use Azure Quantum from all currently supported Azure geographies, and be able to associate storage accounts from any Azure region with your Quantum workspace. To continue using Azure Quantum, create a new Quantum workspace in one of the supported regions.
 
 To retain your Azure Quantum job information, migrate all the job data from your old workspace to your new workspace. When you do the migration, your job input and output data are available in your new workspace. But you can't see the job history for those jobs anymore in the Azure portal, Azure Quantum SDK, or the Azure CLI.
 
@@ -62,7 +62,7 @@ The storage account for your old workspace is now associated with your new works
 
 ## [Managed storage](#tab/tabid-managed)
 
-If your old workspace uses a managed storage account, then create a new workspace with a managed storage account and use AzCopy to migrate your data from the old managed storage account to the new managed storage account. For information about how to install and use AzCopy, see [Get started with AzCopy](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10?tabs=dnf).
+If your old workspace uses a managed storage account, then create a new workspace with a managed storage account and use AzCopy to migrate your data from the old managed storage account to the new managed storage account. For information about how to install and use AzCopy, see [Get started with AzCopy](https://learn.microsoft.com/azure/storage/common/storage-use-azcopy-v10).
 
 > [!NOTE]
 > To use AzCopy to migrate your job data to a new managed storage account, you must have a role assignment in each storage account that allows you to generate a shared access signature (SAS), such as Contributor or Storage Account Contributor.
@@ -126,4 +126,4 @@ The notebooks from your old workspace are now available in your new workspace.
 After you set up your new workspace and migrate all your data, delete your old workspace. Note that all workspaces in discontinued regions will be automatically deleted on September 30th, 2025.
 
 > [!NOTE]
-> For questions about migration issues, contact [Azure Support](https://azure.microsoft.com/en-us/support/).
+> For questions about migration issues, email [azurequantuminfo@microsoft.com](mailto:azurequantuminfo@microsoft.com).
