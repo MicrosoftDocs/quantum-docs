@@ -39,7 +39,7 @@ To run your OpenQASM code on a local quantum simulator in VS Code, open and sele
 
 - Press **Ctrl + F5**.
 - Press **Ctrl + Shift + P** (or **Cmd + Shift + P**) to open the Command Palette, and then enter **Debug: Run**.
-- Choose the **Run** code lense.
+- Choose the **Run** code lens.
 - Choose the **Run** button Editor Action, represented by a play icon.
 
 The output from your code appears in the **DEBUG CONSOLE** tab on the output Panel.
@@ -85,14 +85,14 @@ from qsharp.openqasm import run
 
 qsharp.init(target_profile=TargetProfile.Base)
 
-result = run(
+results = run(
     """
     include "stdgates.inc";
     qubit[2] q;
     reset q;
     h q[0];
     cx q[0], q[1];
-    bit c = measure q;
+    bit c = measure q[1];
     """,
     shots=10,
     noise=BitFlipNoise(0.1),
@@ -105,19 +105,20 @@ print(results)
 You can use the `import_openqasm()` function to store an OpenQASM program as a Python object and then call that object later in your Python code. For example, the following stores an OpenQASM circuit into a Python object called `bell`:
 
 ```python
+import qsharp
 from qsharp import init, TargetProfile
 from qsharp.openqasm import import_openqasm
 
 qsharp.init(target_profile=TargetProfile.Base)
 
-import_qasm(
+import_openqasm(
     """
     include "stdgates.inc";
     qubit[2] q;
     reset q;
     h q[0];
     cx q[0], q[1];
-    bit c = measure q;
+    bit c = measure q[1];
     """,
     name="bell",
 )
@@ -144,7 +145,32 @@ You can also use all the QDK package functionality with `bell`, such as noisy si
 The following cell creates am OpenQASM circuit that takes an angle `theta` as input, then calls the circuit as a Python function:
 
 ```python
-import_qasm(
+import_openqasm(
+    """
+    include "stdgates.inc";
+    input float theta;
+    qubit[2] q;
+    rx(theta) q[0];
+    rx(-theta) q[1];
+    bit[2] c;
+    c = measure q;
+    """,
+    name="parameterized_circuit",
+)
+
+from qsharp.code import parameterized_circuit
+
+parameterized_circuit(1.57)
+```
+
+### Compile OpenQASM programs into QIR
+
+You can compile OpenQASM code into Quantum Intermediate Representation (QIR) with the `compile()` function.
+
+For example, the following cell compiles OpenQASM code for a parameterized circuit into QIR:
+
+```python
+import_openqasm(
     """
     include "stdgates.inc";
     input float theta;
@@ -161,31 +187,6 @@ from qsharp.code import parameterized_circuit
 
 bound_compilation = qsharp.compile(parameterized_circuit, 1.57)
 print(bound_compilation)
-```
-
-### Directly compile OpenQASM programs
-
-The following cell compiles OpenQASM code directly without using Python bindings from the QDK:
-
-```python
-from qsharp import TargetProfile
-from qsharp.openqasm import compile
-
-compilation = compile(
-    """
-    include "stdgates.inc";
-    input float theta;
-    qubit[2] q;
-    rx(theta) q[0];
-    rx(-theta) q[1];
-    bit[2] c;
-    c = measure q;
-    """,
-    1.57,
-    target_profile=TargetProfile.Base,
-) 
-
-print(compilation)
 ```
 
 > [!NOTE]
