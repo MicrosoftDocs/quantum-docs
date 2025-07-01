@@ -89,10 +89,13 @@ To generate a SAS for each storage account, follow these steps:
 1. In the **Overview** menu, choose the **Storage account** link.
 1. In the **Security + networking** dropdown on the Storage account blade, choose **Shared access signature**.
 1. For **Allowed services**, select only **Blob**.
+
    For **Allowed resource types**, select **Service**, **Container**, and **Object**.
+
    For **Allowed permissions**, make sure that you select **Read** and **List**.
 1. To generate a SAS for your old workspace's storage account, choose **Generate SAS and connection string**. Copy and save the **Blob service SAS URL** text. You need this URL when you use AzCopy.
 1. To generate a SAS for your new workspace's storage account, go to **Quantum Workspaces** again, choose your new workspace, and then repeat the preceding steps. The only difference for the new workspace SAS is the allowed permissions.
+
    For **Allowed permissions**, make sure that you select **Write**, **Add**, and **Create**.
    Copy and save the URL for this SAS too.
 1. Open a terminal and run the following AzCopy command:
