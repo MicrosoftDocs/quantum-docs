@@ -37,6 +37,8 @@
         href: bulk-add-users-to-a-workspace.md
       - name: Share access to your Azure Quantum workspace
         href: how-to-share-access-quantum-workspace.md
+      - name: Migrate your Azure Quantum job data
+        href: migration-guide.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Work with Azure Quantum using the Azure CLI
