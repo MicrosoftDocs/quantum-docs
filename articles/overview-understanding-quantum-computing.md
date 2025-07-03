@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Learn how quantum computing works, how it compares to classical computing, and how it uses the principles of quantum mechanics.
-ms.date: 10/22/2024
+ms.date: 05/19/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -33,7 +33,7 @@ This game of increasing the number of locations can't be played indefinitely. At
 
 ### Turning difficulty into opportunity
 
-The observation of this exponential growth led scientist to ask a powerful question: could we simulate quantum systems using a machine that exploits exactly the same laws of physics? And could we use those that machine to investigate other tasks that are crucial for us? These questions led to the genesis of **Quantum Computing**.
+The observation of this exponential growth led scientists to ask a powerful question: could we simulate quantum systems using a machine that exploits exactly the same laws of physics? And could we use that machine to investigate other tasks that are crucial for us? These questions led to the genesis of **Quantum Computing**.
 
 In 1985, David Deutsch showed that a quantum computer could efficiently simulate the behavior of any physical system. This discovery was the first indication that quantum computers could be used to solve problems that are intractable on classical computers.
 
@@ -81,7 +81,7 @@ Imagine that you are exercising in your living room. You turn all the way to you
 
 However, if you are a quantum particle, then you can have a certain probability of *facing left* AND a certain probability of *facing right* due to a phenomenon known as *superposition* (also known as *coherence*).
 
-Only quantum systems like ions, electrons or superconducting circuits can exist in the superposition states that enable the power of quantum computing. A quantum particle such as an electron has its own “facing left or facing right” property, namely *spin*, referred to as either up or down, so the quantum state of an electron is a superposition of "spin up" and "spin down".
+Only quantum systems like ions, electrons, or superconducting circuits can exist in the superposition states that enable the power of quantum computing. For example, electrons are quantum particles that have their own "facing left or facing right" property called spin. The two spin states are called spin up and spin down, and the quantum state of an electron is a superposition of the spin up and spin down states.
 
 If you want to learn more and practice with superposition, see [Training module: Explore superposition with Q#](/training/modules/explore-superposition/).
 

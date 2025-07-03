@@ -13,8 +13,6 @@ uid: microsoft.quantum.providers.quantinuum
 
 # Quantinuum provider
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 Quantinuum provides access to trapped-ion systems with high-fidelity, fully connected qubits, and the ability to perform mid-circuit measurement.
 
 - Publisher: [Quantinuum]
@@ -75,7 +73,7 @@ System Model H1 Emulator usage is offered free-of-charge with a hardware subscri
 
 ## Quantinuum Emulator (cloud based)
 
-The Quantinuum Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date. 
+The Quantinuum Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date.
 
 ## System Model H1
 
@@ -119,7 +117,7 @@ System Model H2 hardware is continuously upgraded throughout it's product lifecy
   - H2-2: `quantinuum.qpu.h2-2`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
-## System Model H1 and H2 Technical Specifications 
+## System Model H1 and H2 Technical Specifications
 
 Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/hardware/h1) and [System Model H2](https://www.quantinuum.com/hardware/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 
@@ -620,9 +618,9 @@ where:
 - $C$ is the shot count.
 
 > [!NOTE]
-> The total cost in HQCs includes all gates and measurements across any conditional branches or control flows. This may have a higher impact on integrated hybrid jobs. 
+> The total cost in HQCs includes all gates and measurements across any conditional branches or control flows. This may have a higher impact on integrated hybrid jobs.
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal]. For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 [Quantinuum]: https://www.quantinuum.com
 [System Model H1]: https://www.quantinuum.com/hardware/h1
