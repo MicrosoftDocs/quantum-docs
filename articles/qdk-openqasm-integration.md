@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document provides on who to run OpenQASM code in the Quantum Development Kit
 ms.author: quantumdocwriters
-ms.date: 06/23/2025
+ms.date: 07/07/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -15,7 +15,7 @@ uid: microsoft.quantum.how-to.openqasm-development-qdk
 
 # Write and run OpenQASM code in the Quantum Development Kit
 
-The Quantum Development Kit (QDK) provides a development environment for OpenQASM programs with Azure Quantum integration. This article, you'll learn a few ways to write, debug, and run OpenQASM code in the QDK.
+The Quantum Development Kit (QDK) provides a development environment for OpenQASM programs with Azure Quantum integration. In this article, you learn how to write, debug, and run OpenQASM code in the QDK.
 
 The following QDK features are available in OpenQASM programs:
 
@@ -49,7 +49,7 @@ The output from your code appears in the **DEBUG CONSOLE** tab on the output Pan
 
 #### Built-in sample programs
 
-The QDK comes with several built-in quantum algorithm samples for OpenQASM. To try out the sample algorithms, write `sample` in an empty `.qasm` file. A completion list appears that contains the sample algorithms. Choose a sample and then run the code the generated code.
+The QDK comes with several built-in quantum algorithm samples for OpenQASM. To try out the sample algorithms, write `sample` in an empty `.qasm` file. A completion list appears that contains the sample algorithms. Choose a sample and then run the generated code.
 
 #### Debug locally in VS Code
 
@@ -68,7 +68,7 @@ For instructions on how to submit a job to Azure Quantum from VS Code, see [Conn
 
 ## Work with OpenQASM in Python and Jupyter Notebook
 
-The QDK includes two Python packages,`qsharp` and `qsharp-widgets`, that let you work with Q# and OpenQASM code in a Python environment in Jupyter Notebook. You write your OpenQASM code as a Python string, and then use that string to run, import, or compile your OpenQASM code in the Python environment.
+The QDK includes two Python packages, `qsharp` and `qsharp-widgets`, that let you work with Q# and OpenQASM code in a Python environment in Jupyter Notebook. You write your OpenQASM code as a Python string, and then use that string to run, import, or compile your OpenQASM code in the Python environment.
 
 ### Prerequisites
 
@@ -102,7 +102,7 @@ print(results)
 
 ### Call an OpenQASM program from Python
 
-You can use the `import_openqasm()` function to store an OpenQASM program as a Python object and then call that object later in your Python code. For example, the following stores an OpenQASM circuit into a Python object called `bell`:
+You can use the `import_openqasm()` function to store an OpenQASM program as a Python object and then call that object later in your Python code. For example, the following cell stores an OpenQASM circuit in a Python object called `bell`:
 
 ```python
 import qsharp
@@ -142,7 +142,7 @@ You can also use all the QDK package functionality with `bell`, such as noisy si
 
 #### Parameterized OpenQASM programs
 
-The following cell creates am OpenQASM circuit that takes an angle `theta` as input, then calls the circuit as a Python function:
+The following cell creates an OpenQASM circuit that takes an angle `theta` as input, then calls the circuit as a Python function:
 
 ```python
 import_openqasm(
