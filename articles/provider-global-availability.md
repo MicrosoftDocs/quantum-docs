@@ -322,6 +322,9 @@ PASQAL offers a Pay-As-You-Go plan through Azure Quantum. For more information a
 
 ## [Quantinuum](#tab/tabid-quantinuum)
 
+> [!WARNING]
+> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
+
 Quantinuum offers four plans through Azure Quantum: Standard and Premium plans with access to System Model H1, and Standard and Premium plan with access to System Models H1 and H2. For more information about Quantinuum resources on Azure Quantum, see [Quantinuum provider and targets](xref:microsoft.quantum.providers.quantinuum).
 
 ### Quantinuum is available in the following countries/regions:

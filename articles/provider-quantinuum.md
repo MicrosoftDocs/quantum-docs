@@ -20,6 +20,9 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 ## Targets
 
+> [!WARNING]
+> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
+
 The following targets are available from this provider:
 
 |Target name|Target ID|Number of qubits|Description|
