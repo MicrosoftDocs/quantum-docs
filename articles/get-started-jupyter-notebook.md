@@ -13,9 +13,9 @@ uid: microsoft.quantum.get-started.notebooks
 
 # Get started with Q# and an Azure Quantum notebook
 
-Learn how to run Q# code in a Jupyter Notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal. A [Jupyter](https://jupyter.org/) Notebook is a document that contains both rich text and code and can run in your browser using Q# and Python code.  Notebooks can be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and a preconfigured Q# and Python development environment. 
+Learn how to run Q# code in a Jupyter Notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal. A [Jupyter](https://jupyter.org/) Notebook is a document that contains both rich text and code and can run in your browser using Q# and Python code.  Notebooks can be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and a preconfigured Q# and Python development environment.
 
-In this article, you will run a sample notebook in the Azure portal that executes a simple quantum random number generator written in Q# and Python. 
+In this article, you will run a sample notebook in the Azure portal that executes a simple quantum random number generator written in Q# and Python.
 
 For more information about using Jupyter Notebooks with the Azure Quantum service, see [Work with Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
 
@@ -75,6 +75,9 @@ Some things to note:
     :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the Jupyter Notebook showing how to run it":::
 
 ### Stepping through the program on Quantinuum
+
+> [!WARNING]
+> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
 
 The *hello world* program runs a simple quantum random number generator and displays a histogram of the results. 
 

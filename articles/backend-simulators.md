@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, PASQAL, Quantinuum, and Rigetti.
 ms.author: quantumdocwriters
-ms.date: 01/14/2025
+ms.date: 07/23/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
@@ -42,6 +42,9 @@ Emu-TN emulator runs on a cluster of NVIDIA DGX nodes, each equipped with NVIDIA
 For more information, see the [PASQAL provider](xref:microsoft.quantum.providers.pasqal) page.
 
 ## Quantinuum
+
+> [!WARNING]
+> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
 
 Quantinuum provides two emulator tools:
 
