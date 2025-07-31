@@ -9,6 +9,7 @@ ms.topic: get-started
 no-loc: ['Q#', '$$v', target, targets]
 title: Run a Q# and Python notebook
 uid: microsoft.quantum.get-started.notebooks
+ms.custom: sfi-image-nochange
 ---
 
 # Get started with Q# and an Azure Quantum notebook

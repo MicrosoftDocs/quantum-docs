@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Work with Jupyter notebooks in a workspace
 uid: microsoft.quantum.how-to.notebooks
+ms.custom: sfi-image-nochange
 ---
 
 # Work with Jupyter Notebooks in an Azure Quantum workspace

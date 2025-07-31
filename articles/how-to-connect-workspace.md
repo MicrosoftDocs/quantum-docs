@@ -9,6 +9,9 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Connect to your Azure Quantum workspace
 uid: microsoft.quantum.how-to.connect-workspace
+ms.custom:
+  - sfi-image-nochange
+  - sfi-ropc-nochange
 
 #customer intent: As a quantum developer, I want to connect to my Azure Quantum workspace so I can submit my quantum programs to the Azure Quantum service.
 ---
