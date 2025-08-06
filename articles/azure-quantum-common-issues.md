@@ -9,6 +9,7 @@ ms.topic: troubleshooting-known-issue
 no-loc: [Quantum Development Kit, target, targets]
 title: Troubleshoot Issues with Azure Quantum
 uid: microsoft.quantum.azure.common-issues
+ms.custom: sfi-ropc-nochange
 
 #customer intent: As a quantum developer, I want to troubleshoot common issues with Azure Quantum so that I can continue to use the service effectively.
 ---

@@ -5,11 +5,14 @@ ms.author: quantumdocwriters
 ms.date: 10/22/2024
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.custom: devx-track-azurecli
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Authenticate with Access Keys
 uid: microsoft.quantum.how-to.manage-access-keys
+ms.custom:
+  - devx-track-azurecli
+  - sfi-image-nochange
+  - sfi-ropc-nochange
 ---
 
 # Authenticate in your workspace using an access key 
