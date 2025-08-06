@@ -8,6 +8,7 @@ ms.subservice: core
 ms.topic: how-to
 title: Authenticate Using a Managed Identity 
 uid: microsoft.quantum.optimization.authenticate-managed-identity
+ms.custom: sfi-image-nochange
 
 #customer intent: As a quantum developer, I want to understand how to authenticate using a managed identity to submit jobs to Azure Quantum.
 ---

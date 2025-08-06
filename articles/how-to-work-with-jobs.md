@@ -9,6 +9,7 @@ ms.topic: concept-article
 no-loc: [Quantum Development Kit, target, targets]
 title: Introduction to jobs
 uid: microsoft.quantum.work-with-jobs
+ms.custom: sfi-image-nochange
 #customer intent: As a quantum developer, I want to know how to work with jobs in Azure Quantum.
 ---
 

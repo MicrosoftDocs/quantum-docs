@@ -8,6 +8,7 @@ ms.subservice: computing
 ms.topic: faq
 title: 'FAQ: Understanding Job Costs and Billing'
 uid: microsoft.quantum.azure.job-cost-billing
+ms.custom: sfi-image-nochange
 
 #customer intent: As a quantum developer, I want to understand how to view the job cost report, and how to manage my invoices so that I can track my spending and manage my budget.
 ---

@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Bulk Add Users to Azure Quantum Workspace
 uid: microsoft.quantum.how-to.bulk-add-users
+ms.custom: sfi-image-nochange
 ---
 
 # Bulk add users to your Azure Quantum workspace
