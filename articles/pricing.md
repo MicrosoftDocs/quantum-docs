@@ -147,7 +147,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 ***
 ## Rigetti
 
-[Rigetti](xref:microsoft.quantum.providers.rigetti) charges for job execution time on their quantum processors. There's no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://github.com/quil-lang/qvm) simulator is free for all users.
+[Rigetti](xref:microsoft.quantum.providers.rigetti) charges for job execution time on their quantum processors. There's no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://github.com/quil-lang/qvm) simulator is free for all users under all plans.
 
 Rigetti offers one billing plan:  **Pay As You Go**.
  
@@ -157,7 +157,7 @@ The Pay-as-you-go plan consists of *a la carte* access to Rigetti QPUs. The usag
 
 |Pricing | Includes access to   |
 |---|---|  
-|USD 0.013 per 10-millisecond increment of job execution time | Rigetti Ankaa-3 |
+|USD 0.02 per 10-millisecond increment of job execution time | Rigetti Ankaa-3<br />Rigetti Cepheus-1-36Q |
 
 > [!NOTE]
 > If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
