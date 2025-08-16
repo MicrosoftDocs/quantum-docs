@@ -50,7 +50,7 @@ from azure.quantum.cirq import AzureQuantumService
 Next, create an `AzureQuantumService` object using the `workspace` object from the previous cell to connect to your Azure Quantum workspace.  Add a new cell with the following code:
 
 ```python
-provider = AzureQuantumService(workspace)
+service = AzureQuantumService(workspace)
 ```
 
 ## Define a simple circuit
