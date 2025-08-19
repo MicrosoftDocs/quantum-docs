@@ -118,9 +118,12 @@ Jupyter notebooks in an Azure Quantum workspace are isolated from other users' n
 Jupyter Notebooks are stored in an [Azure Storage](/azure/storage/) account linked to your Azure Quantum workspace.
 
 > [!NOTE]
-> When an Azure Quantum workspace is created, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. This is required for using Jupyter Notebooks in the portal. If you do not plan to use Jupyter Notebooks in the portal and you do not want to enable CORS for your Azure Storage account, you can directly edit your storage account to remove the CORS rule. In the storage account properties, under **Settings**, select **Resource Sharing (CORS)** and remove the rule under **File Service**.  Be aware that if you open the **Notebooks** blade again in your workspace, the rule will be recreated automatically. 
+> When an Azure Quantum workspace is created, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. This is required for using Jupyter Notebooks in the portal. If you do not plan to use Jupyter Notebooks in the portal and you do not want to enable CORS for your Azure Storage account, you can directly edit your storage account to remove the CORS rule. In the storage account properties, under **Settings**, select **Resource Sharing (CORS)** and remove the rule under **File Service**.  Be aware that if you open the **Notebooks** blade again in your workspace, the rule will be recreated automatically.
 
 ## Limitations
+
+> [!WARNING]
+> On September 30, 2025, the Azure Quantum service will be available in only the following regions: East US, West US, North Europe, and West Europe. Create new Quantum workspaces in one of these regions. If your existing workspace isn't in one of these regions, then see [Migrate your Azure Quantum job data](xref:microsoft.quantum.how-to.migrate-quantum-workspace-new-region).
 
 The following are limitations with Jupyter Notebooks in an Azure Quantum workspace.
 

@@ -17,6 +17,9 @@ uid: microsoft.quantum.provider-availability
 
 The availability of the quantum computing providers IonQ, Pasqal, Quantinuum, and Rigetti varies based on the country/region where your billing account is registered. Select the tab for each provider to view its availability by country/region.
 
+> [!WARNING]
+> On September 30, 2025, the Azure Quantum service will be available in only the following regions: East US, West US, North Europe, and West Europe. Create new Quantum workspaces in one of these regions. If your existing workspace isn't in one of these regions, then see [Migrate your Azure Quantum job data](xref:microsoft.quantum.how-to.migrate-quantum-workspace-new-region).
+
 ## [IonQ](#tab/tabid-ionq)
 
 IonQ offers a Pay-As-You-Go plan through Azure Quantum. For more information about IonQ resources on Azure Quantum, see [IonQ provider and targets](xref:microsoft.quantum.providers.ionq).
