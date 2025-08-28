@@ -99,6 +99,7 @@ To generate a SAS for each storage account, follow these steps:
    For **Allowed permissions**, make sure that you select **Write**, **Add**, and **Create**.
    Copy and save the URL for this SAS too.
 1. Open a terminal and run the following AzCopy command:
+
    ```azcopy
    azcopy copy <old storage account blob service SAS URL> <new storage account blob service SAS URL> --recursive
    ```
@@ -107,19 +108,15 @@ If the copy is successful, then you get a job summary output in the terminal. Th
 
 ***
 
-## Migrate your Jupyter Notebook files
+## Save your Jupyter Notebook files
 
-If you have Jupyter notebooks in your old workspace that you want to retain, then download those notebooks from the Azure portal before you delete your old workspace. To migrate your notebooks to your new workspace, follow these steps:
+If you have Jupyter notebooks in your old workspace that you want to retain, then download those notebooks from the Azure portal before you delete your old workspace. To download Jupyter notebooks from the Azure portal, follow these steps:
 
-1. Log in to the Azure portal, go to **Quantum Workspaces**, and then choose your old workspace.
+1. Log in to the Azure portal.
+1. Go to **Quantum Workspaces** and choose your old workspace.
 1. In the **Operations** dropdown on the Quantum Workspace blade, choose **Notebooks**.
-1. In the Jupyter Notebooks blade, open the **My notebooks** dropdown. A list of all your Jupyter notebooks appears. For each notebook that you want to migrate, choose the **ellipsis button** (...), and then choose **Download Notebook** to download the notebook to your device.
-1. Go to **Quantum Workspaces** again, and then choose your new workspace.
-1. Go to the **Notebooks** menu again.
-1. On the **My notebooks** dropdown, choose (...), and then choose **Upload Notebooks**.
-1. Select all the notebook files that you want to upload from your device, and then choose **Upload files**.
-
-The notebooks from your old workspace are now available in your new workspace.
+1. In the Jupyter Notebooks blade, open the **My notebooks** dropdown. A list of all your Jupyter notebooks appears.
+1. For each notebook that you want to save, choose the **ellipsis button** (...), and then choose **Download Notebook** to download the notebook to your device.
 
 ## Delete your old Quantum workspace
 
