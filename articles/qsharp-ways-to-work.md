@@ -20,6 +20,9 @@ In this article, you learn the differences between each option and how to choose
 
 ## Options for running Q# programs
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 Azure Quantum is available through three development environments:
 
 - [**Azure Quantum website:**](#azure-quantum-website) Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.

@@ -48,7 +48,7 @@ namespace Superposition {
 }
 ```
 
-Based on the comments (`//`), the Q# program first allocates a qubit, applies an operation to put the qubit in superposition, measures the qubit state, resets the qubit, and finally returns the result. 
+Based on the comments (`//`), the Q# program first allocates a qubit, applies an operation to put the qubit in superposition, measures the qubit state, resets the qubit, and finally returns the result.
 
 Let's break this Q# program down into its components.
 
@@ -257,7 +257,7 @@ operation MeasureOneQubit() : Result {
 
 Q# and Azure Quantum are a powerful combination for developing and running quantum programs. With Q# and Azure Quantum, you can write quantum programs, simulate their behavior, estimate resource requirements, and run them on real quantum hardware. This integration allows you to explore the potential of quantum computing and develop innovative solutions for complex problems. Whether you are a beginner or an experienced quantum developer, Q# and Azure Quantum provide the tools and resources you need to unlock the power of quantum computing.
 
-The following diagram shows the stages through which a quantum program passes when you develop it with Q# and Azure Quantum. Your program starts with the development environment and ends with the submission of the job to real quantum hardware. 
+The following diagram shows the stages through which a quantum program passes when you develop it with Q# and Azure Quantum. Your program starts with the development environment and ends with the submission of the job to real quantum hardware.
 
 :::image type="content" source="media/quantum-development-kit-flow-diagram.svg" alt-text="Diagram showing the workflow of quantum programming development.":::
 
@@ -266,6 +266,9 @@ Let's break down the steps in the diagram.
 ### Choose your development environment
 
 Run your quantum programs in your preferred development environment. You can use the online code editor in the Azure Quantum website, the hosted Jupyter Notebooks in your Azure Quantum workspace in the Azure portal, or a local development environment with Visual Studio Code. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
+
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
 
 ### Write your quantum program
 
