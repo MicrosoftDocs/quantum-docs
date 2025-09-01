@@ -7,9 +7,11 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: ["Azure Quantum", Azure, Jupyter, "Jupyter Notebook", "Jupyter Notebooks"]
-title: Download your Jupyter notebooks from your Quantum workspace
+title: Download your hosted Jupyter notebooks from your Quantum workspace
 uid: microsoft.quantum.how-to.download-notebooks-from-portal
 ---
+
+# Download your hosted Jupyter notebooks from your Quantum workspace
 
 On October 15, 2025, the Azure Quantum service will discontinue support for integrated Jupyter notebooks hosted in Quantum workspaces. If you don't download your notebooks from your workspace before this date, then you'll lose access to your notebooks in the Azure portal.
 
