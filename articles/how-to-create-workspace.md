@@ -15,6 +15,9 @@ uid: microsoft.quantum.how-to.workspace
 
 # Create an Azure Quantum workspace
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum applications.
 
 A workspace is needed to [get started with Jupyter Notebooks in the Azure portal](xref:microsoft.quantum.get-started.notebooks) or quantum programs on quantum hardware.
@@ -62,10 +65,10 @@ To create an Azure Quantum workspace, follow these steps.
 
 ### [Quick create](#tab/tabid-quick)
 
-This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, and Microsoft Quantum Computing providers. Your workspace can still be customized after creation, if needed. 
+This option is the easiest path to creating a workspace. It automatically creates the necessary resource group and storage account, adds the IonQ, Quantinuum, Rigetti, and Microsoft Quantum Computing providers. Your workspace can still be customized after creation, if needed.
 
 > [!NOTE]
-> To use **Quick create**, you must be an **Owner** of the subscription you selected in the previous step. To see a list of your subscriptions and access, see [Check your role assignments](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-role-assignments). 
+> To use **Quick create**, you must be an **Owner** of the subscription you selected in the previous step. To see a list of your subscriptions and access, see [Check your role assignments](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-role-assignments).
 
 1. Enter a name for the workspace.
 1. Select the region for the workspace.
@@ -90,7 +93,7 @@ Use this option to manually configure your resource group and storage account, s
 1. Select or create a storage account for the workspace:
 
    - To have Azure automatically create a storage account, select **Create a new storage account with default settings**.
-   - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings**. 
+   - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings**.
    > [!NOTE]
    >The storage account you select must be enabled for public internet access. For more information, see [Authorization failure](xref:microsoft.quantum.azure.common-issues#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation).
 
@@ -119,4 +122,3 @@ Deployment of your workspace may take a few minutes. The status and deployment d
 - [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 - [Get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
 - [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
-

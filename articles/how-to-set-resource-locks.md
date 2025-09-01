@@ -18,7 +18,7 @@ Microsoft recommends locking all of your Azure Quantum workspaces and linked sto
 There are two types of ARM resource locks:
 
 - A **CannotDelete** lock prevents users from deleting a resource, but permits reading and modifying its configuration.
-- A **ReadOnly** lock prevents users from modifying a resource's configuration (including deleting it), but permits reading its configuration. 
+- A **ReadOnly** lock prevents users from modifying a resource's configuration (including deleting it), but permits reading its configuration.
 For more information about resource locks, see [Lock resources to prevent unexpected changes](/azure/azure-resource-manager/management/lock-resources?tabs=json).
 
 > [!NOTE]
@@ -41,22 +41,25 @@ The following configurations should be avoided:
 
 |Resource |Lock&nbsp;type |Notes |
 |--------|--------|--------|
-|Storage account |Read-only |Setting a Read-only resource lock on the storage account can cause failures with workspace creation, the Jupyter Notebooks interface, and submitting and fetching jobs. | 
-|Parent subscription of the workspace or the parent resource group of the workspace or storage account |Read-only |When a resource lock is applied to a parent resource, all resources under that parent inherit the same lock, including resources created at a later date. For more granular control, resource locks should be applied directly at the resource level. | 
+|Storage account |Read-only |Setting a Read-only resource lock on the storage account can cause failures with workspace creation, the Jupyter Notebooks interface, and submitting and fetching jobs. |
+|Parent subscription of the workspace or the parent resource group of the workspace or storage account |Read-only |When a resource lock is applied to a parent resource, all resources under that parent inherit the same lock, including resources created at a later date. For more granular control, resource locks should be applied directly at the resource level. |
 
 ## Prerequisites
 
 You must be an **Owner** or **User Access Administrator** of a resource to apply ARM resource locks. For more information, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 ### Command-line deployment
 
 You will need either Azure PowerShell or Azure CLI to deploy the lock. If you use Azure CLI, you must have the latest version. For the installation instructions, see:
 
-- [Install Azure PowerShell](/powershell/azure/install-az-ps)    
+- [Install Azure PowerShell](/powershell/azure/install-az-ps)
 - [Install Azure CLI](/cli/azure/install-azure-cli)
 
 > [!IMPORTANT]
-> If you haven't used Azure CLI with Azure Quantum before, follow the steps in the [Environment setup](xref:microsoft.quantum.workspaces-cli#environment-setup) section to add the `quantum` extension and register the Azure Quantum namespace. 
+> If you haven't used Azure CLI with Azure Quantum before, follow the steps in the [Environment setup](xref:microsoft.quantum.workspaces-cli#environment-setup) section to add the `quantum` extension and register the Azure Quantum namespace.
 
 ## Sign in to Azure
 
@@ -105,8 +108,8 @@ az lock create \
 ```
 
 - name: A descriptive name for the lock
-- resource-group: The name of the parent resource group. 
-- resource: The name of the resource to apply the lock to. 
+- resource-group: The name of the parent resource group.
+- resource: The name of the resource to apply the lock to.
 - lock-type: The type of lock to apply, either **CanNotDelete** or **ReadOnly**.
 - resource-type: The type of the target resource.
 
@@ -193,7 +196,7 @@ New-AzResourceLock -LockLevel CanNotDelete `
 
 - LockLevel: The type of lock to apply, either **CanNotDelete** or **ReadOnly**.
 - LockName: A descriptive name for the lock
-- ResourceName: The name of the resource to apply the lock to. 
+- ResourceName: The name of the resource to apply the lock to.
 - ResourceType: The type of the target resource.
 - ResourceGroupName: The name of the parent resource group.
 
@@ -332,8 +335,7 @@ az lock delete \
     --resource-type  Microsoft.Storage/storageAccounts
 ```
 
-If the deletion is successful, Azure does not return a message. To verify the deletion, you can run `az lock list`. 
-
+If the deletion is successful, Azure does not return a message. To verify the deletion, you can run `az lock list`.
 
 # [PowerShell](#tab/azure-powershell)
 
@@ -372,7 +374,7 @@ Get-AzResourceLock `
 
 Delete a lock
 
-To delete a lock, use the `Remove-AzResourceLock` command. For more information, see the [Remove-AzResourceLock](/powershell/module/az.resources/remove-azresourcelock) reference. 
+To delete a lock, use the `Remove-AzResourceLock` command. For more information, see the [Remove-AzResourceLock](/powershell/module/az.resources/remove-azresourcelock) reference.
 
 ```azurepowershell
 Remove-AzResourceLock `
