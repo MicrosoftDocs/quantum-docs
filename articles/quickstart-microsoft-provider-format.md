@@ -21,6 +21,9 @@ Learn how to use the `azure-quantum` Python package to submit circuits in specif
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 ## Prerequisites
 
 To run your circuits in a Notebook in Azure portal, you need:
@@ -40,7 +43,7 @@ To develop and run your circuits in Visual Studio Code, you also need:
 
 ## Create a new Jupyter Notebook
 
-You can create a notebook in VS Code or directly in the Azure Quantum portal. 
+You can create a notebook in VS Code or directly in the Azure Quantum portal.
 
 ### [Azure Quantum portal](#tab/tabid-portal)
 
@@ -48,7 +51,7 @@ You can create a notebook in VS Code or directly in the Azure Quantum portal.
 1. In the left blade, select **Notebooks**.
 1. Click **My Notebooks** and click **Add New**.
 1. In **Kernel Type**, select **IPython**.
-1. Type a name for the file, and click **Create file**. 
+1. Type a name for the file, and click **Create file**.
 
 When your new Notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
 
@@ -64,11 +67,11 @@ workspace = Workspace (
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
 1. To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace. 
+location of your Azure Quantum workspace.
     1. Log in to your Azure account, <https://portal.azure.com>,
     1. Select your Azure Quantum workspace, and navigate to **Overview**.
     1. Copy the parameters in the fields.
-    
+
         :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace." lightbox="media/azure-portal-workspace-overview.png":::
 
 
@@ -299,10 +302,10 @@ The device defines a list of [pre-calibrated layouts](https://pulser.readthedocs
 
 This is the recommended option because it will improve the performance of the QPU.
 
-* Option 1: Define your register using pre-calibrated layouts
+- Option 1: Define your register using pre-calibrated layouts
 
     Inspect the layouts available on Fresnel and define your register from this layout. Check the pulser documentation for more information on how to do that.
-        
+
     Example:
 
     ```python
@@ -321,10 +324,10 @@ If pre-calibrated layouts do not satisfy the requirements of your experiment, yo
 
 For any given arbitrary register, a neutral-atom QPU will place traps according to the layout, which must then undergo calibration. Since each calibration requires time, it is generally advisable to reuse an existing calibrated layout whenever possible
 
-* Option 2: Automatically derive a layout from your defined register
+- Option 2: Automatically derive a layout from your defined register
 
     This option allows for the automatic generation of a layout based on a specified register. However, for large registers, this process may yield sub-optimal solutions due to limitations in the algorithm used to create the layout.
-    
+
     ```python
     from pulser import Register
     qubits = {
@@ -339,9 +342,9 @@ For any given arbitrary register, a neutral-atom QPU will place traps according 
     reg = Register(qubits).with_automatic_layout(device) 
     ```
 
-* Option 3: Define your register using a manually defined layout
+- Option 3: Define your register using a manually defined layout
 
-    - Create an arbitrary layout with 20 traps randomly positioned in a 2D plane
+  - Create an arbitrary layout with 20 traps randomly positioned in a 2D plane
 
     ```python
     import numpy as np
@@ -354,7 +357,7 @@ For any given arbitrary register, a neutral-atom QPU will place traps according 
     # Creating the layout
     layout = RegisterLayout(traps, slug="random_20")
     ```
-    
+
     - Define your register with specific trap IDs
 
     ```python
@@ -362,6 +365,7 @@ For any given arbitrary register, a neutral-atom QPU will place traps according 
     reg = layout.define_register(*trap_ids, qubit_ids=["a", "b", "c", "d"])
     reg.draw()
     ```
+
 #### Write a pulse sequence
 
 The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the quantum register.
@@ -395,7 +399,8 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
 
     seq.draw()
     ```
-    The following image shows the pulse sequence. 
+
+    The following image shows the pulse sequence.
     :::image type="content" source="media/provider-format-pasqal-sequence.png" alt-text="Pulse sequence":::
 
 #### Convert the sequence to a JSON string
@@ -481,7 +486,7 @@ def prepare_input_data(seq):
         circuit = f.read()
     ```
 
-1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. 
+1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object.
 
     ```python
     target = workspace.get_targets(name="quantinuum.sim.h1-1sc")
@@ -525,7 +530,7 @@ def prepare_input_data(seq):
 
     > [!NOTE]
     > For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
-    
+
 ### Submit a circuit to Rigetti using Quil
 
 The easiest way to submit Quil jobs is using the [pyquil-for-azure-quantum](https://pypi.org/project/pyquil-for-azure-quantum/) package, as it allows you to use the tools and documentation of the [pyQuil](https://pyquil-docs.rigetti.com/en/stable/) library. Without this package, pyQuil can be used to _construct_ Quil programs but not to submit them to Azure Quantum.
@@ -592,7 +597,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
     from azure.quantum.target.rigetti import Result, Rigetti, RigettiTarget, InputParams
     ```
 
-1. Create a `target` object and select the name of the Rigetti's target. For example, the following code selects the `QVM` target. 
+1. Create a `target` object and select the name of the Rigetti's target. For example, the following code selects the `QVM` target.
 
     ```python
     target = Rigetti(

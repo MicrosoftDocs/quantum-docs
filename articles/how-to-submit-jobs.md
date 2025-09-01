@@ -17,6 +17,9 @@ zone_pivot_groups: azurequantum-quantumcomputing-ide
 
 Learn how to use Visual Studio Code to create and submit Q# programs to real quantum hardware. You can submit quantum computing jobs to Azure Quantum as a standalone Q# program, combine Q# with Python in a Q# project, and run a Jupyter Notebook.
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 ::: zone pivot="ide-qsharp"
 
 [!INCLUDE [qsharp-procedure](includes/how-to-submit-quantum-include-qsharp.md)]
