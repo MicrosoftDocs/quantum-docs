@@ -30,7 +30,8 @@ The following targets are available from this provider:
 |[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
 |[IonQ Aria 1](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
 |[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
-|[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte	|32 qubits	|IonQ's Forte trapped-ion quantum computer. Available in Private Preview only.|
+|[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte-1	|36 qubits	|IonQ's Forte trapped-ion quantum computer.|
+|[IonQ Forte Enterprise](#ionq-forte-enterprise-quantum-computer) |	ionq.qpu.forte-enterprise-1	|36 qubits	|IonQ's Forte Enterprise trapped-ion quantum computer.|
 
 IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
 
@@ -82,14 +83,30 @@ IonQ Aria is available through Azure Quantum Credits plan and a separate billing
 
 ## IonQ Forte quantum computer
 
-IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 32-qubit software-configurable system, IonQ Forte is available in Private Preview on Azure Quantum. For more information, see [IonQ Forte (ionq.com)](https://ionq.com/quantum-systems/forte).
+IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte (ionq.com)](https://ionq.com/quantum-systems/forte).
 
 > [!IMPORTANT]
 > *Debiasing* is enabled on the Forte system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
-- Target ID: `ionq.qpu.forte`
+- Target ID: `ionq.qpu.forte-1`
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
+
+| Parameter Name | Type     | Required | Description |
+|----------------|----------|----------|-------------|
+| `shots`   | int    | No | Number of experimental shots.  |
+
+## IonQ Forte Enterprise quantum computer
+
+IonQ Forte Enterprise is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte Enterprise (ionq.com)](https://ionq.com/quantum-systems/forte-enterprise).
+
+> [!IMPORTANT]
+> *Debiasing* is enabled on the Forte Enterprise system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+
+- Job type: `Quantum Program`
+- Data Format: `ionq.circuit.v1`
+- Target ID: `ionq.qpu.forte-enterprise-1`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
