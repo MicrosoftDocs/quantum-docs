@@ -43,7 +43,7 @@ Migration instructions depend on whether your old workspace's storage account is
 
 ## [Unmanaged storage](#tab/tabid-unmanaged)
 
-If your old workspace uses an unmanaged storage account, then link that storage account to your new workspace. The linked storage account contains your old job data along with data for jobs that submit in your new workspace.
+If your old workspace uses an unmanaged storage account, then link that storage account to your new workspace. The linked storage account contains your old job data along with data for jobs that you submit in your new workspace.
 
 > [!NOTE]
 > To link a storage account to a Quantum workspace, you must have a role assignment that allows you to perform role assignments on that storage account, such as Owner or User Access Administrator.
