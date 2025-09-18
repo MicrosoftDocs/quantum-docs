@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document gives instructions on how to migrate a Quantum Workspace to a new Azure region
 ms.author: quantumdocwriters
-ms.date: 07/01/2025
+ms.date: 09/18/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -43,7 +43,7 @@ Migration instructions depend on whether your old workspace's storage account is
 
 ## [Unmanaged storage](#tab/tabid-unmanaged)
 
-If your old workspace uses an unmanaged storage account, then link that storage account to your new workspace. Your old job data will be available in your new workspace because the linked storage account already contains your old job data.
+If your old workspace uses an unmanaged storage account, then link that storage account to your new workspace. The linked storage account contains your old job data along with data for jobs that you submit in your new workspace.
 
 > [!NOTE]
 > To link a storage account to a Quantum workspace, you must have a role assignment that allows you to perform role assignments on that storage account, such as Owner or User Access Administrator.
