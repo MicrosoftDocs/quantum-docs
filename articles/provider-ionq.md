@@ -1,8 +1,8 @@
 ---
-author: SoniaLopezBravo
+author: azure-quantum-content
 description: This document provides the technical details of the IonQ quantum computing provider
-ms.author: sonialopez
-ms.date: 10/24/2024
+ms.author: quantumdocwriters
+ms.date: 09/17/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -13,11 +13,6 @@ uid: microsoft.quantum.providers.ionq
 
 # IonQ provider
 
-> [!IMPORTANT]
-> IonQ has retired their Harmony-2 quantum computer effective September 1, 2024. 
-
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 IonQ’s quantum computers perform calculations by manipulating the hyperfine energy states of Ytterbium ions with lasers. Atoms are nature's qubits — every qubit is identical within and between programs. Logical operations can also be performed on any arbitrary pair of qubits, enabling complex quantum programs unhindered by physical connectivity. Want to learn more? Read IonQ’s [trapped ion quantum computer technology overview](https://ionq.com/technology).
 
 - Publisher: [IonQ](https://ionq.com)
@@ -25,13 +20,13 @@ IonQ’s quantum computers perform calculations by manipulating the hyperfine en
 
 The following targets are available from this provider:
 
-|Target name |	Target ID|	Number of qubits|	Description|
-|---|---|---|---|
-|[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
-|[IonQ Aria 1](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
-|[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
-|[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte-1	|36 qubits	|IonQ's Forte trapped-ion quantum computer.|
-|[IonQ Forte Enterprise](#ionq-forte-enterprise-quantum-computer) |	ionq.qpu.forte-enterprise-1	|36 qubits	|IonQ's Forte Enterprise trapped-ion quantum computer.|
+| Target name                                                      | Target ID                   | Number of qubits | Description                                           |
+| ---------------------------------------------------------------- | --------------------------- | ---------------- | ----------------------------------------------------- |
+| [Quantum simulator](#quantum-simulator)                          | ionq.simulator              | 29 qubits        | IonQ's cloud-based idealized simulator. Free of cost. |
+| [IonQ Aria 1](#ionq-aria-quantum-computer)                       | ionq.qpu.aria-1             | 25 qubits        | IonQ's Aria trapped-ion quantum computer.             |
+| [IonQ Aria 2](#ionq-aria-quantum-computer)                       | ionq.qpu.aria-2             | 25 qubits        | IonQ's Aria trapped-ion quantum computer.             |
+| [IonQ Forte](#ionq-forte-quantum-computer)                       | ionq.qpu.forte-1            | 36 qubits        | IonQ's Forte trapped-ion quantum computer.            |
+| [IonQ Forte Enterprise 1](#ionq-forte-enterprise-quantum-computer) | ionq.qpu.forte-enterprise-1 | 36 qubits        | IonQ's Forte Enterprise trapped-ion quantum computer. |
 
 IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
 
@@ -79,7 +74,7 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 \* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
-IonQ Aria is available through Azure Quantum Credits plan and a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
+IonQ Aria is available through Azure Quantum Credits plan and Pay As You Go plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
 ## IonQ Forte quantum computer
 
@@ -100,6 +95,8 @@ IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quan
 ## IonQ Forte Enterprise quantum computer
 
 IonQ Forte Enterprise is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte Enterprise (ionq.com)](https://ionq.com/quantum-systems/forte-enterprise).
+
+the Forte Enterprise is a version of the Forte that has been adapted and ruggedized for deployment in a standard data center environment, making it more suitable for enterprise-level, production-oriented tasks. The base quantum computing hardware and performance are the same. The primary difference between the IonQ Forte and the IonQ Forte Enterprise lies in their deployment and intended use cases, not their core performance specifications. While both systems boast the same high-performance metrics, the Forte Enterprise is specifically designed for integration into a data center environment.
 
 > [!IMPORTANT]
 > *Debiasing* is enabled on the Forte Enterprise system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
@@ -402,7 +399,7 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Credits and quotas** blade and select the **Quotas** tab of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
+Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 > [!NOTE]
 > If you are using an [Azure Quantum Credits](xref:microsoft.quantum.credits) plan, and not a billing plan, the quotas information maps to your allocated credits. In that case, the quota lists the total number of credits you have received.
