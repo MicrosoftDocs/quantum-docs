@@ -16,13 +16,13 @@ uid: microsoft.quantum.reference.vscode
 The Azure Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio Code (VS Code), along with Q#-specific features when you work with `.qs` files. This reference guide describes all the QDK commands that you can access in the VS Code Command Palette, along with other features and links to additional content. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
 > [!TIP]
-> Most commands from the QDK extension are accessible from the **View > Command Palette** menu. While in a `.qs file`, open the Command Palette and enter **QDK:** to view a filtered list of commands.
+> Most commands from the QDK extension are accessible from the **View > Command Palette** menu. While in a `.qs` file, open the Command Palette and enter **QDK:** to view a filtered list of commands.
 
 ## Commands
 
 Most of the QDK commands are related to writing and running Q# programs, and are only available when a `.qs` file is active. Other commands work in the background and aren't accessible in the Command Palette.
 
-The following table describes that the commands from the QDK extension that appear in the Command Palette.
+The following table describes the commands from the QDK extension that appear in the Command Palette.
 
 > [!TIP]
 > You can create custom keyboard shortcuts for VS Code commands using **Keyboard Shortcuts**, or **Ctrl + K + S**. For more information, see [Key Bindings for VS Code](https://code.visualstudio.com/docs/getstarted/keybindings).
