@@ -14,7 +14,7 @@ no-loc: [target, targets]
 - The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!TIP]
-> You don't need to have an Azure account to run the Resource Estimator. 
+> You don't need to have an Azure account to run the Resource Estimator.
 
 ## Create a new Q# file
 
@@ -390,9 +390,9 @@ Copy the following code into the `ShorRE.qs` file:
 
 The Resource Estimator offers [six predefined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four of which have gate-based instruction sets and two that have a Majorana instruction set. It also offers two [quantum error correction codes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-codes), `surface_code` and `floquet_code`.
 
-In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code. 
+In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code.
 
-1. Select **View -> Command Palette**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. You can also click on **Estimate** from the list of commands displayed right before the `Main` operation. Select this option to open the Resource Estimator window.
+1. Select **View -> Command Palette**, and type **resource**, which brings up the **QDK: Calculate Resource Estimates** command. You can also select **Estimate** from the list of commands that precedes the `Main` operation. Select this option to open the Resource Estimator window.
 
     :::image type="content" source="../media/codelens-estimate-shorRE.png" alt-text="Screenshot showing how to select the estimate command from the code lens list.":::
 
@@ -407,7 +407,7 @@ In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qub
 
 The Resource Estimator provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation.  
 
-The result of the resource estimation is displayed in the **Q# Estimate** window. 
+The result of the resource estimation is displayed in the **Q# Estimate** window.
 
 1. The **Results** tab displays a summary of the resource estimation. **Click the icon** next to the first row to select the columns you want to display. You can select from run name, estimate type, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
 
@@ -449,9 +449,9 @@ The result of the resource estimation is displayed in the **Q# Estimate** window
 
 ## Change the target parameters
 
-You can estimate the cost for the same Q# program using other qubit type, error correction code, and error budget. Open the Resource Estimator window by select **View -> Command Palette**, and type `Q#: Calculate Resource Estimates`.
+You can estimate the cost for the same Q# program using other qubit type, error correction code, and error budget. Open the Resource Estimator window by selecting **View -> Command Palette**, and then enter `QDK: Calculate Resource Estimates`.
 
-Select any other configuration, for example the Majorana-based qubit parameter, `qubit_maj_ns_e6`. Accept the default error budget value or enter a new one, and press **Enter**. The Resource Estimator reruns the estimation with the new target parameters.
+Select a different configuration, for example the Majorana-based qubit parameter, `qubit_maj_ns_e6`. Accept the default error budget value or enter a new one, and then press **Enter**. The Resource Estimator reruns the estimation with the new target parameters.
 
 For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
@@ -459,11 +459,11 @@ For more information, see [Target parameters](xref:microsoft.quantum.overview.re
 
 The Azure Quantum Resource Estimator can run multiple configurations of target parameters and compare the resource estimation results.
 
-1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type `Q#: Calculate Resource Estimates`.
+1. Select **View -> Command Palette**, or press **Ctrl + Shift + P**, and enter `QDK: Calculate Resource Estimates`.
 1. Select **qubit_gate_us_e3**, **qubit_gate_us_e4**, **qubit_maj_ns_e4 + floquet_code**, and **qubit_maj_ns_e6 + floquet_code**, and click **OK**.
 1. Accept the default error budget value 0.001 and press **Enter**.
 1. Press **Enter** to accept the input file, in this case, **ShorRE.qs**.
-1. In the case of multiple configurations of parameters, the results are displayed in different rows in the **Results** tab. 
+1. In the case of multiple configurations of parameters, the results are displayed in different rows in the **Results** tab.
 1. The **Space-time diagram** shows the results for all the configurations of parameters. The first column of the results table displays the legend for each configuration of parameters. You can hover over each point to see the details of the resource estimation at that point.
 
     :::image type="content" source="../media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the Resource Estimator.":::
