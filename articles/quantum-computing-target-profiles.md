@@ -15,13 +15,13 @@ uid: microsoft.quantum.target-profiles
 
 # Different types of target profiles in Azure Quantum
 
-Quantum devices are still an emerging technology and unfortunately not all of them can run every Q# program. As such, you need to keep some restrictions in mind while you develop quantum programs. The target profile types define the capabilities of the quantum devices that you target with your Q# programs. The Quantum Development Kit (QDK) has three different target profile types, which together support all the capabilities of the current quantum devices that are available in Azure Quantum.
+Quantum devices are still an emerging technology and unfortunately not all of them can run every Q# program. As such, you need to keep some restrictions in mind while you develop quantum programs. The target profile types define the capabilities of the quantum devices that you target with your Q# programs. The Quantum Development Kit (QDK) has a set of different target profile types, which together support all the capabilities of the current quantum devices that are available in Azure Quantum.
 
 This article discusses the different types of target profiles in Azure Quantum, their limitations, and how to configure them in the QDK.
 
 ## Target profiles and their limitations
 
-Currently, Azure Quantum and the QDK manage three different target profiles, depending on their ability to run [quantum intermediate representation (QIR) programs](xref:microsoft.quantum.concepts.qir).
+Currently, Azure Quantum and the QDK manage different target profiles, depending on their ability to run [quantum intermediate representation (QIR) programs](xref:microsoft.quantum.concepts.qir).
 
 - [**:::no-loc text="Unrestricted":::**:](#create-and-run-programs-for--target-profile) This profile can run any QIR program, and thus any Q# program, within the limits of memory for simulators or the number of qubits for physical quantum computers.
 - [**:::no-loc text="Base":::**:](#create-and-run-programs-for--target-profile-1) This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program that's targeted for this kind of QPU, values of type `Result` don't support equality comparison.
@@ -45,13 +45,13 @@ To manually set the QIR target profile to **Unrestricted**, choose one of the fo
   }
   ```
 
-- Set the target profile directly in your Q# code. To do so, include `@EntryPoint(Unrestricted)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Unrestricted)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
 
-In Python, call the `qsharp.init` method to set the target profile.
+- In Python, call the `qsharp.init` method to set the target profile.
 
-```python
-qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted) 
-```
+  ```python
+  qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted) 
+  ```
 
 ## Create and run programs for :::no-loc text="Base"::: target profile
 
@@ -82,13 +82,13 @@ To manually set the QIR target profile to **Base**, choose one of the following 
   }
   ```
 
-- Set the target profile directly in your Q# code. To do so, include `@EntryPoint(Base)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Base)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
 
-In Python, call the `qsharp.init` method to set the target profile.
+- In Python, call the `qsharp.init` method to set the target profile.
 
-```python
-qsharp.init(target_profile=qsharp.TargetProfile.Base) 
-```
+  ```python
+  qsharp.init(target_profile=qsharp.TargetProfile.Base) 
+  ```
 
 ### Supported targets for :::no-loc text="Base"::: target profile
 
@@ -133,13 +133,13 @@ To manually set the QIR target profile to **Adaptive RI**, choose one of the fol
   }
   ```
 
-- Set the target profile directly in your Q# code. To do so, include `@EntryPoint(Adaptive_RI)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Adaptive_RI)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
 
-In Python, call the `qsharp.init` method to set the target profile.
+- In Python, call the `qsharp.init` method to set the target profile.
 
-```python
-qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI) 
-```
+  ```python
+  qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI) 
+  ```
 
 ### Supported targets for :::no-loc text="Adaptive RI"::: target profile
 
