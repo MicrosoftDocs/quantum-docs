@@ -73,18 +73,6 @@ These five criteria are often known as the [Di Vincenzo criteria](https://en.wik
 
 Building devices that meet these five criteria is one of the most demanding engineering challenges ever faced by humankind. Azure Quantum offers a variety of quantum computing solutions with different qubit technologies. For more information, see [the full list of Azure Quantum providers](xref:microsoft.quantum.reference.qc-target-list).
 
----
-A good quantum computer should have these five features:
-
-Scalable: It can have many qubits.
-Initializable: It can always set the qubits to a specific initial state (usually the 0 state).
-Resilient: It can keep the qubits in superposition states for a long time.
-Universal: It can perform a [set of universal quantum operations](xref:microsoft.quantum.concepts.tfactories#universal-set-of-quantum-gates) such that any other operation can be decomposed into a sequence of universal operations.
-Reliable: It can measure the qubits accurately and consistently.
-These five criteria are often known as the [DiVincenzo criteria](https://en.wikipedia.org/wiki/DiVincenzo%27s_criteria) criteria for quantum computation.
-
-Building a device that meets all five criteria is one of the most demanding engineering challenges of our time. Microsoft is partnering with some of the best-in-class quantum computer manufacturers around the world to give you access to the latest quantum computing solutions through Azure Quantum.
-
 ## Understand quantum phenomena
 
 Quantum phenomena are the fundamental principles that differentiate quantum computing from classical computing. Understanding these phenomena is crucial for grasping how quantum computers operate and why they hold such potential. The two most important quantum phenomena are superposition and entanglement.
