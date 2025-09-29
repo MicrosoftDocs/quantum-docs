@@ -115,10 +115,7 @@ When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter 
 <function name> not found. Found a matching item `<function name>' that is not available for the current compilation configuration
 ```
 
-This error indicates that the QIR (quantum intermediate representation) target profile is set to **Basic** and the function in question requires the **Unrestricted** target profile. To set the target profile to **Unrestricted**:
-
-1. While in your Q# program in VS Code, select **Q#: QIR base** on the bottom status bar.
-1. From the options displayed in the top status bar, select **Q#: unrestricted**.
+This error indicates that you set the QIR (quantum intermediate representation) target profile to **Basic** and the function in question requires the **Unrestricted** target profile. If you don't specify a target profile type, then the compiler will automatically set the target to **Unrestricted** for you.
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
@@ -246,8 +243,8 @@ code and the required logical error rate.
 
 Here is what you could do in such a scenario:
 
-* Increase the error budget, either total or the part for logical errors.
-* Reduce the physical error rates in the qubit parameters.
+- Increase the error budget, either total or the part for logical errors.
+- Reduce the physical error rates in the qubit parameters.
 
 ### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
@@ -255,7 +252,7 @@ The Resource Estimator accepts only one of [`maxDuration`](xref:qsharp.estimator
 
 ### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
 
-This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`. 
+This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`.
 
 To avoid this error, take one of the following actions:
 

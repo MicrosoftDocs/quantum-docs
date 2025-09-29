@@ -6,7 +6,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
 no-loc: [Quantum Development Kit, target, targets]
-#customer intent: As a quantum programmer, I want to learn about quantum entanglement 
+#customer intent: As a quantum programmer, I want to learn about quantum entanglement
 ---
 
 ## Prerequisites
@@ -164,12 +164,7 @@ In order to run the code as a standalone program, the Q# compiler needs to know 
     }
     ```
 
-1. Before running the program, ensure that the target profile is set to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
-
-    > [!NOTE]
-    > If the target profile isn't set to **Unrestricted**, you get an error when you run the program.
-
-1. To run the program, select **Run Q# File** from the play icon drop-down in the top-right, select **Run** from the list of commands preceding the `Main` operation, or press **Ctrl+F5**. The program runs the `Main` operation on the default simulator.
+1. To run the program, choose **Run** from the menu that precedes the `Main` operation, or press **Ctrl + F5**. The program runs the `Main` operation on the default simulator.
 1. Your output appears in the debug console.
 
     ```output
@@ -314,15 +309,15 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
     Result: "(502, 498, 502, 498)"
     ```
 
-The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation entangled the two qubits, so that whatever happens to one of them, happens to the other. 
+The statistics for the first qubit haven't changed (a 50/50 chance of a `Zero` or a `One` after measurement), but the measurement results for the second qubit are **always** the same as the measurement of the first qubit. The `CNOT` operation entangled the two qubits, so that whatever happens to one of them, happens to the other.
 
 ### Plot the frequency histogram
 
 Let's visualize the distribution of results obtained from running the quantum program multiple times. The frequency histogram helps visualize the probability distribution of these outcomes.
 
-1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also select **Histogram** from the list of commands preceding `Main`. Select this option to open the Q# histogram window.
+1. Select **View -> Command Palette**, or press **Ctrl + Shift + P**, and then enter **histogram**, which brings up the **QDK: Run file and show histogram** option. You can also select **Histogram** from the list of commands preceding `Main`. Choose this option to open the Q# histogram window.
 1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram displays in the Q# histogram window.
-1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. In this case, there are 50 different unique results. Note that for each outcome the measurement results for the first and the second qubit are always the same. 
+1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. In this case, there are 50 different unique results. Note that for each outcome the measurement results for the first and the second qubit are always the same.
 
     :::image type="content" source="../media/histogram-vscode-entanglement.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code.":::
 
@@ -333,4 +328,3 @@ Let's visualize the distribution of results obtained from running the quantum pr
 1. Select the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
 
     :::image type="content" source="../media/histogram-vscode-entanglement-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
-

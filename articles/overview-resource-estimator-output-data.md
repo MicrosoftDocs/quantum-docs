@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.resources-estimator-output.data
 
 # Retrieving the output of the Resource Estimator
 
-Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in Jupyter Notebooks in Visual Studio Code.
+Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in Jupyter Notebooks in Visual Studio Code (VS Code).
 
 ## Prerequisites
 
@@ -27,39 +27,40 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Re
     ```
 
 > [!NOTE]
-> If you run the Resource Estimator in Visual Studio Code from the command palette, the following commands doesn't apply. For more information, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+> If you run the Resource Estimator in VS Code from the command palette, then the following commands don't apply. For more information, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Output parameters
 
-The output data of the Resource Estimator is a report that is printed in the console and can be accessed programmatically. For example, the following code snippet shows how to access the resource estimation parameters.
+The output from the Resource Estimator is a report that's printed to the console and that you can access programmatically. For example, the following code snippet displays the values of all the Resource Estimator parameters:
 
 ```python
 result['jobParams']
 ```
 
-The following output data constitutes the possible entries that can be access programmatically.
+The following table contains the data type and a brief description for each output parameter, which you can access programmatically.
+[ARE THESE PARAMETERS EXHAUSTIVE AND ARE THEY ALL STILL PART OF THE OUTPUT PARAMETERS SET? I DON'T SEE STATUS]
 
-|Top-level output parameter|Data type|Description|
-|---|----|----|
-|`status`|string| The status of the job, it's always `Succeeded`.|
-|`jobParams`| dictionary| The target parameters of the job that are passed as input.|
-|`physicalCounts`| dictionary| The physical resource estimates. For more information, see [Physical counts](#physical-counts).|
-|`physicalCountsFormatted`| dictionary| The physical resource estimates formatted for display in report data. For more information, see [Physical counts formatted](#physical-counts-formatted).|
-|`logicalQubit`| dictionary| The logical qubit properties. For more information, see [Logical qubit](#logical-qubit).|
-|`tfactory`| dictionary| The T factory properties.|
-|`logicalCounts`| dictionary| The pre-layout logical resource estimates. For more information, see [Logical counts](#logical-counts).|
-|`reportData`| dictionary| Generation data for resource estimation report.|
+| Top-level output parameter | Data type  | Description |
+|----------------------------|------------|-------------|
+| `status`                   | string     | The status of the job, it's always `Succeeded`.                                                                                                          |
+| `jobParams`                | dictionary | The target parameters of the job that are passed as input.                                                                                               |
+| `physicalCounts`           | dictionary | The physical resource estimates. For more information, see [Physical counts](#physical-counts).                                                          |
+| `physicalCountsFormatted`  | dictionary | The physical resource estimates formatted for display in report data. For more information, see [Physical counts formatted](#physical-counts-formatted). |
+| `logicalQubit`             | dictionary | The logical qubit properties. For more information, see [Logical qubit](#logical-qubit).                                                                 |
+| `tfactory`                 | dictionary | The T factory properties.                                                                                                                                |
+| `logicalCounts`            | dictionary | The pre-layout logical resource estimates. For more information, see [Logical counts](#logical-counts).                                                  |
+| `reportData`               | dictionary | Generation data for resource estimation report.                                                                                                          |
 
 ### Physical counts
 
-The `physicalCounts` dictionary contains the following entries:
+The `physicalCounts` dictionary containsS the following entries:
 
-|Output parameter|Data type|Description|
-|---|----|----|
-|`physicalQubits`|number| The total number of physical qubits.|
-|`runtime`|number| The total runtime to execute the algorithm in nanoseconds.|
-|`rqops`| number| The number of reliable quantum operations per second (QOPS).|
-| `breakdown` |dictionary |Breakdown of estimates. For more information, see [Physical counts breakdown](#physical-counts-breakdown).|
+| Output parameter | Data type  | Description |
+|------------------|------------|-------------|
+| `physicalQubits` | number     | The total number of physical qubits.|
+| `runtime`        | number     | The total runtime to execute the algorithm in nanoseconds.|
+| `rqops`          | number     | The number of reliable quantum operations per second (QOPS).|
+| `breakdown`      | dictionary |Breakdown of estimates. For more information, see [Physical counts breakdown](#physical-counts-breakdown).|
 
 #### Physical counts breakdown
 
@@ -181,12 +182,12 @@ SpaceChart(result[0], 2) # First (estimate index=0) run and third (point index=2
 
 ## Space-time diagram
 
-In quantum computing, there's a tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation. 
+In quantum computing, there's a tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation.
 
 When estimating the resources of an algorithm, you can use the space-time diagram to visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm.
 
 > [!NOTE]
-> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation). If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the Pareto frontier estimation is enabled by default.
+> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation). If you run the Resource Estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** command, the Pareto frontier estimation is enabled by default.
 
 The space-time diagram allows you to find the optimal combination of {number of qubits, runtime} pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair.
 
