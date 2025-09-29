@@ -78,7 +78,7 @@ operation Main() : Unit {
 }
 ```
 
-The `Main()` operation never takes arguments, and for now returns a `Unit` object, which is analogous to returning `void` in C# or an empty tuple, `Tuple[()]`, in Python.
+The `Main` operation never takes arguments, and for now returns a `Unit` object, which is analogous to returning `void` in C# or an empty tuple, `Tuple[()]`, in Python.
 Later, you modify the operation to return an array of measurement results.
 
 ### Allocate qubits 
@@ -96,7 +96,7 @@ As in real quantum computations, Q# doesn't allow you to directly access qubit s
 
 ### Apply single-qubit and controlled operations
 
-Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Microsoft.Quantum.Intrinsic` namespace. 
+Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Microsoft.Quantum.Intrinsic` namespace.
 
 > [!NOTE]
 > Note that `Microsoft.Quantum.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
@@ -216,20 +216,19 @@ For now, the `Main` operation doesn't return any value - the operation returns `
 
 ### [Q# standalone program](#tab/tabid-qsharp)
 
-1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile isn't set to **Unrestricted**, you get an error when you run the program.
-1. To run your program, select **Run Q# File** from the play icon drop-down in the top-right, or press **Ctrl+F5**. The program runs the `Main()` operation on the default simulator.
+1. To run your program, choose **Run Q# File** from the menu that precedes `Main`, or press **Ctrl + F5**. The program runs the `Main` operation on the default simulator.
 1. The `Message` and `DumpMachine` outputs appear in the debug console.
 
 ### [Jupyter Notebook](#tab/tabid-python)
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
+1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
 1. In the first cell, import the `qsharp` package in your Python code:
 
     ```python
     import qsharp
     ```
 
-1. Add the Q# program with the `Main` operation. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`. Copy this code into the second cell. 
+1. Add the Q# program with the `Main` operation. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`. Copy this code into the second cell.
 
     ```qsharp
     %%qsharp
@@ -390,8 +389,7 @@ operation Main() : Result[] {
 
 ### [Q# standalone program](#tab/tabid-qsharp2)
 
-1. Before running the program, verify in the status bar at the bottom of VS Code that the target profile is set to **Q#: Unrestricted**. To change the target profile, select the target profile in the status bar, and select **Unrestricted** from the dropdown menu. If the target profile isn't set to **Unrestricted**, you get an error when you run the program.
-1. To run your program, select **Run Q# file** from the play icon drop-down in the top-right, or press **Ctrl+5**. The program runs the `Main()` operation on the default simulator.
+1. To run your program, choose **Run Q#** from the menu that precedes `Main`, or press **Ctrl + F5**. The program runs the `Main` operation on the default simulator.
 1. The `Message` and `DumpMachine` outputs appear in the debug console.
 
 Your output should look similar to this:
@@ -522,6 +520,7 @@ Indeed, if you want to develop full-scale, applicable quantum programs, worrying
     ```qsharp
     ApplyQFT(qs);
     ```
+
 1. Your code should now look like this
 
     ```qsharp

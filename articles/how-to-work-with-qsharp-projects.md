@@ -183,11 +183,12 @@ The following requirements and configurations apply to all Q# projects.
 
 These steps apply to all Q# projects.
 
-1. In the VS Code file explorer, right-click the folder you want to use for the root folder of the Q# project and select **Create Q# project**, or open the folder and select **View > Command Palette > Q#: Create a Q# project...**.
-1. VS Code creates a minimal manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file.
+1. In the VS Code file explorer, go to the folder that you want to use for the root folder of the Q# project.
+1. Open the **View** menu and choose **Command Palette**.
+1. Enter and **QDK: Create Q# project** and press **Enter**. VS Code creates a minimal manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file.
 1. Edit the manifest file as needed. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder.
-1. If you're accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes your program is in the /src folder of the Q# project:
+1. If you're accessing the Q# project from a Python program or Jupyter Notebook, set the [root folder path](#defining-the-project-folder-python-and-jupyter-notebook-programs) using `qsharp.init`. This example assumes that your program is in the `/src` folder of the Q# project:
 
     ```python
     qsharp.init(project_root = '../Teleportation_project')
@@ -196,7 +197,7 @@ These steps apply to all Q# projects.
 1. If you're using only Q# files in VS Code, when you open a Q# file, the compiler searches for a manifest file, determines the root folder of the project, and then scans the subfolder for \*.qs files.
 
 > [!NOTE]
-> You can also manually create the manifest file and the `/src` folder in step 2.
+> You can also manually create the manifest file and the `/src` folder.
 
 ## Example project
 

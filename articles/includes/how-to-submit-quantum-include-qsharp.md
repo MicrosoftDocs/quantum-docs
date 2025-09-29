@@ -5,7 +5,7 @@ ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
-no-loc: [Quantum Development Kit, target, targets]
+no-loc: [Quantum Development Kit, QDK, target, targets]
 ---
 
 ## Submitting Q# jobs to Azure Quantum
@@ -33,7 +33,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 ## Run a Q# program
 
-1. To test run your program locally on the built-in simulator, click on **Run** from the list of commands next to the entry point operation, or press **Ctrl+F5**. Your output will appear in the debug console.
+1. To test run your program locally on the built-in simulator, click on **Run** from the list of commands next to the entry point operation, or press **Ctrl + F5**. Your output will appear in the debug console.
 1. To debug your program before submitting it to Azure Quantum, click on **Debug** from the list of commands next to the entry point operation, or press **F5**. Use the debugging controls at the top to step over, into, and out of the code. For more information about debugging Q# programs, see [Testing and debugging](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging).
 
     :::image type="content" source="../media/codelens-run-debug.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens with run and debug commands.":::
@@ -42,7 +42,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 The frequency histogram represents the distribution of results obtained from running a quantum program multiple times, or "shots". Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The frequency histogram helps visualize the probability distribution of these outcomes.
 
-1. Select **View -> Command Palette** and type “histogram” which should bring up the **Q#: Run file and show histogram** option. You can also click on **Histogram** from the list of commands next to the entry point operation. Select this option to open the Q# histogram window.
+1. Select **View -> Command Palette** and type **histogram**, which brings up the **QDK: Run file and show histogram** command. You can also choose **Histogram** from the list of commands that precede the entry point operation. Select this option to open the Q# histogram window.
 
     :::image type="content" source="../media/codelens-histogram.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens with histogram command.":::
 
@@ -62,7 +62,7 @@ The frequency histogram represents the distribution of results obtained from run
 
 Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them. For more information, see [Quantum circuit diagrams in Visual Studio Code](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
 
-1. Select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands next to the entry point operation.
+1. Select **View -> Command Palette** and type **circuit**, which brings up the **QDK: Show circuit** command. You can also select **Circuit** from the list of commands next to the entry point operation.
 
     :::image type="content" source="../media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
 
@@ -70,28 +70,27 @@ Quantum circuit diagrams are a visual representation of quantum operations. They
 
     :::image type="content" source="../media/circuit-vscode-randombit.png" alt-text="Screenshot the Q# circuit window showing the resulting circuit diagram for the random bit operation.":::
 
-
 ## Connect to Azure Quantum and submit your job
 
-You can connect and submit jobs directly from VS Code. For this example, you'll submit a job to the Rigetti simulator. 
+You can connect and submit jobs directly from VS Code. For this example, you submit a job to the Rigetti simulator.
 
-1. Select **View -> Command Palette** and type **Q#: Connect to an Azure Quantum workspace**. Press **Enter**.
+1. Select **View -> Command Palette** and enter **QDK: Connect to an Azure Quantum workspace**. Press **Enter**.
 1. Select **Azure account**, and follow the prompts to connect to your preferred directory, subscription, and workspace.
 
     > [!NOTE]
-    > If you have a connection string, you can select **Connection string** and paste the connection string corresponding to your Azure Quantum workspace. For more information, see [Connect to a Quantum workspace using a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
+    > If you have a connection string, then you can select **Connection string** and paste the connection string corresponding to your Azure Quantum workspace. For more information, see [Connect to a Quantum workspace using a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
 
 1. Once you are connected, in the **Explorer** pane, expand **Quantum Workspaces**.
 1. Expand your workspace and expand the **Rigetti** provider.
 
    > [!NOTE]
-   > If there is an issue connecting to Azure Quantum, a warning icon displays next to the workspace name. Hover over the workspace name to display error information. 
+   > If there's an issue connecting to Azure Quantum, a warning icon displays next to the workspace name. Hover over the workspace name to display error information.
 
 1. Select **rigetti.sim.qvm** as your target.
 
     :::image type="content" source="../media/vscode-add-rigetti.png" alt-text="Screenshot of Visual Studio Code showing how to select Rigetti simulator as target.":::
 
-1. Select the play icon to the right of the target name to start submitting the current Q# program. If you get a popup, select **Change the QIR target profile and continue**.
+1. Select the play icon to the right of the target name to start submitting the current Q# program.
 
     :::image type="content" source="../media/vscode-run-rigetti.png" alt-text="Screenshot of Visual Studio Code showing how to run Rigetti simulator as target.":::
 
