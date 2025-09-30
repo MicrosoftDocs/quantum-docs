@@ -96,9 +96,14 @@ In the Pay-as-you-go plan the usage is charged based on the job execution time o
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ***
+
 ## Quantinuum
 
-[Quantinuum](xref:microsoft.quantum.providers.quantinuum) uses a system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units defined by Quantinuum are*H-System Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
+> [!WARNING]
+> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
+
+[Quantinuum](xref:microsoft.quantum.providers.quantinuum) uses a system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units defined by Quantinuum are*Hardware Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
+
 
 HQCs and eHQCs are used to calculate the cost of running a job, and they're calculated based on the following formula:
 
@@ -115,7 +120,7 @@ where:
 
 To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
 
-Quantinuum provides four subscription plans: **Standard**, **Premium**, **Standard H1 + H2**, and **Premium H1 + H2**. Quantinuum also offers a **Pay as You Go** offering.
+Quantinuum provides two subscription plans: **Standard** and **Premium**. Quantinuum also offers a **Pay as You Go** offering.
 
 ### [Subscriptions](#tab/tabid-H2)
 
@@ -130,11 +135,10 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Pay as You Go](#tab/tabid-PAYG)
 
-The Pay as You Go plan provides queued access to either the H1 series quantum computers or H2 series quantum computers and is charged per HQC usage. To get additional information on Pay as You Go pricing please contact Quantinuum sales at Sales@Quantinuum.com.
+The Pay as You Go plan provides queued access to the H2 series quantum computers and is charged per HQC usage. To get additional information on Pay as You Go pricing please contact Quantinuum sales at Sales@Quantinuum.com.
 
 |PAYG Pricing| Includes access to |
 |---|---|
-|**System Model H1** Per HQC usage + Azure infrastructure costs | <ul><li>System Model H1 quantum computers and emulator|
 |**System Model H2** Per HQC usage + Azure infrastructure costs | <ul><li>System Model H2 quantum computers and emulator|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
@@ -142,7 +146,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 ***
 ## Rigetti
 
-[Rigetti](xref:microsoft.quantum.providers.rigetti) charges for job execution time on their quantum processors. There's no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://github.com/quil-lang/qvm) simulator is free for all users.
+[Rigetti](xref:microsoft.quantum.providers.rigetti) charges for job execution time on their quantum processors. There's no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://github.com/quil-lang/qvm) simulator is free for all users under all plans.
 
 Rigetti offers one billing plan:  **Pay As You Go**.
  
@@ -152,7 +156,7 @@ The Pay-as-you-go plan consists of *a la carte* access to Rigetti QPUs. The usag
 
 |Pricing | Includes access to   |
 |---|---|  
-|USD 0.013 per 10-millisecond increment of job execution time | Rigetti Ankaa-3 |
+|USD 0.02 per 10-millisecond increment of job execution time | Rigetti Ankaa-3<br />Rigetti Cepheus-1-36Q |
 
 > [!NOTE]
 > If you have questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
