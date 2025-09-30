@@ -14,7 +14,10 @@ uid: microsoft.quantum.how-to.adapting-qiskit
 
 # How to adapt Qiskit samples to run on Azure Quantum
 
-If you have some experience with quantum computing or are just starting, it's likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt any Qiskit sample to run against any of the Azure Quantum backends. 
+If you have some experience with quantum computing or are just starting, it's likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt any Qiskit sample to run against any of the Azure Quantum backends.
+
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
 
 ## Prerequisites
 
@@ -67,8 +70,8 @@ Now you need to create a backend that points to an Azure Quantum provider.
     ```
 
     > [!NOTE]
-    > The location and resource ID of your workspace can be found in the **Overview** tab of your Azure Quantum workspace. 
-    >  :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of the overview blade of a workspace in Azure portal. Location and resource ID are marked inside a red rectangle.":::
+    > The location and resource ID of your workspace can be found in the **Overview** tab of your Azure Quantum workspace.
+    > :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of the overview blade of a workspace in Azure portal. Location and resource ID are marked inside a red rectangle.":::
 
     1. Click **+ Code** to add a new code and add the backend to the sample. Replace the `backend` variable with the Azure Quantum backend you want to use. For example, to use the IonQ simulator, use `backend = ionq_simulator_backend`.
 

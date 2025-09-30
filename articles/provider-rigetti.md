@@ -13,8 +13,6 @@ uid: microsoft.quantum.providers.rigetti
 
 # Rigetti provider
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 [Rigetti quantum processors](https://qcs.rigetti.com/qpus) are universal, gate-model machines based on tunable superconducting qubits. System features and device characteristics include enhanced readout capabilities, a speedup in quantum processing times, fast gate times for multiple entangling gate families, rapid sampling via active register reset, and parametric control.
 
 - Publisher: [Rigetti](https://rigetti.com)
@@ -26,6 +24,7 @@ The Rigetti provider makes the following targets available:
 |---|---|---|---|
 |[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
 |[Ankaa-3](#ankaa-3) |rigetti.qpu.ankaa-3 | 84 qubits|  |
+|[Cepheus-1-36Q](#cepheus-1-36q) |rigetti.qpu.cepheus-1-36q | 36 qubits|  |
 
 > [!NOTE]
 > Rigetti simulators and hardware targets do not support Cirq programs. 
@@ -45,6 +44,14 @@ An 84-qubit quantum processor.
 - Target ID: `rigetti.qpu.ankaa-3`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
+### Cepheus-1-36Q
+
+A 36-qubit quantum processor built from an array of 9-qubit chips tiled together.
+
+- Job Type: `Quantum Program`
+- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
+- Target ID: `rigetti.qpu.cepheus-1-36q`
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
 ## Simulators
 

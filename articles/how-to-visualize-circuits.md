@@ -48,8 +48,8 @@ Follow these steps to visualize quantum circuits of Q# programs in Visual Studio
 
 ### Viewing circuit diagrams for a Q# program
 
-1. Open a Q# file in Visual Studio Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program). 
-1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and type “circuit” which should bring up the **Q#: Show circuit** option. You can also click on **Circuit** from the list of commands preceding `Main()`.
+1. Open a Q# file in Visual Studio Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program).
+1. To visualize the quantum circuit of the Q# program, select **View -> Command Palette** and enter **circuit** to bring up the **QDK: Show circuit** command. You can also click on **Circuit** from the list of commands preceding `Main()`.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
 
@@ -198,14 +198,12 @@ The downside of traced circuits is that they only capture the measurement outcom
 
 ### Target profile
 
-The currently selected target profile influences how circuit diagrams are generated. Target profiles are used to specify the capabilities of the target hardware, and the restrictions that are imposed on the quantum program. 
+The currently selected target profile influences how circuit diagrams are generated. Target profiles are used to specify the capabilities of the target hardware, and the restrictions that are imposed on the quantum program.
 
-When the target profile is set to **Unrestricted** or **QIR Adaptive RI**, the circuit diagrams show the quantum operations that are invoked in the Q# program. When the target profile is set to **QIR base**, the circuit diagrams show the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
+When the target profile is set to **Unrestricted**, **Adaptive RI**, or **Adaptive RIF**, the circuit diagrams show the quantum operations that are invoked in the Q# program. When the target profile is set to **Base**, the circuit diagrams show the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
 
 > [!NOTE]
-> - To select the target profile in VS Code, select **View -> Command Palette** and select **Q#: Set the Azure Quantum QIR target profile**. You can select `QIR base`, `QIR Adaptive RI`, or `unrestricted` from the dropdown list.
->
-> - To select the target profile in Python, call `qsharp.init(target_profile=qsharp.TargetProfile.Base)`, `qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)`or `qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted)`.
+> You can choose from four target profiles: `Base`, `Unrestricted`, `Adaptive_RI`, and `Adaptive_RIF`. If you don't specify a target profile, then the Q# compiler automatically sets an appropriate target profile for you. To manually set a target profile, pass the target profile name as an argument to `@Entrypoint()`. For example, `@Entrypoint(Unrestricted)` sets the target profile to **Unrestricted**.
 
 Specifically, gate decompositions are applied that would make the resulting circuit compatible with the capabilities of the target hardware. These are the same decompositions that would get applied during code generation and submission to Azure Quantum.
 
@@ -230,12 +228,12 @@ Specifically, gate decompositions are applied that would make the resulting circ
     }
     ```
 
-1. When target profile is set to **Unrestricted** or **QIR Adaptive RI**, the gates displayed on the circuit correspond exactly to the quantum operations that are invoked in the Q# program.
+1. When target profile is set to **Unrestricted**, **Adaptive RI**, or **Adaptive RIF**, the gates displayed on the circuit correspond exactly to the quantum operations that are invoked in the Q# program.
 
     :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of quantum circuits when target profile is Unrestricted." lightbox="media/circuits-target-unrestricted.png":::
 
-1. When the target profile is **QIR base**, the circuit looks different. Since Base profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. Since `Reset` operation isn't a supported gate in Base Profile, it's dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
+1. When the target profile is **Base**, the circuit looks different. Since Base profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. Since `Reset` operation isn't a supported gate in Base Profile, it's dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
 
-    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of quantum circuits when target profile is QIR base." lightbox="media/circuits-target-base.png":::
+    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of quantum circuits when the target profile is set to base." lightbox="media/circuits-target-base.png":::
 
 

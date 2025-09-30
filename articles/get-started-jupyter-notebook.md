@@ -9,17 +9,19 @@ ms.topic: get-started
 no-loc: ['Q#', '$$v', target, targets]
 title: Run a Q# and Python notebook
 uid: microsoft.quantum.get-started.notebooks
+ms.custom: sfi-image-nochange
 ---
 
 # Get started with Q# and an Azure Quantum notebook
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
+Learn how to run Q# code in a Jupyter Notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal. A [Jupyter](https://jupyter.org/) Notebook is a document that contains both rich text and code and can run in your browser using Q# and Python code.  Notebooks can be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and a preconfigured Q# and Python development environment.
 
-Learn how to run Q# code in a Jupyter Notebook in the [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) portal. A [Jupyter](https://jupyter.org/) Notebook is a document that contains both rich text and code and can run in your browser using Q# and Python code.  Notebooks can be created directly in the Azure Quantum portal, and offer features such as preloaded connection information and a preconfigured Q# and Python development environment. 
-
-In this article, you will run a sample notebook in the Azure portal that executes a simple quantum random number generator written in Q# and Python. 
+In this article, you will run a sample notebook in the Azure portal that executes a simple quantum random number generator written in Q# and Python.
 
 For more information about using Jupyter Notebooks with the Azure Quantum service, see [Work with Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
+
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
 
 ## Prerequisites
 
@@ -49,47 +51,50 @@ To run the sample notebook, follow these steps for your selected provider.
 
 ### [IonQ](#tab/tabid-ionq)
 
-1. In **My notebooks**, select the **hello-world-qsharp-ionq** notebook. 
-1. To run the full program from top to bottom, select **Run all**. 
+1. In **My notebooks**, select the **hello-world-qsharp-ionq** notebook.
+1. To run the full program from top to bottom, select **Run all**.
 1. To walk through the example and run each cell individually from top to bottom, select the cell you want to run and select the **run icon**.
 
     :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the Jupyter Notebook showing how to run it.":::
 
 ### Stepping through the program on IonQ
 
-The *hello world* program runs a simple quantum random number generator and displays a histogram of the results. 
+The *hello world* program runs a simple quantum random number generator and displays a histogram of the results.
 
 Some things to note:
 
-- **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
-- **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
-- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
-- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
+- **1st cell**: Preloads your subscription information to connect to the Azure Quantum service.
+- **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace.
+- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler.
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell.
 - **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
-- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
+- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1.
 
 ### [Quantinuum](#tab/tabid-qunatinuum)
 
-1. In **My notebooks**, select the **hello-world-qsharp-quantinuum** notebook. 
-1. To run the full program from top to bottom, select **Run all**. 
+1. In **My notebooks**, select the **hello-world-qsharp-quantinuum** notebook.
+1. To run the full program from top to bottom, select **Run all**.
 1. To walk through the example and run each cell individually from top to bottom, select the cell you want to run and select the **run icon**.
 
     :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the Jupyter Notebook showing how to run it":::
 
 ### Stepping through the program on Quantinuum
 
-The *hello world* program runs a simple quantum random number generator and displays a histogram of the results. 
+> [!WARNING]
+> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
+
+The *hello world* program runs a simple quantum random number generator and displays a histogram of the results.
 
 Some things to note:
 
-- **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
-- **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
-- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
-- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
+- **1st cell**: Preloads your subscription information to connect to the Azure Quantum service.
+- **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace.
+- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler.
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell.
 - **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
-- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
+- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1.
 
-Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement. 
+Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement.
 
 To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *quantinuum.sim.h1-1e*.
 
@@ -104,24 +109,24 @@ Re-run that cell and the following cells. Now, the results should be roughly spl
 
 ### [Rigetti](#tab/tabid-rigetti)
 
-1. In **My notebooks**, select the **hello-world-qsharp-rigetti** notebook. 
-1. To run the full program from top to bottom, select **Run all**. 
+1. In **My notebooks**, select the **hello-world-qsharp-rigetti** notebook.
+1. To run the full program from top to bottom, select **Run all**.
 1. To walk through the example and run each cell individually from top to bottom, select the cell you want to run and select the **run icon**.
 
     :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of the Jupyter Notebook showing how to run it":::
 
 ### Stepping through the program on Rigetti
 
-The *hello world* program runs a simple quantum random number generator and displays a histogram of the results. 
+The *hello world* program runs a simple quantum random number generator and displays a histogram of the results.
 
 Some things to note:
 
-- **1st cell**: Preloads your subscription information to connect to the Azure Quantum service. 
-- **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace. 
-- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler. 
-- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell. 
+- **1st cell**: Preloads your subscription information to connect to the Azure Quantum service.
+- **2nd cell**: Retrieves the available targets (quantum computers and simulators) in your workspace.
+- **3rd cell**: Imports the `qsharp` package and sets the base profile for the compiler.
+- **4th cell**: The Q# code that defines the program. Note the `%%qsharp` magic command which allows you to enter Q# code directly into the Python notebook cell.
 - **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
-- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1. 
+- **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1.
 
 ***
 

@@ -20,6 +20,9 @@ In this article, you learn the differences between each option and how to choose
 
 ## Options for running Q# programs
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 Azure Quantum is available through three development environments:
 
 - [**Azure Quantum website:**](#azure-quantum-website) Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.
@@ -65,8 +68,6 @@ The following table shows what you can and can't do on the Azure Quantum website
 ## Azure portal
 
 The [Azure portal](https://portal.azure.com) is the main interface of the Microsoft Azure cloud computing platform. From the portal, you can create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) to run quantum programs, send them to [quantum hardware providers](xref:microsoft.quantum.reference.qc-target-list), and store their results in an Azure Quantum storage account. You can also manage your subscriptions, activity, credit usage, quotas, and access control.
-
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 Quantum workspaces include [Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks), which are web-based Jupyter Notebooks in the Azure portal. Use Azure notebooks to create, upload, store, and run Q# and Python programs on quantum simulators or hardware. From your quantum workspace, you can use sample notebooks to get started with quantum programming.
 

@@ -9,6 +9,9 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Connect to your Azure Quantum workspace
 uid: microsoft.quantum.how-to.connect-workspace
+ms.custom:
+  - sfi-image-nochange
+  - sfi-ropc-nochange
 
 #customer intent: As a quantum developer, I want to connect to my Azure Quantum workspace so I can submit my quantum programs to the Azure Quantum service.
 ---
@@ -96,12 +99,14 @@ If you're working with a Python environment, you can create a `Workspace` object
 #### [VS Code](#tab/tabid-vscode1)
 
 1. Open Visual Studio Code.
-1. Select **View -> Command Palette** and type **Q#: Connect to an Azure Quantum workspace**. Press **Enter**.
-1. Select **Connection string**.
-1. **Paste** the connection string you copied from the Azure portal and press **Enter**.
-1. Your Azure Quantum workspace appears in the **Explorer** pane, under **Quantum Workspaces**. You can expand the workspace to see the targets available in your workspace and the list of jobs.
+1. Open the **View** menu and choose **Command Palette**.
+1. Enter **QDK: Connect to an Azure Quantum workspace**, then press **Enter**.
+1. Choose **Connection string**.
+1. Paste the connection string that you copied from the Azure portal and press **Enter**.
 
-    :::image type="content" source="media/quantum-workspace-explorer-vscode.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
+Your Azure Quantum workspace appears in the **Explorer** pane, under **Quantum Workspaces**. You can expand the workspace to see the targets available in your workspace and the list of jobs.
+
+:::image type="content" source="media/quantum-workspace-explorer-vscode.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
 
 ***
 

@@ -2,13 +2,14 @@
 author: azure-quantum-content
 description: Learn how to bulk add users to your Azure Quantum workspace using a CSV file. This guide simplifies user management for large teams. 
 ms.author: quantumdocwriters
-ms.date: 01/07/2025
+ms.date: 07/09/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Bulk Add Users to Azure Quantum Workspace
 uid: microsoft.quantum.how-to.bulk-add-users
+ms.custom: sfi-image-nochange
 ---
 
 # Bulk add users to your Azure Quantum workspace
@@ -30,7 +31,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- An aka.ms shortlink for your Quantum Workspace (for example, aka.ms/aq/hackathon-notebooks). To create the link, use the [Aka link manager tool](https://redirectiontool.trafficmanager.net/).
+- A link for your Azure Quantum Workspace. To get the link for your Quantum workspace, go to your Azure Quantum workspace in the Azure portal and copy the URL from the address bar of your browser.
 
 ## Create a group in the Azure Active Directory
 
@@ -91,7 +92,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
     - **Email address to invite** - the user who will receive an invitation
 
-    - **Redirection url** - the aka.ms shortlink to which the invited user is forwarded after accepting the invitation
+    - **Redirection url** - the link to your Azure Quantum workspace. The invited user is forwarded to this link when they accept the invitation
 
     :::image type="content" source="media/bulk-invite-users-CSV.png" alt-text="Screen shot showing the template CSV and how to list the users' email addresses and a custom invitation message.":::
 

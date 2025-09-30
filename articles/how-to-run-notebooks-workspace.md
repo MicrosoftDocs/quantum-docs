@@ -9,11 +9,15 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Work with Jupyter notebooks in a workspace
 uid: microsoft.quantum.how-to.notebooks
+ms.custom: sfi-image-nochange
 ---
 
 # Work with Jupyter Notebooks in an Azure Quantum workspace
 
 Learn how to run Q# or Python code in a Jupyter Notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter Notebook is a document that contains both rich text and code and can run in your browser.
+
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
 
 ## Prerequisites
 
@@ -45,7 +49,7 @@ To run Q# or Python code in a Jupyter Notebook, follow these steps.
 1. Select the cell you want to run and select the **run icon** to run the code in the cell, or select **Run all** to run all cells in the notebook.
 
     :::image type="content" source="media/run_or_run_all.png" alt-text="Screenshot of a Jupyter notebook showing how to run it.":::
-    
+
 ## Create a new notebook
 
 Follow these steps to create a new Jupyter Notebook using Q# or Python.
@@ -89,7 +93,7 @@ You can upload one or more existing Jupyter Notebooks to an Azure Quantum worksp
 After the notebooks have been uploaded, you can find them under **My notebooks**.
 
 > [!NOTE]
-> If you're uploading a notebook that was saved from another Azure Quantum workspace, you may need to update the connection information, such as Subscription, Resource group, workspace name, Location, or Resource ID, before running the notebook. 
+> If you're uploading a notebook that was saved from another Azure Quantum workspace, you may need to update the connection information, such as Subscription, Resource group, workspace name, Location, or Resource ID, before running the notebook.
 
 ## Manage notebooks
 
@@ -117,7 +121,7 @@ Jupyter notebooks in an Azure Quantum workspace are isolated from other users' n
 Jupyter Notebooks are stored in an [Azure Storage](/azure/storage/) account linked to your Azure Quantum workspace.
 
 > [!NOTE]
-> When an Azure Quantum workspace is created, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. This is required for using Jupyter Notebooks in the portal. If you do not plan to use Jupyter Notebooks in the portal and you do not want to enable CORS for your Azure Storage account, you can directly edit your storage account to remove the CORS rule. In the storage account properties, under **Settings**, select **Resource Sharing (CORS)** and remove the rule under **File Service**.  Be aware that if you open the **Notebooks** blade again in your workspace, the rule will be recreated automatically. 
+> When an Azure Quantum workspace is created, [Cross-Origin Resource Sharing (CORS)](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) in enabled on the linked Azure Storage account. This is required for using Jupyter Notebooks in the portal. If you do not plan to use Jupyter Notebooks in the portal and you do not want to enable CORS for your Azure Storage account, you can directly edit your storage account to remove the CORS rule. In the storage account properties, under **Settings**, select **Resource Sharing (CORS)** and remove the rule under **File Service**.  Be aware that if you open the **Notebooks** blade again in your workspace, the rule will be recreated automatically.
 
 ## Limitations
 
@@ -128,8 +132,8 @@ The following are limitations with Jupyter Notebooks in an Azure Quantum workspa
 - Notebook instances have pre-allocated 2 vCPU and 4 GB of memory.
 - Idle kernels are terminated after 30 minutes. After that time, you will need to rerun the cells.
 - The location of your storage account and workspace will affect the performance of Jupyter Notebooks in an Azure Quantum workspace. When possible, try to create the storage account and workspace in a region close to where you will be using your notebooks.
-- There can be no more than 10 notebooks open concurrently in one region per subscription. To open more than 10 notebooks concurrently, you should deploy workspaces across multiple regions. 
-- A single user can open no more than five notebooks concurrently in one region per subscription. 
+- There can be no more than 10 notebooks open concurrently in one region per subscription. To open more than 10 notebooks concurrently, you should deploy workspaces across multiple regions.
+- A single user can open no more than five notebooks concurrently in one region per subscription.
 
 ## Next steps
 

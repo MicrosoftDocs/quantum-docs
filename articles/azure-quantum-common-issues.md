@@ -9,6 +9,7 @@ ms.topic: troubleshooting-known-issue
 no-loc: [Quantum Development Kit, target, targets]
 title: Troubleshoot Issues with Azure Quantum
 uid: microsoft.quantum.azure.common-issues
+ms.custom: sfi-ropc-nochange
 
 #customer intent: As a quantum developer, I want to troubleshoot common issues with Azure Quantum so that I can continue to use the service effectively.
 ---
@@ -48,7 +49,7 @@ If the target where you want to run your job is missing from the available targe
 
 Steps to resolve this issue:
 
-1. Open your Azure portal (https://portal.azure.com) and authenticate your account. 
+1. Open your Azure portal (https://portal.azure.com) and authenticate your account.
 2. Under **Navigate**, select **Subscriptions** and select your subscription.
 3. Select **Access control (IAM)**.
 4. Under **Check access**, search for your email address and select the account.
@@ -56,7 +57,7 @@ Steps to resolve this issue:
 6. Select the **Role assignments** tab.
 
     > [!NOTE]
-    > If you don't see the **Role assignments** tab, you may need to expand the portal to full screen or close the **\<your name\> assignments** pane. 
+    > If you don't see the **Role assignments** tab, you may need to expand the portal to full screen or close the **\<your name\> assignments** pane.
 
 7. Select the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
 8. Select **Save**.
@@ -68,9 +69,10 @@ Steps to resolve this issue:
 If a job submission fails with this message even though you have a valid connection to the Azure Quantum service, the storage account may be configured to block public network access. The Azure Quantum service only supports storage accounts via public internet access.
 
 To check the storage account:
+
 - On the quantum workspace page in the Azure Portal, select **Overview** and select the storage account.
 - On the storage account page, in **Security + networking**, select **Networking**.
-- In the **Firewalls and virtual networks** tab in **Public network access**, ensure that **Enable all networks** is selected. 
+- In the **Firewalls and virtual networks** tab in **Public network access**, ensure that **Enable all networks** is selected.
 
 ### Issue: "Failed to compile program" when attempting to submit a Q# program through the CLI
 
@@ -82,7 +84,7 @@ Failed to compile program.
 Command ran in 21.181 seconds (init: 0.457, invoke: 20.724)
 ```
 
-This error occurs when there's a problem with the Q# program that causes the compilation to fail. 
+This error occurs when there's a problem with the Q# program that causes the compilation to fail.
 
 ### Issue: Compiler error "Wrong number of gate parameters"
 
@@ -92,7 +94,7 @@ When submitting a job to Quantinuum from a local Jupyter Notebook or command lin
 Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
 ```
 
-This error occurs when a comma **","** or another non-period character is used as a decimal separator, as is common in many languages. Replace any non-period decimal separators with periods **"."**. 
+This error occurs when a comma **","** or another non-period character is used as a decimal separator, as is common in many languages. Replace any non-period decimal separators with periods **"."**.
 
 ```qsharp
 // replace this line:
@@ -105,7 +107,6 @@ rx(1.5707963267948966) q[0];
 > [!NOTE]
 > This issue does not occur in hosted notebooks in the Azure Quantum portal, only in local development environments. 
 
-
 ### Issue: Compiler error "not available for the current compilation configuration"
 
 When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter the error:
@@ -114,11 +115,7 @@ When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter 
 <function name> not found. Found a matching item `<function name>' that is not available for the current compilation configuration
 ```
 
-This error indicates that the QIR (quantum intermediate representation) target profile is set to **Basic** and the function in question requires the **Unrestricted** target profile. To set the target profile to **Unrestricted**:
-
-1. While in your Q# program in VS Code, select **Q#: QIR base** on the bottom status bar. 
-1. From the options displayed in the top status bar, select **Q#: unrestricted**.
-
+This error indicates that you set the QIR (quantum intermediate representation) target profile to **Basic** and the function in question requires the **Unrestricted** target profile. If you don't specify a target profile type, then the compiler will automatically set the target to **Unrestricted** for you.
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
@@ -129,19 +126,19 @@ A typical scenario for this situation happens if the tab or web browser window i
 
 You can verify that you're running into this role assignment issue by following these steps:
 
-* Navigate to your new quantum workspace in Azure Portal
-* Under **Overview** > **Essentials** > **Storage account**, select on the storage account link
-* In the left navigation bar, select **Access Control (IAM)**
-* Select **Role Assignments**
-* Verify that your workspace appears as a **Contributor**
-* If the workspace doesn't appear as a **Contributor**, you can either:
-  * Create a new workspace and make sure to wait for the workspace creation to be completed before closing the web browser tab or window.
-  * Add the proper role assignment under the storage account     
-    * Access Control (IAM) > Add role assignments
-    * Role > Contributor
-    * Assign access to > User, group, or service principal
-    * Select > [Workspace name]
-    * Save
+- Navigate to your new quantum workspace in Azure Portal
+- Under **Overview** > **Essentials** > **Storage account**, select on the storage account link
+- In the left navigation bar, select **Access Control (IAM)**
+- Select **Role Assignments**
+- Verify that your workspace appears as a **Contributor**
+- If the workspace doesn't appear as a **Contributor**, you can either:
+  - Create a new workspace and make sure to wait for the workspace creation to be completed before closing the web browser tab or window.
+  - Add the proper role assignment under the storage account
+    - Access Control (IAM) > Add role assignments
+    - Role > Contributor
+    - Assign access to > User, group, or service principal
+    - Select > [Workspace name]
+    - Save
 
 ### Issue: Job fails with error code: QIRPreProcessingFailed
 
@@ -160,17 +157,17 @@ pip install --upgrade azure-quantum[qiskit]
 
 ### Issue: Retrieving basic information about failed jobs
 
-After you submit a job to a hardware target, your job may sit in the queue for several hours, or even one or two days, before failing. 
+After you submit a job to a hardware target, your job may sit in the queue for several hours, or even one or two days, before failing.
 
 To retrieve more information about the failure:
 
 - To view the output or the returned error message, use the [`get_results()`](xref:azure.quantum.job.Job) method with the job object:
 
-```python
-job.get_results()
-``` 
+    ```python
+    job.get_results()
+    ```
 
-- In your Azure Portal workspace, select **Operations > Job Management**, and then select the job **Name** to open a detail pane. 
+- In your Azure Portal workspace, select **Operations > Job Management**, and then select the job **Name** to open a detail pane.
 - In your Azure Portal workspace, select **Operations > Providers**. Verify the availability of the target machine. Jobs submitted to targets with a status of **Degraded** may stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
 
 ### Issue: I keep being asked to authenticate when programmatically connecting to my workspace
@@ -183,7 +180,7 @@ You can resolve this issue by running `az login` using the Azure CLI. For more i
 
 ### Issue: After updating the azure-quantum package, I get the error \"ModuleNotFoundError: No module named qiskit.tools\" when monitoring a job
 
-As of Qiskit 1.0, the `qiskit.tools` module, which is required for the `job_monitor()` function, is deprecated. To monitor jobs, use the `wait_for_final_state()` or the `result` functions. 
+As of Qiskit 1.0, the `qiskit.tools` module, which is required for the `job_monitor()` function, is deprecated. To monitor jobs, use the `wait_for_final_state()` or the `result` functions.
 
 ```python
 job = MyTarget.run(circuit, shots=100)
@@ -204,7 +201,7 @@ The following common scenarios may prevent resource estimation jobs to complete.
 To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that _Parallel Synthesis Sequential Pauli Computation (PSSPC)_  is performed on the input program. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
 operation that can be efficiently evaluated classically. Therefore, a quantum program that does not contain T states, for example from T gates or rotation gates, or measurement operations does not require any physical quantum computing resources. For more information about Parallel Synthesis Sequential Pauli Computation, see [arXiv:2211.07629, Appendix D](https://arxiv.org/pdf/2211.07629.pdf#page=25).
 
-```ouput
+```output
 Error message: Algorithm requires at least one T state or measurement to estimate resources
 ```
 
@@ -214,7 +211,7 @@ The _logical_ T state error rate depends on the error budget and the number of T
 required logical T state error rate from physical T gates, which have a _physical_ T gate error rate. Typically, the physical T gate error rate is higher than the required logical T gate error rate. In some scenarios, the
 physical T gate error rate is significantly higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
 
-```ouput
+```output
 Error message: No T factory can be found, because the required logical T state error rate is too low
 ```
 
@@ -230,7 +227,7 @@ There is also the opposite scenario, in which the physical T gate error rate is 
 quality. However, this scenario requires a careful consideration of the impact of transfer units that transfer the physical T states from code distance 1 to the code distance of the algorithm (see [arXiv:2211.07629, Appendix
 C](https://arxiv.org/pdf/2211.07629.pdf#page=21)). In general, in the presence of T factories, the cost of transfer units is negligible.
 
-```ouput
+```output
 Error message: No T factory can be found, because the required logical T state error rate is too high; transfer units are necessary to perform a resource estimation accurately. One possibility to circumvent this problem is to increase the physical T gate error rate of the qubit parameters.
 ```
 
@@ -246,8 +243,8 @@ code and the required logical error rate.
 
 Here is what you could do in such a scenario:
 
-* Increase the error budget, either total or the part for logical errors.
-* Reduce the physical error rates in the qubit parameters.
+- Increase the error budget, either total or the part for logical errors.
+- Reduce the physical error rates in the qubit parameters.
 
 ### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
@@ -255,7 +252,7 @@ The Resource Estimator accepts only one of [`maxDuration`](xref:qsharp.estimator
 
 ### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
 
-This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`. 
+This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`.
 
 To avoid this error, take one of the following actions:
 
@@ -292,15 +289,15 @@ If access was recently granted, you may need to refresh the page. It can sometim
 
 ### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
-This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab doesn't list Rigetti as an available provider. For a list of providers and their availability by country/region, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability). 
+This issue occurs because the provider doesn't support the billing region your subscription is set in. For example, if your subscription is set in Israel, the Providers tab doesn't list Rigetti as an available provider. For a list of providers and their availability by country/region, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability).
 
 ### Issue: Workspace creation or adding/removing providers fails with "ResourceDeploymentFailure" or "ProviderDeploymentFailure"
 
 This issue may include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: \<*Name of the provider*>".
 
-This failure occurs because the tenant did not enable Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases. 
+This failure occurs because the tenant did not enable Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases.
 
-### Issue: Deploying a quantum workspace or deploying a storage account fails with one of the following errors:
+### Issue: Deploying a quantum workspace or deploying a storage account fails with one of the following errors
 
 - **Workspace**: "The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'".
 - **Storage account**: "The template deployment failed because of policy violation".
@@ -311,6 +308,9 @@ To resolve this, work with your subscription administrator to get an exception f
 
 ## Azure Quantum portal
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 ### Issue: Saved notebooks don't load
 
 After selecting **Notebooks** in your workspace, the list of your saved notebooks displays a progress bar but never loads.
@@ -319,6 +319,6 @@ This scenario can happen for three reasons:
 
 1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you see a **404 - Not found** error.
 
-1. If the storage account is not enabled for public internet access. See [Authorization failure](#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation) for more information. 
+1. If the storage account is not enabled for public internet access. See [Authorization failure](#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation) for more information.
 
 1. If the managed identity of the workspace is not a **Contributor** to the storage account. Check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.

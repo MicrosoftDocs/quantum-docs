@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v', target, targets]
+no-loc: ['Q#', '$$v', target, targets, QDK]
 title: Resource Estimator Target Parameters
 uid: microsoft.quantum.overview.resources-estimator
 ---
@@ -570,12 +570,12 @@ The parameter `logical_qubit_specification_first_round_override` can be provided
 
 ## Pareto frontier estimation
 
-When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation. 
+When estimating the resources of an algorithm, it's important to consider the tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation.
 
 The Pareto frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
 
 > [!NOTE]
-> If you run the Resource Estimator in Visual Studio Code using the **Q#: Calculate Resource Estimates** option, the Pareto frontier estimation is enabled by default.
+> If you run the Resource Estimator in Visual Studio Code using the **QDK: Calculate Resource Estimates** option, the Pareto frontier estimation is enabled by default.
 
 If you run the Resource Estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
 

@@ -9,6 +9,7 @@ ms.topic: how-to
 no-loc: ['Q#', '$$v']
 title: Share access to your Azure Quantum workspace
 uid: microsoft.quantum.how-to.share-access-workspace
+ms.custom: sfi-image-nochange
 ---
 
 # Share access to your Azure Quantum workspace

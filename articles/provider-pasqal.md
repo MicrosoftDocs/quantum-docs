@@ -12,8 +12,6 @@ uid: microsoft.quantum.providers.pasqal
 
 # PASQAL provider
 
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
-
 PASQAL's quantum computers control neutral atoms with optical tweezers, using laser light to manipulate quantum registers with up to a hundred qubits.
 
 - Publisher: [PASQAL](https://www.pasqal.com/)
@@ -95,5 +93,4 @@ To see the PASQAL billing plan, visit [Azure Quantum pricing](xref:microsoft.qua
 
 ## Limits and quotas
 
-PASQAL quotas apply to the usage of the emulator and QPU and can be increased with a support ticket. 
-To check your current limits and quotas, navigate to the Credits and quotas section, then select the Quotas tab in your workspace on the [Azure portal](https://portal.azure.com). Refer to [Azure Quantum quotas](xref:microsoft.quantum.quotas) for more information.
+PASQAL quotas apply to the usage of the emulator and QPU and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). Refer to [Azure Quantum quotas](xref:microsoft.quantum.quotas) for more information.

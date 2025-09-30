@@ -22,14 +22,14 @@ In this quickstart, you learn how to use the Azure Quantum Resource Estimator to
 * The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!TIP]
-> You don't need to have an Azure account to run the Resource Estimator. 
+> You don't need to have an Azure account to run the Resource Estimator.
 
 ## Load a Q# sample program
 
-1. Open Visual Studio Code. 
-1. Select **File > New File** and save the file as **RandomNum.qs**. 
+1. Open Visual Studio Code.
+1. Select **File > New File** and save the file as **RandomNum.qs**.
 1. Open **RandomNum.qs** and start typing `sample` to open the dropdown menu of Q# samples.
-1. Select **Random Bit sample** and save the file again. 
+1. Select **Random Bit sample** and save the file again.
 
 ## Run the Resource Estimator
 
@@ -37,7 +37,7 @@ The Resource Estimator offers [six predefined qubit parameters](xref:microsoft.q
 
 In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code.
 
-1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “resource” which should bring up the **Q#: Calculate Resource Estimates** option. Select this option to open the Resource Estimator window.
+1. Select **View -> Command Palette**, or press **Ctrl+Shift+P**, and type “resource” which should bring up the **QDK: Calculate Resource Estimates** option. Select this option to open the Resource Estimator window.
 1. You can select one or more **Qubit parameter + Error Correction code** types to estimate the resources for. For this example, select **qubit_gate_us_e3** and click **OK**.
 1. Specify the **Error budget** or accept the default value 0.001. For this example, leave the default value and press **Enter**.
 1. Press **Enter** to accept the default result name based on the filename, in this case, **RandomNum**.
@@ -82,8 +82,7 @@ The Resource Estimator provides multiple estimates for the same algorithm, each 
     |Physical qubits formula     |                                      2 * `codeDistance` * `codeDistance`|
 
     > [!TIP]
-    > Click **Show detailed rows** to display the description of each output of the report data. 
-    
+    > Click **Show detailed rows** to display the description of each output of the report data.
 
 The full functionality of the Resource Estimator is beyond the scope of this quickstart. For more information, see [Use the Resource Estimator with different SDKs and IDEs](xref:microsoft.quantum.submit-resource-estimation-jobs#resources-estimation-with-q-and-python).
 

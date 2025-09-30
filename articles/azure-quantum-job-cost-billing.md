@@ -8,6 +8,7 @@ ms.subservice: computing
 ms.topic: faq
 title: 'FAQ: Understanding Job Costs and Billing'
 uid: microsoft.quantum.azure.job-cost-billing
+ms.custom: sfi-image-nochange
 
 #customer intent: As a quantum developer, I want to understand how to view the job cost report, and how to manage my invoices so that I can track my spending and manage my budget.
 ---
@@ -23,8 +24,6 @@ Azure Quantum makes solutions available from Microsoft and from our partner comp
 |Plan|Description|
 |---|---|
 |Billing plans| Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
-
-[!INCLUDE [Azure Quantum credits banner](includes/azure-quantum-credits.md)]
 
 ## How can I modify the usage plan for my Azure Quantum workspace?
 

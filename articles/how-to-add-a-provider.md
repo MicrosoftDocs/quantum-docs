@@ -13,8 +13,8 @@ uid: microsoft.quantum.add-provider
 # Add or remove a provider
 
 Providers are usually added to an Azure Quantum workspace when the workspace is created. However, additional providers can be added (or existing providers removed) anytime after that. If you submit a quantum job to a provider that is not yet in your workspace, you will receive an error message prompting you to install the necessary provider.
- 
-To add a provider to an existing workspace: 
+
+To add a provider to an existing workspace:
 
 1. Sign in to the [Azure portal](https://portal.azure.com), using the credentials for your Azure subscription.
 2. Select **Home** and navigate to your Azure Quantum workspace.

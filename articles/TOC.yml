@@ -37,6 +37,10 @@
         href: bulk-add-users-to-a-workspace.md
       - name: Share access to your Azure Quantum workspace
         href: how-to-share-access-quantum-workspace.md
+      - name: Migrate your Azure Quantum job data
+        href: migration-guide.md
+      - name: Download your hosted Jupyter notebooks
+        href: notebook-portal-download.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Work with Azure Quantum using the Azure CLI
@@ -101,8 +105,14 @@
       href: how-to-work-with-qsharp-projects.md
     - name: Debug and test your Q# code
       href: testing-debugging.md
+    - name: Use VS Code agent mode in your Q# projects
+      href: qdk-vscode-agent-setup.md
     - name: Visualize Q# circuit diagrams
       href: how-to-visualize-circuits.md
+    - name: Create circuits with the Circuit Editor
+      href: qdk-circuit-editor.md
+    - name: Write and run OpenQASM code in the Quantum Development Kit
+      href: qdk-openqasm-integration.md
     - name: Perform long-running experiments
       href: how-to-long-running-experiments.md
     - name: Adapt Qiskit samples to Azure Quantum

@@ -33,7 +33,6 @@ In this tutorial, you:
     - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
     - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
-
 ## Define the problem
 
 Grover's algorithm is one of the most famous algorithms in quantum computing. The type of problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the *search problem*.
@@ -419,12 +418,11 @@ You can also submit your program to the free [Quantinuum Emulator](xref:microsof
     }
     ```
 
-1. Before running the program, ensure the target profile is set to **Unrestricted**. Select **View -> Command Palette**, search for QIR, select **Q#: Set the Azure Quantum QIR target profile**, and then select **Q#: unrestricted**. 
-1. To run your program, select **Run** from the list of commands above the `Main` operation, or press **Ctrl+F5**. By default, the compiler runs the `Main` operation or function on the default simulator.
-1. Your output will appear in the debug console in the terminal.
+1. To run your program, choose **Run** from the list of commands above the `Main` operation, or press **Ctrl + F5**. By default, the compiler runs the `Main` operation or function on the default simulator.
+1. Your output appears in the debug console in the terminal.
 
 > [!NOTE]
-> If the target profile is not set to **Unrestricted**, you will get an error when you run the program.
+> If the QIR target profile isn't set to **Unrestricted**, then you get an error when you run the program. For this program, the compiler automatically sets the target profile to **Unrestricted** unless you set the profile yourself.
 
 ***
 

@@ -18,6 +18,9 @@ Learn how to submit a Qiskit quantum circuit using the `azure-quantum` Python pa
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
+> [!WARNING]
+> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
+
 ::: zone pivot="platform-local"
 
 [!INCLUDE [local-procedure](includes/quickstart-qiskit-include-local.md)]
@@ -35,7 +38,6 @@ For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.cir
 [!INCLUDE [local-simulator-procedure](includes/quickstart-qiskit-include-simulator.md)]
 
 ::: zone-end
-
 
 ## Next steps
 

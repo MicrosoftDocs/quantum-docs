@@ -19,20 +19,20 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
 
 ## What is an intermediate representation?
 
-A common pattern in classical compilers is to start by compiling the source language into an intermediate representation. An intermediate representation is – as its name indicates – an intermediary step in the conversion of instructions from source code to machine language. 
+A common pattern in classical compilers is to start by compiling the source language into an intermediate representation. An intermediate representation is – as its name indicates – an intermediary step in the conversion of instructions from source code to machine language.
 
 An intermediate representation acts as an abstract representation of a program. All programs, irrespective of the language they are written in, are translated into this intermediate representation by a so-called front-end compiler, while a back-end component is responsible for translating that intermediate representation into a machine representation. The intermediate representation allows thus to decouple source languages from hardware platforms and makes it possible to build a compiler in a modular way, where each new language only requires a new front end to be supported on all platforms for which a back end is available.
 
-The intermediate representation is typically designed to allow many different source languages to be represented. Moreover, at this intermediate level it is also possible to perform some optimization and circuit rearrangement that makes the final implementation more efficient. 
+The intermediate representation is typically designed to allow many different source languages to be represented. Moreover, at this intermediate level it is also possible to perform some optimization and circuit rearrangement that makes the final implementation more efficient.
 Once the final target execution platform is known, the intermediate representation can be compiled to actual executable code.
 
 This approach allows many source languages to share a common set of optimizers and executable generators. It also makes it easy to compile a single source language for many different targets. The intermediate representation provides a common platform that can be shared across many sources and targets and allows a great deal of reuse in compiler machinery.
 
 ## What is Quantum Intermediate Representation?
 
-QIR is an intermediate representation for quantum programs developed by the [QIR Alliance](http://qir-alliance.org/), to which Microsoft belongs. It provides a common interface that supports many languages and target platforms for quantum computation. You can think of QIR as a universal mid-layer language that enables communication between high-level languages and machines. While Q# compiles to QIR, QIR isn't specific to Q#: any quantum programming framework can leverage QIR to represent a quantum program. It is hardware-agnostic, which means that it doesn't specify a quantum instruction or gate set, leaving that to the target computing environment. 
+QIR is an intermediate representation for quantum programs developed by the [QIR Alliance](http://qir-alliance.org/), to which Microsoft belongs. It provides a common interface that supports many languages and target platforms for quantum computation. You can think of QIR as a universal mid-layer language that enables communication between high-level languages and machines. While Q# compiles to QIR, QIR isn't specific to Q#. Any quantum programming framework can leverage QIR to represent a quantum program. It is hardware-agnostic, which means that it doesn't specify a quantum instruction or gate set, leaving that to the target computing environment.
 
-QIR is based on the popular open-source [LLVM](https://llvm.org/) classical compiler. LLVM  is a collection of modular and reusable compiler and toolchain technologies that has been adapted by a wide set of languages. QIR specifies a set of rules for representing quantum constructs in LLVM, however it doesn't require any extensions or modifications to LLVM. 
+QIR is based on the popular open-source [LLVM](https://llvm.org/) classical compiler. LLVM  is a collection of modular and reusable compiler and toolchain technologies that has been adapted by a wide set of languages. QIR specifies a set of rules for representing quantum constructs in LLVM, however it doesn't require any extensions or modifications to LLVM.
 
 The fact that LLVM is the underlying toolchain means that QIR is naturally able to process both classical and quantum logic. This feature is essential for hybrid quantum–classical algorithms, which have become increasingly important for applications of quantum computing. In addition, it allows you to leverage compilation and optimization tools from the classical computing industry, and, therefore, to reduce the cost of writing translations.
 
