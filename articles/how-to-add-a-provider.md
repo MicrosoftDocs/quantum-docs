@@ -12,9 +12,6 @@ uid: microsoft.quantum.add-provider
 
 # Add or remove a provider
 
-> [!WARNING]
-> On September 30, 2025, the Azure Quantum service will be available in only the following regions: East US, West US, North Europe, and West Europe. Create new Quantum workspaces in one of these regions. If your existing workspace isn't in one of these regions, then see [Migrate your Azure Quantum job data](xref:microsoft.quantum.how-to.migrate-quantum-workspace-new-region).
-
 Providers are usually added to an Azure Quantum workspace when the workspace is created. However, additional providers can be added (or existing providers removed) anytime after that. If you submit a quantum job to a provider that is not yet in your workspace, you will receive an error message prompting you to install the necessary provider.
 
 To add a provider to an existing workspace:

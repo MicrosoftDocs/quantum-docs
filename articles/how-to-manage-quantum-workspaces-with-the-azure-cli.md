@@ -54,9 +54,6 @@ To use the Azure Quantum service, you need:
 
 ## Create an Azure Quantum workspace
 
-> [!WARNING]
-> On September 30, 2025, the Azure Quantum service will be available in only the following regions: East US, West US, North Europe, and West Europe. Create new Quantum workspaces in one of these regions. If your existing workspace isn't in one of these regions, then see [Migrate your Azure Quantum job data](xref:microsoft.quantum.how-to.migrate-quantum-workspace-new-region).
-
 To create a new Azure Quantum workspace, you need to know:
 
 - The location or Azure region name to create the resource. You can use the [list of regions and their resource manager codes](https://github.com/Azure/azure-extensions-cli#regions) supported by the Azure CLI tool, for example, **westus**.
