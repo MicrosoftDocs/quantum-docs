@@ -48,9 +48,6 @@ If you have any questions or run into any issue using Azure Quantum, you can con
 
 ## Create the workspace
 
-> [!WARNING]
-> On September 30, 2025, the Azure Quantum service will be available in only the following regions: East US, West US, North Europe, and West Europe. Create new Quantum workspaces in one of these regions. If your existing workspace isn't in one of these regions, then see [Migrate your Azure Quantum job data](xref:microsoft.quantum.how-to.migrate-quantum-workspace-new-region).
-
 To create an Azure Quantum workspace, follow these steps.
 
 1. Sign in to the [Azure portal](https://portal.azure.com), using the credentials for your Azure subscription.
