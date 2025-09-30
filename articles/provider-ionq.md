@@ -75,12 +75,12 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 IonQ Aria is available through Azure Quantum Credits plan and Pay As You Go plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
-## IonQ Forte 1 quantum computer
+## IonQ Forte quantum computer
 
-IonQ Forte 1 is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte 1 (ionq.com)](https://ionq.com/quantum-systems/forte).
+IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte (ionq.com)](https://ionq.com/quantum-systems/forte).
 
 > [!IMPORTANT]
-> *Debiasing* is enabled on the Forte 1 system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+> *Debiasing* is enabled on the Forte system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
@@ -91,14 +91,14 @@ IonQ Forte 1 is IonQ's highest-performing, commercially available trapped-ion qu
 |----------------|----------|----------|-------------|
 | `shots`   | int    | No | Number of experimental shots.  |
 
-## IonQ Forte Enterprise 1 quantum computer
+## IonQ Forte Enterprise quantum computer
 
-IonQ Forte Enterprise 1 is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte Enterprise 1 (ionq.com)](https://ionq.com/quantum-systems/forte-enterprise).
+IonQ Forte Enterprise is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte Enterprise (ionq.com)](https://ionq.com/quantum-systems/forte-enterprise).
 
-The Forte Enterprise 1 is a version of the Forte class systems that has been adapted and ruggedized for deployment in a standard data center environment, making it more suitable for enterprise-level, production-oriented tasks. The base quantum computing hardware and performance are the same. The primary difference between the IonQ Forte 1 and the IonQ Forte Enterprise 1 lies in their deployment and intended use cases, not their core performance specifications. While both systems boast the same high-performance metrics, the Forte Enterprise 1 is specifically designed for integration into a data center environment.
+The Forte Enterprise is a version of the Forte class systems that has been adapted and ruggedized for deployment in a standard data center environment, making it more suitable for enterprise-level, production-oriented tasks. The base quantum computing hardware and performance are the same. The primary difference between the IonQ Forte and the IonQ Forte Enterprise lies in their deployment and intended use cases, not their core performance specifications. While both systems boast the same high-performance metrics, the Forte Enterprise is specifically designed for integration into a data center environment.
 
 > [!IMPORTANT]
-> *Debiasing* is enabled on the Forte Enterprise 1 system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+> *Debiasing* is enabled on the Forte Enterprise system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
