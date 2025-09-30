@@ -20,13 +20,12 @@ IonQ’s quantum computers perform calculations by manipulating the hyperfine en
 
 The following targets are available from this provider:
 
-| Target name                                                      | Target ID                   | Number of qubits | Description                                           |
-| ---------------------------------------------------------------- | --------------------------- | ---------------- | ----------------------------------------------------- |
-| [Quantum simulator](#quantum-simulator)                          | ionq.simulator              | 29 qubits        | IonQ's cloud-based idealized simulator. Free of cost. |
-| [IonQ Aria 1](#ionq-aria-quantum-computer)                       | ionq.qpu.aria-1             | 25 qubits        | IonQ's Aria trapped-ion quantum computer.             |
-| [IonQ Aria 2](#ionq-aria-quantum-computer)                       | ionq.qpu.aria-2             | 25 qubits        | IonQ's Aria trapped-ion quantum computer.             |
-| [IonQ Forte](#ionq-forte-quantum-computer)                       | ionq.qpu.forte-1            | 36 qubits        | IonQ's Forte trapped-ion quantum computer.            |
-| [IonQ Forte Enterprise 1](#ionq-forte-enterprise-quantum-computer) | ionq.qpu.forte-enterprise-1 | 36 qubits        | IonQ's Forte Enterprise trapped-ion quantum computer. |
+| Target name                                                        | Target ID                   | Number of qubits | Description                                             |
+| ------------------------------------------------------------------ | --------------------------- | ---------------- | ------------------------------------------------------- |
+| [Quantum simulator](#quantum-simulator)                            | ionq.simulator              | 29 qubits        | IonQ's cloud-based idealized simulator. Free of cost.   |
+| [IonQ Aria 1](#ionq-aria-quantum-computer)                         | ionq.qpu.aria-1             | 25 qubits        | IonQ's Aria 1 trapped-ion quantum computer.             |
+| [IonQ Forte 1](#ionq-forte-quantum-computer)                       | ionq.qpu.forte-1            | 36 qubits        | IonQ's Forte 1 trapped-ion quantum computer.            |
+| [IonQ Forte Enterprise 1](#ionq-forte-enterprise-quantum-computer) | ionq.qpu.forte-enterprise-1 | 36 qubits        | IonQ's Forte Enterprise 1 trapped-ion quantum computer. |
 
 IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
 
@@ -48,7 +47,7 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
-- Target ID: `ionq.qpu.aria-1`, `ionq.qpu.aria-2`
+- Target ID: `ionq.qpu.aria-1`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
@@ -76,12 +75,12 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 IonQ Aria is available through Azure Quantum Credits plan and Pay As You Go plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
-## IonQ Forte quantum computer
+## IonQ Forte 1 quantum computer
 
-IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte (ionq.com)](https://ionq.com/quantum-systems/forte).
+IonQ Forte 1 is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte 1 (ionq.com)](https://ionq.com/quantum-systems/forte).
 
 > [!IMPORTANT]
-> *Debiasing* is enabled on the Forte system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+> *Debiasing* is enabled on the Forte 1 system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
@@ -92,14 +91,14 @@ IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quan
 |----------------|----------|----------|-------------|
 | `shots`   | int    | No | Number of experimental shots.  |
 
-## IonQ Forte Enterprise quantum computer
+## IonQ Forte Enterprise 1 quantum computer
 
-IonQ Forte Enterprise is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte Enterprise (ionq.com)](https://ionq.com/quantum-systems/forte-enterprise).
+IonQ Forte Enterprise 1 is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte Enterprise 1 (ionq.com)](https://ionq.com/quantum-systems/forte-enterprise).
 
-the Forte Enterprise is a version of the Forte that has been adapted and ruggedized for deployment in a standard data center environment, making it more suitable for enterprise-level, production-oriented tasks. The base quantum computing hardware and performance are the same. The primary difference between the IonQ Forte and the IonQ Forte Enterprise lies in their deployment and intended use cases, not their core performance specifications. While both systems boast the same high-performance metrics, the Forte Enterprise is specifically designed for integration into a data center environment.
+The Forte Enterprise 1 is a version of the Forte class systems that has been adapted and ruggedized for deployment in a standard data center environment, making it more suitable for enterprise-level, production-oriented tasks. The base quantum computing hardware and performance are the same. The primary difference between the IonQ Forte 1 and the IonQ Forte Enterprise 1 lies in their deployment and intended use cases, not their core performance specifications. While both systems boast the same high-performance metrics, the Forte Enterprise 1 is specifically designed for integration into a data center environment.
 
 > [!IMPORTANT]
-> *Debiasing* is enabled on the Forte Enterprise system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+> *Debiasing* is enabled on the Forte Enterprise 1 system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
