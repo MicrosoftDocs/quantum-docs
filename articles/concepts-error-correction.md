@@ -70,7 +70,7 @@ There are many different types of QEC codes, each with its own properties and ad
 The three-qubit error correction code is a simple repetition code that can detect and correct one bit flip error. It encodes a single logical qubit into three physical qubits by repeating the qubit three times.
 
 > [!TIP]
-> Check out the [Q# code sample for the three-qubit code](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs).
+> Check out the [Q# code sample for the three-qubit code](https://github.com/microsoft/qdk/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs).
 
 Imagine you want to send an arbitrary single qubit $\ket{\phi}= \alpha\ket{0} + \beta \ket{1}$. To avoid errors, you encode the basis states $\ket{0}$ and $\ket{1}$ into a joint state of three qubits. The two logical basis states are $\ket{0_L} = \ket{000}$ and $\ket{1_L} = \ket{111}$.
 
