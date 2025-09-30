@@ -86,7 +86,7 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
     )
     ```
 
-1. Set the `target` parameter to the Quantinuum target you want to use. For example, to use the `quantinuum.sim.h1-1e` target: 
+1. Set the `target` parameter to the Quantinuum target you want to use. For example, to use the `quantinuum.sim.h1-1e` target:
 
     ```python
     target = workspace.get_targets("quantinuum.sim.h1-1e")
@@ -112,7 +112,7 @@ The following table lists the supported features for hybrid quantum computing wi
 | Qubit reuse | Supported |
 | Real-time classical compute| 64-bit signed integer arithmetic <br>Utilizes classical register resources |
 
-The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running hybrid quantum jobs, you'll receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qsharp/wiki/QIR).
+The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running hybrid quantum jobs, you'll receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qdk/wiki/QIR).
 
 > [!NOTE]
 > You need to select the appropriate **Adaptive RI** target profile to obtain appropriate feedback when using Q# features that the target doesn't support.
@@ -241,7 +241,7 @@ After a successful run on the emulator:
 
 ## Hybrid quantum computing samples
 
-The following samples can be found in [Q# code samples repository](https://github.com/microsoft/qsharp/blob/main/samples/). They demonstrate the current feature set for hybrid quantum computing.
+The following samples can be found in [Q# code samples repository](https://github.com/microsoft/qdk/blob/main/samples/). They demonstrate the current feature set for hybrid quantum computing.
 
 ### Three-qubit repetition code
 
@@ -249,7 +249,7 @@ This sample demonstrates how to create a [three-qubit repetition code](xref:micr
 
 It leverages integrated hybrid computing features to count the number of times error correction was performed while the state of a logical qubit register is coherent.
 
-You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs). 
+You can find the code sample [here](https://github.com/microsoft/qdk/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs).
 
 ### Iterative phase estimation
 
@@ -257,7 +257,7 @@ This sample program demonstrates an iterative phase estimation within Q#. It use
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
-You can find the code sample [here](https://github.com/microsoft/qsharp/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs).
+You can find the code sample [here](https://github.com/microsoft/qdk/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs).
 
 > [!NOTE]
 > This sample code was written by members of [KPMG](https://kpmg.com/xx/en/what-we-do/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It demonstrates expanded capabilities of :::no-loc text="Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.

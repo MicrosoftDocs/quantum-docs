@@ -72,7 +72,7 @@ The QDK includes two Python packages, `qsharp` and `qsharp-widgets`, that let yo
 
 ### Prerequisites
 
-To run OpenQASM code in a Jupyter notebook with VS Code, set up VS Code with extensions for the QDK, Python, and Jupyter Notebook. For more information on how to install these extensions and run Jupyter notebooks with VS Code, see [Tutorial: Q# in Jupyter Notebooks and VS Code](https://github.com/microsoft/qsharp/wiki/Working-with-Jupyter-Notebooks#tutorial-q-in-jupyter-notebooks-and-vs-code).
+To run OpenQASM code in a Jupyter notebook with VS Code, set up VS Code with extensions for the QDK, Python, and Jupyter Notebook. For more information on how to install these extensions and run Jupyter notebooks with VS Code, see [Tutorial: Q# in Jupyter Notebooks and VS Code](https://github.com/microsoft/qdk/wiki/Working-with-Jupyter-Notebooks#tutorial-q-in-jupyter-notebooks-and-vs-code).
 
 ### Run OpenQASM directly in a Python notebook cell
 
@@ -196,4 +196,4 @@ print(bound_compilation)
 
 Support for OpenQASM in the QDK is ongoing.
 
-For a list of OpenQASM language limitations and features that are under development in the QDK, see [Unsupported or unimplemented OpenQASM language features](https://github.com/microsoft/qsharp/wiki/OpenQASM#unsupported-or-unimplemented-openqasm-language-features).
+For a list of OpenQASM language limitations and features that are under development in the QDK, see [Unsupported or unimplemented OpenQASM language features](https://github.com/microsoft/qdk/wiki/OpenQASM#unsupported-or-unimplemented-openqasm-language-features).
