@@ -13,7 +13,7 @@ uid: microsoft.quantum.providers-pricing
 #customer intent: As a quantum developer, I want to understand the pricing plans for Azure Quantum providers, so that I can choose the best plan for my needs.
 ---
 
-# Pricing plans for Azure Quantum providers
+# Pricing plans for Azure Quantum providers 
 
 In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information below is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
 

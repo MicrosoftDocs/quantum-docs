@@ -23,7 +23,7 @@ However, there are however some situations where the Azure Support team will nee
 
 ## Frequently asked questions
 
-### Q: What is the support policy for using IonQ offerings through Azure Quantum?
+### Q: What is the support policy for using IonQ offerings through Azure Quantum? 
 
 Microsoft will provide support for the Azure platform and the Azure Quantum service only. Support for IonQ hardware, simulators, and other products and targets will be provided directly by IonQ. For more information about Azure support, see [Azure support plans](https://azure.microsoft.com/support/plans/).
 For information about IonQ support, please see the [IonQ Support website](http://support.ionq.com/).

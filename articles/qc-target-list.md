@@ -55,7 +55,7 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 | [Rigetti Ankaa-3](xref:microsoft.quantum.providers.rigetti#ankaa-3)                                   | 84 qubits        |     |
 | [Rigetti Cepheus-1-36Q](xref:microsoft.quantum.providers.rigetti#cepheus-1-36q)                       | 36 qubits        |     |
 
-## Coming soon to Azure Quantum
+## Coming soon to Azure Quantum 
 
 Azure Quantum is a platform for innovation. As the quantum hardware partners across the Azure Quantum ecosystem keep growing, you can explore these upcoming quantum hardware solutions.
 
