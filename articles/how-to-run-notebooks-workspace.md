@@ -125,9 +125,6 @@ Jupyter Notebooks are stored in an [Azure Storage](/azure/storage/) account link
 
 ## Limitations
 
-> [!WARNING]
-> On September 30, 2025, the Azure Quantum service will be available in only the following regions: East US, West US, North Europe, and West Europe. Create new Quantum workspaces in one of these regions. If your existing workspace isn't in one of these regions, then see [Migrate your Azure Quantum job data](xref:microsoft.quantum.how-to.migrate-quantum-workspace-new-region).
-
 The following are limitations with Jupyter Notebooks in an Azure Quantum workspace.
 
 - As it is free, the Jupyter Notebook instance will live up to a maximum of 12 hours (after that time, your instance will be deleted or recreated, and you will need to reinstall any custom packages).
