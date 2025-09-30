@@ -18,7 +18,7 @@ As with classical programming, it is essential to be able to check that quantum 
 
 ## Debug your Q# program
 
-The Azure Quantum Development Kit (QDK) Visual Studio Code extension includes a debugger for Q# programs. You can set breakpoints, step through your code and into each function or operation, and track not only the local variables, but the quantum state of the qubits as well. 
+The Azure Quantum Development Kit (QDK) Visual Studio Code extension includes a debugger for Q# programs. You can set breakpoints, step through your code and into each function or operation, and track not only the local variables, but the quantum state of the qubits as well.
 
 > [!NOTE]
 > The VS Code debugger only works with Q# (.qs) files and doesn't work with Q# cells in a Jupyter Notebook. For testing Jupyter Notebook cells, see [Test your code](#test-your-code).
@@ -40,10 +40,10 @@ operation Main() : Result {
 }
 ```
 
-1. Set a breakpoint on the line `H(qubit)` by clicking to the left of the line number. 
+1. Set a breakpoint on the line `H(qubit)` by clicking to the left of the line number.
 1. Select the debugger icon to open the debugger pane and select **Run and Debug**. The debugger controls are displayed at the top of the screen.
-1. Select F5 to start debugging and continue to the breakpoint. In the debugger **Variables** pane, expand the **Quantum State** category. You can see that the qubit has been initialized in the |0> state. 
-1. Step into (F11) the `H` operation and the source code for the `H` operation displays. As you step through the operation, note the quantum value changes as the `H` operation puts the qubit into superposition. 
+1. Select F5 to start debugging and continue to the breakpoint. In the debugger **Variables** pane, expand the **Quantum State** category. You can see that the qubit has been initialized in the |0> state.
+1. Step into (F11) the `H` operation and the source code for the `H` operation displays. As you step through the operation, note the quantum value changes as the `H` operation puts the qubit into superposition.
 1. As you step over (F10) the `M` operation, the quantum value is resolved to either |0> or |1> as a result of the measurement, and the value of the classical variable `result` is displayed.
 1. As you step over the `Reset` operation, the qubit is reset to |0>.
 
@@ -51,10 +51,9 @@ operation Main() : Result {
 
 Although the VS Code Q# debugger is not available for Q# cells in a Jupyter Notebook, the Azure QDK provides some expressions and functions that can help troubleshoot your code.
 
-
 ### Fail expression
 
-The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression) expression ends the computation entirely, corresponding to a fatal error that stops the program. 
+The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression) expression ends the computation entirely, corresponding to a fatal error that stops the program.
 
 Consider this simple example that validates a parameter value:
 
@@ -91,11 +90,11 @@ Qsc.Eval.UserFail
    ╰────
 ```
 
-Here, the `fail` expression prevents the program from continuing to run with invalid data. 
+Here, the `fail` expression prevents the program from continuing to run with invalid data.
 
 ### Fact() function
 
-You can implement the same behavior as the previous example using the `Fact()` function from the `Microsoft.Quantum.Diagnostics` namespace. The `Fact()` function evaluates a given classical condition and throws an exception if it is false. 
+You can implement the same behavior as the previous example using the `Fact()` function from the `Microsoft.Quantum.Diagnostics` namespace. The `Fact()` function evaluates a given classical condition and throws an exception if it is false.
 
 ```python
 import qsharp 
@@ -129,12 +128,10 @@ Qsc.Eval.UserFail
 
 ### DumpMachine() function
 
-
-
 `DumpMachine()` is a Q# function that allows you to dump information about the current state of the target machine to the console and continue to run your program.
 
 > [!NOTE]
-> With the release of the Azure Quantum Development Kit, the `DumpMachine()` function now uses big-endian ordering for its output. 
+> With the release of the Azure Quantum Development Kit, the `DumpMachine()` function now uses big-endian ordering for its output.
 
 ```python
 import qsharp
@@ -198,7 +195,6 @@ Basis State
 |11⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
 ```
 
-
 ```qsharp
 %%qsharp
 R1Frac(1, 2, qubits[0]);
@@ -256,7 +252,7 @@ dump[3]
 
 ### CheckZero() and CheckAllZero() operations
 
-`CheckZero()` and `CheckAllZero()` are Q# operations that can check whether the current state of a qubit or qubit array is $\ket{0}$. `CheckZero()` returns `true` if the qubit is in the $\ket{0}$ state, and `false` if it is in any other state. `CheckAllZero()` returns `true` if all qubits in the array are in the $\ket{0}$ state, and `false` if the qubits are in any other state. 
+`CheckZero()` and `CheckAllZero()` are Q# operations that can check whether the current state of a qubit or qubit array is $\ket{0}$. `CheckZero()` returns `true` if the qubit is in the $\ket{0}$ state, and `false` if it is in any other state. `CheckAllZero()` returns `true` if all qubits in the array are in the $\ket{0}$ state, and `false` if the qubits are in any other state.
 
 ```qsharp
 import Microsoft.Quantum.Diagnostics.*;
@@ -282,7 +278,7 @@ operation Main() : Unit {
 
 ### dump_operation() function
 
-`dump_operation` is a Python function that takes an operation, or operation definition, and a number of qubits to use, and returns a square matrix of complex numbers representing the output of the operation. 
+`dump_operation` is a Python function that takes an operation, or operation definition, and a number of qubits to use, and returns a square matrix of complex numbers representing the output of the operation.
 
 You import `dump_operation` from `qsharp.utils`.
 
@@ -331,8 +327,7 @@ print(res)
 [[(1+0j), 0j, 0j, 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, (0.968912+0j), (-0.247404+0j)], [0j, 0j, (0.247404+0j), (0.968912+0j)]]
 ```
 
-
-The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation. 
+The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation.
 
 ```python
 qsharp.eval("operation ApplySWAP(qs : Qubit[]) : Unit is Ctl + Adj { SWAP(qs[0], qs[1]); }")
@@ -348,8 +343,4 @@ print(res)
 [[(1+0j), 0j, 0j, 0j], [0j, 0j, (1+0j), 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, 0j, (1+0j)]]
 ```
 
-More examples of testing operations using `dump_operation()` can be found on the samples page [Testing Operations in the QDK](https://github.com/microsoft/qsharp/tree/main/samples/testing/operations).
-
-
-
-
+More examples of testing operations using `dump_operation()` can be found on the samples page [Testing Operations in the QDK](https://github.com/microsoft/qdk/tree/main/samples/testing/operations).

@@ -14,16 +14,17 @@ uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
 
-In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). 
+In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
 In this tutorial, you will:
 
 > [!div class="checklist"]
-> * Clone a sample repository from GitHub.
-> * Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
-> * Run resource estimation for a large-scale problem, which is a double-factorized chemistry sample.
+>
+> - Clone a sample repository from GitHub.
+> - Use FCIDUMP files as argument parameters for chemical modelling and simulation applications.
+> - Run resource estimation for a large-scale problem, which is a double-factorized chemistry sample.
 
-## Prerequisites 
+## Prerequisites
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
@@ -34,24 +35,24 @@ In this tutorial, you will:
     ```
 
 > [!TIP]
-> You don't need to have an Azure account to run the Resource Estimator. 
+> You don't need to have an Azure account to run the Resource Estimator.
 
 ## Describe the problem
 
 In this tutorial, you evaluate the physical resource estimates of the qubitization algorithm described in [Phys. Rev. Research 3, 033055 (2021)](https://doi.org/10.1103/PhysRevResearch.3.033055) to calculate the energy of a user provided Hamiltonian to chemical accuracy of 1 mHa.
 
-The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in provided FCIDUMP (full configuration interaction) files that are available via an HTTPS URI. 
+The quantum algorithm that calculates the energy of the Hamiltonian is based on *double-factorized qubitization*. The Hamiltonian is described in terms of one- and two-electron integrals in provided FCIDUMP (full configuration interaction) files that are available via an HTTPS URI.
 
 The *qubitization* approach is based on quantum phase estimation, but instead of constructing the standard $U = \\exp{(-i H/\\alpha)}$ from the Hamiltonian matrix $H$, one takes $U = \\exp{(-i \\sin^{-1} (H/\\alpha))}$, which can typically be implemented with fewer resources. Using *double-factorization*, $H$ is represented compactly through a combination of a judicious choice of orbitals and compression.
 
 ## Load the sample in Visual Studio Code
 
-The code for this tutorial can be found in the [Q# sample repository](https://github.com/microsoft/qsharp), under [estimation/df-chemistry](https://github.com/microsoft/qsharp/tree/main/samples/estimation/df-chemistry). We recommend that you clone the repository in your local machine to run the sample. 
+The code for this tutorial can be found in the [Q# sample repository](https://github.com/microsoft/qdk), under [estimation/df-chemistry](https://github.com/microsoft/qdk/tree/main/samples/estimation/df-chemistry). We recommend that you clone the repository in your local machine to run the sample.
 
 To clone the repository, run the following command from your terminal:
 
 ```bash
-git clone https://github.com/microsoft/qsharp.git
+git clone https://github.com/microsoft/qdk.git
 ```
 
 ## Select and pass an FCIDUMP file
@@ -126,7 +127,7 @@ options:
                                   "qecScheme": {"name": "floquet_code"}})
     ```
 
-## Why chemistry applications of quantum computing are important? 
+## Why chemistry applications of quantum computing are important?
 
 This tutorial represents a first step to integrate resource estimation of quantum solutions to electronic structure problems. One of the most important applications of scaled quantum computers is solving quantum chemistry problems. The simulation of complex quantum mechanical systems has the potential to unlock breakthroughs in areas such as carbon capture, food insecurity, and designing better fuels and materials.  
 
