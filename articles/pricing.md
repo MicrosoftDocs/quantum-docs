@@ -34,22 +34,6 @@ where:
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
 IonQ offers a **pay-as-you-go** plan and a **monthly subscription** plan with access to the quantum simulator, the Aria 1 25-qubit quantum computers, and IonQ Forte 1 and Forte Enterprise 1 36-qubit quantum computers.
-
-### [Azure Quantum Credits](#tab/tabid-AQcredits)
-
-Azure Quantum Credits consumption is based on a resource-usage model. The cost of use is deducted from your Azure Quantum Credits based on the number of Azure Quantum Tokens (AQTs). To learn more about credits, see [FAQ: Azure Quantum Credits](xref:microsoft.quantum.credits).
-
-| Includes access to      | Pricing                                                                                                                                                                                                                                                                                                            |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| IonQ simulator          | Free of charge                                                                                                                                                                                                                                                                                                     |
-| IonQ Aria 1             | <ul><li>USD0.000220 / 1-qubit-gate shot (deducted from your credits)</li><li> USD0.000975 / 2-qubit-gate shot (deducted from your credits)</li><li>Minimum price per program execution:<ul><li>USD97.50 - default setting, error mitigation is on</li><li> USD12.4166 if error mitigation is off</li></ul></ul>    |
-| IonQ Forte 1            | <ul><li>USD0.0001645 / 1-qubit-gate shot (deducted from your credits)</li><li> USD0.001121 / 2-qubit-gate shot (deducted from your credits)</li><li>Minimum price per program execution:<ul><li>USD168.195 - default setting, error mitigation is on</li><li> USD25.7899 if error mitigation is off</li></ul></ul> |
-| IonQ Forte Enterprise 1 | <ul><li>USD0.0001645 / 1-qubit-gate shot (deducted from your credits)</li><li> USD0.001121 / 2-qubit-gate shot (deducted from your credits)</li><li>Minimum price per program execution:<ul><li>USD168.195 - default setting, error mitigation is on</li><li> USD25.7899 if error mitigation is off</li></ul></ul> |
-
-
-> [!IMPORTANT]
-> There are no costs or charges for using simulator. However, there may be some small storage costs, as the input and output of your jobs are stored in a storage account that you pay for. Job data is typically <1MB per job.
-> For more details, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
  
 ### [Pay As You Go](#tab/tabid-paygo)
 
