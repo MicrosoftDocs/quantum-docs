@@ -120,7 +120,7 @@ where:
 
 To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
 
-Quantinuum provides four subscription plans: **Standard**, **Premium**, **Standard H1 + H2**, and **Premium H1 + H2**. Quantinuum also offers a **Pay as You Go** offering.
+Quantinuum provides two subscription plans: **Standard** and **Premium**. Quantinuum also offers a **Pay as You Go** offering.
 
 ### [Subscriptions](#tab/tabid-H2)
 
@@ -135,11 +135,10 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Pay as You Go](#tab/tabid-PAYG)
 
-The Pay as You Go plan provides queued access to either the H1 series quantum computers or H2 series quantum computers and is charged per HQC usage. To get additional information on Pay as You Go pricing please contact Quantinuum sales at Sales@Quantinuum.com.
+The Pay as You Go plan provides queued access to the H2 series quantum computers and is charged per HQC usage. To get additional information on Pay as You Go pricing please contact Quantinuum sales at Sales@Quantinuum.com.
 
 |PAYG Pricing| Includes access to |
 |---|---|
-|**System Model H1** Per HQC usage + Azure infrastructure costs | <ul><li>System Model H1 quantum computers and emulator|
 |**System Model H2** Per HQC usage + Azure infrastructure costs | <ul><li>System Model H2 quantum computers and emulator|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
