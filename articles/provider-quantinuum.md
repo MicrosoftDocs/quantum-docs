@@ -27,13 +27,10 @@ The following targets are available from this provider:
 
 |Target name|Target ID|Number of qubits|Description|
 |---|---|---|---|
-|[H1-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h1-1sc|20 qubits| Use this to validate quantum programs against the H1-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |56 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H2-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-2sc |56 qubits|Use this to validate quantum programs against the H2-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H1-1 Emulator](#system-model-h1-emulators) |quantinuum.sim.h1-1e | 20 qubits| Uses a realistic physical model and noise model of H1-1.|
 |[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabilizer simulation|
 |[H2-2 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-2e | 56/32 qubits|Uses a realistic physical model and noise model of H2-2. 56 qubit simulation is only available as a stabilizer simulation|
-|[H1-1](#system-model-h1)|quantinuum.qpu.h1-1 |20 qubits|Quantinuum's H1-1 trapped ion device.|
 |[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-1 trapped ion device.|
 |[H2-2](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-2 trapped ion device.|
 
@@ -48,49 +45,21 @@ To get started using the Quantinuum provider on Azure Quantum, see [Get started 
 
 ## Syntax Checkers
 
-We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H1-1 syntax checker uses the same compiler as H1-1. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
+We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H2-1 syntax checker uses the same compiler as H2-1. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
-  - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
   - H2-2 Syntax Checker: `quantinuum.sim.h2-2sc`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
 Syntax Checkers usage is offered free-of-charge.
 
-## System Model H1 Emulators
-
-After validating the syntax of their code with a Syntax Checker, users can take advantage of Quantinuum's System Model H1 Emulators, emulation tools that contain a detailed physical model and realistic noise model of the actual System Model H1 hardware. The noise models are derived from a detailed characterization of the hardware. The System Model H1 Emulators use an identical API for job submission as the System Model H1 hardware, enabling seamless transition from emulation to hardware. To help maximize productivity and shorten development time, the System Model H1 Emulators are available even while the hardware is offline.
-
-More information can be found in the *System Model H1 Emulator Product Data Sheet* found on the [System Model H1] page.
-
-- Job type: `Simulation`
-- Data Format: `quantinuum.openqasm.v1`
-- Target ID:
-  - H1-1 Emulator: `quantinuum.sim.h1-1e`
-- Target Execution Profile: [:::no-loc text="QIR Adaptive RI":::](xref:microsoft.quantum.target-profiles)
-
-System Model H1 Emulator usage is offered free-of-charge with a hardware subscription. For details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
-
 ## Quantinuum Emulator (cloud based)
 
-The Quantinuum Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H1 quantum computer](#system-model-h1). The quantum simulation performed is the same as the [System Model H1 Emulator](#system-model-h1-emulators) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date.
 
-## System Model H1
-
-The System Model H1 generation of quantum computers, Powered by Honeywell, are comprised of a Quantum charge-coupled device (QCCD) with one linear section and currently includes one machine targets: the H1-1. Users are encouraged to test compatibility of their code with the H1-1 by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H1 Emulator](#system-model-h1-emulators) prior to submitting them to the target machines.
-
-The System Model H1 machine is continuously upgraded throughout its product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
-
-More information can be found in the *System Model H1 Product Data Sheet* found on the [System Model H1] page.
-
-- Job type: `Quantum Program`
-- Data Format: `honeywell.openqasm.v1`, `honeywell.qir.v1`
-- Target ID:
-  - H1-1: `quantinuum.qpu.h1-1`
-- Target Execution Profile: [:::no-loc text="QIR Adaptive RI":::](xref:microsoft.quantum.target-profiles)
+The Quantinuum Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H2 quantum computer](#system-model-h2). The quantum simulation performed is the same as the [System Model H2 Emulator](#system-model-h2-emulator) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date.
 
 ## System Model H2 Emulator
 
@@ -120,9 +89,10 @@ System Model H2 hardware is continuously upgraded throughout it's product lifecy
   - H2-2: `quantinuum.qpu.h2-2`
 - Target Execution Profile: [QIR Adaptive RI](xref:microsoft.quantum.target-profiles)
 
-## System Model H1 and H2 Technical Specifications
 
-Technical details for System Model H1 and System Model H2 can be found in Quantinuum's product data sheets on the [System Model H1](https://www.quantinuum.com/hardware/h1) and [System Model H2](https://www.quantinuum.com/hardware/h2) pages alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
+## System Model H2 Technical Specifications
+
+Technical details for System Model H2 can be found in Quantinuum's product data sheets on the [System Model H2](https://www.quantinuum.com/hardware/h2) page alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
 
 ## Additional Capabilities
 
@@ -146,7 +116,7 @@ Due to the internal level structure of trapped-ion qubits, a mid-circuit measure
 
 When a subset of qubits is measured in the middle of the circuit, the classical information from these measurements can be used to condition future elements of the circuit. The examples also highlight this usage.
 
-For information on MCMR in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
+For information on MCMR in Quantinuum systems, see the [MCMR] page on [Quantinuum Docs].
 
 #### [MCMR with Q# Provider](#tab/tabid-mcmr-with-q-provider)
 
@@ -215,7 +185,7 @@ circuit.draw()
 
 ### Arbitrary Angle ZZ Gates
 
-Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
+Quantinuum's native gate set includes arbitrary angle ZZ gates. This is beneficial for reducing the 2-qubit gate count for many quantum algorithms and gate sequences. For information on Arbitrary Angle ZZ gates in Quantinuum systems, [Parameterized Angle ZZ Gates] page on [Quantinuum Docs].
 
 #### [Arbitrary Angle ZZ Gates with Q# Provider](#tab/tabid-arbitrary-angle-zz-gates-with-q-provider)
 
@@ -280,8 +250,7 @@ circuit.measure_all()
 
 ### General SU(4) Entangling Gate
 
-Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the Quantinuum systems product data sheets on the [System Model H1] and [System Model H2] pages.
-
+Quantinuum's native gate set includes a general SU(4) entangling gate. Note that quantum circuits submitted to the hardware are rebased to the fully entangling ZZ gate and the arbitrary angle RZZ gate. Circuits are only rebased to the General SU(4) Entangling gate if users opt into it. For information on the General SU(4) Entangler in Quantinuum systems, see the [Parameterized Angle SU(4) Gates] page on [Quantinuum Docs].
 #### [General SU(4) Entangling Gate with Q# Provider](#tab/tabid-su4-with-q-provider)
 
 In Q\#, the General SU(4) Entangling gate is implemented via Quantinuum's QIR profile. To use it, define a function with a custom intrinsic matching the QIR profile signature, and use this function within the `SU4Example` operation.
@@ -324,7 +293,7 @@ MyWorkspace = azure.quantum.Workspace(
     location = ""
 )
 
-MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h2-1e")
 
 # Update TKET optimization level desired
 option_params = {
@@ -347,7 +316,7 @@ job.get_results()
 
 Users have the option of experimenting with the noise parameters of the Quantinuum emulators. **Only a few of the available noise parameters are highlighted** here demonstrating how to pass through the parameters in the Azure Quantum providers.
 
-For more information on the full set of noise parameters available, see the Quantinuum emulator product data sheets on the [System Model H1] and [System Model H2] pages.
+For more information on the full set of noise parameters available, see the [Quantinuum Emulators] page on [Quantinuum docs].
 
 #### [Emulator Noise Parameters with Q# Provider](#tab/tabid-emulator-noise-parameters-with-q-provider)
 
@@ -391,11 +360,11 @@ MyWorkspace = azure.quantum.Workspace(
     location = ""
 )
 
-MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h2-1e")
 
 # Update the parameter names desired
 # Note: This is not the full set of options available. 
-# For the full set, see the System Model H1 Emulator Product Data Sheet
+# For the full set, see the Quantinuum Emulators page
 option_params = {
     "error-params": {
         "p1": 4e-5,
@@ -441,11 +410,11 @@ option_params = {
 
 ```python
 # Specify the emulator backend target to submit to
-backend = provider.get_backend("quantinuum.sim.1e")
+backend = provider.get_backend("quantinuum.sim.h2-1e")
 
 # Update the parameter names desired
 # Note: This is not the full set of options available. 
-# For the full set, see the System Model H1 Emulator Product Data Sheet
+# For the full set, see the Quantinuum Emulator page
 option_params = {
     "error-params": {
         "p1": 4e-5,
@@ -542,7 +511,7 @@ MyWorkspace = azure.quantum.Workspace(
     location = ""
 )
 
-MyTarget = MyWorkspace.get_targets("quantinuum.sim.h1-1e")
+MyTarget = MyWorkspace.get_targets("quantinuum.sim.h2-1e")
 
 # Update TKET optimization level desired
 option_params = {
@@ -562,7 +531,7 @@ job.get_results()
 
 ```python
 # Specify the backend target to submit to
-backend = provider.get_backend("quantinuum.sim.h1-1e")
+backend = provider.get_backend("quantinuum.sim.h2-1e")
 
 # Update TKET optimization level desired
 option_params = {
@@ -579,7 +548,7 @@ print("Job id:", job.id())
 
 ## Technical Specifications
 
-Technical details for the System Model H1 and H2 and System Model H1 and H2 Emulators can be found in Quantinuum's product data sheets on the [System Model H1] and [System Model H2] page alongside links to Quantinuum specification and quantum volume data repositories and how to cite usage of Quantinuum systems.
+Technical details for the System Model H2 and System Model H2 Emulators can be found on the [Hardware User Guide] page alongside Quantinuum specification and quantum volume data repositories and [How to cite Quantinuum Systems].
 
 ## Target Availability
 
@@ -626,7 +595,6 @@ where:
 Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
 
 [Quantinuum]: https://www.quantinuum.com
-[System Model H1]: https://www.quantinuum.com/hardware/h1
 [System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html 
@@ -636,3 +604,10 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
 [`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com
+[Quantinuum Docs]:https://docs.quantinuum.com/
+[MCMR]: https://docs.quantinuum.com/systems/trainings/getting_started/mcmr.html
+[Parameterized Angle ZZ Gates]: https://docs.quantinuum.com/systems/trainings/getting_started/parameterized_angle_2_qubit_gates.html#parameterized-angle-zz-gates
+[Parameterized Angle SU(4) Gates]: https://docs.quantinuum.com/systems/trainings/getting_started/parameterized_angle_2_qubit_gates.html#parameterized-angle-su-4-gates
+[Quantinuum Emulators]: https://docs.quantinuum.com/systems/user_guide/emulator_user_guide/introduction.html
+[Hardware User Guide]: https://docs.quantinuum.com/systems/user_guide/hardware_user_guide/access.html
+[How to cite Quantinuum Systems]: https://docs.quantinuum.com/systems/support/quantinuum_systems_citations.html
