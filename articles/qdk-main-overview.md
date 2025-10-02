@@ -1,0 +1,40 @@
+---
+title: Build Quantum Solutions with the Azure Quantum Development Kit
+description: This document is the main landing page for the Quantum Development Kit (QDK), which gives a high level overview of the QDK and links to documentation on all the features in the QDK.
+author: azure-quantum-content
+ms.author: quantumdocwriters
+ms.service: azure-quantum
+ms.subservice: qdk
+ms.topic: overview
+ms.date: 10/02/2025
+no-loc: ["Azure Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor"]
+uid: microsoft.quantum.overview.qdk-landing-page
+
+#Customer intent: As a developer, I want to learn about what the QDK has to offer and how to use the QDK.
+---
+
+# Build Quantum Solutions with the Azure Quantum Development Kit
+
+The Azure Quantum Development Kit (QDK) is an extensive software development kit designed specifically for quantum program development. The QDK is a free to use and open-source extension for Microsoft's Visual Studio Code (VS Code). Install the QDK extension on VS Code to get started with state-of-the-art quantum development tools.
+
+## Overview of the QDK
+
+In addition to a robust set of quantum-specific features, the QDK offers standard VS Code development tools such as syntax highlighting, code suggestions with IntelliSense, CodeLens shortcuts, error checking and debugging, and code references.
+
+For quantum development, the QDK offers support for several quantum programming languages, a rich set of quantum code samples, development in Jupyter Notebook, visualization tools to understand your results and explore quantum circuits, simulators to run quantum programs on your local machine, and full integration with Azure Quantum to submit jobs to run on real quantum computers.
+
+The QDK also includes a fully integrated AI agent experience with Copilot in VS Code. The VS Code agent can write code for you, explain what the code does, help you submit jobs to Azure Quantum, and even teach you about theoretical concepts in quantum computing.
+
+To install the QDK, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+
+To update the QDK, see [Update the QDK to the latest version](xref:microsoft.quantum.update-qdk).
+
+## Features of the QDK
+
+Explore the following documentation to learn more about each QDK feature:
+
+- [Microsoft's Q# programming language](xref:microsoft.quantum.qsharp-overview)
+- [The OpenQASM programming language](xref:microsoft.quantum.how-to.openqasm-development-qdk)
+- [Qiskit and Cirq Python libraries](xref:microsoft.quantum.overview.qdk-qiskit-cirq)
+- [Build circuits with the Circuit Editor](xref:microsoft.quantum.how-to.qdk-circuit-editor)
+- [Copilot integration in VS Code](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup)
