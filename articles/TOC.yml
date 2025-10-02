@@ -83,6 +83,7 @@
   items:
   - name: The Quantum Development Kit
     href: qdk-main-overview.md
+  - name: The Q# programming language
     items:
     - name: Introduction to Q#
       href: qsharp-overview.md
@@ -116,9 +117,11 @@
         href: vscode-qsharp-reference.md
       - name: Language reference for Q#
         href: user-guide/language/toc.yml
-    - name: OpenQASM in the QDK
-      href: qdk-openqasm-integration.md
-    - name: Qiskit and Cirq in the QDK
+  - name: OpenQASM in the QDK
+    href: qdk-openqasm-integration.md
+  - name: Support for Qiskit and Cirq
+    items:
+    - name: Overview of Qiskit and Cirq in the QDK
       href: qdk-qiskit-cirq-overview.md
     - name: How-to guides for Qiskit and Cirq
       items:
@@ -130,10 +133,10 @@
         href: quickstart-microsoft-cirq.md
       - name: Submit a circuit in provider-specific format
         href: quickstart-microsoft-provider-format.md
-    - name: Build circuits with the Circuit Editor
-      href: qdk-circuit-editor.md
-    - name: Use VS Code agent mode for the QDK
-      href: qdk-vscode-agent-setup.md
+  - name: Build circuits with the Circuit Editor
+    href: qdk-circuit-editor.md
+  - name: Use VS Code agent mode for the QDK
+    href: qdk-vscode-agent-setup.md
 - name: Hybrid quantum computing (QC)
   items:
   - name: Introduction to hybrid QC
