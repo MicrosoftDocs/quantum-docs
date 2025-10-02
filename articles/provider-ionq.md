@@ -398,8 +398,6 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
-
 ## IonQ status
 
 For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/). 

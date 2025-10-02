@@ -6,9 +6,7 @@ ms.date: 09/18/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting-general
-no-loc:
-  - target
-  - targets
+no-loc: [target, targets]
 title: Support policy for IonQ in Azure Quantum
 uid: microsoft.quantum.providers.computing.ionq.support
 ---

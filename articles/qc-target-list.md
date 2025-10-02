@@ -34,26 +34,26 @@ For information on which quantum computing providers are available in your regio
 
 Microsoft's provider partners offer a wide-range of qubit availability for their hardware processors and simulators. 
 
-| Target name                                                                                           | Number of qubits |     |
-| ----------------------------------------------------------------------------------------------------- | ---------------- | --- |
-| [IonQ Quantum simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator)                     | 29 qubits        |     |
-| [IonQ Aria 1](xref:microsoft.quantum.providers.ionq#ionq-aria-quantum-computer)                       | 25 qubits        |     |
-| [IonQ Forte 1](xref:microsoft.quantum.providers.ionq#ionq-forte-quantum-computer)                     | 36 qubits        |     |
-| [IonQ Forte Enterprise 1](xref:microsoft.quantum.providers.ionq#ionq-forte-enterprise-quantum-computer) | 36 qubits        |     |
-| [PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emulator)                                     | 100 qubits       |     |
-| [PASQAL Fresnel1](xref:microsoft.quantum.providers.pasqal#fresnel1)                                   | 100 qubits       |     |
-| [Quantinuum H1-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)         | 20 qubits        |     |
-| [Quantinuum H1-2 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)         | 20 qubits        |     |
-| [Quantinuum H2-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)         | 32 qubits        |     |
-| [Quantinuum H1-1 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulators)     | 20 qubits        |     |
-| [Quantinuum H1-2 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulators)     | 20 qubits        |     |
-| [Quantinuum H2-1 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h2-emulator)      | 32 qubits        |     |
-| [Quantinuum H1-1](xref:microsoft.quantum.providers.quantinuum#system-model-h1)                        | 20 qubits        |     |
-| [Quantinuum H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1)                        | 20 qubits        |     |
-| [Quantinuum H2-1](xref:microsoft.quantum.providers.quantinuum#system-model-h2)                        | 32 qubits        |     |
-| [Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators)          | 30 qubits        |     |
-| [Rigetti Ankaa-3](xref:microsoft.quantum.providers.rigetti#ankaa-3)                                   | 84 qubits        |     |
-| [Rigetti Cepheus-1-36Q](xref:microsoft.quantum.providers.rigetti#cepheus-1-36q)                       | 36 qubits        |     |
+| Target name                                                                                           | Number of qubits |
+| ----------------------------------------------------------------------------------------------------- | ---------------- |
+| [IonQ Quantum simulator](xref:microsoft.quantum.providers.ionq#quantum-simulator)                     | 29 qubits        |
+| [IonQ Aria 1](xref:microsoft.quantum.providers.ionq#ionq-aria-quantum-computer)                       | 25 qubits        |
+| [IonQ Forte 1](xref:microsoft.quantum.providers.ionq#ionq-forte-quantum-computer)                     | 36 qubits        |
+| [IonQ Forte Enterprise 1](xref:microsoft.quantum.providers.ionq#ionq-forte-enterprise-quantum-computer) | 36 qubits        |
+| [PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emulator)                                     | 100 qubits       |
+| [PASQAL Fresnel1](xref:microsoft.quantum.providers.pasqal#fresnel1)                                   | 100 qubits       |
+| [Quantinuum H1-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)         | 20 qubits        |
+| [Quantinuum H1-2 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)         | 20 qubits        |
+| [Quantinuum H2-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)         | 32 qubits        |
+| [Quantinuum H1-1 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulators)     | 20 qubits        |
+| [Quantinuum H1-2 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h1-emulators)     | 20 qubits        |
+| [Quantinuum H2-1 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h2-emulator)      | 32 qubits        |
+| [Quantinuum H1-1](xref:microsoft.quantum.providers.quantinuum#system-model-h1)                        | 20 qubits        |
+| [Quantinuum H1-2](xref:microsoft.quantum.providers.quantinuum#system-model-h1)                        | 20 qubits        |
+| [Quantinuum H2-1](xref:microsoft.quantum.providers.quantinuum#system-model-h2)                        | 32 qubits        |
+| [Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators)          | 30 qubits        |
+| [Rigetti Ankaa-3](xref:microsoft.quantum.providers.rigetti#ankaa-3)                                   | 84 qubits        |
+| [Rigetti Cepheus-1-36Q](xref:microsoft.quantum.providers.rigetti#cepheus-1-36q)                       | 36 qubits        |
 
 ## Coming soon to Azure Quantum
 

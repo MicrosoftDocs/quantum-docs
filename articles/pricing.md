@@ -15,7 +15,7 @@ uid: microsoft.quantum.providers-pricing
 
 # Pricing plans for Azure Quantum providers
 
-In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information below is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
+In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information in this article is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
 
 ## IonQ 
 
@@ -49,7 +49,7 @@ The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 25-qub
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 > [!NOTE]
->  If you're an existing research grant or a Pay-as-you-go customer, you may see another billing unit in addition to AQT, called *Quantum Gate-Shots (QGS)*. The QGS units are equivalent to AQT units. The number of QGS is calculated by the following formula:
+>  If you are an existing research grant or a Pay-as-you-go customer, you may see another billing unit in addition to AQT, called *Quantum Gate-Shots (QGS)*. The QGS units are equivalent to AQT units. The number of QGS is calculated by the following formula:
 > 
 > $$
 > QGS = N · C
@@ -100,12 +100,12 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 ## Quantinuum
 
 > [!WARNING]
-> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
+> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you are on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
 
 [Quantinuum](xref:microsoft.quantum.providers.quantinuum) uses a system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units defined by Quantinuum are*Hardware Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
 
 
-HQCs and eHQCs are used to calculate the cost of running a job, and they're calculated based on the following formula:
+HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
 $$
 HQC = 5 + C(N_{1q} + 10 N_{2q} + 5 N_m)/5000
