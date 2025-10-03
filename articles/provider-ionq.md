@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document provides the technical details of the IonQ quantum computing provider
 ms.author: quantumdocwriters
-ms.date: 10/24/2024
+ms.date: 09/17/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
@@ -20,14 +20,14 @@ IonQ’s quantum computers perform calculations by manipulating the hyperfine en
 
 The following targets are available from this provider:
 
-|Target name |	Target ID|	Number of qubits|	Description|
-|---|---|---|---|
-|[Quantum simulator](#quantum-simulator)	|ionq.simulator|	29 qubits|	IonQ's cloud-based idealized simulator. Free of cost.|
-|[IonQ Aria 1](#ionq-aria-quantum-computer) |	ionq.qpu.aria-1	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
-|[IonQ Aria 2](#ionq-aria-quantum-computer) |	ionq.qpu.aria-2	|25 qubits	|IonQ's Aria trapped-ion quantum computer.|
-|[IonQ Forte](#ionq-forte-quantum-computer) |	ionq.qpu.forte	|32 qubits	|IonQ's Forte trapped-ion quantum computer. Available in Private Preview only.|
+| Target name                                                        | Target ID                   | Number of qubits | Description                                             |
+| ------------------------------------------------------------------ | --------------------------- | ---------------- | ------------------------------------------------------- |
+| [Quantum simulator](#quantum-simulator)                            | ionq.simulator              | 29 qubits        | IonQ's cloud-based idealized simulator. Free of cost.   |
+| [IonQ Aria 1](#ionq-aria-quantum-computer)                         | ionq.qpu.aria-1             | 25 qubits        | IonQ's Aria 1 trapped-ion quantum computer.             |
+| [IonQ Forte 1](#ionq-forte-quantum-computer)                       | ionq.qpu.forte-1            | 36 qubits        | IonQ's Forte 1 trapped-ion quantum computer.            |
+| [IonQ Forte Enterprise 1](#ionq-forte-enterprise-quantum-computer) | ionq.qpu.forte-enterprise-1 | 36 qubits        | IonQ's Forte Enterprise 1 trapped-ion quantum computer. |
 
-IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets).
+IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets). 
 
 ## Quantum simulator
 
@@ -47,7 +47,7 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
-- Target ID: `ionq.qpu.aria-1`, `ionq.qpu.aria-2`
+- Target ID: `ionq.qpu.aria-1`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
@@ -59,9 +59,9 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 | Measure | Average time duration  |
 |---------|----------------------------|
 | T1 | 10-100 s  |
-| T2 | 1 s|
-| Single-qubit gate | 135 µs |
-| Two-qubit gate | 600 µs |
+| T2 | 1 s| 
+| Single-qubit gate | 135 µs | 
+| Two-qubit gate | 600 µs | 
 
 ### System fidelity
 
@@ -73,18 +73,36 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 \* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
-IonQ Aria is available through a separate billing plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
+IonQ Aria is available through Pay As You Go plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
 
 ## IonQ Forte quantum computer
 
-IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 32-qubit software-configurable system, IonQ Forte is available in Private Preview on Azure Quantum. For more information, see [IonQ Forte (ionq.com)](https://ionq.com/quantum-systems/forte).
+IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte (ionq.com)](https://ionq.com/quantum-systems/forte).
 
 > [!IMPORTANT]
 > *Debiasing* is enabled on the Forte system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
-- Target ID: `ionq.qpu.forte`
+- Target ID: `ionq.qpu.forte-1`
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
+
+| Parameter Name | Type     | Required | Description |
+|----------------|----------|----------|-------------|
+| `shots`   | int    | No | Number of experimental shots.  |
+
+## IonQ Forte Enterprise quantum computer
+
+IonQ Forte Enterprise is IonQ's highest-performing, commercially available trapped-ion quantum computer. With a 36-qubit software-configurable system. For more information, see [IonQ Forte Enterprise (ionq.com)](https://ionq.com/quantum-systems/forte-enterprise).
+
+The Forte Enterprise is a version of the Forte class systems that has been adapted and ruggedized for deployment in a standard data center environment, making it more suitable for enterprise-level, production-oriented tasks. The base quantum computing hardware and performance are the same. The primary difference between the IonQ Forte and the IonQ Forte Enterprise lies in their deployment and intended use cases, not their core performance specifications. While both systems boast the same high-performance metrics, the Forte Enterprise is specifically designed for integration into a data center environment.
+
+> [!IMPORTANT]
+> *Debiasing* is enabled on the Forte Enterprise system by default, and submitted jobs are subject to debiasing-based pricing. For more information about debiasing and how to disable/enable the service, see [Error mitigation](#error-mitigation).
+
+- Job type: `Quantum Program`
+- Data Format: `ionq.circuit.v1`
+- Target ID: `ionq.qpu.forte-enterprise-1`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description |
@@ -95,7 +113,7 @@ IonQ Forte is IonQ's highest-performing, commercially available trapped-ion quan
 
 In Q#, the output of a quantum measurement is a value of type `Result`, which can only take the values `Zero` and `One`. When you define a Q# operation, it can only be submitted to IonQ hardware if the return type is a collection of `Result`s, that is, if the output of the operation is the result of a quantum measurement. The reason for this is because IonQ builds a histogram from the returned values, so it restricts the return type to `Result` to simplify creating this histogram.
 
-IonQ's targets correspond to the [:::no-loc text="QIR Base"::: profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow.
+IonQ's targets correspond to the [:::no-loc text="QIR Base"::: profile](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-no-control-flow-profile-targets). This profile can't run quantum operations that require the use of the results from qubit measurements to control the program flow. 
 
 ## Output format
 
@@ -115,11 +133,11 @@ Users can take advantage of these additional capabilities via pass-through param
 
 ### Error mitigation
 
-IonQ provides the option to enable *quantum error mitigation* when submitting jobs to IonQ hardware. Error mitigation is a compiler-level process that runs and executes multiple symmetric variations of a circuit, and then aggregates the outcomes while mitigating the impact of hardware errors and qubit decoherence. Unlike *quantum error correction* techniques, error mitigation does not require large gate and qubit overhead.
+IonQ provides the option to enable *quantum error mitigation* when submitting jobs to IonQ hardware. Error mitigation is a compiler-level process that runs and executes multiple symmetric variations of a circuit, and then aggregates the outcomes while mitigating the impact of hardware errors and qubit decoherence. Unlike *quantum error correction* techniques, error mitigation does not require large gate and qubit overhead. 
 
-*Debiasing* is the process of creating slight variations of a given circuit that *should* be identical on an ideal noiseless machine, using techniques such as different qubit assignments, gate decompositions, and pulse solutions, and then executing those variations.
+*Debiasing* is the process of creating slight variations of a given circuit that *should* be identical on an ideal noiseless machine, using techniques such as different qubit assignments, gate decompositions, and pulse solutions, and then executing those variations. 
 
-*Sharpening* and *Averaging* are options for aggregating the results of the variations. Averaging is based equally on all the variation results, whereas Sharpening filters out the erroneous results, and can be more reliable for certain types of algorithms.
+*Sharpening* and *Averaging* are options for aggregating the results of the variations. Averaging is based equally on all the variation results, whereas Sharpening filters out the erroneous results, and can be more reliable for certain types of algorithms. 
 
 For more information, see [Debiasing and Sharpening](https://ionq.com/resources/debiasing-and-sharpening). For error mitigation pricing, see [IonQ pricing](xref:microsoft.quantum.providers-pricing#ionq).
 
@@ -171,7 +189,7 @@ option_params = {
 
 #### Running a job on Azure Quantum with error mitigation
 
-This example uses a simple random number generator.
+This example uses a simple random number generator. 
 
 First, import the required packages and initiate the base profile:
 
@@ -380,11 +398,9 @@ where:
 - $N$ is the number of one- or two-qubit gates submitted
 - $C$ is the number of execution shots requested
 
-Quotas are based on plan selection and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). For more information, see [Azure Quantum quotas](xref:microsoft.quantum.quotas).
-
 ## IonQ status
 
-For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/).
+For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/). 
 
 ## IonQ best practices and connectivity graph
 
