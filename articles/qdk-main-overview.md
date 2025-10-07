@@ -19,7 +19,7 @@ The Azure Quantum Development Kit (QDK) is an extensive software development kit
 
 ## Overview of the QDK
 
-The QDK offers a rich set of tools and features to help excel in quantum development, such as:
+The QDK offers a rich set of tools and features to help you excel in quantum development, such as:
 
 - Support for several quantum programming languages, including Q#, Qiskit, and OpenQASM.
 - Quantum code samples for various languages and development scenarios.

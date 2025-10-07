@@ -13,7 +13,7 @@ uid: microsoft.quantum.overview.qdk-qiskit-cirq
 #Customer intent: As a developer, I want to learn about how the QDK supports other quantum programming frameworks, like Qiskit and Cirq.
 ---
 
-# Qiskit and Cirq interoperability in the QDK
+# Qiskit and Cirq interoperability with the Quantum Development Kit
 
 The Azure Quantum Development Kit (QDK) supports development in several quantum programming frameworks, including Qiskit and Cirq.
 
