@@ -19,11 +19,20 @@ The Azure Quantum Development Kit (QDK) is an extensive software development kit
 
 ## Overview of the QDK
 
+The QDK offers a rich set of tools and features to help excel in quantum development, such as:
+
+- Support for several quantum programming languages, including Q#, Qiskit, and OpenQASM.
+- Quantum code samples for various languages and development scenarios.
+- Support for development in Jupyter Notebook.
+- Visualization tools for quantum circuits and output from your quantum programs.
+- Full integration with Azure Quantum to submit jobs that run on real quantum hardware.
+- Local simulators to test and run quantum programs on your local device.
+
 In addition to a robust set of quantum-specific features, the QDK offers standard VS Code development tools such as syntax highlighting, code suggestions with IntelliSense, CodeLens shortcuts, error checking and debugging, and code references.
 
-For quantum development, the QDK offers support for several quantum programming languages, a rich set of quantum code samples, development in Jupyter Notebook, visualization tools to understand your results and explore quantum circuits, simulators to run quantum programs on your local machine, and full integration with Azure Quantum to submit jobs to run on real quantum computers.
-
 The QDK also includes a fully integrated AI agent experience with Copilot in VS Code. The VS Code agent can write code for you, explain what the code does, help you submit jobs to Azure Quantum, and even teach you about theoretical concepts in quantum computing.
+
+### Get started with the QDK
 
 To install the QDK, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
@@ -31,7 +40,7 @@ To update the QDK, see [Update the QDK to the latest version](xref:microsoft.qua
 
 ## Features of the QDK
 
-Explore the following documentation to learn more about each QDK feature:
+Explore the following documentation to learn more about the main features of the QDK:
 
 - [Microsoft's Q# programming language](xref:microsoft.quantum.qsharp-overview)
 - [The OpenQASM programming language](xref:microsoft.quantum.how-to.openqasm-development-qdk)
