@@ -119,7 +119,7 @@
         href: user-guide/language/toc.yml
   - name: OpenQASM in the QDK
     href: qdk-openqasm-integration.md
-  - name: Support for Qiskit and Cirq
+  - name: Qiskit and Cirq interoperability
     items:
     - name: Overview of Qiskit and Cirq in the QDK
       href: qdk-qiskit-cirq-overview.md
