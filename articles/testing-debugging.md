@@ -16,7 +16,7 @@ no-loc: ["Q#", '$$v', Quantum Development Kit, target, targets]
 
 As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. This article discusses the tools offered by the Azure Quantum Development Kit for testing and debugging quantum programs.
 
-Testing and debugging is just as important in quantum programming as it is in classical programming. This article discusses how to debug and test your quantum programs with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
+Testing and debugging are just as important in quantum programming as they are in classical programming. This article discusses how to debug and test your quantum programs with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
 
 ## Debug your quantum code
 
@@ -59,7 +59,7 @@ When you're finished exploring the debugger, press ***Ctrl + F5** to exit the de
 
 The QDK provides several Q# and Python functions that dump information about the current state of your program when you call these functions. Use information from these dump functions to check whether your program behaves as you expect.
 
-#### The DumpMachine() function
+#### The `DumpMachine` function
 
 `DumpMachine` is a Q# function that allows you to dump information about the current state of the qubit system to the console as your program runs. `DumpMachine` doesn't stop or interrupt your program during runtime.
 
@@ -84,7 +84,7 @@ The following example calls `DumpMachine` at two points in a Q# program and expl
    }
    ```
 
-1. Press *** Ctrl + Shift + Y** to open the **Debug Console**.
+1. Press **Ctrl + Shift + Y** to open the **Debug Console**.
 1. Press **Ctrl + F5** to run your program. The following output from `DumpMachine` appears in the **Debug Console**:
 
    ```output
@@ -104,7 +104,7 @@ The output from `DumpMachine` shows how the state of the qubit systems changes a
 > [!NOTE]
 > The output from `DumpMachine` uses big-endian ordering.
 
-### The dump_machine() function
+### The `dump_machine` function
 
 The [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) function is a function from the `qsharp` Python library. This function returns the current allocated qubit count and a dictionary of that contains the sparse state amplitudes of the qubit system.
 
@@ -135,7 +135,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
    dump
    ```
   
-   The `dump_machine` functions displays the following output:
+   The `dump_machine` function displays the following output:
   
    ```output
    Basis State
@@ -146,7 +146,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
 
 1. Create a new code cell, then copy and run the following Q# code:
 
-   ```qsharp
+   ```qshar
    %%qsharp
 
    R1Frac(1, 2, qubits[0]);
@@ -160,7 +160,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
    dump
    ```
 
-   The `dump_machine` functions displays the following output:
+   The `dump_machine` function displays the following output:
 
    ```output
    Basis State
@@ -188,7 +188,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
    print(dump[3])
    ```
 
-### The dump_operation() function
+### The `dump_operation` function
 
 The `dump_operation` function is a function from the `qsharp.utils` Python package. This function takes two inputs: a Q# operation or operation definition as a string and the number of qubits that are used in the operation. The output from `dump_operation` is a nested list that represents the square matrix of complex numbers that corresponds to the given quantum operation. The matrix values are in the computational basis, and each sublist represents a row of the matrix.
 
