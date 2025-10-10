@@ -6,9 +6,9 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: conceptual
-title: Q# features in Visual Studio Code
+title: QDK features in Visual Studio Code
 uid: microsoft.quantum.reference.vscode
-#customer intent: As a quantum programmer, I want to know how to access the Q# related features in VS Code.  
+#customer intent: As a quantum programmer, I want to know how to access the QDK related features in VS Code.  
 ---
 
 # Reference: Azure Quantum Development Kit extension for Visual Studio Code
