@@ -145,7 +145,7 @@ To manually set the QIR target profile to **Adaptive RI**, choose one of the fol
 
 For now, Quantinuum is the only provider in Azure Quantum that has :::no-loc text="Adaptive RI"::: targets.
 
-- **Emulators:** `quantinuum.sim.h1-1e` and `quantinuum.sim.h2-1e`
-- **QPUs:** `quantinuum.qpu.h1-1` and `quantinuum.qpu.h2-1`
+- **Emulators:** `quantinuum.sim.h2-1e` and `quantinuum.sim.h2-2e`
+- **QPUs:** `quantinuum.qpu.h2-1` and `quantinuum.qpu.h2-2`
 
 For more information on Quantinuum's offerings in Azure Quantum, see [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum).

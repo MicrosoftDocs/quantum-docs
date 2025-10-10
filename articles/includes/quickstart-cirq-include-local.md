@@ -66,16 +66,16 @@ Use the `targets()`method to list all the targets in your workspace that can run
 current queue time and availability.
 
 > [!NOTE]
-> All the targets in your workspace may not be listed - only the targets that can accept a Cirq or OpenQASM circuit will be listed here. 
+> All the targets in your workspace may not be listed - only the targets that can accept a Cirq or OpenQASM circuit will be listed here.
 
 ```python
 print(service.targets())
 ```
 
 ```output
-[<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>,
-<Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>,
-<Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>,
+[<Target name="quantinuum.qpu.h2-1", avg. queue time=0 s, Degraded>,
+<Target name="quantinuum.sim.h2-1sc", avg. queue time=1 s, Available>,
+<Target name="quantinuum.sim.h2-1e", avg. queue time=40 s, Available>,
 <Target name="ionq.simulator", avg. queue time=3 s, Available>,
 <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>]
 ```
@@ -226,7 +226,7 @@ result. The following cell submits a job that runs the circuit with
 100 shots, waits until the job is complete, and returns the results.
 
 ```python
-result = service.run(program=circuit, repetitions=100, target="quantinuum.sim.h1-1sc")
+result = service.run(program=circuit, repetitions=100, target="quantinuum.sim.h2-1sc")
 ```
 
 This returns a `cirq.Result` object.
@@ -267,7 +267,7 @@ get the results after the job has run successfully.
 job = service.create_job(
     program=circuit,
     repetitions=100,
-    target="quantinuum.sim.h1-1sc"
+    target="quantinuum.sim.h2-1sc"
 )
 ```
 
