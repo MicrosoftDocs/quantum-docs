@@ -308,7 +308,7 @@ The following example wraps the array length test code in an operation and turns
    }
    ```
 
-   The `@Test()` annotation on the line before the `TestCase` function definition turns the operation into a VS Code unit test. A green arrow appears on the function definition line.
+   The `@Test()` annotation on the line before the `TestCase` operation definition turns the operation into a VS Code unit test. A green arrow appears on the operation definition line.
 
 1. Choose the green arrow to run `TestCase` and report the test results.
 1. To interact with your units tests in the VS Code Test Explorer, choose the **Testing** flask icon in the Primary Side Bar.
@@ -317,7 +317,7 @@ The following example wraps the array length test code in an operation and turns
 You can write and run Q# unit tests in VS Code without an entrypoint operation in your program.
 
 > [!NOTE]
-> Callables from the `Std.Diagnostics` namespace aren't compatible with QIR generation, so only include unit tests in Q# code that you run on simulators. If you want to generate QIR from your Q# code, then don't include unit tests in that code.
+> Callables from the `Std.Diagnostics` namespace aren't compatible with QIR generation, so only include unit tests in Q# code that you run on simulators. If you want to generate QIR from your Q# code, then don't include unit tests in your code.
 
 ### The `CheckZero` and `CheckAllZero` operations
 
