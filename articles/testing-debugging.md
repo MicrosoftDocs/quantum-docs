@@ -31,8 +31,8 @@ The following example demonstrates how to use the debugger with a Q# program. Fo
 1. In VS Code, create and save a new `.qs` file with the following code:
 
    ```qsharp
-   import Microsoft.Quantum.Arrays.*;
-   import Microsoft.Quantum.Convert.*;
+   import Std.Arrays.*;
+   import Std.Convert.*;
 
    operation Main() : Result {
        use qubit = Qubit();
@@ -59,7 +59,7 @@ When you're finished exploring the debugger, press ***Ctrl + F5** to exit the de
 
 The QDK provides several Q# and Python functions that dump information about the current state of your program when you call these functions. Use information from these dump functions to check whether your program behaves as you expect.
 
-#### The `DumpMachine` function
+#### The Q# `DumpMachine` function
 
 `DumpMachine` is a Q# function that allows you to dump information about the current state of the qubit system to the console as your program runs. `DumpMachine` doesn't stop or interrupt your program during runtime.
 
@@ -68,7 +68,7 @@ The following example calls `DumpMachine` at two points in a Q# program and expl
 1. In VS Code, create and save a new `.qs` file with the following code:
 
    ```qsharp
-   import Microsoft.Quantum.Diagnostics.*;
+   import Std.Diagnostics.*;
 
    operation Main() : Unit {
        use qubits = Qubit[2];
@@ -104,7 +104,7 @@ The output from `DumpMachine` shows how the state of the qubit systems changes a
 > [!NOTE]
 > The output from `DumpMachine` uses big-endian ordering.
 
-### The `dump_machine` function
+### The Python `dump_machine` function
 
 The [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) function is a function from the `qsharp` Python library. This function returns the current allocated qubit count and a dictionary of that contains the sparse state amplitudes of the qubit system.
 
@@ -146,7 +146,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
 
 1. Create a new code cell, then copy and run the following Q# code:
 
-   ```qshar
+   ```qsharp
    %%qsharp
 
    R1Frac(1, 2, qubits[0]);
@@ -207,14 +207,14 @@ The following example uses `dump_operation` to display information for a 1-qubit
 
    ```python
    res = dump_operation("qs => ()", 1)
-   print("Single-qubit identity gate:\n" res)
+   print("Single-qubit identity gate:\n", res)
    print()
    
    res = dump_operation("qs => H(qs[0])", 1)
-   print("Single-qubit Hadamard gate:\n" res)
+   print("Single-qubit Hadamard gate:\n", res)
    ```
 
-1. You can also call the `qsharp.eval` function and then reference it from `dump_operation` to get the same result. For example, create a new code cell, then copy and run the following Python code to print the matrix elements for a single-qubit Hadamard gate:
+1. You can also call the `qsharp.eval` function and then reference the Q# operation in `dump_operation` to get the same result. For example, create a new code cell, then copy and run the following Python code to print the matrix elements for a single-qubit Hadamard gate:
 
    ```python
    qsharp.eval("operation SingleH(qs : Qubit[]) : Unit {H(qs[0])}")
@@ -267,14 +267,14 @@ The following example uses a `fail` statement to test that a qubit array contain
 
 ### The `Fact` function
 
-You can also use the Q# `Fact` function from the `Microsoft.Quantum.Diagnostics` namespace to test your code. The `Fact` function takes a Boolean expression and en error message string. If the Boolean expression is true, then the test passes and your program continues to run. If the Boolean expression is false, then `Fact` ends your program and displays the error message.
+You can also use the Q# `Fact` function from the `Std.Diagnostics` namespace to test your code. The `Fact` function takes a Boolean expression and en error message string. If the Boolean expression is true, then the test passes and your program continues to run. If the Boolean expression is false, then `Fact` ends your program and displays the error message.
 
 To perform the same array length test in your previous code, nut with the `Fact` function, follow these steps:
 
 1. In VS Code, create and save a new `.qs` file with the following code:
 
    ```qsharp
-   import Microsoft.Quantum.Diagnostics.Fact;
+   import Std.Diagnostics.Fact;
 
    operation Main() : Unit {
        use qs = Qubit[6];
@@ -290,40 +290,45 @@ To perform the same array length test in your previous code, nut with the `Fact`
 
 ### Write Q# unit tests with the `@Test()` annotation
 
-In Q# programs, you can apply the `@Test()` annotation to a callable to turn the callable into a unit test. These units tests appear in the **Testing** menu in VS Code so that you can take advantage of this VS Code feature.
+In Q# programs, you can apply the `@Test()` annotation to a callable (function or operation) to turn the callable into a unit test. These units tests appear in the **Testing** menu in VS Code so that you can take advantage of this VS Code feature. You can turn a callable into a unit test only when the callable doesn't take take input parameters.
 
-The following example puts the array length test code in a function and turns that function into a unit test, and then calls the unit test in the `Main` operation.
-
-> [!NOTE]
-> To turn a Q# callable into a unit test, the callable can't take any parameters. Also, you can only have unit tests in Q# code that you run on simulators. If you want to generate QIR from your Q# code, then your code can't contain unit tests.
+The following example wraps the array length test code in an operation and turns that operation into a unit test:
 
 1. In VS Code, create and save a new `.qs` file with the following code:
 
    ```qsharp
-   import Microsoft.Quantum.Diagnostics.Fact;
+   import Std.Diagnostics.Fact;
 
-   function TestCase() : Unit {
-       Std.Diagnostics.Fact(2 * 2 == 4, "2 * 2 should be 4");
+   @Test()
+   operation TestCase() : Unit {
+       use qs = Qubit[3];
+       let n_qubits = Length(qs);
+
+       Fact(n_qubits == 3, $"The system should have 3 qubits, not {n_qubits}.");
    }
    ```
 
-1. To turn `TestCase` into a unit test, enter `@Test()` on the line before the `TestCase` function definition. A green arrow appears on the function definition line.
+   The `@Test()` annotation on the line before the `TestCase` function definition turns the operation into a VS Code unit test. A green arrow appears on the function definition line.
 
 1. Choose the green arrow to run `TestCase` and report the test results.
 1. To interact with your units tests in the VS Code Test Explorer, choose the **Testing** flask icon in the Primary Side Bar.
+1. Edit your code from `Qubit[3]` to `Qubit[6]` and run the unit test again to see how the test information changes.
 
-You can write and run Q# unit tests without an entrypoint operation in your program.
+You can write and run Q# unit tests in VS Code without an entrypoint operation in your program.
+
+> [!NOTE]
+> Callables from the `Std.Diagnostics` namespace aren't compatible with QIR generation, so only include unit tests in Q# code that you run on simulators. If you want to generate QIR from your Q# code, then don't include unit tests in that code.
 
 ### The `CheckZero` and `CheckAllZero` operations
 
-The `CheckZero` and `CheckAllZero` Q# operations check whether the current state of a qubit or qubit array is $\ket{0}$. The `CheckZero` operation takes a single qubit and returns `true` only when the qubit is in the $\ket{0}$ state. The `CheckAllZero` operations take a qubit array and returns `true` only when all qubits in the array are in the $\ket{0}$ state. To use `CheckZero` and `CheckAllZero`, import them from the `Microsoft.Quantum.Diagnostics` namespace.
+The `CheckZero` and `CheckAllZero` Q# operations check whether the current state of a qubit or qubit array is $\ket{0}$. The `CheckZero` operation takes a single qubit and returns `true` only when the qubit is in the $\ket{0}$ state. The `CheckAllZero` operations take a qubit array and returns `true` only when all qubits in the array are in the $\ket{0}$ state. To use `CheckZero` and `CheckAllZero`, import them from the `Std.Diagnostics` namespace.
 
 The following example uses both operations. The `CheckZero` tests that the `X` operation flips the first qubit from the $\ket{0}$ state to the $\ket{1}$ state, and the `CheckAllZero` operation tests that both qubits are reset to the $\ket{0}$ state.
 
 In VS Code, create and save a new `.qs` file with the following code, then run the program and examine the output in the **Debug Console**.
 
 ```qsharp
-import Microsoft.Quantum.Diagnostics.*;
+import Std.Diagnostics.*;
 
 operation Main() : Unit {
     use qs = Qubit[2];
