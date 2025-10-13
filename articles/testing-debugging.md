@@ -3,12 +3,12 @@ title: How to Debug and Test Quantum Programs in Azure Quantum
 description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
 author: azure-quantum-content
 ms.author: quantumdocwriters
-ms.date: 08/07/2024
+ms.date: 10/09/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: how-to
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
-no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+no-loc: ["Q#", '$$v', Quantum Development Kit, target, targets]
 #customer intent: As a quantum developer, I want to understand how to debug and test my quantum programs
 ---
 
@@ -16,257 +16,333 @@ no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 
 As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. This article discusses the tools offered by the Azure Quantum Development Kit for testing and debugging quantum programs.
 
-## Debug your Q# program
+Testing and debugging are just as important in quantum programming as they are in classical programming. This article discusses how to debug and test your quantum programs with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
 
-The Azure Quantum Development Kit (QDK) Visual Studio Code extension includes a debugger for Q# programs. You can set breakpoints, step through your code and into each function or operation, and track not only the local variables, but the quantum state of the qubits as well.
+## Debug your quantum code
 
-> [!NOTE]
-> The VS Code debugger only works with Q# (.qs) files and doesn't work with Q# cells in a Jupyter Notebook. For testing Jupyter Notebook cells, see [Test your code](#test-your-code).
+The QDK provides several tools to debug your code. If you write Q# or OpenQASM programs in VS Code, then you can use the VS Code debugger to set breakpoints in your programs and analyze your code. The QDK also provides a set of dump functions that you can use to get information at different points in your program.
 
-The following example demonstrates the basic features of the debugger. For complete information about using VS Code debuggers, see [Debugging](https://code.visualstudio.com/docs/editor/debugging).
+### How to use the VS Code debugger
 
-In VS Code, create and save a new .qs file with the following code:
+With the QDK extension in VS Code, you can use the debugger to step through your code and into each function or operation, track the values of local variables, and follow the quantum states of the qubits.
 
-```qsharp
-import Microsoft.Quantum.Arrays.*;
-import Microsoft.Quantum.Convert.*;
+The following example demonstrates how to use the debugger with a Q# program. For complete information on VS Code debuggers, see [Debugging](https://code.visualstudio.com/docs/editor/debugging) on the VS Code website.
 
-operation Main() : Result {
-    use qubit = Qubit();
-    H(qubit);
-    let result = M(qubit);
-    Reset(qubit);
-    return result;
-}
-```
+1. In VS Code, create and save a new `.qs` file with the following code:
 
-1. Set a breakpoint on the line `H(qubit)` by clicking to the left of the line number.
-1. Select the debugger icon to open the debugger pane and select **Run and Debug**. The debugger controls are displayed at the top of the screen.
-1. Select F5 to start debugging and continue to the breakpoint. In the debugger **Variables** pane, expand the **Quantum State** category. You can see that the qubit has been initialized in the |0> state.
-1. Step into (F11) the `H` operation and the source code for the `H` operation displays. As you step through the operation, note the quantum value changes as the `H` operation puts the qubit into superposition.
-1. As you step over (F10) the `M` operation, the quantum value is resolved to either |0> or |1> as a result of the measurement, and the value of the classical variable `result` is displayed.
-1. As you step over the `Reset` operation, the qubit is reset to |0>.
+   ```qsharp
+   import Std.Arrays.*;
+   import Std.Convert.*;
 
-## Test your code
+   operation Main() : Result {
+       use qubit = Qubit();
+       H(qubit);
+       let result = M(qubit);
+       Reset(qubit);
+       return result;
+   }
+   ```
 
-Although the VS Code Q# debugger is not available for Q# cells in a Jupyter Notebook, the Azure QDK provides some expressions and functions that can help troubleshoot your code.
+1. On line 6, `H(qubit)`, click to the left of the line number to set a breakpoint. A red circle appears.
+1. In the Primary Side Bar, choose the debugger icon to open the debugger pane, and then choose **Run and Debug**. The debugger control bar appears.
+1. Press **F5** to start the debugger and continue to the breakpoint. In **Variables** menu of the debugger pane, expand the **Quantum State** dropdown to see that the qubit has been initialized in the $\ket{0}$ state.
+1. Press **F11** to step into the `H` operation. The source code for the `H` operation appears. Notice that **Quantum State** changes to a superposition as you step through the `H` operation.
+1. Press **F10** to step over the `M` operation. Notice that **Quantum State** resolves to either $\ket{0}$ or $\ket{1}$ after the measurement. The `result` variable also appears under **Locals**.
+1. Press **F10** again to step over the `Reset` operation. Notice that **Quantum State** is reset to $\ket{0}$.
 
-### Fail expression
-
-The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression) expression ends the computation entirely, corresponding to a fatal error that stops the program.
-
-Consider this simple example that validates a parameter value:
-
-```python
-# import qsharp package to access the %%qsharp magic command
-import qsharp 
-```
-
-```qsharp
-// use the %%qsharp magic command to change the cell type from Python to Q#
-%%qsharp 
-function PositivityFact(value : Int) : Unit {
-    if value <= 0 {
-        fail $"{value} isn't a positive number.";
-    }   
-}
-PositivityFact(0);
-```
-
-```output
-Error: program failed: 0 isn't a positive number.
-Call stack:
-    at PositivityFact in line_2
-Qsc.Eval.UserFail
-
-  × runtime error
-  ╰─▶ program failed: 0 isn't a positive number.
-   ╭─[line_2:5:1]
- 5 │ 
- 6 │             fail $"{value} isn't a positive number.";
-   ·             ────────────────────┬───────────────────
-   ·                                 ╰── explicit fail
- 7 │     }   
-   ╰────
-```
-
-Here, the `fail` expression prevents the program from continuing to run with invalid data.
-
-### Fact() function
-
-You can implement the same behavior as the previous example using the `Fact()` function from the `Microsoft.Quantum.Diagnostics` namespace. The `Fact()` function evaluates a given classical condition and throws an exception if it is false.
-
-```python
-import qsharp 
-```
-
-```qsharp
-%%qsharp
-function PositivityFact(value : Int) : Unit {
-    Fact(value > 0, "Expected a positive number."); 
-}
-PositivityFact(4);
-```
-
-```output
-Error: program failed: Expected a positive number.
-Call stack:
-    at Microsoft.Quantum.Diagnostics.Fact in diagnostics.qs
-    at PositivityFact in line_4
-Qsc.Eval.UserFail
-
-  × runtime error
-  ╰─▶ program failed: Expected a positive number.
-    ╭─[diagnostics.qs:29:1]
- 29 │         if (not actual) {
- 30 │             fail message;
-    ·             ──────┬─────
-    ·                   ╰── explicit fail
- 31 │         }
-    ╰────
-```
-
-### DumpMachine() function
-
-`DumpMachine()` is a Q# function that allows you to dump information about the current state of the target machine to the console and continue to run your program.
+When you're finished exploring the debugger, press ***Ctrl + F5** to exit the debugger.
 
 > [!NOTE]
-> With the release of the Azure Quantum Development Kit, the `DumpMachine()` function now uses big-endian ordering for its output.
+> The VS Code debugger only works with Q# (`.qs`) and OpenQASM (`.qasm`) files. You can't use the VS Code debugger on Q# cells in Jupyter Notebook.
 
-```python
-import qsharp
-```
+### How to debug with QDK dump functions
 
-```qsharp
-%%qsharp
-import Microsoft.Quantum.Diagnostics.*;
-operation MultiQubitDumpMachineDemo() : Unit {
-    use qubits = Qubit[2];
-    X(qubits[1]);
-    H(qubits[1]);
-    DumpMachine();
+The QDK provides several Q# and Python functions that dump information about the current state of your program when you call these functions. Use information from these dump functions to check whether your program behaves as you expect.
 
-    R1Frac(1, 2, qubits[0]);
-    R1Frac(1, 3, qubits[1]);
-    DumpMachine();
+#### The Q# `DumpMachine` function
+
+`DumpMachine` is a Q# function that allows you to dump information about the current state of the qubit system to the console as your program runs. `DumpMachine` doesn't stop or interrupt your program during runtime.
+
+The following example calls `DumpMachine` at two points in a Q# program and explores the output.
+
+1. In VS Code, create and save a new `.qs` file with the following code:
+
+   ```qsharp
+   import Std.Diagnostics.*;
+
+   operation Main() : Unit {
+       use qubits = Qubit[2];
+       X(qubits[1]);
+       H(qubits[1]);
+       DumpMachine();
+
+       R1Frac(1, 2, qubits[0]);
+       R1Frac(1, 3, qubits[1]);
+       DumpMachine();
     
-    ResetAll(qubits);
-}
-MultiQubitDumpMachineDemo();
-```
+       ResetAll(qubits);
+   }
+   ```
 
-```output
-Basis State
-(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
-|00⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-|01⟩	−0.7071+0.0000𝑖	 50.0000%	↓	-3.1416
+1. Press **Ctrl + Shift + Y** to open the **Debug Console**.
+1. Press **Ctrl + F5** to run your program. The following output from `DumpMachine` appears in the **Debug Console**:
 
-Basis State
-(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
-|00⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-|01⟩	−0.6533−0.2706𝑖	 50.0000%	↙	-2.7489   
-```
+   ```output
+   Basis | Amplitude      | Probability | Phase
+   -----------------------------------------------
+    |00⟩ |  0.7071+0.0000𝑖 |    50.0000% |   0.0000
+    |01⟩ | −0.7071+0.0000𝑖 |    50.0000% |  -3.1416
 
-### dump_machine() function
+   Basis | Amplitude      | Probability | Phase
+   -----------------------------------------------
+    |00⟩ |  0.7071+0.0000𝑖 |    50.0000% |   0.0000
+    |01⟩ | −0.6533−0.2706𝑖 |    50.0000% |  -2.7489
+   ```
 
-[`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) is a Python function that returns the current allocated qubit count and a Python dictionary of sparse state amplitudes that you can parse. Using either of these functions in a Jupyter Notebook allows you to step through your operations much like a debugger. Using the previous example program:
+The output from `DumpMachine` shows how the state of the qubit systems changes after each set of gates.
 
-```python
-import qsharp 
-```
+> [!NOTE]
+> The output from `DumpMachine` uses big-endian ordering.
+
+### The Python `dump_machine` function
+
+The [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) function is a function from the `qsharp` Python library. This function returns the current allocated qubit count and a dictionary of that contains the sparse state amplitudes of the qubit system.
+
+The following example runs the same program as the previous `DumpMachine` example, but in a Jupyter notebook instead of a `.qs` file.
+
+1. In VS Code, press **Ctrl + Shift + P** to open the **Command Palette**.
+1. Enter **Create: New Jupyter Notebook** and press **Enter**. A new Jupyter Notebook tab opens.
+1. In the first cell, copy and run the following code:
+
+   ```python
+   import qsharp 
+   ```
+
+1. Create a new code cell, then copy and run the following Q# code:
+
+   ```qsharp
+   %%qsharp
+
+   use qubits = Qubit[2];
+   X(qubits[0]);
+   H(qubits[1]);
+   ```
+
+1. Create a new code cell. Copy and run the following Python code to view the qubit state at this point in the program:
+
+   ```python
+   dump = qsharp.dump_machine()
+   dump
+   ```
+  
+   The `dump_machine` function displays the following output:
+  
+   ```output
+   Basis State
+   (|𝜓₁…𝜓ₙ⟩)  Amplitude       Measurement Probability  Phase
+   |10⟩       0.7071+0.0000𝑖   50.0000%                 ↑  0.0000
+   |11⟩       0.7071+0.0000𝑖   50.0000%                 ↑  0.0000
+   ```
+
+1. Create a new code cell, then copy and run the following Q# code:
+
+   ```qsharp
+   %%qsharp
+
+   R1Frac(1, 2, qubits[0]);
+   R1Frac(1, 3, qubits[1]);
+   ```
+
+1. Create a new code cell. Copy and run the following Python code to view the qubit state at this point in the program:
+
+   ```python
+   dump = qsharp.dump_machine()
+   dump
+   ```
+
+   The `dump_machine` function displays the following output:
+
+   ```output
+   Basis State
+   (|𝜓₁…𝜓ₙ⟩)  Amplitude      Measurement Probability  Phase
+   |10⟩       0.5000+0.5000𝑖  50.0000%                 ↗  0.7854
+   |11⟩       0.2706+0.6533𝑖  50.0000%                 ↗  1.1781
+   ```
+
+1. To print an abbreviated version the `dump_machine` output, create a new cell and run the following Python code:
+
+   ```python
+   print(dump)
+   ```
+
+1. To get the total number of qubits in the system, create a new code cell and run the following Python code:
+
+   ```python
+   dump.qubit_count
+   ```
+
+1. You can access the amplitudes of individual qubits states that have nonzero amplitude. For example, create a new code cell and run the following Python code to get the individual amplitudes for the $\ket{10}$ and $\ket{11}$ states:
+
+   ```python
+   print(dump[2])
+   print(dump[3])
+   ```
+
+### The `dump_operation` function
+
+The `dump_operation` function is a function from the `qsharp.utils` Python package. This function takes two inputs: a Q# operation or operation definition as a string and the number of qubits that are used in the operation. The output from `dump_operation` is a nested list that represents the square matrix of complex numbers that corresponds to the given quantum operation. The matrix values are in the computational basis, and each sublist represents a row of the matrix.
+
+The following example uses `dump_operation` to display information for a 1-qubit and 2-qubit system.
+
+1. In VS Code, press **Ctrl + Shift + P** to open the **Command Palette**.
+1. Enter **Create: New Jupyter Notebook** and press **Enter**. A new Jupyter Notebook tab opens.
+1. In the first cell, copy and run the following code:
+
+   ```python
+   import qsharp
+   from qsharp.utils import dump_operation
+   ```
+
+1. To display the matrix elements of a single-qubit gate, call `dump_operation` and pass 1 for the number of qubits. For example, copy and run the following Python code in a new code cell to get the matrix elements for an identity gate and a Hadamard gate:
+
+   ```python
+   res = dump_operation("qs => ()", 1)
+   print("Single-qubit identity gate:\n", res)
+   print()
+   
+   res = dump_operation("qs => H(qs[0])", 1)
+   print("Single-qubit Hadamard gate:\n", res)
+   ```
+
+1. You can also call the `qsharp.eval` function and then reference the Q# operation in `dump_operation` to get the same result. For example, create a new code cell, then copy and run the following Python code to print the matrix elements for a single-qubit Hadamard gate:
+
+   ```python
+   qsharp.eval("operation SingleH(qs : Qubit[]) : Unit { H(qs[0]) }")
+
+   res = dump_operation("SingleH", 1)
+   print("Single-qubit Hadamard gate:\n", res)
+   ```
+
+1. To display the matrix elements of a two-qubit gate, call `dump_operation` and pass 2 for the number of qubits. For example, copy and run the following Python code in a new code cell to get the matrix elements for a Controlled Ry operation where the second qubit is the target qubit:
+
+   ```python
+   qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit { Controlled Ry([qs[0]], (0.5, qs[1])); }")
+
+   res = dump_operation("ControlRy", 2)
+   print("Controlled Ry rotation gate:\n", res)
+   ```
+
+For more examples of how to test and debug your code with `dump_operation`, see [Testing operations](https://github.com/microsoft/qdk/tree/main/samples/testing/operations) from the QDK samples.
+
+## Test your quantum code
+
+The QDK provides several Q# functions and operations that you can use to test your code as it runs. You can also write unit tests for Q# programs.
+
+### The `fail` expression
+
+The [`fail`](xref:microsoft.quantum.qsharp.returnsandtermination#fail-expression) expression immediately ends your program. To incorporate tests into your code, use the `fail` expressions inside of conditional statements.
+
+The following example uses a `fail` statement to test that a qubit array contains exactly 3 qubits. The program ends with an error message when the test doesn't pass.
+
+1. In VS Code, create and save a new `.qs` file with the following code:
+
+   ```qsharp
+   operation Main() : Unit {
+       use qs = Qubit[6];
+       let n_qubits = Length(qs);
+
+       if n_qubits != 3 {
+           fail $"The system should have 3 qubits, not {n_qubits}.";
+       }  
+   }
+   ```
+
+1. Press **Ctrl + F5** to run the program. Your program fails and the following output appears in the **Debug Console**:
+
+   ```output
+   Error: program failed: The system should have 3 qubits, not 6.
+   ```
+
+1. Edit your code from `Qubit[6]` to `Qubit[3]`, save your file, and then press **Ctrl + F5** to run the program again. The program runs without an error because the test passes.
+
+### The `Fact` function
+
+You can also use the Q# `Fact` function from the `Std.Diagnostics` namespace to test your code. The `Fact` function takes a Boolean expression and en error message string. If the Boolean expression is true, then the test passes and your program continues to run. If the Boolean expression is false, then `Fact` ends your program and displays the error message.
+
+To perform the same array length test in your previous code, nut with the `Fact` function, follow these steps:
+
+1. In VS Code, create and save a new `.qs` file with the following code:
+
+   ```qsharp
+   import Std.Diagnostics.Fact;
+
+   operation Main() : Unit {
+       use qs = Qubit[6];
+       let n_qubits = Length(qs);
+
+       Fact(n_qubits == 3,  $"The system should have 3 qubits, not {n_qubits}.")
+   }
+   ```
+
+1. Press **Ctrl + F5** to run the program. The test condition in `Fact` doesn't pass and the error message appears in the **Debug Console**.
+
+1. Edit your code from `Qubit[6]` to `Qubit[3]`, save your file, and then press **Ctrl + F5** to run the program again. The test condition in `Fact` passes and your program runs without an error.
+
+### Write Q# unit tests with the `@Test()` annotation
+
+In Q# programs, you can apply the `@Test()` annotation to a callable (function or operation) to turn the callable into a unit test. These units tests appear in the **Testing** menu in VS Code so that you can take advantage of this VS Code feature. You can turn a callable into a unit test only when the callable doesn't take input parameters.
+
+The following example wraps the array length test code in an operation and turns that operation into a unit test:
+
+1. In VS Code, create and save a new `.qs` file with the following code:
+
+   ```qsharp
+   import Std.Diagnostics.Fact;
+
+   @Test()
+   operation TestCase() : Unit {
+       use qs = Qubit[3];
+       let n_qubits = Length(qs);
+
+       Fact(n_qubits == 3, $"The system should have 3 qubits, not {n_qubits}.");
+   }
+   ```
+
+   The `@Test()` annotation on the line before the `TestCase` operation definition turns the operation into a VS Code unit test. A green arrow appears on the operation definition line.
+
+1. Choose the green arrow to run `TestCase` and report the test results.
+1. To interact with your units tests in the VS Code Test Explorer, choose the **Testing** flask icon in the Primary Side Bar.
+1. Edit your code from `Qubit[3]` to `Qubit[6]` and run the unit test again to see how the test information changes.
+
+You can write and run Q# unit tests in VS Code without an entrypoint operation in your program.
+
+> [!NOTE]
+> Callables from the `Std.Diagnostics` namespace aren't compatible with QIR generation, so only include unit tests in Q# code that you run on simulators. If you want to generate QIR from your Q# code, then don't include unit tests in your code.
+
+### The `CheckZero` and `CheckAllZero` operations
+
+The `CheckZero` and `CheckAllZero` Q# operations check whether the current state of a qubit or qubit array is $\ket{0}$. The `CheckZero` operation takes a single qubit and returns `true` only when the qubit is in the $\ket{0}$ state. The `CheckAllZero` operations take a qubit array and returns `true` only when all qubits in the array are in the $\ket{0}$ state. To use `CheckZero` and `CheckAllZero`, import them from the `Std.Diagnostics` namespace.
+
+The following example uses both operations. The `CheckZero` tests that the `X` operation flips the first qubit from the $\ket{0}$ state to the $\ket{1}$ state, and the `CheckAllZero` operation tests that both qubits are reset to the $\ket{0}$ state.
+
+In VS Code, create and save a new `.qs` file with the following code, then run the program and examine the output in the **Debug Console**.
 
 ```qsharp
-%%qsharp
-use qubits = Qubit[2];
-X(qubits[0]);
-H(qubits[1]);
-```
-
-```python
-dump = qsharp.dump_machine()
-dump
-```
-
-```output
-
-Basis State
-(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
-|10⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-|11⟩	0.7071+0.0000𝑖	 50.0000%	↑	0.0000
-```
-
-```qsharp
-%%qsharp
-R1Frac(1, 2, qubits[0]);
-R1Frac(1, 3, qubits[1]);
-```
-
-```python
-dump = qsharp.dump_machine()
-dump
-```
-
-```output
-Basis State
-(|𝜓₁…𝜓ₙ⟩)	Amplitude	Measurement Probability	Phase
-|10⟩	0.5000+0.5000𝑖	 50.0000%	↗	0.7854
-|11⟩	0.2706+0.6533𝑖	 50.0000%	↗	1.1781    
-```
-
-```python
-# you can print an abbreviated version of the values
-print(dump)
-```
-
-```output
-STATE:
-|10⟩: 0.5000+0.5000𝑖
-|11⟩: 0.2706+0.6533𝑖
-```
-
-```python
-# you can access the current qubit count
-dump.qubit_count
-```
-
-```output
-2
-```
-
-```python
-# you can access individual states by their index
-dump[2]
-```
-
-```output
-(0.5+0.5000000000000001j)
-```
-
-```python
-dump[3]
-```
-
-```output
-(0.27059805007309845+0.6532814824381883j)
-```
-
-### CheckZero() and CheckAllZero() operations
-
-`CheckZero()` and `CheckAllZero()` are Q# operations that can check whether the current state of a qubit or qubit array is $\ket{0}$. `CheckZero()` returns `true` if the qubit is in the $\ket{0}$ state, and `false` if it is in any other state. `CheckAllZero()` returns `true` if all qubits in the array are in the $\ket{0}$ state, and `false` if the qubits are in any other state.
-
-```qsharp
-import Microsoft.Quantum.Diagnostics.*;
+import Std.Diagnostics.*;
 
 operation Main() : Unit {
     use qs = Qubit[2];
     X(qs[0]); 
+
     if CheckZero(qs[0]) {
         Message("X operation failed");
     }
     else {
         Message("X operation succeeded");
     }
+
     ResetAll(qs);
+
     if CheckAllZero(qs) {
         Message("Reset operation succeeded");
     }
@@ -275,72 +351,3 @@ operation Main() : Unit {
     }
 }
 ```
-
-### dump_operation() function
-
-`dump_operation` is a Python function that takes an operation, or operation definition, and a number of qubits to use, and returns a square matrix of complex numbers representing the output of the operation.
-
-You import `dump_operation` from `qsharp.utils`.
-
-```python
-import qsharp
-from qsharp.utils import dump_operation
-```
-
-This example prints the matrix of a single-qubit identity gate and the Hadamard gate.
-
-```python
-res = dump_operation("qs => ()", 1)
-print(res)
-res = dump_operation("qs => H(qs[0])", 1)
-print(res)
-```
-
-```output
-[[(1+0j), 0j], [0j, (1+0j)]]
-[[(0.707107+0j), (0.707107+0j)], [(0.707107+0j), (-0.707107-0j)]]
-```
-
-You can also define a function or operation using `qsharp.eval()` and then reference it from `dump_operation`. The single qubit represented earlier can also be represented as
-
-```python
-qsharp.eval("operation SingleQ(qs : Qubit[]) : Unit { }")
-
-res = dump_operation("SingleQ", 1)
-print(res)
-```
-
-```output
-[[(1+0j), 0j], [0j, (1+0j)]]
-```
-
-This example uses a `Controlled Ry` gate to apply a rotation to the second qubit
-
-```python
-qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit {qs[0]; Controlled Ry([qs[0]], (0.5, qs[1]));}")
-
-res = dump_operation("ControlRy", 2)
-print(res)
-```
-
-```output
-[[(1+0j), 0j, 0j, 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, (0.968912+0j), (-0.247404+0j)], [0j, 0j, (0.247404+0j), (0.968912+0j)]]
-```
-
-The following code defines Q# operation `ApplySWAP` and prints its matrix alongside that of the two-qubit identity operation.
-
-```python
-qsharp.eval("operation ApplySWAP(qs : Qubit[]) : Unit is Ctl + Adj { SWAP(qs[0], qs[1]); }")
-
-res = dump_operation("qs => ()", 2)
-print(res)
-res = dump_operation("ApplySWAP", 2)
-print(res)
-```
-
-```output
-[[(1+0j), 0j, 0j, 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, (1+0j), 0j], [0j, 0j, 0j, (1+0j)]]
-[[(1+0j), 0j, 0j, 0j], [0j, 0j, (1+0j), 0j], [0j, (1+0j), 0j, 0j], [0j, 0j, 0j, (1+0j)]]
-```
-
-More examples of testing operations using `dump_operation()` can be found on the samples page [Testing Operations in the QDK](https://github.com/microsoft/qdk/tree/main/samples/testing/operations).
