@@ -217,7 +217,7 @@ The following example uses `dump_operation` to display information for a 1-qubit
 1. You can also call the `qsharp.eval` function and then reference the Q# operation in `dump_operation` to get the same result. For example, create a new code cell, then copy and run the following Python code to print the matrix elements for a single-qubit Hadamard gate:
 
    ```python
-   qsharp.eval("operation SingleH(qs : Qubit[]) : Unit {H(qs[0])}")
+   qsharp.eval("operation SingleH(qs : Qubit[]) : Unit { H(qs[0]) }")
 
    res = dump_operation("SingleH", 1)
    print("Single-qubit Hadamard gate:\n", res)
@@ -226,7 +226,7 @@ The following example uses `dump_operation` to display information for a 1-qubit
 1. To display the matrix elements of a two-qubit gate, call `dump_operation` and pass 2 for the number of qubits. For example, copy and run the following Python code in a new code cell to get the matrix elements for a Controlled Ry operation where the second qubit is the target qubit:
 
    ```python
-   qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit {qs[0]; Controlled Ry([qs[0]], (0.5, qs[1]));}")
+   qsharp.eval ("operation ControlRy(qs : Qubit[]) : Unit { Controlled Ry([qs[0]], (0.5, qs[1])); }")
 
    res = dump_operation("ControlRy", 2)
    print("Controlled Ry rotation gate:\n", res)
@@ -290,7 +290,7 @@ To perform the same array length test in your previous code, nut with the `Fact`
 
 ### Write Q# unit tests with the `@Test()` annotation
 
-In Q# programs, you can apply the `@Test()` annotation to a callable (function or operation) to turn the callable into a unit test. These units tests appear in the **Testing** menu in VS Code so that you can take advantage of this VS Code feature. You can turn a callable into a unit test only when the callable doesn't take take input parameters.
+In Q# programs, you can apply the `@Test()` annotation to a callable (function or operation) to turn the callable into a unit test. These units tests appear in the **Testing** menu in VS Code so that you can take advantage of this VS Code feature. You can turn a callable into a unit test only when the callable doesn't take input parameters.
 
 The following example wraps the array length test code in an operation and turns that operation into a unit test:
 
