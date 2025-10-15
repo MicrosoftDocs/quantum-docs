@@ -80,9 +80,6 @@ Some things to note:
 
 ### Stepping through the program on Quantinuum
 
-> [!WARNING]
-> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
-
 The *hello world* program runs a simple quantum random number generator and displays a histogram of the results.
 
 Some things to note:

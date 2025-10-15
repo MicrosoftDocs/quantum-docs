@@ -20,9 +20,6 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 ## Targets
 
-> [!WARNING]
-> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
-
 The following targets are available from this provider:
 
 |Target name|Target ID|Number of qubits|Description|
@@ -595,7 +592,7 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [Quantinuum]: https://www.quantinuum.com
 [System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
-[`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html 
+[`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html
 [`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
 [`pytket`]: https://cqcl.github.io/tket/pytket/api/#
 [`pytket` User Manual]: https://docs.quantinuum.com/tket/user-guide/
