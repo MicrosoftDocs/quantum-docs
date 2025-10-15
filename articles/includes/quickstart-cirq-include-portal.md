@@ -92,9 +92,9 @@ for target in service.targets():
 
 ```output
 This workspace's targets:
-<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>
-<Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>
-<Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>
+<Target name="quantinuum.qpu.h2-1", avg. queue time=0 s, Degraded>
+<Target name="quantinuum.sim.h2-1sc", avg. queue time=1 s, Available>
+<Target name="quantinuum.sim.h2-1e", avg. queue time=40 s, Available>
 <Target name="ionq.simulator", avg. queue time=3 s, Available>
 <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>
 ```
@@ -238,7 +238,7 @@ b=111010111111111011100001110101111100110001000000101101110100111100111100110110
 
 #### Run on the API Validator
 
-To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `quantinuum.sim.h1-1sc`.
+To check your circuit before running it on actual quantum hardware, you can use the Quantinuum API Validator, `quantinuum.sim.h2-1sc`.
 
 Add the following cell that submits a job to run the circuit with
 100 shots, or repetitions, waits until the job is complete, and returns the results:
@@ -247,7 +247,7 @@ Add the following cell that submits a job to run the circuit with
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="quantinuum.sim.h1-1sc"
+    target="quantinuum.sim.h2-1sc"
 )
 ```
 
@@ -292,7 +292,7 @@ Use the same `run` method and operations that you used previously with the API V
 result = service.run(
     program=circuit,
     repetitions=100,
-    target="quantinuum.qpu.h1-1"
+    target="quantinuum.qpu.h2-1"
 )
 ```
 
@@ -316,7 +316,7 @@ get the results after the job has run successfully.
 job = service.create_job(
     program=circuit,
     repetitions=100,
-    target="quantinuum.qpu.h1-1"
+    target="quantinuum.qpu.h2-1"
 )
 ```
 

@@ -100,9 +100,9 @@ This workspace's targets:
 - ionq.simulator
 - ionq.qpu.aria-1
 - microsoft.estimator
-- quantinuum.qpu.h1-1
-- quantinuum.sim.h1-1sc
-- quantinuum.sim.h1-1e
+- quantinuum.qpu.h2-1
+- quantinuum.sim.h2-1sc
+- quantinuum.sim.h2-1e
 - rigetti.sim.qvm
 - rigetti.qpu.ankaa-3    
 ```
@@ -219,13 +219,13 @@ Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sampl
 
 ### [Quantinuum](#tab/tabid-quantinuum)
 
-To check your code before running it on actual quantum hardware, you can use one of the Quantinuum Syntax Checkers, `quantinuum.sim.h1-1sc`.
+To check your code before running it on actual quantum hardware, you can use one of the Quantinuum Syntax Checkers, `quantinuum.sim.h2-1sc`.
 
 Add a new cell and create an object to represent the Quantinuum Syntax Checker target:
 
 ```python
 # Get Quantinuum's Syntax Checker target:
-apival_backend = provider.get_backend("quantinuum.sim.h1-1sc")
+apival_backend = provider.get_backend("quantinuum.sim.h2-1sc")
 ```
 
 #### Run on the Syntax Checker
@@ -248,7 +248,7 @@ print(result)
 ```
 
 ```output
-Result(backend_name='quantinuum.sim.h1-1sc', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=8, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 8}, memory=['000', '000', '000', '000', '000', '000', '000', '000'], probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
+Result(backend_name='quantinuum.sim.h2-1sc', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=8, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 8}, memory=['000', '000', '000', '000', '000', '000', '000', '000'], probabilities={'000': 1.0}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
 {'000': 8, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0}
 ```
 
@@ -318,7 +318,7 @@ plot_histogram(counts)
 You can see that the results now are roughly divided between 0 and 1. 
 
 ```output
-Result(backend_name='quantinuum.qpu.h1-1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='48282d18-9c15-11ec-bfbd-00155d6373ba', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'111': 53, '101': 1, '000': 46}, probabilities={'111': 0.53, '101': 0.01, '000': 0.46}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
+Result(backend_name='quantinuum.qpu.h2-1', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='48282d18-9c15-11ec-bfbd-00155d6373ba', success=True, results=[ExperimentResult(shots=100, success=True, meas_level=2, data=ExperimentResultData(counts={'111': 53, '101': 1, '000': 46}, probabilities={'111': 0.53, '101': 0.01, '000': 0.46}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit'))])
 {'000': 46, '001': 0, '010': 0, '011': 0, '100': 0, '101': 1, '110': 0, '111': 53}
 ```
 

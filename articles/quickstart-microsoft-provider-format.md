@@ -489,7 +489,7 @@ def prepare_input_data(seq):
 1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object.
 
     ```python
-    target = workspace.get_targets(name="quantinuum.sim.h1-1sc")
+    target = workspace.get_targets(name="quantinuum.sim.h2-1sc")
     job = target.submit(circuit, shots=500)
     ```
 

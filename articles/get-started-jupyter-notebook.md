@@ -80,9 +80,6 @@ Some things to note:
 
 ### Stepping through the program on Quantinuum
 
-> [!WARNING]
-> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
-
 The *hello world* program runs a simple quantum random number generator and displays a histogram of the results.
 
 Some things to note:
@@ -94,15 +91,15 @@ Some things to note:
 - **5th cell**: Compiles the qsharp operation using the base profile to submit to Azure Quantum.
 - **6th and 7th cells**: Sets the target, submits the job, and plots and displays the result. The results should be roughly split between 0 and 1.
 
-Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, *quantinuum.sim.h1-1sc*. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement.
+Looking at the histogram, you may notice that the program returned 0 every time, which is not very random. This is because the notebook was pre-populated to use the **Quantinuum Syntax Checker**, `quantinuum.sim.h2-1sc`. Using the Syntax Checker ensures that your code will run successfully on Quantinuum hardware, but also returns 0 for every quantum measurement.
 
-To create a true random number generator, modify the code in the 5th cell to use the **System Model H1 Emulator** target, *quantinuum.sim.h1-1e*.
+To create a true random number generator, modify the code in the 5th cell to use the **System Model H2 Emulator** target, `quantinuum.sim.h2-1e`.
 
 > [!NOTE]
-> Running the program against the System Model H1 Emulator or the System Model H1 computer will use H-System Quantum Credits (HQCs) from your account. A single run of this example program costs approximately 5.3 HQCs.
+> Running the program against the System Model H2 Emulator or the System Model H2 computer will use H-System Quantum Credits (HQCs) from your account. A single run of this example program costs approximately 5.3 HQCs.
 
 ```python
-qsharp.azure.target("quantinuum.sim.h1-1e")
+qsharp.azure.target("quantinuum.sim.h2-1e")
 ```
 
 Re-run that cell and the following cells. Now, the results should be roughly split between 0 and 1.

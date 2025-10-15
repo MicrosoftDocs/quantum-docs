@@ -59,7 +59,7 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
 1. Select **Azure account**, and follow the prompts to connect to your preferred directory, subscription, and workspace.
 1. After you're connected, in the **Explorer** pane, expand **Quantum Workspaces**.
 1. Expand your workspace and expand the **Quantinuum** provider.
-1. Select any Quantinuum available target, for example **quantinuum.sim.h1-1e**.
+1. Select any Quantinuum available target, for example **quantinuum.sim.h2-1e**.
 1. Select the play icon to the right of the target name to start submitting the current Q# program.
 1. Enter a name to identify the job, and the number of shots.
 1. Press **Enter** to submit the job. The job status displays at the bottom of the screen.
@@ -86,10 +86,10 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
     )
     ```
 
-1. Set the `target` parameter to the Quantinuum target you want to use. For example, to use the `quantinuum.sim.h1-1e` target:
+1. Set the `target` parameter to the Quantinuum target you want to use. For example, to use the `quantinuum.sim.h2-1e` target:
 
     ```python
-    target = workspace.get_targets("quantinuum.sim.h1-1e")
+    target = workspace.get_targets("quantinuum.sim.h2-1e")
     ```
 
 You can combine multiple hybrid quantum jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).

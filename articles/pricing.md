@@ -15,9 +15,9 @@ uid: microsoft.quantum.providers-pricing
 
 # Pricing plans for Azure Quantum providers
 
-In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information in this article is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace you are using. 
+In Azure Quantum, hardware and software providers define and control the pricing of their offerings. The information in this article is subject to change by providers and some delays in reflecting latest pricing information may exist. Be sure to verify the latest pricing information from the Azure Quantum workspace that you're using.
 
-## IonQ 
+## IonQ
 
 [IonQ](xref:microsoft.quantum.providers.ionq) charges based on a token pricing model which billing unit is the *Azure Quantum Token (AQT)*. This model is specific to Azure Quantum. The number of Azure Quantum Tokens is calculated by the following formula:
 
@@ -34,7 +34,7 @@ where:
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
 IonQ offers a **pay-as-you-go** plan and a **monthly subscription** plan with access to the quantum simulator, the Aria 1 25-qubit quantum computers, and IonQ Forte 1 and Forte Enterprise 1 36-qubit quantum computers.
- 
+
 ### [Pay As You Go](#tab/tabid-paygo)
 
 The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 25-qubit, IonQ Forte 1 and Forte Enterprise 1 36-qubit quantum computers, and the IonQ simulator. The use of the quantum computers is charged based on the number of AQTs + Azure infrastructure costs.
@@ -49,16 +49,16 @@ The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 25-qub
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 > [!NOTE]
->  If you are an existing research grant or a Pay-as-you-go customer, you may see another billing unit in addition to AQT, called *Quantum Gate-Shots (QGS)*. The QGS units are equivalent to AQT units. The number of QGS is calculated by the following formula:
-> 
+> If you are an existing research grant or a Pay-as-you-go customer, you may see another billing unit in addition to AQT, called *Quantum Gate-Shots (QGS)*. The QGS units are equivalent to AQT units. The number of QGS is calculated by the following formula:
+>
 > $$
 > QGS = N · C
 > $$
 > where:
-> 
+>
 > - $QGS$ is the number of quantum gate-shots
 > - $N$ is the number of one- or two-qubit gates submitted
-> - $C$ is the number of execution shots 
+> - $C$ is the number of execution shots
 
 ### [Aria-Forte plan](#tab/tabid-aria)
 
@@ -99,11 +99,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## Quantinuum
 
-> [!WARNING]
-> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you are on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
-
 [Quantinuum](xref:microsoft.quantum.providers.quantinuum) uses a system that charges each job depending on the number of operations in the job, and the number of shots you run. The usage units defined by Quantinuum are*Hardware Quantum Credits (HQCs)* for jobs submitted to quantum computers and emulator HQCs (eHQCs) for jobs submitted to emulators.
-
 
 HQCs and eHQCs are used to calculate the cost of running a job, and they are calculated based on the following formula:
 
@@ -144,6 +140,7 @@ The Pay as You Go plan provides queued access to the H2 series quantum computers
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ***
+
 ## Rigetti
 
 [Rigetti](xref:microsoft.quantum.providers.rigetti) charges for job execution time on their quantum processors. There's no added charge per job, per shot, or per gate. The [Quantum Virtual Machine (QVM)](https://github.com/quil-lang/qvm) simulator is free for all users under all plans.
@@ -165,5 +162,3 @@ The Pay-as-you-go plan consists of *a la carte* access to Rigetti QPUs. The usag
 
 - [Azure Quantum quotas](xref:microsoft.quantum.quotas)
 - [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list)
-
- 
