@@ -48,23 +48,23 @@ For more information, see the [PASQAL provider](xref:microsoft.quantum.providers
 
 Quantinuum provides two emulator tools:
 
-**Syntax Checkers** - These tools verify proper syntax, compilation completion, and machine compatibility, using the same compiler as the quantum computer they target. There are Syntax Checkers for System Model H1 and H2.
+**Syntax Checkers** - These tools verify proper syntax, compilation completion, and machine compatibility, using the same compiler as the quantum computer they target. There are Syntax Checkers for both System Model H2 machines.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
 - Target ID:
-  - H1-1 Syntax Checker: `quantinuum.sim.h1-1sc`
   - H2-1 Syntax Checker: `quantinuum.sim.h2-1sc`
+  - H2-2 Syntax Checker: `quantinuum.sim.h2-2sc`
 - Target Execution Profile: QIR Adaptive RI
 - Pricing: Free ($0)
 
-**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H1 and H2 hardware. There are emulators for each machine - the H1-1 and H2-1 - along with cloud-based Quantinuum Emulator.
- 
+**Emulators** - These tools contain a detailed physical model and realistic noise model of the actual System Model H2 hardware. There are emulators for both H2 machines along with a cloud-based Quantinuum Emulator.
+
 - Job type: `Simulation`
 - Data Format: `honeywell.openqasm.v1, honeywell.qir.v1`
 - Target ID:
-  - H1-1 Emulator: `quantinuum.sim.h1-1e`
   - H2-1 Emulator: `quantinuum.sim.h2-1e`
+  - H2-2 Emulator: `quantinuum.sim.h2-2e`
 - Target Execution Profile: QIR Adaptive RI
 
 The Quantinuum Emulator is a System Model H1-based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page. For more information, see the [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based) page.

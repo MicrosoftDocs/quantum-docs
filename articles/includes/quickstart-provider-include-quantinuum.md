@@ -62,7 +62,7 @@ workspace = Workspace(
 1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object. For more information, see [Azure Quantum Job](xref:microsoft.quantum.optimization.job-reference).
 
     ```python
-    target = workspace.get_targets(name="quantinuum.sim.h1-1sc")
+    target = workspace.get_targets(name="quantinuum.sim.h2-1sc")
     job = target.submit(circuit, num_shots=500)
     ```
 
@@ -104,7 +104,7 @@ Looking at the histogram, you may notice that the random number generator return
 Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
-target = workspace.get_targets(name="quantinuum.qpu.h1-1")
+target = workspace.get_targets(name="quantinuum.qpu.h2-1")
 cost = target.estimate_cost(circuit, num_shots=500)
 
 print(f"Estimated cost: {cost.estimated_total}")

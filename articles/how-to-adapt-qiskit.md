@@ -65,8 +65,8 @@ Now you need to create a backend that points to an Azure Quantum provider.
     rigetti_simulator_backend = provider.get_backend("rigetti.sim.qvm")
 
     # Create Quantinuum simulator and QPU backends
-    quantinuum_simulator_backend = provider.get_backend("quantinuum.sim.h1-1e")
-    quantinuum_qpu_backend = provider.get_backend("quantinuum.qpu.h1-1")
+    quantinuum_simulator_backend = provider.get_backend("quantinuum.sim.h2-1e")
+    quantinuum_qpu_backend = provider.get_backend("quantinuum.qpu.h2-1")
     ```
 
     > [!NOTE]

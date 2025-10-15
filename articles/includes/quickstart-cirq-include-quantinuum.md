@@ -33,7 +33,7 @@ from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
     resource_id="",
     location="",
-    default_target="quantinuum.sim.h1-1sc"
+    default_target="quantinuum.sim.h2-1sc"
 )
 ```
 
@@ -49,12 +49,12 @@ print(service.targets())
 ```
 
 ```output
-[<Target name="quantinuum.qpu.h1-1", avg. queue time=0 s, Degraded>,
-<Target name="quantinuum.sim.h1-1sc", avg. queue time=1 s, Available>,
-<Target name="quantinuum.qpu.h1-2", avg. queue time=217300 s, Unavailable>,
-<Target name="quantinuum.sim.h1-2sc", avg. queue time=0 s, Available>,
-<Target name="quantinuum.sim.h1-1e", avg. queue time=40 s, Available>,
-<Target name="quantinuum.sim.h1-2e", avg. queue time=64 s, Available>,
+[<Target name="quantinuum.qpu.h2-1", avg. queue time=0 s, Degraded>,
+<Target name="quantinuum.sim.h2-1sc", avg. queue time=1 s, Available>,
+<Target name="quantinuum.qpu.h2-2", avg. queue time=217300 s, Unavailable>,
+<Target name="quantinuum.sim.h2-2sc", avg. queue time=0 s, Available>,
+<Target name="quantinuum.sim.h2-1e", avg. queue time=40 s, Available>,
+<Target name="quantinuum.sim.h2-2e", avg. queue time=64 s, Available>,
 <Target name="ionq.qpu", avg. queue time=229 s, Available>,
 <Target name="ionq.simulator", avg. queue time=3 s, Available>,
 <Target name="ionq.qpu.aria-1", avg. queue time=1136774 s, Available>]
@@ -120,7 +120,7 @@ Before running a job on the QPU, you can estimate how much it will cost to run. 
 cost = service.estimate_cost(
     program=circuit,
     repetitions=100,
-    target="quantinuum.qpu.h1-1sc"
+    target="quantinuum.qpu.h2-1sc"
 )
 
 print(f"Estimated cost: {cost.estimated_total}")
