@@ -43,9 +43,6 @@ For more information, see the [PASQAL provider](xref:microsoft.quantum.providers
 
 ## Quantinuum
 
-> [!WARNING]
-> Quantinuum will retire the H1-1 hardware on October 15, 2025. If you're on a plan that uses the H1 system, then switch to a plan that supports the H2 hardware.
-
 Quantinuum provides two emulator tools:
 
 **Syntax Checkers** - These tools verify proper syntax, compilation completion, and machine compatibility, using the same compiler as the quantum computer they target. There are Syntax Checkers for both System Model H2 machines.
