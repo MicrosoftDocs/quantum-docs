@@ -20,9 +20,6 @@ In this article, you will run a sample notebook in the Azure portal that execute
 
 For more information about using Jupyter Notebooks with the Azure Quantum service, see [Work with Jupyter Notebooks in an Azure Quantum workspace](xref:microsoft.quantum.how-to.notebooks).
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 ## Prerequisites
 
 Before you begin, you need the following prerequisites to use Jupyter Notebooks in an Azure Quantum workspace.

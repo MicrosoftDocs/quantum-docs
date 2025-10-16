@@ -48,9 +48,6 @@ The following configurations should be avoided:
 
 You must be an **Owner** or **User Access Administrator** of a resource to apply ARM resource locks. For more information, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 ### Command-line deployment
 
 You will need either Azure PowerShell or Azure CLI to deploy the lock. If you use Azure CLI, you must have the latest version. For the installation instructions, see:

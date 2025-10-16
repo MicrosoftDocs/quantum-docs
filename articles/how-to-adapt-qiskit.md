@@ -16,9 +16,6 @@ uid: microsoft.quantum.how-to.adapting-qiskit
 
 If you have some experience with quantum computing or are just starting, it's likely that you use some samples from [Qiskit.org](https://qiskit.org/). This article shows you how to adapt any Qiskit sample to run against any of the Azure Quantum backends.
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don't have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
