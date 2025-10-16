@@ -18,9 +18,6 @@ When you submit a quantum program to Azure Quantum, the job is uploaded to the A
 
 If your quantum program requires many iterations, each one is submitted as a single job. For some quantum experiments, such as variational algorithms (VQE) and optimization algorithms (QAOA), it's common to run for hours or days, in particular when QPU queue times are high and the programs require many iterations.
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 See the following suggestion to run long-runtime experiments in Azure Quantum.
 
 ## Program with few loops

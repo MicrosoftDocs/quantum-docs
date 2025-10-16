@@ -21,9 +21,6 @@ Learn how to use the `azure-quantum` Python package to submit circuits in specif
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 ## Prerequisites
 
 To run your circuits in a Notebook in Azure portal, you need:

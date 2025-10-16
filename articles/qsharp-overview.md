@@ -267,9 +267,6 @@ Let's break down the steps in the diagram.
 
 Run your quantum programs in your preferred development environment. You can use the online code editor in the Azure Quantum website, the hosted Jupyter Notebooks in your Azure Quantum workspace in the Azure portal, or a local development environment with Visual Studio Code. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 ### Write your quantum program
 
 You can write quantum programs in Q# using the Quantum Development Kit (QDK). To get started, see [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).

@@ -308,9 +308,6 @@ To resolve this, work with your subscription administrator to get an exception f
 
 ## Azure Quantum portal
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 ### Issue: Saved notebooks don't load
 
 After selecting **Notebooks** in your workspace, the list of your saved notebooks displays a progress bar but never loads.
