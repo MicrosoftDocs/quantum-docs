@@ -16,9 +16,6 @@ ms.custom: sfi-image-nochange
 
 Learn how to run Q# or Python code in a Jupyter Notebook in an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). A Jupyter Notebook is a document that contains both rich text and code and can run in your browser.
 
-> [!WARNING]
-> On October 15, 2025, Azure Quantum will discontinue support for hosted Jupyter notebooks. To retain your notebooks, see [Download your hosted Jupyter notebooks from your Quantum workspace](xref:microsoft.quantum.how-to.download-notebooks-from-portal).
-
 ## Prerequisites
 
 You need the following prerequisites to use Jupyter Notebooks in an Azure Quantum workspace.
