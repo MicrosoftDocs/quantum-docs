@@ -23,13 +23,10 @@ For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.cir
 
 ## Prerequisites
 
-To run your circuits in a Notebook in Azure portal, you need:
+To develop and run your circuits in Visual Studio Code (VS Code), you need:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-
-To develop and run your circuits in Visual Studio Code, you also need:
-
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The Azure Quantum `qsharp`, `azure-quantum`, and `ipykernel` packages.  
@@ -38,39 +35,18 @@ To develop and run your circuits in Visual Studio Code, you also need:
     python -m pip install --upgrade qsharp azure-quantum ipykernel
     ```
 
-## Create a new Jupyter Notebook
+## Create a new Jupyter notebook
 
-You can create a notebook in VS Code or directly in the Azure Quantum portal.
-
-### [Azure Quantum portal](#tab/tabid-portal)
-
-1. Log in to the [Azure portal](https://portal.azure.com/) and select the workspace from the previous step.
-1. In the left blade, select **Notebooks**.
-1. Click **My Notebooks** and click **Add New**.
-1. In **Kernel Type**, select **IPython**.
-1. Type a name for the file, and click **Create file**.
-
-When your new Notebook opens, it automatically creates the code for the first cell, based on your subscription and workspace information.
-
-```python
-from azure.quantum import Workspace
-workspace = Workspace ( 
-    resource_id = "", # Your resource_id 
-    location = ""  # Your workspace location (for example, "westus") 
-)
-```
-
-### [Visual Studio Code](#tab/tabid-vscode)
+To create a notebook in VS Code, follow these steps:
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. To connect to the Azure Quantum service, your program will need the resource ID and the
+1. To connect to the Azure Quantum service, your program needs the resource ID and the
 location of your Azure Quantum workspace.
     1. Log in to your Azure account, <https://portal.azure.com>,
     1. Select your Azure Quantum workspace, and navigate to **Overview**.
     1. Copy the parameters in the fields.
 
         :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace." lightbox="media/azure-portal-workspace-overview.png":::
-
 
 1. In the first cell of your notebook, paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
@@ -82,8 +58,6 @@ create a `workspace` object that connects to your Azure Quantum workspace.
         location = ""  # Add your workspace location (for example, "westus") 
     )
     ```
-
-***
 
 ## Submit QIR-formatted circuits
 

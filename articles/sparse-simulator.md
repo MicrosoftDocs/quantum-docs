@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to run your Q# programs on the Azure Quantum Development Kit sparse simulator.
 ms.author: quantumdocwriters
-ms.date: 01/24/2025
+ms.date: 10/16/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
@@ -19,7 +19,7 @@ For more information about the sparse simulator, please see [Jaques and Häner (
 
 ## Calling the sparse simulator
 
-The sparse simulator is the default local simulator in Visual Studio Code with the Azure Quantum Development Kit extension installed, and in the Azure Quantum portal. 
+The sparse simulator is the default local simulator in Visual Studio Code with the Azure Quantum Development Kit extension installed.
 
 | Scenario | Method |
 |----------|--------|
@@ -30,17 +30,17 @@ The sparse simulator is the default local simulator in Visual Studio Code with t
 
 ## Adding Pauli noise to the sparse simulator
 
-The sparse simulator supports the addition of Pauli noise to the simulation. This feature allows you to simulate the effects of noise on quantum operations and measurements. The noise model is specified using a dictionary of Pauli noise probabilities, where the keys are the Pauli operators `X`, `Y`, and `Z`, and the values are the probabilities of applying the corresponding Pauli operator. The noise model can be used in Q# programs, Python programs, or configured in the VS Code settings. 
+The sparse simulator supports the addition of Pauli noise to the simulation. This feature allows you to simulate the effects of noise on quantum operations and measurements. The noise model is specified using a dictionary of Pauli noise probabilities, where the keys are the Pauli operators `X`, `Y`, and `Z`, and the values are the probabilities of applying the corresponding Pauli operator. The noise model can be used in Q# programs, Python programs, or configured in the VS Code settings.
 
 ### Adding Pauli noise using the VS Code settings
 
-Pauli noise can be configured globally in Visual Studio Code by configuring the **Q# > Simulation:Pauli Noise** user setting. 
+Pauli noise can be configured globally in Visual Studio Code by configuring the **Q# > Simulation:Pauli Noise** user setting.
 
 :::image type="content" source="media/noisy-settings.png" alt-text="Screen shot showing settings for Q# noisy simulator.":::
 
 The settings apply to histogram results for all Q# programs run in VS Code, and to all gates, measurements, and qubits referenced in the program. The settings are identical to using the `ConfigurePauliNoise()` function.
 
-Running a histogram of the following GHz sample program without noise configured would return $\ket{00000}$ roughly half the time and $\ket{11111}$ the other half. 
+Running a histogram of the following GHz sample program without noise configured would return $\ket{00000}$ roughly half the time and $\ket{11111}$ the other half.
 
 ```qsharp
 import Std.Diagnostics.*;
@@ -62,13 +62,13 @@ operation GHzSample(n: Int) : Result[] {
 
 :::image type="content" source="media/noisy-50-50.png" alt-text="Screen shot showing results with no noise.":::
 
-However, adding 1% bit-flip noise shows the state starting to diffuse, and with 25% noise, the state is indistinguishable from noise. 
+However, adding 1% bit-flip noise shows the state starting to diffuse, and with 25% noise, the state is indistinguishable from noise.
 
 :::image type="content" source="media/noisy-1-25.png" alt-text="Screen shot showing results with 1% noise and 25% noise.":::
 
 ### Adding Pauli noise to Q# programs
 
-You can use the `ConfigurePauliNoise()` function to set or modify the noise model for individual Q# programs.  Using `ConfigurePauliNoise()`, you can granularly control where noise is applied in your Q# programs. 
+You can use the `ConfigurePauliNoise()` function to set or modify the noise model for individual Q# programs.  Using `ConfigurePauliNoise()`, you can granularly control where noise is applied in your Q# programs.
 
 > [!NOTE]
 > If you configure noise in the VS Code settings, it will be applied to all Q# programs. If you configure noise in a Q# program using `ConfigurePauliNoise()`, it will bypass any VS Code settings during the run of that program.
@@ -83,8 +83,8 @@ operation GHzSample(n: Int) : Result[] {
     H(qs[0]);
 ...
 ```
-:::image type="content" source="media/noisy-allocation.png" alt-text="Screen shot showing results with noise added after qubit allocation.":::
 
+:::image type="content" source="media/noisy-allocation.png" alt-text="Screen shot showing results with noise added after qubit allocation.":::
 
 or just prior to the measurement operation.
 
@@ -98,6 +98,7 @@ or just prior to the measurement operation.
     let results = MeasureEachZ(qs);
     ...
 ```
+
 :::image type="content" source="media/noisy-measurement.png" alt-text="Screen shot showing results with noise added just before measurement.":::
 
 You can also use `ConfigurePauliNoise()` to reset or clear noise configurations. In this example, the noise settings are set after qubit allocation, and then cleared immediately after the Hadamard operation, so that noise is only applied to the `H();` operation.
@@ -124,7 +125,6 @@ The following functions are available in the `Qdk.Std.Diagnostics` library to co
 | `NoNoise()` | Configures the noise model for no noise. | `ConfigurePauliNoise(NoNoise())` $\equiv$ `ConfigurePauliNoise(0.0, 0.0, 0.0)`     |
 | `ApplyIdleNoise` | Applies configured noise to a single qubit during simulation.    | `...`<br>`use q = Qubit[2];`<br>`ConfigurePauliNoise(0.1, 0.0, 0.0);`<br>`ApplyIdleNoise(q[0]);`<br>`...`     |
 
-
 ### Adding Pauli noise to Python programs or Jupyter Notebooks
 
 Pauli noise configuration is available with the `qsharp` Python package, and histogram capability with the `qsharp_widgets` package. Noise is added as a parameter to the `qsharp.run` method.
@@ -135,7 +135,7 @@ Pauli noise configuration is available with the `qsharp` Python package, and his
 
 The following sample shows the effect of 10% depolarizing noise on a Bell state measurement.
 
-```python 
+```python
 import qsharp
 import qsharp_widgets
 ```
@@ -182,5 +182,3 @@ and this run applies Pauli-Y noise with 10% probability.
 result = qsharp.run("GHzSample()", 20, noise=(0.0, 0.1, 0.0))
 display(qsharp_widgets.Histogram(result))
 ```
-
-

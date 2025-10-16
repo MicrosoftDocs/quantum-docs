@@ -8,25 +8,19 @@ ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Python', '$$v', target, targets]
 title: Submit Qiskit quantum circuits to Azure Quantum
-zone_pivot_groups: ide-local-portal
+zone_pivot_groups: ide-local
 uid: microsoft.quantum.quickstarts.computing.qiskit
 --- 
 
 # How to submit a circuit with Qiskit to Azure Quantum
 
-Learn how to submit a Qiskit quantum circuit using the `azure-quantum` Python package. You can submit Qiskit circuits to Azure Quantum using an Azure Quantum notebook, which has a built-in `azure-quantum` Python package, or from your local machine. You can also test your circuits using the local sparse simulator.
+Learn how to submit a Qiskit quantum circuit using the `azure-quantum` Python package. You can submit Qiskit circuits to Azure Quantum using the Azure Quantum Development Kit (QDK) and Jupyter Notebook in Visual Studio Code (VS Code). You can also test your circuits using the local sparse simulator.
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
 ::: zone pivot="platform-local"
 
 [!INCLUDE [local-procedure](includes/quickstart-qiskit-include-local.md)]
-
-::: zone-end
-
-::: zone pivot="platform-portal"
-
-[!INCLUDE [portal-procedure](includes/quickstart-qiskit-include-portal.md)]
 
 ::: zone-end
 

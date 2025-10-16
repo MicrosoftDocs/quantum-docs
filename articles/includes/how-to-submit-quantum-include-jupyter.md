@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 ms.author: quantumdocwriters
-ms.date: 01/13/2025
+ms.date: 10/16/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
@@ -10,7 +10,7 @@ no-loc: [Quantum Development Kit, target, targets]
 
 ## Submitting Jupyter Notebooks jobs to Azure Quantum
 
-Learn how to use VS Code to run, debug, and submit a Q# Jupyter Notebook to Azure Quantum. The steps in this article also apply to Jupyter Notebooks on your local Jupyter server or notebooks in the Azure Quantum portal. 
+Learn how to use VS Code to run, debug, and submit a Q# Jupyter Notebook to Azure Quantum.
 
 ## Prerequisites
 
@@ -18,9 +18,9 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `qsharp`, `qsharp-widgets`, and `azure-quantum` packages, and the `ipykernel` package. 
+- The Azure Quantum `qsharp`, `qsharp-widgets`, and `azure-quantum` packages, and the `ipykernel` package.
 
     ```bash
     python -m pip install --upgrade qsharp qsharp-widgets azure-quantum ipykernel
@@ -28,16 +28,16 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 ## Run and test your program in the local simulator
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information. 
+1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
+1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 1. In the first cell of the notebook, run the following Python code to import the necessary modules:
 
     ```python
     import qsharp
     import azure.quantum
     ```
-    
-    - The `qsharp` module activates the `%%qsharp` magic command that lets you enter Q# code directly into a cell. 
+
+    - The `qsharp` module activates the `%%qsharp` magic command that lets you enter Q# code directly into a cell.
     - The `azure-quantum` module provides connectivity to your Azure Quantum workspace.
     > [!NOTE]
     > If the Jupyter Python kernel `ipykernel` is not detected, VS Code will prompt you to install it.  
@@ -45,7 +45,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 1. Add another cell and enter this Q# code that returns a user-specified number of random bits:
 
     > [!NOTE]
-    > Notice that as soon as you type in the magic command `%%qsharp`, the notebook cell changes type from *Python* to *Q#*. 
+    > Notice that as soon as you type in the magic command `%%qsharp`, the notebook cell changes type from **Python** to **Q#**.
  
     ```qsharp
     %%qsharp
@@ -111,9 +111,7 @@ Circuit(qsharp.circuit("RandomNBits(4)"))
 
 :::image type="content" source="../media/circuit-jupyter-notebook.png" alt-text="Screenshot of Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
 
-
 For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
-
 
 ## Compile your job using the Base profile
 

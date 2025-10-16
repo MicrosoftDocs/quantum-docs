@@ -14,7 +14,7 @@ uid: microsoft.quantum.long-running-experiments
 
 # How to perform long-running experiments on Azure Quantum
 
-When you submit a quantum program to Azure Quantum, the job is uploaded to the Azure Storage account that you configured in the workspace waiting to be executed in the QPU provider you've selected. When your quantum program is next on the queue for the corresponding provider, Azure Quantum downloads your program and submits it to the provider, going from *waiting* to *executing* state. For more information about the state of Azure Quantum jobs, see [Monitoring jobs](xref:microsoft.quantum.work-with-jobs#monitoring-jobs).
+When you submit a quantum program to Azure Quantum, the job is uploaded to the Azure Storage account that you configured in the workspace waiting to be executed in the QPU provider you've selected. When your quantum program is next on the queue for the corresponding provider, Azure Quantum downloads your program and submits it to the provider, going from **waiting** to **executing** state. For more information about the state of Azure Quantum jobs, see [Monitoring jobs](xref:microsoft.quantum.work-with-jobs#monitoring-jobs).
 
 If your quantum program requires many iterations, each one is submitted as a single job. For some quantum experiments, such as variational algorithms (VQE) and optimization algorithms (QAOA), it's common to run for hours or days, in particular when QPU queue times are high and the programs require many iterations.
 
@@ -22,7 +22,7 @@ See the following suggestion to run long-runtime experiments in Azure Quantum.
 
 ## Program with few loops
 
-If your program doesn't require many loops and the QPU queue time is high, you may wait a couple of hours and submit your job later, or submit your program to a different provider from the ones available in Azure Quantum. 
+If your program doesn't require many loops and the QPU queue time is high, you may wait a couple of hours and submit your job later, or submit your program to a different provider from the ones available in Azure Quantum.
 
 ## Sessions
 
