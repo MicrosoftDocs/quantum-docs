@@ -8,12 +8,10 @@ groups:
     title: IonQ
   - id: platform-quantinuum
     title: Quantinuum
-- id: ide-local-portal
-  title: Local or online development environments
+- id: ide-local-simulator
+  title: Local development environments
   prompt: Select your preferred development environment
   pivots:
-  - id: platform-portal
-    title: Azure Quantum portal
   - id: platform-local
     title: Local computer
   - id: platform-simulator
