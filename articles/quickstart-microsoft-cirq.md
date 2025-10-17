@@ -56,7 +56,7 @@ location of your Azure Quantum workspace.
 1. Select your Azure Quantum workspace, and navigate to **Overview**.
 1. Copy the parameters in the fields.
 
-    :::image type="content" source="../media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
+    :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
 
 Add a new cell and use your account information to create `Workspace` and  `AzureQuantumService` objects to connect to your Azure Quantum workspace.
 

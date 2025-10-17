@@ -8,7 +8,7 @@ ms.topic: include
 no-loc: [Quantum Development Kit, target, targets]
 ---
 
-## Submitting Jupyter Notebooks jobs to Azure Quantum
+## Submit jobs to Azure Quantum from Jupyter Notebook
 
 Learn how to use VS Code to run, debug, and submit a Q# Jupyter Notebook to Azure Quantum.
 
