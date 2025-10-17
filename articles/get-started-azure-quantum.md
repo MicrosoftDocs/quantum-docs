@@ -108,11 +108,9 @@ To open your code in VS Code for the Web:
   
     :::image type="content" source="media/launch-vs-code.png" alt-text="Screenshot of the icon to launch VS Code.":::
 
-
 ## Next steps
 
-You can also run quantum programs using the Azure portal or by setting up a local development environment. 
+You can also run quantum programs using the Azure portal or by setting up a local development environment.
 
 - [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) 
-- [Get started with an Azure Quantum notebook](xref:microsoft.quantum.get-started.notebooks) 
 - [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)

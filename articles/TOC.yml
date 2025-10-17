@@ -14,8 +14,6 @@
     href: get-started-azure-quantum.md
   - name: Create an Azure Quantum workspace
     href: how-to-create-workspace.md
-  - name: Get started with Azure Quantum notebooks
-    href: get-started-jupyter-notebook.md
   - name: Set up the Quantum Development Kit
     href: install-overview-qdk.md
   - name: Ways to run Q# programs
@@ -25,8 +23,6 @@
   items:
   - name: Users and workspaces
     items:
-    - name: Work with Azure Quantum notebooks
-      href: how-to-run-notebooks-workspace.md
     - name: Manage your Azure Quantum workspaces
       items:
       - name: Connect to your Azure Quantum workspace
@@ -39,8 +35,6 @@
         href: how-to-share-access-quantum-workspace.md
       - name: Migrate your Azure Quantum job data
         href: migration-guide.md
-      - name: Download your hosted Jupyter notebooks
-        href: notebook-portal-download.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
     - name: Work with Azure Quantum using the Azure CLI
@@ -125,8 +119,6 @@
       href: qdk-qiskit-cirq-overview.md
     - name: How-to guides for Qiskit and Cirq
       items:
-      - name: Adapt Qiskit samples to Azure Quantum
-        href: how-to-adapt-qiskit.md
       - name: Submit a circuit with Qiskit
         href: quickstart-microsoft-qiskit.md
       - name: Submit a circuit with Cirq

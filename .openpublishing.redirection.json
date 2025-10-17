@@ -288,7 +288,7 @@
 		},
 		{
 			"source_path": "articles/overview-quantum-machine-learning.md",
-			"redirect_url": "/azure/quantum/how-to-adapt-qiskit",
+			"redirect_url": "/azure/quantum/",
 			"redirect_document_id": false
 		},
 		{
@@ -1139,6 +1139,26 @@
 		{
 			"source_path": "articles/credits-faq.md",
 			"redirect_url": "/azure/quantum/pricing",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-run-notebooks-workspace.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/get-started-jupyter-notebook.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-adapt-qiskit.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/notebook-portal-download.md",
+			"redirect_url": "/azure/quantum/",
 			"redirect_document_id": false
 		}
 	]
