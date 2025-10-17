@@ -17,7 +17,7 @@ uid: microsoft.quantum.how-to.workspace
 
 Learn how to create an [Azure Quantum](xref:microsoft.quantum.azure-quantum-overview) workspace in the Azure portal. An Azure Quantum workspace resource, or workspace for short, is a collection of assets associated with running quantum applications.
 
-A workspace is needed to [get started with Jupyter Notebooks in the Azure portal](xref:microsoft.quantum.get-started.notebooks) or quantum programs on quantum hardware.
+You need a workspace to submit quantum programs to quantum hardware.
 
 > [!TIP]
 > You can also create an Azure Quantum workspace using the Azure command-line interface (CLI). For more information, see [Manage quantum workspaces with the Azure CLI](xref:microsoft.quantum.workspaces-cli).
@@ -26,10 +26,10 @@ A workspace is needed to [get started with Jupyter Notebooks in the Azure portal
 
 You need to have an Azure account with an active subscription to create an Azure Quantum workspace. If you don't have one, you can choose from one of the following subscriptions, or for a full list see [Microsoft Azure Offer Details](https://azure.microsoft.com/support/legal/offer-details/).
 
-|Azure subscription | Description|
-|------|-------|
-|Pay-as-you-go (recommended) | You pay for the services you use, and you can cancel anytime.|
-|Enterprise Agreement| If your organization has an Enterprise Agreement (EA) purchasing contract with Microsoft, your organization's Account Owners can create [Enterprise Dev/Test subscriptions](https://azure.microsoft.com/offers/ms-azr-0148p/) for active Visual Studio subscribers under the EA.|
+| Azure subscription          | Description |
+|-----------------------------|-------------|
+| Pay-as-you-go (recommended) | You pay for the services you use, and you can cancel anytime. |
+| Enterprise Agreement        | If your organization has an Enterprise Agreement (EA) purchasing contract with Microsoft, your organization's Account Owners can create [Enterprise Dev/Test subscriptions](https://azure.microsoft.com/offers/ms-azr-0148p/) for active Visual Studio subscribers under the EA. |
 <!-- 
 *** COMMENTED out UNTIL A BASIC EMULATOR PLAN IS CONFIRMED ***
 
@@ -41,7 +41,7 @@ You need to have an Azure account with an active subscription to create an Azure
 > The free Azure trial gets you started with USD200 in Azure credits to be used in Azure 1st-party services (Azure Quantum isn't eligible) within the first 30 days of sign-up. Note that you can't use general-purpose Azure Credits with Microsoft third-party quantum providers (providers that aren't owned by Microsoft).
 -->
 
-If you have any questions or run into any issue using Azure Quantum, you can contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+If you have questions or run into issues when you use Azure Quantum, then contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Create the workspace
 
@@ -114,5 +114,4 @@ Deployment of your workspace may take a few minutes. The status and deployment d
 ## Next steps
 
 - [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
-- [Get started with Jupyter Notebooks in Azure Quantum](xref:microsoft.quantum.get-started.notebooks)
 - [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)

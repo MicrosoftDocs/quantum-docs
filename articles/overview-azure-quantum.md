@@ -30,7 +30,7 @@ To get started with Azure Quantum, you first need to determine your current setu
 |I don't have an Azure account and I'm a developer|You can install the [Quantum Development Kit for Visual Studio Code](#visual-studio-code)|
 |I have an Azure account|You can start by creating an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Then, you can either use the [Azure portal](#the-azure-portal) or install the [Quantum Development Kit for Visual Studio Code](#visual-studio-code)|
 
-You **don't need** to have an Azure account to use Azure Quantum. But, if you want to submit your quantum programs to real quantum hardware in Azure Quantum, you need an Azure account and an Azure Quantum workspace. 
+You **don't need** to have an Azure account to use Azure Quantum. But, if you want to submit your quantum programs to real quantum hardware in Azure Quantum, you need an Azure account and an Azure Quantum workspace.
 
 To have an Azure account, can register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you are a student, you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/?cid=msft_learn).
 
@@ -93,7 +93,7 @@ To get started, see [Run your first resource estimate](xref:microsoft.quantum.qu
 
 Quantum mechanics is the underlying "operating system" of the universe. It describes how the fundamental building blocks of nature behave. Nature's behaviors, such as chemical reactions, biological reactions, and material formations, often involve many-body quantum interactions. For simulating intrinsically quantum mechanical systems, such as molecules, quantum computing is promising, because qubits can be used to represent the natural states in question. Examples of quantum systems that quantum computing can model are photosynthesis, superconductivity, and complex molecular formations.
 
-[Azure Quantum Elements](https://quantum.microsoft.com/solutions/azure-quantum-elements) is purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows optimized for scaling on Azure High-Performance Computing (HPC) clusters, AI-accelerated computing, augmented reasoning using AI, integration with quantum tools to start experimenting with existing quantum hardware, and access in the future to Microsoft’s quantum supercomputer. 
+[Azure Quantum Elements](https://quantum.microsoft.com/solutions/azure-quantum-elements) is purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows optimized for scaling on Azure High-Performance Computing (HPC) clusters, AI-accelerated computing, augmented reasoning using AI, integration with quantum tools to start experimenting with existing quantum hardware, and access in the future to Microsoft’s quantum supercomputer.
 
 For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
 
@@ -101,9 +101,9 @@ For more information, see [Unlocking the power of Azure for Molecular Dynamics](
 
 Quantum computers do exceptionally well with problems that require calculating a large number of possible combinations. These types of problems can be found in many areas, such as quantum simulation, cryptography, quantum machine learning, and search problems.
 
-One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be. One well-known example is the Grover's algorithm, which yield a polynomial speedup over the classical counterparts. 
+One of the goals of quantum computing research is to study which problems can be solved by a quantum computer faster than a classical computer and how large the speedup can be. One well-known example is the Grover's algorithm, which yield a polynomial speedup over the classical counterparts.
 
-[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem. 
+[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem.
 
 For an implementation of Grover's algorithm, see [Tutorial: Implement Grover's search algorithm in Q#](xref:microsoft.quantum.tutorial-qdk.grovers).
 
@@ -118,7 +118,7 @@ Choose the provider that best suits the characteristics of your problem and your
 - [Quantinuum](xref:microsoft.quantum.providers.quantinuum): Trapped-ion systems with high-fidelity, fully connected qubits, low error rates, qubit reuse, and the ability to perform mid-circuit measurements.
 - [Rigetti](xref:microsoft.quantum.providers.rigetti): Rigetti's systems are powered by superconducting qubit-based quantum processors. They offer fast gate times, low-latency conditional logic, and fast program execution times.
 
-For more information on the specifications of each provider, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list). 
+For more information on the specifications of each provider, see the full [Quantum computing target list](xref:microsoft.quantum.reference.qc-target-list).
 
 For information about job cost, see [Pricing in Azure Quantum](xref:microsoft.quantum.providers-pricing) and [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing).
 
@@ -132,6 +132,5 @@ Start using Azure Quantum:
 
 - [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace)
 - [Get started with Q# and Visual Studio Code](xref:microsoft.quantum.submit-jobs)
-- [Get started with Q# and Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks)
 - [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Run a Qiskit circuit in Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)

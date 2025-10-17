@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
 ms.author: quantumdocwriters
-ms.date: 03/17/2025
+ms.date: 10/16/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: troubleshooting-known-issue
@@ -14,15 +14,15 @@ ms.custom: sfi-ropc-nochange
 #customer intent: As a quantum developer, I want to troubleshoot common issues with Azure Quantum so that I can continue to use the service effectively.
 ---
 
-# Troubleshooting common issues in Azure Quantum
+# Troubleshooting issues in Azure Quantum
 
-When working with the Azure Quantum service, you may run into these common issues. See how you can solve them.
+When you work with the Azure Quantum service, you might experience connection or job-related issues. See how you can solve these issues.
 
 ## Connecting to your workspace
 
 ### Issue: Unable to authenticate to Azure Quantum via pytket-azure CI
 
-When trying to authenticate to Azure Quantum via the `pytket-azure` package in a CI environment using the environment variables "AZURE_TENANT_ID", "AZURE_CLIENT_ID", and "AZURE_CLIENT_SECRET", you may encounter the error:
+When trying to authenticate to Azure Quantum via the `pytket-azure` package in a CI environment using the environment variables "AZURE_TENANT_ID", "AZURE_CLIENT_ID", and "AZURE_CLIENT_SECRET", you might encounter the error:
 
 ```cmd
 Code: InsufficientPermissions
@@ -57,7 +57,7 @@ Steps to resolve this issue:
 6. Select the **Role assignments** tab.
 
     > [!NOTE]
-    > If you don't see the **Role assignments** tab, you may need to expand the portal to full screen or close the **\<your name\> assignments** pane.
+    > If you don't see the **Role assignments** tab, you might need to expand the portal to full screen or close the **\<your name\> assignments** pane.
 
 7. Select the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
 8. Select **Save**.
@@ -66,7 +66,7 @@ Steps to resolve this issue:
 
 ### Issue: "AuthorizationFailure - This request is not authorized to perform this operation"
 
-If a job submission fails with this message even though you have a valid connection to the Azure Quantum service, the storage account may be configured to block public network access. The Azure Quantum service only supports storage accounts via public internet access.
+If a job submission fails with this message even though you have a valid connection to the Azure Quantum service, the storage account might be configured to block public network access. The Azure Quantum service only supports storage accounts via public internet access.
 
 To check the storage account:
 
@@ -76,7 +76,7 @@ To check the storage account:
 
 ### Issue: "Failed to compile program" when attempting to submit a Q# program through the CLI
 
-When attempting to submit a job at the command prompt using the `az quantum submit` command, you may encounter the following error message:
+When attempting to submit a job at the command prompt using the `az quantum submit` command, you might encounter the following error message:
 
 ```azurecli
 az quantum job submit ...
@@ -88,7 +88,7 @@ This error occurs when there's a problem with the Q# program that causes the com
 
 ### Issue: Compiler error "Wrong number of gate parameters"
 
-When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM (OPENQASM 2.0) translator, you may encounter this error:
+When submitting a job to Quantinuum from a local Jupyter Notebook or command line environment, and using the legacy QASM (OPENQASM 2.0) translator, you might encounter this error:
 
 ```cmd
 Job ID <jobId> failed or was cancelled with the message: 1000: Compile error: [<file, line>] Wrong number of gate parameters
@@ -104,12 +104,9 @@ rx(1,5707963267948966) q[0];
 rx(1.5707963267948966) q[0];
 ```
 
-> [!NOTE]
-> This issue does not occur in hosted notebooks in the Azure Quantum portal, only in local development environments. 
-
 ### Issue: Compiler error "not available for the current compilation configuration"
 
-When you run a Q# code cell in a Jupyter Notebook in VS Code, you may encounter the error:
+When you run a Q# code cell in a Jupyter Notebook in VS Code, you might encounter the error:
 
 ```cmd
 <function name> not found. Found a matching item `<function name>' that is not available for the current compilation configuration
@@ -119,9 +116,9 @@ This error indicates that you set the QIR (quantum intermediate representation) 
 
 ### Issue: Operation returned an invalid status code 'Forbidden'
 
-When you submit your first job, you may get a ‘forbidden’ error code.
+When you submit your first job, you might get a 'forbidden' error code.
 
-This issue may originate during the workspace creation: Azure Quantum fails to complete the role assignment linking the new workspace to the storage account that was specified.
+This issue might originate during the workspace creation: Azure Quantum fails to complete the role assignment linking the new workspace to the storage account that was specified.
 A typical scenario for this situation happens if the tab or web browser window is closed before the workspace creation is completed.
 
 You can verify that you're running into this role assignment issue by following these steps:
@@ -149,7 +146,7 @@ Error code: QIRPreProcessingFailed
 Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
 ```
 
-This error can be caused by a dependency conflict with a previous version of *pyqir* or *qiskit-qir*. Uninstall all versions of *pyqir*, *pyqir-*\*, and *qiskit-qir* on your local machine, and then install or update the *azure-quantum* Python package using the [qiskit] parameter:
+This error can be caused by a dependency conflict with a previous version of `pyqir` or `qiskit-qir`. Uninstall all versions of `pyqir`, `pyqir-*`, and `qiskit-qir` on your local machine, and then install or update the `azure-quantum` Python package using the [qiskit] parameter:
 
 ```Shell
 pip install --upgrade azure-quantum[qiskit]
@@ -157,7 +154,7 @@ pip install --upgrade azure-quantum[qiskit]
 
 ### Issue: Retrieving basic information about failed jobs
 
-After you submit a job to a hardware target, your job may sit in the queue for several hours, or even one or two days, before failing.
+After you submit a job to a hardware target, your job might sit in the queue for several hours, or even one or two days, before failing.
 
 To retrieve more information about the failure:
 
@@ -168,11 +165,11 @@ To retrieve more information about the failure:
     ```
 
 - In your Azure Portal workspace, select **Operations > Job Management**, and then select the job **Name** to open a detail pane.
-- In your Azure Portal workspace, select **Operations > Providers**. Verify the availability of the target machine. Jobs submitted to targets with a status of **Degraded** may stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
+- In your Azure Portal workspace, select **Operations > Providers**. Verify the availability of the target machine. Jobs submitted to targets with a status of **Degraded** might stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of *target unavailable*.
 
 ### Issue: I keep being asked to authenticate when programmatically connecting to my workspace
 
-If you are using the Azure Quantum Python SDK, for example within Jupyter notebook, and are connecting to your workspace using the `AzureQuantumProvider` class, you may experience a pop-up to authenticate to Azure every time you run your script.
+If you are using the Azure Quantum Python SDK, for example within Jupyter notebook, and are connecting to your workspace using the `AzureQuantumProvider` class, you might experience a pop-up to authenticate to Azure every time you run your script.
 
 This pop-up happens because your security token is being reset every time you run the script.
 
@@ -194,11 +191,11 @@ result = job.result()
 
 ## Azure Quantum Resource Estimator
 
-The following common scenarios may prevent resource estimation jobs to complete. See how to resolve them.
+The following issues might prevent resource estimation jobs from completing. See how to resolve these issues.
 
 ### Issue: Quantum algorithm must contain at least one T state or measurement
 
-To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that _Parallel Synthesis Sequential Pauli Computation (PSSPC)_  is performed on the input program. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
+To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that *Parallel Synthesis Sequential Pauli Computation (PSSPC)*  is performed on the input program. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
 operation that can be efficiently evaluated classically. Therefore, a quantum program that does not contain T states, for example from T gates or rotation gates, or measurement operations does not require any physical quantum computing resources. For more information about Parallel Synthesis Sequential Pauli Computation, see [arXiv:2211.07629, Appendix D](https://arxiv.org/pdf/2211.07629.pdf#page=25).
 
 ```output
@@ -207,8 +204,8 @@ Error message: Algorithm requires at least one T state or measurement to estimat
 
 ### Issue: Physical T gate error rate is too high
 
-The _logical_ T state error rate depends on the error budget and the number of T states in the quantum program. [T factories](xref:microsoft.quantum.concepts.tfactories) are used to create T states with the
-required logical T state error rate from physical T gates, which have a _physical_ T gate error rate. Typically, the physical T gate error rate is higher than the required logical T gate error rate. In some scenarios, the
+The *logical* T state error rate depends on the error budget and the number of T states in the quantum program. [T factories](xref:microsoft.quantum.concepts.tfactories) are used to create T states with the
+required logical T state error rate from physical T gates, which have a *physical* T gate error rate. Typically, the physical T gate error rate is higher than the required logical T gate error rate. In some scenarios, the
 physical T gate error rate is significantly higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
 
 ```output
@@ -217,9 +214,9 @@ Error message: No T factory can be found, because the required logical T state e
 
 Here is what you could do in such a scenario:
 
-* Increase the error budget, either total or the part for T states.
-* Reduce the physical T gate error rate in the qubit parameters.
-* Reduce the number of T states in the quantum program by reducing T gates, rotation gates, and Toffoli gates.
+- Increase the error budget, either total or the part for T states.
+- Reduce the physical T gate error rate in the qubit parameters.
+- Reduce the number of T states in the quantum program by reducing T gates, rotation gates, and Toffoli gates.
 
 ### Issue: Physical T gate error rate is too low
 
@@ -233,8 +230,8 @@ Error message: No T factory can be found, because the required logical T state e
 
 Here is what you could do in such a scenario:
 
-* Increase the physical T gate error rate in the qubit parameters to the required logical T state error rate.
-* Reduce the error budget or just the part for the T states.
+- Increase the physical T gate error rate in the qubit parameters to the required logical T state error rate.
+- Reduce the error budget or just the part for the T states.
 
 ### Issue: Error rate must be a number between 0 and 1
 
@@ -252,26 +249,26 @@ The Resource Estimator accepts only one of [`maxDuration`](xref:qsharp.estimator
 
 ### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
 
-This error results from generating QIR for Qiskit circuits via the *qiskit_qir* Python package without setting the `record_output` parameter to `False`.
+This error results from generating QIR for Qiskit circuits via the `qiskit_qir` Python package without setting the `record_output` parameter to `False`.
 
 To avoid this error, take one of the following actions:
 
-- Use the *azure_quantum* Python package to submit Qiskit circuits to Azure Quantum (recommended).
-- When using the *qiskit_qir* Python package, be sure to set the `record_output` parameter to `False` before submitting your circuit.
+- Use the `azure_quantum` Python package to submit Qiskit circuits to Azure Quantum (recommended).
+- When using the `qiskit_qir` Python package, be sure to set the `record_output` parameter to `False` before submitting your circuit.
 
 ## Creating an Azure Quantum workspace
 
-The following issues may occur when you use the Azure portal to create a workspace.
+The following issues might occur when you use the Azure portal to create a workspace.
 
 ### Issue: You can't access the workspace creation form in the Azure portal; you are asked to sign up for a subscription instead
 
 This issue occurs because you don't have an active subscription.
 
-For example, you may have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn), which includes USD200 free Azure Credits to use on Azure services. These Azure credits aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you consume the $200 of free Azure credits (whichever occurs first), you **must** upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal allows you to access the workspace creation form.
+For example, you might have signed up for the [30 day free trial Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn), which includes USD200 free Azure Credits to use on Azure services. These Azure credits aren't eligible to use on quantum hardware providers. After 30 days of sign-up or once you consume the $200 of free Azure credits (whichever occurs first), you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. Once you have an active subscription, the Azure portal allows you to access the workspace creation form.
 
 To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
 
-### Issue: The **Quick create** option is unavailable
+### Issue: The Quick create option is unavailable
 
 You must be an **Owner** of the subscription you select in order to use the **Quick create** option. To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions). If you're a subscription **Contributor**, you can use the **Advanced create** option to create a workspace.
 
@@ -279,13 +276,13 @@ You must be an **Owner** of the subscription you select in order to use the **Qu
 
 This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
-### Issue: "Deployment Validation Failed" error message appears after you select **Create**
+### Issue: "Deployment Validation Failed" error message appears after you select Create
 
-This error message may include more details such as "The client does not have authorization to perform action."
+This error message might include more details such as "The client does not have authorization to perform action."
 
 This issue occurs because you don't have the authorization required at the subscription, resource group, or storage account level. For more information on required access levels, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
-If access was recently granted, you may need to refresh the page. It can sometimes take up to one hour for new role assignments to take effect over cached permissions across the stack.
+If access was recently granted, you might need to refresh the page. It can sometimes take up to one hour for new role assignments to take effect over cached permissions across the stack.
 
 ### Issue: You don't see a specific quantum hardware provider on the Providers tab
 
@@ -293,7 +290,7 @@ This issue occurs because the provider doesn't support the billing region your s
 
 ### Issue: Workspace creation or adding/removing providers fails with "ResourceDeploymentFailure" or "ProviderDeploymentFailure"
 
-This issue may include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: \<*Name of the provider*>".
+This issue might include more details such as "ResourceDeploymentFailure - The 'AzureAsyncOperationWaiting' resource operation completed with terminal provisioning state 'Failed'.", or "ProviderDeploymentFailure - Failed to create plan for provider: \<*Name of the provider*>".
 
 This failure occurs because the tenant did not enable Azure Marketplace purchases. Follow the steps in [Enabling Azure Marketplace purchases](/azure/cost-management-billing/manage/ea-azure-marketplace#enabling-azure-marketplace-purchases) to enable Azure Marketplace purchases.
 
@@ -302,20 +299,6 @@ This failure occurs because the tenant did not enable Azure Marketplace purchase
 - **Workspace**: "The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'".
 - **Storage account**: "The template deployment failed because of policy violation".
 
-This issue may occur if your subscription security policy blocks the creation of storage accounts that have public access enabled. The Azure Quantum service only supports storage accounts via public internet access.
+This issue might occur if your subscription security policy blocks the creation of storage accounts that have public access enabled. The Azure Quantum service only supports storage accounts via public internet access.
 
 To resolve this, work with your subscription administrator to get an exception for the storage account that you want to use.
-
-## Azure Quantum portal
-
-### Issue: Saved notebooks don't load
-
-After selecting **Notebooks** in your workspace, the list of your saved notebooks displays a progress bar but never loads.
-
-This scenario can happen for three reasons:
-
-1. If the storage account no longer exists. This can happen if the storage account linked to the workspace was deleted. To verify, select the **Overview** page for the workspace and select the link to the storage account. If the storage account has been deleted, you see a **404 - Not found** error.
-
-1. If the storage account is not enabled for public internet access. See [Authorization failure](#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation) for more information.
-
-1. If the managed identity of the workspace is not a **Contributor** to the storage account. Check that the workspace identity (which uses the same name as the workspace) still has the **Contributor** role assignment to the storage account. To verify, select the **Overview** page for the workspace and select the link to the storage account. On the **Overview** page for the storage account, select **Access control (IAM)** and verify that the workspace is listed under **Contributor**.

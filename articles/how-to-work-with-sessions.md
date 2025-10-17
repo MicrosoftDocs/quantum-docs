@@ -148,7 +148,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
     provider = AzureQuantumProvider(workspace)
     ```
 
-1. You create a **quantum backend** using the target you want to use. For example, the following code creates a quantum backend for IonQ simulator. For more information, see [Create an Azure Quantum backend](xref:microsoft.quantum.how-to.adapting-qiskit#create-an-azure-quantum-backend).
+1. Create a **quantum backend** for the target that you want to use. For example, the following code creates a quantum backend for the IonQ simulator.
 
     ```python
     ionq_simulator_backend = provider.get_backend("ionq.simulator")
@@ -156,7 +156,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
     backend_id = provider_backend.name()
     ```
 
-1. To **create** a session object, you can use the `.open_session` function.
+1. To **create** a session object, use the `.open_session` function.
 
     ```python
     from azure.quantum.job.session import Session, SessionJobFailurePolicy
@@ -167,7 +167,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
     print("Creating session")
     ```
 
-1. To **attach the session** manually created to the quantum backend, you can use `session = provider_backend.latest_session`.
+1. To **attach the session** manually created to the quantum backend, use `session = provider_backend.latest_session`.
 1. You can **retrieve** the jobs of your session using `session.list(jobs)`.
 1. You can **close** a session with `session.close()`.
 1. You can **wait** for a session to be completed:

@@ -22,41 +22,41 @@ In this article, you learn the differences between each option and how to choose
 
 Azure Quantum is available through three development environments:
 
-- [**Azure Quantum website:**](#azure-quantum-website) Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.
-- [**Azure portal:**](#azure-portal)  Manage your Azure subscription and Azure Quantum workspace, where you can write and run Q# and Python programs in Jupyter Notebooks. No installation required.
-- [**Visual Studio Code:**](#visual-studio-code) Write, run, and debug quantum code in your local environment, using Q# as a standalone program or with Python. Installation required.
+- [**Microsoft Quantum website:**](#microsoft-quantum-website) Use Copilot to write, run, and explain Q# code in your browser. No installation or Azure account required.
+- [**Azure portal:**](#azure-portal)  Manage your Azure subscription and Azure Quantum workspace, where you can access information about your quantum providers and job submissions. No installation required.
+- [**Visual Studio Code:**](#visual-studio-code) Write, run, and debug quantum code in your local environment, using Q# as a standalone program or with Python in Jupyter Notebook. Installation required.
 
 The option you choose for running Q# programs depends on your coding experience, quantum knowledge, and goals. Because each option has different features and functionality, you typically use them together, such as writing Q# programs with the QDK extension in VS Code while managing your quantum workspace in the Azure portal. For more information, see the following table:
 
-| &nbsp;  | Azure Quantum website | Azure portal | Visual Studio Code |
-|-----|:-----:|:-----:|:-----:|
-| Built-in Q# support | &#10004; |  &#10004;  |  &nbsp; &#10004; * |
-| QPU access | &#10004; |  &#10004;  |  &nbsp; &nbsp; &#10004; **  |
-| Jupyter  Notebooks  | &nbsp; |  &#10004;  |  &#10004;  |
-| Resource Estimator  | &nbsp; |  &nbsp;  |  &#10004;  |
-| Python support  | &nbsp; |  &#10004;  |  &#10004;  |
-| Cirq and Qiskit support  |  &nbsp;  |  &#10004;  |  &#10004;  |
-| Integrated hybrid  | &nbsp; |  &nbsp;  |  &#10004;  |
-| Local setup  | &nbsp; |  &nbsp;  |  &#10004;  |
-| Quantum workspace creation  | &nbsp; |  &#10004;  |  &nbsp;  |
+| &nbsp;                     | Microsoft Quantum website | Azure portal | Visual Studio Code        |
+|----------------------------|---------------------------|--------------|---------------------------|
+| Built-in Q# support        | &#10004;                  | &#10004;     | &nbsp; &#10004; *         |
+| QPU access                 | &#10004;                  | &#10004;     | &nbsp; &nbsp; &#10004; ** |
+| Jupyter  Notebooks         | &nbsp;                    | &nbsp;       | &#10004;                  |
+| Resource Estimator         | &nbsp;                    | &nbsp;       | &#10004;                  |
+| Python support             | &nbsp;                    | &#10004;     | &#10004;                  |
+| Cirq and Qiskit support    | &nbsp;                    | &#10004;     | &#10004;                  |
+| Integrated hybrid          | &nbsp;                    | &nbsp;       | &#10004;                  |
+| Local setup                | &nbsp;                    | &nbsp;       | &#10004;                  |
+| Quantum workspace creation | &nbsp;                    | &#10004;     | &nbsp;                    |
 
 **\*** VS Code provides rich Q# support, such as CodeLens, IntelliSense, and debugging.
 
 **\*\*** QPU access in VS Code requires an Azure subscription.
 
-## Azure Quantum website
+## Microsoft Quantum website
 
-On the [Azure Quantum website](https://quantum.microsoft.com/), you can run Q# programs in an online code editor—no installation or Azure account required. Write your own Q# code, explore the built-in Q# samples, or prompt Copilot to code for you.
+On the [Microsoft Quantum website](https://quantum.microsoft.com/), you can run Q# programs in an online code editor—no installation or Azure account required. Write your own Q# code, explore the built-in Q# samples, or prompt Copilot to code for you.
 
-The Azure Quantum website also features blogs, articles, and videos from quantum experts and enthusiasts. The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) deepen your knowledge with self-paced tutorials on the fundamentals of quantum computing and Q#.
+The Microsoft Quantum website also features blogs, articles, and videos from quantum experts and enthusiasts. The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) deepen your knowledge with self-paced tutorials on the fundamentals of quantum computing and Q#.
 
 For more information, see [Explore Copilot in Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
-### Is the Azure Quantum website right for me?
+### Is the Microsoft Quantum website right for me?
 
-The Azure Quantum website lets you run Q# programs in your browser and access various learning resources. If you're a quantum enthusiast who wants to learn by doing, the Azure Quantum website is for you.
+The Microsoft Quantum website lets you run Q# programs in your browser and access various learning resources. If you're a quantum enthusiast who wants to learn by doing, the Microsoft Quantum website is for you.
 
-The following table shows what you can and can't do on the Azure Quantum website:
+The following table shows what you can and can't do on the Microsoft Quantum website:
 
 | You can: | You can't: | You need: |
 | --- | --- | --- |
@@ -66,8 +66,6 @@ The following table shows what you can and can't do on the Azure Quantum website
 
 The [Azure portal](https://portal.azure.com) is the main interface of the Microsoft Azure cloud computing platform. From the portal, you can create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace) to run quantum programs, send them to [quantum hardware providers](xref:microsoft.quantum.reference.qc-target-list), and store their results in an Azure Quantum storage account. You can also manage your subscriptions, activity, credit usage, quotas, and access control.
 
-Quantum workspaces include [Azure Quantum notebooks](xref:microsoft.quantum.get-started.notebooks), which are web-based Jupyter Notebooks in the Azure portal. Use Azure notebooks to create, upload, store, and run Q# and Python programs on quantum simulators or hardware. From your quantum workspace, you can use sample notebooks to get started with quantum programming.
-
 ### Is the Azure portal right for me?
 
 From the Azure portal, you can grant a group of users, like your team members or students, access to your quantum workspace. If you want to manage your subscriptions, review your invoices, or add quantum providers, the Azure portal is for you.
@@ -76,7 +74,7 @@ The following table shows what you can and can't do in the Azure portal:
 
 | You can: | You can't: | You need: |
 | --- | --- | --- |
-| <ul><li>Create quantum workspaces.</li><li>Manage your subscriptions and workspaces.</li><li> Copy access keys of your workspace.</li><li>Manage your quantum jobs.</li><li>Run Q# and Python programs in Azure notebooks.</li><li>Save your programs and results.</li><li>Select any quantum computing provider.</li></ul> | <ul><li>Access the Quantum Copilot.</li><li>Debug your programs.| <ul><li>An Azure subscription.</li><li>A quantum workspace.</li><li> No installation required.</li></ul> |
+| <ul><li>Create quantum workspaces.</li><li>Manage your subscriptions and workspaces.</li><li> Copy access keys of your workspace.</li><li>Manage your quantum jobs.</li><li>Save your programs and results.</li><li>Select any quantum computing provider.</li></ul> | <ul><li>Access the Quantum Copilot.</li><li>Debug your programs.| <ul><li>An Azure subscription.</li><li>A quantum workspace.</li><li> No installation required.</li></ul> |
 
 ## Visual Studio Code
 
