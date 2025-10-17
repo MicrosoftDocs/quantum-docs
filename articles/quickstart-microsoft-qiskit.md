@@ -2,13 +2,13 @@
 author: azure-quantum-content
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service.
 ms.author: quantumdocwriters
-ms.date: 11/15/2024
+ms.date: 10/17/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Python', '$$v', target, targets]
 title: Submit Qiskit quantum circuits to Azure Quantum
-zone_pivot_groups: ide-local
+zone_pivot_groups: ide-local-simulator
 uid: microsoft.quantum.quickstarts.computing.qiskit
 --- 
 
