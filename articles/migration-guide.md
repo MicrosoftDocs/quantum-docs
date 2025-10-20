@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document gives instructions on how to migrate a Quantum Workspace to a new Azure region
 ms.author: quantumdocwriters
-ms.date: 09/18/2025
+ms.date: 10/20/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -15,26 +15,7 @@ uid: microsoft.quantum.how-to.migrate-quantum-workspace-new-region
 
 # Migrate your Azure Quantum job data
 
-As of September 30, 2025, the Azure Quantum service will be available in only the following Azure regions:
-
-- East US
-- West US
-- North Europe
-- West Europe
-
-Azure Quantum will discontinue support for the following Azure regions:
-
-- UK South
-- UK West
-- Japan East
-- Japan West
-- West US 2
-- Germany West Central
-- West Central US
-
-If your Azure Quantum workspace is deployed and hosted in any of the discontinued regions, then you'll lose access to your workspace on September 30, 2025. You'll still be able to access and use Azure Quantum from all currently supported Azure geographies, and be able to associate storage accounts from any Azure region with your Quantum workspace. To continue using Azure Quantum, create a new Quantum workspace in one of the supported regions.
-
-To retain your Azure Quantum job information, migrate all the job data from your old workspace to your new workspace. When you do the migration, your job input and output data are available in your new workspace. But you can't see the job history for those jobs anymore in the Azure portal, Azure Quantum SDK, or the Azure CLI.
+If you have an existing Azure Quantum workspace and you create new workspace, then you can migrate your job data from the old workspace to the new workspace. When you do the migration, your job input and output data are available in your new workspace. But you can't see the job history for those jobs anymore in the Azure portal, Azure Quantum SDK, or the Azure CLI.
 
 Migration instructions depend on whether your old workspace's storage account is managed or unmanaged.
 
@@ -107,20 +88,6 @@ To generate a SAS for each storage account, follow these steps:
 If the copy is successful, then you get a job summary output in the terminal. The contents of your old managed storage account are now also in your new managed storage account.
 
 ***
-
-## Save your Jupyter Notebook files
-
-If you have Jupyter notebooks in your old workspace that you want to retain, then download those notebooks from the Azure portal before you delete your old workspace. To download Jupyter notebooks from the Azure portal, follow these steps:
-
-1. Log in to the Azure portal.
-1. Go to **Quantum Workspaces** and choose your old workspace.
-1. In the **Operations** dropdown on the Quantum Workspace blade, choose **Notebooks**.
-1. In the Jupyter Notebooks blade, open the **My notebooks** dropdown. A list of all your Jupyter notebooks appears.
-1. For each notebook that you want to save, choose the **ellipsis button** (...), and then choose **Download Notebook** to download the notebook to your device.
-
-## Delete your old Quantum workspace
-
-After you set up your new workspace and migrate all your data, delete your old workspace. Note that all workspaces in discontinued regions will be automatically deleted on September 30, 2025.
 
 > [!NOTE]
 > For questions about migration issues, email [azurequantuminfo@microsoft.com](mailto:azurequantuminfo@microsoft.com).
