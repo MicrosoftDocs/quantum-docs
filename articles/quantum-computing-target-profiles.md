@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: This document provides an overview of target profile types available in Azure Quantum and their limitations. 
-ms.date: 09/25/2025
+ms.date: 10/22/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
@@ -26,6 +26,7 @@ Currently, Azure Quantum and the QDK manage different target profiles, depending
 - [**:::no-loc text="Unrestricted":::**:](#create-and-run-programs-for--target-profile) This profile can run any QIR program, and thus any Q# program, within the limits of memory for simulators or the number of qubits for physical quantum computers.
 - [**:::no-loc text="Base":::**:](#create-and-run-programs-for--target-profile-1) This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program that's targeted for this kind of QPU, values of type `Result` don't support equality comparison.
 - [**:::no-loc text="Adaptive RI":::**:](#create-and-run-programs-for--target-profile-2) This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program that's targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement.
+- - [**:::no-loc text="Adaptive RIF":::**:](#create-and-run-programs-for--target-profile-3) This profile has the same capabilities as the :::no-loc text="Adaptive RI"::: profile, but also supports floating point operations.
 
 ## Create and run programs for :::no-loc text="Unrestricted"::: target profile
 
@@ -149,3 +150,43 @@ For now, Quantinuum is the only provider in Azure Quantum that has :::no-loc tex
 - **QPUs:** `quantinuum.qpu.h2-1` and `quantinuum.qpu.h2-2`
 
 For more information on Quantinuum's offerings in Azure Quantum, see [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum).
+
+## Create and run programs for :::no-loc text="Adaptive RIF"::: target profile
+
+:::no-loc text="Adaptive RIF"::: target profiles have all the capabilities of :::no-loc text="Adaptive RI"::: profiles, but also support Q# programs that contain floating point calculations.
+
+For example, the following Q# code is allowed in a :::no-loc text="Adaptive RIF"::: target:
+
+```qsharp
+operation MeasureQubit(q : Qubit) : Result { 
+    return M(q); 
+}
+
+operation SetToZero(q : Qubit) : Unit {
+     if MeasureQubit(q) == One { X(q); }
+}
+```
+
+### Configure :::no-loc text="Adaptive RIF"::: target profile
+
+To manually set the QIR target profile to **Adaptive RIF**, choose one of the following options:
+
+- If you set up a Q# project, then add the following command to your project's `qsharp.json` file:
+
+  ```json
+  {
+    "targetProfile": "adaptive_rif"
+  }
+  ```
+
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Adaptive_RIF)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
+
+- In Python, call the `qsharp.init` method to set the target profile.
+
+  ```python
+  qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RIF) 
+  ```
+
+### Supported targets for :::no-loc text="Adaptive RI"::: target profile
+
+For now, Azure Quantum doesn't have :::no-loc text="Adaptive RIF"::: targets. However, you can run programs for :::no-loc text="Adaptive RIF"::: targets on the local simulator in the QDK.

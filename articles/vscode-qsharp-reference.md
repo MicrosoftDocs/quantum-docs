@@ -28,7 +28,7 @@ The following table describes the commands from the QDK extension that appear in
 > You can create custom keyboard shortcuts for VS Code commands using **Keyboard Shortcuts**, or **Ctrl + K + S**. For more information, see [Key Bindings for VS Code](https://code.visualstudio.com/docs/getstarted/keybindings).
 
 | Command | Action | Notes | Alternate user action |
-|---------|--------|-------|--------------|
+|---------|--------|-------|-----------------------|
 | **QDK: Create Q# Project** | Creates a Q# project in the active folder, including  a `qsharp.json` manifest file and a `src` subfolder with a default `main.qs` file. | For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects). | In File Explorer, right-click the target folder and select **Create Q# project**. |
 | **QDK: Create an Azure Quantum notebook**  | Opens a sample Jupyter Notebook that runs a Q# + Python program and submits a job to Azure Quantum. | For more information about Azure Quantum notebooks, see [Work with Azure Quantum notebooks](xref:microsoft.quantum.submit-jobs). | N/A |
 | **QDK: Connect to an Azure Quantum workspace** | Connect to an Azure Quantum workspace using your Azure account or a connection string. Once you're authenticated, your workspace appears in File Explorer in **Quantum Workspaces**. | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace). | In File Explorer, hover over **Quantum workspaces** and select the **＋ icon**. |
@@ -39,10 +39,10 @@ The following table describes the commands from the QDK extension that appear in
 The following commands are available when a `.qs` file is active.
 
 | Command | Action | Notes | Alternate user action |
-|---------|--------|-------|--------------|
+|---------|--------|-------|-----------------------|
 | **QDK: Show circuit** | Displays a circuit diagram for the Q# program before it runs. | For more information, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits). | Select the code lens option **Circuit** from the menu next to the entry point operation or above each user-defined operation in the program. |
 | **QDK: Run file and show histogram** | Runs the current Q# program and displays a histogram of the results in a new pane. | To access the sort and filter options for the histogram display, select the filter icon in the histogram pane. | Select the code lens option **Histogram** from the menu next to the entry point operation. |
-| **QDK: Get QIR for current QDK program** | Opens the QIR source for the current Q# code in a new edit window. Your program must use the Base or Adaptive RI target profile to export QIR source. | For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir), and the Q# [developer blog](https://github.com/microsoft/qdk/wiki/QIR). | N/A |
+| **QDK: Get QIR for current QDK program** | Opens the QIR source for the current Q# code in a new edit window. Your program must use the Base, Adaptive RI, or Adaptive RIF target profile to export QIR source. | For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir), and the Q# [developer blog](https://github.com/microsoft/qdk/wiki/QIR). | N/A |
 | **QDK: Calculate Resource Estimates** | Invokes the built-in version of the Resource Estimator. | For more information, see [Introduction to the Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). | N/A |
 | **QDK: Help** | A brief overview of the QDK extension in VS Code. | For complete Azure Quantum documentation, see [Azure Quantum documentation](/azure/quantum/). | N/A  |
 | **QDK: Run file and show circuit diagram** | Runs the current Q# program and displays a circuit of the program with outputs. | For more information, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits). | N/A |
@@ -56,10 +56,10 @@ The following commands are available when a `.qs` file is active.
 
 Q# programs make use of two terminal windows in VS Code:
 
-| Terminal | Action |
-|-----------------|-----------|
+| Terminal          | Action                              |
+|-----------------  |-------------------------------------|
 | **Debug console** | Displays run output or debug output |  
-| **Problems** | Displays pre-compile error checks |
+| **Problems**      | Displays pre-compile error checks   |
 
 ## Edit Q# code
 
@@ -79,11 +79,11 @@ For more information, see [Intellisense](https://code.visualstudio.com/docs/edit
 
 ### Work with Q# files and projects
 
-| Task | Action  | Notes |
-|-----------------|-----------|----------------|
-| **New Q# file** | Select **File > New file > Text file**. Save the file with a `.qs` extension. | If you set `Files: Default Language = qsharp`, a new file automatically defaults to Q# formatting. |
+| Task                    | Action    | Notes          |
+|-------------------------|-----------|----------------|
+| **New Q# file**         | Select **File > New file > Text file**. Save the file with a `.qs` extension. | If you set `Files: Default Language = qsharp`, a new file automatically defaults to Q# formatting. |
 | **Create a Q# project** | From an open folder in File Explorer, select **Create Q# Project** from the Command Palette, or right-click the folder in File Explorer and select **Create Q# project**.| For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects). |
-| **Sample files** | In a blank `.qs` file, enter **samples**, and then select a sample program from the list of options. | You can also select **Open QDK playground** in the Command Palette to open an online folder of Q# sample programs in File Explorer. |
+| **Sample files**        | In a blank `.qs` file, enter **samples**, and then select a sample program from the list of options. | You can also select **Open QDK playground** in the Command Palette to open an online folder of Q# sample programs in File Explorer. |
 
 ### Connect to Azure Quantum
 

@@ -51,7 +51,16 @@ You can submit hybrid quantum jobs to Azure Quantum as Q# standalone programs or
 
 ### [Q# in Visual Studio Code](#tab/tabid-vscode)
 
-To configure the target profile for hybrid jobs in Visual Studio Code, open a Q# file and enter `@EntryPoint(Adaptive_RI)` before `Main()`, or before another entrypoint operation of your choice.
+To configure the target profile for hybrid jobs in Visual Studio Code, choose one of the following options:
+
+- If your Q# file isn't part of a Q# project, then open the file and enter `@EntryPoint(Adaptive_RI)` before your program's entrypoint operation.
+- If your Q# file is part of a Q# project, then add the following to your project's `qsharp.json` file:
+  
+  ```json
+  {
+    "targetProfile": "adaptive_ri"
+  }
+  ```
 
 When you set your target profile to **Adaptive RI**, you can submit your Q# program as a hybrid quantum job to Quantinuum. To do so, follow these steps:
 
@@ -95,7 +104,7 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
 You can combine multiple hybrid quantum jobs within a [session](xref:microsoft.quantum.hybrid.interactive) using the `target.open_session` function. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions).
 
 > [!NOTE]
-> Although sessions are available for all quantum computing hardware providers, notice that `Adaptive_RI` target profile jobs are currently supported only on Quantinuum targets.
+> Although sessions are available for all quantum computing hardware providers, `Adaptive_RI` target profile jobs are currently supported only on Quantinuum targets.
 
 ***
 
@@ -103,19 +112,19 @@ You can combine multiple hybrid quantum jobs within a [session](xref:microsoft.q
 
 The following table lists the supported features for hybrid quantum computing with Quantinuum in Azure Quantum.
 
-|Supported feature| Notes |
-|---|---|
-| Dynamics values| Bools and integers whose value depend on a measurement result|
-| Loops | Classically-bounded loops only |
-| Arbitrary control flow | Use of if/else branching  |
-| Mid-circuit measurement | Utilizes classical register resources |
-| Qubit reuse | Supported |
-| Real-time classical compute| 64-bit signed integer arithmetic <br>Utilizes classical register resources |
+| Supported feature           | Notes                                                                      |
+|-----------------------------|----------------------------------------------------------------------------|
+| Dynamics values             | Bools and integers whose value depend on a measurement result              |
+| Loops                       | Classically-bounded loops only                                             |
+| Arbitrary control flow      | Use of if/else branching                                                   |
+| Mid-circuit measurement     | Utilizes classical register resources                                      |
+| Qubit reuse                 | Supported                                                                  |
+| Real-time classical compute | 64-bit signed integer arithmetic <br>Utilizes classical register resources |
 
-The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when running hybrid quantum jobs, you'll receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qdk/wiki/QIR).
+The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when you run hybrid quantum jobs, then you receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qdk/wiki/QIR).
 
 > [!NOTE]
-> You need to select the appropriate **Adaptive RI** target profile to obtain appropriate feedback when using Q# features that the target doesn't support.
+> You need to select the appropriate **Adaptive RI** target profile to obtain appropriate feedback when you use Q# features that the target doesn't support.
 
 To see the supported features in action, copy the following code into a Q# file and add the subsequent code snippets.
 

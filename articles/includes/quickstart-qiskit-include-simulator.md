@@ -62,7 +62,7 @@ c: 2/═════════════════════════
 Using that same circuit, you can generate QIR which is used to run on quantum hardware.
 
 > [!NOTE]
-> When generating QIR, all registers must have been measured into. If there are any unused registers, an error will be raised. Additionally, attempting to generate QIR when the profile is set to `Unrestricted` raises an error. The `Unrestricted` profile is only valid for simulation. Either TargetProfile.Base or `TargetProfile.Adaptive_RI` must be used. The `target_profile` can be overridden in the `backend.qir(...)` call to switch profiles.
+> When generating QIR, all registers must have been measured into. If there are any unused registers, an error will be raised. Additionally, attempting to generate QIR when the profile is set to `Unrestricted` raises an error. The `Unrestricted` profile is only valid for simulation. You must use `TargetProfile.Base`, `TargetProfile.Adaptive_RI`, or `TargetProfile.Adaptive_RIF`. The `target_profile` can be overridden in the `backend.qir(...)` call to switch profiles.
 
 1. Import `QSharpError` and `TargetProfile`
 
@@ -70,11 +70,12 @@ Using that same circuit, you can generate QIR which is used to run on quantum ha
     from qsharp import QSharpError, TargetProfile
     ```
 
-2. Modify the output to generate QIR
+1. Modify the output to generate QIR
 
     ```python
         print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
     ```
+
 Your code should now look like this:
 
 ```python

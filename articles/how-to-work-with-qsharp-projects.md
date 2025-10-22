@@ -93,9 +93,9 @@ qsharp.init(project_root = '../Teleportation_project')
 ```
 
 > [!NOTE]
-> If you're planning to compile your program to submit to the Azure Quantum service, you should also add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you may need to set the profile to `Base` or `Adaptive_RI`, for example, `qsharp.init(project_root = '../Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles).
+> If you plan to compile your program to submit to the Azure Quantum service, then add your `target_profile` parameter to the `qsharp.init` statement. By default, `qsharp.init` sets the profile to `Unrestricted` so that you can test any quantum code in the local simulator. However, to submit a job to Azure Quantum, you might need to set the profile to `Base`, `Adaptive_RI`, or `Adaptive_RIF`. For example, `qsharp.init(project_root = '../Teleportation_project', target_profile = qsharp.TargeProfile.Base)`. For more information about target profiles, see [QIR target profiles](xref:microsoft.quantum.target-profiles).
 
-The path of the root folder is relative to the file that is setting it, meaning that your Q# project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path may also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
+The path of the root folder is relative to the file that sets the path, so your Q# project folder can be anywhere and the calling program doesn't necessarily have to be in the project. A valid path could also be `'./MyProjects/Teleportation_project'`, or `../../Teleportation_project`.
 
 The Q# compiler verifies there is a valid manifest file in the specified root folder and makes any \*.qs resources under the **src** folder available for reference within the project.
 
