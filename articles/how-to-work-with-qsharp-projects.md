@@ -152,7 +152,7 @@ The following examples show how manifest files can define the scope of your Q# p
     }
     ```
 
-- You can also use the manifest file to define an external Q# project as a dependency and remotely access operations and functions in that external project. For more information, see [Using projects as external dependencies](#configuring-q-projects-as-external-dependencies).
+- You can also use the manifest file to define an external Q# project as a dependency and remotely access operations and functions in that external project. For more information, see [Using projects as external dependencies](#configure-q-projects-as-external-dependencies).
 
 ## Q# project requirements and properties
 
