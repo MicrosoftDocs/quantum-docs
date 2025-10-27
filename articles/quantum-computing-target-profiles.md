@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [QIR, Base, Adaptive RI, target, targets, full]
+no-loc: [QIR, Base, Adaptive RI, target, targets, full, Adaptive RIF]
 title: Target Profile Types 
 uid: microsoft.quantum.target-profiles
 
@@ -61,6 +61,7 @@ To manually set the QIR target profile to **Unrestricted**, choose one of the fo
 For example, you can't run the following `FlipQubitOnZero` operation on a :::no-loc text="Base"::: target:
 
 ```qsharp
+    @EntryPoint(Base)
     operation FlipQubitOnZero() : Unit {
         use q = Qubit();
         if M(q) == Zero {
@@ -113,6 +114,7 @@ When you measure a qubit in Q#, a value of type `Result` is returned. If you wan
 For example, the following Q# code is allowed in a :::no-loc text="Adaptive RI"::: target:
 
 ```qsharp
+@EntryPoint(Adaptive_RI)
 operation MeasureQubit(q : Qubit) : Result { 
     return M(q); 
 }
@@ -158,12 +160,16 @@ For more information on Quantinuum's offerings in Azure Quantum, see [Quantinuum
 For example, the following Q# code is allowed in a :::no-loc text="Adaptive RIF"::: target:
 
 ```qsharp
-operation MeasureQubit(q : Qubit) : Result { 
-    return M(q); 
-}
-
-operation SetToZero(q : Qubit) : Unit {
-     if MeasureQubit(q) == One { X(q); }
+@EntryPoint(Adaptive_RIF)
+operation DynamicFloat() : Double {
+    use q = Qubit();
+    H(q);
+    mutable f = 0.0;
+    if M(q) == One {
+        f = 0.5;
+    }
+    Reset(q);
+    return f;
 }
 ```
 

@@ -30,7 +30,7 @@ To run Python programs, you also need:
 
 ## How Q# projects work
 
-A Q# project contains a Q# manifest file, named `qsharp.json`, and one or more `.qs` files in a specified folder structure. When a user opens a `.qs` file in VS Code, or sets the `project_root` in a Jupyter Notebook or Python file, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, then the compiler operates in a single file mode. You can create a Q# project manually or directly in VS Code.
+A Q# project contains a Q# manifest file, named `qsharp.json`, and one or more `.qs` files in a specified folder structure. You can create a Q# project manually or directly in VS Code. When you open a `.qs` file in VS Code, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, then the compiler operates in a single file mode. When you set the `project_root` in a Jupyter Notebook or Python file, the compiler looks for the manifest file in the `project_root` folder.
 
 An external Q# project is a standard Q# project that resides in another directory or on a public GitHub repository, and acts as a custom library. An external project uses `export` statements to define the functions and operations that are accessible by external programs. Programs define the external project as a dependency in their manifest file, and use `import` statements to access the items in the external project, such as operations, functions, structs, and namespaces. For more information, see [Using projects as external dependencies](#configure-q-projects-as-external-dependencies).
 
