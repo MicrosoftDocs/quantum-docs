@@ -14,18 +14,18 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
-- The Azure Quantum `qsharp` Python package with the `qiskit` and `widget` tags. 
+- The Azure Quantum `qsharp` Python package with the `qiskit` and `widget` tags.
 
     ```cmd
     python pip install "qsharp[qiskit,widgets]>=1.9" 
     ```
+
     > [!IMPORTANT]
     > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
-
 ## Run a basic circuit
 
-In VS Code, open a new Python file to define and run a basic circuit using the built-in sparse simulator in the Qsharp package.  
+In VS Code, open a new Python file to define and run a basic circuit with the built-in sparse simulator from the `qsharp` package.  
 
 ```python
 # load the required imports 
@@ -44,8 +44,7 @@ counts = job.result().get_counts()
 print(counts)
 ```
 
-To run the program, select the Run icon in the upper right, and select **Run Python file**. The output displays in a new terminal window. 
-
+To run the program, select the Run icon in the upper right, and select **Run Python file**. The output displays in a new terminal window.
 
 ```html
                   ┌─────────────────────────┐┌─┐
@@ -57,12 +56,13 @@ c: 2/═════════════════════════
                                               0  1
 {'11': 680, '00': 344}
 ```
+
 ## Generate QIR for the circuit
 
-Using that same circuit, you can generate QIR which is used to run on quantum hardware.
+From that same circuit, you can generate QIR that's used to run on quantum hardware.
 
 > [!NOTE]
-> When generating QIR, all registers must have been measured into. If there are any unused registers, an error will be raised. Additionally, attempting to generate QIR when the profile is set to `Unrestricted` raises an error. The `Unrestricted` profile is only valid for simulation. Either TargetProfile.Base or `TargetProfile.Adaptive_RI` must be used. The `target_profile` can be overridden in the `backend.qir(...)` call to switch profiles.
+> To generate QIR, all registers must be measured into. If there are any unused registers, then an error is raised. Additionally, you get an error when you attempt to generate QIR with an `Unrestricted` target profile. The `Unrestricted` profile is only valid for simulation. You must use `TargetProfile.Base`, `TargetProfile.Adaptive_RI`, or `TargetProfile.Adaptive_RIF`. You can override the `target_profile` in the `backend.qir(...)` call to switch profiles.
 
 1. Import `QSharpError` and `TargetProfile`
 
@@ -70,11 +70,12 @@ Using that same circuit, you can generate QIR which is used to run on quantum ha
     from qsharp import QSharpError, TargetProfile
     ```
 
-2. Modify the output to generate QIR
+1. To generate QIR, modify the output:
 
     ```python
         print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
     ```
+
 Your code should now look like this:
 
 ```python
@@ -91,7 +92,7 @@ print(circuit)
 print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
 ```
 
-with the output:
+Your code's output should look like this:
 
 ```html
      ┌────────────┐             ┌─┐   
@@ -155,7 +156,7 @@ attributes #1 = { "irreversible" }
 !10 = !{i32 1, !"multiple_target_branching", i1 false}
 ```
 
-Not all programs can run on all hardware. Here you can try to target the `Base` profile, but we will get detailed errors on which parts of the program aren't supported.
+Not all programs can run on all hardware. Here, if you try to target the `Base` profile, then you get detailed errors about which parts of the program aren't supported.
 
 ```python
 try:

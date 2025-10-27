@@ -11,7 +11,7 @@ no-loc: [Quantum Development Kit, target, targets]
 
 ## Submitting Python with Q# jobs to Azure Quantum
 
-Learn how to use VS Code to write a Python program that calls Q# operations, connect to Azure using the Python commands or Azure CLI, and submit your job. 
+Learn how to use VS Code to write a Python program that calls Q# operations, connect to Azure using the Python commands or Azure CLI, and submit your job.
 
 ## Prerequisites
 
@@ -21,8 +21,8 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed. 
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
-- The Azure Quantum `qsharp` and `azure-quantum` packages. 
-- [Azure CLI](xref:microsoft.quantum.install-qdk.overview#add-support-for-azure-cli) with the latest Azure Quantum extension installed. 
+- The Azure Quantum `qsharp` and `azure-quantum` packages.
+- [Azure CLI](xref:microsoft.quantum.install-qdk.overview#add-support-for-azure-cli) with the latest Azure Quantum extension installed.
 
 ## Create and import your Q# operations
 
@@ -30,7 +30,7 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
 
 
 1. Follow the steps to create a [Q# project](xref:microsoft.quantum.qsharp-projects#steps-for-creating-a-q-project).
-1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the */src* directory in your project as `Source.qs`. 
+1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the */src* directory in your project as `Source.qs`.
 
     ```qsharp
 
@@ -60,8 +60,8 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
     import azure.quantum
     ```
 
-1. Next, add code to define the Q# project root folder and test run the target operation on the local simulator. The operation is called by *\<namespace>.\<operation_name( )>*, and in this case, you are passing in the number of random bits to return. 
-    
+1. Next, add code to define the Q# project root folder and test run the target operation on the local simulator. The operation is called by *\<namespace>.\<operation_name( )>*, and in this case, you are passing in the number of random bits to return.
+
     > [!NOTE]
     > Because no namespace was specified in `Source.qs`, the compiler uses the file name as the default namespace - `Source.RandomNBits()`. For more information, see [Projects and implicit namespaces](xref:microsoft.quantum.qsharp-projects#projects-and-implicit-namespaces).
 
@@ -94,22 +94,22 @@ With the `qsharp` package, you can store your functions and operations in Q# fil
     [Zero, Zero, Zero, One],
     [One, Zero, Zero, One]]
     ```
-    
+
 ## Compile your job using the Base profile
 
 When you run programs on the local quantum simulator, you can submit any type of Q# program. However, Azure Quantum hardware targets do not yet support the full capabilities required to run all Q# programs. In order to compile and submit Q# programs to Azure Quantum, you need to set your target profile to tell Q# which capabilities that your target hardware supports. Currently, that is either the `Base` or `Adpative_RI` profile. For more information, see [Profile types in Azure Quantum](xref:microsoft.quantum.target-profiles).
-    
+
    > [!NOTE]
-   > For [Q# only programs in VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp), VS Code sets the `Base` profile automatically. 
+   > For [Q# only programs in VS Code](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp), VS Code sets the `Base` profile automatically.
 
 1. Use the `init` method to set the profile:
 
     ```python
     qsharp.init(project_root = '../MyProjectRootFolder', target_profile=qsharp.TargetProfile.Base)
     ```
-    > [!NOTE]
-    > Because you are reinitializing your qsharp state, you need to set the `project_root` parameter again so the compiler knows where to find the `RandomNBits` operation. This could also have been done in step 5 of the previous procedure. 
 
+    > [!NOTE]
+    > Because you are reinitializing your qsharp state, you need to set the `project_root` parameter again so the compiler knows where to find the `RandomNBits` operation. This could also have been done in step 5 of the previous procedure.
 
 1. Then use the `compile` method to specify the operation or function that is the entry point to your program. The compiled program can then be submitted to any quantum hardware:
 
@@ -119,8 +119,7 @@ When you run programs on the local quantum simulator, you can submit any type of
 
 ## Connect to Azure Quantum and submit your job
 
-You can connect to Azure Quantum and submit your job using a Python-created `Workspace` object, or connect and submit your job using Azure CLI. Using Azure CLI requires that you save the compiled program as a text file and submit that file using a CLI command. 
-
+You can connect to Azure Quantum and submit your job using a Python-created `Workspace` object, or connect and submit your job using Azure CLI. Using Azure CLI requires that you save the compiled program as a text file and submit that file using a CLI command.
 
 ### [Using Python](#tab/tabid-python)
 
@@ -225,9 +224,9 @@ The `azure.quantum` Python package includes additional methods to display more d
 
 ### [Using the Azure CLI](#tab/tabid-cli)
 
-To submit a job to Azure Quantum with the Azure CLI, you need to submit a physical file of the program that you just compiled. 
+To submit a job to Azure Quantum with the Azure CLI, you need to submit a physical file of the program that you just compiled.
 
-1. Add to following code to your `randomNum.py` file. This opens a text file and writes your compiled program to the proper format. 
+1. Add to following code to your `randomNum.py` file. This opens a text file and writes your compiled program to the proper format.
 
     ```python
     file = open("compiled_output.txt", "w")
@@ -251,7 +250,7 @@ To submit a job to Azure Quantum with the Azure CLI, you need to submit a physic
 
     ```azurecli
     az account set -s <MySubscriptionID>
-    ``` 
+    ```
 
 1. View your available workspaces with:
 
@@ -259,7 +258,7 @@ To submit a job to Azure Quantum with the Azure CLI, you need to submit a physic
     az quantum workspace list
     ```
 
-1. You can use `quantum workspace set` to select a default workspace that you want to use to list and submit jobs. 
+1. You can use `quantum workspace set` to select a default workspace that you want to use to list and submit jobs.
 
     ```azurecli
     az quantum workspace set \
@@ -275,7 +274,7 @@ To submit a job to Azure Quantum with the Azure CLI, you need to submit a physic
     az quantum target list -o table
     ```
 
-1. Submit your job using the `job submit` command. 
+1. Submit your job using the `job submit` command.
     - `--target-id` can be any target. For this example, use the **rigetti.sim.qvm** target.
     - `--job-name` can be any string.
     - `--job-input-format` is always **qir.v1**.
@@ -313,4 +312,5 @@ To submit a job to Azure Quantum with the Azure CLI, you need to submit a physic
     ------------  -----------  ----------------------
     [0, 1, 1, 1]  1.00000000   |████████████████████|
     ```
+
 ***

@@ -9,7 +9,7 @@ ms.topic: tutorial
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: 'Tutorial: Create a Quantum Random Number Generator'
 uid: microsoft.quantum.tutorial-qdk.random-number
-#customer intent: As a quantum programmer, 
+#customer intent: As a quantum programmer, I want to generate random numbers on a real quantum computer.
 ---
 
 # Tutorial: Implement a quantum random number generator in Q\#
@@ -47,7 +47,7 @@ Classical computers don't produce random numbers, but rather _pseudorandom_ numb
 
 Quantum computers, on the other hand, can generate truly random numbers. This is because the measurement of a qubit in superposition is a probabilistic process. The result of the measurement is random, and there's no way to predict the outcome. This is the basic principle of quantum random number generators.
 
-A qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement. 
+A qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement.
 
 You start by taking a qubit in a basis state, for example zero. The first step of the random number generator is to use a *Hadamard* operation to put the qubit into an equal superposition. The measurement of this state results in a zero or a one with 50% probability of each outcome, a truly random bit.
 
@@ -189,7 +189,7 @@ Since the outcome of the measurement is random and the probabilities of measurin
     }
     ```
 
-    The `let` directive declares variables that don't change during the computation. Here you define the maximum value as 100.    
+    The `let` directive declares variables that don't change during the computation. Here you define the maximum value as 100.
 
     For more information about the `Main` operation, see [Entry Points](xref:microsoft.quantum.qsharp-overview#entry-points).
 
@@ -416,7 +416,6 @@ Let's visualize the distribution of results obtained from running the quantum pr
 
     :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
 
-
 ### [Jupyter Notebook in VS Code](#tab/tabid-python)
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
@@ -496,7 +495,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 ***
 
 > [!NOTE]
-> This code snippet does not currently run on any available Azure Quantum hardware targets, as the callable `ResultArrayAsInt` requires a QPU with [full computation profile](/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles).
+> This code snippet does not currently run on any available Azure Quantum hardware targets, as the callable `ResultArrayAsInt` requires a QPU with a [full computation profile](/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles).
 
 ## Related content
 
