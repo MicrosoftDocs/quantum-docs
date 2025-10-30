@@ -46,7 +46,7 @@ The Microsoft Quantum website is free to use and doesn't require an Azure accoun
 
 Azure Quantum offers the Quantum Development Kit (QDK), a software development kit designed specifically for quantum development. With the QDK, you can write programs in different quantum programming languages, debug your code, get real-time code feedback, and submit jobs to real quantum hardware through Azure Quantum. The QDK supports Microsoft's Q# programming language, along with other languages like Qiskit, Cirq, and OpenQASM.
 
-The Quantum Development Kit is free and open source. To get started, install the QDK extension in VS Code. For more information, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+The Quantum Development Kit is free and open source. To get started, install the QDK extension in Visual Studio Code (VS Code). For more information, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!NOTE]
 > An Azure Quantum workspace is required to run your local quantum programs on Azure Quantum provider hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
@@ -81,9 +81,9 @@ For more information, see [Hybrid quantum computing](xref:microsoft.quantum.over
 
 ### Resource estimation in quantum computing
 
-In quantum computing, resource estimation is the ability to understand the resources that are required to run an algorithm on a quantum computer. When you understand the resource requirements to run your programs on different types of quantum hardware, you can prepare and refine your quantum solutions to run on future scaled quantum machines. For example, the Resource Estimator can estimate the resources needed to break a particular encryption algorithm.
+In quantum computing, resource estimation is the ability to understand the resources that are required to run an algorithm on a quantum computer. When you understand the resource requirements to run your programs on different types of quantum hardware, you can prepare and refine your quantum solutions to run on future scaled quantum machines. For example, resource estimation can help you determine the feasibility of breaking a particular encryption algorithm on a quantum computer.
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources that you need to run a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols, or set your own estimation parameters. The Azure Quantum Resource Estimator computes post-layout physical resource estimates given a set of inputs such as qubit parameters, the quantum error correction (QEC) code, the error budget, and [other parameters](xref:microsoft.quantum.overview.resources-estimator).
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources that you need to run a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols, or set your own estimation parameters. The Resource Estimator computes post-layout physical resource estimates given a set of inputs such as qubit parameters, the quantum error correction (QEC) code, the error budget, and [other parameters](xref:microsoft.quantum.overview.resources-estimator).
 
 To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
@@ -93,7 +93,7 @@ To get started, see [Run your first resource estimate](xref:microsoft.quantum.qu
 
 Quantum mechanics is like the underlying operating system of our universe, and describes how the fundamental building blocks of nature behave. Chemical reactions, cellular processes, and material properties are all quantum mechanical in nature, and often involve interactions between a huge number of quantum particles. Quantum computers have promise to simulate intrinsically quantum mechanical systems, such as molecules, because qubits can be used to represent the natural quantum states in these systems. Examples of quantum systems that we can model include photosynthesis, superconductivity, and complex molecular formations.
 
-The QDK and Azure quantum are purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows that are optimized for scaling on Azure high-performance computing (HPC) clusters, AI-accelerated computing, integration with quantum tools and quantum hardware, and future access to Microsoft’s quantum supercomputer.
+The QDK and Azure Quantum are purpose-built to accelerate scientific discovery. Reinvent your research and development productivity with simulation workflows that are optimized for scaling on Azure high-performance computing (HPC) clusters, AI-accelerated computing, integration with quantum tools and quantum hardware, and future access to Microsoft’s quantum supercomputer.
 
 For more information, see [Unlocking the power of Azure for Molecular Dynamics](https://cloudblogs.microsoft.com/quantum/2023/06/01/unlocking-the-power-of-azure-for-molecular-dynamics/).
 
@@ -103,7 +103,7 @@ Quantum computers do exceptionally well with problems that require calculations 
 
 One of the goals of quantum computing research is to study what kinds of problems can be solved by a quantum computer faster than a classical computer, and how large the speedup can be. One well-known example is Grover's algorithm, which yields a polynomial speedup over the classical counterparts.
 
-[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value $x$ is a valid solution (a "yes or no problem") can be formulated in terms of the search problem.
+[Grover's algorithm](xref:microsoft.quantum.concepts.grovers) speeds up the solution to unstructured data searches, running the search in fewer steps than any classical algorithm could. Indeed, any problem that allows you to check whether a given value is a valid solution (a "yes or no problem") can be formulated in terms of the search problem.
 
 For an implementation of Grover's algorithm, see [Tutorial: Implement Grover's search algorithm in Q#](xref:microsoft.quantum.tutorial-qdk.grovers).
 
