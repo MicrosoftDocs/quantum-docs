@@ -26,8 +26,8 @@ The following targets are available from this provider:
 |---|---|---|---|
 |[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |56 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
 |[H2-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-2sc |56 qubits|Use this to validate quantum programs against the H2-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabilizer simulation|
-|[H2-2 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-2e | 56/32 qubits|Uses a realistic physical model and noise model of H2-2. 56 qubit simulation is only available as a stabilizer simulation|
+|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. >32 qubit simulation is only available as a stabilizer simulation|
+|[H2-2 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-2e | 56/32 qubits|Uses a realistic physical model and noise model of H2-2. >32 qubit simulation is only available as a stabilizer simulation|
 |[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-1 trapped ion device.|
 |[H2-2](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-2 trapped ion device.|
 
