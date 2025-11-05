@@ -38,7 +38,6 @@ result['jobParams']
 ```
 
 The following table contains the data type and a brief description for each output parameter, which you can access programmatically.
-[ARE THESE PARAMETERS EXHAUSTIVE AND ARE THEY ALL STILL PART OF THE OUTPUT PARAMETERS SET? I DON'T SEE STATUS]
 
 | Top-level output parameter | Data type  | Description |
 |----------------------------|------------|-------------|
