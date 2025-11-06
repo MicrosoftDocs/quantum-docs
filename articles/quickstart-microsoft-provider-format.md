@@ -29,10 +29,10 @@ To develop and run your circuits in Visual Studio Code (VS Code), you need:
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The Azure Quantum `qsharp`, `azure-quantum`, and `ipykernel` packages.  
+- The Azure Quantum `qdk`, `azure-quantum`, and `ipykernel` packages.  
 
     ```bash
-    python -m pip install --upgrade qsharp azure-quantum ipykernel
+    python -m pip install --upgrade qdk azure-quantum ipykernel
     ```
 
 ## Create a new Jupyter notebook

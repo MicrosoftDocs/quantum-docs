@@ -23,8 +23,8 @@ The first step is to define a Q# operation that initializes a qubit to a known s
 Open the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) and copy the following code into the code editor window. Don't select **Run** yet; you'll run the code later in the tutorial.
 
 ```qsharp
-import Microsoft.Quantum.Intrinsic.*;
-import Microsoft.Quantum.Canon.*;
+import Std.Intrinsic.*;
+import Std.Canon.*;
 
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
     if desired != M(target) {
@@ -39,13 +39,13 @@ The `SetQubitState` operation:
 
 1. Takes two parameters: a type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types), named `desired`, that represents the desired state for the qubit to be in (`Zero` or `One`), and a type [`Qubit`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). 
 1. Performs a measurement operation, `M`, which measures the state of the qubit (`Zero` or `One`) and compares the result to the value specified in `desired`.
-1. If the measurement doesn't match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state. 
+1. If the measurement doesn't match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state.
 
 ## Write a test operation to test the Bell state
 
 Next, to demonstrate the effect of the `SetQubitState` operation, create another operation named `Main`. This operation allocates two qubits, call `SetQubitState` to set the first qubit to a known state, and then measure the qubits to see the results.
 
-Copy the following code into the code editor window, below the `SetQubitState` operation. 
+Copy the following code into the code editor window, below the `SetQubitState` operation.
 
 ```qsharp
 operation Main() : (Int, Int, Int, Int) {
@@ -111,8 +111,8 @@ In order to run the code as a standalone program, the Q# compiler in the Copilot
 Your Q# program up to this point should now look like this:
 
 ```qsharp
-import Microsoft.Quantum.Intrinsic.*;
-import Microsoft.Quantum.Canon.*;
+import Std.Intrinsic.*;
+import Std.Canon.*;
 
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
     if desired != M(target) {
@@ -245,8 +245,8 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
 Add the `CNOT` operation to your program immediately after the `H` operation. Your full program should look like this:
 
 ```qsharp
-import Microsoft.Quantum.Intrinsic.*;
-import Microsoft.Quantum.Canon.*;
+import Std.Intrinsic.*;
+import Std.Canon.*;
 
     operation SetQubitState(desired : Result, target : Qubit) : Unit {
         if desired != M(target) {

@@ -19,8 +19,9 @@ In this tutorial, you implement Grover's algorithm in Q# to solve search-based p
 In this tutorial, you:
 
 > [!div class="checklist"]
-> * Define the Grover's algorithm for a search problem
-> * Implement Grover's algorithm in Q#
+>
+> - Define the Grover's algorithm for a search problem
+> - Implement Grover's algorithm in Q#
 
 [!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
@@ -202,7 +203,7 @@ operation Main() : Result[] {
 
 ## Run the program
 
-Select the desired platform to run your program. 
+Select the desired platform to run your program.
 
 ### [Copilot in Azure Quantum](#tab/tabid-copilot)
 
@@ -212,11 +213,11 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Arrays.*;
-    import Microsoft.Quantum.Measurement.*;
-    import Microsoft.Quantum.Diagnostics.*;
+    import Std.Convert.*;
+    import Std.Math.*;
+    import Std.Arrays.*;
+    import Std.Measurement.*;
+    import Std.Diagnostics.*;
     
     operation Main() : Result[] {
         let nQubits = 5;
@@ -327,11 +328,11 @@ You can also submit your program to the free [Quantinuum Emulator](xref:microsof
 
     ```qsharp
   
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Arrays.*;
-    import Microsoft.Quantum.Measurement.*;
-    import Microsoft.Quantum.Diagnostics.*;
+    import Std.Convert.*;
+    import Std.Math.*;
+    import Std.Arrays.*;
+    import Std.Measurement.*;
+    import Std.Diagnostics.*;
 
 
     operation Main() : Result[] {
@@ -430,7 +431,7 @@ You can also submit your program to the free [Quantinuum Emulator](xref:microsof
 
 Explore other Q# tutorials:
 
-* [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
-* [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
-* [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+- [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
+- [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
+- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

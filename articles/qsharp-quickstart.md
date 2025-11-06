@@ -21,6 +21,7 @@ When two or more [qubits](xref:microsoft.quantum.concepts.qubit) are entangled, 
 In this quickstart, you:
 
 > [!div class="checklist"]
+>
 > - Create a Q# file.
 > - Allocate a pair of qubits.
 > - Entangle the qubits.
@@ -44,10 +45,10 @@ In your `Main.qs` file, follow these steps to entangle and measure a pair of qub
 
 The QDK includes the Q# standard library with predefined functions and operations for your quantum programs. To use them, you must first import the relevant library.
 
-In your program, use an `import` statement to open the `Microsoft.Quantum.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the entangled state.
+In your program, use an `import` statement to open the `Std.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the entangled state.
 
 ```qsharp
-    import Microsoft.Quantum.Diagnostics.*;
+    import Std.Diagnostics.*;
 ```
 
 ### Define an operation
@@ -105,7 +106,7 @@ The resulting state of both qubits is the Bell pair $\frac{1}{\sqrt{2}}(\ket{00}
 
 ### Display the entangled state
 
-Before measuring the qubits, it's important to verify that your previous code successfully entangles them. You can use the `DumpMachine` operation, which is part of the `Microsoft.Quantum.Diagnostics` library, to output the current state of your Q# program:
+Before measuring the qubits, it's important to verify that your previous code successfully entangles them. You can use the `DumpMachine` operation, which is part of the `Std.Diagnostics` library, to output the current state of your Q# program:
 
 ```qsharp
         // Show the entangled state of the qubits.
@@ -154,7 +155,7 @@ Congratulations! You wrote a Q# program that entangles two qubits and creates a 
 Your final Q# program should look like this:
 
 ```qsharp
-import Microsoft.Quantum.Diagnostics.*;
+import Std.Diagnostics.*;
 
 operation Main() : (Result, Result) {  
     // Allocate two qubits, q1 and q2, in the 0 state.

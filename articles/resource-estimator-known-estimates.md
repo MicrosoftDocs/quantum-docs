@@ -26,10 +26,10 @@ For information about how to run the Resource Estimator, see [Different ways to 
 If you want to use Python in VS Code, you also need the following:
 
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest Azure Quantum `qsharp` package.  
+- The latest Azure Quantum `qdk` package.  
 
     ```bash
-    python -m pip install --upgrade qsharp 
+    python -m pip install --upgrade qdk
     ```
 
 ## Use known estimates for an operation
@@ -49,7 +49,7 @@ You can use the `AccountForEstimates` Q# operation to pass known estimates to th
 For example, consider the following Q# operation called `FactoringFromLogicalCounts` that takes a list of known estimates and a list of qubits.
 
 ```qsharp
-import Microsoft.Quantum.ResourceEstimation.*;
+import Std.ResourceEstimation.*;
 
 operation FactoringFromLogicalCounts() : Unit {
     use qubits = Qubit[12581];

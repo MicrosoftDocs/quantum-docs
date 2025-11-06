@@ -69,17 +69,17 @@ The Resource Estimator provides multiple estimates for the same algorithm, each 
 
 1. Finally, the **Resource Estimates** tab displays the full list of output data for the Resource Estimator. You can inspect cost details by collapsing the groups, which have more information. For example, collapse the **Logical qubit parameters** group. For more information, see [the report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data) for the Resource Estimator.
 
-    |Logical qubit parameter| Value |
-    |----|---|
-    |QEC scheme                                                |                           surface_code |
-    |Code distance                                                                       |            5 |
-    |Physical qubits                                                                   |            50 |
-    |Logical cycle time                                                                   |   3 millisecs |
-    |Logical qubit error rate                                                            |     3.00E-5 |
-    |Crossing prefactor                                                                    |       0.03|
-    |Error correction threshold                                                             |      0.01|
-    |Logical cycle time formula    | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance`|
-    |Physical qubits formula     |                                      2 * `codeDistance` * `codeDistance`|
+    | Logical qubit parameter    | Value                                                                     |
+    |----------------------------|---------------------------------------------------------------------------|
+    | QEC scheme                 | surface_code                                                              |
+    | Code distance              | 5                                                                         |
+    | Physical qubits            | 50                                                                        |
+    | Logical cycle time         | 3 millisecs                                                               |
+    | Logical qubit error rate   | 3.00E-5                                                                   |
+    | Crossing prefactor         | 0.03                                                                      |
+    | Error correction threshold | 0.01                                                                      |
+    | Logical cycle time formula | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance` |
+    | Physical qubits formula    | 2 * `codeDistance` * `codeDistance`                                       |
 
     > [!TIP]
     > Click **Show detailed rows** to display the description of each output of the report data.

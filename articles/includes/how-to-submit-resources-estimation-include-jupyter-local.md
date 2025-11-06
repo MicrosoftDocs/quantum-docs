@@ -13,16 +13,16 @@ no-loc: [target, targets]
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qsharp` and `qsharp_widgets` packages.  
+- The latest Azure Quantum `qdk` library with the optional `jupyter` extra.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp_widgets 
+    python -m pip install --upgrade qdk[jupyter] 
     ```
 
-    or 
-    
+    or
+
     ```bash
-    !pip install --upgrade qsharp qsharp_widgets
+    pip install --upgrade qdk[jupyter]
     ```
 
 > [!TIP]
@@ -30,12 +30,12 @@ no-loc: [target, targets]
 
 ## Create the quantum algorithm
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information. 
+1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
+1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 1. In the first cell of the notebook, import the `qsharp` package.
 
     ```python
-    import qsharp
+    from qdk import qsharp
     ```
 
 1. Add a new cell and copy the following code.
@@ -432,10 +432,10 @@ For example, expand the **Logical qubit parameters** group to see that the code 
 
 ### Space diagram
 
-The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qsharp-widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
+The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qdk.widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
-from qsharp-widgets import SpaceChart, EstimateDetails
+from qdk.widgets import SpaceChart, EstimateDetails
 SpaceChart(result)
 ```
 
@@ -604,7 +604,7 @@ The **Pareto frontier estimation** provides multiple estimates for the same algo
 1. You can use the `EstimatesOverview` function to display a table with the overall physical resource counts. Click the icon next to the first row to select the columns you want to display. You can select from run name, estimate type, qubit type, qec scheme, error budget, logical qubits, logical depth, code distance, T states, T factories, T factory fraction, runtime, rQOPS, and physical qubits.
 
     ```python
-    from qsharp_widgets import EstimatesOverview
+    from qdk.widgets import EstimatesOverview
     EstimatesOverview(result)
     ```
 
@@ -641,9 +641,9 @@ The space-time diagram shows the number of physical qubits and the runtime of th
     
     EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
     ```
-    
+
     :::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot showing the space-time diagram of the Resource Estimator when using Pareto frontier estimation and multiple configurations of parameters.":::
-    
+
     > [!NOTE]
     > You can define colors and run names for the qubit-time diagram using the `EstimatesOverview` function.
 

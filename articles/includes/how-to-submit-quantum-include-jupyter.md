@@ -20,10 +20,10 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `qsharp`, `qsharp-widgets`, and `azure-quantum` packages, and the `ipykernel` package.
+- The Azure Quantum `qdk[jupyter]` and `azure-quantum` packages, and the `ipykernel` package.
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets azure-quantum ipykernel
+    python -m pip install --upgrade qdk[jupyter] azure-quantum ipykernel
     ```
 
 ## Run and test your program in the local simulator
@@ -33,7 +33,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 1. In the first cell of the notebook, run the following Python code to import the necessary modules:
 
     ```python
-    import qsharp
+    from qdk import qsharp
     import azure.quantum
     ```
 
@@ -46,7 +46,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
     > [!NOTE]
     > Notice that as soon as you type in the magic command `%%qsharp`, the notebook cell changes type from **Python** to **Q#**.
- 
+
     ```qsharp
     %%qsharp
 
@@ -97,14 +97,15 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
     [One, Zero, Zero, One]]
     ```
 
-## Visualize  the quantum circuit
+## Visualize the quantum circuit
 
-You can visualize quantum circuits using the `qsharp-widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image. For more information, see [Quantum circuit diagrams with Jupyter Notebooks](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
+You can visualize quantum circuits using the `qdk.widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image. For more information, see [Quantum circuit diagrams with Jupyter Notebooks](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
 
 Add the following code to a new cell to visualize the circuit:
 
 ```python
-from qsharp_widgets import Circuit
+from qdk import qsharp
+from qdk.widgets import Circuit
 
 Circuit(qsharp.circuit("RandomNBits(4)"))
 ```

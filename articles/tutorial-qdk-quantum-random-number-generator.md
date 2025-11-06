@@ -35,10 +35,10 @@ In this tutorial, you will:
 - To develop and run the code sample in Visual Studio Code:
     - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
     - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-    - If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qsharp` Python package. To do so, open a terminal and run the following command:
+    - If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python package. To do so, open a terminal and run the following command:
 
         ```bash
-        $ pip install --upgrade  qsharp
+        pip install --upgrade qdk
         ```
 
 ## Define the problem
@@ -141,11 +141,11 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
 ### Write a complete random number generator
 
-1. First, you need to import the required namespaces from the Q# standard library to the program. The Q# compiler loads many common functions and operations automatically, however for the complete random number generator, you need some additional functions and operations from two Q# namespaces: `Microsoft.Quantum.Math`and `Microsoft.Quantum.Convert`.
+1. First, you need to import the required namespaces from the Q# standard library to the program. The Q# compiler loads many common functions and operations automatically, however for the complete random number generator, you need some additional functions and operations from two Q# namespaces: `Std.Math`and `Std.Convert`.
 
     ```qsharp
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
+    import Std.Convert.*;
+    import Std.Math.*;
     ```
 
 1. Next, you define the `GenerateRandomNumberInRange` operation. This operation repeatedly calls the `GenerateRandomBit` operation to build a string of bits.
@@ -172,10 +172,10 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
     Let's take a moment to review the new code.
 
-    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Microsoft.Quantum.Math` namespace converts an integer to the number of bits needed to represent it.
+    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Std.Math` namespace converts an integer to the number of bits needed to represent it.
     * The `SampleRandomNumberInRange` operation uses a `for` loop to generate random numbers until it generates one that's equal to or less than `max`. The `for` loop works exactly the same as a `for` loop in other programming languages.
     * The variable `bits` is a mutable variable. A mutable variable is one that can change during the computation. You use the `set` directive to change a mutable variable's value.
-    * The `ResultArrayAsInt` function, from the default `Microsoft.Quantum.Convert` namespace, converts the bit string to a positive integer.
+    * The `ResultArrayAsInt` function, from the default `Std.Convert` namespace, converts the bit string to a positive integer.
 
 1. Finally, you add an entry point to the program. By default, the Q# compiler looks for a `Main` operation and starts processing there. It calls the `GenerateRandomNumberInRange` operation to generate a random number between 0 and 100.
 
@@ -196,8 +196,8 @@ Since the outcome of the measurement is random and the probabilities of measurin
 1. The complete code for the random number generator is as follows:
 
 ```qsharp
-import Microsoft.Quantum.Convert.*;
-import Microsoft.Quantum.Math.*;
+import Std.Convert.*;
+import Std.Math.*;
 
 operation Main() : Int {
     let max = 100;
@@ -258,8 +258,8 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
+    import Std.Convert.*;
+    import Std.Math.*;
 
     operation Main() : Int {
         let max = 100;
@@ -329,8 +329,8 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Copy the following code in the `RandomNumberGenerator.qs` file.
 
     ```qsharp
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
+    import Std.Convert.*;
+    import Std.Math.*;
 
     operation Main() : Int {
         let max = 100;
@@ -422,16 +422,16 @@ Let's visualize the distribution of results obtained from running the quantum pr
 1. In the first cell, import the `qsharp` package in your Python code:
 
     ```python
-    import qsharp
+    from qdk import qsharp
     ```
 
-1. Add the Q# code for the quantum random number generator program. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`.  Copy this code into the second cell. 
+1. Add the Q# code for the quantum random number generator program. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`.  Copy this code into the second cell.
 
     ```qsharp
     %%qsharp
     
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
+    import Std.Convert.*;
+    import Std.Math.*;
     
     operation Main() : Int {
         let max = 100;

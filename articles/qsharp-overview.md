@@ -64,7 +64,7 @@ namespace Superposition {
 
 Namespaces can help you organize related functionality. Namespaces are optional in Q# programs, meaning that you can write a program without defining a namespace.
 
-For example, the **Superposition** program of the example could be also written without a namespace as:
+For example, the **Superposition** program from the example can also be written without a namespace as:
 
 ```qsharp
 @EntryPoint()
@@ -283,7 +283,7 @@ By default, Q# programs in Jupyter Notebooks use the `ipykernel` Python package.
 
 When using `%%qsharp`, keep the following in mind:
 
-- You must first run `import qsharp` to enable `%%qsharp`.
+- You must first run `from qdk import qsharp` to enable `%%qsharp`.
 - `%%qsharp` scopes to the notebook cell in which it appears and changes the cell type from Python to Q#.
 - You can't put a Python statement before or after `%%qsharp`.
 - Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.

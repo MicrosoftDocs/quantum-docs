@@ -106,7 +106,7 @@ The output from `DumpMachine` shows how the state of the qubit systems changes a
 
 ### The Python `dump_machine` function
 
-The [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) function is a function from the `qsharp` Python library. This function returns the current allocated qubit count and a dictionary of that contains the sparse state amplitudes of the qubit system.
+The [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) function is a function from the `qsharp` Python package. This function returns the current allocated qubit count and a dictionary of that contains the sparse state amplitudes of the qubit system.
 
 The following example runs the same program as the previous `DumpMachine` example, but in a Jupyter notebook instead of a `.qs` file.
 
@@ -115,7 +115,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
 1. In the first cell, copy and run the following code:
 
    ```python
-   import qsharp 
+   from qdk import qsharp 
    ```
 
 1. Create a new code cell, then copy and run the following Q# code:
@@ -199,7 +199,7 @@ The following example uses `dump_operation` to display information for a 1-qubit
 1. In the first cell, copy and run the following code:
 
    ```python
-   import qsharp
+   from qdk import qsharp
    from qsharp.utils import dump_operation
    ```
 

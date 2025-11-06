@@ -21,6 +21,7 @@ Although Q# was primarily created as a high-level programming language for large
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
+>
 > * Define quantum operations in Q#.
 > * Write the Quantum Fourier Transform circuit
 > * Simulate a quantum operation from qubit allocation to measurement output.
@@ -36,10 +37,10 @@ In this tutorial, you learn how to:
 
 * The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 * The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-* If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qsharp` Python package. To do so, open a terminal and run the following command:
+* If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python package. To do so, open a terminal and run the following command:
 
     ```bash
-    $ pip install --upgrade  qsharp
+    pip install --upgrade qdk
     ```
 
 ## Create a new Q# file
@@ -58,12 +59,12 @@ You can view the [full Q# code](#the-complete-qft-operation) for this section as
 
 ### Import required Q# libraries
 
-Inside your Q# file, import the relevant `Microsoft.Quantum.*` namespaces.
+Inside your Q# file, import the relevant `Std.*` namespaces.
 
 ```qsharp
-import Microsoft.Quantum.Diagnostics.*;
-import Microsoft.Quantum.Math.*;
-import Microsoft.Quantum.Arrays.*;
+import Std.Diagnostics.*;
+import Std.Math.*;
+import Std.Arrays.*;
 
 // operations go here
 ```
@@ -176,9 +177,9 @@ ResetAll(qs); // deallocate qubits
 The Q# program is completed. Your **QFTcircuit.qs** file should now look like this:
 
 ```qsharp
-import Microsoft.Quantum.Diagnostics.*;
-import Microsoft.Quantum.Math.*;
-import Microsoft.Quantum.Arrays.*;
+import Std.Diagnostics.*;
+import Std.Math.*;
+import Std.Arrays.*;
 
 operation Main() : Unit {
 
@@ -225,16 +226,16 @@ For now, the `Main` operation doesn't return any value - the operation returns `
 1. In the first cell, import the `qsharp` package in your Python code:
 
     ```python
-    import qsharp
+    from qdk import qsharp
     ```
 
 1. Add the Q# program with the `Main` operation. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`. Copy this code into the second cell.
 
     ```qsharp
     %%qsharp
-    import Microsoft.Quantum.Diagnostics.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Arrays.*;
+    import Std.Diagnostics.*;
+    import Std.Math.*;
+    import Std.Arrays.*;
     
     operation Main() : Unit {
     
@@ -341,9 +342,9 @@ Now change the placement of the `DumpMachine` functions to output the state befo
 Your final Q# code should look like this:
 
 ```qsharp
-import Microsoft.Quantum.Diagnostics.*;
-import Microsoft.Quantum.Math.*;
-import Microsoft.Quantum.Arrays.*;
+import Std.Diagnostics.*;
+import Std.Math.*;
+import Std.Arrays.*;
 
 operation Main() : Result[] {
 
@@ -427,9 +428,9 @@ Post-QFT measurement results [qubit0, qubit1, qubit2]:
     ```qsharp
     %%qsharp
     
-    import Microsoft.Quantum.Diagnostics.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Arrays.*;
+    import Std.Diagnostics.*;
+    import Std.Math.*;
+    import Std.Arrays.*;
     
     operation Main() : Result[] {
     
@@ -524,9 +525,9 @@ Indeed, if you want to develop full-scale, applicable quantum programs, worrying
 1. Your code should now look like this
 
     ```qsharp
-    import Microsoft.Quantum.Diagnostics.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Arrays.*;
+    import Std.Diagnostics.*;
+    import Std.Math.*;
+    import Std.Arrays.*;
     
     operation Main() : Result[] {
     

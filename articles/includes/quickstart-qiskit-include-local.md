@@ -15,20 +15,21 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The Azure Quantum `azure-quantum` Python package with the \[qiskit\] tag. 
+- The Azure Quantum `qdk` and `azure-quantum[qiskit]` Python packages, and the `ipykernel` package.
+
+    > [!NOTE]
+    > If the Jupyter Python kernel `ipykernel` is't detected, then VS Code will prompt you to install it.
 
     ```cmd
-    python -m pip install --upgrade azure-quantum[qiskit] qsharp ipykernel 
+    python -m pip install --upgrade azure-quantum[qiskit] qdk ipykernel 
     ```
+
     > [!IMPORTANT]
     > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
-    > [!NOTE]
-    > If the Jupyter Python kernel `ipykernel` is not detected, VS Code will prompt you to install it.  
-
 ## Create a new Jupyter Notebook
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
+1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
 1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information. 
 
 ## Load the required imports
@@ -45,8 +46,7 @@ from azure.quantum.qiskit import AzureQuantumProvider
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your need the resource ID and the
-location of your Azure Quantum workspace. 
+To connect to the Azure Quantum service, your need the resource ID and the location of your Azure Quantum workspace.
 
 1. Log in to your Azure account, <https://portal.azure.com>,
 1. Select your Azure Quantum workspace, and navigate to **Overview**.
@@ -55,7 +55,6 @@ location of your Azure Quantum workspace.
     :::image type="content" source="../media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
 
 Add a new cell in your notebook and use your account information to create [`Workspace`](xref:azure.quantum.Workspace) and  [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) objects to connect to your Azure Quantum workspace.
-
 
 ```python
 workspace = Workspace(  
@@ -124,7 +123,6 @@ q_2: ──────────┤ X ├─╫──╫─┤M├
 c: 3/════════════════╩══╩══╩═
                      0  1  2 
 ```
-
 
 ## Select a target to run your program
 
@@ -201,14 +199,13 @@ result.get_memory(circuit)
 ```
 
 > [!NOTE]
-> On IonQ targets, if you submit a job with an odd number of shots, the results will be rounded down to the next even number. For example, if you specify 9 shots, the results will display data for 8 shots. 
+> On IonQ targets, if you submit a job with an odd number of shots, the results will be rounded down to the next even number. For example, if you specify 9 shots, the results will display data for 8 shots.
 
 #### Estimate job cost
 
 Before running a job on the QPU, you should estimate how much it costs to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
-
 
 #### Run on IonQ QPU
 
@@ -223,8 +220,6 @@ Submit the circuit to run on Azure Quantum, get the results, and run `plot_histo
 
 > [!NOTE]
 > The time required to run a circuit on the QPU may vary depending on current queue times.
-
-
 
 ```python
 # Submit the circuit to run on Azure Quantum
@@ -252,7 +247,7 @@ Result(backend_name='ionq.qpu.aria-1', backend_version='1', qobj_id='Qiskit Samp
 
 ### [Quantinuum](#tab/tabid-quantinuum)
 
-#### Run on the syntax checker 
+#### Run on the syntax checker
 
 To test the program before running it on the hardware, first run it on the Quantinuum Syntax Checker. Use the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method to create a `Backend` object to connect to the Quantinuum Syntax Checker backend:
 
@@ -306,12 +301,11 @@ Before running a job on the QPU, you should estimate how much it will cost to ru
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the **Provider** tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
-
-#### Run on a Quantinuum QPU 
+#### Run on a Quantinuum QPU
 
 After running successfully on the API validator, you can run your job on one of Quantinuum's hardware processors (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)).
 
-> [!NOTE] 
+> [!NOTE]
 > The time required to run a circuit on the QPU may vary depending on current queue times.
 
 ```python
@@ -342,7 +336,6 @@ Result(backend_name='quantinuum.qpu.h2-1', backend_version='1', qobj_id='Qiskit 
 ```
 
 ![Qiskit circuit result on Quantinuum QPU](../media/azure-quantum-qiskit-hw-result-2.png)
-
 
 ### [Rigetti](#tab/tabid-rigetti)
 
@@ -405,4 +398,4 @@ result.get_memory(circuit)
 > results = []
 > for job in jobs:
 >     results.append(job.result())
->```
+> ```
