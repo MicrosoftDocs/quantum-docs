@@ -97,10 +97,10 @@ As in real quantum computations, Q# doesn't allow you to directly access qubit s
 
 ### Apply single-qubit and controlled operations
 
-Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Microsoft.Quantum.Intrinsic` namespace.
+Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Std.Intrinsic` namespace.
 
 > [!NOTE]
-> Note that `Microsoft.Quantum.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
+> Note that `Std.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 

@@ -208,38 +208,38 @@ Reset(q);
 
 ### Standard library namespaces
 
-The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Microsoft.Quantum.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.
+The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Std.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.
 
 To call a function or operation, you can specify the full namespace or use an `import` statement, which makes all the functions and operations for that namespace available and makes your code more readable. The following examples call the same operation:
 
 ```qsharp
-Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
+Std.Intrinsic.Message("Hello quantum world!");
 ```
 
 ```qsharp
-// imports all functions and operations from the Microsoft.Quantum.Intrinsic namespace.
-import Microsoft.Quantum.Intrinsic.*;
-Message("Hello quantum world!");
-
-// imports just the `Message` function from the Microsoft.Quantum.Intrinsic namespace.
-import Microsoft.Quantum.Intrinsic.Message;
-Message("Hello quantum world!");
-```
-
-```qsharp
-// namespaces in the standard library may be imported using `Std` instead of `Microsoft.Quantum`. 
+// imports all functions and operations from the Std.Intrinsic namespace.
 import Std.Intrinsic.*;
+Message("Hello quantum world!");
+
+// imports just the `Message` function from the Std.Intrinsic namespace.
+import Std.Intrinsic.Message;
+Message("Hello quantum world!");
+```
+
+```qsharp
+// namespaces in the standard library can be imported using `Microsoft.Quantum` instead of `Std`. 
+import Microsoft.Quantum.Intrinsic.*;
 Message("Hello quantum world!");
 ```
 
 > [!NOTE]
-> The **Superposition** program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
+> The **Superposition** program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Std.Core` and `Std.Intrinsic`, which contain commonly used functions and operations.
 
-You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the **Superposition** program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
+You can take advantage of the `Std.Measurement` namespace by using the `MResetZ` operation to optimize the **Superposition** program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
 ```qsharp
 // Import the namespace for the MResetZ operation.
-import Microsoft.Quantum.Measurement.*;
+import Std.Measurement.*;
 
 @EntryPoint()
 operation MeasureOneQubit() : Result {
