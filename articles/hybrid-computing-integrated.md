@@ -29,10 +29,10 @@ This article explains how to submit hybrid jobs to Azure Quantum using the [Adap
     - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 - If you wan to submit Python + Q# programs, you need the following prerequisites:
     - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-    - The Azure Quantum `azure-quantum` and `qdk` packages.
+    - The `qdk` Python package with the optional `azure` extra.
     
         ```bash
-        pip install --upgrade azure-quantum qdk
+        pip install --upgrade qdk[azure]
         ```
 
 ## Supported targets

@@ -226,12 +226,6 @@ import Std.Intrinsic.Message;
 Message("Hello quantum world!");
 ```
 
-```qsharp
-// namespaces in the standard library can be imported using `Microsoft.Quantum` instead of `Std`. 
-import Microsoft.Quantum.Intrinsic.*;
-Message("Hello quantum world!");
-```
-
 > [!NOTE]
 > The **Superposition** program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Std.Core` and `Std.Intrinsic`, which contain commonly used functions and operations.
 

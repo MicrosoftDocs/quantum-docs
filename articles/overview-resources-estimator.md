@@ -170,7 +170,7 @@ Another way is to pass the qubit parameters to the [`EstimatorParams` class](xre
 
 ```python
 from qdk import qsharp
-from qsharp.estimator import EstimatorParams, QubitParams
+from qdk.estimator import EstimatorParams, QubitParams
 
 params = EstimatorParams()
 params.qubit_params.name = QubitParams.MAJ_NS_E6 # qubit_maj_ns_e6 qubit parameter
@@ -194,10 +194,9 @@ qsharp.estimate("RunProgram()", params=
 Or, you can pass the instructions in the form of a list.
 
 ```python
-from qdk import qsharp
 from qsharp.estimator import EstimatorParams, QubitParams
 
-params = MicrosoftEstimatorParams()
+params = EstimatorParams()
 params.qubit_params.name = QubitParams.MAJ_NS_E4
 params.qubit_params.two_qubit_joint_measurement_error_rate = 1e-5
 ```
@@ -221,8 +220,7 @@ params.qubit_params.two_qubit_joint_measurement_error_rate = 1e-5
 The following code shows how to specify custom qubit parameters for a gate-based instruction set:
 
 ```python
-from qdk import qsharp
-from qsharp.estimator import EstimatorParams, QubitParams
+from qdk.estimator import EstimatorParams, QubitParams
 
 params = EstimatorParams()
 
@@ -234,7 +232,7 @@ params.qubit_params.idle_error_rate = 0.02
 ```
 
 > [!NOTE]
-> When not specified, the values for `two_qubit_gate_time` and `t_gate_time` default to `one_qubit_gate_time`, the values for `two_qubit_gate_error_rate` and `t_gate_error_rate` default to `one_qubit_gate_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
+> The default value for `two_qubit_gate_time` and `t_gate_time` is `one_qubit_gate_time`, the default value for `two_qubit_gate_error_rate` and `t_gate_error_rate` is `one_qubit_gate_error_rate`, and the default value for `idle_error_rate` is `one_qubit_measurement_error_rate`.
 
 #### Qubit parameters for Majorana qubits
 
@@ -253,8 +251,7 @@ params.qubit_params.idle_error_rate = 0.02
 A minimum template for a Majorana based instruction set with all required values is:
 
 ```python
-from qdk import qsharp
-from qsharp.estimator import EstimatorParams, QubitParams
+from qdk.estimator import EstimatorParams, QubitParams
 
 params = EstimatorParams()
 
@@ -265,7 +262,7 @@ params.qubit_params.one_qubit_measurement_error_rate = 0.01
 ```
 
 > [!NOTE]
-> When not specified, the values for `two_qubitJointMeasurementTime` and `t_gate_time` default to `one_qubit_measurement_time`, the values for `two_qubit_joint_measurement_error_rate` and `t_gate_error_rate` default to `one_qubit_measurement_error_rate`, and the value for `idle_error_rate` defaults to `one_qubit_measurement_error_rate`.
+> The default value for `two_qubitJointMeasurementTime` and `t_gate_time` is `one_qubit_measurement_time`, the default value for `two_qubit_joint_measurement_error_rate` and `t_gate_error_rate` is `one_qubit_measurement_error_rate`, and the default value for `idle_error_rate` is `one_qubit_measurement_error_rate`.
 
 For `one_qubit_measurement_error_rate` and `two_qubit_joint_measurement_error_rate`, you can specify the error rates that correspond to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers. For example:
 
@@ -390,11 +387,11 @@ qsharp.estimate("RunProgram()", params=
 ```
 
 > [!NOTE]
-> When not specified, the values for `"logicalCycleTime"` and `"physicalQubitsPerLogicalQubit"` default to `"oneQubitMeasurementTime"`, the value for `"errorCorrectionThreshold"` defaults to `0.01`, and the value for `"crossingPrefactor"` defaults to `0.03`.
+> The default value for `"logicalCycleTime"` and `"physicalQubitsPerLogicalQubit"` is `"oneQubitMeasurementTime"`, the default value for `"errorCorrectionThreshold"` is `0.01`, and the default value for `"crossingPrefactor"` is `0.03`.
 
 ### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance. 
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
 
 You can use the following code as a template for QEC schemes:
 
@@ -443,7 +440,7 @@ You can also pass the error budget parameters to the [`EstimatorParams` class](x
 
 ```python
 from qdk import qsharp
-from qsharp.estimator import EstimatorParams, QubitParams, QECScheme
+from qdk.estimator import EstimatorParams, QubitParams, QECScheme
 
 params = EstimatorParams()
 params.items.error_budget = 0.333 # error budget of 1/3
@@ -456,8 +453,7 @@ Also, you can individually specify each component of the error budget. The sum o
 The following code shows how to specify the error budget parameter with T states and rotations:
 
 ```python
-from qdk import qsharp
-from qsharp.estimator import EstimatorParams, QubitParams
+from qdk.estimator import EstimatorParams, QubitParams
 
 params = EstimatorParams()
 params.error_budget.logical = 0.01
@@ -469,18 +465,17 @@ params.error_budget.rotations = 0.03
 
 You can use the `"constraints"` class to apply constraints on the [T factory](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator) component-level. By adjusting constraints, you can optimize the estimates toward reducing the number of qubits or toward reducing the runtime.
 
-|Parameter|Data type|Description|
-|----|----|-----|
-|`logical_depth_factor`|float| Control the execution time. If it has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing `logical_depth_factor`, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.|
-|`max_t_factories`|integer| Maximum number of T factory copies. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `max_t_factories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).|
-|`max_duration`|time string| Maximum runtime for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_duration` is specified, the Resource Estimator tries to find the best estimate for `max_physical_qubits` among solutions constrained by the maximal number specified.|
-|`max_physical_qubits`|integer| Maximum number of physical qubits for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_physical_qubits` is specified, the Resource Estimator tries to find the best estimate for `max_duration` among solutions constrained by the maximal number specified. |
+| Parameter              | Data type   | Description |
+|------------------------|-------------|-------------|
+| `logical_depth_factor` | float       | Control the execution time. If it has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing `logical_depth_factor`, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.|
+| `max_t_factories`      | integer     | Maximum number of T factory copies. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `max_t_factories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).|
+| `max_duration`         | time string | Maximum runtime for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_duration` is specified, the Resource Estimator tries to find the best estimate for `max_physical_qubits` among solutions constrained by the maximal number specified.|
+| `max_physical_qubits` | integer      | Maximum number of physical qubits for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_physical_qubits` is specified, the Resource Estimator tries to find the best estimate for `max_duration` among solutions constrained by the maximal number specified. |
 
 The following code shows how to specify the constraints for a quantum algorithm:
 
 ```python
-from qdk import qsharp
-from qsharp.estimator import EstimatorParams
+from qdk.estimator import EstimatorParams
 
 params = EstimatorParams()
 
@@ -500,8 +495,7 @@ params.constraints.max_t_factories = 10
 You can provide specifications for T factories distillation algorithms with the [`DistillationUnitSpecification` class](xref:qsharp.estimator.DistillationUnitSpecification). The specification can be either predefined or custom. You can specify a predefined specification by selecting the distillation unit name: `15-1 RM` or `15-1 space-efficient`.
 
 ```python
-from qdk import qsharp
-from qsharp.estimator import EstimatorParams, DistillationUnitSpecification
+from qdk.estimator import EstimatorParams, DistillationUnitSpecification
 
 params = EstimatorParams()
 unit = DistillationUnitSpecification()
@@ -513,7 +507,7 @@ params.distillation_unit_specifications.append(unit)
 In both cases, notation *15-1* stands for 15 input T states and 1 output T state. The `15-1 space-efficient` distillation unit uses fewer qubits than `15-1 RM` but requires more runtime. For more information, see [Table VI](https://arxiv.org/pdf/2211.07629.pdf#page=24).
 
 > [!TIP]
-> Using predefined distillation units provides better performance comparing with custom ones.
+> When you use predefined distillation units, you get better performance than with custom units.
 
 ### Customize your distillation units
 
@@ -539,8 +533,7 @@ All numeric parameters are expected to be positive. The `displayName` specifies 
 The following code shows how to specify the distillation unit parameters for a quantum algorithm using the [`DistillationUnitSpecification` class](xref:qsharp.estimator.DistillationUnitSpecification) and the [`ProtocolSpecificDistillationUnitSpecification` class](xref:qsharp.estimator.ProtocolSpecificDistillationUnitSpecification).
 
 ```python
-from qdk import qsharp
-from qsharp.estimator import EstimatorParams, DistillationUnitSpecification, ProtocolSpecificDistillationUnitSpecification
+from qdk.estimator import EstimatorParams, DistillationUnitSpecification, ProtocolSpecificDistillationUnitSpecification
 
 params = EstimatorParams()
 unit = DistillationUnitSpecification()
@@ -564,14 +557,14 @@ The formulas for `failure_probability_formula` and `output_error_rate_formula` a
   
 See the following examples of custom formulas using long and short notation. These examples illustrate formulas used by default within the standard implementation.
 
-|Parameter|Long formula|Short formula|
-|---|---|---|
-|`failure_probability_formula`| "15.0 * input_error_rate + 356.0 * clifford_error_rate" | "15.0 * z + 356.0 * c" |
-|`output_error_rate_formula`| "35.0 * input_error_rate ^ 3 + 7.1 * clifford_error_rate" | "35.0 * z ^ 3 + 7.1 * c" |
+| Parameter                     | Long formula                                               | Short formula             |
+|-------------------------------|------------------------------------------------------------|---------------------------|
+| `failure_probability_formula` | "15.0 \* input_error_rate + 356.0 * clifford_error_rate"   | "15.0 \* z + 356.0 * c"   |
+| `output_error_rate_formula`   | "35.0 \* input_error_rate ^ 3 + 7.1 * clifford_error_rate" | "35.0 \* z ^ 3 + 7.1 * c" |
 
 At least one of the parameters `physical_qubit_specification` or `logical_qubit_specification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
 
-The parameter `logical_qubit_specification_first_round_override` can be provided only if `logical_qubit_specification` is specified. If so, it overrides values of `logical_qubit_specification` in case if applied at the first round of distillation. The value `<protocol specific parameters> ` that is required for `logical_qubit_specification_first_round_override` should follow the scheme:
+The parameter `logical_qubit_specification_first_round_override` can be provided only if `logical_qubit_specification` is specified. If so, it overrides values of `logical_qubit_specification` in case if applied at the first round of distillation. The value `<protocol specific parameters>` that is required for `logical_qubit_specification_first_round_override` should follow the scheme:
 
 ```python
 {
@@ -587,7 +580,7 @@ When estimating the resources of an algorithm, it's important to consider the tr
 The Pareto frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
 
 > [!NOTE]
-> If you run the Resource Estimator in Visual Studio Code using the **QDK: Calculate Resource Estimates** option, the Pareto frontier estimation is enabled by default.
+> If you run the Resource Estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** comand, then the Pareto frontier estimation is enabled by default.
 
 If you run the Resource Estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
 
@@ -609,7 +602,7 @@ EstimatesOverview(result)
 ```
 
 > [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you experience issues when you work with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 

@@ -26,7 +26,7 @@ To create a session, you need the following prerequisites:
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The Azure Quantum `azure-quantum` package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the \[qiskit\] or \[cirq\] tags.
+- The Azure Quantum `azure-quantum` package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the `qiskit` or `cirq` extras.
 
     ```bash
     pip install --upgrade azure-quantum[qiskit] 
@@ -61,9 +61,9 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 1. In the first cell of the notebook, run the following code:
 
     ```python
-    import azure.quantum
+    from qdk.azure import Workspace
 
-    workspace = azure.quantum.Workspace(
+    workspace = Workspace(
         resource_id = "", # add your resource ID
         location = "", # add your location, for example "westus"
     )

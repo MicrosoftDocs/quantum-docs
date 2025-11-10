@@ -14,7 +14,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
-- The Azure Quantum `qdk` Python package with the optional `qiskit` and `jupyter` extras.
+- The `qdk` Python package with the optional `qiskit` and `jupyter` extras.
 
     ```cmd
     python pip install "qdk[qiskit,widgets]"
