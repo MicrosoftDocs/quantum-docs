@@ -69,7 +69,7 @@ This section discusses how to implement the algorithm in Q#. There are few thing
 
 ### Define the marked state
 
-First, you define what input you are trying to find in the search. To do so, write an operation that applies the steps **b**, **c** and **d** from the [Grover's algorithm](#the-grovers-algorithm).
+First, you define what input you are trying to find in the search. To do so, write an operation that applies the steps **b**, **c** and **d** from the [Grover's algorithm](#grovers-algorithm).
 
 Together, these steps are also known as the **Grover'S diffusion operator** $-H^{\otimes n} O_0 H^{\otimes n}$.
 
