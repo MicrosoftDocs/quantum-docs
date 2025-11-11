@@ -14,14 +14,14 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
-- The Azure Quantum `qsharp` Python package with the `qiskit` and `widget` tags.
+- The `qdk` Python package with the optional `qiskit` and `jupyter` extras.
 
     ```cmd
-    python pip install "qsharp[qiskit,widgets]>=1.9" 
+    python pip install "qdk[qiskit,jupyter]"
     ```
 
     > [!IMPORTANT]
-    > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
+    > Make sure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
 ## Run a basic circuit
 
@@ -29,8 +29,9 @@ In VS Code, open a new Python file to define and run a basic circuit with the bu
 
 ```python
 # load the required imports 
-from qiskit.circuit.random import random_circuit
+from qdk import qsharp
 from qsharp.interop.qiskit import QSharpBackend
+from qiskit.circuit.random import random_circuit
 
 # define and display the circuit
 circuit = random_circuit(2, 2, measure=True)
@@ -67,7 +68,7 @@ From that same circuit, you can generate QIR that's used to run on quantum hardw
 1. Import `QSharpError` and `TargetProfile`
 
     ```python
-    from qsharp import QSharpError, TargetProfile
+    from qdk.qsharp import QSharpError, TargetProfile
     ```
 
 1. To generate QIR, modify the output:
@@ -80,9 +81,10 @@ Your code should now look like this:
 
 ```python
 # load the required imports 
-from qiskit.circuit.random import random_circuit
-from qsharp.interop.qiskit import QSharpBackend
+from qdk import qsharp
 from qsharp import QSharpError, TargetProfile
+from qsharp.interop.qiskit import QSharpBackend
+from qiskit.circuit.random import random_circuit
 
 # define and display the circuit
 circuit = random_circuit(2, 2, measure=True)

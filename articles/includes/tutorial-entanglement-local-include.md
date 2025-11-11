@@ -28,8 +28,8 @@ The first step is to define a Q# operation that initializes a qubit to a known s
 Open `CreateBellStates.qs` and copy the following code:
 
 ```qsharp
-import Microsoft.Quantum.Intrinsic.*;
-import Microsoft.Quantum.Canon.*;
+import Std.Intrinsic.*;
+import Std.Canon.*;
 
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
     if desired != M(target) {
@@ -44,7 +44,7 @@ The  `SetQubitState` operation:
 
 1. Takes two parameters: a type [`Result`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types), named `desired`, that represents the desired state for the qubit to be in (`Zero` or `One`), and a type [`Qubit`](xref:microsoft.quantum.qsharp.typesystem-overview#available-types). 
 1. Performs a measurement operation, `M`, which measures the state of the qubit (`Zero` or `One`) and compares the result to the value specified in `desired`.
-1. If the measurement does not match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state. 
+1. If the measurement does not match the compared value, it runs an `X` operation, which flips the state of the qubit to where the probabilities of a measurement returning `Zero` and `One` are reversed. This way, `SetQubitState` always puts the target qubit in the desired state.
 
 ## Write a test operation to test the Bell state
 
@@ -96,18 +96,18 @@ In the code, the `count` and `initial` variables are set to `1000` and `One` res
 
 The `Main`operation:
 
-1. Takes two parameters: `count`, the number of times to run a measurement, and `initial`, the desired state to initialize the qubit. 
+1. Takes two parameters: `count`, the number of times to run a measurement, and `initial`, the desired state to initialize the qubit.
 1. Calls the `use` statement to initialize two qubits.
 1. Loops for `count` iterations. For each loop, it
     1. Calls `SetQubitState` to set a specified `initial` value on the first qubit.
-    1. Calls `SetQubitState` again to set the second qubit to a `Zero` state. 
+    1. Calls `SetQubitState` again to set the second qubit to a `Zero` state.
     1. Uses the `M` operation to measure each qubit.
     1. Stores the number of measurements for each qubit that return `One`.
 1. After the loop completes, it calls `SetQubitState` again to reset the qubits to a known state (`Zero`) to allow others to
-allocate the qubits in a known state. Resetting the qubit is required by the `use` statement. 
+allocate the qubits in a known state. Resetting the qubit is required by the `use` statement.
 1. Finally, it uses the `Message` function to print a message to the console before returning the results.
 
-## Run the code 
+## Run the code
 
 Before moving on to the procedures for superposition and entanglement, test the code up to this point to see the initialization and measurement of the qubits.
 
@@ -116,8 +116,8 @@ In order to run the code as a standalone program, the Q# compiler needs to know 
 1. Your `CreateBellStates.qs` file up to this point should now look like this:
 
     ```qsharp
-    import Microsoft.Quantum.Intrinsic.*;
-    import Microsoft.Quantum.Canon.*;
+    import Std.Intrinsic.*;
+    import Std.Canon.*;
     
     operation SetQubitState(desired : Result, target : Qubit) : Unit {
         if desired != M(target) {
@@ -178,7 +178,6 @@ In order to run the code as a standalone program, the Q# compiler needs to know 
 
 1. If you change the value of `initial` to `Zero` and run the program again, you should observe that the first qubit also returns `Zero` every time.
 
-
     ```output
     Q1 - Zeros: 1000
     Q1 - Ones: 0
@@ -211,7 +210,7 @@ To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. 
             let resultQ2 = M(q2); 
             ...
     ```
-    
+
 1. Now when you run the program, you can see the results of the first qubit in superposition:
 
     ```output
@@ -229,7 +228,7 @@ To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. 
     Q2 - Zeros: 1000
     Q2 - Ones: 0
     ```
-    
+
 1. Initializing the first qubit to `Zero` returns similar results.
 
     ```output
@@ -238,7 +237,7 @@ To put a qubit in superposition, Q# provides the `H`, or *Hadamard*, operation. 
     Q2 - Zeros: 1000
     Q2 - Ones: 0
     ```
-    
+
 ## Entangle two qubits
 
 As mentioned earlier, entangled qubits are connected such that they cannot be described independently from each other. That is, whatever operation happens to one qubit, also happens to the entangled qubit. This allows you to know the resulting state of one qubit without measuring it, just by measuring the state of the other qubit. (This example uses two qubits; however, it is also possible to entangle three or more qubits).
@@ -248,8 +247,8 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
 1. Add the `CNOT` operation to your program immediately after the `H` operation. Your full program should look like this:
 
     ```qsharp
-    import Microsoft.Quantum.Intrinsic.*;
-    import Microsoft.Quantum.Canon.*;
+    import Std.Intrinsic.*;
+    import Std.Canon.*;
     
         operation SetQubitState(desired : Result, target : Qubit) : Unit {
             if desired != M(target) {
@@ -300,7 +299,7 @@ To enable entanglement, Q# provides the `CNOT` operation, which stands for *Cont
         }
     
     ```
-    
+
     ```output
     Q1 - Zeros: 502           
     Q1 - Ones: 498       // results will vary

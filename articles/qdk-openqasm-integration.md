@@ -79,8 +79,7 @@ To run OpenQASM code in a Jupyter notebook with VS Code, set up VS Code with ext
 To run OpenQASM code directly in a Python cell, use the `run()` function from the `qsharp.openqasm` library. For example, the following cell calls the `run()` function with an OpenQASM code string, and arguments for the number of shots and noise:
 
 ```python
-import qsharp
-from qsharp import BitFlipNoise, TargetProfile
+from qdk import qsharp, BitFlipNoise, TargetProfile
 from qsharp.openqasm import run
 
 qsharp.init(target_profile=TargetProfile.Base)
@@ -105,8 +104,7 @@ print(results)
 You can use the `import_openqasm()` function to store an OpenQASM program as a Python object and then call that object later in your Python code. For example, the following cell stores an OpenQASM circuit in a Python object called `bell`:
 
 ```python
-import qsharp
-from qsharp import init, TargetProfile
+from qdk import qsharp, BitFlipNoise, TargetProfile
 from qsharp.openqasm import import_openqasm
 
 qsharp.init(target_profile=TargetProfile.Base)
@@ -128,6 +126,7 @@ This next cell imports and calls the `bell` circuit:
 
 ```python
 from qsharp.code import bell
+
 bell()
 ```
 
@@ -135,6 +134,7 @@ After `bell` is part of your environment, you can run it directly from a Q# cell
 
 ```qsharp
 %%qsharp
+
 bell()
 ```
 

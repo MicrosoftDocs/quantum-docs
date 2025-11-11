@@ -93,11 +93,11 @@ In VS Code, you can use Q# by itself or with Python, which requires the `qsharp`
 
 The following table shows how to use Q# with and without Python in VS Code:
 
-| Format | Files | Description |
-| --- | --- | --- |
-| Q# | .qs | A Q# program that contains only Q# code. |
-| Q# and Python | .qs and .py | The Python program is a host program that, at some point in its routine, calls and uses the results of the Q# program. This is typically for complex projects. |
-| Jupyter Notebook | .ipynb | The Python kernel supports both code and text cells. By default, code cells use Python, but you can change them to Q# with the `%%qsharp` command. This means you can have Python code, Q# code, and explanatory text in one file. For more information, see [The %%qsharp command](xref:microsoft.quantum.qsharp-overview#the-qsharp-command). |
+| Format           | Files       | Description |
+|------------------|-------------|-------------|
+| Q#               | .qs         | A Q# program that contains only Q# code. |
+| Q# and Python    | .qs and .py | The Python program is a host program that, at some point in its routine, calls and uses the results of the Q# program. This is typically for complex projects. |
+| Jupyter Notebook | .ipynb      | The Python kernel supports both code and text cells. By default, code cells use Python, but you can change them to Q# with the `%%qsharp` command. This means you can have Python code, Q# code, and explanatory text in one file. For more information, see [The %%qsharp command](xref:microsoft.quantum.qsharp-overview#the-qsharp-command). |
 
 ### Is Visual Studio Code right for me?
 

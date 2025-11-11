@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, target, targets]
+no-loc: ['Q#', '$$v', "Variational Quantum Eigensolver", "Quantum Approximate Optimization Algorithm", "target", "targets", "AI", "azure-quantum", "Azure Quantum", "Azure Quantum Development Kit", "Circuit Editor", "cirq", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "qiskit", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
 title: Get Started with Sessions
 uid: microsoft.quantum.hybrid.interactive
 
@@ -26,10 +26,16 @@ To create a session, you need the following prerequisites:
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The Azure Quantum `azure-quantum` package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the \[qiskit\] or \[cirq\] tags. 
+- The `azure-quantum` Python package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the `qiskit` or `cirq` extras.
 
     ```bash
     pip install --upgrade azure-quantum[qiskit] 
+    ```
+
+    or
+
+    ```bash
+    pip install --upgrade azure-quantum[cirq] 
     ```
 
 ## What is a session?
@@ -42,7 +48,7 @@ A key user scenario where you may want to combine jobs in a session is *paramete
 
 ## Supported hardware
 
-Sessions are supported on **all** quantum computing hardware providers. In some cases, jobs submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
+Sessions are supported on all quantum computing hardware providers. In some cases, jobs that are submitted within a session are prioritized in the queue of that target. For more information, see [Target behavior](#target-behavior).
 
 ## How to create a session
 
@@ -50,35 +56,36 @@ To create a session, follow these steps:
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
-This example shows how to create a session with Q# inline code using a Jupyter Notebook in Visual Studio Code. You can also create sessions using a [Python program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) that invokes an adjacent Q# program. 
+This example shows how to create a session with Q# inline code using a Jupyter Notebook in Visual Studio Code (VS Code). You can also create sessions using a [Python program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) that invokes an adjacent Q# program.
 
 > [!NOTE]
 > Sessions are managed with Python, even when running Q# inline code.
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter and select **Create: New Jupyter Notebook**.
 1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
-1. In the first cell of the notebook, run 
+1. In the first cell of the notebook, run the following code:
 
     ```python
-    import azure.quantum
+    from qdk.azure import Workspace
 
-    workspace = azure.quantum.Workspace(
+    workspace = Workspace(
         resource_id = "", # add your resource ID
         location = "", # add your location, for example "westus"
     )
     ```
 
-1. Click **+ Code** to add a new cell in the notebook and import `qsharp` Python SDK. 
+1. Add a new cell in the notebook and import the `qsharp` Python package:
 
     ```python
-    import qsharp
+    from qdk import qsharp
     ```
 
-1. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [IonQ simulator](xref:microsoft.quantum.providers.ionq) as target.
+1. Choose your [quantum target](xref:microsoft.quantum.reference.qc-target-list). In this example, the target is the [IonQ simulator](xref:microsoft.quantum.providers.ionq).
 
     ```python
     target = workspace.get_targets("ionq.simulator")
-    ```	
+    ```
 
 1. Select the configurations of the [target profile](xref:microsoft.quantum.target-profiles), either `Base`, `Adaptive_RI`, or `Unrestricted`.
 
@@ -110,7 +117,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     ```
 
 1. Next, you create a session. Let's say you want to run `GenerateRandomBit` operation three times, so you use `target.submit` to submit the Q# operation with the `target` data and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.
- 
+
     ```python
     angle = [0.0, 0.0]
     with target.open_session(name="Q# session of three jobs") as session:
@@ -125,20 +132,23 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     ```
 
     > [!IMPORTANT]
-    > When passing arguments as parameters to the job, they are formatted into the Q# expression when calling `qsharp.compile`. This means that you need to be careful to format your arguments as Q# objects. In this example, because arrays in Python are already printed as \[item0, item1, ...\], the input arguments match the Q# formatting. For other Python data structures you might need more handling to get the string values inserted into the Q# in a compatible way.
+    > When you pass arguments as parameters to the job, the arguments are formatted into the Q# expression when `qsharp.compile` is called. This means that you need to format your arguments as Q# objects. In this example, because arrays in Python are already printed as `[item0, item1, ...]`, the input arguments match the Q# formatting. For other Python data structures, you might need more handling to get the string values inserted into the Q# in a compatible way.
 
 1. Once you create a session, you can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
-
 ### [Qiskit](#tab/tabid-qiskit)
 
-1. First, you need to import additional modules from `azure-quantum` and `qiskit`. Next, create a `provider` object with your Quantum workspace information.
+1. Import additional modules from `azure-quantum` and `qiskit`.
+
+   ```python
+   from qiskit import QuantumCircuit
+   from qdk.azure import Workspace
+   from azure.quantum.qiskit import AzureQuantumProvider
+   ```
+
+1. Create a `provider` object with your Quantum workspace information.
 
     ```python
-    from qiskit import QuantumCircuit
-    from azure.quantum import Workspace
-    from azure.quantum.qiskit import AzureQuantumProvider
-
     workspace = Workspace(
                 resource_id = "", # add your resource ID
                 location = "") # add your location
@@ -146,7 +156,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     provider = AzureQuantumProvider(workspace)
     ```
 
-2. Write your quantum circuit. For example, the following circuit generates a random bit. 
+1. Write your quantum circuit. For example, the following circuit generates a random bit.
 
     ```python
     circuit = QuantumCircuit(2, 2)
@@ -157,13 +167,13 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     circuit.draw()
     ```
 
-3. Next, create a backend instance with the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, set [IonQ simulator](xref:microsoft.quantum.providers.ionq) as the target. 
+1. Create a backend instance with the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, set your target to the [IonQ simulator](xref:microsoft.quantum.providers.ionq).
 
     ```python
     backend = provider.get_backend("ionq.simulator")
     ```
 
-4. Next, create a session. Let's say you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+1. Create a session. Let's say that you want to run your quantum circuit three times, so you use `backend.run` to submit the Qiskit circuit, and you repeat the code three times. In a real world scenario, you might want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
     ```python
     with backend.open_session(name="Qiskit Session") as session:
@@ -180,7 +190,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 
 ### [Cirq](#tab/tabid-cirq)
 
-1. First, write your quantum circuit. For example, the following circuit generates a random bit. 
+1. Write your quantum circuit. For example, the following circuit generates a random bit.
 
     ```python
     import cirq
@@ -196,7 +206,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     print(circuit)
     ```
 
-2. Then, create a `service` object with your Quantum workspace information. 
+1. Create a `service` object with your Quantum workspace information.
 
     ```python
     from azure.quantum.cirq import AzureQuantumService
@@ -206,7 +216,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
                 location = "") # add your location
     ```
 
-3. Select the [quantum target](xref:microsoft.quantum.reference.qc-target-list) of your choice. In this example, you're using [IonQ simulator](xref:microsoft.quantum.providers.ionq) as target.
+1. Choose your [quantum target](xref:microsoft.quantum.reference.qc-target-list). In this example, the target is the [IonQ simulator](xref:microsoft.quantum.providers.ionq).
 
     > [!NOTE]
     > Cirq circuits can only use IonQ or Quantinuum targets.
@@ -215,7 +225,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     target = service.get_target("ionq.simulator")
     ```
 
-4. Next, you create a session. Let's say you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times - in a real world scenario, you may want to submit different programs instead of the same code.. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
+1. Create a session. Let's say that you want to run your quantum circuit three times, so you use `target.submit` to submit the Cirq circuit, and you repeat the code three times. In a real world scenario, you might want to submit different programs instead of the same code. You can use `workspace.list_session_jobs` to retrieve a list of all jobs in the session. For more information, see [How to manage sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#retrieve-sessions-list-sessions-and-list-jobs-of-sessions).
 
     ```python
     with target.open_session(name="Cirq Session") as session:
@@ -229,13 +239,13 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 
 ***
 
-## Target behavior 
+## Target behavior
 
-Each quantum hardware provider defines their own heuristics to best manage the prioritization of jobs within a session. 
+Each quantum hardware provider defines their own heuristics to best manage the prioritization of jobs within a session.
 
-### Quantinuum 
+### Quantinuum
 
-If you choose to submit jobs within a session to a [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), your session will have exclusive access to the hardware as long as you queue jobs within one minute from each other. After that, your jobs will be accepted and handled with the standard queueing and prioritization logic. 
+If you choose to submit jobs within a session to a [Quantinuum target](xref:microsoft.quantum.providers.quantinuum), then your session has exclusive access to the hardware as long as you queue jobs within one minute of each other. After that, your jobs are accepted and handled with the standard queueing and prioritization logic.
 
 ## Related content
 

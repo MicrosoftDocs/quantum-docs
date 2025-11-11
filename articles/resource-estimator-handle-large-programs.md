@@ -26,15 +26,15 @@ For information about how to run the Resource Estimator, see [Different ways to 
 If you want to use Python in VS Code, you also need the following:
 
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest Azure Quantum `qsharp` package.  
+- The latest `qdk` Python package.  
 
     ```bash
-    python -m pip install --upgrade qsharp 
+    python -m pip install --upgrade qdk
     ```
 
-## Manual caching with Q# programs 
+## Manual caching with Q# programs
 
-When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called *manual caching*.
+When you submit a resource estimation job to the Resource Estimator, the quantum program is evaluated completely to extract the resource estimates. If you want estimate the resources of a Q# operation that is invoked many times, for example, in a loop with many iterations, the execution of the resource estimation job may take a long time. One way to reduce long execution times is to run the operation once, compute and cache its costs, and use the data on subsequent calls. This technique is called manual caching.
 
 The Resource Estimator target supports two Q# functions to perform manual caching: `BeginEstimateCaching(name: String, variant: Int): Bool` and `EndEstimateCaching(): Unit`. `BeginEstimateCaching` function takes as inputs a `name` which is the unique name of the code fragment for which you want to cache costs, and an integer `variant` that distinguishes different variants of cost for the same fragment.
 
@@ -77,4 +77,3 @@ In this case, the cache is different for odd and even values of `c`. In other wo
 - [Retrieve the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize the target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator)
-

@@ -42,8 +42,8 @@ To start exploring the Copilot and coding in Azure Quantum, use one of the sampl
     /// This program implements a quantum random number generator by setting qubits
     /// in superposition and then using the measurement results as random bits.
 
-    import Microsoft.Quantum.Measurement;
-    import Microsoft.Quantum.Intrinsic;
+    import Std.Measurement;
+    import Std.Intrinsic;
 
     operation Main() : Result[] {
         // Generate 5-bit random number.
