@@ -45,10 +45,10 @@ In your `Main.qs` file, follow these steps to entangle and measure a pair of qub
 
 The QDK includes the Q# standard library with predefined functions and operations for your quantum programs. To use them, you must first import the relevant library.
 
-In your program, use an `import` statement to open the `Std.Diagnostics` library. This gives you access to all its functions and operations, including `DumpMachine()`, which you later use to display the entangled state.
+In your program, use an `import` statement to open the `Std.Diagnostics` library. This gives you access to all the library's functions and operations, including `DumpMachine`, which you later use to display the entangled state.
 
 ```qsharp
-    import Std.Diagnostics.*;
+import Std.Diagnostics.*;
 ```
 
 ### Define an operation
@@ -106,11 +106,11 @@ The resulting state of both qubits is the Bell pair $\frac{1}{\sqrt{2}}(\ket{00}
 
 ### Display the entangled state
 
-Before measuring the qubits, it's important to verify that your previous code successfully entangles them. You can use the `DumpMachine` operation, which is part of the `Std.Diagnostics` library, to output the current state of your Q# program:
+Before you measure the qubits, it's important to verify that your previous code successfully entangles them. Use the `DumpMachine` operation, which is part of the `Std.Diagnostics` library, to output the current state of your Q# program:
 
 ```qsharp
-        // Show the entangled state of the qubits.
-        DumpMachine();
+    // Show the entangled state of the qubits.
+    DumpMachine();
 ```
 
 ### Measure the qubits

@@ -23,7 +23,7 @@ This article shows how to customize the target parameters of the [Azure Quantum 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qdk` library with the `jupyter` extra.  
+- The latest `qdk` Python library with the `jupyter` extra.  
 
     ```bash
     python -m pip install --upgrade qdk[jupyter] 
@@ -154,7 +154,7 @@ For reference, the complete predefined qubit parameters are as follows:
 
 ### Pass predefined qubit parameters
 
-There are two ways to programmatically specify predefined qubit parameters. One way is to select the qubit model name for the `qubitParams` class when you run `qsharp.estimate`. For example, to select `"qubit_maj_ns_e6"` qubit parameter, write the following code:
+There are two ways to programmatically specify predefined qubit parameters. One way is to select the qubit model name for the `qubitParams` class when you run `qsharp.estimate`. For example, to select the `"qubit_maj_ns_e6"` qubit parameter, write the following code:
 
 ```python
 from qdk import qsharp
@@ -166,7 +166,7 @@ qsharp.estimate("RunProgram()", params=
                 })
 ```
 
-Another way is to pass the qubit parameters to the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams) using [`QubitParams`](xref:qsharp.estimator.QubitParams). For example, to select `MAJ_NS_E6` qubit parameter, write the following code:
+Another way is to pass the qubit parameters to the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams) using [`QubitParams`](xref:qsharp.estimator.QubitParams). For example, to select the `MAJ_NS_E6` qubit parameter, write the following code:
 
 ```python
 from qdk import qsharp
@@ -275,7 +275,7 @@ params.qubit_params.two_qubit_joint_measurement_error_rate = \
 > If you specify a single numeric value for single-qubit and two-qubit error rates in Majorana qubit measurement, then both readout and process error rates might be equal.
 
 > [!IMPORTANT]
-> All values that aren't specified will take a default value. For example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` models a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values, where possible time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
+> All values that aren't specified will take a default value. For example, specifying `"qubit": {"oneQubitGateTime":"200 ns"}` models a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers, followed by a space and the time unit for such values. The supported time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
 
 ## Quantum error correction schemes
 
@@ -391,7 +391,7 @@ qsharp.estimate("RunProgram()", params=
 
 ### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. Further, you need to specify the `"logicalCycleTime"`, that is, the time to execute a single logical operation, which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, that is, the number of physical qubits required to encode one logical qubit based on the code distance.
+The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. You also need to specify the `"logicalCycleTime"`, which is the time to execute a single logical operation, and which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, which is the number of physical qubits required to encode one logical qubit based on the code distance.
 
 You can use the following code as a template for QEC schemes:
 
@@ -507,7 +507,7 @@ params.distillation_unit_specifications.append(unit)
 In both cases, notation *15-1* stands for 15 input T states and 1 output T state. The `15-1 space-efficient` distillation unit uses fewer qubits than `15-1 RM` but requires more runtime. For more information, see [Table VI](https://arxiv.org/pdf/2211.07629.pdf#page=24).
 
 > [!TIP]
-> When you use predefined distillation units, you get better performance than with custom units.
+> You get better performance when you use predefined distillation units instead of custom units.
 
 ### Customize your distillation units
 
@@ -564,7 +564,7 @@ See the following examples of custom formulas using long and short notation. The
 
 At least one of the parameters `physical_qubit_specification` or `logical_qubit_specification` should be provided. If only the former is provided, the distillation unit can be applied to physical qubits. If only the latter is provided, the distillation unit can be applied to logical qubits. If both are provided, the distillation unit can be applied to both types of qubits.
 
-The parameter `logical_qubit_specification_first_round_override` can be provided only if `logical_qubit_specification` is specified. If so, it overrides values of `logical_qubit_specification` in case if applied at the first round of distillation. The value `<protocol specific parameters>` that is required for `logical_qubit_specification_first_round_override` should follow the scheme:
+The parameter `logical_qubit_specification_first_round_override` can be provided only if `logical_qubit_specification` is specified. If so, it overrides values of `logical_qubit_specification` when applied at the first round of distillation. The value `<protocol specific parameters>` that is required for `logical_qubit_specification_first_round_override` should have the following scheme:
 
 ```python
 {
@@ -580,7 +580,7 @@ When estimating the resources of an algorithm, it's important to consider the tr
 The Pareto frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
 
 > [!NOTE]
-> If you run the Resource Estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** comand, then the Pareto frontier estimation is enabled by default.
+> If you run the Resource Estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** command, then the Pareto frontier estimation is enabled by default.
 
 If you run the Resource Estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
 

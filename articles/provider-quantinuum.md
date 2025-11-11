@@ -40,7 +40,7 @@ All of Quantinuum's targets now support Integrated hybrid circuits. For more inf
 
 ## Syntax Checkers
 
-We recommend that users first use a Syntax Checker to validate their code. Syntax Checkers verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H2-1 syntax checker uses the same compiler as H2-1. The full compilation stack is executed, except for the actual quantum operations. If the code compiles, then the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
+We recommend that users first use a Syntax Checker to validate their code. Syntax Checkers verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer that they target. For example, the H2-1 syntax checker uses the same compiler as H2-1. The full compilation stack is executed, except for the actual quantum operations. If the code compiles, then the syntax checker returns a `success` status and a result of all 0s. If the code doesn't compile, then the syntax checker returns a failed status and gives an error message to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
@@ -316,8 +316,8 @@ For more information on the full set of noise parameters available, see the [Qua
 First, import the required packages and initiate the base profile:
 
 ```python
-from qdk import qsharp
-import azure.quantum
+from qdk import qsharp, azure
+
 qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
@@ -348,7 +348,7 @@ MyProgram = qsharp.compile("GenerateRandomBit()")
 Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
 
 ```python
-MyWorkspace = azure.quantum.Workspace(
+MyWorkspace = azure.Workspace(
     resource_id = "",
     location = ""
 )

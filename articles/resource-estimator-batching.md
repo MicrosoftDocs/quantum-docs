@@ -16,7 +16,7 @@ uid: microsoft.quantum.resource-estimator-batching
 
 In this article, you learn how to run multiple configurations of target parameters at the same time and compare them using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
-The Azure Quantum Resource Estimator allows you to run multiple configurations of [target parameters](xref:microsoft.quantum.overview.resources-estimator) as a single job to avoid rerunning multiple jobs on the same quantum program.
+The Azure Quantum Resource Estimator allows you to run multiple configurations of [target parameters](xref:microsoft.quantum.overview.resources-estimator) as a single job so that you don't need to rerun multiple jobs on the same quantum program.
 
 One job may consists of multiple items or configurations of target parameters. Some scenarios where you may want to run multiple items as a single job:
 
@@ -32,15 +32,15 @@ For information about how to run the Resource Estimator, see [Different ways to 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest Azure Quantum `qdk` package.  
+- The latest `qdk` Python library.  
 
     ```bash
     python -m pip install --upgrade qdk
     ```
 
-## Running multiple configurations with the Resource Estimator
+## Run multiple configurations with the Resource Estimator
 
-Running multiple configurations of target parameters as a single job in Q# can be done in a [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs). You can pass a list of target parameters to the `params` parameter of the `qsharp.estimate` function.
+You can run multiple configurations of target parameters as a single job in Q# with [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs). You can pass a list of target parameters to the `params` parameter of the `qsharp.estimate` function.
 
 The following example shows how to run two configurations of target parameters as a single job. The first configuration uses the default target parameters, and the second configuration uses the `qubit_maj_ns_e6` qubit parameter and the `floquet_code` QEC scheme.
 

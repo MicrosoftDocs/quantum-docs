@@ -26,7 +26,11 @@ In this article, you learn how to create, manage, and share Q# projects. A Q# pr
 To run Python programs, you also need:
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The Azure Quantum `qdk` and `azure-quantum` packages.
+- The `qdk` Python library with the optional `azure` extra.
+
+    ```bash
+    python -m pip install --upgrade qdk[azure]
+    ```
 
 ## How Q# projects work
 
@@ -480,9 +484,9 @@ import MyMathFunctions.MyFunction, MyMathFunctions.AnotherFunction as Multiply;
 
 For this example, you use the same teleportation program as the earlier example, but separate the calling program and the callables into different projects.
 
-1. Create two folders on your local drive, for example **Project_A** and **Project_B**.
+1. Create two folders on your local drive, for example `Project_A` and `Project_B`.
 1. Create a Q# project in each folder. For details, see the steps in [How to create a Q# project](#how-to-create-a-q-project).
-1. In **Project_A**, the calling program, copy the following code into the manifest file, but edit the path as needed for **Project_B**:
+1. In `Project_A`, the calling program, copy the following code into the manifest file, but edit the path as needed for `Project_B`:
 
     ```json
     {
@@ -496,7 +500,7 @@ For this example, you use the same teleportation program as the earlier example,
       }    
     ```
 
-1. In **Project_A**, copy the following code into `Main.qs`:
+1. In `Project_A`, copy the following code into `Main.qs`:
 
     ```qsharp
     import MyTeleportLib.Teleport; // imports the Teleport operation from the MyTeleportLib namespace defined in the manifest file
@@ -518,7 +522,7 @@ For this example, you use the same teleportation program as the earlier example,
     }   
     ```
 
-1. In **Project_B**, copy the following code into `Main.qs`:
+1. In `Project_B`, copy the following code into `Main.qs`:
 
     ```qsharp
         operation Teleport(msg : Qubit, target : Qubit) : Unit {
@@ -542,7 +546,7 @@ For this example, you use the same teleportation program as the earlier example,
     ```
 
     > [!NOTE]
-    > Note that the `PrepareBellPair` operation does not need to be exported because it's not called directly from your program in **Project_A**. Because `PrepareBellPair` is in the local scope of **Project_B**, it's already accessible by the `Teleport` operation.
+    > Note that the `PrepareBellPair` operation does not need to be exported because it's not called directly from your program in `Project_A`. Because `PrepareBellPair` is in the local scope of `Project_B`, it's already accessible by the `Teleport` operation.
 
 1. To run the program, open `/Project_A/Main.qs` in VS Code and choose **Run**.
 

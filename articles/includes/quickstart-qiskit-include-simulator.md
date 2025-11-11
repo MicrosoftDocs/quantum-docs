@@ -17,11 +17,11 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - The `qdk` Python package with the optional `qiskit` and `jupyter` extras.
 
     ```cmd
-    python pip install "qdk[qiskit,widgets]"
+    python pip install "qdk[qiskit,jupyter]"
     ```
 
     > [!IMPORTANT]
-    > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
+    > Make sure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
 
 ## Run a basic circuit
 

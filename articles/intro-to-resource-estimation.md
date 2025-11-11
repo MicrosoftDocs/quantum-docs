@@ -23,7 +23,7 @@ The Resource Estimator calculates the total number of physical and logical qubit
 
 ## What features make the Resource Estimator unique?
 
-The Resource Estimator is a powerful tool that involves all levels of quantum computing stack. The quantum computing stack can be divided into three levels: the application level, the quantum programming or compilation level, and the hardware or modeling level.
+The Resource Estimator is a powerful tool that involves all levels of the quantum computing stack. The quantum computing stack can be divided into three levels: the application level, the quantum programming or compilation level, and the hardware or modeling level.
 
 The Resource Estimator allows you to customize the parameters of each level and analyze how they impact the overall resources needed to run a quantum program.
 
@@ -35,13 +35,13 @@ The Resource Estimator has an extensibility API to model any quantum architectur
 
 You can use pre-defined qubit parameters and quantum error correction (QEC) schemes or configure unique settings across a wide range of machine characteristics. For more information, see [Customize the target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
 
-| Target parameters | Describe your system |
-|---|---|
-| [Physical qubit model](xref:microsoft.quantum.overview.resources-estimator#Physical-qubit-parameters) | For example, specify the instruction set, the qubit measurement time, error rates, or gate times. |
+| Target parameters                                                                                                       | Describe your system |
+|-------------------------------------------------------------------------------------------------------------------------|----------------------|
+| [Physical qubit model](xref:microsoft.quantum.overview.resources-estimator#Physical-qubit-parameters)                   | For example, specify the instruction set, the qubit measurement time, error rates, or gate times. |
 | [Quantum error correction scheme](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes) | For example, specify the number of physical qubits per logical qubit, the logical cycle time, or the error correction threshold. |
-| [Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget) | For example, specify the error budget to implement logical qubits, T states distillation, and synthesis of the rotation gates. |
+| [Error budget](xref:microsoft.quantum.overview.resources-estimator#error-budget)                                        | For example, specify the error budget to implement logical qubits, T states distillation, and synthesis of the rotation gates. |
 | [Distillation units](xref:microsoft.quantum.overview.resources-estimator#distillation-units) | For example, specify the number of T states required for the distillation process, number of T states produced as output from the distillation process, or the probability of failure of the distillation process. |
-| [Constraints](xref:microsoft.quantum.overview.resources-estimator#constraints) | For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of [T factory copies](xref:microsoft.quantum.concepts.tfactories). |
+| [Constraints](xref:microsoft.quantum.overview.resources-estimator#constraints)                                          | For example, specify the maximum number of physical qubits, the maximum runtime, or the maximum number of [T factory copies](xref:microsoft.quantum.concepts.tfactories). |
 
 > [!NOTE]
 > With the Resource Estimator, you can model any quantum architecture. For example, the startup [Alice & Bob's](https://alice-bob.com/) uses the Resource Estimator to evaluate their architecture, which uses cat qubits and repetition error correction code. For more information, see this [post in the Q# blog](https://devblogs.microsoft.com/qsharp/evaluating-cat-qubits-for-fault-tolerant-quantum-computing-using-azure-quantum-resource-estimator/).
@@ -90,4 +90,4 @@ For example, one of the Hamiltonians used in this tutorial, the *nitrogenase_54o
 
 Although quantum computers promise to solve important scientific and commercial problems, achieving commercial viability will require large-scale, fault-tolerant quantum computers that have both a large number of qubits in superposition and physical error rates below a certain threshold. Commercial and scientific viability will also require QEC schemes to achieve fault tolerance. QEC is both time and space intensive, requiring increased execution time for algorithm or logical-level operations, as well as additional physical qubits to store and compute information.
 
-Using the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator will help you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. Understanding these requirements will allow you to prepare and refine quantum solutions to run on future, scaled quantum machines.
+With the Resource Estimator, you can understand the impact of architectural design choices and quantum error correction schemes. The Resource Estimator helps you understand how many qubits are needed to run an application, how long it will take to run, and which qubit technologies are better suited to solving a specific problem. When you understand these requirements, you can prepare and refine quantum solutions to run on future, scaled quantum machines.

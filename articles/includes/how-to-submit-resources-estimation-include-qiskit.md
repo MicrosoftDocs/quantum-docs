@@ -13,7 +13,7 @@ no-loc: [target, targets]
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [Visual Studio Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qdk` library with the optional `jupyter` extra, and the `qiskit` package.  
+- The latest `qdk` Python library with the optional `jupyter` extra, and the `qiskit` library.  
 
     ```bash
     python -m pip install --upgrade qdk[jupyter] qiskit
@@ -30,13 +30,13 @@ no-loc: [target, targets]
 
 ### Create a new Jupyter Notebook
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
-
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter and select **Create: New Jupyter Notebook**.
+1. VS Code detects and displays the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, then you might need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 
 ### Create the quantum algorithm
 
-In this example, you create a quantum circuit for a multiplier based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic.
+In this example, you create a quantum circuit for a multiplier that's based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic.
 
 You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the `bitwidth` value of the multiplier. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. The function will also print some logical resource counts for the multiplier extracted directly from the quantum circuit.
 
@@ -99,7 +99,7 @@ EstimateDetails(result)
 
 `EstimateDetails` function displays a table with the overall physical resource counts. You can inspect cost details by expanding the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
 
-For example, if you expand the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 15.
+For example, if you expand the **Logical qubit parameters** group, then it's easier to see that the error correction code distance is 15.
 
 | Logical qubit parameter   | Value                                                                     |
 |---------------------------|---------------------------------------------------------------------------|
@@ -161,7 +161,7 @@ result.data()["jobParams"]
   'twoQubitGateTime': '50 ns'}}
  ```
 
-These are the target parameters that can be customized:
+You can customize the following target parameters:
 
 - `errorBudget` - the overall allowed error budget
 - [`qecScheme`](xref:qsharp.estimator.QECScheme) - the quantum error correction (QEC) scheme

@@ -29,7 +29,7 @@ This article explains how to submit hybrid jobs to Azure Quantum using the [Adap
     - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 - If you wan to submit Python + Q# programs, you need the following prerequisites:
     - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-    - The `qdk` Python package with the optional `azure` extra.
+    - The `qdk` Python library with the optional `azure` extra.
     
         ```bash
         pip install --upgrade qdk[azure]
@@ -76,20 +76,20 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
 
 ### [Q# + Python](#tab/tabid-python)
 
-1. When using the `qsharp` Python package, use the `qsharp.init` function and set the `target_profile` parameter to `Adaptive_RI`.
+1. With the `qdk` Python package, use the `init` and `TargetProfile` objects to set the `target_profile` parameter to `Adaptive_RI`.
 
     ```python
-    from qdk import qsharp
-    
-    qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)
+    from qdk import init, TargetProfile
+
+    init(target_profile=TargetProfile.Adaptive_RI)
     ```
 
 1. Connect to your Azure Quantum workspace.
 
     ```python
-    import azure.quantum
+    from qdk.azure import Workspace
     
-    workspace = azure.quantum.Workspace(
+    workspace = Workspace(
         resource_id = "", # add your resource ID
         location = "", # add your location, for example "westus"
     )
@@ -235,7 +235,7 @@ Quantinuum supports mid-circuit measurement, that is, branching based on measure
 
 ## Estimate the cost of a hybrid quantum computing job
 
-You can estimate the cost to run a hybrid quantum computing job on Quantinuum hardware by running it on an emulator first.
+You can estimate the cost to run a hybrid quantum computing job on Quantinuum hardware by running the job on an emulator first.
 
 After a successful run on the emulator:
 

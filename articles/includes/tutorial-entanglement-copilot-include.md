@@ -10,11 +10,9 @@ no-loc: [Quantum Development Kit, target, targets]
 
 ## Prerequisites
 
-To run the code sample in the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), you need:
+To run the code sample in the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), you need a Microsoft (MSA) email account.
 
-- A Microsoft (MSA) email account.
-
-For more information about the Copilot, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+For more information about Copilot for Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 ## Initialize a qubit to a known state
 
@@ -102,11 +100,11 @@ The `Main`operation:
 allocate the qubits in a known state. Resetting is required by the `use` statement.
 1. Finally, it uses the `Message` function to print results to the Copilot output windows before returning the results.
 
-## Run the code in the Copilot for Azure Quantum
+## Run the code in Copilot for Azure Quantum
 
 Before moving on to the procedures for superposition and entanglement, you can test the code up to this point to see the initialization and measurement of the qubits.
 
-In order to run the code as a standalone program, the Q# compiler in the Copilot needs to know *where* to start the program. Because no namespace is specified, the compiler recognizes the default entry point as the `Main` operation. For more information, see [Projects and implicit namespaces](xref:microsoft.quantum.qsharp-projects#projects-and-implicit-namespaces).
+In order to run the code as a standalone program, the Q# compiler in Copilot needs to know where to start the program. Because no namespace is specified, the compiler recognizes the default entry point as the `Main` operation. For more information, see [Projects and implicit namespaces](xref:microsoft.quantum.qsharp-projects#projects-and-implicit-namespaces).
 
 Your Q# program up to this point should now look like this:
 
@@ -234,7 +232,7 @@ Q2 - Ones: 0
 ```
 
 > [!NOTE]
-> By moving the slider in the Copilot for Azure Quantum and increasing the number of shots, you can see how the superposition results vary slightly over the distribution of the shots.
+> To see how the superposition results vary over the distribution of the shots, move the slider in Copilot for Azure Quantum and increase the number of shots.
 
 ## Entangle two qubits
 

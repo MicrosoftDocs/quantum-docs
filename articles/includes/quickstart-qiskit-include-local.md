@@ -15,10 +15,10 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The Azure Quantum `qdk` and `azure-quantum[qiskit]` Python packages, and the `ipykernel` package.
+- The `qdk` Python library, the `azure-quantum` Python package with the `qiskit` extra, and the `ipykernel` package.
 
     > [!NOTE]
-    > If the Jupyter Python kernel `ipykernel` is't detected, then VS Code will prompt you to install it.
+    > If the Jupyter Python kernel `ipykernel` isn't detected, then VS Code will prompt you to install it.
 
     ```cmd
     python -m pip install --upgrade azure-quantum[qiskit] qdk ipykernel 
@@ -29,8 +29,9 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 ## Create a new Jupyter Notebook
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information. 
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter and select **Create: New Jupyter Notebook**.
+1. VS Code detects and displays the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, then you might need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 
 ## Load the required imports
 
@@ -199,18 +200,17 @@ result.get_memory(circuit)
 ```
 
 > [!NOTE]
-> On IonQ targets, if you submit a job with an odd number of shots, the results will be rounded down to the next even number. For example, if you specify 9 shots, the results will display data for 8 shots.
+> On IonQ targets, if you submit a job with an odd number of shots, then the number of shots is rounded down to the nearest even number. For example, if you specify 9 shots, the the results display data for 8 shots.
 
 #### Estimate job cost
 
-Before running a job on the QPU, you should estimate how much it costs to run.
+Before you run a job on the QPU, you should estimate how much the jobs costs to run.
 
-For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
+For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the **Provider** tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
 #### Run on IonQ QPU
 
-To connect to real hardware (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)), simply
-provide the name of the target `"ionq.qpu.aria-1"` to the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method:
+To connect to real hardware (a [Quantum Processor Unit](xref:microsoft.quantum.target-profiles#quantum-processing-units-qpu-different-profiles) (QPU)), simply provide the name of the target `"ionq.qpu.aria-1"` to the [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) method:
 
 ```python
 qpu_backend = provider.get_backend("ionq.qpu.aria-1")
@@ -219,7 +219,7 @@ qpu_backend = provider.get_backend("ionq.qpu.aria-1")
 Submit the circuit to run on Azure Quantum, get the results, and run `plot_histogram` to plot the results.
 
 > [!NOTE]
-> The time required to run a circuit on the QPU may vary depending on current queue times.
+> The time required to run a circuit on the QPU depends on current queue times.
 
 ```python
 # Submit the circuit to run on Azure Quantum

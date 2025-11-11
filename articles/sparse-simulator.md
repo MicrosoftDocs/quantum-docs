@@ -70,7 +70,7 @@ However, adding 1% bit-flip noise shows the state starting to diffuse, and with 
 You can use the `ConfigurePauliNoise()` function to set or modify the noise model for individual Q# programs.  Using `ConfigurePauliNoise()`, you can granularly control where noise is applied in your Q# programs.
 
 > [!NOTE]
-> If you configure noise in the VS Code settings, it will be applied to all Q# programs. If you configure noise in a Q# program using `ConfigurePauliNoise()`, it will bypass any VS Code settings during the run of that program.
+> If you configure noise in the VS Code settings, then the noise is applied to all Q# programs. If you configure noise in a Q# program using `ConfigurePauliNoise`, then that noise overrides your VS Code noise settings during the run of that program.
 
 For example, in the previous program you can add noise immediately after qubit allocation:  
 

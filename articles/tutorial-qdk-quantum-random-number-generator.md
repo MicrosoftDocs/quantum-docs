@@ -19,11 +19,12 @@ In this tutorial, you learn to write a basic quantum program in Q# that leverage
 In this tutorial, you will:
 
 > [!div class="checklist"]
-> * Create a Q# program.
-> * Review the main components of a Q# program.
-> * Define the logic of a problem.
-> * Combine classical and quantum operations to solve a problem.
-> * Work with qubits and superposition to build a quantum random number generator.
+>
+> - Create a Q# program.
+> - Review the main components of a Q# program.
+> - Define the logic of a problem.
+> - Combine classical and quantum operations to solve a problem.
+> - Work with qubits and superposition to build a quantum random number generator.
 
 [!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
@@ -35,21 +36,21 @@ In this tutorial, you will:
 - To develop and run the code sample in Visual Studio Code:
     - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
     - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-    - If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python package. To do so, open a terminal and run the following command:
+    - If you want to use Jupyter Notebook, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python library with the `jupyter` extra. To do so, open a terminal and run the following command:
 
         ```bash
-        pip install --upgrade qdk
+        pip install --upgrade qdk[jupyter]
         ```
 
 ## Define the problem
 
-Classical computers don't produce random numbers, but rather _pseudorandom_ numbers. A pseudorandom number generator generates a deterministic sequence of numbers based on some initial value, called a _seed_. To better approximate random values, this seed is often the current time from the CPU's clock.
+Classical computers don't produce random numbers, but rather pseudorandom numbers. A pseudorandom number generator generates a deterministic sequence of numbers based on some initial value, called a seed. To better approximate random values, this seed is often the current time from the CPU's clock.
 
 Quantum computers, on the other hand, can generate truly random numbers. This is because the measurement of a qubit in superposition is a probabilistic process. The result of the measurement is random, and there's no way to predict the outcome. This is the basic principle of quantum random number generators.
 
-A qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either in the **0** state or in the **1** state. However, before measurement, the state of the qubit represents the *probability* of reading either a **0** or a **1** with a measurement.
+A qubit is a unit of quantum information that can be in superposition. When measured, a qubit can only be either in the 0 state or in the 1 state. However, before measurement, the state of the qubit represents the probability of reading either a 0 or a 1 with a measurement.
 
-You start by taking a qubit in a basis state, for example zero. The first step of the random number generator is to use a *Hadamard* operation to put the qubit into an equal superposition. The measurement of this state results in a zero or a one with 50% probability of each outcome, a truly random bit.
+You start by taking a qubit in a basis state, for example zero. The first step of the random number generator is to use a Hadamard operation to put the qubit into an equal superposition. The measurement of this state results in a zero or a one with 50% probability of each outcome, a truly random bit.
 
 There's no way of knowing what you will get after the measurement of the qubit in superposition, and the result is a different value each time the code is invoked. But how can you use this behavior to generate larger random numbers?
 
@@ -123,13 +124,13 @@ By putting the qubit in superposition with the `H` operation and measuring it wi
 
 ### Visualize the Q\# code with the Bloch sphere
 
-In the Bloch sphere, the north pole represents the classical value **0** and the south pole represents the classical value **1**. Any superposition can be represented by a point on the sphere (represented by an arrow). The closer the end of the arrow to a pole the higher the probability the qubit collapses into the classical value assigned to that pole when measured. For example, the qubit state represented by the arrow in the following figure has a higher probability of giving the value **0** if you measure it.
+In the Bloch sphere, the north pole represents the classical value 0 and the south pole represents the classical value 1. Any superposition can be represented by a point on the sphere (represented by an arrow). The closer the end of the arrow to a pole the higher the probability the qubit collapses into the classical value assigned to that pole when measured. For example, the qubit state represented by the arrow in the following figure has a higher probability of giving the value 0 if you measure it.
 
 <img src="~/media/qrng-Bloch.png" width="175" alt="A diagram showing a qubit state with a high probability of measuring zero.">
 
 You can use this representation to visualize what the code is doing:
 
-1. First, start with a qubit initialized in the |0〉 state and apply an `H` operation to create an equal superposition in which the probabilities for **0** and **1** are the same.
+1. First, start with a qubit initialized in the |0〉 state and apply an `H` operation to create an equal superposition in which the probabilities for 0 and 1 are the same.
 
     <img src="~/media/qrng-H.png" width="450" alt="A diagram showing the preparation of a qubit in superposition by applying the hadamard gate.">
 
@@ -137,7 +138,7 @@ You can use this representation to visualize what the code is doing:
 
     <img src="~/media/qrng-meas.png" width="450" alt="A diagram showing the measurement of a qubit and saving the output.">
 
-Since the outcome of the measurement is random and the probabilities of measuring **0** and **1** are the same, you have obtained a completely random bit. You can call this operation several times to create integers. For example, if you call the operation three times to obtain three random bits, you can build random 3-bit numbers (that is, a random number between 0 and 7).
+Since the outcome of the measurement is random and the probabilities of measuring 0 and 1 are the same, you have obtained a completely random bit. You can call this operation several times to create integers. For example, if you call the operation three times to obtain three random bits, you can build random 3-bit numbers (that is, a random number between 0 and 7).
 
 ### Write a complete random number generator
 
@@ -172,10 +173,10 @@ Since the outcome of the measurement is random and the probabilities of measurin
 
     Let's take a moment to review the new code.
 
-    * You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Std.Math` namespace converts an integer to the number of bits needed to represent it.
-    * The `SampleRandomNumberInRange` operation uses a `for` loop to generate random numbers until it generates one that's equal to or less than `max`. The `for` loop works exactly the same as a `for` loop in other programming languages.
-    * The variable `bits` is a mutable variable. A mutable variable is one that can change during the computation. You use the `set` directive to change a mutable variable's value.
-    * The `ResultArrayAsInt` function, from the default `Std.Convert` namespace, converts the bit string to a positive integer.
+    - You need to calculate the number of bits needed to express integers up to `max`. The `BitSizeI` function from the `Std.Math` namespace converts an integer to the number of bits needed to represent it.
+    - The `SampleRandomNumberInRange` operation uses a `for` loop to generate random numbers until it generates one that's equal to or less than `max`. The `for` loop works exactly the same as a `for` loop in other programming languages.
+    - The variable `bits` is a mutable variable. A mutable variable is one that can change during the computation. You use the `set` directive to change a mutable variable's value.
+    - The `ResultArrayAsInt` function, from the default `Std.Convert` namespace, converts the bit string to a positive integer.
 
 1. Finally, you add an entry point to the program. By default, the Q# compiler looks for a `Main` operation and starts processing there. It calls the `GenerateRandomNumberInRange` operation to generate a random number between 0 and 100.
 
@@ -324,7 +325,7 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 
 ### [Q# program in Visual Studio Code](#tab/tabid-vscode)
 
-1. Open Visual Studio Code and select **File > New Text File** to create a new file.
+1. In Visual Studio Code, open the **File** menu and choose **New Text File** to create a new file.
 1. Save the file as `RandomNumberGenerator.qs`. This file will contain the Q# code for your program.
 1. Copy the following code in the `RandomNumberGenerator.qs` file.
 
@@ -501,7 +502,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 
 Explore other Q# tutorials:
 
-* [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
-* [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
-* [Quantum Fourier Transforms](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+- [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
+- [Quantum Fourier Transforms](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
+- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

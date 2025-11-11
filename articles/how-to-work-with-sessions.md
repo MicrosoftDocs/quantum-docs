@@ -14,7 +14,7 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 
 # How to manage your sessions 
 
-In Azure Quantum, you can group multiple jobs against a single target, which allows you to manage jobs effectively. This is called a session. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+In Azure Quantum, you can group multiple jobs against a single target to effectively manage your jobs. This is called a session. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
 
 In this article, you learn how use sessions to manually manage your jobs. You also learn about the job failure policies and how to avoid session timeouts.
 
@@ -23,10 +23,10 @@ In this article, you learn how use sessions to manually manage your jobs. You al
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The Azure Quantum `azure-quantum` Python package. If you want to use Qiskit or Cirq, then you need to install the `azure-quantum` package with the \[qiskit\] or \[cirq\] tags.
+- The `azure-quantum` Python package. If you want to use Qiskit or Cirq, then you need to install the `azure-quantum` package with the `qiskit` or `cirq` extras.
 
     ```bash
-    pip install --upgrade azure-quantum[qiskit]
+    pip install --upgrade azure-quantum[qiskit,cirq]
     ```
 
 > [!NOTE]
@@ -37,7 +37,7 @@ In this article, you learn how use sessions to manually manage your jobs. You al
 You can use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
 
 1. Choose the **Job management** blade in your Quantum workspace.
-1. Identify the jobs of type **Session**. In this view, you can see the Unique ID of a session in column **Id** and monitor its **Status**. The states of a session are:
+1. Identify the jobs of type **Session**. In this view, you can find the Unique ID of a session in the **Id** column and monitor the session's **Status**. Sessions can have the following statuses:
    - **Waiting**: Jobs within the session are currently running.
    - **Succeeded**: Session has ended successfully.
    - **TimeOut**: If no new job is submitted within the session for 10 minutes, then that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
@@ -186,7 +186,7 @@ To create a new session, it's a best practice to follow the steps in [Get starte
 
 ## Pass arguments in Q\#  
 
-If your Q# operation takes input arguments, then those arguments are passed during job submission, which is Python code. This means that you need to be careful to format your arguments as Q# objects.
+If your Q# operation takes input arguments, then those arguments are passed during job submission, which is Python code. This means that you need to format your arguments as Q# objects.
 
 When you pass arguments as parameters to the job, the arguments are formatted as Q# code when `qsharp.compile` is called, so the values from Python need to be formatted into a string as valid Q# syntax.
 
@@ -228,12 +228,12 @@ In this example, because arrays in Python are already printed as \[item0, item1,
 
 ## Session timeouts
 
-A session times out if no new job is submitted within the session for 10 minutes. The session reports a status of **TimedOut**. To avoid this situation, add a `with` block using `backend.open_session(name="Name")`, so the session `close()` is invoked by the service at the end of the code block. 
+A session times out if no new job is submitted within the session for 10 minutes. The session reports a status of **TimedOut**. To avoid this situation, add a `with` block using `backend.open_session(name="Name")`, so the session `close()` is invoked by the service at the end of the code block.
 
 > [!NOTE]
-> If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the session have all completed.
+> If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the session are complete.
 
-The following code snippets show an example of a session times out after 10 minutes because no new jobs are submitted. To avoid that, the next code snippet shows how to use a `with` block to create a session.
+The following code snippets show an example of a session that times out after 10 minutes because no new jobs are submitted. To avoid that, the next code snippet shows how to use a `with` block to create a session.
 
 ```python
 #Example of a session that times out 
@@ -262,7 +262,7 @@ However, this behavior can be changed by specifying a job failure policy of `job
 
 If the session is never closed and times out, the status is **TimedOut** even if jobs have failed.
 
-For example, the following program creates a session with three jobs. The first job fails because it specifies `"garbage"` as input data. To avoid the end of the session at this point, the program shows how to add `job_failure_policy=SessionJobFailurePolicy.CONTINUE` when creating the session.
+For example, the following program creates a session with three jobs. The first job fails because it specifies `"garbage"` as input data. To avoid the end of the session at this point, the program shows how to add `job_failure_policy=SessionJobFailurePolicy.CONTINUE` when you create the session.
 
 ```python
 #Example of a session that does not close but reports Failure(s) when a jobs fails

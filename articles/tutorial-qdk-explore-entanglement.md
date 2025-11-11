@@ -20,7 +20,7 @@ In this tutorial, you write a Q# program that manipulates and measures qubits an
 Here are some key concepts to understand before you begin:
 
 - Classical bits hold a single binary value such as a 0 or 1, but qubits can be in a superposition of the two states, 0 and 1. Each possible qubit state is described by a set of probability amplitudes.
-- When you measure a qubit's state, you always get either 0 or 1. The probability of each result is determined by the probability amplitudes that define the superposition state before you measure.
+- When you measure a qubit's state, you always get either 0 or 1. The probability of each result is determined by the probability amplitudes that define the superposition state when you make a measurement.
 - Multiple qubits can be entangled such that you can't describe them independently from each other. When you measure one qubit in an entangled pair, you also get information about the other qubit without measuring it.
 
 In this tutorial, you'll learn how to:
@@ -28,7 +28,7 @@ In this tutorial, you'll learn how to:
 > [!div class="checklist"]
 >
 > - Create Q# operations to initialize a qubit to a desired state.
-> - Put a qubit in superposition.
+> - Put a qubit into a superposition state.
 > - Entangle a pair of qubits.
 > - Measure a qubit and observe the results.
 

@@ -31,7 +31,7 @@ To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum
 
 ## Add support for Python and Jupyter Notebook
 
-With Python support in VS Code, you can embed or call Q# code from your Python programs or Jupyter notebooks, and run them on the built-in quantum simulator. You can also connect to your Azure workspace and submit your jobs to run on real quantum hardware.
+With Python support in VS Code, you can embed or call Q# code from your Python programs or Jupyter notebooks, and run them on the built-in quantum simulator. You can also connect to your Azure Quantum workspace and submit your jobs to run on real quantum hardware.
 
 ### Prerequisites
 
@@ -44,13 +44,13 @@ To add Python and Jupyter Notebook support:
 
 1. Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
 1. Open the command line.
-1. Install the `qdk` package with the `azure` extra:
+1. Install the `qdk` Python library with the `azure` extra:
 
    ```cmd
    python -m pip install qdk[azure]
    ```
 
-1. For Qiskit or Cirq support, install `azure-quantum` with the [qiskit] or [cirq] parameters:
+1. For Qiskit or Cirq support, install `azure-quantum` with the `qiskit` or `cirq` extras:
 
    > [!IMPORTANT]
    > If you're updating from a previous Qiskit environment, see [Update the azure-quantum package with Qiskit support](xref:microsoft.quantum.update-qdk#update-azure-quantum-with-qiskit-support).
@@ -71,7 +71,7 @@ To add Python and Jupyter Notebook support:
    python -m pip install azure-quantum[qiskit,cirq]
     ```
 
-1. Install optional Python packages that you might need to display results and work in Jupyter Notebook:
+1. Install optional Python packages to display results and work in Jupyter Notebook:
 
     ```cmd
     python -m pip install qdk[jupyter] ipykernel ipympl jupyterlab

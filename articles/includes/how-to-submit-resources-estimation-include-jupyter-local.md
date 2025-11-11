@@ -13,7 +13,7 @@ no-loc: [target, targets]
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qdk` library with the optional `jupyter` extra.  
+- The latest `qdk` Python library with the optional `jupyter` extra.  
 
     ```bash
     python -m pip install --upgrade qdk[jupyter] 
@@ -30,8 +30,9 @@ no-loc: [target, targets]
 
 ## Create the quantum algorithm
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter and select **Create: New Jupyter Notebook**.
+1. VS Code detects and displays the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, then you might need to select a kernel from the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 1. In the first cell of the notebook, import the `qsharp` package.
 
     ```python
@@ -415,27 +416,28 @@ The `qsharp.estimate` function creates a result object, which can be used to dis
 
 For example, expand the **Logical qubit parameters** group to see that the code distance is 21 and the number of physical qubits is 882.
 
-|Logical qubit parameter| Value |
-|----|---|
-|QEC scheme                                                |                           surface_code |
-|Code distance                                                                       |            21 |
-|Physical qubits                                                                   |            882 |
-|Logical cycle time                                                                   |   8 millisecs |
-|Logical qubit error rate                                                            |     3.00E-13 |
-|Crossing prefactor                                                                    |       0.03|
-|Error correction threshold                                                             |      0.01|
-|Logical cycle time formula    | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance`|
-|Physical qubits formula     |                                      2 * `codeDistance` * `codeDistance`|
+| Logical qubit parameter   | Value                                                                       |
+|---------------------------|-----------------------------------------------------------------------------|
+|QEC scheme                 | surface_code                                                                |
+|Code distance              | 21                                                                          |
+|Physical qubits            | 882                                                                         |
+|Logical cycle time         | 8 millisecs                                                                 |
+|Logical qubit error rate   | 3.00E-13                                                                    |
+|Crossing prefactor         | 0.03                                                                        |
+|Error correction threshold | 0.01                                                                        |
+|Logical cycle time formula | (4 \* `twoQubitGateTime` + 2 \* `oneQubitMeasurementTime`) * `codeDistance` |
+|Physical qubits formula    | 2 \* `codeDistance` * `codeDistance`                                        |
 
 > [!TIP]
 > For a more compact version of the output table, you can use `result.summary`.
 
 ### Space diagram
 
-The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can use the `qdk.widgets` package to visualize this distribution to better understand the estimated space requirements for the algorithm.
+The distribution of physical qubits that's used for the algorithm and the T factories are factors that might impact the design of your algorithm. You can use the `qdk.widgets` package to visualize the physical qubit distribution and better understand the estimated space requirements for the algorithm.
 
 ```python
 from qdk.widgets import SpaceChart, EstimateDetails
+
 SpaceChart(result)
 ```
 
@@ -492,6 +494,7 @@ result_maj = qsharp.estimate("RunProgram()", params={
                 "qubitParams": {
                     "name": "qubit_maj_ns_e6"
                 }})
+
 EstimateDetails(result_maj)
 ```
 

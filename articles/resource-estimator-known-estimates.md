@@ -26,7 +26,7 @@ For information about how to run the Resource Estimator, see [Different ways to 
 If you want to use Python in VS Code, you also need the following:
 
 - Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest Azure Quantum `qdk` package.  
+- The latest `qdk` Python package.  
 
     ```bash
     python -m pip install --upgrade qdk

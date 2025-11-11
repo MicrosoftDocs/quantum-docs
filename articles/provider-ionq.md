@@ -262,7 +262,7 @@ job = backend.run(circuit, shots=500)
 ```
 
 > [!NOTE]
-> If you do not pass in the `error-mitigation` parameter, the target machine will use its default setting, which is enabled for Aria and Forte systems.
+> If you don't pass in the `error-mitigation` parameter, then the target machine uses its default setting, which is enabled for Aria and Forte systems.
 <!--
 When you run a job with error mitigation enabled, IonQ makes both aggregate results, Sharpened and Averaged, available. The Average result is returned by default. To view the Sharpened result, pass `sharpen=True` with the `job_result()` call:
 
@@ -294,7 +294,7 @@ For more information about Qiskit jobs, see [Submit a circuit with Qiskit](xref:
 
 ### Noise model simulation
 
-Even the best of today's quantum hardware has inherent noise, and knowing the noise characteristics of your target system can help you refine your algorithms and get a more realistic prediction of results when running the circuit on hardware. IonQ provides a noise model simulation that introduces noise into the circuit using a "noise fingerprint" specific to the target hardware. For more information, see [Get Started with Hardware Noise Model Simulation](https://ionq.com/docs/get-started-with-hardware-noise-model-simulation).
+Even the best of today's quantum hardware has inherent noise. Knowing the noise characteristics of your target system can help you refine your algorithms and get a more realistic prediction of results when running the circuit on real hardware. IonQ provides a noise model simulation that introduces noise into the circuit using a "noise fingerprint" specific to the target hardware. For more information, see [Get Started with Hardware Noise Model Simulation](https://ionq.com/docs/get-started-with-hardware-noise-model-simulation).
 
 #### Noise model parameters
 

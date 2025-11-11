@@ -20,7 +20,7 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Re
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qdk` library with the `jupyter` extra.  
+- The latest `qdk` Python library with the `jupyter` extra.  
 
     ```bash
     python -m pip install --upgrade qdk[jupyter] 
@@ -188,7 +188,7 @@ When estimating the resources of an algorithm, you can use the space-time diagra
 
 The space-time diagram allows you to find the optimal combination of {number of qubits, runtime} pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair.
 
-To run the space-time diagram in Jupyter Notebook, you can use the `EstimatesOverview` widget from the `widgets` package.
+To run the space-time diagram in Jupyter Notebook, use the `EstimatesOverview` widget from the `widgets` package.
 
 ```python
 from qdk.widgets import EstimatesOverview
@@ -206,7 +206,7 @@ The space-time diagram is specially useful when comparing multiple configuration
 :::image type="content" source="media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the Resource Estimator.":::
 
 > [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you experience issues when you work with the Resource Estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 

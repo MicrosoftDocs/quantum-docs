@@ -20,7 +20,7 @@ In this tutorial, you:
 
 > [!div class="checklist"]
 >
-> - Define the Grover's algorithm for a search problem
+> - Define Grover's algorithm for a search problem
 > - Implement Grover's algorithm in Q#
 
 [!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
@@ -48,7 +48,7 @@ To implement Grover's algorithm to solve a search problem, you need to:
 1. Implement the function of the Grover's task as a quantum oracle. To implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
 1. Use Grover's algorithm with your oracle to solve the task. Once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
 
-## The Grover's algorithm
+## Grover's algorithm
 
 Suppose there are $N=2^n$ eligible items for the search problem and they are indexed by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
@@ -146,7 +146,7 @@ operation GroverSearch( nQubits : Int, iterations : Int, phaseOracle : Qubit[] =
 }
 ```
 
-The `GroverSearch` operation initializes a register of $n$ qubits in the state $\ket{0}$, prepares the register into a uniform superposition, and then applies the Grover's algorithm for the specified number of iterations.  The search itself consists of repeatedly reflecting about the marked state and the start state, which you can write out in Q# as a for loop. Finally, it measures the register and returns the result.
+The `GroverSearch` operation initializes a register of $n$ qubits in the state $\ket{0}$, prepares the register into a uniform superposition, and then applies Grover's algorithm for the specified number of iterations.  The search itself consists of repeatedly reflecting about the marked state and the start state, which you can write out in Q# as a for loop. Finally, it measures the register and returns the result.
 
 The code makes use of three helper operations: `PrepareUniform`, `ReflectAboutUniform`, and `ReflectAboutAllOnes`.
 

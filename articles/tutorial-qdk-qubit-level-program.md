@@ -37,15 +37,15 @@ In this tutorial, you learn how to:
 
 * The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 * The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-* If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python package. To do so, open a terminal and run the following command:
+* If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python package with the `jupyter` extra. To do so, open a terminal and run the following command:
 
     ```bash
-    pip install --upgrade qdk
+    pip install --upgrade qdk[jupyter]
     ```
 
 ## Create a new Q# file
 
-1. In VS Code, select **File > New Text File** 
+1. In VS Code, open the **File** menu and choose **New Text File**.
 1. Save the file as **QFTcircuit.qs**. This file contains the Q# code for your program.
 1. Open **QFTcircuit.qs**.
 

@@ -23,12 +23,12 @@ Learn how to update the Azure Quantum Development Kit (QDK) to the latest versio
 
 ## Update the VS Code extension
 
-By default, VS Code automatically updates extensions. After an extension is updated, you're prompted to reload VS Code. If you prefer to disable auto-updates and update extensions manually, see [Extension auto-update](https://code.visualstudio.com/docs/editor/extension-marketplace#_extension-autoupdate) in the VS Code documentation.
+By default, VS Code automatically updates extensions. After an extension is updated, you're prompted to reload VS Code. To disable auto-updates and update your extensions manually, see [Extension auto-update](https://code.visualstudio.com/docs/editor/extension-marketplace#_extension-autoupdate) in the VS Code documentation.
 
 ## Update the Azure Quantum Python packages
 
 > [!IMPORTANT]
-> If you're updating from a previous Qiskit environment, see [Update the azure-quantum package with Qiskit support in a virtual Python environment (recommended)](#update-the-azure-quantum-package-with-qiskit-support-in-a-virtual-python-environment-recommended).
+> If you're updating from a previous Qiskit environment, then see [Update the azure-quantum package with Qiskit support in a virtual Python environment (recommended)](#update-the-azure-quantum-package-with-qiskit-support-in-a-virtual-python-environment-recommended).
 
 1. Update to the latest `qdk` and `azure-quantum` Python packages with the package installer for Python (pip).
   
@@ -78,13 +78,13 @@ To create a virtual Python environment and install azure-quantum with Qiskit sup
 > See [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility.
 
 > [!NOTE]
-> You can also open your virtual environment in VS Code. From the **View** menu, choose **Command Palette** and enter **Python: Create Environment**, and then choose **venv**. Choose **Open Folder...** and select the environment folder that you created earlier. For more information on using environments in VS Code, see [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
+> You can also open your virtual environment in VS Code. From the **View** menu, choose **Command Palette**, and then enter **Python: Create Environment** and choose **venv**. Then, choose **Open Folder...** and select the environment folder that you created earlier. For more information on using environments in VS Code, see [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
 
 ### Update the `azure-quantum` package with Qiskit support in the current environment
 
 You can also update the `azure-quantum` package with Qiskit support without using a virtual environment. However, updates to the `qiskit` packages in an existing environment might cause dependency conflicts with other packages. See [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility.
 
-To update the azure-quantum package, complete the following steps:
+To update the `azure-quantum` package, complete the following steps:
 
 1. Uninstall the existing `azure-quantum` and `qiskit` packages:
 
@@ -92,7 +92,7 @@ To update the azure-quantum package, complete the following steps:
     pip uninstall -y azure-quantum qiskit qiskit-terra qiskit-qir
     ```
 
-1. Reinstall `azure-quantum` with the optional [qiskit] parameter:
+1. Reinstall `azure-quantum` with the optional `qiskit` extra:
 
     ```cmd
     pip install azure-quantum[qiskit]
