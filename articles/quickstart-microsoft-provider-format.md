@@ -14,7 +14,7 @@ uid: microsoft.quantum.quickstarts.computing.provider
 
 # How to submit specific formatted circuits to Azure Quantum
 
-Learn how to use the `azure-quantum` Python package to submit circuits in specific formats to the Azure Quantum service. This article shows you how to submit circuits in the following formats:
+Learn how to use the `qdk.azure` Python package to submit circuits in specific formats to the Azure Quantum service. This article shows you how to submit circuits in the following formats:
 
 - [Submit QIR circuits](#submit-qir-formatted-circuits)
 - [Submit provider-specific circuits](#submit-a-circuit-with-a-provider-specific-format-to-azure-quantum)
@@ -29,17 +29,18 @@ To develop and run your circuits in Visual Studio Code (VS Code), you need:
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The Azure Quantum `qsharp`, `azure-quantum`, and `ipykernel` packages.  
+- The `qdk` Python library with the `azure-quantum` extra, and the `ipykernel` package.
 
     ```bash
-    python -m pip install --upgrade qsharp azure-quantum ipykernel
+    python -m pip install --upgrade qdk[azure] ipykernel
     ```
 
 ## Create a new Jupyter notebook
 
 To create a notebook in VS Code, follow these steps:
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter and select **Create: New Jupyter Notebook**.
 1. To connect to the Azure Quantum service, your program needs the resource ID and the
 location of your Azure Quantum workspace.
     1. Log in to your Azure account, <https://portal.azure.com>,
@@ -52,7 +53,7 @@ location of your Azure Quantum workspace.
 create a `workspace` object that connects to your Azure Quantum workspace.
 
     ```python
-    from azure.quantum import Workspace
+    from qdk.azure import Workspace
     workspace = Workspace ( 
         resource_id = "", # Add your resource_id 
         location = ""  # Add your workspace location (for example, "westus") 

@@ -20,10 +20,10 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `qsharp`, `qsharp-widgets`, and `azure-quantum` packages, and the `ipykernel` package.
+- The Azure Quantum `qdk[jupyter]` and `azure-quantum` packages, and the `ipykernel` package.
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp-widgets azure-quantum ipykernel
+    python -m pip install --upgrade qdk[jupyter] azure-quantum ipykernel
     ```
 
 ## Run and test your program in the local simulator
@@ -33,20 +33,20 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 1. In the first cell of the notebook, run the following Python code to import the necessary modules:
 
     ```python
-    import qsharp
+    from qdk import qsharp, azure
     import azure.quantum
     ```
 
-    - The `qsharp` module activates the `%%qsharp` magic command that lets you enter Q# code directly into a cell.
-    - The `azure-quantum` module provides connectivity to your Azure Quantum workspace.
+    - The `qsharp` package activates the `%%qsharp` magic command that lets you enter Q# code directly into a cell.
+    - The `azure` package provides connectivity to your Azure Quantum workspace.
     > [!NOTE]
-    > If the Jupyter Python kernel `ipykernel` is not detected, VS Code will prompt you to install it.  
+    > If the Jupyter Python kernel `ipykernel` isn't detected, then VS Code will prompt you to install it.  
 
 1. Add another cell and enter this Q# code that returns a user-specified number of random bits:
 
     > [!NOTE]
     > Notice that as soon as you type in the magic command `%%qsharp`, the notebook cell changes type from **Python** to **Q#**.
- 
+
     ```qsharp
     %%qsharp
 
@@ -97,16 +97,17 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
     [One, Zero, Zero, One]]
     ```
 
-## Visualize  the quantum circuit
+## Visualize the quantum circuit
 
-You can visualize quantum circuits using the `qsharp-widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image. For more information, see [Quantum circuit diagrams with Jupyter Notebooks](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
+You can visualize quantum circuits using the `qdk.widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image. For more information, see [Quantum circuit diagrams with Jupyter Notebook](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
 
 Add the following code to a new cell to visualize the circuit:
 
 ```python
-from qsharp_widgets import Circuit
+from qdk.qsharp import circuit
+from qdk.widgets import Circuit
 
-Circuit(qsharp.circuit("RandomNBits(4)"))
+Circuit(circuit("RandomNBits(4)"))
 ```
 
 :::image type="content" source="../media/circuit-jupyter-notebook.png" alt-text="Screenshot of Jupyter Notebook showing how to visualize the circuit for a Q# operation.":::
@@ -122,7 +123,9 @@ To reinitialize the Q# interpreter and compile your program with the base profil
 1. Use the `init` method to set the profile:
 
     ```python
-    qsharp.init(target_profile=qsharp.TargetProfile.Base)
+    from qdk import init, TargetProfile
+
+    init(target_profile=TargetProfile.Base)
     ```
 
 1. Since you reinitialized the interpreter, you need to run your code again with the new profile:
@@ -151,7 +154,9 @@ To reinitialize the Q# interpreter and compile your program with the base profil
 1. Next, use the `compile` method to specify the operation or function that is the entry point to your program. This compiles your code into QIR format, which can then be submitted to any quantum hardware:
 
     ```python
-    MyProgram = qsharp.compile("RandomNBits(4)")
+    from qdk.qsharp import compile
+
+    MyProgram = compile("RandomNBits(4)")
     ```
 
 ## Connect to Azure Quantum and submit your job
@@ -161,7 +166,9 @@ Now that you have your program compiled into the correct format, create an `azur
 1. In a new cell, fill in your resource ID and location from your Azure Quantum workspace:
 
     ```python
-    MyWorkspace = azure.quantum.Workspace(
+    from qdk.azure import Workspace
+
+    MyWorkspace = Workspace(
         resource_id = "MyResourceID",
         location = "MyLocation"
     )
@@ -222,9 +229,10 @@ Now that you have your program compiled into the correct format, create an `azur
     Job status: Succeeded
     Job ID: 0150202e-9638-11ee-be2f-b16153380354
     ```
+
 ### Additional job details
 
-The `azure.quantum` Python package includes additional methods to display more detailed job data.
+The `qdk.azure` Python package includes additional methods to display more detailed job data.
 
 - `job.get_results_histogram()`: This method returns a dictionary of the outcomes and shot count for each unique measurement. For example, the results for the previous job would be
 

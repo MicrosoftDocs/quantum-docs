@@ -19,8 +19,9 @@ In this tutorial, you implement Grover's algorithm in Q# to solve search-based p
 In this tutorial, you:
 
 > [!div class="checklist"]
-> * Define the Grover's algorithm for a search problem
-> * Implement Grover's algorithm in Q#
+>
+> - Define Grover's algorithm for a search problem
+> - Implement Grover's algorithm in Q#
 
 [!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
@@ -47,7 +48,7 @@ To implement Grover's algorithm to solve a search problem, you need to:
 1. Implement the function of the Grover's task as a quantum oracle. To implement Grover's algorithm, you need to implement the function $f(x)$ of your Grover's task as a [quantum oracle](xref:microsoft.quantum.concepts.oracles).
 1. Use Grover's algorithm with your oracle to solve the task. Once you have a quantum oracle, you can plug it into your Grover's algorithm implementation to solve the problem and interpret the output.
 
-## The Grover's algorithm
+## Grover's algorithm
 
 Suppose there are $N=2^n$ eligible items for the search problem and they are indexed by assigning each item an integer from $0$ to $N-1$. The steps of the algorithm are:
 
@@ -68,7 +69,7 @@ This section discusses how to implement the algorithm in Q#. There are few thing
 
 ### Define the marked state
 
-First, you define what input you are trying to find in the search. To do so, write an operation that applies the steps **b**, **c** and **d** from the [Grover's algorithm](#the-grovers-algorithm).
+First, you define what input you are trying to find in the search. To do so, write an operation that applies the steps **b**, **c** and **d** from the [Grover's algorithm](#grovers-algorithm).
 
 Together, these steps are also known as the **Grover'S diffusion operator** $-H^{\otimes n} O_0 H^{\otimes n}$.
 
@@ -145,7 +146,7 @@ operation GroverSearch( nQubits : Int, iterations : Int, phaseOracle : Qubit[] =
 }
 ```
 
-The `GroverSearch` operation initializes a register of $n$ qubits in the state $\ket{0}$, prepares the register into a uniform superposition, and then applies the Grover's algorithm for the specified number of iterations.  The search itself consists of repeatedly reflecting about the marked state and the start state, which you can write out in Q# as a for loop. Finally, it measures the register and returns the result.
+The `GroverSearch` operation initializes a register of $n$ qubits in the state $\ket{0}$, prepares the register into a uniform superposition, and then applies Grover's algorithm for the specified number of iterations.  The search itself consists of repeatedly reflecting about the marked state and the start state, which you can write out in Q# as a for loop. Finally, it measures the register and returns the result.
 
 The code makes use of three helper operations: `PrepareUniform`, `ReflectAboutUniform`, and `ReflectAboutAllOnes`.
 
@@ -202,7 +203,7 @@ operation Main() : Result[] {
 
 ## Run the program
 
-Select the desired platform to run your program. 
+Select the desired platform to run your program.
 
 ### [Copilot in Azure Quantum](#tab/tabid-copilot)
 
@@ -212,11 +213,11 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Arrays.*;
-    import Microsoft.Quantum.Measurement.*;
-    import Microsoft.Quantum.Diagnostics.*;
+    import Std.Convert.*;
+    import Std.Math.*;
+    import Std.Arrays.*;
+    import Std.Measurement.*;
+    import Std.Diagnostics.*;
     
     operation Main() : Result[] {
         let nQubits = 5;
@@ -327,11 +328,11 @@ You can also submit your program to the free [Quantinuum Emulator](xref:microsof
 
     ```qsharp
   
-    import Microsoft.Quantum.Convert.*;
-    import Microsoft.Quantum.Math.*;
-    import Microsoft.Quantum.Arrays.*;
-    import Microsoft.Quantum.Measurement.*;
-    import Microsoft.Quantum.Diagnostics.*;
+    import Std.Convert.*;
+    import Std.Math.*;
+    import Std.Arrays.*;
+    import Std.Measurement.*;
+    import Std.Diagnostics.*;
 
 
     operation Main() : Result[] {
@@ -430,7 +431,7 @@ You can also submit your program to the free [Quantinuum Emulator](xref:microsof
 
 Explore other Q# tutorials:
 
-* [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
-* [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
-* [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-* The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+- [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
+- [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
+- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

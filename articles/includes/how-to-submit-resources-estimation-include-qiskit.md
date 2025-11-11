@@ -13,32 +13,30 @@ no-loc: [target, targets]
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [Visual Studio Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest Azure Quantum `qsharp` and `qsharp_widgets`, and `qiskit` packages.  
+- The latest `qdk` Python library with the optional `jupyter` extra, and the `qiskit` library.  
 
     ```bash
-    python -m pip install --upgrade qsharp qsharp_widgets qiskit
+    python -m pip install --upgrade qdk[jupyter] qiskit
     ```
 
-    or 
-    
+    or
+
     ```bash
-    !pip install --upgrade qsharp qsharp_widgets qiskit
+    pip install --upgrade qdk[jupyter] qiskit
     ```
-
 
 > [!TIP]
 > You don't need to have an Azure account to run the Resource Estimator.
 
-
 ### Create a new Jupyter Notebook
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**. 
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
-
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter and select **Create: New Jupyter Notebook**.
+1. VS Code detects and displays the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, then you might need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 
 ### Create the quantum algorithm
 
-In this example, you create a quantum circuit for a multiplier based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic. 
+In this example, you create a quantum circuit for a multiplier that's based on the construction presented in [Ruiz-Perez and Garcia-Escartin (arXiv:1411.5949)](https://arxiv.org/abs/1411.5949) which uses the Quantum Fourier Transform to implement arithmetic.
 
 You can adjust the size of the multiplier by changing the `bitwidth` variable. The circuit generation is wrapped in a function that can be called with the `bitwidth` value of the multiplier. The operation will have two input registers, each the size of the specified `bitwidth`, and one output register that is twice the size of the specified `bitwidth`. The function will also print some logical resource counts for the multiplier extracted directly from the quantum circuit.
 
@@ -66,9 +64,10 @@ bitwidth = 4
 circ = create_algorithm(bitwidth)
 ```
 
-Estimate the physical resources for this operation using the default assumptions. You can use the `estimate` call, which is overloaded to accept a `QuantumCircuit` object from Qiskit. 
+Estimate the physical resources for this operation using the default assumptions. You can use the `estimate` call, which is overloaded to accept a `QuantumCircuit` object from Qiskit.
 
 ```python
+from qdk import qsharp
 from qsharp.estimator import EstimatorParams
 from qsharp.interop.qiskit import estimate
 
@@ -79,6 +78,7 @@ result = estimate(circ, params)
 Alternatively, you can use the `ResourceEstimatorBackend` to perform the estimation as the existing backend does.
 
 ```python
+from qdk import qsharp
 from qsharp.interop.qiskit import ResourceEstimatorBackend
 from qsharp.estimator import EstimatorParams
 
@@ -92,25 +92,26 @@ result = job.result()
 The `result` object contains the output of the resource estimation job. You can use the `EstimateDetails` function to display the results in a more readable format.
 
 ```python
-from qsharp_widgets import EstimateDetails
+from qdk.widgets import EstimateDetails
+
 EstimateDetails(result)
 ```
 
 `EstimateDetails` function displays a table with the overall physical resource counts. You can inspect cost details by expanding the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
 
-For example, if you expand the **Logical qubit parameters** group, you can more easily see that the error correction code distance is 15. 
+For example, if you expand the **Logical qubit parameters** group, then it's easier to see that the error correction code distance is 15.
 
-|Logical qubit parameter | Value |
-|----|---|
-|QEC scheme | surface_code |
-|Code distance |15 |
-|Physical qubits | 450 |
-|Logical cycle time    | 6us |
-|Logical qubit error rate  |     3.00E-10 |
-|Crossing prefactor |       0.03|
-|Error correction threshold   |      0.01|
-|Logical cycle time formula | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance`|
-|Physical qubits formula	      | 2 * `codeDistance` * `codeDistance`|
+| Logical qubit parameter   | Value                                                                     |
+|---------------------------|---------------------------------------------------------------------------|
+|QEC scheme                 | surface_code                                                              |
+|Code distance              | 15                                                                        |
+|Physical qubits            | 450                                                                       |
+|Logical cycle time         | 6us                                                                       |
+|Logical qubit error rate   | 3.00E-10                                                                  |
+|Crossing prefactor         | 0.03                                                                      |
+|Error correction threshold | 0.01                                                                      |
+|Logical cycle time formula | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance` |
+|Physical qubits formula    | 2 * `codeDistance` * `codeDistance`                                       |
 
 In the **Physical qubit parameters** group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 
@@ -122,7 +123,7 @@ In the **Physical qubit parameters** group you can see the physical qubit proper
 The distribution of physical qubits used for the algorithm and the T factories is a factor which may impact the design of your algorithm. You can visualize this distribution to better understand the estimated space requirements for the algorithm.
 
 ```python
-from qsharp_widgets import SpaceChart
+from qdk.widgets import SpaceChart
 
 SpaceChart(result)
 ```
@@ -160,13 +161,13 @@ result.data()["jobParams"]
   'twoQubitGateTime': '50 ns'}}
  ```
 
-These are the target parameters that can be customized: 
+You can customize the following target parameters:
 
-* `errorBudget` - the overall allowed error budget
-* [`qecScheme`](xref:qsharp.estimator.QECScheme) - the quantum error correction (QEC) scheme
-* [`qubitParams`](xref:qsharp.estimator.QubitParams) - the physical qubit parameters
-* [`constraints`](xref:qsharp.estimator.EstimatorConstraints) - the constraints on the component-level
-* [`distillationUnitSpecifications`](xref:qsharp.estimator.DistillationUnitSpecification) - the specifications for T factories distillation algorithms
+- `errorBudget` - the overall allowed error budget
+- [`qecScheme`](xref:qsharp.estimator.QECScheme) - the quantum error correction (QEC) scheme
+- [`qubitParams`](xref:qsharp.estimator.QubitParams) - the physical qubit parameters
+- [`constraints`](xref:qsharp.estimator.EstimatorConstraints) - the constraints on the component-level
+- [`distillationUnitSpecifications`](xref:qsharp.estimator.DistillationUnitSpecification) - the specifications for T factories distillation algorithms
 
 For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
