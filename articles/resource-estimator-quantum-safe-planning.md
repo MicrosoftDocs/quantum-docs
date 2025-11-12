@@ -15,10 +15,10 @@ uid: microsoft.quantum.resource-estimator-cryptography
 
 # Analyze cryptographic protocols with the Resource Estimator
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available on the [Azure Quantum website (quantum.microsoft.com)](https://quantum.microsoft.com/tools/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
+The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
 
 > [!NOTE]
-> To access the Resource Estimator on the [Azure Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) you only need a Microsoft account.
+> To access the Resource Estimator on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) you only need a Microsoft account.
 
 The Resource Estimator for quantum-safe planning takes a set of four target parameters as input:
 
@@ -29,7 +29,7 @@ The Resource Estimator for quantum-safe planning takes a set of four target para
 
 ## Use the Resource Estimator for quantum-safe planning
 
-To use the Resource Estimator for quantum-safe planning, go to [Azure Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography). 
+To use the Resource Estimator for quantum-safe planning, go to the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography).
 
 1. Click on the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
 1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
@@ -38,7 +38,7 @@ To use the Resource Estimator for quantum-safe planning, go to [Azure Quantum we
 1. The results are displayed in a **plot** that shows the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption algorithm. **Hover over** the points of the plot to see more information about the resource estimates.
 1. At any point, you can **ask Copilot a question** about cryptography, resource estimation, or quantum computing.
 
-    :::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in Azure Quantum website. The picture displays the input parameters that constitute the encryption algorithm and the resulting plot of the resource estimation job.":::
+    :::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in the Microsoft Quantum website. The picture displays the input parameters that constitute the encryption algorithm and the resulting plot of the resource estimation job.":::
 
 ## Next steps
 

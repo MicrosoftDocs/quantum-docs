@@ -14,8 +14,6 @@ no-loc: ["Q#", '$$v', Quantum Development Kit, target, targets]
 
 # How to debug and test your quantum code
 
-As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. This article discusses the tools offered by the Azure Quantum Development Kit for testing and debugging quantum programs.
-
 Testing and debugging are just as important in quantum programming as they are in classical programming. This article discusses how to debug and test your quantum programs with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
 
 ## Debug your quantum code
