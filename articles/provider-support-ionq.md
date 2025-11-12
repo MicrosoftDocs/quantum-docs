@@ -17,7 +17,7 @@ This article describes the Microsoft support policy that applies when you use th
 
 If you're using the IonQ provider and hit any unexpected issues that you can't troubleshoot yourself, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
-However, there are however some situations where the Azure Support team will need to redirect you to IonQ's support team. Or, you may receive a quicker response by reaching out to IonQ directly at the [IonQ Support website](http://support.ionq.com/). 
+However, there are however some situations where the Azure Support team will need to redirect you to IonQ's support team. Or, you may receive a quicker response by reaching out to IonQ directly at the [IonQ Support website](http://support.ionq.com/).
 
 ## Frequently asked questions
 
