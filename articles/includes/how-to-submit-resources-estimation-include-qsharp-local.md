@@ -347,8 +347,7 @@ Copy the following code into the `ShorRE.qs` file:
     /// ```
     internal function NTrailingZeroes(number : Int) : Int {
         mutable nZeroes = 0;
-        mutable copy
- = number;
+        mutable copy = number;
         while (copy % 2 == 0) {
             nZeroes += 1;
             copy /= 2;
