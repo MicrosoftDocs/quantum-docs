@@ -109,7 +109,7 @@ Copy the following code into the `ShorRE.qs` file:
         }
 
         // Return all the qubits used for oracles eigenstate back to 0 state
-        // using Microsoft.Quantum.Intrinsic.ResetAll.
+        // using Std.Intrinsic.ResetAll
         ResetAll(eigenstateRegister);
 
         return frequencyEstimate;

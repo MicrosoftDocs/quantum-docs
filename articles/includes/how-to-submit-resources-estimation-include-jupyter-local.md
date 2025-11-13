@@ -126,7 +126,7 @@ no-loc: [target, targets]
         }
     
         // Return all the qubits used for oracle eigenstate back to 0 state
-        // using Microsoft.Quantum.Intrinsic.ResetAll.
+        // using Std.Intrinsic.ResetAll
         ResetAll(eigenstateRegister);
     
         return frequencyEstimate;
