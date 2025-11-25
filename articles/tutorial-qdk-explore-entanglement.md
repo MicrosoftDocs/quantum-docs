@@ -15,15 +15,15 @@ zone_pivot_groups: ide-platforms-copilot-vscode
 
 # Tutorial: Explore quantum entanglement with Q\#
 
-In this tutorial, you write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement. You prepare two qubits in a specific quantum state, learn how to write Q# code to operate on qubits to change their state, and demonstrate the effects of superposition and entanglement. You build your Q# program piece-by-piece to introduce qubit states, operations, and measurements.
+In this tutorial, you write a Q# program that prepares two qubits in a specific quantum state, operates on the qubits to entangle them with each other, and performs measurements to demonstrate the effects of superposition and entanglement. You build your Q# program piece-by-piece to introduce qubit states, quantum operations, and measurements.
 
-Here are some key concepts to understand before you begin:
+Before you begin, review the following quantum computing concepts:
 
 - Classical bits hold a single binary value such as a 0 or 1, but qubits can be in a superposition of the two states, 0 and 1. Each possible qubit state is described by a set of probability amplitudes.
 - When you measure a qubit's state, you always get either 0 or 1. The probability of each result is determined by the probability amplitudes that define the superposition state when you make a measurement.
 - Multiple qubits can be entangled such that you can't describe them independently from each other. When you measure one qubit in an entangled pair, you also get information about the other qubit without measuring it.
 
-In this tutorial, you'll learn how to:
+In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
@@ -52,4 +52,4 @@ Explore other Q# tutorials:
 
 - [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
 - [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises that teach the elements of quantum computing and Q# programming at the same time.
