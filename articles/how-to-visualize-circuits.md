@@ -14,39 +14,25 @@ uid: microsoft.quantum.how-to.visualize-circuits
 
 # How to visualize quantum circuit diagrams with Q#
 
-Quantum circuit diagrams are a visual representation of quantum operations. Circuit diagrams show the flow of qubits through the quantum program, including the gates and measurements that are applied to the qubits.
+Quantum circuit diagrams are a visual representation of quantum operations. Circuit diagrams show the flow of qubits through the quantum program, including the gates and measurements that the program applies to the qubits.
 
-In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams in Visual Studio Code (VS Code) and Jupyter Notebook.
+In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
 
 For more information about quantum circuit diagrams, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites
 
-### VS Code
-
-- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
-- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
-- The latest `qdk` Python library with the optional `azure` extra.
+- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/).
+- The latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed in VS Code.
+- The latest version of the `qdk` Python library with the optional `azure` and `jupyter` extras.
 
     ```bash
-    python -m pip install --upgrade qdk[azure]
+    python -m pip install --upgrade qdk[azure,jupyter]
     ```
 
-### Jupyter Notebook
-
-- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest `qdk` Python library with the optional `jupyter` extra, and the `ipykernel` package.
-
-    ```bash
-    python -m pip install --upgrade qdk[jupyter] ipykernel
-    ```
-
-## Quantum circuits with VS Code
+## Visualize quantum circuits in VS Code
 
 To visualize quantum circuits of Q# programs in VS Code, complete the following steps.
-
-For more information about quantum circuit diagrams, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
 ### View circuit diagrams for a Q# program
 
@@ -54,35 +40,36 @@ For more information about quantum circuit diagrams, see [Quantum circuits conve
 1. Open the **View** menu and choose **Command Palette**.
 1. Enter **circuit** to bring up the **QDK: Show circuit** command. Or, choose the **Circuit** code lens from the list of commands above your entry point operation.
 
-    :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
+    :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot of a Q# file in Visual Studio Code that shows where to find the code lens circuit command.":::
 
-The circuit is displayed in the Q# circuit window. For example, the following circuit corresponds to an operation that puts a qubit in a superposition state and then measures the qubit. The circuit diagram shows one qubit register that's initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol.
+The Q# circuit window appears and displays the circuit diagram for your program. For example, the following circuit corresponds to an operation that puts a qubit in a superposition state and then measures the qubit. The circuit diagram shows one qubit register that's initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol.
 
-:::image type="content" source="media/circuit-vscode-randombit.png" alt-text="Screenshot the Q# circuit window showing the resulting circuit diagram for the random bit operation.":::
+:::image type="content" source="media/circuit-vscode-randombit.png" alt-text="Screenshot of the Q# circuit window that shows the circuit diagram for the random bit operation.":::
 
-### View circuit diagrams for operations
+> [!TIP]
+> In Q# and OpenQASM files, select an element in the circuit diagram to highlight the code that created the circuit element.
 
-To visualize the quantum circuit for a single Q# operation, choose the **Circuit** code lens above the operation declaration.
+### View circuit diagrams for individual operations
 
-:::image type="content" source="media/circuit-codelens-operation.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuits in the Q# circuits pane after debugging the program.":::
+To visualize the quantum circuit for an individual operation in a Q# file, choose the **Circuit** code lens above the operation declaration.
+
+:::image type="content" source="media/circuit-codelens-operation.png" alt-text="Screenshot of Visual Studio Code that shows how to visualize the circuit of a single Q# operation in a Q# program.":::
 
 ### View circuit diagrams when you're debugging
 
-When you use the VS Code debugger in a Q# program, you can visualize the quantum circuit based on the current state of the program.
+When you use the VS Code debugger in a Q# program, you can visualize the quantum circuit based on the state of the program at the current debugger breakpoint.
 
 1. Choose the **Debug** command from the code lens above your entry point operation.
 1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu to show the circuit while you step through the program.
 
-    :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit while debugging a program." lightbox="media/circuit-codelens-debug.png":::
+    :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code that shows how to visualize the circuit when you're in debug mode." lightbox="media/circuit-codelens-debug.png":::
 
 1. Set breakpoints and step through your code to see how the circuit updates as your program runs.
-1. The current quantum circuit is shown in the **QDK Circuit** panel. This circuit diagram represents the current state of the simulator, which is the gates that have been applied up until the current point in your program.
-
-    :::image type="content" source="media/codelens-circuits-bellstates.png" alt-text="Screenshot of Visual Studio Code showing how to visualize the circuit for a single Q# operation." lightbox="media/codelens-circuits-bellstates.png":::
+1. The current quantum circuit displays in the **QDK Circuit** panel.
 
 ## Quantum circuits in Jupyter Notebook
 
-In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` and `qdk.widgets` packages. The `widgets` package provides a widget that renders a quantum circuit diagram as an SVG image.
+In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` and `qdk.widgets` Python packages. The `widgets` package provides a widget that renders a quantum circuit diagram as an SVG image.
 
 ### View circuit diagrams for an entry expression
 
@@ -123,7 +110,7 @@ In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` an
     ```python
     from qdk.widgets import Circuit
     
-    Circuit(qsharp.circuit("PrepareBellState()"))
+    Circuit(qsharp.circuit("BellState()"))
     ```
 
     :::image type="content" source="media/circuits-jupyter-notebook-bellstate.png" alt-text="Screenshot of a Jupyter Notebook that shows how to visualize the circuit for a Q# operation.":::
@@ -205,8 +192,4 @@ Specifically, gate decompositions are applied such that the resulting circuit is
 
 1. When the target profile is set to **Unrestricted**, **Adaptive RI**, or **Adaptive RIF**, the gates in the circuit diagram correspond exactly to the quantum operations that are invoked in the Q# program.
 
-    :::image type="content" source="media/circuits-target-unrestricted.png" alt-text="Screenshot of quantum circuits when target profile is Unrestricted." lightbox="media/circuits-target-unrestricted.png":::
-
 1. When the target profile is set to **Base**, the circuit looks different. Because **Base** profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. The `Reset` operation isn't a supported gate in the **Base** profile, so the operation is dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
-
-    :::image type="content" source="media/circuits-target-base.png" alt-text="Screenshot of quantum circuits when the target profile is set to base." lightbox="media/circuits-target-base.png":::
