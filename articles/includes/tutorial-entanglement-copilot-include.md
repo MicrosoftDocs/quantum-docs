@@ -16,7 +16,7 @@ For more information about Copilot for Azure Quantum, see [Explore Azure Quantum
 
 ## Initialize a qubit to a known state
 
-The first step is to define a Q# operation that initializes a qubit to a desired classical state, either 0 or 1. This operation measures a qubit in a general quantum state, which returns a Q# `Result` type value of either `Zero` or `One`. Then, if the measurement result is different from the desired state, the operation flips the state so that the operation returns the desired state 100% of the time.
+The first step is to define a Q# operation that initializes a qubit to a desired classical state, either 0 or 1. This operation measures a qubit in a general quantum state, which returns a Q# `Result` type value of either `Zero` or `One`. If the measurement result is different from the desired state, then the operation flips the state so that the operation returns the desired state 100% of the time.
 
 Open [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), clear the default code, and then copy the following code into the code editor window. This code can't run by itself, so don't choose **Run** yet. You run the code later in the tutorial when you have a fully working Q# program.
 
@@ -177,7 +177,7 @@ Q2 - Ones: 0
 
 ## Put a qubit into a superposition state
 
-Currently, the qubits in your program are only in a classical state, either 1 or 0, just like bits on a regular computer. To entangle the qubits, you must first put one of the qubits into an equal superposition state. Measurement of a qubit in an equal superposition state has a 50% to return `Zero` and a 50% chance to return `One`.
+Currently, the qubits in your program are in a classical state, either 1 or 0, just like bits on a regular computer. To entangle the qubits, you must first put one of the qubits into an equal superposition state. Measurement of a qubit in an equal superposition state has a 50% to return `Zero` and a 50% chance to return `One`.
 
 To put a qubit into a superposition state, use the Q# `H`, or Hadamard, operation. The `H` operation converts a qubit that's in a pure `Zero` or `One` state into a sort of halfway state between `Zero` and `One`.
 
