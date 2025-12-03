@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 ms.author: quantumdocwriters
-ms.date: 02/14/2025
+ms.date: 12/03/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
@@ -18,12 +18,9 @@ For more information about Copilot for Azure Quantum, see [Explore Azure Quantum
 
 The first step is to define a Q# operation that initializes a qubit to a desired classical state, either 0 or 1. This operation measures a qubit in a general quantum state, which returns a Q# `Result` type value of either `Zero` or `One`. If the measurement result is different from the desired state, then the operation flips the state so that the operation returns the desired state 100% of the time.
 
-Open [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), clear the default code, and then copy the following code into the code editor window. This code can't run by itself, so don't choose **Run** yet. You run the code later in the tutorial when you have a fully working Q# program.
+Open [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), clear the default code, and then copy the following code into the code editor window. You can't run this code by itself because it isn't a complete Q# program yet.
 
 ```qsharp
-import Std.Intrinsic.*;
-import Std.Canon.*;
-
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
     if desired != M(target) {
         X(target);
@@ -106,9 +103,6 @@ To run your code as a standalone program, the Q# compiler in Copilot needs to kn
 Your Q# program now looks like this:
 
 ```qsharp
-import Std.Intrinsic.*;
-import Std.Canon.*;
-
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
     if desired != M(target) {
         X(target);
@@ -151,7 +145,6 @@ operation Main() : (Int, Int, Int, Int) {
     Message($"Q2 - Zeros: {count - numOnesQ2}");
     Message($"Q2 - Ones: {numOnesQ2}");
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
-
 }
 ```
 
@@ -216,21 +209,18 @@ Initialize the first qubit to `Zero` instead of `One` and run the program again.
 
 ## Entangle two qubits
 
-Entangled qubits are correlated such that they can't be described independently from each other. TWhatever operation happens to one qubit, also happens to the entangled qubit. When you measure the state of one entangled qubit, you also know the state of the other qubit without measuring it. This tutorial uses an example with two entangled qubits, but you can entangle three or more qubits too.
+Entangled qubits are correlated such that they can't be described independently from each other. When you measure the state of one entangled qubit, you also know the state of the other qubit without measuring it. This tutorial uses an example with two entangled qubits, but you can entangle three or more qubits too.
 
 To create an entangled state, use the Q# `CNOT`, or Controlled-NOT, operation. When you apply `CNOT` to two qubits, one qubit is the control qubit and the other is the target qubit. If the state of the control qubit is `One`, then the `CNOT` operation flips the state of the target qubit. Otherwise, `CNOT` does nothing to the qubits.
 
 Add the `CNOT` operation to your program immediately after the `H` operation. Your full program looks like this:
 
 ```qsharp
-import Std.Intrinsic.*;
-import Std.Canon.*;
-
-    operation SetQubitState(desired : Result, target : Qubit) : Unit {
-        if desired != M(target) {
-            X(target);
-        }
+operation SetQubitState(desired : Result, target : Qubit) : Unit {
+    if desired != M(target) {
+        X(target);
     }
+}
 
 operation Main() : (Int, Int, Int, Int) {
     mutable numOnesQ1 = 0;
@@ -272,8 +262,7 @@ operation Main() : (Int, Int, Int, Int) {
     Message($"Q2 - Ones: {numOnesQ2}");
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
 
-    }
-
+ }
 ```
 
 Run the program and view the output. You results very slightly each time you run the program.

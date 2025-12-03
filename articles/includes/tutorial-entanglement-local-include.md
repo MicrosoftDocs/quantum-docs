@@ -28,9 +28,6 @@ The first step is to define a Q# operation that initializes a qubit to a desired
 Open `CreateBellStates.qs` and copy the following code:
 
 ```qsharp
-import Std.Intrinsic.*;
-import Std.Canon.*;
-
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
     if desired != M(target) {
         X(target);
@@ -113,9 +110,6 @@ To run the code as a standalone program, the Q# compiler needs to know where to 
 Your `CreateBellStates.qs` file now looks like this:
 
 ```qsharp
-import Std.Intrinsic.*;
-import Std.Canon.*;
-
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
     if desired != M(target) {
         X(target);
@@ -158,7 +152,6 @@ operation Main() : (Int, Int, Int, Int) {
     Message($"Q2 - Zeros: {count - numOnesQ2}");
     Message($"Q2 - Ones: {numOnesQ2}");
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
-
 }
 ```
 
@@ -222,21 +215,18 @@ Initialize the first qubit to `Zero` instead of `One` and run the program again.
 
 ## Entangle two qubits
 
-Entangled qubits are correlated such that they can't be described independently from each other. TWhatever operation happens to one qubit, also happens to the entangled qubit. When you measure the state of one entangled qubit, you also know the state of the other qubit without measuring it. This tutorial uses an example with two entangled qubits, but you can entangle three or more qubits too.
+Entangled qubits are correlated such that they can't be described independently from each other. When you measure the state of one entangled qubit, you also know the state of the other qubit without measuring it. This tutorial uses an example with two entangled qubits, but you can entangle three or more qubits too.
 
 To create an entangled state, use the Q# `CNOT`, or Controlled-NOT, operation. When you apply `CNOT` to two qubits, one qubit is the control qubit and the other is the target qubit. If the state of the control qubit is `One`, then the `CNOT` operation flips the state of the target qubit. Otherwise, `CNOT` does nothing to the qubits.
 
 Add the `CNOT` operation to your program immediately after the `H` operation. Your full program looks like this:
 
 ```qsharp
-import Std.Intrinsic.*;
-import Std.Canon.*;
-
-    operation SetQubitState(desired : Result, target : Qubit) : Unit {
-        if desired != M(target) {
-            X(target);
-        }
+operation SetQubitState(desired : Result, target : Qubit) : Unit {
+    if desired != M(target) {
+        X(target);
     }
+}
 
 operation Main() : (Int, Int, Int, Int) {
     mutable numOnesQ1 = 0;
@@ -277,8 +267,7 @@ operation Main() : (Int, Int, Int, Int) {
     Message($"Q2 - Zeros: {count - numOnesQ2}");
     Message($"Q2 - Ones: {numOnesQ2}");
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
-
-    }
+}
 ```
 
 Run the program and view the output. You results very slightly each time you run the program.
