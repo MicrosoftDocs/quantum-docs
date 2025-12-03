@@ -84,7 +84,7 @@ operation Main() : (Int, Int, Int, Int) {
 
 In the code, the `count` and `initial` variables are set to `1000` and `One` respectively. This initializes the first qubit to `One` and measures each qubit 1000 times.
 
-The `Main`operation does the following:
+The `Main` operation does the following:
 
 1. Sets variables for the number of shots (`count`) and the initial qubit state (`One`).
 1. Calls the `use` statement to initialize two qubits.
@@ -157,7 +157,7 @@ Q2 - Zeros: 1000
 Q2 - Ones: 0
 ```
 
-Your program doesn't modify the qubits states yet, so measurement of the first qubit always returns `One`, and the second qubit always returns `Zero`.
+Your program doesn't modify the qubit states yet, so measurement of the first qubit always returns `One`, and the second qubit always returns `Zero`.
 
 If you change the value of `initial` to `Zero` and run the program again, then the first qubit also always returns `Zero`.
 
@@ -261,11 +261,10 @@ operation Main() : (Int, Int, Int, Int) {
     Message($"Q2 - Zeros: {count - numOnesQ2}");
     Message($"Q2 - Ones: {numOnesQ2}");
     return (count - numOnesQ1, numOnesQ1, count - numOnesQ2, numOnesQ2 );
-
  }
 ```
 
-Run the program and view the output. You results very slightly each time you run the program.
+Run the program and view the output. Your results very slightly each time you run the program.
 
 ```output
 Q1 - Zeros: 502

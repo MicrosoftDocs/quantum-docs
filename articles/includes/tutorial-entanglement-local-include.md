@@ -91,7 +91,7 @@ operation Main() : (Int, Int, Int, Int) {
 
 In the code, the `count` and `initial` variables are set to `1000` and `One` respectively. This initializes the first qubit to `One` and measures each qubit 1000 times.
 
-The `Main`operation does the following:
+The `Main` operation does the following:
 
 1. Sets variables for the number of shots (`count`) and the initial qubit state (`One`).
 1. Calls the `use` statement to initialize two qubits.
@@ -166,7 +166,7 @@ Q2 - Zeros: 1000
 Q2 - Ones: 0
 ```
 
-Your program doesn't modify the qubits states yet, so measurement of the first qubit always returns `One`, and the second qubit always returns `Zero`.
+Your program doesn't modify the qubit states yet, so measurement of the first qubit always returns `One`, and the second qubit always returns `Zero`.
 
 If you change the value of `initial` to `Zero` and run the program again, then the first qubit also always returns `Zero`.
 
@@ -270,7 +270,7 @@ operation Main() : (Int, Int, Int, Int) {
 }
 ```
 
-Run the program and view the output. You results very slightly each time you run the program.
+Run the program and view the output. Your results very slightly each time you run the program.
 
 ```output
 Q1 - Zeros: 502
@@ -287,14 +287,14 @@ To plot a frequency histogram that shows the distribution of results when you ru
 
 1. Open your `CreateBellStates.qs` file in VS Code.
 1. Open the **View** menu and choose **Command Palette**.
-1. Enter **histogram** to bring up the **QDK: Run file and show histogram** option. Or, choose the **Histogram** command from the code lens option that precede the `Main` operation. Then, enter a number of shots (for example, 100). The Q# histogram opens in a new tab.
+1. Enter **histogram** to bring up the **QDK: Run file and show histogram** option. Or, choose the **Histogram** command from the code lens option that precedes the `Main` operation. Then, enter a number of shots (for example, 100). The Q# histogram opens in a new tab.
 
-  Each bar in the histogram corresponds to a possible outcome when the entanglement circuit runs 1000 times. The height of a bar represents the number of times that outcome occurs For example, the following histogram shows a distribution with 50 unique results. Note that for each outcome the measurement results for the first and the second qubit are always the same.
+    Each bar in the histogram corresponds to a possible outcome when the entanglement circuit runs 1000 times. The height of a bar represents the number of times that outcome occurs. For example, the following histogram shows a distribution with 50 unique results. Note that for each outcome, the measurement results for the first and the second qubit are always the same.
 
-  :::image type="content" source="../media/histogram-vscode-entanglement.png" alt-text="Screenshot of the Q# histogram window in Visual Studio Code.":::
+    :::image type="content" source="../media/histogram-vscode-entanglement.png" alt-text="Screenshot of the Q# histogram window in Visual Studio Code.":::
 
-  > [!TIP]
-  > To zoom in on the histogram, use the mouse scroll wheel or a trackpad gesture. To pan the chart when you're zoomed in, hold **Alt** while you scroll.
+    > [!TIP]
+    > To zoom in on the histogram, use the mouse scroll wheel or a trackpad gesture. To pan the chart when you're zoomed in, hold **Alt** while you scroll.
 
 1. Choose a bar to display the percentage of total shots that produced that outcome.
 1. Choose the **settings icon** in the top-left to display visualization options.
