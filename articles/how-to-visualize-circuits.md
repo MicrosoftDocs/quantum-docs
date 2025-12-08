@@ -37,7 +37,6 @@ To visualize quantum circuits of Q# programs in VS Code, complete the following 
 ### View circuit diagrams for a Q# program
 
 1. Open a Q# file in VS Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program).
-1. Open the **View** menu and choose **Command Palette**.
 1. Choose the **Circuit** command from the code lens that precedes your entry point operation.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot of a Q# file in Visual Studio Code that shows where to find the code lens circuit command.":::
