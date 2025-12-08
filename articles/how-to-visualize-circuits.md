@@ -18,11 +18,11 @@ Quantum circuit diagrams are a visual representation of quantum operations. Circ
 
 In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams in the Azure Quantum Development Kit (QDK) using Visual Studio Code (VS Code) and Jupyter Notebook.
 
-For more information about quantum circuit diagrams, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
+For more information about quantum circuit diagrams, see [Quantum circuit conventions](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites
 
-- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/).
+- The latest version of [VS Code](https://code.visualstudio.com/download), or open [VS Code for the Web](https://vscode.dev/).
 - The latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed in VS Code.
 - The latest version of the `qdk` Python library with the optional `jupyter` extra.
 
@@ -38,20 +38,20 @@ To visualize quantum circuits of Q# programs in VS Code, complete the following 
 
 1. Open a Q# file in VS Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program).
 1. Open the **View** menu and choose **Command Palette**.
-1. Enter **circuit** to bring up the **QDK: Show circuit** command. Or, choose the **Circuit** code lens from the list of commands above your entry point operation.
+1. Choose the **Circuit** command from the code lens that precedes your entry point operation.
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot of a Q# file in Visual Studio Code that shows where to find the code lens circuit command.":::
 
-The Q# circuit window appears and displays the circuit diagram for your program. For example, the following circuit corresponds to an operation that puts a qubit in a superposition state and then measures the qubit. The circuit diagram shows one qubit register that's initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol.
+The Q# circuit window appears and displays the circuit diagram for your program. For example, the following circuit corresponds to an operation that puts a qubit in a superposition state and then measures the qubit. The circuit diagram shows one qubit register that's initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol. In this case, the measurement result is zero.
 
 :::image type="content" source="media/circuit-vscode-randombit.png" alt-text="Screenshot of the Q# circuit window that shows the circuit diagram for the random bit operation.":::
 
 > [!TIP]
-> In Q# and OpenQASM files, select an element in the circuit diagram to highlight the code that created the circuit element.
+> In Q# and OpenQASM files, select an element in the circuit diagram to highlight the code that creates the circuit element.
 
 ### View circuit diagrams for individual operations
 
-To visualize the quantum circuit for an individual operation in a Q# file, choose the **Circuit** code lens above the operation declaration.
+To visualize the quantum circuit for an individual operation in a Q# file, choose the **Circuit** command from the code lens that precedes the operation.
 
 :::image type="content" source="media/circuit-codelens-operation.png" alt-text="Screenshot of Visual Studio Code that shows how to visualize the circuit of a single Q# operation in a Q# program.":::
 
@@ -59,10 +59,9 @@ To visualize the quantum circuit for an individual operation in a Q# file, choos
 
 When you use the VS Code debugger in a Q# program, you can visualize the quantum circuit based on the state of the program at the current debugger breakpoint.
 
-1. Choose the **Debug** command from the code lens above your entry point operation.
-1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu. A new panel opens that shows the circuit while you step through the program.
+1. Choose the **Debug** command from the code lens that precedes your entry point operation.
+1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu. The **QDK Circuit** panel opens, which shows the circuit while you step through the program.
 1. Set breakpoints and step through your code to see how the circuit updates as your program runs.
-1. The current quantum circuit displays in the **QDK Circuit** panel.
 
 ## Quantum circuits in Jupyter Notebook
 
@@ -135,9 +134,7 @@ You can generate circuit diagrams of operations that take qubits, or arrays of q
 
 ## Circuit diagrams for dynamic circuits
 
-When you visualize quantum circuits, the following conditions can affect the appearance of your circuit diagrams.
-
-Circuit diagrams are generated by executing the classical logic within a Q# program and keeping track of all allocated and applied gates. Loops and conditionals are supported as long as they deal only with classical values.
+Circuit diagrams are generated by executing the classical logic within a Q# program and keeping track of all allocated and applied gates. Loops and conditionals are supported when they deal only with classical values.
 
 However, programs that contain loops and conditional expressions that use qubit measurement results are trickier to represent with a circuit diagram. For example, consider the following expression:
 
@@ -149,6 +146,6 @@ if (M(q) == One) {
 
 This expression can't be represented with a straightforward circuit diagram because the gates are conditional on a measurement result. Circuits with gates that depend on measurement results are called dynamic circuits.
 
-You can generate diagrams for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they're applied. This is called trace mode, because the qubits and gates are traced as the simulation is performed.
+You can generate diagrams for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they're applied. This is called trace mode because the qubits and gates are traced as the simulation is performed.
 
 The downside of traced circuits is that they only capture the measurement outcome and the consequent gate applications for a single simulation. In the above example, if the measurement outcome is `Zero`, then the `X` gate isn't in the diagram. If you run the simulation again, then you might get a different circuit.
