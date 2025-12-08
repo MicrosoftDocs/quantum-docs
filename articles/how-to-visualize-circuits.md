@@ -1,12 +1,12 @@
 ---
 author: azure-quantum-content
 description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
-ms.date: 10/23/2024
+ms.date: 12/08/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ["Azure Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "azure-quantum", "qdk[azure]"]
+no-loc: ["Azure Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "azure-quantum", "qdk[jupyter]", "Jupyter", "Jupyter Notebook"]
 title: Visualize Quantum Circuits with Q#
 uid: microsoft.quantum.how-to.visualize-circuits
 #customer intent: As a quantum programmer, I want to visually represent my quantum algorithms.
@@ -16,7 +16,7 @@ uid: microsoft.quantum.how-to.visualize-circuits
 
 Quantum circuit diagrams are a visual representation of quantum operations. Circuit diagrams show the flow of qubits through the quantum program, including the gates and measurements that the program applies to the qubits.
 
-In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
+In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams in the Azure Quantum Development Kit (QDK) using Visual Studio Code (VS Code) and Jupyter Notebook.
 
 For more information about quantum circuit diagrams, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
@@ -24,10 +24,10 @@ For more information about quantum circuit diagrams, see [Quantum circuits conve
 
 - The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/).
 - The latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed in VS Code.
-- The latest version of the `qdk` Python library with the optional `azure` and `jupyter` extras.
+- The latest version of the `qdk` Python library with the optional `jupyter` extra.
 
     ```bash
-    python -m pip install --upgrade qdk[azure,jupyter]
+    python -m pip install --upgrade qdk[jupyter]
     ```
 
 ## Visualize quantum circuits in VS Code
@@ -60,16 +60,13 @@ To visualize the quantum circuit for an individual operation in a Q# file, choos
 When you use the VS Code debugger in a Q# program, you can visualize the quantum circuit based on the state of the program at the current debugger breakpoint.
 
 1. Choose the **Debug** command from the code lens above your entry point operation.
-1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu to show the circuit while you step through the program.
-
-    :::image type="content" source="media/circuit-codelens-debug.png" alt-text="Screenshot of Visual Studio Code that shows how to visualize the circuit when you're in debug mode." lightbox="media/circuit-codelens-debug.png":::
-
+1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu. A new panel opens that shows the circuit while you step through the program.
 1. Set breakpoints and step through your code to see how the circuit updates as your program runs.
 1. The current quantum circuit displays in the **QDK Circuit** panel.
 
 ## Quantum circuits in Jupyter Notebook
 
-In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` and `qdk.widgets` Python packages. The `widgets` package provides a widget that renders a quantum circuit diagram as an SVG image.
+In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` and `qdk.widgets` Python modules. The `widgets` module provides a widget that renders a quantum circuit diagram as an SVG image.
 
 ### View circuit diagrams for an entry expression
 
@@ -105,7 +102,7 @@ In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` an
     q_1    ───────── X ──
     ```
 
-1. To visualize a quantum circuit as an SVG image, use the `widgets` package. Create a new cell, then run the following code to visualize the circuit that you created in the previous cell.
+1. To visualize a quantum circuit as an SVG image, use the `widgets` module. Create a new cell, then run the following code to visualize the circuit that you created in the previous cell.
 
     ```python
     from qdk.widgets import Circuit
@@ -136,11 +133,9 @@ You can generate circuit diagrams of operations that take qubits, or arrays of q
     Circuit(qsharp.circuit(operation="PrepareCatState"))
     ```
 
-## Conditions that affect circuit diagrams
+## Circuit diagrams for dynamic circuits
 
 When you visualize quantum circuits, the following conditions can affect the appearance of your circuit diagrams.
-
-### Dynamic circuits
 
 Circuit diagrams are generated by executing the classical logic within a Q# program and keeping track of all allocated and applied gates. Loops and conditionals are supported as long as they deal only with classical values.
 
@@ -157,39 +152,3 @@ This expression can't be represented with a straightforward circuit diagram beca
 You can generate diagrams for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they're applied. This is called trace mode, because the qubits and gates are traced as the simulation is performed.
 
 The downside of traced circuits is that they only capture the measurement outcome and the consequent gate applications for a single simulation. In the above example, if the measurement outcome is `Zero`, then the `X` gate isn't in the diagram. If you run the simulation again, then you might get a different circuit.
-
-### Target profile
-
-The QIR target profile that you select affects how circuit diagrams are generated. Target profiles are used to specify the capabilities of the target hardware, and the restrictions that are imposed on the quantum program.
-
-When the target profile is set to **Unrestricted**, **Adaptive RI**, or **Adaptive RIF**, the circuit diagrams show the quantum operations that are invoked in the Q# program. When the target profile is set to **Base**, the circuit diagrams show the quantum operations that would be run on hardware if the program is submitted to Azure Quantum with this target profile.
-
-> [!NOTE]
-> You can choose from four target profiles: `Base`, `Unrestricted`, `Adaptive_RI`, and `Adaptive_RIF`. If you don't specify a target profile, then the Q# compiler automatically sets an appropriate target profile for you. To manually set a target profile, pass the target profile name as an argument to `@Entrypoint()`. For example, `@Entrypoint(Unrestricted)` sets the target profile to **Unrestricted**.
-
-Specifically, gate decompositions are applied such that the resulting circuit is compatible with the capabilities of the target hardware. These decompositions are the same ones that get applied during code generation and submission to Azure Quantum.
-
-1. For example, consider the following Q# program that measures a single qubit and an array of qubits.
-
-    ```qsharp
-    import Std.Measurement.*;
-
-    operation Main() : (Result, Result[]) {
-        // The `M` operation performs a measurement of a single qubit in the
-        // computational basis, also known as the Pauli Z basis.
-        use q = Qubit();
-        let result = M(q);
-        Reset(q);
-
-        // The `MeasureEachZ` operation measures each qubit in an array in the
-        // computational basis and returns an array of `Result` values.
-        use qs = Qubit[2];
-        let results = MeasureEachZ(qs);
-
-        return (result, results);
-    }
-    ```
-
-1. When the target profile is set to **Unrestricted**, **Adaptive RI**, or **Adaptive RIF**, the gates in the circuit diagram correspond exactly to the quantum operations that are invoked in the Q# program.
-
-1. When the target profile is set to **Base**, the circuit looks different. Because **Base** profile targets don't allow qubit reuse after measurement, the measurement is now performed on an entangled qubit instead. The `Reset` operation isn't a supported gate in the **Base** profile, so the operation is dropped. The resulting circuit matches what would be run on hardware if this program is submitted to Azure Quantum with this target profile.
