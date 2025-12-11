@@ -511,7 +511,7 @@ option_params = {
     "tket-opt-level": 1
 }
 
-``` 
+```
 
 Pass in the optimization option when submitting the job:
 
@@ -591,11 +591,11 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html
-[`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
-[`pytket`]: https://cqcl.github.io/tket/pytket/api/#
+[`pytket-quantinuum`]: https://github.com/Quantinuum/pytket-quantinuum
+[`pytket`]: https://github.com/Quantinuum/tket/tree/main/pytket
 [`pytket` User Manual]: https://docs.quantinuum.com/tket/user-guide/
-[`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
-[`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
+[`pytket-quantinuum` Compilation Passes]: https://docs.quantinuum.com/tket/user-guide/examples/circuit_compilation/compilation_example.html
+[`pytket-quantinuum` Examples]: https://github.com/Quantinuum/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com
 [Quantinuum Docs]:https://docs.quantinuum.com/
 [MCMR]: https://docs.quantinuum.com/systems/trainings/getting_started/mcmr.html
