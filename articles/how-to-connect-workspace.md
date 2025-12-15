@@ -140,11 +140,9 @@ To find your workspace parameters, follow these steps:
 
 ### Use workspace parameters to connect to your Azure Quantum workspace
 
-#### [Python](#tab/tabid-python)
-
 You can use your workspace's parameters to connect to your Azure Quantum workspace with the `azure-quantum` package or with Azure CLI.
 
-#### [Python](#tab/tabid-python1)
+#### [Python](#tab/tabid-python)
 
 Create a `Workspace` object to connect to your Azure Quantum workspace. There are three options to identify your Azure Quantum workspace when you create a `Workspace` object.
 
