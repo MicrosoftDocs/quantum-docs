@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
 ms.topic: install-set-up-deploy
-no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+no-loc: ["Q#", "$$v", "Quantum Development Kit", "QDK", "Qiskit", "Azure Quantum", "Azure"]
 title: Update the Quantum Development Kit (QDK)
 uid: microsoft.quantum.update-qdk
 #customer intent: as an admin, I want to install the latest components of Azure Quantum
@@ -36,21 +36,23 @@ By default, VS Code automatically updates extensions. After an extension is upda
     pip install --upgrade qdk
     ```
 
-    To add support for the analysis, transformation, code generation, and simulation of Qiskit circuits, install the optional `qiskit` and `widget` packages.
+1. To add support for the analysis, transformation, code generation, and simulation of Qiskit circuits, install the optional `qiskit` and `jupyter` extras.
 
     ```cmd
     pip install --upgrade qdk[qiskit,jupyter]
     ```
 
-    ```cmd
-    pip install --upgrade azure-quantum
-    ```
+> [!NOTE]
+> The QDK supports versions 1 and 2 of Qiskit.
 
 ### Update the azure-quantum package with Qiskit support in a virtual Python environment (recommended)
 
 The `azure-quantum` Python package includes optional support for creating and submitting Qiskit circuits to Azure Quantum. When you install the `azure-quantum` package with Qiskit support, the package installs the latest version of Qiskit, which might cause issues with an existing Qiskit environment. To ensure a stable development environment, create a virtual Python environment and install `azure-quantum` there.
 
-To create a virtual Python environment and install azure-quantum with Qiskit support, follow these steps:
+> [!NOTE]
+> If you're using Qiskit version 1, then see [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility.
+
+To create a virtual Python environment and install `azure-quantum` with Qiskit support, follow these steps:
 
 1. Create a local folder, for example `~/qiskit10-env`.
 1. Run `venv` with the path to the folder.
@@ -73,9 +75,6 @@ To create a virtual Python environment and install azure-quantum with Qiskit sup
     ```
 
 1. Install other packages that you used in your previous environment as needed. You can run `pip list` in each environment to compare packages and versions.
-
-> [!NOTE]
-> See [Qiskit 1.0 packaging changes](https://docs.quantum.ibm.com/api/migration-guides/qiskit-1.0-installation#qiskit-10-packaging-changes) for more information on package compatibility.
 
 > [!NOTE]
 > You can also open your virtual environment in VS Code. From the **View** menu, choose **Command Palette**, and then enter **Python: Create Environment** and choose **venv**. Then, choose **Open Folder...** and select the environment folder that you created earlier. For more information on using environments in VS Code, see [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).

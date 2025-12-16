@@ -24,9 +24,6 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
     python -m pip install --upgrade azure-quantum[qiskit] qdk ipykernel 
     ```
 
-    > [!IMPORTANT]
-    > Ensure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
-
 ## Create a new Jupyter Notebook
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
@@ -49,7 +46,7 @@ from azure.quantum.qiskit import AzureQuantumProvider
 
 To connect to the Azure Quantum service, your need the resource ID and the location of your Azure Quantum workspace.
 
-1. Log in to your Azure account, <https://portal.azure.com>,
+1. Log in to your Azure account, <https://portal.azure.com>.
 1. Select your Azure Quantum workspace, and navigate to **Overview**.
 1. Copy the parameters in the fields.
 

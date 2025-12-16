@@ -17,7 +17,7 @@ uid: microsoft.quantum.overview.qdk-qiskit-cirq
 
 The Azure Quantum Development Kit (QDK) supports development in several quantum programming frameworks, including Qiskit and Cirq.
 
-Qiskit and Cirq are Python libraries that offer tools to create and visualize quantum circuits and write quantum programs. The QDK supports some interoperability with both Qiskit and Cirq. You can write your quantum programs in these frameworks and then run your programs on the local simulator or submit them as jobs to Azure Quantum with the QDK.
+Qiskit and Cirq are Python libraries that offer tools to create and visualize quantum circuits and write quantum programs. The QDK supports some interoperability with Qiskit versions 1 and 2, and with Cirq. You can write your quantum programs in these frameworks and then run your programs on the local simulator or submit them as jobs to Azure Quantum with the QDK.
 
 ## Get started with Qiskit and Cirq in the QDK
 
