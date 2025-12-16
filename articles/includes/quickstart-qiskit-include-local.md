@@ -53,8 +53,6 @@ To connect to the Azure Quantum service, your need the resource ID and the locat
 1. Select your Azure Quantum workspace, and navigate to **Overview**.
 1. Copy the parameters in the fields.
 
-    :::image type="content" source="../media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
-
 Add a new cell in your notebook and use your account information to create [`Workspace`](xref:azure.quantum.Workspace) and  [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) objects to connect to your Azure Quantum workspace.
 
 ```python
