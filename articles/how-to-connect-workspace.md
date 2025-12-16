@@ -55,7 +55,7 @@ You can use a connection string to specify the connection parameters to an Azure
 1. Go to your Azure Quantum workspace.
 1. In the workspace panel, expand the **Operations** dropdown and choose **Access Keys**.
 1. You must enable access keys for you workspace. If the **Access Keys** slider is set to **Disabled**, then set the slider to **Enabled**.
-1. Choose the **Copy** icon for that connection string that you want to copy. You can chose either the primary or secondary connection string.
+1. Choose the **Copy** icon for that connection string that you want to copy. You can choose either the primary or secondary connection string.
 
 > [!WARNING]
 > It's a security risk to store your account access keys or connection strings in clear text. It's a best practice to store your account keys in an encrypted format, or migrate your applications to use Microsoft Entra authorization for access to your Azure Quantum workspace.
