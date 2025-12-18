@@ -46,9 +46,6 @@ location of your Azure Quantum workspace.
     1. Log in to your Azure account, <https://portal.azure.com>,
     1. Select your Azure Quantum workspace, and navigate to **Overview**.
     1. Copy the parameters in the fields.
-
-        :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace." lightbox="media/azure-portal-workspace-overview.png":::
-
 1. In the first cell of your notebook, paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
 
