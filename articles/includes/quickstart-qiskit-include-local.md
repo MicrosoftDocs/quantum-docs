@@ -72,7 +72,7 @@ available on your workspace:
 ```python
 print("This workspace's targets:")
 for backend in provider.backends():
-    print("- " + backend.name())
+    print("- " + backend.name)
 ```
 
 ```output
