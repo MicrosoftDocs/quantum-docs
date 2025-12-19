@@ -29,7 +29,7 @@ The following targets are available from this provider:
 | [H2-1 Emulator](#system-model-h2-emulator) | quantinuum.sim.h2-1e  | 56/32 qubits     | Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabilizer simulation |
 | [H2-2 Emulator](#system-model-h2-emulator) | quantinuum.sim.h2-2e  | 56/32 qubits     | Uses a realistic physical model and noise model of H2-2. 56 qubit simulation is only available as a stabilizer simulation |
 | [H2-1](#system-model-h2)                   | quantinuum.qpu.h2-1   | 56 qubits        | Quantinuum's H2-1 trapped ion device. |
-| [H2-2](#system-model-h2)                   | quantinuum.qpu.h2-1   | 56 qubits        | Quantinuum's H2-2 trapped ion device. |
+| [H2-2](#system-model-h2)                   | quantinuum.qpu.h2-2   | 56 qubits        | Quantinuum's H2-2 trapped ion device. |
 
 Quantinuum's targets correspond to a **:::no-loc text="QIR Adaptive RI":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-qir-adaptive-ri-profile-targets).
 
