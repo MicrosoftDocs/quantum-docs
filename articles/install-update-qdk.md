@@ -28,7 +28,7 @@ By default, VS Code automatically updates extensions. After an extension is upda
 ## Update the Azure Quantum Python packages
 
 > [!IMPORTANT]
-> If you're updating from a previous Qiskit environment, then see [Update the azure-quantum package with Qiskit support in a virtual Python environment (recommended)](#update-the-azure-quantum-package-with-qiskit-support-in-a-virtual-python-environment-recommended).
+> If you're updating from a previous Qiskit environment, then see [Update the azure-quantum package with Qiskit support in a virtual Python environment (recommended)](#update-the-qdk-azure-package-with-qiskit-support-in-a-virtual-python-environment-recommended).
 
 1. Update to the latest `qdk` Python library with the optional `azure`:
   
