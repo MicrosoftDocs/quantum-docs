@@ -20,12 +20,9 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
     python pip install "qdk[qiskit,jupyter]"
     ```
 
-    > [!IMPORTANT]
-    > Make sure that you have the latest version of Qiskit. For more information, see [Update the azure-quantum Python package](xref:microsoft.quantum.update-qdk#update-the-azure-quantum-python-packages).
-
 ## Run a basic circuit
 
-In VS Code, open a new Python file to define and run a basic circuit with the built-in sparse simulator from the `qsharp` package.  
+In VS Code, open a new Python file to create and run a basic circuit with the built-in sparse simulator from the `qsharp` module.  
 
 ```python
 # load the required imports 
@@ -74,7 +71,7 @@ From that same circuit, you can generate QIR that's used to run on quantum hardw
 1. To generate QIR, modify the output:
 
     ```python
-        print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
+    print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
     ```
 
 Your code should now look like this:
@@ -96,7 +93,7 @@ print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
 
 Your code's output should look like this:
 
-```html
+```output
      ┌────────────┐             ┌─┐   
 q_0: ┤ Rx(2.7195) ├─■───────────┤M├───
      └──┬─────┬───┘ │U1(5.5924) └╥┘┌─┐

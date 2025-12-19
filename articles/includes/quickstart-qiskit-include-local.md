@@ -15,13 +15,10 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The `qdk` Python library, the `azure-quantum` Python package with the `qiskit` extra, and the `ipykernel` package.
-
-    > [!NOTE]
-    > If the Jupyter Python kernel `ipykernel` isn't detected, then VS Code will prompt you to install it.
+- The `qdk` Python library with the `azure` and `qiskit` extras, and the `ipykernel` package.
 
     ```cmd
-    python -m pip install --upgrade azure-quantum[qiskit] qdk ipykernel 
+    python -m pip install --upgrade qdk[azure,qiskit] ipykernel 
     ```
 
 ## Create a new Jupyter Notebook
@@ -35,11 +32,10 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 In the first cell of your notebook, run the following code to load the required imports:
 
 ```python
-import azure.quantum
-from azure.quantum import Workspace 
+from qdk.azure import Workspace
+from qdk.azure.qiskit import AzureQuantumProvider
 from qiskit import QuantumCircuit
 from qiskit.visualization import plot_histogram
-from azure.quantum.qiskit import AzureQuantumProvider
 ```
 
 ## Connect to the Azure Quantum service
@@ -47,8 +43,8 @@ from azure.quantum.qiskit import AzureQuantumProvider
 To connect to the Azure Quantum service, your need the resource ID and the location of your Azure Quantum workspace.
 
 1. Log in to your Azure account, <https://portal.azure.com>.
-1. Select your Azure Quantum workspace, and navigate to **Overview**.
-1. Copy the parameters in the fields.
+1. Select your Azure Quantum workspace, and go to **Overview**.
+1. Copy the **Resource ID** and **Location** parameters.
 
 Add a new cell in your notebook and use your account information to create [`Workspace`](xref:azure.quantum.Workspace) and  [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) objects to connect to your Azure Quantum workspace.
 
@@ -63,8 +59,7 @@ provider = AzureQuantumProvider(workspace)
 
 ### List all backends
 
-You can now print all of the quantum computing backends that are
-available on your workspace:
+You can now print all of the quantum computing backends that are available on your workspace:
 
 ```python
 print("This workspace's targets:")
@@ -74,26 +69,24 @@ for backend in provider.backends():
 
 ```output
 This workspace's targets:
-- ionq.qpu
-- ionq.qpu.aria-1
 - ionq.simulator
-- microsoft.estimator
-- quantinuum.hqs-lt-s1
-- quantinuum.hqs-lt-s1-apival
-- quantinuum.hqs-lt-s2
-- quantinuum.hqs-lt-s2-apival
-- quantinuum.hqs-lt-s1-sim
-- quantinuum.hqs-lt-s2-sim
-- quantinuum.qpu.h2-1
+- ionq.qpu.aria-1
+- ionq.qpu.forte-1
+- ionq.qpu.forte-enterprise-1
 - quantinuum.sim.h2-1sc
+- quantinuum.sim.h2-2sc
 - quantinuum.sim.h2-1e
+- quantinuum.sim.h2-2e
+- quantinuum.qpu.h2-1
+- quantinuum.qpu.h2-2
 - rigetti.sim.qvm
 - rigetti.qpu.ankaa-3
+- rigetti.qpu.cepheus-1-36q
 ```
 
 ## Run a simple circuit
 
-First, create a simple Qiskit circuit to run.
+In a new cell, create a simple Qiskit circuit.
 
 ```python
 # Create a Quantum Circuit acting on the q register
@@ -108,7 +101,7 @@ circuit.measure([0,1,2], [0, 1, 2])
 circuit.draw()
 ```
 
-```html
+```output
      ┌───┐          ┌─┐      
 q_0: ┤ H ├──■───────┤M├──────
      └───┘┌─┴─┐     └╥┘┌─┐   
@@ -126,7 +119,7 @@ c: 3/════════════════╩══╩══╩═
 
 #### Run on the IonQ simulator
 
-Before running on real hardware, let's test the circuit in the simulator. Use [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) to create a `Backend` object to connect to the IonQ Simulator backend:
+Before you run your circuit on real hardware, test your circuit in the simulator. Use [`get_backend`](xref:azure.quantum.qiskit.AzureQuantumProvider) to create a `Backend` object to connect to the IonQ Simulator backend:
 
 ```python
 simulator_backend = provider.get_backend("ionq.simulator")
@@ -141,9 +134,7 @@ circuit = transpile(circuit, simulator_backend)
 
 The transpile function returns a new circuit object where gates are decomposed into gates that are supported on the specified backend.
 
-You can now run the program via the Azure Quantum service and get the
-result. The following cell submits a job that runs the circuit with
-100 shots:
+You can now run the program via the Azure Quantum service and get the result. The following cell submits a job that runs the circuit with 100 shots:
 
 ```python
 job = simulator_backend.run(circuit, shots=8)
@@ -166,10 +157,7 @@ print(result)
 Result(backend_name='ionq.simulator', backend_version='1', qobj_id='Qiskit Sample - 3-qubit GHZ circuit', job_id='00000000-0000-0000-0000-000000000000', success=True, results=[ExperimentResult(shots=8, success=True, meas_level=2, data=ExperimentResultData(counts={'000': 4, '111': 4}, memory=['000', '000', '000', '000', '111', '111', '111', '111'], probabilities={'000': 0.5, '111': 0.5}), header=QobjExperimentHeader(name='Qiskit Sample - 3-qubit GHZ circuit', num_qubits=3, metadata={}), status=JobStatus.DONE, name='Qiskit Sample - 3-qubit GHZ circuit')], date=None, status=None, header=None, error_data=None)
 ```
 
-Because the result is an object native to the Qiskit package, you can use
-Qiskit\'s `result.get_counts` and `plot_histogram` to visualize the
-results. To make sure that all possible bitstring labels are represented,
-add them to `counts`.
+Because the result is an object type specific to the Qiskit package, use `result.get_counts` and `plot_histogram` to visualize the results. To represent all possible bitstring labels, add the labels to `counts`.
 
 ```python
 counts = {format(n, "03b"): 0 for n in range(8)}
@@ -184,7 +172,7 @@ plot_histogram(counts)
 
 ![Qiskit circuit result on IonQ Simulator](../media/azure-quantum-qiskit-ionq-result-1.png)
 
-You can also use the `get_memory()` function to display individual shot data from the job
+You can also use the `get_memory` function to display individual shot data from the job:
 
 ```python
 result.get_memory(circuit)
@@ -195,11 +183,11 @@ result.get_memory(circuit)
 ```
 
 > [!NOTE]
-> On IonQ targets, if you submit a job with an odd number of shots, then the number of shots is rounded down to the nearest even number. For example, if you specify 9 shots, the the results display data for 8 shots.
+> On IonQ targets, if you submit a job with an odd number of shots, then the number of shots is rounded down to the nearest even number. For example, if you specify 9 shots, then the results display data for 8 shots.
 
 #### Estimate job cost
 
-Before you run a job on the QPU, you should estimate how much the jobs costs to run.
+Estimate how much a job costs to run before you run a job on the QPU.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the **Provider** tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
@@ -211,7 +199,7 @@ To connect to real hardware (a [Quantum Processor Unit](xref:microsoft.quantum.t
 qpu_backend = provider.get_backend("ionq.qpu.aria-1")
 ```
 
-Submit the circuit to run on Azure Quantum, get the results, and run `plot_histogram` to plot the results.
+Submit the circuit to run on Azure Quantum, get the results, and then run `plot_histogram` to plot the results.
 
 > [!NOTE]
 > The time required to run a circuit on the QPU depends on current queue times.
@@ -280,7 +268,7 @@ Result(backend_name='quantinuum.sim.h2-1sc', backend_version='1', qobj_id='Qiski
 > [!NOTE]
 > While the [Quantinuum syntax checker](xref:microsoft.quantum.providers.quantinuum#api-validator) ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true quantum measurement, you need to run your circuit on quantum hardware.
 
-You can also use the `get_memory()` function to display individual shot data from the job
+You can also use the `get_memory` function to display individual shot data from the job
 
 ```python
 result.get_memory(circuit)
@@ -290,7 +278,7 @@ result.get_memory(circuit)
 ['000', '000', '000', '000', '000', '000', '000', '000']
 ```
 
-#### Estimate job cost
+#### Estimate your job cost
 
 Before running a job on the QPU, you should estimate how much it will cost to run.
 
@@ -305,7 +293,7 @@ After running successfully on the API validator, you can run your job on one of 
 
 ```python
 # Get Quantinuum's QPU backend:
-qpu_backend = provider.get_backend("quantinuum.qpu.h2-1")
+qpu_backend = provider.get_backend("quantinuum.sim.h2-1")
 ```
 
 ```python
@@ -343,9 +331,7 @@ Use the `provider.get_backend` method to create a `Backend` object to connect to
 qvm_backend = provider.get_backend("rigetti.sim.qvm")
 ```
 
-You can now run the program via the Azure Quantum service and get the
-result. The following cell submits a job that runs the circuit with
-eight shots:
+You can now run the program via the Azure Quantum service and get the result. The following cell submits a job that runs the circuit with eight shots:
 
 ```python
 # Submit the circuit to run on Azure Quantum
@@ -370,7 +356,7 @@ Result(backend_name='rigetti.sim.qvm', backend_version='1', qobj_id='Qiskit Samp
 
 ![Qiskit circuit result on Rigetti QVM simulator](../media/azure-quantum-qiskit-rigetti-result-1.png)
 
-You can also use the `get_memory()` function to display individual shot data from the job
+You can also use the `get_memory` function to display individual shot data from the job
 
 ```python
 result.get_memory(circuit)
@@ -383,7 +369,7 @@ result.get_memory(circuit)
 ***
 
 > [!IMPORTANT]
-> Submitting multiple circuits on a single job is currently not supported. As a workaround you can call the `backend.run` method to submit each circuit asynchronously, then fetch the results of each job. For example:
+> You can't submit multiple circuits on a single job. As a workaround, you can call the `backend.run` method to submit each circuit asynchronously, then fetch the results of each job. For example:
 >
 > ```python
 > jobs = []

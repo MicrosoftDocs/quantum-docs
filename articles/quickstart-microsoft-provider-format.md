@@ -14,7 +14,7 @@ uid: microsoft.quantum.quickstarts.computing.provider
 
 # How to submit specific formatted circuits to Azure Quantum
 
-Learn how to use the `qdk.azure` Python package to submit circuits in specific formats to the Azure Quantum service. This article shows you how to submit circuits in the following formats:
+Learn how to use the `qdk.azure` Python module to submit circuits in specific formats to the Azure Quantum service. This article shows you how to submit circuits in the following formats:
 
 - [Submit QIR circuits](#submit-qir-formatted-circuits)
 - [Submit provider-specific circuits](#submit-a-circuit-with-a-provider-specific-format-to-azure-quantum)
@@ -124,7 +124,7 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
 
 1. Create a `submit_qir_job` helper function to submit the QIR circuit to a target. Note that the input and output data formats are specified as `qir.v1` and `microsoft.quantum-results.v1`, respectively.
 
-    ```python 
+    ```python
     # Submit the job with proper input and output data formats
     def submit_qir_job(target, input, name, count=100):
         job = target.submit(
@@ -289,7 +289,7 @@ This is the recommended option because it will improve the performance of the QP
 
 ##### Arbitrary layouts
 
-If pre-calibrated layouts do not satisfy the requirements of your experiment, you can create a custom layout.
+If pre-calibrated layouts don't satisfy the requirements of your experiment, then you can create a custom layout.
 
 For any given arbitrary register, a neutral-atom QPU will place traps according to the layout, which must then undergo calibration. Since each calibration requires time, it is generally advisable to reuse an existing calibrated layout whenever possible
 
@@ -409,8 +409,7 @@ def prepare_input_data(seq):
     > [!NOTE]
     > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-1. Submit the program to PASQAL. Before submitting your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-tn` as a target.
-
+1. Submit the program to PASQAL. Before you submit your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-tn` as a target.
 
     ```python
     target = workspace.get_targets(name="pasqal.sim.emu-tn") # Change to "pasqal.qpu.fresnel" to use Fresnel QPU
@@ -493,7 +492,7 @@ def prepare_input_data(seq):
 
     ![Quantinuum job output](media/quantinuum-results.png)
 
-    Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
+    Looking at the histogram, you might notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 1. Before running a job on the QPU, you should estimate how much it will cost to run.
 
@@ -627,7 +626,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
 ***
 
 > [!IMPORTANT]
-> Submitting multiple circuits on a single job is currently not supported. As a workaround you can call the `backend.run` method to submit each circuit asynchronously, then fetch the results of each job. For example:
+> You can't submit multiple circuits on a single job. As a workaround you can call the `backend.run` method to submit each circuit asynchronously, then fetch the results of each job. For example:
 >
 > ```python
 > jobs = []

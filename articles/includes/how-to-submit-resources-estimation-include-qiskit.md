@@ -13,16 +13,10 @@ no-loc: [target, targets]
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [Visual Studio Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest `qdk` Python library with the optional `jupyter` extra, and the `qiskit` library.  
+- The latest `qdk` Python library with the optional `jupyter` and `qiskit` extras.  
 
     ```bash
-    python -m pip install --upgrade qdk[jupyter] qiskit
-    ```
-
-    or
-
-    ```bash
-    pip install --upgrade qdk[jupyter] qiskit
+    pip install --upgrade qdk[jupyter,qiskit]
     ```
 
 > [!TIP]
@@ -52,7 +46,7 @@ def create_algorithm(bitwidth):
 ```
   
 > [!NOTE]
-> If you select a Python kernel and the `qiskit` module isn't recognized, try selecting a different Python environment in the kernel picker.
+> If you select a Python kernel that doesn't recognize the `qiskit` module, then choose a different Python environment in the kernel picker.
 
 ### Estimate the quantum algorithm
   
