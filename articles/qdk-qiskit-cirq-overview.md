@@ -21,8 +21,8 @@ Qiskit and Cirq are Python libraries that offer tools to create and visualize qu
 
 ## Get started with Qiskit and Cirq in the QDK
 
-Install the Qiskit and Cirq libraries, and run Qiskit and Cirq circuits on Azure Quantum, through the `azure-quantum` Python SDK. You can also run Qiskit circuits on the QDK's local simulator.
+You can install the Qiskit and Cirq libraries, and run Qiskit and Cirq circuits on Azure Quantum, with the `qdk.azure` Python module in the QDK. You can also run Qiskit circuits on the QDK's local simulator.
 
-To get started with Qiskit, see [How to submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
+To get started with Qiskit in the QDK, see [How to submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
 
-To get started with Cirq, see [How to submit a circuit with Cirq to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.cirq).
+To get started with Cirq in the QDK, see [How to submit a circuit with Cirq to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.cirq).
