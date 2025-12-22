@@ -57,7 +57,7 @@ To add Python and Jupyter Notebook support:
    ```
 
    > [!IMPORTANT]
-   > If you're updating from a previous Qiskit environment, then see [Update the azure-quantum package with Qiskit support](xref:microsoft.quantum.update-qdk#update-the-qdk-azure-module-with-qiskit-support-in-a-virtual-python-environment-recommended).
+   > If you're updating from a previous Qiskit environment, then see [Update the `qdk.azure` module with Qiskit support](xref:microsoft.quantum.update-qdk##update-the-qdkazure-module-with-qiskit-support-in-a-virtual-python-environment-recommended).
 
 1. To work in Jupyter Notebook and display visualizations, install the following Python packages:
 
