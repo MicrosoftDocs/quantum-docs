@@ -50,11 +50,10 @@ For more information, see [Get started with the QDK](xref:microsoft.quantum.inst
 
 To start using Google Colab notebooks to run your quantum programs on Azure Quantum, follow these steps:
 
-1. **Add** a new cell in the notebook, and **Copy** the following code to install the required Python packages:
+1. **Add** a new cell in the notebook, and **Copy** the following command to install the required Python packages:
 
   ```python
-  !pip install -U azure-quantum
-  !pip install -U azure-quantum[qiskit]
+  !pip install -U qdk[azure,qiskit]
   ```
 
 1. Click **Runtime** and select **Restart runtime**

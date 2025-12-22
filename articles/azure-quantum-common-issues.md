@@ -20,7 +20,7 @@ When you work with the Azure Quantum service, you might experience connection or
 
 ## Connecting to your workspace
 
-### Issue: Unable to authenticate to Azure Quantum via pytket-azure CI
+### Issue: Unable to authenticate to Azure Quantum via `pytket-azure` CI
 
 When trying to authenticate to Azure Quantum via the `pytket-azure` package in a CI environment using the environment variables "AZURE_TENANT_ID", "AZURE_CLIENT_ID", and "AZURE_CLIENT_SECRET", you might encounter the error:
 
@@ -146,10 +146,10 @@ Error code: QIRPreProcessingFailed
 Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
 ```
 
-This error can be caused by a dependency conflict with a previous version of `pyqir` or `qiskit-qir`. Uninstall all versions of `pyqir`, `pyqir-*`, and `qiskit-qir` on your local machine, and then install or update the `azure-quantum` Python package using the [qiskit] parameter:
+This error can be caused by a dependency conflict with a previous version of `pyqir` or `qiskit-qir`. Uninstall all versions of `pyqir`, `pyqir-*`, and `qiskit-qir` on your local machine, and then install or update the `qdk` Python library with the `azure` and `qiskit` extras:
 
 ```Shell
-pip install --upgrade azure-quantum[qiskit]
+pip install --upgrade qdk[azure,qiskit]
 ```
 
 ### Issue: Retrieving basic information about failed jobs
@@ -253,7 +253,7 @@ This error results from generating QIR for Qiskit circuits via the `qiskit_qir` 
 
 To avoid this error, take one of the following actions:
 
-- Use the `azure_quantum` Python package to submit Qiskit circuits to Azure Quantum (recommended).
+- Use the `qdk.azure` Python module to submit Qiskit circuits to Azure Quantum (recommended).
 - When using the `qiskit_qir` Python package, be sure to set the `record_output` parameter to `False` before submitting your circuit.
 
 ## Creating an Azure Quantum workspace
