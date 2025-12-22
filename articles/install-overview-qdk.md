@@ -50,28 +50,16 @@ To add Python and Jupyter Notebook support:
    python -m pip install qdk[azure]
    ```
 
-1. For Qiskit or Cirq support, install `azure-quantum` with the `qiskit` or `cirq` extras:
-
-   > [!IMPORTANT]
-   > If you're updating from a previous Qiskit environment, see [Update the azure-quantum package with Qiskit support](xref:microsoft.quantum.update-qdk#update-azure-quantum-with-qiskit-support).
+1. For Qiskit version 1 and version 2 support, install the `qiskit` extra:
 
    ```cmd
    python -m pip install azure-quantum[qiskit]
    ```
 
-   or
+   > [!IMPORTANT]
+   > If you're updating from a previous Qiskit environment, then see [Update the `qdk.azure` module with Qiskit support](xref:microsoft.quantum.update-qdk##update-the-qdkazure-module-with-qiskit-support-in-a-virtual-python-environment-recommended).
 
-   ```cmd
-   python -m pip install azure-quantum[cirq]
-   ```
-
-   or
-
-   ```cmd
-   python -m pip install azure-quantum[qiskit,cirq]
-    ```
-
-1. Install optional Python packages to display results and work in Jupyter Notebook:
+1. To work in Jupyter Notebook and display visualizations, install the following Python packages:
 
     ```cmd
     python -m pip install qdk[jupyter] ipykernel ipympl jupyterlab
@@ -81,16 +69,14 @@ To test your setup, see [Submit Q# jobs with Python](xref:microsoft.quantum.subm
 
 ## Add support for the Azure CLI
 
-The Azure CLI is an optional method for submitting quantum jobs using a terminal window in VS Code.
+You have the option to use the Azure CLI to submit quantum jobs from a terminal window in VS Code.
 
 1. Install the [Azure CLI](/cli/azure/install-azure-cli).
-1. Open a Windows command prompt.
+1. Open a Windows command prompt or a terminal in VS Code.
 1. In the command prompt, run the following command to update to the latest Azure CLI `quantum` extension:
 
     ```cmd
-    az extension add \
-        --upgrade \
-        -n quantum
+    az extension add --upgrade -n quantum
     ```
 
 To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-python).
