@@ -27,7 +27,7 @@ For more information about the origins of Q#, see the blog post [Why do we need 
 
 ## Structure of a Q# program
 
-Before you start writing Q# programs, it's important to understand their structure and components. Consider the following Q# program, named **Superposition**, that creates a superposition state:
+Before you start writing Q# programs, it's important to understand their structure and components. Consider the following Q# program, named `Superposition`, that creates a superposition state:
 
 ```qsharp
 namespace Superposition {
@@ -64,7 +64,7 @@ namespace Superposition {
 
 Namespaces can help you organize related functionality. Namespaces are optional in Q# programs, meaning that you can write a program without defining a namespace.
 
-For example, the **Superposition** program of the example could be also written without a namespace as:
+For example, the `Superposition` program from the example can also be written without a namespace as:
 
 ```qsharp
 @EntryPoint()
@@ -90,7 +90,7 @@ operation MeasureOneQubit() : Result {
 
 Every Q# program must have an entry point, which is the starting point of the program. By default, the Q# compiler starts executing a program from the `Main()` operation, if available, which can be located anywhere in the program. Optionally, you can use the `@EntryPoint()` attribute to specify any operation in the program as the point of execution.
 
-For example, in the **Superposition** program, the `MeasureOneQubit()` operation is the entry point of the program because it has the `@EntryPoint()` attribute before the operation definition:
+For example, in the `Superposition` program, the `MeasureOneQubit()` operation is the entry point of the program because it has the `@EntryPoint()` attribute before the operation definition:
 
 ```qsharp
 @EntryPoint()
@@ -125,7 +125,7 @@ Types are essential in any programming language because they define the data tha
 
 Q# also provides types that are specific to quantum computing. For example, the `Result` type represents the result of a qubit measurement and can have two values: `Zero` or `One`.
 
-In the **Superposition** program, the `MeasureOneQubit()` operation returns a `Result` type, which corresponds to the return type of the `M` operation. The measurement result is stored in a new variable that's defined using the `let` statement:
+In the `Superposition` program, the `MeasureOneQubit()` operation returns a `Result` type, which corresponds to the return type of the `M` operation. The measurement result is stored in a new variable that's defined using the `let` statement:
 
 ```qsharp
 // The operation definition returns a Result type.
@@ -145,7 +145,7 @@ Q# also allows you to define your own custom types. For more information, see [T
 
 In Q#, you allocate qubits using the `use` keyword and the `Qubit` type. Qubits are always allocated in the $\ket{0}$ state.
 
-For example, the **Superposition** program defines a single qubit and stores it in the variable `q`:
+For example, the `Superposition` program defines a single qubit and stores it in the variable `q`:
 
 ```qsharp
 // Allocate a qubit.
@@ -164,7 +164,7 @@ X(qubits[1]); // Apply X to the second qubit.
 
 After allocating a qubit, you can pass it to operations and functions. Operations are the basic building blocks of a Q# program. A Q# operation is a quantum subroutine, or a callable routine that contains quantum operations that change the state of the qubit register.
 
-To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the **Superposition** program, the `MeasureOneQubit()` operation takes no parameters and returns a `Result` type:
+To define a Q# operation, you specify a name for the operation, its inputs, and its output. In the `Superposition` program, the `MeasureOneQubit()` operation takes no parameters and returns a `Result` type:
 
 ```qsharp
 operation MeasureOneQubit() : Result {
@@ -180,7 +180,7 @@ operation SayHelloQ() : Unit {
 }
 ```
 
-The Q# standard library also provides operations you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z-basis, `H` puts the qubit into an even superposition, where it has a 50% chance of being measured as `Zero` or `One`.
+The Q# standard library also provides operations that you can use in quantum programs, such as the Hadamard operation, `H`, in the `Superposition` program. Given a qubit in the Z-basis, `H` puts the qubit into an even superposition, where it has a 50% chance of being measured as `Zero` or `One`.
 
 ### Measuring qubits
 
@@ -190,7 +190,7 @@ In Q#, the `Measure` operation measures one or more qubits in the specified Paul
 
 To implement a measurement in the computational basis $\lbrace\ket{0},\ket{1}\rbrace$, you can also use the `M` operation, which measures a qubit in the Pauli Z-basis. This makes `M` equivalent to `Measure([PauliZ], [qubit])`.
 
-For example, the **Superposition** program uses the `M` operation:
+For example, the `Superposition` program uses the `M` operation:
 
 ```qsharp
 // Measure the qubit in the Z-basis.
@@ -208,38 +208,32 @@ Reset(q);
 
 ### Standard library namespaces
 
-The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Microsoft.Quantum.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.
+The Q# standard library has built-in namespaces that contain functions and operations you can use in quantum programs. For example, the `Std.Intrinsic` namespace contains commonly used operations and functions, such as `M` to measure results and `Message` to display user messages anywhere in the program.
 
 To call a function or operation, you can specify the full namespace or use an `import` statement, which makes all the functions and operations for that namespace available and makes your code more readable. The following examples call the same operation:
 
 ```qsharp
-Microsoft.Quantum.Intrinsic.Message("Hello quantum world!");
+Std.Intrinsic.Message("Hello quantum world!");
 ```
 
 ```qsharp
-// imports all functions and operations from the Microsoft.Quantum.Intrinsic namespace.
-import Microsoft.Quantum.Intrinsic.*;
-Message("Hello quantum world!");
-
-// imports just the `Message` function from the Microsoft.Quantum.Intrinsic namespace.
-import Microsoft.Quantum.Intrinsic.Message;
-Message("Hello quantum world!");
-```
-
-```qsharp
-// namespaces in the standard library may be imported using `Std` instead of `Microsoft.Quantum`. 
+// imports all functions and operations from the Std.Intrinsic namespace.
 import Std.Intrinsic.*;
+Message("Hello quantum world!");
+
+// imports just the `Message` function from the Std.Intrinsic namespace.
+import Std.Intrinsic.Message;
 Message("Hello quantum world!");
 ```
 
 > [!NOTE]
-> The **Superposition** program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces: `Microsoft.Quantum.Core` and `Microsoft.Quantum.Intrinsic`, which contain commonly used functions and operations.
+> The `Superposition` program doesn't have any `import` statements or calls with full namespaces. That's because the Q# development environment automatically loads two namespaces, `Std.Core` and `Std.Intrinsic`, which contain commonly used functions and operations.
 
-You can take advantage of the `Microsoft.Quantum.Measurement` namespace by using the `MResetZ` operation to optimize the **Superposition** program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
+You can take advantage of the `Std.Measurement` namespace by using the `MResetZ` operation to optimize the `Superposition` program. `MResetZ` combines the measurement and reset operations into one step, as in the following example:
 
 ```qsharp
 // Import the namespace for the MResetZ operation.
-import Microsoft.Quantum.Measurement.*;
+import Std.Measurement.*;
 
 @EntryPoint()
 operation MeasureOneQubit() : Result {
@@ -283,7 +277,7 @@ By default, Q# programs in Jupyter Notebooks use the `ipykernel` Python package.
 
 When using `%%qsharp`, keep the following in mind:
 
-- You must first run `import qsharp` to enable `%%qsharp`.
+- You must first run `from qdk import qsharp` to enable `%%qsharp`.
 - `%%qsharp` scopes to the notebook cell in which it appears and changes the cell type from Python to Q#.
 - You can't put a Python statement before or after `%%qsharp`.
 - Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.

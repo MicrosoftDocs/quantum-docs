@@ -12,7 +12,7 @@ uid: microsoft.quantum.hybrid.integrated
 #customer intent: As a quantum programmer, I want to understand integrated hybrid computing.
 ---
 
-# Run hybrid quantum computing jobs with adaptive target profile
+# Run hybrid quantum computing jobs with an adaptive target profile
 
 Hybrid computing combines classical and quantum computing processes to solve complex problems.
 
@@ -29,10 +29,10 @@ This article explains how to submit hybrid jobs to Azure Quantum using the [Adap
     - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 - If you wan to submit Python + Q# programs, you need the following prerequisites:
     - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-    - The Azure Quantum `azure-quantum` and `qsharp` packages.
+    - The `qdk` Python library with the optional `azure` extra.
     
         ```bash
-        pip install --upgrade azure-quantum qsharp
+        pip install --upgrade qdk[azure]
         ```
 
 ## Supported targets
@@ -76,20 +76,20 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
 
 ### [Q# + Python](#tab/tabid-python)
 
-1. When using the *qsharp* Python package, use the `qsharp.init` function and set the `target_profile` parameter to `Adaptive_RI`.
+1. With the `qdk` Python package, use the `init` and `TargetProfile` objects to set the `target_profile` parameter to `Adaptive_RI`.
 
     ```python
-    import qsharp
-    
-    qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI)
+    from qdk import init, TargetProfile
+
+    init(target_profile=TargetProfile.Adaptive_RI)
     ```
 
 1. Connect to your Azure Quantum workspace.
 
     ```python
-    import azure.quantum
+    from qdk.azure import Workspace
     
-    workspace = azure.quantum.Workspace(
+    workspace = Workspace(
         resource_id = "", # add your resource ID
         location = "", # add your location, for example "westus"
     )
@@ -112,14 +112,14 @@ You can combine multiple hybrid quantum jobs within a [session](xref:microsoft.q
 
 The following table lists the supported features for hybrid quantum computing with Quantinuum in Azure Quantum.
 
-| Supported feature           | Notes                                                                      |
-|-----------------------------|----------------------------------------------------------------------------|
-| Dynamics values             | Bools and integers whose value depend on a measurement result              |
-| Loops                       | Classically-bounded loops only                                             |
-| Arbitrary control flow      | Use of if/else branching                                                   |
-| Mid-circuit measurement     | Utilizes classical register resources                                      |
-| Qubit reuse                 | Supported                                                                  |
-| Real-time classical compute | 64-bit signed integer arithmetic <br>Utilizes classical register resources |
+| Supported feature           | Notes                                                                   |
+|-----------------------------|-------------------------------------------------------------------------|
+| Dynamics values             | Bools and integers whose value depend on a measurement result           |
+| Loops                       | Classically-bounded loops only                                          |
+| Arbitrary control flow      | Use of if/else branching                                                |
+| Mid-circuit measurement     | Utilizes classical register resources                                   |
+| Qubit reuse                 | Supported                                                               |
+| Real-time classical compute | 64-bit signed integer arithmetic, utilizes classical register resources |
 
 The QDK provides target-specific feedback when Q# language features aren't supported for the selected target. If your Q# program contains unsupported features when you run hybrid quantum jobs, then you receive an error message at design-time. For more information, see the [QIR wiki page](https://github.com/microsoft/qdk/wiki/QIR).
 
@@ -129,9 +129,9 @@ The QDK provides target-specific feedback when Q# language features aren't suppo
 To see the supported features in action, copy the following code into a Q# file and add the subsequent code snippets.
 
 ```qsharp
-import Microsoft.Quantum.Measurement.*;
-import Microsoft.Quantum.Math.*;
-import Microsoft.Quantum.Convert.*;
+import Std.Measurement.*;
+import Std.Math.*;
+import Std.Convert.*;
 
 operation Main() : Result {
     use (q0, q1) = (Qubit(), Qubit());
@@ -150,18 +150,18 @@ operation Main() : Result {
 Quantinuum supports dynamic bools and integers, which means bools and integers that depend on measurement results. Note that `r0` is a `Result` type that can be used to generate dynamic bool and integer values.
 
 ```qsharp
-        let dynamicBool = r0 != Zero; 
-        let dynamicBool = ResultAsBool(r0); 
-        let dynamicInt = dynamicBool ? 0 | 1; 
+    let dynamicBool = r0 != Zero; 
+    let dynamicBool = ResultAsBool(r0); 
+    let dynamicInt = dynamicBool ? 0 | 1; 
 ```
 
 Quantinuum supports dynamic bools and integers, however, it doesn't support dynamic values for other data types, such as double. Copy the following code to see feedback about the limitations of dynamic values.
 
 ```qsharp
-        let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
-        let dynamicInt = r0 == One ? 1 | 0;
-        let dynamicDouble = IntAsDouble(dynamicInt); // cannot use a dynamic double value
-        let dynamicRoot = Sqrt(dynamicDouble); // cannot use a dynamic double value
+    let dynamicDouble = r0 == One ? 1. | 0.; // cannot use a dynamic double value
+    let dynamicInt = r0 == One ? 1 | 0;
+    let dynamicDouble = IntAsDouble(dynamicInt); // cannot use a dynamic double value
+    let dynamicRoot = Sqrt(dynamicDouble); // cannot use a dynamic double value
 ```
 
 Even though dynamic values are not supported for some data types, those data types can still be used with static values.
@@ -174,68 +174,68 @@ Even though dynamic values are not supported for some data types, those data typ
 Even dynamic values of supported typed can't be used in certain situations. For example, Quantinuum doesn't support dynamic arrays, that is, arrays whose size depends on a measurement result. Quantinuum doesn't support dynamically-bounded loops either. Copy the following code to see the limitations of dynamic values.
 
 ```qsharp
-        let dynamicInt = r0 == Zero ? 2 | 4;
-        let dynamicallySizedArray = [0, size = dynamicInt]; // cannot use a dynamically-sized array
-        let staticallySizedArray = [0, size = 10];
-        // Loops with a dynamic condition are not supported by Quantinuum.
-        for _ in 0..dynamicInt {
-            Rx(PI(), q1);
-        }
+    let dynamicInt = r0 == Zero ? 2 | 4;
+    let dynamicallySizedArray = [0, size = dynamicInt]; // cannot use a dynamically-sized array
+    let staticallySizedArray = [0, size = 10];
+    // Loops with a dynamic condition are not supported by Quantinuum.
+    for _ in 0..dynamicInt {
+         Rx(PI(), q1);
+    }
         
-        // Loops with a static condition are supported.
-        let staticInt = 3;
-        for _ in 0..staticInt {  
-            Rx(PI(), q1);  
-        }
+    // Loops with a static condition are supported.
+    let staticInt = 3;
+    for _ in 0..staticInt {  
+         Rx(PI(), q1);  
+    }
 ```
 
 Quantinuum supports control flow, including `if/else` branching, using both static and dynamic conditions. Branching on dynamic conditions is also known as branching based on measurement results.
 
 ```qsharp
-        let dynamicInt = r0 == Zero ? 0 | 1; 
-        if dynamicInt > 0 {
-            X(q1);
-        }
-        let staticInt = 1;
-        if staticInt > 5 {
-            Y(q1);
-        } else {
-            Z(q1);
-        }
+    let dynamicInt = r0 == Zero ? 0 | 1; 
+    if dynamicInt > 0 {
+        X(q1);
+     }
+    let staticInt = 1;
+    if staticInt > 5 {
+         Y(q1);
+    } else {
+         Z(q1);
+    }
 ```
 
 Quantinuum supports loops with classical conditions and including `if` expressions.
 
 ```qsharp
-        for idx in 0..3 {
-            if idx % 2 == 0 {
-                Rx(ArcSin(1.), q0);
-                Rz(IntAsDouble(idx) * PI(), q1)
-            } else {
-                Ry(ArcCos(-1.), q1);
-                Rz(IntAsDouble(idx) * PI(), q1)
-            }
+    for idx in 0..3 {
+        if idx % 2 == 0 {
+            Rx(ArcSin(1.), q0);
+            Rz(IntAsDouble(idx) * PI(), q1)
+        } else {
+            Ry(ArcCos(-1.), q1);
+             Rz(IntAsDouble(idx) * PI(), q1)
         }
+     }
 ```
 
 Quantinuum supports mid-circuit measurement, that is, branching based on measurement results.
 
 ```qsharp
-        if r0 == One {
-            X(q1);
-        }
-        let r1 = MResetZ(q1);
-        if r0 != r1 {
-            let angle = PI() + PI() + PI()* Sin(PI()/2.0);
-            Rxx(angle, q0, q1);
-        } else {
-            Rxx(PI() + PI() + 2.0 * PI() * Sin(PI()/2.0), q1, q0);
-        }
+    if r0 == One {
+        X(q1);
+    }
+    let r1 = MResetZ(q1);
+    if r0 != r1 {
+        let angle = PI() + PI() + PI()* Sin(PI()/2.0);
+        Rxx(angle, q0, q1);
+    } else {
+        Rxx(PI() + PI() + 2.0 * PI() * Sin(PI()/2.0), q1, q0);
+    }
 ```
 
-## Estimating the cost of a hybrid quantum computing job
+## Estimate the cost of a hybrid quantum computing job
 
-You can estimate the cost of running a hybrid quantum computing job on Quantinuum hardware by running it on an emulator first.
+You can estimate the cost to run a hybrid quantum computing job on Quantinuum hardware by running the job on an emulator first.
 
 After a successful run on the emulator:
 
@@ -258,7 +258,7 @@ This sample demonstrates how to create a [three-qubit repetition code](xref:micr
 
 It leverages integrated hybrid computing features to count the number of times error correction was performed while the state of a logical qubit register is coherent.
 
-You can find the code sample [here](https://github.com/microsoft/qdk/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs).
+You can find the code in [this sample](https://github.com/microsoft/qdk/blob/main/samples/algorithms/ThreeQubitRepetitionCode.qs).
 
 ### Iterative phase estimation
 
@@ -266,7 +266,7 @@ This sample program demonstrates an iterative phase estimation within Q#. It use
 
 The circuit begins by encoding the pair of vectors on the target qubit and the ancilla qubit. It then applies an Oracle operator to the entire register, controlled off the control qubit, which is set up in the $\ket +$ state. The controlled Oracle operator generates a phase on the $\ket 1$ state of the control qubit. This can then be read by applying an H gate to the control qubit to make the phase observable when measuring.
 
-You can find the code sample [here](https://github.com/microsoft/qdk/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs).
+You can find the code in [this sample](https://github.com/microsoft/qdk/blob/main/samples/algorithms/DotProductViaPhaseEstimation.qs).
 
 > [!NOTE]
 > This sample code was written by members of [KPMG](https://kpmg.com/xx/en/what-we-do/alliances/microsoft/kpmg-and-microsoft-azure-quantum.html) Quantum team in Australia and falls under an MIT License. It demonstrates expanded capabilities of :::no-loc text="Adaptive RI"::: targets and makes use of bounded loops, classical function calls at run time, nested conditional if statements, mid circuit measurements, and qubit reuse.

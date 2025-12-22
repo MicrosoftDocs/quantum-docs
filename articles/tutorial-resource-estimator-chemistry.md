@@ -9,7 +9,7 @@ ms.topic: tutorial
 no-loc: [target, targets]
 title: 'Tutorial: Estimate Resources of a Quantum Chemistry Problem'
 uid: microsoft.quantum.tutorial.resource-estimator.chemistry
-#customer intent: As a quantum programmer, 
+#customer intent: As a quantum programmer, I want to estimate the resources required to run a chemistry calculation on a quantum computer.
 ---
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
@@ -28,10 +28,10 @@ In this tutorial, you will:
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
-- The latest Azure Quantum `qsharp` package, and `numpy` and `scipy` packages.  
+- The latest `qdk` Python library, and the `numpy` and `scipy` packages.  
 
     ```bash
-    python -m pip install --upgrade qsharp numpy scipy 
+    python -m pip install --upgrade qdk numpy scipy
     ```
 
 > [!TIP]
@@ -106,7 +106,7 @@ options:
 
 ### Change target parameters
 
-1. Open the **chemistry.py** file.
+1. Open the `chemistry.py` file.
 1. The target parameters of the resource estimation can be found in the call to `qsharp.estimate` of the `chemistry.py` file. The following code snippet shows the parameters used in this tutorial.
 
     ```python

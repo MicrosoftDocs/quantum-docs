@@ -14,8 +14,6 @@ no-loc: ["Q#", '$$v', Quantum Development Kit, target, targets]
 
 # How to debug and test your quantum code
 
-As with classical programming, it is essential to be able to check that quantum programs act as intended, and to be able to diagnose incorrect behavior. This article discusses the tools offered by the Azure Quantum Development Kit for testing and debugging quantum programs.
-
 Testing and debugging are just as important in quantum programming as they are in classical programming. This article discusses how to debug and test your quantum programs with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
 
 ## Debug your quantum code
@@ -53,7 +51,7 @@ The following example demonstrates how to use the debugger with a Q# program. Fo
 When you're finished exploring the debugger, press ***Ctrl + F5** to exit the debugger.
 
 > [!NOTE]
-> The VS Code debugger only works with Q# (`.qs`) and OpenQASM (`.qasm`) files. You can't use the VS Code debugger on Q# cells in Jupyter Notebook.
+> The VS Code debugger works only with Q# (`.qs`) and OpenQASM (`.qasm`) files. You can't use the VS Code debugger on Q# cells in Jupyter Notebook.
 
 ### How to debug with QDK dump functions
 
@@ -106,7 +104,7 @@ The output from `DumpMachine` shows how the state of the qubit systems changes a
 
 ### The Python `dump_machine` function
 
-The [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) function is a function from the `qsharp` Python library. This function returns the current allocated qubit count and a dictionary of that contains the sparse state amplitudes of the qubit system.
+The [`dump_machine`](/python/qsharp/qsharp?view=qsharp-py#qsharp-dump-machine&preserve-view=true) function is a function from the `qsharp` Python package. This function returns the current allocated qubit count and a dictionary that contains the sparse state amplitudes of the qubit system.
 
 The following example runs the same program as the previous `DumpMachine` example, but in a Jupyter notebook instead of a `.qs` file.
 
@@ -115,7 +113,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
 1. In the first cell, copy and run the following code:
 
    ```python
-   import qsharp 
+   from qdk import qsharp 
    ```
 
 1. Create a new code cell, then copy and run the following Q# code:
@@ -199,7 +197,7 @@ The following example uses `dump_operation` to display information for a 1-qubit
 1. In the first cell, copy and run the following code:
 
    ```python
-   import qsharp
+   from qdk import qsharp
    from qsharp.utils import dump_operation
    ```
 

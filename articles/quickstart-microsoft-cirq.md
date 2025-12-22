@@ -24,19 +24,20 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The Azure Quantum `azure-quantum` package with the \[cirq\] tag, and the `qsharp` and the `ipykernel` packages.
+- The Azure Quantum `azure-quantum` package with the `cirq` extra, and the `qdk` and the `ipykernel` packages.
 
     ```bash
-    python -m pip install --upgrade azure-quantum[cirq] qsharp ipykernel 
+    python -m pip install --upgrade azure-quantum[cirq] qdk ipykernel 
     ```
 
     > [!NOTE]
-    > If the Jupyter Python kernel `ipykernel` is not detected, VS Code will prompt you to install it.  
+    > If the Jupyter Python kernel `ipykernel` isn't detected, then VS Code will prompt you to install it.  
 
 ## Create a new Jupyter Notebook
 
-1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. In the top-right, VS Code will detect and display the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, you may need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter and select **Create: New Jupyter Notebook**.
+1. VS Code detects and displays the version of Python and the virtual Python environment that was selected for the notebook. If you have multiple Python environments, then you might need to select a kernel using the kernel picker in the top right. If no environment was detected, see [Jupyter Notebooks in VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_setting-up-your-environment) for setup information.
 
 ## Load the required imports
 
@@ -55,8 +56,6 @@ location of your Azure Quantum workspace.
 1. Log in to your Azure account, <https://portal.azure.com>,
 1. Select your Azure Quantum workspace, and navigate to **Overview**.
 1. Copy the parameters in the fields.
-
-    :::image type="content" source="media/azure-portal-workspace-overview.png" alt-text="Screenshot of Visual Studio Code showing how to expand the overview pane of your Quantum Workspace.":::
 
 Add a new cell and use your account information to create `Workspace` and  `AzureQuantumService` objects to connect to your Azure Quantum workspace.
 

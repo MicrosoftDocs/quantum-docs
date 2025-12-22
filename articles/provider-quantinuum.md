@@ -22,14 +22,14 @@ Quantinuum provides access to trapped-ion systems with high-fidelity, fully conn
 
 The following targets are available from this provider:
 
-|Target name|Target ID|Number of qubits|Description|
-|---|---|---|---|
-|[H2-1 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-1sc |56 qubits|Use this to validate quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H2-2 Syntax Checker](#syntax-checkers) |quantinuum.sim.h2-2sc |56 qubits|Use this to validate quantum programs against the H2-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost.|
-|[H2-1 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-1e | 56/32 qubits|Uses a realistic physical model and noise model of H2-1. >32 qubit simulation is only available as a stabilizer simulation|
-|[H2-2 Emulator](#system-model-h2-emulator)|quantinuum.sim.h2-2e | 56/32 qubits|Uses a realistic physical model and noise model of H2-2. >32 qubit simulation is only available as a stabilizer simulation|
-|[H2-1](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-1 trapped ion device.|
-|[H2-2](#system-model-h2)|quantinuum.qpu.h2-1| 56 qubits|Quantinuum's H2-2 trapped ion device.|
+| Target name                                | Target ID             | Number of qubits | Description |
+|--------------------------------------------|-----------------------|------------------|-------------|
+| [H2-1 Syntax Checker](#syntax-checkers)    | quantinuum.sim.h2-1sc | 56 qubits        | Validates quantum programs against the H2-1 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost. |
+| [H2-2 Syntax Checker](#syntax-checkers)    | quantinuum.sim.h2-2sc | 56 qubits        | Validates quantum programs against the H2-2 compiler before submitting to hardware or emulators on Quantinuum's platform. Free of cost. |
+| [H2-1 Emulator](#system-model-h2-emulator) | quantinuum.sim.h2-1e  | 56/32 qubits     | Uses a realistic physical model and noise model of H2-1. 56 qubit simulation is only available as a stabilizer simulation |
+| [H2-2 Emulator](#system-model-h2-emulator) | quantinuum.sim.h2-2e  | 56/32 qubits     | Uses a realistic physical model and noise model of H2-2. 56 qubit simulation is only available as a stabilizer simulation |
+| [H2-1](#system-model-h2)                   | quantinuum.qpu.h2-1   | 56 qubits        | Quantinuum's H2-1 trapped ion device. |
+| [H2-2](#system-model-h2)                   | quantinuum.qpu.h2-2   | 56 qubits        | Quantinuum's H2-2 trapped ion device. |
 
 Quantinuum's targets correspond to a **:::no-loc text="QIR Adaptive RI":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-qir-adaptive-ri-profile-targets).
 
@@ -40,7 +40,7 @@ All of Quantinuum's targets now support Integrated hybrid circuits. For more inf
 
 ## Syntax Checkers
 
-We recommend that users first validate their code using a Syntax Checker. This is a tool to verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer they target. For example, the H2-1 syntax checker uses the same compiler as H2-1. The full compilation stack is executed with the exception of the actual quantum operations. If the code compiles, the syntax checker returns a `success` status and a result of all 0s. If the code does not compile, the syntax checker returns a failed status and give the error returned to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
+We recommend that users first use a Syntax Checker to validate their code. Syntax Checkers verify proper syntax, compilation completion, and machine compatibility. Syntax Checkers use the same compiler as the quantum computer that they target. For example, the H2-1 syntax checker uses the same compiler as H2-1. The full compilation stack is executed, except for the actual quantum operations. If the code compiles, then the syntax checker returns a `success` status and a result of all 0s. If the code doesn't compile, then the syntax checker returns a failed status and gives an error message to help users debug their circuit syntax. Syntax Checkers allow developers to validate their code at any time, even when machines are offline.
 
 - Job type: `Simulation`
 - Data Formats: `honeywell.openqasm.v1`, `honeywell.qir.v1`
@@ -316,8 +316,8 @@ For more information on the full set of noise parameters available, see the [Qua
 First, import the required packages and initiate the base profile:
 
 ```python
-import qsharp
-import azure.quantum
+from qdk import qsharp, azure
+
 qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
@@ -348,7 +348,7 @@ MyProgram = qsharp.compile("GenerateRandomBit()")
 Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
 
 ```python
-MyWorkspace = azure.quantum.Workspace(
+MyWorkspace = azure.Workspace(
     resource_id = "",
     location = ""
 )
@@ -467,7 +467,7 @@ For more information on `pytket`, see the following links:
 First, import the required packages and initiate the base profile:
 
 ```python
-import qsharp
+from qdk import qsharp
 import azure.quantum
 qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
@@ -511,7 +511,7 @@ option_params = {
     "tket-opt-level": 1
 }
 
-``` 
+```
 
 Pass in the optimization option when submitting the job:
 
@@ -591,11 +591,11 @@ Quotas are based on plan selection and can be increased with a support ticket. T
 [System Model H2]: https://www.quantinuum.com/hardware/h2
 [`MResetZ`]: /qsharp/api/qsharp/microsoft.quantum.measurement.mresetz
 [`rzz`]: https://qiskit.org/documentation/stubs/qiskit.circuit.library.RZZGate.html
-[`pytket-quantinuum`]: https://github.com/CQCL/pytket-quantinuum
-[`pytket`]: https://cqcl.github.io/tket/pytket/api/#
+[`pytket-quantinuum`]: https://github.com/Quantinuum/pytket-quantinuum
+[`pytket`]: https://github.com/Quantinuum/tket/tree/main/pytket
 [`pytket` User Manual]: https://docs.quantinuum.com/tket/user-guide/
-[`pytket-quantinuum` Compilation Passes]: https://cqcl.github.io/pytket-quantinuum/api/#default-compilation
-[`pytket-quantinuum` Examples]: https://github.com/CQCL/pytket-quantinuum/tree/develop/examples
+[`pytket-quantinuum` Compilation Passes]: https://docs.quantinuum.com/tket/user-guide/examples/circuit_compilation/compilation_example.html
+[`pytket-quantinuum` Examples]: https://github.com/Quantinuum/pytket-quantinuum/tree/develop/examples
 [Azure portal]: https://portal.azure.com
 [Quantinuum Docs]:https://docs.quantinuum.com/
 [MCMR]: https://docs.quantinuum.com/systems/trainings/getting_started/mcmr.html

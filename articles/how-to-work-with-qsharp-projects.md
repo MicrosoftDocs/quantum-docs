@@ -6,7 +6,7 @@ ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+no-loc: ["AI", "azure-quantum", "Azure Quantum", "Azure Quantum Development Kit", "Circuit Editor", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
 title: "Develop and Manage Q# Projects and Custom Libraries"
 uid: microsoft.quantum.qsharp-projects
 #customer intent: As a quantum developer, I want to understand how to use Q# projects to develop quantum programs and custom libraries
@@ -26,13 +26,17 @@ In this article, you learn how to create, manage, and share Q# projects. A Q# pr
 To run Python programs, you also need:
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The Azure Quantum `qsharp` and `azure-quantum` packages.
+- The `qdk` Python library with the optional `azure` extra.
+
+    ```bash
+    python -m pip install --upgrade qdk[azure]
+    ```
 
 ## How Q# projects work
 
 A Q# project contains a Q# manifest file, named `qsharp.json`, and one or more `.qs` files in a specified folder structure. You can create a Q# project manually or directly in VS Code.
 
-When you open a `.qs` file in VS Code, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, then the compiler operates in a single file mode. 
+When you open a `.qs` file in VS Code, the compiler searches the surrounding folder hierarchy for the manifest file and determines the project's scope. If no manifest file is found, then the compiler operates in a single file mode.
 
 When you set the `project_root` in a Jupyter Notebook or Python file, the compiler looks for the manifest file in the `project_root` folder.
 
@@ -90,7 +94,7 @@ Consider the following folder structure, which contains a `.py` Python file:
 You must set the `project_root` before you make calls to Q# operations. For example:
 
 ```python
-import qsharp
+from qdk import qsharp
 
 qsharp.init(project_root = '../Teleportation_project')
 ```
@@ -168,8 +172,10 @@ The following requirements and configurations apply to all Q# projects.
 
     ```qsharp
     import MyMathLib.*;  //imports all the callables in the MyMathLib namespace
+
     ...
-        Multiply(x,y);
+
+    Multiply(x,y);
     ```
 
     Or, reference them individually with the namespace.
@@ -234,7 +240,6 @@ The manifest file contains the **author** and **license** fields:
 The main file, named `Main.qs`, contains the entry point and references the `TeleportOperations.TeleportLib` namespace from `TeleportLib.qs`.
 
 ```qsharp
-
     import TeleportOperations.TeleportLib.Teleport; // references the Teleport operation from TeleportLib.qs
 
     operation Main() : Unit {
@@ -257,7 +262,6 @@ The main file, named `Main.qs`, contains the entry point and references the `Tel
 The `TeleportLib.qs` files defines the `Teleport` operation and calls the `PrepareBellPair` operation from the `PrepareStateLib.qs` file.
 
 ```qsharp
-
     import TeleportOperations.PrepareState.PrepareStateLib.*; // references the namespace in PrepareStateLib.qs
  
     operation Teleport(msg : Qubit, target : Qubit) : Unit {
@@ -276,7 +280,6 @@ The `TeleportLib.qs` files defines the `Teleport` operation and calls the `Prepa
 The `PrepareStateLib.qs` file contains a standard reusable operation to create a Bell pair.
 
 ```qsharp
-    
     operation PrepareBellPair(left : Qubit, right : Qubit) : Unit is Adj + Ctl {
         H(left);
         CNOT(left, right);
@@ -296,7 +299,7 @@ To run this program, open the `Main.qs` file in VS Code and choose **Run**.
 To run this program in a Jupyter Notebook, open a new notebook and run the following cells:
 
 ```python
-import qsharp
+from qdk import qsharp
 ```
 
 ```python
@@ -305,7 +308,6 @@ import qsharp
 
 # this example assumes your program is in the /src folder
 qsharp.init(project_root = '../Teleportation_project')
-
 ```
 
 If your path is valid, then you get the following confirmation message: `Q# initialized with configuration: {'targetProfile': 'unrestricted'}`.
@@ -329,7 +331,7 @@ print(qsharp.eval("Main.Main()"))
 To run this program, run the Python script:
 
 ```python
-import qsharp
+from qdk import qsharp
 
 # Set the root folder for the Q# project
 # Make adjustments to the path depending on where your program is saved
@@ -374,7 +376,7 @@ To add a dependency to an external project on a drive share, define the dependen
 }
 ```
 
-In the preceding manifest file, **MyDependency** is a user defined string that identifies the namespace when you call an operation. For example, if you create a dependency named `MyMathFunctions`, then you can call a function from that dependency with `MyMathFunctions.MyFunction()`.
+In the preceding manifest file, **MyDependency** is a user-defined string that identifies the namespace when you call an operation. For example, if you create a dependency named `MyMathFunctions`, then you can call a function from that dependency with `MyMathFunctions.MyFunction()`.
 
 To add a dependency to a project that's published to a public GitHub repository, use the following example manifest file:
 
@@ -455,6 +457,7 @@ Import the callables with the following code:
 
 ```qsharp
 import MyMathFunctions.MyFunction;  // imports "MyFunction()" from the namespace
+
 ...
 ```
 
@@ -479,11 +482,11 @@ import MyMathFunctions.MyFunction, MyMathFunctions.AnotherFunction as Multiply;
 
 ### Example external project
 
-For this example, you'll use the same teleportation program as the earlier example, but separate the calling program and the callables into different projects.
+For this example, you use the same teleportation program as the earlier example, but separate the calling program and the callables into different projects.
 
-1. Create two folders on your local drive, for example "Project_A" and "Project_B".
-1. Create a Q# project in each folder following the steps in [How to create a Q# project](#how-to-create-a-q-project).
-1. In **Project_A**, the calling program, copy the following code into the manifest file, editing the path as needed for Project_B
+1. Create two folders on your local drive, for example `Project_A` and `Project_B`.
+1. Create a Q# project in each folder. For details, see the steps in [How to create a Q# project](#how-to-create-a-q-project).
+1. In `Project_A`, the calling program, copy the following code into the manifest file, but edit the path as needed for `Project_B`:
 
     ```json
     {
@@ -497,7 +500,7 @@ For this example, you'll use the same teleportation program as the earlier examp
       }    
     ```
 
-1. In Project_A, copy the following code into Main.qs
+1. In `Project_A`, copy the following code into `Main.qs`:
 
     ```qsharp
     import MyTeleportLib.Teleport; // imports the Teleport operation from the MyTeleportLib namespace defined in the manifest file
@@ -519,10 +522,9 @@ For this example, you'll use the same teleportation program as the earlier examp
     }   
     ```
 
-1. In **Project_B**, copy the following code into Main.qs
+1. In `Project_B`, copy the following code into `Main.qs`:
 
     ```qsharp
-        
         operation Teleport(msg : Qubit, target : Qubit) : Unit {
             use here = Qubit();
     
@@ -544,15 +546,15 @@ For this example, you'll use the same teleportation program as the earlier examp
     ```
 
     > [!NOTE]
-    > Note that the `PrepareBellPair` operation does not need to be exported because it is not called directly from your program in Project_A. Because it is in the local scope of Project_B, it is already accessible by the `Teleport` operation
+    > Note that the `PrepareBellPair` operation does not need to be exported because it's not called directly from your program in `Project_A`. Because `PrepareBellPair` is in the local scope of `Project_B`, it's already accessible by the `Teleport` operation.
 
 1. To run the program, open `/Project_A/Main.qs` in VS Code and choose **Run**.
 
 ## Projects and implicit namespaces
 
-In Q# projects, if a namespace is not specified in a `.qs` program, then the compiler uses the file name as the namespace. Referencing a callable from an external dependency then uses the syntax `<dependencyName>.<namespace>.<callable>`. However, if the file is named `Main.qs`, then the compiler assumes the namespace and the calling syntax is `<dependencyName>.<callable>`, as in the previous example, `import MyTeleportLib.Teleport`.
+In Q# projects, if a namespace isn't specified in a `.qs` program, then the compiler uses the file name as the namespace. Then, when you reference a callable from an external dependency, you use the syntax `<dependencyName>.<namespace>.<callable>`. However, if the file is named `Main.qs`, then the compiler assumes that the namespace and the calling syntax is `<dependencyName>.<callable>`, as in the previous example, `import MyTeleportLib.Teleport`.
 
-Because you might have multiple project files, you need to account for the correct syntax when your reference callables. For example, consider a project with the following file structure:
+Because you might have multiple project files, you need to account for the correct syntax when you reference callables. For example, consider a project with the following file structure:
 
 - **/src**
   - *Main.qs*

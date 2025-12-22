@@ -26,7 +26,7 @@ Currently, Azure Quantum and the QDK manage different target profiles, depending
 - [**:::no-loc text="Unrestricted":::**:](#create-and-run-programs-for--target-profile) This profile can run any QIR program, and thus any Q# program, within the limits of memory for simulators or the number of qubits for physical quantum computers.
 - [**:::no-loc text="Base":::**:](#create-and-run-programs-for--target-profile-1) This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program that's targeted for this kind of QPU, values of type `Result` don't support equality comparison.
 - [**:::no-loc text="Adaptive RI":::**:](#create-and-run-programs-for--target-profile-2) This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program that's targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement.
-- - [**:::no-loc text="Adaptive RIF":::**:](#create-and-run-programs-for--target-profile-3) This profile has the same capabilities as the :::no-loc text="Adaptive RI"::: profile, but also supports floating point operations.
+- [**:::no-loc text="Adaptive RIF":::**:](#create-and-run-programs-for--target-profile-3) This profile has the same capabilities as the :::no-loc text="Adaptive RI"::: profile, but also supports floating point operations.
 
 ## Create and run programs for :::no-loc text="Unrestricted"::: target profile
 
@@ -48,10 +48,12 @@ To manually set the QIR target profile to **Unrestricted**, choose one of the fo
 
 - If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Unrestricted)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
 
-- In Python, call the `qsharp.init` method to set the target profile.
+- In Python, call the `qdk.init` method to set the target profile.
 
   ```python
-  qsharp.init(target_profile=qsharp.TargetProfile.Unrestricted) 
+  from qdk import init, TargetProfile
+
+  init(target_profile=TargetProfile.Unrestricted) 
   ```
 
 ## Create and run programs for :::no-loc text="Base"::: target profile
@@ -86,10 +88,12 @@ To manually set the QIR target profile to **Base**, choose one of the following 
 
 - If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Base)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
 
-- In Python, call the `qsharp.init` method to set the target profile.
+- In Python, call the `qdk.init` method to set the target profile.
 
   ```python
-  qsharp.init(target_profile=qsharp.TargetProfile.Base) 
+  from qdk import init, TargetProfile
+
+  init(target_profile=TargetProfile.Base) 
   ```
 
 ### Supported targets for :::no-loc text="Base"::: target profile
@@ -138,10 +142,12 @@ To manually set the QIR target profile to **Adaptive RI**, choose one of the fol
 
 - If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Adaptive_RI)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
 
-- In Python, call the `qsharp.init` method to set the target profile.
+- In Python, call the `qdk.init` method to set the target profile.
 
   ```python
-  qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RI) 
+  from qdk import init, TargetProfile
+
+  init(target_profile=TargetProfile.Adaptive_RI) 
   ```
 
 ### Supported targets for :::no-loc text="Adaptive RI"::: target profile
@@ -187,12 +193,14 @@ To manually set the QIR target profile to **Adaptive RIF**, choose one of the fo
 
 - If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Adaptive_RIF)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
 
-- In Python, call the `qsharp.init` method to set the target profile.
+- In Python, call the `qdk.init` method to set the target profile.
 
   ```python
-  qsharp.init(target_profile=qsharp.TargetProfile.Adaptive_RIF) 
+  from qdk import init, TargetProfile
+
+  init(target_profile=TargetProfile.Adaptive_RIF) 
   ```
 
-### Supported targets for :::no-loc text="Adaptive RI"::: target profile
+### Supported targets for :::no-loc text="Adaptive RIF"::: target profile
 
 For now, Azure Quantum doesn't have :::no-loc text="Adaptive RIF"::: targets. However, you can run programs for :::no-loc text="Adaptive RIF"::: targets on the local simulator in the QDK.

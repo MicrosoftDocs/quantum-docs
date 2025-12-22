@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v', target, targets]
+no-loc: ["AI", "azure-quantum", "Azure Quantum", "Azure Quantum Development Kit", "Circuit Editor", "cirq", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "qiskit", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
 title: Manage your Sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 #customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
@@ -14,48 +14,48 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 
 # How to manage your sessions 
 
-In Azure Quantum you can group multiple jobs against a single target, which allows you to manage jobs effectively. This is called a *session*. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
+In Azure Quantum, you can group multiple jobs against a single target to effectively manage your jobs. This is called a session. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
 
-In this article, you learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
+In this article, you learn how use sessions to manually manage your jobs. You also learn about the job failure policies and how to avoid session timeouts.
 
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The Azure Quantum `azure-quantum` package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the \[qiskit\] or \[cirq\] tags. 
+- The `azure-quantum` Python package. If you want to use Qiskit or Cirq, then you need to install the `azure-quantum` package with the `qiskit` or `cirq` extras.
 
     ```bash
-    pip install --upgrade azure-quantum[qiskit] 
+    pip install --upgrade azure-quantum[qiskit,cirq]
     ```
 
 > [!NOTE]
-> Sessions are managed with Python, even when running Q# inline code.
+> Sessions are managed with Python, even when you run Q# inline code.
 
-## Monitoring sessions
+## Monitor your sessions
 
 You can use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
 
-1. Select the **Job management** blade in your Quantum workspace.
-1. Identify the jobs of type **Session**. In this view you can see the Unique ID of a Session in column **Id** and monitor its **Status**. The states of a session are: 
-   - **Waiting**: Jobs within the session are being executed. 
-   - **Succeeded**: Session has ended successfully. 
-   - **TimeOut**: If no new job is submitted within the session for 10 minutes, that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
-   - **Failed**: If a job within a session fails, that session ends and reports a status of *Failed*. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
+1. Choose the **Job management** blade in your Quantum workspace.
+1. Identify the jobs of type **Session**. In this view, you can find the Unique ID of a session in the **Id** column and monitor the session's **Status**. Sessions can have the following statuses:
+   - **Waiting**: Jobs within the session are currently running.
+   - **Succeeded**: Session has ended successfully.
+   - **TimeOut**: If no new job is submitted within the session for 10 minutes, then that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
+   - **Failed**: If a job within a session fails, then that session ends and reports a status of **Failed**. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
 1. Click on a session's name for more details.
-1. You can see the list of **All jobs** within the session and monitor their status.
+1. You can see the list of **All jobs** within the session and monitor their statuses.
 
-## Retrieving and listing sessions
+## Retrieve and list sessions
 
-The following table shows the Python commands to get the list of all sessions and all jobs for a given session. 
+The following table shows the Python commands to get the list of all sessions and all jobs for a given session.
 
-|Command| Description|
-|---|---|
-|[`workspace.list_sessions()`](xref:azure.quantum.Workspace) or `session.list_sessions()` | Retrieve a list of all sessions in a Quantum Workspace.|
-|[`workspace.get_session(sessionId)`](xref:azure.quantum.Workspace) or `session.get_session(sessionId)` | Retrieve the session with ID `sessionId`. Each session has a unique ID. |
-|[`workspace.list_session_jobs(sessionId)`](xref:azure.quantum.Workspace) or `session.list_session_jobs(sessionId)`  | Retrieve a list of all jobs in the session with ID `sessionId`. Each session has a unique ID.|
+| Command                                                                                                            | Description                                                                                   |
+|--------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| [`workspace.list_sessions()`](xref:azure.quantum.Workspace) or `session.list_sessions()`                           | Retrieve a list of all sessions in a Quantum Workspace.                                       |
+| [`workspace.get_session(sessionId)`](xref:azure.quantum.Workspace) or `session.get_session(sessionId)`             | Retrieve the session with ID `sessionId`. Each session has a unique ID.                       |
+| [`workspace.list_session_jobs(sessionId)`](xref:azure.quantum.Workspace) or `session.list_session_jobs(sessionId)` | Retrieve a list of all jobs in the session with ID `sessionId`. Each session has a unique ID. |
 
-For example, the following code defines a function that gets a session with a minimum number of jobs. Then, for that session, it lists all the jobs, the total number of jobs, and the first 10 jobs. 
+For example, the following code defines a function that gets a session with a minimum number of jobs. Then, for that session, it lists all the jobs, the total number of jobs, and the first 10 jobs.
 
 ```python
 def get_a_session_with_jobs(min_jobs):
@@ -74,13 +74,13 @@ for job in session_jobs[0:10]:
     print(f"Id: {job.id}, Name={job.details.name}")
 ```
 
-## Manual methods of opening/closing sessions
+## Manually open or close sessions
 
-We recommend following the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions) to create a new session. You can also manually create sessions.
+To create a new session, it's a best practice to follow the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions). If you want to manually create sessions instead, then choose the tab for your development environment.
 
 ### [Q# + Python](#tab/tabid-pythonsdk)
 
-1. First, create a **Session object**.
+1. Create a **Session object**.
 
       ```python
       from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
@@ -102,7 +102,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
     > At this point, the session only exists on the client, and you can see that the status is **None**. To view the status of the session, you also need to create the session in the service.
 
 1. To **create** a session in the service, you can use [`workspace.open_session(session)`](xref:azure.quantum.Workspace) or [`session.open()`](xref:azure.quantum.job.Session).
-1. You can refresh the **status** and the session details with [`session.refresh()`](xref:azure.quantum.job.Session), or by getting a new session object from a session ID. 
+1. You can refresh the **status** and the session details with [`session.refresh()`](xref:azure.quantum.job.Session), or by getting a new session object from a session ID.
 
       ```python
       same_session = workspace.get_session(session.id) 
@@ -126,7 +126,7 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
 
 ### [Qiskit](#tab/tabid-qiskit)
 
-1. First, import the **credentials** of your Azure Quantum workspace.
+1. Import the **credentials** of your Azure Quantum workspace.
 
     ```python
     import os
@@ -184,11 +184,11 @@ We recommend following the steps in [Get started with sessions](xref:microsoft.q
 
 ***
 
-## Passing arguments in Q\#  
+## Pass arguments in Q\#  
 
-If your Q# operation takes input arguments, those arguments are passed during job submission, which is Python code. This means that you need to be careful to format your arguments as Q# objects.
+If your Q# operation takes input arguments, then those arguments are passed during job submission, which is Python code. This means that you need to format your arguments as Q# objects.
 
-When passing arguments as parameters to the job, they are formatted as Q# code when calling `qsharp.compile`, so the values from Python need to be formatted into a string as valid Q# syntax.
+When you pass arguments as parameters to the job, the arguments are formatted as Q# code when `qsharp.compile` is called, so the values from Python need to be formatted into a string as valid Q# syntax.
 
 Consider the following Q# program, which takes an integer, `n`, and an array of angles, `angle`, as input.
 
@@ -228,12 +228,12 @@ In this example, because arrays in Python are already printed as \[item0, item1,
 
 ## Session timeouts
 
-A session times out if no new job is submitted within the session for 10 minutes. The session reports a status of **TimedOut**. To avoid this situation, add a `with` block using `backend.open_session(name="Name")`, so the session `close()` is invoked by the service at the end of the code block. 
+A session times out if no new job is submitted within the session for 10 minutes. The session reports a status of **TimedOut**. To avoid this situation, add a `with` block using `backend.open_session(name="Name")`, so the session `close()` is invoked by the service at the end of the code block.
 
 > [!NOTE]
-> If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the session have all completed. 
+> If there are errors or bugs in your program, it might take more than 10 minutes to submit a new job after the previous jobs in the session are complete.
 
-The following code snippets show an example of a session times out after 10 minutes because no new jobs are submitted. To avoid that, the next code snippet shows how to use a `with` block to create a session. 
+The following code snippets show an example of a session that times out after 10 minutes because no new jobs are submitted. To avoid that, the next code snippet shows how to use a `with` block to create a session.
 
 ```python
 #Example of a session that times out 
@@ -260,9 +260,9 @@ The default policy for a session when a job fails is to end that session. If you
 
 However, this behavior can be changed by specifying a job failure policy of `job_failure_policy=SessionJobFailurePolicy.CONTINUE`, instead of the default `SessionJobFailurePolicy.ABORT`, when creating the session. When the job failure policy is `CONTINUE`, the service continues to accept jobs. The session reports a status of **Failure(s)** in this case, which will change to **Failed** once the session is closed.
 
-If the session is never closed and times out, the status is **TimedOut** even if jobs have failed. 
+If the session is never closed and times out, the status is **TimedOut** even if jobs have failed.
 
-For example, the following program creates a session with three jobs. The first job fails because it specifies `"garbage"` as input data. To avoid the end of the session at this point, the program shows how to add `job_failure_policy=SessionJobFailurePolicy.CONTINUE` when creating the session. 
+For example, the following program creates a session with three jobs. The first job fails because it specifies `"garbage"` as input data. To avoid the end of the session at this point, the program shows how to add `job_failure_policy=SessionJobFailurePolicy.CONTINUE` when you create the session.
 
 ```python
 #Example of a session that does not close but reports Failure(s) when a jobs fails
