@@ -277,7 +277,7 @@ By default IonQ allows you to specify a quantum circuit using an abstract set of
 
 However, in some advanced usage cases, you might want to define a circuit directly on native gates in order to be closer to the hardware and bypass optimization. The native gate set is the set of quantum gates that are physically executed in the quantum processor, and they map the circuit to those as part of the execution.
 
-For more information, see [Getting Started With Native Gates (ionq.com)](https://ionq.com/docs/getting-started-with-native-gates).
+For more information, see [Getting Started With Native Gates (ionq.com)](https://docs.ionq.com/guides/getting-started-with-native-gates).
 
 In order to use the native gate set when submitting Qiskit jobs to Azure Quantum, you specify the `gateset` parameter when initializing the backend as in the example below:
 
