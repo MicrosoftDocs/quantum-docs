@@ -124,8 +124,8 @@ Subscriptions are monthly subscription plans available through queued access.
 
 |Plans and Pricing|  Includes access to  |
 |---|---|
-|**Standard Plan**: USD135,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on currently available Quantinuum hardware</li><li>100k eHQCs for use on the Quantinuum emulators</li></ul>|
-|**Premium Plan**: USD185,000/Month + Azure infrastructure costs  | <ul><li>17k HQCs for use on currently available Quantinuum hardware</li><li>170k eHQCs for use on the Quantinuum emulators</li></ul>|
+|**Standard Plan**: USD125,000/Month + Azure infrastructure costs | <ul><li>10k HQCs for use on Quantinuum System Model H2</li><li>100k eHQCs for use on the Quantinuum System Model H2 emulators</li></ul>|
+|**Premium Plan**: USD175,000/Month + Azure infrastructure costs  | <ul><li>17k HQCs for use on Quantinuum System Model H2</li><li>170k eHQCs for use on the Quantinuum System Model H2 emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
