@@ -20,10 +20,10 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The Azure Quantum `qdk[jupyter]` and `azure-quantum` packages, and the `ipykernel` package.
+- The `qdk` Python library with the `azure` and `jupyter` extras, and the `ipykernel` package.
 
     ```bash
-    python -m pip install --upgrade qdk[jupyter] azure-quantum ipykernel
+    python -m pip install --upgrade "qdk[azure,jupyter]" ipykernel
     ```
 
 ## Run and test your program in the local simulator
@@ -33,12 +33,12 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 1. In the first cell of the notebook, run the following Python code to import the necessary modules:
 
     ```python
-    from qdk import qsharp, azure
-    import azure.quantum
+    from qdk import qsharp
+    import qdk.azure
     ```
 
-    - The `qsharp` package activates the `%%qsharp` magic command that lets you enter Q# code directly into a cell.
-    - The `azure` package provides connectivity to your Azure Quantum workspace.
+    - The `qdk.qsharp` module activates the `%%qsharp` magic command that lets you enter Q# code directly into a cell.
+    - The `qdk.azure` module provides connectivity to your Azure Quantum workspace.
     > [!NOTE]
     > If the Jupyter Python kernel `ipykernel` isn't detected, then VS Code will prompt you to install it.  
 
@@ -99,7 +99,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 ## Visualize the quantum circuit
 
-You can visualize quantum circuits using the `qdk.widgets` package. This package provides a widget that renders a quantum circuit diagram as an SVG image. For more information, see [Quantum circuit diagrams with Jupyter Notebook](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
+You can visualize quantum circuits using the `qdk.widgets` module. This module provides a widget that renders a quantum circuit diagram as an SVG image. For more information, see [Quantum circuit diagrams with Jupyter Notebook](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
 
 Add the following code to a new cell to visualize the circuit:
 
@@ -232,9 +232,9 @@ Now that you have your program compiled into the correct format, create an `azur
 
 ### Additional job details
 
-The `qdk.azure` Python package includes additional methods to display more detailed job data.
+The `qdk.azure` module includes additional methods to display more detailed job data.
 
-- `job.get_results_histogram()`: This method returns a dictionary of the outcomes and shot count for each unique measurement. For example, the results for the previous job would be
+- `job.get_results_histogram`: This method returns a dictionary of the outcomes and shot count for each unique measurement. For example, the results for the previous job would be
 
     ```python
     print(job.get_results_histogram()) 
@@ -261,7 +261,7 @@ The `qdk.azure` Python package includes additional methods to display more detai
     }
     ```
 
-- `job.get_results_shots()` : This method returns a list of each shot result. For example, the results for the previous job would be
+- `job.get_results_shots` : This method returns a list of each shot result. For example, the results for the previous job would be
 
     ```python
     print(job.get_results_shots()) 

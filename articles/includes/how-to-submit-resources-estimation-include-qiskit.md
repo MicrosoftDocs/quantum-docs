@@ -16,7 +16,7 @@ no-loc: [target, targets]
 - The latest `qdk` Python library with the `jupyter` and `qiskit` extras.  
 
     ```bash
-    pip install --upgrade qdk[jupyter,qiskit]
+    pip install --upgrade "qdk[jupyter,qiskit]"
     ```
 
 > [!TIP]
@@ -95,17 +95,17 @@ EstimateDetails(result)
 
 For example, if you expand the **Logical qubit parameters** group, then it's easier to see that the error correction code distance is 15.
 
-| Logical qubit parameter   | Value                                                                     |
-|---------------------------|---------------------------------------------------------------------------|
-|QEC scheme                 | surface_code                                                              |
-|Code distance              | 15                                                                        |
-|Physical qubits            | 450                                                                       |
-|Logical cycle time         | 6us                                                                       |
-|Logical qubit error rate   | 3.00E-10                                                                  |
-|Crossing prefactor         | 0.03                                                                      |
-|Error correction threshold | 0.01                                                                      |
-|Logical cycle time formula | (4 * `twoQubitGateTime` + 2 * `oneQubitMeasurementTime`) * `codeDistance` |
-|Physical qubits formula    | 2 * `codeDistance` * `codeDistance`                                       |
+| Logical qubit parameter   | Value                                                                        |
+|---------------------------|------------------------------------------------------------------------------|
+|QEC scheme                 | surface_code                                                                 |
+|Code distance              | 15                                                                           |
+|Physical qubits            | 450                                                                          |
+|Logical cycle time         | 6us                                                                          |
+|Logical qubit error rate   | 3.00E-10                                                                     |
+|Crossing prefactor         | 0.03                                                                         |
+|Error correction threshold | 0.01                                                                         |
+|Logical cycle time formula | (4 \* `twoQubitGateTime` + 2 \* `oneQubitMeasurementTime`) \* `codeDistance` |
+|Physical qubits formula    | 2 \* `codeDistance` \* `codeDistance`                                        |
 
 In the **Physical qubit parameters** group you can see the physical qubit properties that were assumed for this estimation. For example, the time to perform a single-qubit measurement and a single-qubit gate are assumed to be 100 ns and 50 ns, respectively.
 

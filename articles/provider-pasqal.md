@@ -19,10 +19,10 @@ PASQAL's quantum computers control neutral atoms with optical tweezers, using la
 
 The following targets available from this provider:
 
-|Target name| Target ID|Number of qubits | Description |
-|---|---|---|---|
-|[Emu-TN](#emulator) | pasqal.sim.emu-tn| 100 qubits 1D and 2D networks| Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
-|[Fresnel](#fresnel) | pasqal.qpu.fresnel | 100 qubits | PASQAL's neutral atoms quantum computer. |
+| Target name         | Target ID          | Number of qubits              | Description |
+|---------------------|--------------------|-------------------------------|-------------|
+| [Emu-TN](#emulator) | pasqal.sim.emu-tn  | 100 qubits 1D and 2D networks | Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
+| [Fresnel](#fresnel) | pasqal.qpu.fresnel | 100 qubits                    | PASQAL's neutral atoms quantum computer. |
 
 ## Emulator
 
@@ -53,8 +53,8 @@ In PASQAL QPU, individual atoms are trapped at well-defined positions in 1D or 2
 To install Pulser SDK packages, run the following code:
 
 ```python
-    !pip -q install pulser-simulation #Only for using the local Qutip emulator included in Pulser
-    !pip -q install pulser-core
+!pip -q install pulser-simulation #Only for using the local Qutip emulator included in Pulser
+!pip -q install pulser-core
 ```
 
 ## Input data format

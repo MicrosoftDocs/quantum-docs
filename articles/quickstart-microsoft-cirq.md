@@ -27,7 +27,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - The Azure Quantum `azure-quantum` package with the `cirq` extra, and the `qdk` and the `ipykernel` packages.
 
     ```bash
-    python -m pip install --upgrade azure-quantum[cirq] qdk ipykernel 
+    python -m pip install --upgrade "azure-quantum[cirq]" qdk ipykernel 
     ```
 
     > [!NOTE]
