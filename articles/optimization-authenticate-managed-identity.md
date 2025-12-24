@@ -20,15 +20,15 @@ as a user account. For example, you may want to submit jobs from a virtual machi
 
 ## Configure a managed identity
 
-A managed identity allows an application to access other Azure resources (such as your Azure Quantum workspace) and authenticate with these resources. 
+A managed identity allows an application to access other Azure resources (such as your Azure Quantum workspace) and authenticate with these resources.
 
 To configure a managed identity:
 
 1. Via the Azure portal, locate the resource that you wish to give access to. This resource may be a VM, a Function App, or other application.
-2. Select the resource, and view the overview page.
-3. Under **Settings**, select **Identity**.
-4. Configure the **Status** setting to **On**.
-5. Select **Save** to persist your configuration and confirm the opening dialog with **Yes**.
+1. Select the resource, and view the overview page.
+1. Under **Settings**, select **Identity**.
+1. Configure the **Status** setting to **On**.
+1. Select **Save** to persist your configuration and confirm the opening dialog with **Yes**.
 
 ## Grant access to your Azure Quantum workspace
 
@@ -47,7 +47,7 @@ In order to allow the resource to access your Azure Quantum workspace:
 
 ## Logging in to your Azure Quantum workspace
 
-You should now be able to use your quantum workspace from your chosen resource. For example when using your workspace from within a VM, you will no longer need to authenticate each time. 
+You should now be able to use your quantum workspace from your chosen resource. For example when using your workspace from within a VM, you will no longer need to authenticate each time.
 
 In some cases, you may also want to specify explicitly within the code to use a Managed Identity Credential:
 
@@ -55,7 +55,7 @@ In some cases, you may also want to specify explicitly within the code to use a 
 
 from azure.identity import ManagedIdentityCredential
 
-from azure.quantum import Workspace
+from qdk.azure import Workspace
 workspace = Workspace (
     resource_id = "",
     location = "" ,

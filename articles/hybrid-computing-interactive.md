@@ -26,16 +26,16 @@ To create a session, you need the following prerequisites:
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The `azure-quantum` Python package. If you want to use Qiskit or Cirq, you need to install the `azure-quantum` package with the `qiskit` or `cirq` extras.
+- The `qdk` Python library. If you want to use Qiskit or Cirq, you need to install the `azure` and `qiskit` extras.
 
     ```bash
-    pip install --upgrade azure-quantum[qiskit] 
+    pip install --upgrade qdk
     ```
 
     or
 
     ```bash
-    pip install --upgrade azure-quantum[cirq] 
+    pip install --upgrade "qdk[azure,qiskit]" 
     ```
 
 ## What is a session?
@@ -141,7 +141,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 1. Import additional modules from `azure-quantum` and `qiskit`.
 
    ```python
-   from qiskit import QuantumCircuit
+   from qdk.qiskit import QuantumCircuit
    from qdk.azure import Workspace
    from azure.quantum.qiskit import AzureQuantumProvider
    ```

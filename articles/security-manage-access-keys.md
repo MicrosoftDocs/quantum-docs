@@ -28,29 +28,29 @@ In this article, you learn how to enable or disable the access keys for your Azu
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the Azure Quantum `azure-quantum` package.
+- The latest version of the `qdk` Python library with the `azure` extra.
 
     ```bash
-    !pip install --upgrade azure-quantum
+    pip install --upgrade "qdk[azure]"
     ```
 
-- If you use Azure CLI, you must have the latest version. For the installation instructions, see:
+If you use Azure CLI, then you must have the latest version. For installation instructions, see:
 
-    - [Install Azure CLI on Windows](/cli/azure/install-azure-cli-windows)
-    - [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
-    - [Install Azure CLI on macOS](/cli/azure/install-azure-cli-macos)
+- [Install Azure CLI on Windows](/cli/azure/install-azure-cli-windows)
+- [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
+- [Install Azure CLI on macOS](/cli/azure/install-azure-cli-macos)
 
 ### Connect to your Azure Quantum workspace with a connection string
 
-The `azure-quantum` package provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace. To connect to your Azure Quantum workspace, you create `Workspace` object using the connection string as authenticator. For more information, see [how to copy a connection string](xref:microsoft.quantum.how-to.connect-workspace#copy-the-connection-string).
+The `qdk.azure` module provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace. To connect to your Azure Quantum workspace, create `Workspace` object using the connection string as the authenticator. For more information, see [how to copy a connection string](xref:microsoft.quantum.how-to.connect-workspace#copy-the-connection-string).
 
-When creating a `Workspace` object, you have two options for identifying your Azure Quantum workspace.
+When you create a `Workspace` object, you have two options to identify your Azure Quantum workspace.
 
-- You can create a `Workspace` object by calling `from_connection_string`.
+- Create a `Workspace` object by calling `from_connection_string`.
 
     ```python
     # Creating a new Workspace object from a connection string 
-    from azure.quantum import Workspace 
+    from qdk.azure import Workspace 
     
     connection_string = "[Copy connection string]" 
     workspace = Workspace.from_connection_string(connection_string) 
@@ -58,7 +58,7 @@ When creating a `Workspace` object, you have two options for identifying your Az
     print(workspace.get_targets()) 
     ```
 
-- If you don't want to copy your connection string in the code, you can also store your connection string in an environment variable and use `Workspace()`.
+- If you don't want to copy your connection string in the code, then store your connection string in an environment variable and use `Workspace`.
 
     ```python
     # Using environment variable to connect with  connection string
@@ -69,7 +69,7 @@ When creating a `Workspace` object, you have two options for identifying your Az
     
     os.environ["AZURE_QUANTUM_CONNECTION_STRING"] = connection_string 
     
-    from azure.quantum import Workspace 
+    from qdk.azure import Workspace 
     
     workspace = Workspace() 
     print(workspace.get_targets()) 

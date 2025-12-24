@@ -27,7 +27,7 @@ In this tutorial, you will:
 ## Prerequisites
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
+- The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
 - The latest `qdk` Python library, and the `numpy` and `scipy` packages.  
 
     ```bash

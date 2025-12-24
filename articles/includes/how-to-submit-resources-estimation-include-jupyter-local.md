@@ -16,13 +16,7 @@ no-loc: [target, targets]
 - The latest `qdk` Python library with the optional `jupyter` extra.  
 
     ```bash
-    python -m pip install --upgrade qdk[jupyter] 
-    ```
-
-    or
-
-    ```bash
-    pip install --upgrade qdk[jupyter]
+    pip install --upgrade "qdk[jupyter]"
     ```
 
 > [!TIP]
@@ -476,12 +470,12 @@ You can see that the Resource Estimator takes the `qubit_gate_ns_e3` qubit model
 
 These are the target parameters that can be customized:
 
-* `errorBudget` - the overall allowed error budget for the algorithm 
-* `qecScheme` - the quantum error correction (QEC) scheme 
-* `qubitParams` - the physical qubit parameters 
-* `constraints` - the constraints on the component-level
-* `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
-* `estimateType` - single or frontier
+- `errorBudget` - the overall allowed error budget for the algorithm
+- `qecScheme` - the quantum error correction (QEC) scheme
+- `qubitParams` - the physical qubit parameters
+- `constraints` - the constraints on the component-level
+- `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
+- `estimateType` - single or frontier
 
 For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
 
@@ -549,11 +543,10 @@ The Azure Quantum Resource Estimator allows you to run multiple configuration of
     result_batch.summary_data_frame(labels=["Gate-based ns, 10⁻³", "Majorana ns, 10⁻⁶"])
     ```
 
-    |Model|Logical qubits |	Logical depth|	T states|	Code distance|	T factories|	T factory fraction|	Physical qubits	|rQOPS	|Physical runtime|
-    |----|----|----|----|----|----|----|----|----|----|
-    |Gate-based ns, 10⁻³	|223|	3.64M|	4.70M|	21|	19|	76.30 %|	829.77k|	26.55M|	31 secs|
-    |Majorana ns, 10⁻⁶	|223	|3.64M	|4.70M	|5	|19|	63.02 %|	79.60k|	148.67M|	5 secs|
-
+    | Model               | Logical qubits | Logical depth | T states | Code distance | T factories | T factory fraction | Physical qubits | rQOPS   | Physical runtime |
+    |---------------------|----------------|---------------|----------|---------------|-------------|--------------------|-----------------|---------|------------------|
+    | Gate-based ns, 10⁻³ | 223            | 3.64M         | 4.70M    | 21            | 19          | 76.30 %            | 829.77k         | 26.55M  | 31 secs          |
+    | Majorana ns, 10⁻⁶   | 223            | 3.64M         | 4.70M    | 5             | 19          | 63.02 %            | 79.60k          | 148.67M | 5 secs           |
 
 1. You can also construct a list of estimation parameters using the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams).
 
@@ -573,19 +566,19 @@ The Azure Quantum Resource Estimator allows you to run multiple configuration of
     params.items[5].qubit_params.name = QubitParams.MAJ_NS_E6
     params.items[5].qec_scheme.name = QECScheme.FLOQUET_CODE
     ```
-    
+
     ```python
     qsharp.estimate("RunProgram()", params=params).summary_data_frame(labels=labels)
     ```
 
-    |Model|Logical qubits|	Logical depth|	T states|	Code distance|	T factories|	T factory fraction|	Physical qubits|	rQOPS	|Physical runtime|
-    |----|----|----|----|----|----|----|----|----|----|
-    |Gate-based µs, 10⁻³|	223	3.64M|	4.70M|	17|	13	|40.54 %	|216.77k|	21.86k|	10 hours|
-    |Gate-based µs, 10⁻⁴	|223	|3.64M	|4.70M|	9|	14|	43.17 %|	63.57k|	41.30k|	5 hours|
-    |Gate-based ns, 10⁻³|	223	3.64M|	4.70M|	17|	16|	69.08 %	|416.89k|	32.79M|	25 secs|
-    |Gate-based ns, 10⁻⁴|	223	3.64M	|4.70M|	9|	14|	43.17 %|	63.57k|	61.94M|	13 secs|
-    |Majorana ns, 10⁻⁴|	223	3.64M|	4.70M|	9|	19|	82.75 %	|501.48k|	82.59M	|10 secs|
-    |Majorana ns, 10⁻⁶|	223	3.64M|	4.70M|	5|	13|	31.47 %|	42.96k|	148.67M	|5 secs|
+    | Model              | Logical qubits | Logical depth | T states | Code distance | T factories | T factory fraction | Physical qubits | rQOPS   | Physical runtime |
+    |--------------------|----------------|---------------|----------|---------------|-------------|--------------------|-----------------|---------|------------------|
+    |Gate-based µs, 10⁻³ | 223            | 3.64M         | 4.70M    | 17            | 13          | 40.54 %            | 216.77k         | 21.86k  | 10 hours         |
+    |Gate-based µs, 10⁻⁴ | 223            | 3.64M         | 4.70M    | 9             | 14          | 43.17 %            | 63.57k          | 41.30k  | 5 hours          |
+    |Gate-based ns, 10⁻³ | 223            | 3.64M         | 4.70M    | 17            | 16          | 69.08 %            | 416.89k         | 32.79M  | 25 secs          |
+    |Gate-based ns, 10⁻⁴ | 223            | 3.64M         | 4.70M    | 9             | 14          | 43.17 %            | 63.57k          | 61.94M  | 13 secs          |
+    |Majorana ns, 10⁻⁴   | 223            | 3.64M         | 4.70M    | 9             | 19          | 82.75 %            | 501.48k         | 82.59M  | 10 secs          |
+    |Majorana ns, 10⁻⁶   | 223            | 3.64M         | 4.70M    | 5             | 13          | 31.47 %            | 42.96k          | 148.67M | 5 secs           |
 
 ## Running Pareto frontier estimation
 

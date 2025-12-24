@@ -26,7 +26,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 ## Create and import your Q# operations
 
-With the `qdk.qsharp` package, you can store your functions and operations in Q# files and create [Q# projects](xref:microsoft.quantum.qsharp-projects) that let you call into any of them from your Python code. This especially helpful when you need to launch a program that takes input parameters.
+With the `qdk.qsharp` module, you can store your functions and operations in Q# files and create [Q# projects](xref:microsoft.quantum.qsharp-projects) that let you call into any of them from your Python code. This especially helpful when you need to launch a program that takes input parameters.
 
 1. Follow the steps to create a [Q# project](xref:microsoft.quantum.qsharp-projects#steps-for-creating-a-q-project).
 1. Open a new text file, add the following Q# code that returns a user-specified number of random bits, and save the file to the `/src` directory in your project as `Source.qs`.
@@ -51,10 +51,11 @@ With the `qdk.qsharp` package, you can store your functions and operations in Q#
     ```
 
 1. In the project root folder (with the `qsharp.json` file), open another file and save it as `randomNum.py`.
-1. Add the following code to import the `qsharp` and `azure.quantum` modules.
+1. Add the following code to load the required imports:
 
     ```python
-    from qdk import qsharp, azure
+    from qdk import qsharp
+    from qdk.azure import Workspace
     ```
 
 1. Next, add code to define the Q# project root folder and test run the target operation on the local simulator. The operation is called by *\<namespace>.\<operation_name( )>*, and in this case, you are passing in the number of random bits to return.
@@ -116,16 +117,16 @@ When you run programs on the local quantum simulator, you can submit any type of
 
 ## Connect to Azure Quantum and submit your job
 
-You can connect to Azure Quantum and submit your job using a Python-created `Workspace` object, or connect and submit your job using Azure CLI. Using Azure CLI requires that you save the compiled program as a text file and submit that file using a CLI command.
+You can connect to Azure Quantum and submit your job using a `Workspace` Python object, or connect and submit your job using Azure CLI. Using Azure CLI requires that you save the compiled program as a text file and submit that file using a CLI command.
 
 ### [Using Python](#tab/tabid-python)
 
-Now that you have your program compiled into the correct format, create an `azure.quantum.Workspace` object to connect to Azure Quantum. You'll use the Resource ID of your Azure Quantum workspace in order to connect. The Resource ID and location can be copied from your workspace overview page in the Azure portal.
+Now that you have your program compiled into the correct format, create a `Workspace` object to connect to Azure Quantum. You'll use the Resource ID of your Azure Quantum workspace in order to connect. The Resource ID and location can be copied from your workspace overview page in the Azure portal.
 
 1. Add the following code to `randomNum.py`, filling in your resource ID and location from your Azure Quantum workspace:
 
     ```python
-    workspace = azure.Workspace(
+    workspace = Workspace(
         resource_id = "MyResourceID",
         location = "MyLocation"
     )
@@ -190,7 +191,7 @@ Now that you have your program compiled into the correct format, create an `azur
 
 ### Additional job details
 
-The `qdk.azure` Python package includes additional methods to display more detailed job data.
+The `qdk.azure` Python module includes additional methods to display more detailed job data.
 
 - `job.get_results_histogram()`: This method returns a dictionary of the outcomes and shot count for each unique measurement. For example, the results for the previous job would be
 

@@ -24,16 +24,20 @@ This article explains how to submit hybrid jobs to Azure Quantum using the [Adap
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- If you want to submit Q# standalone programs, you need the following prerequisites:
-    - [Visual Studio Code](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) installed.
-    - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
-- If you wan to submit Python + Q# programs, you need the following prerequisites:
-    - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-    - The `qdk` Python library with the optional `azure` extra.
-    
-        ```bash
-        pip install --upgrade qdk[azure]
-        ```
+
+If you want to submit Q# standalone programs, then you also need the following prerequisites:
+
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) installed.
+- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
+
+If you want to submit Python and Q# programs, then you also need the following prerequisites:
+
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- The latest `qdk` Python library with the optional `azure` extra.
+
+    ```bash
+    pip install --upgrade "qdk[azure]"
+    ```
 
 ## Supported targets
 

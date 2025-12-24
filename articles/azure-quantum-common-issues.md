@@ -149,7 +149,7 @@ Error message: No match found for output recording set converter from outputreco
 This error can be caused by a dependency conflict with a previous version of `pyqir` or `qiskit-qir`. Uninstall all versions of `pyqir`, `pyqir-*`, and `qiskit-qir` on your local machine, and then install or update the `qdk` Python library with the `azure` and `qiskit` extras:
 
 ```Shell
-pip install --upgrade qdk[azure,qiskit]
+pip install --upgrade "qdk[azure,qiskit]"
 ```
 
 ### Issue: Retrieving basic information about failed jobs
@@ -175,7 +175,7 @@ This pop-up happens because your security token is being reset every time you ru
 
 You can resolve this issue by running `az login` using the Azure CLI. For more information, see [az login](/cli/azure/reference-index#az-login()).
 
-### Issue: After updating the azure-quantum package, I get the error \"ModuleNotFoundError: No module named qiskit.tools\" when monitoring a job
+### Issue: After updating the `qdk[azure]` package, I get the error \"ModuleNotFoundError: No module named qiskit.tools\" when monitoring a job
 
 As of Qiskit 1.0, the `qiskit.tools` module, which is required for the `job_monitor()` function, is deprecated. To monitor jobs, use the `wait_for_final_state()` or the `result` functions.
 

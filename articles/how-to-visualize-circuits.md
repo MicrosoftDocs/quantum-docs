@@ -27,7 +27,7 @@ For more information about quantum circuit diagrams, see [Quantum circuit conven
 - The latest version of the `qdk` Python library with the optional `jupyter` extra.
 
     ```bash
-    python -m pip install --upgrade qdk[jupyter]
+    python -m pip install --upgrade "qdk[jupyter]"
     ```
 
 ## Visualize quantum circuits in VS Code

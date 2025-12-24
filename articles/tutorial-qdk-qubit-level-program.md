@@ -22,10 +22,10 @@ In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> * Define quantum operations in Q#.
-> * Write the Quantum Fourier Transform circuit
-> * Simulate a quantum operation from qubit allocation to measurement output.
-> * Observe how the quantum system's simulated wavefunction evolves throughout the operation.
+> - Define quantum operations in Q#.
+> - Write the Quantum Fourier Transform circuit
+> - Simulate a quantum operation from qubit allocation to measurement output.
+> - Observe how the quantum system's simulated wavefunction evolves throughout the operation.
 
 > [!NOTE]
 > This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in circuit diagrams. For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
@@ -35,12 +35,13 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-* The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-* The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-* If you want to use Jupyter Notebooks, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python package with the `jupyter` extra. To do so, open a terminal and run the following command:
+- The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
+- The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- If you want to use Jupyter Notebooks, then you need to install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions in VS Code.
+- The latest `qdk` Python package with the `jupyter` extra. To install these, open a terminal and run the following command:
 
     ```bash
-    pip install --upgrade qdk[jupyter]
+    pip install --upgrade "qdk[jupyter]"
     ```
 
 ## Create a new Q# file
@@ -82,7 +83,7 @@ operation Main() : Unit {
 The `Main` operation never takes arguments, and for now returns a `Unit` object, which is analogous to returning `void` in C# or an empty tuple, `Tuple[()]`, in Python.
 Later, you modify the operation to return an array of measurement results.
 
-### Allocate qubits 
+### Allocate qubits
 
 Within the Q# operation, allocate a register of three qubits with the `use` keyword. With `use`, the qubits are automatically allocated in the $\ket{0}$ state.
 
@@ -500,6 +501,7 @@ Post-QFT measurement results [qubit0, qubit1, qubit2]:
     Post-QFT measurement results [qubit0, qubit1, qubit2]: 
     [[Zero, One, One]]
     ```
+
 ***
 
 This output illustrates a few different things:
@@ -573,7 +575,7 @@ You can thus apply the proper QFT for any given number of qubits, without having
 
 Explore other Q# tutorials:
 
-* [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
-* [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
-* [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
-* The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
+- [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
+- [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
+- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

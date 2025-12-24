@@ -17,7 +17,7 @@ from azure.quantum.cirq import AzureQuantumService
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program will need the resource ID and the
+To connect to the Azure Quantum service, your program needs the resource ID and the
 location of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
 copy the values from the header.
@@ -110,11 +110,11 @@ pl.ylabel("Counts")
 pl.xlabel("Result")
 ```
 
-Looking at the histogram, you may notice that the random number generator returned 0 every time, which is not very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
+The histogram shows that the random number generator returns 0 every time, which isn't random. The results aren't random because, while the API Validator ensures that your code runs successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
 ## Estimate job cost
 
-Before running a job on the QPU, you can estimate how much it will cost to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
+Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
 
 ```python
 cost = service.estimate_cost(
@@ -132,9 +132,7 @@ For the most current pricing details, see [Azure Quantum pricing](xref:microsoft
 
 ## Asynchronous workflow using Jobs
 
-For long-running circuits, it can be useful to run them asynchronously.
-The `service.create_job` method returns a `Job` object, which you can use to
-get the results after the job has run successfully.
+For long-running circuits, it can be useful to run them asynchronously. The `service.create_job` method returns a `Job` object, which you can use to get the results after the job runs successfully.
 
 ```python
 job = service.create_job(
@@ -165,6 +163,4 @@ print(result)
     {'m_b': ['00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00', '00']}
 ```
 
-Note that this does not return a `cirq.Result` object. Instead, it
-returns a dictionary of bitstring measurement results indexed by measurement key.
-
+This doesn't return a `cirq.Result` object. Instead, it returns a dictionary of bitstring measurement results indexed by measurement key.

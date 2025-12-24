@@ -316,7 +316,8 @@ For more information on the full set of noise parameters available, see the [Qua
 First, import the required packages and initiate the base profile:
 
 ```python
-from qdk import qsharp, azure
+from qdk import qsharp
+from qdk.azure import Workspace
 
 qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
@@ -348,7 +349,7 @@ MyProgram = qsharp.compile("GenerateRandomBit()")
 Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
 
 ```python
-MyWorkspace = azure.Workspace(
+MyWorkspace = Workspace(
     resource_id = "",
     location = ""
 )
@@ -468,7 +469,7 @@ First, import the required packages and initiate the base profile:
 
 ```python
 from qdk import qsharp
-import azure.quantum
+from qdk.azure import Workspace
 qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
@@ -499,7 +500,7 @@ MyProgram = qsharp.compile("GenerateRandomBit()")
 Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
 
 ```python
-MyWorkspace = azure.quantum.Workspace(
+MyWorkspace = Workspace(
     resource_id = "",
     location = ""
 )

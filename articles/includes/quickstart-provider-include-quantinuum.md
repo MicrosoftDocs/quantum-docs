@@ -12,7 +12,7 @@ ms.topic: include
 First, run the following cell to load the required imports:
 
 ```python
-from azure.quantum import Workspace
+from qdk.azure import Workspace
 ```
 
 ## Connect to the Azure Quantum service
@@ -113,5 +113,3 @@ print(f"Estimated cost: {cost.estimated_total}")
 This prints the estimated cost in H-System Quantum Credits (HQCs).
 
 For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
-
-

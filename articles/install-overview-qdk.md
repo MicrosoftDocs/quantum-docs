@@ -47,13 +47,13 @@ To add Python and Jupyter Notebook support:
 1. Install the `qdk` Python library with the `azure` extra:
 
    ```cmd
-   python -m pip install qdk[azure]
+   python -m pip install "qdk[azure]"
    ```
 
 1. For Qiskit version 1 and version 2 support, install the `qiskit` extra:
 
    ```cmd
-   python -m pip install azure-quantum[qiskit]
+   python -m pip install "qdk[qiskit]"
    ```
 
    > [!IMPORTANT]
@@ -62,7 +62,7 @@ To add Python and Jupyter Notebook support:
 1. To work in Jupyter Notebook and display visualizations, install the following Python packages:
 
     ```cmd
-    python -m pip install qdk[jupyter] ipykernel ipympl jupyterlab
+    python -m pip install "qdk[jupyter]" ipykernel ipympl jupyterlab
     ```
 
 To test your setup, see [Submit Q# jobs with Python](xref:microsoft.quantum.submit-jobs?pivots=ide-python) or [Submit Q# jobs with Jupyter Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
