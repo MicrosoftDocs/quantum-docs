@@ -167,4 +167,3 @@ print(result)
 
 Note that this does not return a `cirq.Result` object. Instead, it
 returns a dictionary of bitstring measurement results indexed by measurement key.
-

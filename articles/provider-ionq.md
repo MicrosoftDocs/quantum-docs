@@ -195,7 +195,7 @@ First, import the required packages and initiate the base profile:
 
 ```python
 from qdk import qsharp
-import azure.quantum
+from qdk.azure import Workspace
 qsharp.init(target_profile=qsharp.TargetProfile.Base)
 ```
 
@@ -224,7 +224,7 @@ MyProgram = qsharp.compile("GenerateRandomBit()")
 Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
 
 ```python
-MyWorkspace = azure.quantum.Workspace(
+MyWorkspace = Workspace(
     resource_id = "",
     location = ""
 )
@@ -398,7 +398,7 @@ where:
 
 ## IonQ status
 
-For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/). 
+For information about IonQ QPU job processing delays, see [IonQ status page](https://status.ionq.co/).
 
 ## IonQ best practices and connectivity graph
 

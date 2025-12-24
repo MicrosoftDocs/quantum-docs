@@ -88,10 +88,10 @@ You can see your quotas by using the Azure Command-Line Interface (Azure CLI). F
     ```
 
     ```output
-    |Dimension | Holds | Limit   |   Period |   ProviderId | Scope | Utilization|
-    |--------- | ----- | --------- | -------- | ----------|  ------------ | -----------|
-    |qgs      |  0.0  |  8333334.0 | Infinite | ionq      |  Subscription | 33334.0|
-    |hqc      |  0.0  |  800.0     | Infinite | quantinuum  | Subscription | 0.0|
+    | Dimension | Holds | Limit      | Period   | ProviderId | Scope        | Utilization |
+    | --------- | ----- | ---------  | -------- | ---------- | ------------ | ----------- |
+    | qgs       |  0.0  |  8333334.0 | Infinite | ionq       | Subscription | 33334.0     |
+    | hqc       |  0.0  |  800.0     | Infinite | quantinuum | Subscription | 0.0         |
     ```
 
     In this example, the `qgs` row shows that the account has a limit of `8333334 qgs` with IonQ, of which `33334 qgs` have been used. The account also has a limit of `800` HQCs with Quantinuum, of which `0` are used.
@@ -108,12 +108,12 @@ The **Period** column indicates the period when your quota is renewed.
 
 ### Track quota using Python SDK
 
-1. Install the latest version of the [`azure-quantum` Python package](xref:microsoft.quantum.install-qdk.overview).
+1. Install the latest version of the [`qdk` Python library](xref:microsoft.quantum.install-qdk.overview).
 
 1. Open a new Python file. Instantiate a **`Workspace` object**, which allows you to connect to the workspace you previously deployed in Azure.
 
     ```python
-    from azure.quantum import Workspace
+    from qdk.azure import Workspace
 
     # Copy the following settings for your workspace
     workspace = Workspace ( 
@@ -154,9 +154,9 @@ The `period` item indicates the period when your quota is renewed.
 
 > [!TIP]
 > The `get_quotas` method return the results in the form of a Python dictionary. For a more human-readable format, use the following code samples to print a summary of > the remaining quotas at subscription and workspace level.
-> 
+>
 > Copy the following code to track quota at **subscription level**.
-> 
+>
 > ```python
 > # This gathers usage against quota for the various providers (quota is set at the subscription level).
 > # Note that a provider may have multiple quotas, such as Quantinuum that limits usage of their Emulator.
@@ -252,8 +252,6 @@ You can request quota increases by raising a support ticket.
       - Which quotas you want to change, and by how much
       - Any justification for why you are increasing your quota can help us to decide in some cases.
 
-
 ## Related content
 
 - [FAQ: Understanding Job Costs and Billing in Azure Quantum](xref:microsoft.quantum.azure.job-cost-billing)
-

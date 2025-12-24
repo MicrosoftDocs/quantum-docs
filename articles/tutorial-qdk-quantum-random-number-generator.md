@@ -30,17 +30,18 @@ In this tutorial, you will:
 
 ## Prerequisites
 
-- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding):
-  - A Microsoft (MSA) email account.
+To run the code sample in [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), you must have a Microsoft (MSA) email account.
 
-- To develop and run the code sample in Visual Studio Code:
-    - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-    - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-    - If you want to use Jupyter Notebook, you also need to install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions, and the latest `qdk` Python library with the `jupyter` extra. To do so, open a terminal and run the following command:
+To develop and run the code sample in Visual Studio Code (VS Code) and Jupyter Notebook, install the following:
 
-        ```bash
-        pip install --upgrade qdk[jupyter]
-        ```
+- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
+- The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- The [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
+- The latest `qdk` Python library with the `jupyter` extra. To install these, open a terminal and run the following command:
+
+    ```bash
+    pip install --upgrade "qdk[jupyter]"
+    ```
 
 ## Define the problem
 

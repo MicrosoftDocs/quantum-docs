@@ -32,7 +32,7 @@ To develop and run your circuits in Visual Studio Code (VS Code), you need:
 - The `qdk` Python library with the `azure` extra, and the `ipykernel` package.
 
     ```bash
-    python -m pip install --upgrade qdk[azure] ipykernel
+    python -m pip install --upgrade "qdk[azure]" ipykernel
     ```
 
 ## Create a new Jupyter notebook
@@ -556,7 +556,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
         print(f"Shot {i}: {shot}")
     ```
 
-### [Use azure-quantum Python SDK](#tab/tabid-azquantum) 
+### [Use azure-quantum Python SDK](#tab/tabid-azquantum)
 
 1. First, load the required imports.
 

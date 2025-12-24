@@ -20,14 +20,14 @@ uid: microsoft.quantum.providers.rigetti
 
 The Rigetti provider makes the following targets available:
 
-|Target name|Target ID|Number of qubits|Description|
-|---|---|---|---|
-|[Quantum Virtual Machine (QVM)](#simulators) |	rigetti.sim.qvm	|-| Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost.|
-|[Ankaa-3](#ankaa-3) |rigetti.qpu.ankaa-3 | 84 qubits|  |
-|[Cepheus-1-36Q](#cepheus-1-36q) |rigetti.qpu.cepheus-1-36q | 36 qubits|  |
+| Target name                                  | Target ID                 | Number of qubits | Description |
+|----------------------------------------------|---------------------------|------------------|-------------|
+| [Quantum Virtual Machine (QVM)](#simulators) | rigetti.sim.qvm           | -                | Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost. |
+| [Ankaa-3](#ankaa-3)                          | rigetti.qpu.ankaa-3       | 84 qubits        |  |
+| [Cepheus-1-36Q](#cepheus-1-36q)              | rigetti.qpu.cepheus-1-36q | 36 qubits        |  |
 
 > [!NOTE]
-> Rigetti simulators and hardware targets do not support Cirq programs. 
+> Rigetti simulators and hardware targets do not support Cirq programs.
 
 Rigetti's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets).
 
@@ -71,9 +71,9 @@ To see Rigetti's billing plan, visit [Azure Quantum pricing](xref:microsoft.quan
 
 All Rigetti targets currently accept two formats:
 
-* `rigetti.quil.v1`, which is the text of a [Quil] program. 
-* `rigetti.qir.v1`, which is QIR bitcode.
- 
+- `rigetti.quil.v1`, which is the text of a [Quil] program.
+- `rigetti.qir.v1`, which is QIR bitcode.
+
 All targets also take the optional `count` integer parameter for defining the number of shots to run. If omitted, the program only runs once.
 
 ### Quil
@@ -133,8 +133,7 @@ for i, shot in enumerate(data_per_shot):
     print(f"Shot {i}: {shot}")
 ```
 
-### [Use azure-quantum Python SDK](#tab/tabid-azquantum) 
-
+### [Use azure-quantum Python SDK](#tab/tabid-azquantum)
 
 ```python
 from azure.quantum import Workspace
@@ -189,12 +188,13 @@ print(f"Data from '{readout}' register:")
 for i, shot in enumerate(data_per_shot):
     print(f"Shot {i}: {shot}")
 ```
+
 ***
 
 [Quil]: https://github.com/quil-lang/quil
 [QVM]: https://github.com/quil-lang/qvm
 [quilc]: https://github.com/quil-lang/quilc
-[`pyQuil`]: https://pyquil-docs.rigetti.com/en/stable/ 
+[`pyQuil`]: https://pyquil-docs.rigetti.com/en/stable/
 [Quil-T]: https://pyquil-docs.rigetti.com/en/latest/quilt.html
 [Native Quil]: https://pyquil-docs.rigetti.com/en/latest/compiler.html#legal-compiler-input
 [`pyquil-for-azure-quantum`]: https://pypi.org/project/pyquil-for-azure-quantum/

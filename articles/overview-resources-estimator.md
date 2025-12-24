@@ -26,7 +26,7 @@ This article shows how to customize the target parameters of the [Azure Quantum 
 - The latest `qdk` Python library with the `jupyter` extra.  
 
     ```bash
-    python -m pip install --upgrade qdk[jupyter] 
+    python -m pip install --upgrade "qdk[jupyter]"
     ```
 
 ## Target parameters

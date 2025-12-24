@@ -23,7 +23,7 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Re
 - The latest `qdk` Python library with the `jupyter` extra.  
 
     ```bash
-    python -m pip install --upgrade qdk[jupyter] 
+    python -m pip install --upgrade "qdk[jupyter]"
     ```
 
 > [!NOTE]

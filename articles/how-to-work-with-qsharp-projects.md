@@ -29,7 +29,7 @@ To run Python programs, you also need:
 - The `qdk` Python library with the optional `azure` extra.
 
     ```bash
-    python -m pip install --upgrade qdk[azure]
+    python -m pip install --upgrade "qdk[azure]"
     ```
 
 ## How Q# projects work

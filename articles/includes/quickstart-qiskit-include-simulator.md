@@ -16,7 +16,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
 - The `qdk` Python package with the `qiskit` and `jupyter` extras.
 
-    ```cmd
+    ```bash
     python pip install "qdk[qiskit,jupyter]"
     ```
 

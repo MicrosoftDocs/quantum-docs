@@ -23,10 +23,10 @@ In this article, you learn how use sessions to manually manage your jobs. You al
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The `azure-quantum` Python package. If you want to use Qiskit or Cirq, then you need to install the `azure-quantum` package with the `qiskit` or `cirq` extras.
+- The `qdk` Python library. If you want to use Qiskit or Cirq, then you need to install the `azure` and `qiskit` extras.
 
     ```bash
-    pip install --upgrade azure-quantum[qiskit,cirq]
+    pip install --upgrade "qdk[azure,qiskit]"
     ```
 
 > [!NOTE]
@@ -83,7 +83,7 @@ To create a new session, it's a best practice to follow the steps in [Get starte
 1. Create a **Session object**.
 
       ```python
-      from azure.quantum.job.session import Session, SessionDetails, SessionJobFailurePolicy
+      from qdk.azure.job import Session, SessionDetails, SessionJobFailurePolicy
       import uuid
     
       session = Session(
@@ -137,8 +137,8 @@ To create a new session, it's a best practice to follow the steps in [Get starte
 1. Next, you create a **Provider object**.
 
     ```python
-    from azure.quantum import Workspace
-    from azure.quantum.qiskit import AzureQuantumProvider
+    from qdk.azure import Workspace
+    from qdk.azure.qiskit import AzureQuantumProvider
 
     workspace = Workspace (
         resource_id = resource_id,
@@ -159,7 +159,7 @@ To create a new session, it's a best practice to follow the steps in [Get starte
 1. To **create** a session object, use the `.open_session` function.
 
     ```python
-    from azure.quantum.job.session import Session, SessionJobFailurePolicy
+    from qdk.azure.job import Session, SessionJobFailurePolicy
     session = provider_backend.open_session(name="Azure Quantum Session",
     job_failure_policy=SessionJobFailurePolicy.CONTINUE) # optional, defaults to abort
     session.open()
