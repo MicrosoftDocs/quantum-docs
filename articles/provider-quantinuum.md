@@ -275,13 +275,17 @@ operation SU4Example() : Result[] {
 Now compile the operation:
 
 ```python
+from qdk import qsharp
+
 MyProgram = qsharp.compile("GenerateRandomBit()")
 ```
 
 Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
 
 ```python
-MyWorkspace = azure.quantum.Workspace(
+from qdk.azure import Workspace
+
+MyWorkspace = Workspace(
     resource_id = "",
     location = ""
 )
