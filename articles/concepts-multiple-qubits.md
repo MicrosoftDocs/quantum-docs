@@ -21,26 +21,26 @@ This article reviews the rules used to build multi-qubit states out of single-qu
 
 The true power of quantum computing only becomes evident as you increase the number of qubits. Single qubits possess some counter-intuitive features, such as the ability to be in more than one state at a given time. However, if you only had single-qubit gates in a quantum computer, then a calculator and certainly a classical supercomputer would dwarf its computational power.
 
-Quantum computing power arises, in part, because the dimension of the vector space of quantum state vectors grows exponentially with the number of qubits. This means that while a single qubit can be trivially modeled, simulating a fifty-qubit quantum computation would arguably push the limits of existing supercomputers. Increasing the size of the computation by only one extra qubit *doubles* the memory required to store the state and roughly *doubles* the computational time. This rapid doubling of computational power is why a quantum computer with a relatively small number of qubits can far surpass the most powerful supercomputers of today, tomorrow, and beyond for some computational tasks.
+Quantum computing power arises, in part, because the dimension of the vector space of quantum state vectors grows exponentially with the number of qubits. This means that while a single qubit can be trivially modeled, simulating a fifty-qubit quantum computation would arguably push the limits of existing supercomputers. Increasing the size of the computation by only one extra qubit doubles the memory required to store the state and roughly doubles the computational time. This rapid doubling of computational power is why a quantum computer with a relatively small number of qubits can far surpass the most powerful supercomputers of today, tomorrow, and beyond for some computational tasks.
 
 ## Two-qubit states
 
 Suppose you have two separate qubits in the following states:
 
-$$ \psi=\begin{bmatrix} \alpha \\  \beta \end{bmatrix} $$
-$$ \phi=\begin{bmatrix} \gamma \\  \delta \end{bmatrix} $$
+$$ \psi=\begin{bmatrix} \alpha \\\\  \beta \end{bmatrix} $$
+$$ \phi=\begin{bmatrix} \gamma \\\\  \delta \end{bmatrix} $$
 
 The corresponding two-qubit state is the result of the tensor product, or [Kronecker product](https://en.wikipedia.org/wiki/Kronecker_product), of vectors, which is defined as follows:
 
 $$
-\psi \otimes \phi = \begin{bmatrix} \alpha \\  \beta \end{bmatrix} \otimes \begin{bmatrix} \gamma \\  \delta \end{bmatrix}
-=\begin{bmatrix} \alpha \begin{bmatrix} \gamma \\  \delta \end{bmatrix} \\\\ \beta \begin{bmatrix}\gamma \\  \delta \end{bmatrix} \end{bmatrix}
-= \begin{bmatrix} \alpha\gamma \\  \alpha\delta \\  \beta\gamma \\  \beta\delta \end{bmatrix}.
+\psi \otimes \phi = \begin{bmatrix} \alpha \\\ \beta \end{bmatrix} \otimes \begin{bmatrix} \gamma \\\\ \delta \end{bmatrix}
+=\begin{bmatrix} \alpha \begin{bmatrix} \gamma \\\\ \delta \end{bmatrix} \\\\ \beta \begin{bmatrix}\gamma \\\\ \delta \end{bmatrix} \end{bmatrix}
+= \begin{bmatrix} \alpha\gamma \\\\ \alpha\delta \\\\ \beta\gamma \\\\ \beta\delta \end{bmatrix}.
 $$
 
 Therefore, given two single-qubit states $\psi$ and $\phi$, each of dimension 2, the corresponding two-qubit state $\psi \otimes \phi$ is 4-dimensional. The vector
 
-$$ \begin{bmatrix} \alpha_{00} \\  \alpha_{01} \\  \alpha_{10} \\  \alpha_{11} \end{bmatrix} $$
+$$ \begin{bmatrix} \alpha_{00} \\\\ \alpha_{01} \\\\ \alpha_{10} \\\\ \alpha_{11} \end{bmatrix} $$
 
 represents a quantum state on two qubits if
 
@@ -51,25 +51,25 @@ More generally, you can see that the unit vector $v_1 \otimes v_2 \otimes \cdots
 The computational basis for two-qubit states is formed by the tensor products of one-qubit basis states. For a two-qubit system, there are the following four states:
 
 $$
-00 \equiv \begin{bmatrix} 1 \\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+00 \equiv \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix}
 $$
 
 $$
-01 \equiv \begin{bmatrix} 1 \\ 0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+01 \equiv \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\\\ 0 \end{bmatrix}
 $$
 
 $$
-10 \equiv \begin{bmatrix} 0 \\ 1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}
+10 \equiv \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\\\ 0 \end{bmatrix}
 $$
 
 $$
-11 \equiv \begin{bmatrix} 0 \\ 1 \end{bmatrix} \otimes \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
+11 \equiv \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 1 \end{bmatrix}
 $$
 
 While you can always take the tensor product of two single-qubit states to form a two-qubit state, not all two-qubit quantum states can be written as the tensor product of two single-qubit states.
-For example, there are no states $\psi=\begin{bmatrix} \alpha \\ \beta \end{bmatrix}$ and $\phi=\begin{bmatrix} \gamma \\ \delta \end{bmatrix}$ such that their tensor product is the state
+For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\ \beta \end{bmatrix}$ and $\phi = \begin{bmatrix} \gamma \\\\ \delta \end{bmatrix}$ such that their tensor product is the state
 
-$$ \psi \otimes \phi = \begin{bmatrix} 1 / \sqrt{2} \\  0 \\  0 \\  1/\sqrt{2} \end{bmatrix}. $$
+$$ \psi \otimes \phi = \begin{bmatrix} 1 / \sqrt{2} \\\\  0 \\\\  0 \\\\  1/\sqrt{2} \end{bmatrix}. $$
 
 Such a two-qubit state, which can't be written as the tensor product of single-qubit states, is called an entangled state; the two qubits are said to be [entangled](https://en.wikipedia.org/wiki/Quantum_entanglement). Loosely speaking, because the quantum state can't be thought of as a tensor product of single qubit states, the information that the state holds isn't confined to either of the qubits individually. Rather, the information is stored non-locally in the correlations between the two states. This non-locality of information is one of the major distinguishing features of quantum computing over classical computing, and is essential for many quantum protocols, including quantum error correction.
 
@@ -79,9 +79,9 @@ Measuring two-qubit states is similar to single-qubit measurements. Measuring th
 
 $$
 \begin{bmatrix}
-\alpha_{00} \\
-\alpha_{01} \\
-\alpha_{10} \\
+\alpha_{00} \\\\
+\alpha_{01} \\\\
+\alpha_{10} \\\\
 \alpha_{11}
 \end{bmatrix}
 $$
@@ -91,9 +91,9 @@ yields $00$ with probability $|\alpha_{00}|^2$, $01$ with probability $|\alpha_{
 $$
 00 \equiv
 \begin{bmatrix}
-1 \\
-0 \\
-0 \\
+1 \\\\
+0 \\\\
+0 \\\\
 0
 \end{bmatrix}.
 $$
@@ -104,14 +104,14 @@ To see this, consider measuring the first qubit of the following state, which is
 
 $$
 H^{\otimes 2} \left(
-\begin{bmatrix} 1 \\ 0 \end{bmatrix}\otimes \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+\begin{bmatrix} 1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}
 \right)
-= \frac{1}{2}\begin{bmatrix} 1 & 1 & 1 & 1 \\ 1 & -1 & 1 & -1 \\ 1 & 1 & -1 & -1 \\ 1 & -1 & -1 & 1 \end{bmatrix}
-\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0\end{bmatrix}
-= \frac{1}{2}\begin{bmatrix} 1 \\ 1 \\ 1 \\ 1\end{bmatrix}
+= \frac{1}{2}\begin{bmatrix} 1 & 1 & 1 & 1 \\\\ 1 & -1 & 1 & -1 \\\\ 1 & 1 & -1 & -1 \\\\ 1 & -1 & -1 & 1 \end{bmatrix}
+\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0\end{bmatrix}
+= \frac{1}{2}\begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\\\ 1\end{bmatrix}
 \mapsto
 \begin{cases}
-\text{outcome } = 0 & \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 1 \\ 0 \\ 0 \end{bmatrix} \\ \text{outcome } = 1 & \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix} \\
+\text{outcome } = 0 & \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\\\ 0 \end{bmatrix} \\\\ \text{outcome } = 1 & \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\\\ 1 \end{bmatrix} \\\\
 \end{cases}.
 $$
 
@@ -146,13 +146,13 @@ This is just the sum of the two probabilities that would be expected for measuri
 For our example, this evaluates to
 
 $$
-\frac{1}{4} \left| \begin{bmatrix} 0 & 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \right|^2 + \frac{1}{4} \left| \begin{bmatrix} 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \right|^2 = \frac{1}{2}.
+\frac{1}{4} \left| \begin{bmatrix} 0 & 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\\\ 1 \end{bmatrix} \right|^2 + \frac{1}{4} \left| \begin{bmatrix} 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 1 \\\\ 1 \\\\ 1 \\\\ 1 \end{bmatrix} \right|^2 = \frac{1}{2}.
 $$
 
 which perfectly matches our intuition. Similarly, the state after the first qubit is measured as $1$ can be written as
 
 $$
-\frac{\frac{e_1}{2}+\frac{e_3}{2}}{\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 0 \\ 1 \\ 1 \end{bmatrix}
+\frac{\frac{e_1}{2}+\frac{e_3}{2}}{\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\\\ 0 \\\\ 1 \\\\ 1 \end{bmatrix}
 $$
 
 again in accordance with our intuition.
@@ -163,14 +163,14 @@ As in the single-qubit case, any unitary transformation is a valid operation on 
 For example, the CNOT (controlled-NOT) gate is a commonly used two-qubit gate and is represented by the following unitary matrix:
 
 $$
-\text{CNOT} = \begin{bmatrix} 1  & 0 & 0 & 0  \\  0 & 1 & 0 & 0 \\  0 & 0 & 0 & 1 \\  0 & 0 & 1 & 0 \end{bmatrix}
+\text{CNOT} = \begin{bmatrix} 1  & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix}
 $$
 
 We can also form two-qubit gates by applying single-qubit gates on both qubits. For example, if you apply the gates
 
 $$
 \begin{bmatrix}
-a & b \\ c & d
+a & b \\\\ c & d
 \end{bmatrix}
 $$
 
@@ -178,7 +178,7 @@ and
 
 $$
 \begin{bmatrix}
-e & f \\ g & h
+e & f \\\\ g & h
 \end{bmatrix}
 $$
 
@@ -186,17 +186,16 @@ to the first and second qubits, respectively, this is equivalent to applying the
 
 $$
 \begin{bmatrix}
-a & b \\ c & d
+a & b \\\\ c & d
 \end{bmatrix}
 \otimes
 \begin{bmatrix}
-e & f \\ g & h
-\end{bmatrix}
-=
+e & f \\\\ g & h
+\end{bmatrix} =
 \begin{bmatrix}
-ae & af & be & bf \\
-ag & ah & bg & bh \\
-ce & cf & de & df \\
+ae & af & be & bf \\\\
+ag & ah & bg & bh \\\\
+ce & cf & de & df \\\\
 cg & ch & dg & dh
 \end{bmatrix}.
 $$
@@ -209,7 +208,7 @@ The intuition behind a controlled-not gate can be generalized to arbitrary gates
 
 $$
 \Lambda\_0(Z) =
-\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}
+\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 \end{bmatrix}
 =(\mathbf{1} \otimes H)\operatorname{CNOT}(\mathbf{1}\otimes H).
 $$
 
@@ -226,14 +225,14 @@ We follow exactly the same patterns explored in the two-qubit case to build many
 
 $$
 1011001 \equiv
-\begin{bmatrix} 0 \\  1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\  0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\  1 \end{bmatrix} \otimes \begin{bmatrix} 0 \\  1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\  0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\  0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\  1 \end{bmatrix}.
+\begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix}.
 $$
 
 Quantum gates work in exactly the same way. For example, if you wish to apply the $X$ gate to the first qubit and then perform a CNOT between the second and third qubits you can express this transformation as
 
 $$
 \begin{align}
-(X \otimes \operatorname{CNOT}_{12} \otimes \mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1}) \begin{bmatrix} 0 \\  1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\  0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\  1 \end{bmatrix} \otimes \begin{bmatrix} 0 \\  1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\  0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\  0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\  1 \end{bmatrix} \\
+(X \otimes \operatorname{CNOT}_{12} \otimes \mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1} \otimes \mathbf{1}) \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \\\\
 & \qquad \qquad \equiv 0011001.
 \end{align}
 $$
@@ -243,7 +242,7 @@ In many qubit systems, there's often a need to allocate and deallocate qubits th
 Finally, although new gates needed to be added to our gate set to achieve universal quantum computing for two qubit quantum computers, no new gates need to be introduced in the multi-qubit case. The gates $H$, $T$, and CNOT form a universal gate set on many qubits because any general unitary transformation can be broken into a series of two qubit rotations. You then can use the theory developed for the two-qubit case and use it again here when you have many qubits.
 
 > [!NOTE]
-> While the linear algebraic notation that used to this point can certainly be used to describe multi-qubit states, it becomes increasingly cumbersome as you increase the size of the states. The resulting column-vector for a 7-bit string, for example, is $128$ dimensional, which makes it cumbersome to express it using the notation described earlier. Instead, *Dirac notation*, a symbolic shorthand that simplifies the representation of quantum states, is used. For more information, see [Dirac notation](xref:microsoft.quantum.concepts.dirac).
+> While the linear algebraic notation that used to this point can certainly be used to describe multi-qubit states, it becomes increasingly cumbersome as you increase the size of the states. The resulting column-vector for a 7-bit string, for example, is $128$ dimensional, which makes it cumbersome to express it using the notation described earlier. Instead, Dirac notation, a symbolic shorthand that simplifies the representation of quantum states, is used. For more information, see [Dirac notation](xref:microsoft.quantum.concepts.dirac).
 
 ## Related content
 
