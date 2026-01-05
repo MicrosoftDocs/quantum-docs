@@ -14,15 +14,23 @@ uid: microsoft.quantum.tutorial.qdk-chem-benzene-sim
 
 # Tutorial: Simulate quantum chemistry calculations for benzene diradical with QDK Chemistry in VS Code
 
-In this tutorial, you learn how to perform quantum chemistry calculations for benzene diradical, prepare a quantum circuit for the molecule, run the quantum circuit on different simulators, and visualize the results of your molecular calculations and quantum circuit.
+In this tutorial, you work through an end-to-end quantum chemistry calculation for benzene diradical with the Microsoft Quantum Development Kit (QDK) in Visual Studio Code (VS Code). You learn how to perform a series of classical quantum chemistry calculations, prepare a quantum circuit for your molecule, run the quantum circuit on different simulators, and visualize the results of your molecular calculations and quantum circuit.
 
 ## Prerequisites
 
-To do this tutorial, you must have the following:
+To do this tutorial, you must install the following:
 
-- a
-- b
-- c
+- VS Code with the QDK and Jupyter extensions [LINKS TO INSTALLATION DOCS]
+- A Python environment with Python version 3.9 or higher.
+- The latest version of the `qdk` Python library with the `jupyter` extra
+
+    ```bash
+    pip install --upgrade "qdk[jupyter]" 
+    ```
+
+## Load and view the molecular structure
+
+......
 
 ## Related content
 
