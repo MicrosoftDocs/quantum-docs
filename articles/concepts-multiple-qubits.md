@@ -67,7 +67,7 @@ $$
 $$
 
 While you can always take the tensor product of two single-qubit states to form a two-qubit state, not all two-qubit quantum states can be written as the tensor product of two single-qubit states.
-For example, there are no states $\psi=\begin{bmatrix} \alpha \\\\ \beta \end{bmatrix}$ and $\phi = \begin{bmatrix} \gamma \\\\ \delta \end{bmatrix}$ such that their tensor product is the state
+For example, there are no states $\psi$ and $\phi$ such that their tensor product is the state
 
 $$ \psi \otimes \phi = \begin{bmatrix} 1 / \sqrt{2} \\\\  0 \\\\  0 \\\\  1/\sqrt{2} \end{bmatrix}. $$
 
