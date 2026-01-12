@@ -37,6 +37,7 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 | [IonQ Aria 1](xref:microsoft.quantum.providers.ionq#ionq-aria-quantum-computer)                         | 25 qubits        |
 | [IonQ Forte 1](xref:microsoft.quantum.providers.ionq#ionq-forte-quantum-computer)                       | 36 qubits        |
 | [IonQ Forte Enterprise 1](xref:microsoft.quantum.providers.ionq#ionq-forte-enterprise-quantum-computer) | 36 qubits        |
+| [IonQ Forte Enterprise 2](xref:microsoft.quantum.providers.ionq#ionq-forte-enterprise-quantum-computer) | 36 qubits        |
 | [PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emulator)                                       | 100 qubits       |
 | [PASQAL Fresnel1](xref:microsoft.quantum.providers.pasqal#fresnel1)                                     | 100 qubits       |
 | [Quantinuum H2-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)           | 32 qubits        |
