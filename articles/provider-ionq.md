@@ -26,6 +26,7 @@ The following targets are available from this provider:
 | [IonQ Aria 1](#ionq-aria-quantum-computer)                         | ionq.qpu.aria-1             | 25 qubits        | IonQ's Aria 1 trapped-ion quantum computer.             |
 | [IonQ Forte 1](#ionq-forte-quantum-computer)                       | ionq.qpu.forte-1            | 36 qubits        | IonQ's Forte 1 trapped-ion quantum computer.            |
 | [IonQ Forte Enterprise 1](#ionq-forte-enterprise-quantum-computer) | ionq.qpu.forte-enterprise-1 | 36 qubits        | IonQ's Forte Enterprise 1 trapped-ion quantum computer. |
+| [IonQ Forte Enterprise 3](#ionq-forte-enterprise-quantum-computer) | ionq.qpu.forte-enterprise-3 | 36 qubits        | IonQ's Forte Enterprise 3 trapped-ion quantum computer. |
 
 IonQ's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets).
 
@@ -102,7 +103,7 @@ The Forte Enterprise is a version of the Forte class systems that has been adapt
 
 - Job type: `Quantum Program`
 - Data Format: `ionq.circuit.v1`
-- Target ID: `ionq.qpu.forte-enterprise-1`
+- Target ID: `ionq.qpu.forte-enterprise-1`, `ionq.qpu.forte-enterprise-3`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles)
 
 | Parameter Name | Type     | Required | Description                   |
