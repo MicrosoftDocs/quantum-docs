@@ -19,11 +19,11 @@ from azure.quantum.cirq import AzureQuantumService
 
 To connect to the Azure Quantum service, your program needs the resource ID of your Azure Quantum workspace. Log in to your Azure account,
 <https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
+copy the **Resource ID** value from the header.
 
 ![How to retrieve the resource ID from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
 
-Paste the values into the following `AzureQuantumService` constructor to
+Paste the value into the following `AzureQuantumService` constructor to
 create a `service` object that connects to your Azure Quantum workspace.
 Optionally, specify a default target:
 

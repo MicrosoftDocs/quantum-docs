@@ -40,11 +40,11 @@ from qiskit.visualization import plot_histogram
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your need the resource ID of your Azure Quantum workspace.
+To connect to the Azure Quantum service, you need the resource ID of your Azure Quantum workspace.
 
 1. Log in to the [Azure portal](https://portal.azure.com).
 1. Choose your Azure Quantum workspace, and go to **Overview**.
-1. Copy the **Resource ID** parameters.
+1. Copy the **Resource ID** parameter.
 
 Add a new cell in your notebook and use your account information to create [`Workspace`](xref:azure.quantum.Workspace) and  [`AzureQuantumProvider`](xref:azure.quantum.qiskit.AzureQuantumProvider) objects to connect to your Azure Quantum workspace.
 
