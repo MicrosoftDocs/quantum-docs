@@ -69,10 +69,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
     ```python
     from qdk.azure import Workspace
 
-    workspace = Workspace(
-        resource_id = "", # add your resource ID
-        location = "", # add your location, for example "westus"
-    )
+    workspace = Workspace(resource_id="") # add your resource ID
     ```
 
 1. Add a new cell in the notebook and import the `qsharp` Python package:

@@ -68,7 +68,7 @@ Set-AzContext SubscriptionName
 
 ## Create an empty resource group
 
-When you deploy a template, you specify a resource group that will contain the quantum workspace with its associated resources. Before running the deployment command, create the resource group with either Azure CLI or Azure PowerShell.
+When you deploy a template, specify a resource group that contains the quantum workspace with its associated resources. Before you run the deployment command, create the resource group with either Azure CLI or Azure PowerShell.
 
 # [Azure CLI](#tab/azure-cli)
 

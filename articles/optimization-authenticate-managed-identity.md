@@ -58,7 +58,6 @@ from azure.identity import ManagedIdentityCredential
 from qdk.azure import Workspace
 workspace = Workspace (
     resource_id = "",
-    location = "" ,
     credential=ManagedIdentityCredential()
 )
 

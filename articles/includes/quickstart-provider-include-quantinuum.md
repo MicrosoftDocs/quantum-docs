@@ -17,21 +17,15 @@ from qdk.azure import Workspace
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace. Log in to your Azure account,
-<https://portal.azure.com>, navigate to your Azure Quantum workspace, and
-copy the values from the header.
+To connect to the Azure Quantum service, your program needs the resource ID your Azure Quantum workspace. Log in to your Azure account in the [Azure portal](https://portal.azure.com), navigate to your Azure Quantum workspace, and then copy the **Resource ID** value from the **Overview** pane.
 
-![How to retrieve the resource ID and location from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
+![How to retrieve the resource ID from an Azure Quantum workspace](../media/azure-quantum-resource-id.png)
 
 Paste the values into the following `Workspace` constructor to
 create a `workspace` object that connects to your Azure Quantum workspace.
 
 ```python
-workspace = Workspace(
-    resource_id="",
-    location=""
-)
+workspace = Workspace(resource_id="") # Fill in your resource ID
 ```
 
 ## Submit a quantum circuit to the Quantinuum API validator

@@ -161,17 +161,14 @@ To reinitialize the Q# interpreter and compile your program with the base profil
 
 ## Connect to Azure Quantum and submit your job
 
-Now that you have your program compiled into the correct format, create an `azure.quantum.Workspace` object to connect to Azure Quantum. You'll use the Resource ID of your Azure Quantum workspace in order to connect. The Resource ID and location can be copied from your workspace overview page in the Azure portal.
+Now that you have your program compiled into the correct format, create a `Workspace` object to connect to Azure Quantum. Use the resource ID of your Azure Quantum workspace to connect. Copy your resource ID from the **Overview** pane in your workspace on the Azure portal.
 
-1. In a new cell, fill in your resource ID and location from your Azure Quantum workspace:
+1. In a new cell, fill in your resource ID from your Azure Quantum workspace:
 
     ```python
     from qdk.azure import Workspace
 
-    MyWorkspace = Workspace(
-        resource_id = "MyResourceID",
-        location = "MyLocation"
-    )
+    MyWorkspace = Workspace(resource_id="") # Fill in your resource ID
     ```
 
 1. Use the `get_targets` method to see the available hardware targets in your workspace:
