@@ -32,9 +32,9 @@ To do this tutorial, you must install the following:
 
 The first step in a quantum chemistry calculation is to calculate the optimized molecular geometry for your molecule. You can use any computational chemistry software of your choice for geometry optimization.
 
-To load the optimized geometry with the QDK Chemistry Python libraries, you must have a `.xyz` file that contains the number of electrons in the molecule, the name of the molecule, and the Cartesian coordinates in 3-dimensional space for each atomic nucleus in the molecule.
+To load the optimized geometry with QDK Chemistry, you must have a structure file that contains the Cartesian coordinates in 3-dimensional space for each atomic nucleus in the molecule.
 
-For the benzene diradical in this tutorial, the optimized geometry is already provided for you. To load the optimized geometry and view the molecular structure, follow these steps:
+For the benzene diradical in this tutorial, the optimized geometry is already provided for you in `.xyz` file format. The structure file also includes the name of the molecule and the total number of electrons. To load the optimized geometry and view the molecular structure, follow these steps:
 
 1. In VS Code, create a folder for this quantum chemistry project, and then open the folder.
 1. Create an empty text file named `benzene_diradical.structure.xyz`.
@@ -76,6 +76,8 @@ For the benzene diradical in this tutorial, the optimized geometry is already pr
       Total mass: 76.098 AMU
       Nuclear Repulsion Energy: 184.689 Eh
     ```
+
+    For more information about `Structure` objects in QDK Chemistry, see [Create a structure object](https://animated-adventure-mwrpnpe.pages.github.io/user/quickstart.html#create-a-structure-object) in the QDK Chemistry documentation.
 
 1. To view the structure of your molecule, copy and run the following code in a new cell:
 
@@ -334,9 +336,19 @@ print(
 )
 ```
 
-The initial qubit Hamiltonian has 247 Pauli terms, which is too many to run accurately on a modern quantum computer. To filter out ...
+The initial qubit Hamiltonian has 247 Pauli terms, which is too many to run accurately on a modern quantum computer. To reduce the number of Pauli terms, run the following code in a new cell to filter and group the Pauli terms:
 
-##
+```python
+print("Filtering and grouping Pauli terms")
+filtered_hamiltonian_op, classical_coeffs = filter_and_group_hamiltonian_from_statevector(
+    hamiltonian=qubit_hamiltonian, statevector=quantum_state.statevector
+    )
+print("Number of Pauli terms after filtering:", len(filtered_hamiltonian_op))
+```
+
+Now there are only 2 Pauli terms, which is manageable for a quantum computer.
+
+## Prepare the quantum circuit with sparse isometry
 
 ----------------------------------------------
 
