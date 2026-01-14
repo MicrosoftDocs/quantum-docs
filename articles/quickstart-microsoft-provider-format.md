@@ -41,9 +41,8 @@ To create a notebook in VS Code, follow these steps:
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
 1. Enter and select **Create: New Jupyter Notebook**.
-1. To connect to the Azure Quantum service, your program needs the resource ID and the
-location of your Azure Quantum workspace.
-    1. Log in to your Azure account, <https://portal.azure.com>,
+1. To connect to the Azure Quantum service, your program needs the resource ID of your Azure Quantum workspace.
+    1. Log in to the [Azure portal](<https://portal.azure.com>).
     1. Select your Azure Quantum workspace, and navigate to **Overview**.
     1. Copy the parameters in the fields.
 1. In the first cell of your notebook, paste the values into the following `Workspace` constructor to
@@ -51,10 +50,8 @@ create a `workspace` object that connects to your Azure Quantum workspace.
 
     ```python
     from qdk.azure import Workspace
-    workspace = Workspace ( 
-        resource_id = "", # Add your resource_id 
-        location = ""  # Add your workspace location (for example, "westus") 
-    )
+
+    workspace = Workspace (resource_id="") # Add your resource ID 
     ```
 
 ## Submit QIR-formatted circuits

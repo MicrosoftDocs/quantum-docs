@@ -93,10 +93,7 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
     ```python
     from qdk.azure import Workspace
     
-    workspace = Workspace(
-        resource_id = "", # add your resource ID
-        location = "", # add your location, for example "westus"
-    )
+    workspace = Workspace(resource_id="") # add your resource ID
     ```
 
 1. Set the `target` parameter to the Quantinuum target you want to use. For example, to use the `quantinuum.sim.h2-1e` target:
