@@ -224,10 +224,7 @@ MyProgram = qsharp.compile("GenerateRandomBit()")
 Connect to Azure Quantum, select the target machine, and configure the noise parameters for the emulator:
 
 ```python
-MyWorkspace = Workspace(
-    resource_id = "",
-    location = ""
-)
+MyWorkspace = Workspace(resource_id = "")
 
 MyTarget = MyWorkspace.get_targets("ionq.qpu.aria-1")
 

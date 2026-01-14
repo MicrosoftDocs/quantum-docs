@@ -139,11 +139,7 @@ for i, shot in enumerate(data_per_shot):
 from azure.quantum import Workspace
 from azure.quantum.target.rigetti import Result, Rigetti, RigettiTarget, InputParams
 
-workspace = Workspace(
-    # TODO: Fill in your details here
-    resource_id="",
-    location=""
-)
+workspace = Workspace(resource_id="") # Fill in your resource ID
 
 target = Rigetti(
     workspace=workspace,

@@ -121,15 +121,12 @@ You can connect to Azure Quantum and submit your job using a `Workspace` Python 
 
 ### [Using Python](#tab/tabid-python)
 
-Now that you have your program compiled into the correct format, create a `Workspace` object to connect to Azure Quantum. You'll use the Resource ID of your Azure Quantum workspace in order to connect. The Resource ID and location can be copied from your workspace overview page in the Azure portal.
+Now that you have your program compiled into the correct format, create a `Workspace` object to connect to Azure Quantum. Use the resource ID of your Azure Quantum workspace to connect. Copy your resource ID from the **Overview** pane in your workspace on the Azure portal.
 
-1. Add the following code to `randomNum.py`, filling in your resource ID and location from your Azure Quantum workspace:
+1. Add the following code to `randomNum.py`, and fill in your resource ID from your Azure Quantum workspace:
 
     ```python
-    workspace = Workspace(
-        resource_id = "MyResourceID",
-        location = "MyLocation"
-    )
+    workspace = Workspace(resource_id="") # Fill in your resource ID
     ```
 
 1. Use the `get_targets` method to display the available hardware targets in your workspace:
@@ -262,7 +259,6 @@ To submit a job to Azure Quantum with the Azure CLI, you need to submit a physic
     az quantum workspace set \
        -g <MyResourceGroup> \
        -w <MyWorkspace> \
-       -l <MyLocation> \
        -o table
     ```
 

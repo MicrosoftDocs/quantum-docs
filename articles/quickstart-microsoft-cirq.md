@@ -50,20 +50,16 @@ from azure.quantum.cirq import AzureQuantumService
 
 ## Connect to the Azure Quantum service
 
-To connect to the Azure Quantum service, your program will need the resource ID and the
-location of your Azure Quantum workspace.
+To connect to the Azure Quantum service, your program needs the resource ID of your Azure Quantum workspace.
 
 1. Log in to your Azure account, <https://portal.azure.com>,
 1. Select your Azure Quantum workspace, and navigate to **Overview**.
-1. Copy the parameters in the fields.
+1. Copy the value in the **Resource ID** field.
 
 Add a new cell and use your account information to create `Workspace` and  `AzureQuantumService` objects to connect to your Azure Quantum workspace.
 
 ```python
-workspace = Workspace(  
-    resource_id = "", # Add the resourceID of your workspace
-    location = "" # Add the location of your workspace (for example "westus")
-    )
+workspace = Workspace(resource_id="") # Add the resource ID of your workspace
 
 service = AzureQuantumService(workspace)
 ```

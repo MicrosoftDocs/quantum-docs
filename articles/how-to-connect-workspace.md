@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to connect and access to your Azure Quantum workspace using connection string and workspace parameters.
 ms.author: quantumdocwriters
-ms.date: 12/12/2025
+ms.date: 01/13/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -16,7 +16,7 @@ ms.custom:
 #customer intent: As a quantum developer, I want to connect to my Azure Quantum workspace so I can submit my quantum programs to the Azure Quantum service.
 ---
 
-# Connect to your Azure Quantum workspace with the `qdk.azure` Python module
+# Connect to your Azure Quantum workspace with the QDK or Azure CLI
 
 If you have an Azure Quantum workspace, then you can connect to your workspace and submit your code with the `qdk.azure` Python module. The `qdk.azure` module provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace.
 
@@ -32,7 +32,7 @@ To connect to your workspace with the `qdk.azure` module, you must have the foll
     pip install --upgrade "qdk[azure]"
     ```
 
-If you use Azure CLI, then you must have the latest version. For the installation instructions, see:
+If you use Azure CLI, then you must have the latest version. For installation instructions, see:
 
 - [Install Azure CLI on Windows](/cli/azure/install-azure-cli-windows)
 - [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
@@ -105,13 +105,13 @@ Create a `Workspace` object to connect to your Azure Quantum workspace. There ar
 1. Choose **Connection string**.
 1. Paste the connection string that you copied from the Azure portal and press **Enter**.
 
-Your Azure Quantum workspace appears in the **Explorer** pane, under **Quantum Workspaces**. Expand the workspace to see the targets that are available in your workspace and the list of jobs.
+Your Azure Quantum workspace appears in the **Explorer** pane, under **QUANTUM WORKSPACES**. Expand the workspace to see the targets that are available in your workspace and the list of jobs.
 
 :::image type="content" source="media/quantum-workspace-explorer-vscode.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
 
 ***
 
-For more information about how to enable, disable, and regenerate your keys, see [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
+For more information about how to work with keys, see [Manage your Access Keys](xref:microsoft.quantum.how-to.manage-access-keys).
 
 > [!IMPORTANT]
 > If you disable access keys for your workspace, then you can't use connection strings to connect to your workspace. But you can still use workspace parameters to connect to your workspace.
@@ -137,38 +137,47 @@ To find your workspace parameters, follow these steps:
 1. Copy the parameters in their corresponding fields.
 
 > [!NOTE]
-> Make sure that you log into the correct tenant before you connect to your workspace.
+> Make sure that you log into the correct tenant before you connect to your workspace. For more information about tenants, see [How to manage Azure subscriptions with the Azure CLI](https://learn.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest&tabs=bash).
 
 ### Use workspace parameters to connect to your Azure Quantum workspace
 
-You can use your workspace's parameters to connect to your Azure Quantum workspace with the `qdk.azure` module or with Azure CLI.
+To stay logged in when you run your Python scripts, before you use workspace parameters to connect to your workspace, open a terminal and run the following Azure CLI command to set the subscription for your workspace. Replace `<subscriptionId>` with your subscription ID.
+
+```azurecli
+az account set --subscription <subscriptionId>
+```
+
+You can use your workspace parameters to connect to your Azure Quantum workspace with the `qdk.azure` module or with Azure CLI.
 
 #### [Python](#tab/tabid-python)
 
-Create a `Workspace` object to connect to your Azure Quantum workspace. There are two options to identify your Azure Quantum workspace when you create a `Workspace` object.
+Create a `Workspace` object to connect to your Azure Quantum workspace. There are three options to identify your Azure Quantum workspace when you create a `Workspace` object.
 
 - Specify the resource ID (recommended):
 
     ```python
     from qdk.azure import Workspace 
     
-    workspace = Workspace(  
-        resource_id = "", # Add the resource ID of your workspace
-        location = "" # Add the location of your workspace
-        )
+    workspace = Workspace(resource_id="") # Add the resource ID of your workspace
     ```
 
-- Specify the subscription ID, resource group, and workspace name, and location:
+- Specify the subscription ID, resource group, and workspace name:
 
     ```python
     from qdk.azure import Workspace 
     
     workspace = Workspace(  
-        subscription_id = "", # Add the subscription ID of your workspace
-        resource_group = "", # Add the resource group of your workspace
-        workspace_name = "" # Add the name of your workspace
-        location = "" # Add the location of your workspace
+        subscription_id="", # Add the subscription ID of your workspace
+        resource_group="", # Add the resource group of your workspace
+        name="" # Add the name of your workspace
         )
+    ```
+
+- Specify just the workspace name. This option might fail when you have multiple workspaces that have the same name in the same tenant.
+
+    ```python
+    from qdk.azure import Workspace 
+    workspace = Workspace(name="") # Add the name of your workspace
     ```
 
 #### [Azure CLI](#tab/tabid-azurecli)
@@ -187,7 +196,7 @@ You can use Azure CLI to connect to your workspace. For more information, see [M
     az account set --subscription SubscriptionName
     ```
 
-1. Set the workspace that you want to use. Replace `ResourceGroupName`, `WorkspaceName`, and `Location` with your workspace's resource group name, workspace name, and location, respectively.
+1. Set the workspace that you want to use. Replace `ResourceGroupName`, `WorkspaceName`, and `Location` with your workspace's resource group name, workspace name, and Azure region respectively.
 
     ```azurecli
     az quantum workspace set --resource-group ResourceGroupName --workspace-name WorkspaceName --location Location

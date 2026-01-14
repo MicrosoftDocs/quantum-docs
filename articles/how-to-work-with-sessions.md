@@ -131,7 +131,6 @@ To create a new session, it's a best practice to follow the steps in [Get starte
     ```python
     import os
     resource_id = os.environ.get("AZURE_QUANTUM_RESOURCE_ID")
-    location = os.environ.get("AZURE_QUANTUM_LOCATION")
     ```
 
 1. Next, you create a **Provider object**.
@@ -140,10 +139,7 @@ To create a new session, it's a best practice to follow the steps in [Get starte
     from qdk.azure import Workspace
     from qdk.azure.qiskit import AzureQuantumProvider
 
-    workspace = Workspace (
-        resource_id = resource_id,
-        location = location
-    )
+    workspace = Workspace (resource_id = resource_id)
 
     provider = AzureQuantumProvider(workspace)
     ```
