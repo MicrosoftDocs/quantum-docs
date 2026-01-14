@@ -315,7 +315,28 @@ Note that `NDETS` in the output is now equal to 2 instead of 400, and the new re
 
 ### Prepare the new quantum state and qubit Hamiltonian
 
+Use the new wavefunction `wfn_sci`to recalculate the quantum state and Hamiltonian if your qubit system. Run the following code in a new cell:
 
+```python
+from prepq_mini.utils.qdk_chemistry import prepare_qubit_hamiltonian, prepare_quantum_state
+from prepq_mini.hamiltonian import filter_and_group_hamiltonian_from_statevector
+
+quantum_state = prepare_quantum_state(
+    wavefunction=wfn_sci, num_orbitals=hamiltonian.get_num_orbitals(),
+    num_electrons=hamiltonian.get_num_electrons(), num_determinants=num_dets_keep
+    )
+
+# Construction Qubit Hamiltonian with one of the available mappings (default: Jordan-Wigner)
+qubit_hamiltonian = prepare_qubit_hamiltonian(fermionic_hamiltonian=hamiltonian)
+print(
+    "Number of Pauli terms in the initial qubit Hamiltonian:",
+    len(qubit_hamiltonian.pauli_ops)
+)
+```
+
+The initial qubit Hamiltonian has 247 Pauli terms, which is too many to run accurately on a modern quantum computer. To filter out ...
+
+##
 
 ----------------------------------------------
 

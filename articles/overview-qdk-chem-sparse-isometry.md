@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
-description: Sparse isometry is a technique created by Microsoft Quantum to efficiently generate simplified state preparation circuits for quantum chemistry calculations on a real quantum computer.
-ms.date: 12/29/2025
+description: This article gives an overview of sparse isometry, which is a technique created by Microsoft Quantum to efficiently generate simplified state preparation circuits for quantum chemistry calculations on a real quantum computer.
+ms.date: 01/12/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
