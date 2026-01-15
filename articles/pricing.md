@@ -28,16 +28,16 @@ $$
 where:
 
 - $AQT$ is the number of Azure Quantum Tokens consumed by the program
-- $m$ is the minimum price per program execution, which is USD97.50 if error mitigation is on and USD12.4166 if error mitigation is off
+- $m$ is the minimum price per program execution, which is USD97.50 if error mitigation is on, and USD12.4166 if error mitigation is off
 - The units $N_{1q} · C$ and $N_{2q} · C$ are called *gate-shots*, where $N_{1q}$ and $N_{2q}$ are the number of one- and two-qubit gates submitted, respectively, and $C$ is the number of execution shots
 
 Multi-controlled two-qubit gates are billed as $6 * (N - 2)$ two-qubit gates, where $N$ is the number of qubits involved in the gate. For example, a NOT gate with three controls would be billed as $(6 * (4 - 2))$ or 12 two-qubit gates. One-qubit gates are billed as 0.225 of a two-qubit gate (rounded down). To learn more about IonQ, visit [IonQ provider page](xref:microsoft.quantum.providers.ionq).
 
-IonQ offers a **pay-as-you-go** plan and a **monthly subscription** plan with access to the quantum simulator, the Aria 1 25-qubit quantum computers, and IonQ Forte 1, Forte Enterprise 1 and Forte Enterprise 3 36-qubit quantum computers.
+IonQ offers a **pay-as-you-go** plan and a **monthly subscription** plan with access to the quantum simulator, the Aria 1 25-qubit quantum computers, IonQ Forte 1, Forte Enterprise 1, and Forte Enterprise 3 36-qubit quantum computers.
 
 ### [Pay As You Go](#tab/tabid-paygo)
 
-The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 25-qubit, IonQ Forte 1, Forte Enterprise 1 and Forte Enterprise 3 36-qubit quantum computers, and the IonQ simulator. The use of the quantum computers is charged based on the number of AQTs + Azure infrastructure costs.
+The Pay-as-you-go plan consists of *a la carte* access to the IonQ Aria 1 25-qubit, IonQ Forte 1, Forte Enterprise 1, Forte Enterprise 3 36-qubit quantum computers, and the IonQ simulator. The use of the quantum computers is charged based on the number of AQTs + Azure infrastructure costs.
 
 | Includes access to      | Pricing                                                                                                                                                                                                                                                 |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -63,7 +63,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ### [Aria-Forte plan](#tab/tabid-aria)
 
-The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-qubit, IonQ Forte 1, Forte Enterprise 1 and Forte Enterprise 3 36-qubit quantum computers, and the IonQ simulator. The Aria-Forte plan consists of USD25,000/Month + Azure infrastructure costs.
+The Aria plan is a monthly subscription plan with access to the IonQ Aria 1 25-qubit, IonQ Forte 1, Forte Enterprise 1, Forte Enterprise 3 36-qubit quantum computers, and the IonQ simulator. The Aria-Forte plan consists of USD25,000/Month + Azure infrastructure costs.
 
 |Includes access to | Pricing |
 |---|---|  
@@ -113,7 +113,7 @@ where:
 
 - $N_{1q}$ is the number of single-qubit operations in a circuit.
 - $N_{2q}$ is the number of native two-qubit operations in a circuit. Native gate is equivalent to CNOT up to several single-qubit gates.
-- $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation and any intermediate and final measurements and state resets.
+- $N_{m}$ is the number of state preparation and measurement (SPAM) operations in a circuit including initial implicit state preparation, any intermediate and final measurements, and state resets.
 - $C$ is the shot count.
 
 To learn more about Quantinuum, visit the [Quantinuum provider page](xref:microsoft.quantum.providers.quantinuum).
