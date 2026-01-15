@@ -12,7 +12,7 @@ uid: microsoft.quantum.tutorial.qdk-chem-benzene-sim
 #customer intent: As a quantum chemistry researcher, I want an end-to-end workflow for how to use QDK Chemistry to run simulations for a quantum chemistry calculation and visualize the results in VS Code
 ---
 
-# Tutorial: Simulate quantum chemistry calculations for benzene diradical with QDK Chemistry in VS Code
+# Tutorial: Simulate quantum chemistry calculations for benzene diradical with QDK Chemistry Python libraries in VS Code
 
 In this tutorial, you go through an end-to-end quantum chemistry workflow for benzene diradical with the Microsoft Quantum Development Kit (QDK) in Visual Studio Code (VS Code). You learn how to perform a series of classical quantum chemistry calculations, prepare a quantum circuit from your classical computational results, run the quantum circuit on different simulators, and visualize the results of your molecular calculations and quantum circuit.
 
@@ -21,11 +21,11 @@ In this tutorial, you go through an end-to-end quantum chemistry workflow for be
 To do this tutorial, you must install the following:
 
 - VS Code with the QDK and Jupyter extensions [LINKS TO INSTALLATION DOCS]
-- A Python environment with Python version 3.9 or higher.
-- The latest version of the `qdk` Python library with the `jupyter` extra
+- A Python environment with Python version 3.9 or higher
+- The latest version of the `qdk` Python library with the `chemistry` and `jupyter` extras
 
     ```bash
-    pip install --upgrade "qdk[jupyter]" 
+    pip install --upgrade "qdk[chemistry,jupyter]"
     ```
 
 ## Load and view the molecular structure
@@ -57,7 +57,7 @@ For the benzene diradical in this tutorial, the optimized geometry is already pr
     ```
 
 1. To create a new Jupyter Notebook file, open the **View** menu and choose **Command Palette**, and then enter **Create: New Jupyter Notebook**. Save the notebook file and use the notebook to run the code in this tutorial.
-1. To load the molecular structure data and display information about the benzene diradical, copy and the run the following code in the first cell of your notebook:
+1. To load the molecular structure data and display information about the benzene diradical, copy and then run the following code in the first cell of your notebook:
 
     ```python
     from qatk.data import Structure
@@ -77,7 +77,7 @@ For the benzene diradical in this tutorial, the optimized geometry is already pr
       Nuclear Repulsion Energy: 184.689 Eh
     ```
 
-    For more information about `Structure` objects in QDK Chemistry, see [Create a structure object](https://animated-adventure-mwrpnpe.pages.github.io/user/quickstart.html#create-a-structure-object) in the QDK Chemistry documentation.
+    For more information about `Structure` objects in QDK Chemistry, see [Structure](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/data/structure.html) in the QDK Chemistry documentation on GitHub.
 
 1. To view the structure of your molecule, copy and run the following code in a new cell:
 
@@ -95,27 +95,31 @@ Use the molecular visualizer to examine the structure of the benzene diradical. 
 
 Now that you're familiar with the structure of your molecule, the next step is to perform a self-consistent field (SCF) calculation to determine the molecular orbitals (MOs) and choose a subset of MOs as the active space.
 
-### Generate MOs from an SCF calculation
+### Determine the energy and wavefunction from an SCF calculation
 
-To run an SCF calculation, you need to choose a basis set for your MOs and an SCF solver. You can set both of these choices as parameters in the `create_scf_solver` function from QDK Chemistry. Copy and run the following code in a new cell to calculate MOs for benzene diradical in the cc-pVDZ basis with the default SCF solver.
+To run an SCF calculation, create an `scf_solver` object and call the `run` method. Specify a basis set when you call `run`. Copy and run the following code in a new cell to perform an SCF calculation for benzene diradical:
 
 ```python
-from qatk.algorithms import create_scf_solver
+from qdk_chemistry.algorithms import create
 
-scf_solver = create_scf_solver()
-scf_solver.settings().set("basis_set", "cc-pvdz")
-scf_solver.settings().set("show_internal_logs", True)
-E, orbitals = scf_solver.solve(structure)
-print(f"SCF Energy: {E + structure.calculate_nuclear_repulsion_energy():.8f} Hartree")
+# Perform an SCF calculation, and return the energy and wavefunction
+scf_solver = create("scf_solver")
+E_hf, wfn_hf = scf_solver.run(structure, charge=0, spin_multiplicity=1, basis_or_guess="cc-pvdz")
+print(f"SCF energy is {E_hf:.3f} Hartree")
+
+# Display a summary of the MOs
+print("SCF Orbitals:\n", wfn_hf.get_orbitals().get_summary())
 ```
 
-Because you turned on `show_internal_logs`, the output from this cell shows information for each step of the SCF algorithm. The output also shows information about your molecule that's calculated from the optimized MOs, such as energy terms, molecular dipole moment, and Mulliken charges.
+The SCF solver outputs the energy of the molecule and the MO coefficients that define the wavefunction in the specified basis.
 
-For more information about SCF calculations in QDK Chemistry, including the log information and full list of parameters for `create_scf_solver`, see [LINK TO QDK CHEM GITHUB DOCS FOR THIS TOPIC].
+For more information on SCF calculations in QDK Chemistry, see [Run a self-consistent field (SCF) calculation](https://animated-adventure-mwrpnpe.pages.github.io/user/quickstart.html#run-a-self-consistent-field-scf-calculation).
 
 ### Select an active space
 
-You have ###### MOs for your molecule, but that's too many to model each one with qubits on a quantum computer. Instead, select an active space that consists of a few MOs where the interesting chemistry happens. You can view the MOs to decide which ones to include in the active space, or you can use QDK Chemistry to automatically select the active space for you.
+In the chosen basis, your molecule has ###### MOs, but that's too many MOs to accurately model with qubits on a quantum computer. Instead of using all the MOs, select an active space that contains only the MOs where the interesting chemistry happens in your molecule. To select an active space, you can either visualize the MOs and use your chemical intuition to make your selection or you can use an `active_space_selector` object from QDK Chemistry to automatically select the active space for you.
+
+For more information on active space selection in QDK Chemistry, see [Active space selection](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/active_space.html).
 
 #### Visualize the SCF MOs
 
@@ -124,13 +128,12 @@ QDK Chemistry uses `.cube` files to visualize MOs. To generate `.cube` files fro
 1. Generate `.cube` files from your SCF MOs. In a new cell, copy and run the following code:
 
     ```python
-    from qatk.algorithms.cubegen import create_cube_generator
+    from qdk_chemistry.utils.cubegen import generate_cubefiles_from_orbitals
     
-    cube_generator = create_cube_generator("pyscf")
-    cube_generator.settings().set("type", "orbitals")
+    cube_generator = generate_cubefiles_from_orbitals(orbitals=wfn_hf.get_orbitals())
     
     # Generate the image data in the Cubefile format
-    cubes = cube_generator.generate(orbitals)
+    cubes = cube_generator.generate()
     
     # Write selected cube files to disk
     for cc in cubes:
@@ -139,33 +142,38 @@ QDK Chemistry uses `.cube` files to visualize MOs. To generate `.cube` files fro
 
     This code creates a set of `.cube` files in your working directory.
 
-1. To visualize the MOs over the molecular structure, copy and the following code in a new cell:
+1. To visualize the MOs over the molecular structure, copy and run the following code in a new cell:
 
     ```python
     cube_data = {
         "alpha_18": Path("MO_alpha_18.cube").read_text(),
-        "alpha_19": Path("MO_alpha_19.cube").read_text()
+        "alpha_19": Path("MO_alpha_19.cube").read_text(),
         # ... etc etc etc
     }
     
     MoleculeViewer(molecule_data=molecular_structure, cube_data=cube_data)
     ```
 
-1. Use the molecular visualizer to view all the MOs and help you select an active space. For more information about how to select MOs for the active space, see [LINK TO ARTICLE ABOUT HOW TO SELECT ACTIVE SPACE???]. For more information about how to view MOs in the visualizer, see [LINK TO HOW-TO ARTICLE ABOUT VISUALIZER].
+Use the molecular visualizer to view the MOs and help you select an active space. For more information about how to view MOs in the visualizer, see [LINK TO HOW-TO ARTICLE ABOUT VISUALIZER].
 
-#### Select the active space MOs automatically
+#### Automatically select the active space MOs
 
-The easiest way to select the active space is use the `create_active_space_selector` function from QDK Chemistry. This function allows you to set the number of electrons and orbitals in the active space. For example, run the following code in a new cell to select an active space with 6 electrons and 6 MOs:
+The easiest way to select the active space is to use an `active_space_selector` object from QDK Chemistry. This object allows you to set the number of electrons and orbitals in the active space. For example, run the following code in a new cell to select an active space with 6 electrons and 6 MOs:
 
 ```python
-from qatk.algorithms import create_active_space_selector
+# Select active space to choose the most chemically relevant orbitals
+active_space_selector = create(
+    "active_space_selector",
+    algorithm_name="qdk_valence",
+    num_active_electrons=6,
+    num_active_orbitals=6
+)
 
-# Select active space with *one* of the available methods
-active_space_selector = create_active_space_selector("valence")
-active_space_selector.settings().set("num_active_electrons", 6)
-active_space_selector.settings().set("num_active_orbitals", 6)
-active_orbitals = active_space_selector.select_active_space(orbitals)
-print(active_orbitals.get_summary(False))
+active_wfn = active_space_selector.run(wfn_hf)
+active_orbitals = active_wfn.get_orbitals()
+
+# Print a summary of the active space orbitals
+print("Active Space Orbitals:\n", active_orbitals.get_summary())
 ```
 
 The preceding code produces the following output with information about the active space:
@@ -182,11 +190,11 @@ Orbitals Summary:
   Active Orbitals: α=6, β=6
 ```
 
-#### Visualize the active space MOs
+### Visualize the active space MOs
 
-However you select your active space, you can use the molecular visualizer to view only the active space MOs. These MOs are the ones that you use to build your quantum circuit.
+You can use the molecular visualizer to view only the active space MOs, which are the ones that you use to build your quantum circuit.
 
-To view the active space MOs, follow these steps:
+To view only the active space MOs, follow these steps:
 
 1. Generate cube files for only the active space MOs. Run the following code in a new cell:
 
@@ -204,58 +212,63 @@ To view the active space MOs, follow these steps:
         cc.to_cubefile(f"{cc.description}.cube")
     ```
 
-1. To visualize the MOs from the cube files, run the following code in a new cell:
+    ```python
+    cube_generator = generate_cubefiles_from_orbitals(orbitals=active_orbitals)
+    
+    # Generate the image data in the Cubefile format
+    cubes = cube_generator.generate()
+    
+    # Write selected cube files to disk
+    for cc in cubes:
+        cc.to_cubefile(f"{cc.description}.cube")
+    ```
+
+1. To visualize the active MOs from the cube files, run the following code in a new cell:
 
     ```python
     cube_data = {
         "alpha_18": Path("MO_alpha_18.cube").read_text(),
-        "alpha_19": Path("MO_alpha_19.cube").read_text()
+        "alpha_19": Path("MO_alpha_19.cube").read_text(),
         # ... etc etc etc
     }
     
     MoleculeViewer(molecule_data=molecule_data, cube_data=cube_data)
     ```
 
-## Construct the wavefunction and quantum state from the molecular Hamiltonian
+## Construct a multi-configurational wavefunction from the active space Hamiltonian
 
-From the active space MOs, construct the molecular Hamiltonian operator that determines the time evolution and energy of your molecule. The molecular Hamiltonian is used to calculate the wavefunction and initial quantum state for your molecule, which is used the build your quantum circuit.
+From the active space MOs, you can construct a multi-configurational wavefunction for only the active space. This wavefunction is a linear combination of products of single-determinant wavefunctions. Each determinant in the multi-configurational wavefunction maps to a qubit in the circuit that prepares the initial state of your molecule on the quantum computer. To construct the multi-configurational wavefunction, you must calculate the active space Hamiltonian.
 
-### Construct the molecular Hamiltonian
+### Calculate the active space Hamiltonian
 
-To construct the molecular Hamiltonian, run the following code in a new cell:
-
-```python
-from qatk.algorithms import create_hamiltonian_constructor
-
-hamiltonian_constructor = create_hamiltonian_constructor()
-hamiltonian = hamiltonian_constructor.construct(active_orbitals)
-print(hamiltonian.get_summary())
-```
-
-The output shows information about the Hamiltonian, like the number of orbitals and electrons, the core energy, and the number of significant one-electron and two-electron integrals.
-
-### Construct the multi-determinant molecular wavefunction and initial quantum state
-
-The wavefunction for a chemistry calculation on a quantum computer is a multi-determinant wavefunction where each determinant is represented by a qubit on the quantum computer. Run the following code in a new cell to construct an initial wavefunction:
+The active space Hamiltonian contains the one-electron and two-electron integrals for the active space MOs. To construct the active space Hamiltonian, use a `hamiltonian_constructor` object. run the following code in a new cell:
 
 ```python
-from qatk.algorithms import create_mc_calculator
-
-mc = create_mc_calculator()
-E_cas, wfn_cas = mc.calculate(hamiltonian)
-
-print("Energy output:")
-print(f"E(CASCI) = {E_cas + hamiltonian.get_core_energy():.8f} Hartree")
-print(
-    "Correlation energy = "
-    f"{(E_cas +  hamiltonian.get_core_energy())
-       - (E + structure.calculate_nuclear_repulsion_energy()):.8f} Hartree"
-    )
+# Construct Hamiltonian in the active space and print its summary
+hamiltonian_constructor = create("hamiltonian_constructor")
+hamiltonian = hamiltonian_constructor.run(active_orbitals)
+print("Active Space Hamiltonian:\n", hamiltonian.get_summary())
 ```
 
-The output from this code contains much information about the wavefunction, including the number of determinants (`NDETS` in the output). You can't use this wavefunction directly because 400 determinants is too many to run accurately on current quantum hardware technologies.
+The output shows information about the Hamiltonian, like the number of orbitals and electrons, the core energy, and the number of significant one-electron and two-electron integrals. For more information about Hamiltonian calculations in QDK Chemistry, see [Hamiltonian](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/data/hamiltonian.html) and [Hamiltonian construction](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/hamiltonian_constructor.html).
+
+### Construct the multi-configurational wavefunction
+
+To construct the multi-configurational wavefunction for the active space, use a `multi_configuration_calculator` object with the active space Hamiltonian that you calculated. Copy and run the following code in a new cell to construct the wavefunction with a complete active space configuration interaction (CASCI) calculation:
+
+```python
+# Perform CASCI calculation to get the wavefunction and exact energy for the active space
+mc = create("multi_configuration_calculator")
+E_cas, wfn_cas = mc.run(hamiltonian, n_active_alpha_electrons=3, n_active_beta_electrons=3)
+
+print(f"CASCI energy is {E_cas:.3f} Hartree, and the electron correlation energy is {E_cas - E_hf:.3f} Hartree")
+```
+
+The output from this shows the CASCI energy, which is lower than the single-determinant energy. The CASCI energy is closer to the true energy of the molecule because the CASCI energy includes electron correlation energy. For more information about multi-configurational wavefunctions in QDK Chemistry, see [Multi-configuration calculations](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/mc_calculator.html).
 
 ### Choose only the most significant determinants
+
+~~~~~~You can't use this wavefunction directly because 400 determinants is too many to run accurately on current quantum hardware technologies.
 
 To help reduce the number of determinants that you use in your wavefunction for the actual quantum circuit, plot the coefficients for all of the determinants in the full wavefunction. Run the following code in a new cell:
 
