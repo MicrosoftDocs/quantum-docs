@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
 no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
-title: Simulate jobs on neutral atom quantum computers in the QDK
+title: How to use the neutral atom device visualizer to analyze programs on neutral atom quantum computers
 uid: microsoft.quantum.how-to.qdk-neutral-atom-visualizer
 #customer intent: As a quantum chemistry researcher, I want to understand the tools that the QDK provides to simulate how my quantum programs will run on a neutral atom devices
 ---

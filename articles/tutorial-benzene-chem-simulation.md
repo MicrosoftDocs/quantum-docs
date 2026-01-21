@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Use QDK/Chemistry to run quantum chemistry simulations and visualize the results in VS Code.
+description: Use the QDK chemistry libraries to run quantum chemistry simulations and visualize the results in VS Code.
 ms.date: 12/29/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
@@ -9,10 +9,10 @@ ms.topic: overview
 no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
 title: Run a quantum chemistry calculation on the Neutral Atom Simulator in Visual Studio Code and visualize the results
 uid: microsoft.quantum.tutorial.qdk-chem-benzene-sim
-#customer intent: As a quantum chemistry researcher, I want an end-to-end workflow for how to use QDK/Chemistry to run simulations for a quantum chemistry calculation and visualize the results in VS Code
+#customer intent: As a quantum chemistry researcher, I want an end-to-end workflow for how to use the QDK chemistry libraries to run simulations for a quantum chemistry calculation and visualize the results in VS Code
 ---
 
-# Tutorial: Simulate quantum chemistry calculations for benzene diradical with QDK/Chemistry Python libraries in VS Code
+# Tutorial: Simulate quantum chemistry calculations for benzene diradical with the QDK in VS Code
 
 In this tutorial, you go through an end-to-end quantum chemistry workflow for benzene diradical with the Microsoft Quantum Development Kit (QDK) in Visual Studio Code (VS Code). You learn how to perform a series of classical quantum chemistry calculations, prepare a quantum circuit from your classical computational results, run the quantum circuit on different simulators, and visualize the results of your molecular calculations and quantum circuit.
 
