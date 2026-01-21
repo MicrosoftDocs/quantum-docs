@@ -20,12 +20,12 @@ In this tutorial, you go through an end-to-end quantum chemistry workflow for be
 
 To do this tutorial, you must install the following:
 
-- VS Code with the QDK and Jupyter extensions [LINKS TO INSTALLATION DOCS]
-- A Python environment with Python version 3.9 or higher
-- The latest version of the `qdk` Python library with the `chemistry` and `jupyter` extras
+- VS Code with the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and Jupyter extensions
+- A Python environment with Python version 3.10 or higher
+- The latest version of the `qdk` Python library with the `jupyter` extra, and the `qdk-chemistry` library
 
     ```bash
-    pip install --upgrade "qdk[chemistry,jupyter]"
+    pip install --upgrade "qdk[jupyter]" qdk-chemistry
     ```
 
 ## Perform classical computational chemistry calculations to build your state preparation quantum circuit
@@ -39,14 +39,13 @@ To perform all the classical calculations and build your state preparation circu
 1. On the first code block in the quickstart guide, choose **Python API**.
 1. Run each code block from the quickstart guide in a new cell in your Jupyter notebook. Run the code blocks in the same order they appear in the quickstart guide.
 
-When you complete the quickstart guide, your notebook environment contains the following Python objects:
+When you complete the quickstart guide, your notebook environment contains the following Python objects that you use in the next parts of the tutorial:
 
-| Variable name | Description | 
-|---------------|-------------|
-| `structure`   | Contains the 3D coordinates of each nucleus in the molecule |
-| `active_orbitals` | Contains the |
-
-You use these Python objects in the rest of the tutorial to visualize your molecule and run simulations of how your quantum circuit runs on a neutral atom quantum computer.
+| Variable name             | Description                                                         | Usage                              |
+|---------------------------|---------------------------------------------------------------------|------------------------------------|
+| `structure`               | Contains the 3D coordinates of each nucleus in the molecule         | View the molecule in 3D            |
+| `active_orbitals`         | Contains the MO coefficients and other data for the active orbitals | Generate `.cube` files to view MOs |
+| `sparse_isometry_circuit` | Contains the state preparation circuit                              | Generate QIR for simulation        |
 
 ## Visualize your molecule and active space MOs
 
@@ -80,7 +79,7 @@ The QDK uses `.cube` files to store spatial information about MOs. To view the s
     MoleculeViewer(molecule_data=structure, cube_data=cube_data)
     ```
 
-Use the molecular visualizer to examine the structure of the benzene diradical and the active space MOs. For more information about how to use the molecular visualizer, see [LINK TO QDK CHEM VISUALIZER HOW-TO ARTICLE].
+Use the molecular visualizer to examine the structure of the benzene diradical and the active space MOs. For more information about how to use the molecular visualizer, see [How to use the molecule visualizer in the QDK](xref:microsoft.quantum.how-to.qdk-molecule-visualizer).
 
 ## Convert the state preparation circuit to QIR
 
@@ -150,14 +149,7 @@ To open the neutral atom device visualizer for your program, copy and run the fo
 from qdk.simulation import NeutralAtomDevice, NoiseConfig
 
 device = NeutralAtomDevice()
-device.trace(qir)
+device.show_trace(qir)
 ```
 
-The neutral atom device visualizer appears in the output cell. Use the visualizer to see how the qubits move and get processed as your circuit runs. For more information on how to use the neutral atom visualizer, see [LINK TO NAS VISUALIZER HOW-TO].
-
-## Related content
-
-To learn more about ... , see the following links:
-
-- [Link A](xref:microsoft.quantum.)
-- [Link B](xref:microsoft.quantum.)
+The neutral atom device visualizer appears in the output cell. Use the visualizer to see how the qubits move and get processed as your circuit runs. For more information on how to use the neutral atom visualizer, see [How to use the neutral atom device visualizer](xref:microsoft.quantum.how-to.qdk-neutral-atom-visualizer).

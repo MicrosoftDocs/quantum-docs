@@ -16,21 +16,14 @@ uid: microsoft.quantum.overview.qdk-chem-sparse-isometry
 
 The circuit for a full quantum chemistry calculation on a quantum computer consists of two parts. The first part is the state preparation circuit, and the second part is the quantum phase estimation (QPE) circuit.
 
-[INSERT IMAGE THAT HIGHLIGHTS STATE PREP VS TIME EVOLUTION PARTS OF CIRCUIT]
-
 The state preparation circuit puts the qubit system on the quantum computer into a state that closely represents the real quantum state of your molecule. Isometry techniques are used to create the state preparation circuit from the wavefunction that you calculate for your molecule. Typical isometry approaches usually result in deep circuits that contain a lot of quantum gates. Each gate in a circuit has the potential to introduce noise into the calculation on the quantum computer, so the ideal circuit is one that performs an accurate computation with the fewest gates.
 
-## Sparse isometry circuit generation with QDK Chemistry
+## Sparse isometry circuit generation with the QDK chemistry libraries
 
-QDK Chemistry from the Microsoft Quantum Development Kit (QDK) includes a novel sparse isometry technique that uses a small number of dense qubits to quickly build a state preparation circuit with less depth and fewer gates than regular isometry techniques. The circuit from sparse isometry prepares the same initial state as the larger circuit from regular isometry, but the sparse isometry circuit is less computationally expensive and introduces less noise into the calculation.
+The QDK chemistry libraries in the Microsoft Quantum Development Kit (QDK) include a novel sparse isometry technique that uses a small number of dense qubits to quickly build a state preparation circuit with less depth and fewer gates than regular isometry techniques. The circuit from sparse isometry prepares the same initial state as the larger circuit from regular isometry, but the sparse isometry circuit is less computationally expensive and introduces less noise into the calculation on the quantum computer.
 
-[INSERT IMAGE THAT COMPARES THE CIRCUIT DIAGRAM FOR REGULAR VS SPARSE ISOMETRY ON THE SAME SYSTEM]
+The sparse isometry implementation in the QDK includes a robust set of customizable parameters to help you build optimal state preparation circuits for a wide variety of molecules and systems. To get started, [install the QDK and QDK Chemistry libraries](LINK TO THESE DOCS).
 
-The sparse isometry implementation in QDK Chemistry includes a robust set of customizable parameters to help you build optimal state preparation circuits for a wide variety of molecules and systems. To get started, [install the QDK and QDK Chemistry libraries](LINK TO THESE DOCS).
+## Learn more
 
-## Related content
-
-To learn more about generate state preparation circuits how to use the sparse isometry tools in QDK Chemistry, see the following links:
-
-- [Link A](xref:microsoft.quantum.)
-- [Link B](xref:microsoft.quantum.)
+To learn more about state preparation circuits in the QDK chemistry libraries, see [State preparation](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/state_preparation.html).
