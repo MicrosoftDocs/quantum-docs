@@ -8,11 +8,11 @@ ms.subservice: core
 ms.topic: overview
 no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
 title: Construct molecular orbitals with SCF calculations in QDK Chemistry
-uid: microsoft.quantum.overview.qdk-chem-scf
+uid: microsoft.quantum.overview.qdk-chem-scf-active-space
 #customer intent: As a quantum chemistry researcher, I want to understand what SCF is, why I perform SCF calculations, and how SCF is implemented in the QDK chemistry libraries
 ---
 
-# Perform SCF calcualtions to construct molecular orbitals
+# Perform SCF calcualtions and active space selection to construct molecular orbitals
 
 In quantum chemistry, electronic structure theory is a framework that describes the organization of electrons in molecular orbitals (MOs). Self-consistent field (SCF) methods are an electronic structure technique that you use to calculate the MOs of the electrons.
 
@@ -26,8 +26,18 @@ An SCF calculation is an iterative procedure to find MO coefficients that are co
 
 The process repeats until the changes in the electron density and energy are smaller than the specified convergence criteria. This method to calculate the energy is called a variational method. For variational methods, the calculated energy is guaranteed to be greater than or equal to the true energy of the molecule, but never less than the true energy.
 
-## Get started with SCF calculations in QDK Chemistry
+## Active space selection
 
-To learn more about SCF calculations in the QDK chemistry libraries, see [Self-consistent field (SCF) solver].
+For some molecular systems, a single-determinant wave function doesn't adequately model the electronic structure, even with large basis sets. In these cases, a multi-determinant wavefunction is used to model the molecular orbitals (MOs) that are most involved with chemical activity.
 
-For an example SCF calculation, see [Run a self-consistent field (SCF) calculation](https://animated-adventure-mwrpnpe.pages.github.io/user/quickstart.html#run-a-self-consistent-field-scf-calculation) in the QDK Chemistry quickstart guide.
+Active space selection is the process of choosing which MOs from the SCF calculation to include in the multi-determinant wavefunction. The best choice of MOs to model your system can be as much an art as it is a science, so good chemical intuition is useful for active space selection. Or, the QDK chemistry libraries can automatically choose the best active space for your problem within a specified set of parameters.
+
+Your choice of active space orbitals is important because the active space affects the structure of your qubit Hamiltonian, and therefore the circuit that runs on the quantum computer.
+
+## Get started with SCF calculations and active space selection in QDK the chemistry libraries
+
+To learn more about SCF calculations in the QDK chemistry libraries, see [Self-consistent field (SCF) solver](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/scf_solver.html).
+
+To learn more about active space selection in the QDK chemistry libraries, see [Active space selection](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/active_space.html).
+
+For code examples of SCF calculations and active space selection in the QDK chemistry libraries, see [Run a self-consistent field (SCF) calculation](https://animated-adventure-mwrpnpe.pages.github.io/user/quickstart.html#run-a-self-consistent-field-scf-calculation) and [Select an active space](https://animated-adventure-mwrpnpe.pages.github.io/user/quickstart.html#select-an-active-space) in the QDK Chemistry quickstart guide.

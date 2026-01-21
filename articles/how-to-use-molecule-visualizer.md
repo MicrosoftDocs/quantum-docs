@@ -5,7 +5,7 @@ ms.date: 01/12/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
+ms.topic: how-to
 no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
 title: How to use the molecule visualizer in the QDK
 uid: microsoft.quantum.how-to.qdk-molecule-visualizer

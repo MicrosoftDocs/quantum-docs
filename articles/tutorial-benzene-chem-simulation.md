@@ -5,7 +5,7 @@ ms.date: 12/29/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
+ms.topic: tutorial
 no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
 title: Run a quantum chemistry calculation on the Neutral Atom Simulator in Visual Studio Code and visualize the results
 uid: microsoft.quantum.tutorial.qdk-chem-benzene-sim

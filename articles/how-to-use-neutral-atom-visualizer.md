@@ -5,7 +5,7 @@ ms.date: 01/20/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
+ms.topic: how-to
 no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
 title: How to use the neutral atom device visualizer to analyze programs on neutral atom quantum computers
 uid: microsoft.quantum.how-to.qdk-neutral-atom-visualizer
