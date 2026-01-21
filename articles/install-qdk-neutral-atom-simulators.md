@@ -29,7 +29,7 @@ To use the neutral atom device simulators, you must install the following:
 To use the neutral atom device simulators, install the latest version of the `qdk` Python library with the `jupyter` extra:
 
 ```bash
-pip install --upgrade qdk[jupyter]
+pip install --upgrade "qdk[jupyter]"
 ```
 
 The `jupyter` extra isn't required to use the simulators, but does install the `qdk.widgets` module. The `widgets` module allows you to create visualizations from your simulation results in Jupyter Notebook.
