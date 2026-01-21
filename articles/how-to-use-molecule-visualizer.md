@@ -22,10 +22,10 @@ To use the molecule visualizer, you must install the following:
 
 - Python environment (version 3.10 or greater) with Python and Pip
 - Visual Studio Code (VS Code) with the Jupyter Notebook extension, or open VS Code for the Web
-- The latest version of the `qdk` Python library with the ``chemistry` and `jupyter` extras
+- The latest version of the `qdk` Python library with the `jupyter` extra, and the `qdk-chemistry` library
 
     ```bash
-    pip install --upgrade "qdk[chemistry,jupyter]"
+    pip install --upgrade "qdk[jupyter]" qdk-chemistry
     ```
 
 ## Create a structure object
