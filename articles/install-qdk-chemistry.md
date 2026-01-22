@@ -31,12 +31,6 @@ QDK/Chemistry is distributed as the `qdk-chemistry` Python library through PyPI.
 python -m pip install qdk-chemistry
 ```
 
-QDK/Chemistry provide native integration with PySCF through a plugin framework. To install QDK/Chemistry with PySCF, run the following command:
-
-```bash
-python -m pip install "qdk-chemistry[plugins]"
-```
-
 To optimize your build, see [Installation Instructions for QDK/Chemistry](https://github.com/microsoft/qdk-chemistry/blob/main/INSTALL.md) on GitHub for detailed manual installation instructions.
 
 ## Related content
