@@ -1,12 +1,12 @@
 ---
 author: azure-quantum-content
 description: This article gives an overview of sparse isometry, which is a technique created by Microsoft Quantum to efficiently generate simplified state preparation circuits for quantum chemistry calculations on a real quantum computer.
-ms.date: 01/12/2026
+ms.date: 01/23/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
 title: Use sparse isometry to efficiently generate simplified state preparation circuits for quantum chemistry calculations
 uid: microsoft.quantum.overview.qdk-chem-sparse-isometry
 #customer intent: As a quantum chemistry researcher, I want to understand what sparse isometry is and why I should use it to build state preparation quantum circuits for my quantum chemistry calculations

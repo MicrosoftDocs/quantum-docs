@@ -1,12 +1,12 @@
 ---
 author: azure-quantum-content
-description: This article gives an overview of the benefits that QDK/Chemistry offers to quantum chemistry researchers..
-ms.date: 01/20/2026
+description: This article gives an overview of the features and benefits that QDK/Chemistry offers to quantum chemistry researchers.
+ms.date: 01/23/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
 title: Simulate jobs on neutral atom quantum computers in the QDK
 uid: microsoft.quantum.overview.qdk-chemistry
 #customer intent: As a quantum chemistry researcher, I want know what QDK for chemistry offers me for my research

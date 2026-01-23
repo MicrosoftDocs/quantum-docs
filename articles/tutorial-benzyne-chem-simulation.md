@@ -1,15 +1,15 @@
 ---
 author: azure-quantum-content
-description: Use the QDK chemistry libraries to run quantum chemistry simulations and visualize the results in VS Code.
-ms.date: 12/29/2025
+description: Use QDK for chemistry to run quantum chemistry simulations and visualize the results in VS Code.
+ms.date: 01/23/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: tutorial
-no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
 title: Run chemistry calculations with the QDK chemistry libraries and neutral atom simulators in VS Code and visualize the results
 uid: microsoft.quantum.tutorial.qdk-chem-benzyne-sim
-#customer intent: As a quantum chemistry researcher, I want an end-to-end workflow for how to use the QDK chemistry libraries to run simulations for a quantum chemistry calculation and visualize the results in VS Code
+#customer intent: As a quantum chemistry researcher, I want an end-to-end workflow for how to use QDK/Chemistry to run simulations for a quantum chemistry calculation and visualize the results in VS Code
 ---
 
 # Tutorial: Simulate quantum chemistry calculations for para-benzyne with the QDK in VS Code
@@ -79,7 +79,7 @@ The QDK uses `.cube` files to store date about MOs. To view the structure and ac
     MoleculeViewer(molecule_data=structure, cube_data=cube_data)
     ```
 
-Use the molecular visualizer to examine the structure of the para-benzyne and the two MOs. For more information about how to use the molecular visualizer, see [How to use the molecule visualizer in the QDK](xref:microsoft.quantum.how-to.qdk-molecule-visualizer).
+Use the molecular visualizer to examine the structure of the para-benzyne and the two MOs. For more information about how to use the molecular visualizer, see [How to use the molecule visualizer with QDK for chemistry](xref:microsoft.quantum.how-to.qdk-molecule-visualizer).
 
 ## Convert the state preparation circuit to QIR
 

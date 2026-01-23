@@ -1,18 +1,18 @@
 ---
 author: azure-quantum-content
-description: This article shows how to install, create, and use the molecule visualizer for the QDK chemistry libraries. 
-ms.date: 01/12/2026
+description: This article describes how to install, create, and use the molecule visualizer with QDK for chemistry. 
+ms.date: 01/23/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
-title: How to use the molecule visualizer in the QDK
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
+title: How to use the molecule visualizer with QDK for chemistry
 uid: microsoft.quantum.how-to.qdk-molecule-visualizer
 #customer intent: As a quantum chemistry researcher, I want to know how to use the QDK's molecule visualizer to examine the structure and molecular orbitals of my molecule
 ---
 
-# How to use the molecule visualizer in the QDK
+# How to use the molecule visualizer with QDK for chemistry
 
 The Microsoft Quantum Development Kit (QDK) includes a molecule visualizer to use with QDK for chemistry (QDK/Chemistry). You can use the visualizer to interact with the 3D structure of your molecule and overlay the molecular orbitals (MOs) in a Jupyter notebook.
 
@@ -28,7 +28,7 @@ To use the molecule visualizer, you must install the following:
     pip install --upgrade "qdk[jupyter]" qdk-chemistry
     ```
 
-## Create a structure object
+## Create a `Structure` object
 
 The molecule visualizer requires a `Structure` object from the `qdk-chemistry` library. A `Structure` object contains the three-dimensional coordinates and element type of each atom in the molecule. To create a `Structure` object, you can load data from a `.xyz` or `.json` structure file, or you can directly specify the coordinates and elements in your code.
 
@@ -99,7 +99,7 @@ Use the following mouse and keyboard controls to interact with the molecule visu
 
 ## View the molecular orbitals
 
-If you have `.cube` files that store the MO data for your molecule, then you can load these files into the molecule visualizer to view the MOs overlaid on the molecule structure. Store the cube data in a Python dictionary with MO labels as keys, then pass the dictionary to `MoleculeViewer`. 
+If you have `.cube` files that store the MO data for your molecule, then you can load these files into the molecule visualizer to view the MOs overlaid on the molecule structure. Store the cube data in a Python dictionary with MO labels as keys, then pass the dictionary to `MoleculeViewer`.
 
 For example, the following code renders MOs for two active space orbitals in para-benzyne when you have the cube files in your working directory:
 

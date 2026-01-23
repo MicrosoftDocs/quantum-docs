@@ -1,12 +1,12 @@
 ---
 author: azure-quantum-content
 description: This article describes how to install the QDK/Chemistry Python library for different operating systems
-ms.date: 01/20/2026
+ms.date: 01/23/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API, Windows]
 title: How to install QDK for chemistry
 uid: microsoft.quantum.how-to.install-qdk-chemistry
 #customer intent: As a quantum chemistry researcher and developer, I want to know how to install the QDK/Chemistry Python library on my device
