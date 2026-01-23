@@ -7,22 +7,22 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: tutorial
 no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
-title: Run a quantum chemistry calculation on the Neutral Atom Simulator in Visual Studio Code and visualize the results
-uid: microsoft.quantum.tutorial.qdk-chem-benzene-sim
+title: Run chemistry calculations with the QDK chemistry libraries and neutral atom simulators in VS Code and visualize the results
+uid: microsoft.quantum.tutorial.qdk-chem-benzyne-sim
 #customer intent: As a quantum chemistry researcher, I want an end-to-end workflow for how to use the QDK chemistry libraries to run simulations for a quantum chemistry calculation and visualize the results in VS Code
 ---
 
-# Tutorial: Simulate quantum chemistry calculations for benzene diradical with the QDK in VS Code
+# Tutorial: Simulate quantum chemistry calculations for para-benzyne with the QDK in VS Code
 
-In this tutorial, you go through an end-to-end quantum chemistry workflow for benzene diradical with the Microsoft Quantum Development Kit (QDK) in Visual Studio Code (VS Code). You learn how to perform a series of classical quantum chemistry calculations, prepare a quantum circuit from your classical computational results, run the quantum circuit on different simulators, and visualize the results of your molecular calculations and quantum circuit.
+In this tutorial, you go through an end-to-end quantum chemistry workflow in Visual Studio Code (VS Code) for para-benzyne with QDK for chemistry (QDK/Chemistry) in the Microsoft Quantum Development Kit (QDK). You learn how to perform a series of classical quantum chemistry calculations, prepare a quantum circuit from your classical computational results, run the quantum circuit on a neutral atom device simulator, and visualize the results of your calculations and quantum circuit.
 
 ## Prerequisites
 
 To do this tutorial, you must install the following:
 
 - VS Code with the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and Jupyter extensions
-- A Python environment with Python version 3.10 or higher
-- The latest version of the `qdk` Python library with the `jupyter` extra, and the `qdk-chemistry` library
+- A Python environment (Python version 3.11, 3.12, or 3.13)
+- The latest version of the `qdk` Python library with the `jupyter` extra, and the `qdk-chemistry` library:
 
     ```bash
     pip install --upgrade "qdk[jupyter]" qdk-chemistry
@@ -30,9 +30,9 @@ To do this tutorial, you must install the following:
 
 ## Perform classical computational chemistry calculations to build your state preparation quantum circuit
 
-Before you can run a quantum chemistry program on a quantum computer, you need to perform a series of classical computational chemistry calculations. These calculations provide the initial quantum state of your molecule, and map that state to a set of qubits and a circuit on a quantum computer. The circuit that you build from the classical calculations is called a state preparation circuit, which puts the qubits into a state that represents the real quantum state of your molecule.
+Before you can run a quantum chemistry program on a quantum computer, you need to perform a series of classical computational chemistry calculations. These calculations provide the initial quantum state of your molecule, and then map that state to a set of qubits and a circuit on a quantum computer. The circuit that you build from the classical calculations is called a state preparation circuit, which puts the qubits into a state that represents the real quantum state of your molecule.
 
-To perform all the classical calculations and build your state preparation circuit for benzene diradical, follow the [Quickstart](https://animated-adventure-mwrpnpe.pages.github.io/user/quickstart.html) guide in the QDK Chemistry documentation on GitHub. To work through the guide, follow these steps:
+To perform all the classical calculations and build your state preparation circuit for para-benzyne, follow the [Quickstart](https:/microsoft.github.io/qdk-chemistry/user/quickstart.html) guide in the QDK/Chemistry documentation on GitHub. To work through the guide, follow these steps:
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
 1. Enter and select **Create: New Jupyter Notebook**. A new tab opens with a blank Jupyter Notebook file.
@@ -49,7 +49,7 @@ When you complete the quickstart guide, your notebook environment contains the f
 
 ## Visualize your molecule and active space MOs
 
-The QDK uses `.cube` files to store spatial information about MOs. To view the structure and active space MOs of the benzene diradical, follow these steps:
+The QDK uses `.cube` files to store date about MOs. To view the structure and active space MOs of para-benzyne, follow these steps:
 
 1. Generate cube files for the active space MOs. In a new cell, copy and run the following code:
 
@@ -68,7 +68,7 @@ The QDK uses `.cube` files to store spatial information about MOs. To view the s
 
     The preceding code creates a `.cube` file for each active space MO in your working directory.
 
-1. To open the molecule visualizer with the structure and MOs, copy and run the following code in a new cell:
+1. Pass the MOs that you want to view as a Python dictionary to the `MoleculeViewer` widget. For example, to view two of the MOs, copy and run the following code in a new cell:
 
     ```python
     cube_data = {
@@ -79,7 +79,7 @@ The QDK uses `.cube` files to store spatial information about MOs. To view the s
     MoleculeViewer(molecule_data=structure, cube_data=cube_data)
     ```
 
-Use the molecular visualizer to examine the structure of the benzene diradical and the active space MOs. For more information about how to use the molecular visualizer, see [How to use the molecule visualizer in the QDK](xref:microsoft.quantum.how-to.qdk-molecule-visualizer).
+Use the molecular visualizer to examine the structure of the para-benzyne and the two MOs. For more information about how to use the molecular visualizer, see [How to use the molecule visualizer in the QDK](xref:microsoft.quantum.how-to.qdk-molecule-visualizer).
 
 ## Convert the state preparation circuit to QIR
 
@@ -105,7 +105,7 @@ Circuit(circuit(src))
 
 ## Run a machine-agnostic simulation on the sparse simulator
 
-The sparse simulator is the default simulator in the QDK. This simulator is machine-agnostic and returns a noiseless sample of measurements results.
+The sparse simulator is the default simulator in the QDK. This simulator is machine-agnostic and returns a noiseless sample of measurement results.
 
 To run your circuit on the sparse simulator and view a histogram of the results, copy and run the following code in a new cell:
 
@@ -121,9 +121,9 @@ Your histogram results change each time you run the program because of the inher
 
 ## Run a neutral atom machine simulation on the GPU simulator
 
-The QDK includes the full-state GPU neutral atom simulator, which incorporate noise, such as qubit loss, from neutral atom machines into the simulation. The noise makes your simulation results closer to the program results on an actual neutral atom quantum computer. The GPU simulator is useful for chemistry programs because chemistry circuits tend to have non-Clifford gates.
+The QDK includes the full-state GPU neutral atom simulator, which incorporate noise from neutral atom machines, such as qubit loss, into the simulation. The noise makes your simulation results closer to the results on an actual neutral atom quantum computer. The GPU simulator is useful for chemistry programs because chemistry circuits tend to have non-Clifford gates.
 
-To run a GPU neutral atom machine simulation with noise, copy and run the following code in a new cell:
+To run a neutral atom device GPU simulation with noise, copy and run the following code in a new cell:
 
 ```python
 from qdk.simulation import NeutralAtomDevice, NoiseConfig
@@ -141,7 +141,7 @@ Histogram(results, labels="kets", items="top-25")
 
 ## Visualize how the program runs on a basic neutral atom device
 
-There are several neutral atom device technologies, but these devices tend to feature arrays of qubits where each qubit is a single neutral atom. Qubits move between zones for storage, processing, and measurement. The QDK provides a generic neutral atom device visualizer that shows how the qubits might move through the device during a program run.
+There are different neutral atom device technologies, but these devices tend to feature arrays of qubits where each qubit is a single neutral atom. Qubits move between zones for storage, processing, and measurement. The QDK provides a basic neutral atom device visualizer that shows how the qubits might move through the device during a program run.
 
 To open the neutral atom device visualizer for your program, copy and run the following code in a new cell:
 

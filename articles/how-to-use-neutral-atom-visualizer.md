@@ -28,7 +28,7 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
 
     ```python
     from qdk import init, TargetProfile
-    from qdk,openqasm import compile
+    from qdk.openqasm import compile
     from qdk.simulation import NeutralAtomDevice, NoiseConfig
     from qdk.widgets import Histogram
     ```
@@ -36,7 +36,7 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
 1. Write your quantum circuit and compile the circuit into QIR. Copy and run the following code in a new cell:
 
     ```python
-    init(target_profile=TargetProfile.Base
+    init(target_profile=TargetProfile.Base)
 
     qasm_src = """
     include "stdgates.inc";
@@ -59,10 +59,10 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
     simulator = NeutralAtomDevice()
     ```
 
-1. To access the visualizer and create a neutral atom qubit diagram for your program, call the simulator's `trace` method and pass the QIR for your quantum program. In a new cell, enter and run the following code:
+1. To access the visualizer and create a neutral atom qubit diagram for your program, call the simulator's `show_trace` method and pass the QIR for your quantum program. In a new cell, enter and run the following code:
 
     ```python
-    simulator.trace(qir)
+    simulator.show_trace(qir)
     ```
 
     The neutral atom qubit diagram renders in the output cell. Note that the visualizer diagrams don't include the effects of noise or qubit loss.

@@ -101,7 +101,7 @@ Use the following mouse and keyboard controls to interact with the molecule visu
 
 If you have `.cube` files that store the MO data for your molecule, then you can load these files into the molecule visualizer to view the MOs overlaid on the molecule structure. Store the cube data in a Python dictionary with MO labels as keys, then pass the dictionary to `MoleculeViewer`. 
 
-For example, the following code renders MOs for two active space orbitals in benzene diradical when you have the cube files in your working directory:
+For example, the following code renders MOs for two active space orbitals in para-benzyne when you have the cube files in your working directory:
 
 ```python
 from pathlib import Path
@@ -111,7 +111,7 @@ cube_data = {
     "alpha_19": Path("MO_alpha_19.cube").read_text(),
 }
 
-MoleculeViewer(molecule_data=molecule_data, cube_data=cube_data, isoval=0.03)
+MoleculeViewer(molecule_data=structure.to_xyz(), cube_data=cube_data, isoval=0.03)
 ```
 
 When you pass cube data to the `MoleculeViewer` widget, the visualizer has the following additional UI elements:

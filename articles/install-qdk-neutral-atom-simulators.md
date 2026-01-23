@@ -82,7 +82,7 @@ For example, to run a neutral atom simulation for a basic quantum program and vi
     noise.mov.loss = 0.001
     ```
 
-1. To create a GPU simulator and run your program on the simulator, copy and run the following code in a new cell: [WHAT IS THE DEFAULT SIMULATOR? CAN WE USE CLIFFORD SIMULATOR FOR THIS EXAMPLE?]
+1. To create a GPU simulator and run your program on the simulator, copy and run the following code in a new cell:
 
     ```python
     simulator = NeutralAtomDevice()
@@ -100,5 +100,5 @@ For example, to run a neutral atom simulation for a basic quantum program and vi
 
 ## Related content
 
-- [Neutral atom simulator overview]().
-- [How to use the neutral atom device visualizer]().
+- [Neutral atom simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
+- [How to use the neutral atom device visualizer](xref:microsoft.quantum.how-to.qdk-neutral-atom-visualizer).

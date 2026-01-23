@@ -42,9 +42,9 @@ The Clifford simulator is fast and efficient, so you can model systems that have
 
 ### The full-state GPU and CPU simulators
 
-The full-state GPU and CPU simulators can model quantum circuits that contain any type of gate. However, these simulators are more computationally expensive to run, and performance is determined by the power of your local machine's GPU and CPU capabilities. The GPU simulator is faster than the CPU simulator, but the CPU simulator is a good option for machines that don't have a good GPU.
+The full-state GPU and CPU simulators can model quantum circuits that contain any type of gate. However, these simulators are more computationally expensive to run, and performance is determined by the power of your local machine's GPU and CPU capabilities. The GPU simulator is faster than the CPU simulator, but the CPU simulator is a good option for machines that don't have a compatible GPU.
 
-The GPU simulator can model only up to 27 qubits. The CPU simulator can model any number of qubits, but runtimes become unfeasible when your program contains too many qubits. Use the full-state simulators when your program has non-Clifford gates. For example, quantum programs for chemistry often contain non-Clifford gates.
+The GPU simulator can model only up to 27 qubits. The CPU simulator can model any number of qubits, but runtimes become impossible when your program contains too many qubits. Use the full-state simulators when your program has non-Clifford gates. For example, quantum programs for chemistry often contain non-Clifford gates.
 
 ### The neutral atom device visualizer
 

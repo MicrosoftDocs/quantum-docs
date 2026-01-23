@@ -11,7 +11,7 @@ title: How to install QDK for chemistry
 uid: microsoft.quantum.how-to.install-qdk-chemistry
 #customer intent: As a quantum chemistry researcher and developer, I want to know how to install the QDK/Chemistry Python library on my device
 ---
-# How to install the QDK chemistry Python library
+# How to install the QDK for chemistry
 
 In this article, you learn how to install QDK for chemistry (QDK/Chemistry), a Python library for quantum chemistry calculations in the Microsoft Quantum Development Kit (QDK).
 
@@ -20,8 +20,8 @@ In this article, you learn how to install QDK for chemistry (QDK/Chemistry), a P
 - Install the latest version of [Visual Studio (VS) Code](https://code.visualstudio.com/download).
 - Install a Python interpreter (version 3.11, 3.12 or 3.13).
 
-> [!WARNING]
-> QDK/Chemistry doesn't provide native support for Windows machines. To use QDK/Chemistry on Windows, you must [install the Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/windows/wsl/install).
+> [!IMPORTANT]
+> Windows support for QDK/Chemistry is provided through the Windows Subsystem for Linux (WSL). To use QDK/Chemistry on Windows machines, you must [install WSL](https://learn.microsoft.com/windows/wsl/install).
 
 ## Install the `qdk-chemistry` library
 
@@ -35,8 +35,8 @@ To optimize your build, see [Installation Instructions for QDK/Chemistry](https:
 
 ## Related content
 
-To learn more about quantum chemistry simulations how to use QDK/Chemistry, see the following articles:
+To learn more about quantum chemistry simulations and how to use QDK/Chemistry, see the following articles:
 
-- [Tutorial: Simulate quantum chemistry calculations for benzene diradical with the QDK in VS Code](xref:microsoft.quantum.tutorial.qdk-chem-benzene-sim)
+- [Tutorial: Simulate quantum chemistry calculations for para-benzyne with the QDK in VS Code](xref:microsoft.quantum.tutorial.qdk-chem-benzene-sim)
 - [Build state preparation circuits for quantum chemistry calculations with sparse isometry](microsoft.quantum.overview.qdk-chem-sparse-isometry)
-- [Perform SCF calcualtions and active space selection to construct molecular orbitals](xref:microsoft.quantum.overview.qdk-chem-scf-active-space)
+- [Perform SCF calculations and active space selection to construct molecular orbitals](xref:microsoft.quantum.overview.qdk-chem-scf-active-space)
