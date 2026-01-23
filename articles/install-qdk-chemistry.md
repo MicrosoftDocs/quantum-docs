@@ -11,7 +11,7 @@ title: How to install QDK for chemistry
 uid: microsoft.quantum.how-to.install-qdk-chemistry
 #customer intent: As a quantum chemistry researcher and developer, I want to know how to install the QDK/Chemistry Python library on my device
 ---
-# How to install the QDK for chemistry
+# How to install QDK for chemistry
 
 In this article, you learn how to install QDK for chemistry (QDK/Chemistry), a Python library for quantum chemistry calculations in the Microsoft Quantum Development Kit (QDK).
 
