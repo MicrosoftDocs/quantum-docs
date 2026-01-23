@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
 title: How to install and use the neutral atom device simulators in the QDK
 uid: microsoft.quantum.how-to.install-qdk-neutral-atom-simulators
 #customer intent: As a quantum developer, I want to know how to install and use the neutral atom device simulators in the QDK

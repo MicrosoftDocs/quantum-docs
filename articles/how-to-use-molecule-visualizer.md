@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
 title: How to use the molecule visualizer with QDK for chemistry
 uid: microsoft.quantum.how-to.qdk-molecule-visualizer
 #customer intent: As a quantum chemistry researcher, I want to know how to use the QDK's molecule visualizer to examine the structure and molecular orbitals of my molecule
@@ -32,7 +32,7 @@ To use the molecule visualizer, you must install the following:
 
 The molecule visualizer requires a `Structure` object from the `qdk-chemistry` library. A `Structure` object contains the three-dimensional coordinates and element type of each atom in the molecule. To create a `Structure` object, you can load data from a `.xyz` or `.json` structure file, or you can directly specify the coordinates and elements in your code.
 
-For example, to load a `Structure` object for para-benzyne from a `.xyz` file, follow these steps:
+For example, to load a `Structure` object for *p*-benzyne from a `.xyz` file, follow these steps:
 
 1. In VS Code, open the folder where you want to save your files.
 1. Create an empty text file named `para_benzyne.structure.xyz`.
@@ -61,7 +61,7 @@ For example, to load a `Structure` object for para-benzyne from a `.xyz` file, f
     from qdk-chemistry import Structure
 
     structure = Structure()
-    structure.from_xyz_file('para-benzyne.structure.xyz')
+    structure.from_xyz_file('*p*-benzyne.structure.xyz')
     ```
 
 For more information about `Structure` objects in the QDK/Chemistry, see [Structure](https:/microsoft.github.io/qdk-chemistry/user/comprehensive/data/structure.html) in the QDK/Chemistry documentation on GitHub.
@@ -101,7 +101,7 @@ Use the following mouse and keyboard controls to interact with the molecule visu
 
 If you have `.cube` files that store the MO data for your molecule, then you can load these files into the molecule visualizer to view the MOs overlaid on the molecule structure. Store the cube data in a Python dictionary with MO labels as keys, then pass the dictionary to `MoleculeViewer`.
 
-For example, the following code renders MOs for two active space orbitals in para-benzyne when you have the cube files in your working directory:
+For example, the following code renders MOs for two active space orbitals in *p*-benzyne when you have the cube files in your working directory:
 
 ```python
 from pathlib import Path

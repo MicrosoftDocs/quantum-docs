@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
 title: How to use the neutral atom device visualizer to analyze programs on neutral atom quantum computers
 uid: microsoft.quantum.how-to.qdk-neutral-atom-visualizer
 #customer intent: As a quantum chemistry researcher, I want to understand the tools that the QDK provides to simulate how my quantum programs run on a neutral atom quantum computers

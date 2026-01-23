@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
 title: Simulate jobs on neutral atom quantum computers in the QDK
 uid: microsoft.quantum.overview.qdk-chemistry
 #customer intent: As a quantum chemistry researcher, I want know what QDK for chemistry offers me for my research
@@ -49,6 +49,12 @@ QDK/Chemistry comes with a suite of code samples to help get started with develo
 - Efficient quantum circuit preparation with GF2+X sparse isometry (LINK TO DEEP DIVE)
 - Seamless integration with native QDK high-performance simulators and resource estimator
 - VS code and Python extensions for QDK/Chemistry, powered by AI-assisted coding capabilities to help you write and understand quantum workloads
+
+## QDK: Mapping chemistry to a quantum computer
+
+The following diagram shows how the QDK can take you from quantum chemistry calculations to building and running a circuit on a quantum computer.
+
+:::image type="content" source="media/qdk-libraries-infographic.png" alt-text="Diagram that shows how you can use QDK libraries to map quantum chemistry problems to a quantum computer.":::
 
 ## QDK/Chemistry resources
 

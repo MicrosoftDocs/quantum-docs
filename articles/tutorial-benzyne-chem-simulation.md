@@ -6,15 +6,15 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: tutorial
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, para-benzyne, "Jupyter Notebook", GitHub, API]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
 title: Run chemistry calculations with the QDK chemistry libraries and neutral atom simulators in VS Code and visualize the results
 uid: microsoft.quantum.tutorial.qdk-chem-benzyne-sim
 #customer intent: As a quantum chemistry researcher, I want an end-to-end workflow for how to use QDK/Chemistry to run simulations for a quantum chemistry calculation and visualize the results in VS Code
 ---
 
-# Tutorial: Simulate quantum chemistry calculations for para-benzyne with the QDK in VS Code
+# Tutorial: Simulate quantum chemistry calculations for *p*-benzyne with the QDK in VS Code
 
-In this tutorial, you go through an end-to-end quantum chemistry workflow in Visual Studio Code (VS Code) for para-benzyne with QDK for chemistry (QDK/Chemistry) in the Microsoft Quantum Development Kit (QDK). You learn how to perform a series of classical quantum chemistry calculations, prepare a quantum circuit from your classical computational results, run the quantum circuit on a neutral atom device simulator, and visualize the results of your calculations and quantum circuit.
+In this tutorial, you go through an end-to-end quantum chemistry workflow in Visual Studio Code (VS Code) for *p*-benzyne with QDK for chemistry (QDK/Chemistry) in the Microsoft Quantum Development Kit (QDK). You learn how to perform a series of classical quantum chemistry calculations, prepare a quantum circuit from your classical computational results, run the quantum circuit on a neutral atom device simulator, and visualize the results of your calculations and quantum circuit.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ To do this tutorial, you must install the following:
 
 Before you can run a quantum chemistry program on a quantum computer, you need to perform a series of classical computational chemistry calculations. These calculations provide the initial quantum state of your molecule, and then map that state to a set of qubits and a circuit on a quantum computer. The circuit that you build from the classical calculations is called a state preparation circuit, which puts the qubits into a state that represents the real quantum state of your molecule.
 
-To perform all the classical calculations and build your state preparation circuit for para-benzyne, follow the [Quickstart](https:/microsoft.github.io/qdk-chemistry/user/quickstart.html) guide in the QDK/Chemistry documentation on GitHub. To work through the guide, follow these steps:
+To perform all the classical calculations and build your state preparation circuit for *p*-benzyne, follow the [Quickstart](https:/microsoft.github.io/qdk-chemistry/user/quickstart.html) guide in the QDK/Chemistry documentation on GitHub. To work through the guide, follow these steps:
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
 1. Enter and select **Create: New Jupyter Notebook**. A new tab opens with a blank Jupyter Notebook file.
@@ -41,15 +41,15 @@ To perform all the classical calculations and build your state preparation circu
 
 When you complete the quickstart guide, your notebook environment contains the following Python objects that you use in the next parts of the tutorial:
 
-| Variable name             | Description                                                         | Usage                              |
-|---------------------------|---------------------------------------------------------------------|------------------------------------|
-| `structure`               | Contains the 3D coordinates of each nucleus in the molecule         | View the molecule in 3D            |
-| `active_orbitals`         | Contains the MO coefficients and other data for the active orbitals | Generate `.cube` files to view MOs |
-| `sparse_isometry_circuit` | Contains the state preparation circuit                              | Generate QIR for simulation        |
+| Variable name             | Description                                                                             | Usage                              |
+|---------------------------|-----------------------------------------------------------------------------------------|------------------------------------|
+| `structure`               | Contains the 3D coordinates of each nucleus in the molecule                             | View the molecule in 3D            |
+| `active_orbitals`         | Contains the molecular orbital (MO) coefficients and other data for the active orbitals | Generate `.cube` files to view MOs |
+| `sparse_isometry_circuit` | Contains the state preparation circuit                                                  | Generate QIR for simulation        |
 
 ## Visualize your molecule and active space MOs
 
-The QDK uses `.cube` files to store date about MOs. To view the structure and active space MOs of para-benzyne, follow these steps:
+The QDK uses `.cube` files to store date about MOs. To view the structure and active space MOs of *p*-benzyne, follow these steps:
 
 1. Generate cube files for the active space MOs. In a new cell, copy and run the following code:
 
@@ -79,7 +79,7 @@ The QDK uses `.cube` files to store date about MOs. To view the structure and ac
     MoleculeViewer(molecule_data=structure, cube_data=cube_data)
     ```
 
-Use the molecular visualizer to examine the structure of the para-benzyne and the two MOs. For more information about how to use the molecular visualizer, see [How to use the molecule visualizer with QDK for chemistry](xref:microsoft.quantum.how-to.qdk-molecule-visualizer).
+Use the molecular visualizer to examine the structure of the *p*-benzyne and the two MOs. For more information about how to use the molecular visualizer, see [How to use the molecule visualizer with QDK for chemistry](xref:microsoft.quantum.how-to.qdk-molecule-visualizer).
 
 ## Convert the state preparation circuit to QIR
 
@@ -100,7 +100,7 @@ To view the circuit in the QDK circuit visualizer, copy and run the following co
 ```python
 from qdk.widgets import Circuit
 
-Circuit(circuit(src))
+Circuit(circuit(sparse_isometry_circuit))
 ```
 
 ## Run a machine-agnostic simulation on the sparse simulator
@@ -121,7 +121,7 @@ Your histogram results change each time you run the program because of the inher
 
 ## Run a neutral atom machine simulation on the GPU simulator
 
-The QDK includes the full-state GPU neutral atom simulator, which incorporate noise from neutral atom machines, such as qubit loss, into the simulation. The noise makes your simulation results closer to the results on an actual neutral atom quantum computer. The GPU simulator is useful for chemistry programs because chemistry circuits tend to have non-Clifford gates.
+The QDK includes the full-state GPU neutral atom simulator, which incorporate noise from neutral atom machines, such as qubit loss, into the simulation. The added noise makes your simulation results more closely match the results of an actual neutral atom quantum computer. The GPU simulator is useful for chemistry programs because chemistry circuits tend to have non-Clifford gates.
 
 To run a neutral atom device GPU simulation with noise, copy and run the following code in a new cell:
 
