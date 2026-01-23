@@ -37,6 +37,5 @@ To optimize your build, see [Installation Instructions for QDK/Chemistry](https:
 
 To learn more about quantum chemistry simulations and how to use QDK/Chemistry, see the following articles:
 
-- [Tutorial: Simulate quantum chemistry calculations for *p*-benzyne with the QDK in VS Code](xref:microsoft.quantum.tutorial.qdk-chem-benzene-sim)
 - [Build state preparation circuits for quantum chemistry calculations with sparse isometry](microsoft.quantum.overview.qdk-chem-sparse-isometry)
 - [Perform SCF calculations and active space selection to construct molecular orbitals](xref:microsoft.quantum.overview.qdk-chem-scf-active-space)
