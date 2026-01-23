@@ -52,8 +52,6 @@ QDK/Chemistry comes with a suite of code samples to help get started with develo
 
 ## QDK: Mapping chemistry to a quantum computer
 
-The following diagram shows how the QDK can take you from quantum chemistry calculations to building and running a circuit on a quantum computer.
-
 :::image type="content" source="media/qdk-libraries-infographic.png" alt-text="Diagram that shows how you can use QDK libraries to map quantum chemistry problems to a quantum computer.":::
 
 ## QDK/Chemistry resources
