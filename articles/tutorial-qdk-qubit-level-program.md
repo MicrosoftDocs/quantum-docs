@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 
 > [!NOTE]
 > This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in circuit diagrams. For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
-> :::image type="content" source="./media/qft_full.PNG" alt-text="Diagram of a Quantum Fourier Transform circuit." :::
+> :::image type="content" source="./media/qft_full.png" alt-text="Diagram of a Quantum Fourier Transform circuit." :::
 
 [!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
 
@@ -105,7 +105,7 @@ Next, you apply the operations that comprise the `Main` operation itself. Q# alr
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
-:::image type="content" source="./media/qft_firstH.PNG" alt-text="Diagram showing a circuit for three qubit QFT through first Hadamard.":::
+:::image type="content" source="./media/qft_firstH.png" alt-text="Diagram showing a circuit for three qubit QFT through first Hadamard.":::
 
 To apply an operation to a specific qubit from a register (for example, a single `Qubit` from an array `Qubit[]`), use standard index notation.
 So, applying the `H` operation to the first qubit of the register `qs` takes the form:
@@ -124,7 +124,7 @@ Note that the control qubit argument must be an array, even if it is for a singl
 
 The controlled operations in the QFT are the `R1` operations that act on the first qubit (and controlled by the second and third qubits):
 
-:::image type="content" source="./media/qft_firstqubit.PNG" alt-text="Diagram showing a circuit for three qubit Quantum Fourier Transform through first qubit." :::
+:::image type="content" source="./media/qft_firstqubit.png" alt-text="Diagram showing a circuit for three qubit Quantum Fourier Transform through first qubit." :::
 
 In your Q# file, call these operations with these statements:
 
@@ -156,7 +156,7 @@ SWAP(qs[2], qs[0]);
 
 Now you have finished writing the qubit-level operations of the quantum Fourier transform into your Q# operation:
 
-:::image type="content" source="./media/qft_full.PNG" alt-text="Diagram showing a circuit for three qubit Quantum Fourier Transform." :::
+:::image type="content" source="./media/qft_full.png" alt-text="Diagram showing a circuit for three qubit Quantum Fourier Transform." :::
 
 ### Deallocate qubits
 

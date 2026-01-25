@@ -122,7 +122,7 @@ from qdk.widgets import SpaceChart
 SpaceChart(result)
 ```
 
-:::image type="content" source="../media/resource-estimator-space-diagram-qiskit.PNG" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
+:::image type="content" source="../media/resource-estimator-space-diagram-qiskit.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
 The space diagram shows the proportion of algorithm qubits and T factory qubits. Note that the number of T factory copies, 19, contributes to the number of physical qubits for T factories as $\text{T factories} \cdot \text{physical qubit per T factory}= 19 \cdot 18,000 = 342,000$.
 
