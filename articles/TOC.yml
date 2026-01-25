@@ -1,4 +1,4 @@
-- name: Azure Quantum documentation
+- name: Microsoft Quantum documentation
   href: index.yml
 - name: Overview
   items:
@@ -8,21 +8,12 @@
     href: overview-understanding-quantum-computing.md
   - name: Microsoft's quantum machine
     href: overview-microsoft-quantum-machine.md
-- name: Get started
-  items:
-  - name: Explore with Copilot in Azure Quantum
-    href: get-started-azure-quantum.md
-  - name: Create an Azure Quantum workspace
-    href: how-to-create-workspace.md
-  - name: Set up the Quantum Development Kit
-    href: install-overview-qdk.md
-  - name: Ways to run Q# programs
-    href: qsharp-ways-to-work.md
-  expanded: true
-- name: Manage Azure Quantum
+- name: The Azure Quantum service
   items:
   - name: Users and workspaces
     items:
+    - name: Create an Azure Quantum workspace
+      href: how-to-create-workspace.md
     - name: Manage your Azure Quantum workspaces
       items:
       - name: Connect to your Azure Quantum workspace
@@ -73,81 +64,115 @@
       href: /azure/architecture/guide/quantum/devops-for-quantum-computing?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
     - name: Quantum computing integration with classical apps
       href: /azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps?toc=/azure/quantum/toc.json&bc=/azure/quantum/breadcrumb/toc.json
-- name: Quantum programming
-  items:
-  - name: The Quantum Development Kit
-    href: qdk-main-overview.md
-  - name: The Q# programming language
-    items:
-    - name: Introduction to Q#
-      href: qsharp-overview.md
-    - name: How-to guides for Q#
-      items:
-      - name: Create your first Q# program
-        href: qsharp-quickstart.md
-      - name: Submit jobs with Q# and VS Code
-        href: how-to-submit-jobs.md
-      - name: Work with Q# projects
-        href: how-to-work-with-qsharp-projects.md
-      - name: Debug and test your Q# code
-        href: testing-debugging.md
-      - name: Visualize Q# circuit diagrams
-        href: how-to-visualize-circuits.md
-      - name: Perform long-running experiments
-        href: how-to-long-running-experiments.md
-    - name: Tutorials for Q#
-      items: 
-      - name: Quantum random number generator
-        href: tutorial-qdk-quantum-random-number-generator.md
-      - name: Quantum entanglement
-        href: tutorial-qdk-explore-entanglement.md
-      - name: Grover's algorithm
-        href: tutorial-qdk-grovers-search.md
-      - name: Quantum Fourier Transform
-        href: tutorial-qdk-qubit-level-program.md
-    - name: Reference guides for Q#
-      items:
-      - name: VS Code reference for Q# programs
-        href: vscode-qsharp-reference.md
-      - name: Language reference for Q#
-        href: user-guide/language/toc.yml
-  - name: OpenQASM in the QDK
-    href: qdk-openqasm-integration.md
-  - name: Qiskit and Cirq interoperability
-    items:
-    - name: Overview of Qiskit and Cirq in the QDK
-      href: qdk-qiskit-cirq-overview.md
-    - name: How-to guides for Qiskit and Cirq
-      items:
-      - name: Submit a circuit with Qiskit
-        href: quickstart-microsoft-qiskit.md
-      - name: Submit a circuit with Cirq
-        href: quickstart-microsoft-cirq.md
-      - name: Submit a circuit in provider-specific format
-        href: quickstart-microsoft-provider-format.md
-  - name: Build circuits with the Circuit Editor
-    href: qdk-circuit-editor.md
-  - name: Use VS Code agent mode for the QDK
-    href: qdk-vscode-agent-setup.md
-- name: Hybrid quantum computing (QC)
-  items:
-  - name: Introduction to hybrid QC
-    href: hybrid-computing-overview.md
   - name: Sessions
     items:
     - name: Get started with sessions
       href: hybrid-computing-interactive.md
     - name: Manage sessions
       href: how-to-work-with-sessions.md
-  - name: Run hybrid QC jobs
-    href: hybrid-computing-integrated.md
-  - name: Concepts for hybrid QC
-    href: hybrid-computing-concepts.md
-- name: Resource Estimation
-  items:
-  - name: Get started
+  - name: Quantum providers
     items:
-    - name: Introduction to the Resource Estimator
+    - name: List of quantum computing providers
+      href: qc-target-list.md
+    - name: Types of target profiles
+      href: quantum-computing-target-profiles.md
+    - name: Azure Quantum provider global availability
+      href: provider-global-availability.md
+    - name: IonQ
+      items:
+      - name: IonQ provider and targets
+        href: provider-ionq.md
+      - name: IonQ support policy
+        href: provider-support-ionq.md
+    - name: PASQAL
+      items:
+      - name: PASQAL provider and targets
+        href: provider-pasqal.md
+      - name: PASQAL support policy
+        href: provider-support-pasqal.md
+    - name: Quantinuum
+      items:
+      - name: Quantinuum provider and targets
+        href: provider-quantinuum.md
+      - name: Quantinuum support policy
+        href: provider-support-quantinuum.md
+    - name: Rigetti
+      items:
+      - name: Rigetti provider and targets
+        href: provider-rigetti.md
+      - name: Rigetti support policy
+        href: provider-support-rigetti.md
+  - name: Troubleshooting Azure Quantum
+    href: azure-quantum-common-issues.md
+  - name: Azure Quantum release notes
+    href: release-notes.md
+- name: The Microsoft Quantum Development Kit
+  items:
+  - name: Quantum Development Kit overview
+    href: qdk-main-overview.md
+  - name: Get started with the QDK
+    items:
+    - name: Set up the QDK
+      href: install-overview-qdk.md
+    - name: Visual Studio Code agent mode
+      href: qdk-vscode-agent-setup.md
+    - name: Explore with Copilot in Azure Quantum
+      href: get-started-azure-quantum.md
+  - name: Quantum language support in the QDK
+    items:
+    - name: Q#
+      href: qsharp-overview.md
+    - name: OpenQASM
+      items:
+      - name: Overview of OpenQASM in the QDK
+        href: qdk-openqasm-integration.md
+    - name: Python interoperability
+      items:
+      - name: Python quantum language support in the QDK
+        href: qdk-qiskit-cirq-overview.md
+      - name: Qiskit
+        items:
+        - name: Submit a circuit with Qiskit
+          href: quickstart-microsoft-qiskit.md
+      - name: Cirq
+        items:
+        - name: Submit a circuit with Cirq
+          href: quickstart-microsoft-cirq.md
+  - name: Simulators and visualizers
+    items:
+    - name: Sparse simulator
+      href: sparse-simulator.md
+    - name: Backend simulators
+      href: backend-simulators.md
+    - name: The Circuit Editor
+      href: qdk-circuit-editor.md
+    - name: Neutral atom device simulators
+      items:
+      - name: Neutral atom simulator overview
+        href: overview-qdk-neutral-atom-simulator.md
+      - name: Install the neutral atom simulators
+        href: install-qdk-neutral-atom-simulators.md
+      - name: How to use the neutral atom device visualizers
+        href: how-to-use-neutral-atom-visualizer.md
+  - name: "Applications: Chemistry"
+    items:
+    - name: Welcome to QDK for chemistry
+      href: overview-qdk-chemistry.md
+    - name: Tools and features in QDK for chemistry
+      items:
+      - name: Self-consistent field calculations and active space selection
+        href: overview-qdk-chem-scf-active-space.md
+      - name: Build state preparation circuits with sparse isometry
+        href: overview-qdk-chem-sparse-isometry.md
+    - name: How to use QDK for chemistry
+      items:
+      - name: Install QDK for chemistry
+        href: install-qdk-chemistry.md
+      - name: How to use the molecule visualizer
+        href: how-to-use-molecule-visualizer.md
+  - name: The Resource Estimator
+    items:
+    - name: Get started with the Resource Estimator
       href: intro-to-resource-estimation.md
     - name: Run your first resource estimate
       href: quickstart-microsoft-resources-estimator.md
@@ -157,59 +182,65 @@
       href: overview-resources-estimator.md
     - name: Get the output of the Resource Estimator
       href: overview-resource-estimator-output-data.md
-  - name: Work with the Resource Estimator
+    - name: How to work with the Resource Estimator
+      items:
+      - name: Compare multiple configurations
+        href: resource-estimator-batching.md
+      - name: Use known estimates
+        href: resource-estimator-known-estimates.md
+      - name: Optimize large programs
+        href: resource-estimator-handle-large-programs.md
+      - name: Analyze cryptographic protocols 
+        href: resource-estimator-quantum-safe-planning.md
+  - name: Integration with Azure Quantum
     items:
-    - name: Compare multiple configurations
-      href: resource-estimator-batching.md
-    - name: Use known estimates
-      href: resource-estimator-known-estimates.md
-    - name: Optimize large programs
-      href: resource-estimator-handle-large-programs.md
-    - name: Analyze cryptographic protocols 
-      href: resource-estimator-quantum-safe-planning.md
-  - name: Tutorials with the Resource Estimator
+    - name: Submit a circuit in provider-specific format
+      href: quickstart-microsoft-provider-format.md
+    - name: Perform long-running experiments
+      href: how-to-long-running-experiments.md
+    - name: Hybrid quantum computing (QC)
+      items:
+      - name: Introduction to hybrid QC
+        href: hybrid-computing-overview.md
+      - name: Run hybrid QC jobs
+        href: hybrid-computing-integrated.md
+  - name: The Q# programming language
     items:
-    - name: Double-factorized chemistry
+    - name: Introduction to Q#
+      href: qsharp-overview.md
+    - name: How-to guides for Q#
+      items:
+      - name: Create your first Q# program
+        href: qsharp-quickstart.md
+      - name: Ways to run Q# programs
+        href: qsharp-ways-to-work.md
+      - name: Submit jobs with Q# and VS Code
+        href: how-to-submit-jobs.md
+      - name: Work with Q# projects
+        href: how-to-work-with-qsharp-projects.md
+      - name: Debug and test your Q# code
+        href: testing-debugging.md
+      - name: Visualize Q# circuit diagrams
+        href: how-to-visualize-circuits.md
+    - name: Reference guides for Q#
+      items:
+      - name: VS Code reference for Q# programs
+        href: vscode-qsharp-reference.md
+      - name: Language reference for Q#
+        href: user-guide/language/toc.yml
+  - name: Tutorials for the QDK and Q#
+    items: 
+    - name: Quantum random number generator
+      href: tutorial-qdk-quantum-random-number-generator.md
+    - name: Quantum entanglement
+      href: tutorial-qdk-explore-entanglement.md
+    - name: Grover's algorithm
+      href: tutorial-qdk-grovers-search.md
+    - name: Quantum Fourier Transform
+      href: tutorial-qdk-qubit-level-program.md
+    - name: Double-factorized chemistry with the Resource Estimator
       href: tutorial-resource-estimator-chemistry.md
-- name: Quantum simulators
-  items:
-  - name: Sparse simulator
-    href: sparse-simulator.md
-  - name: Backend simulators
-    href: backend-simulators.md
-- name: Quantum providers
-  items:
-  - name: List of quantum computing providers
-    href: qc-target-list.md
-  - name: Types of target profiles
-    href: quantum-computing-target-profiles.md
-  - name: Azure Quantum provider global availability
-    href: provider-global-availability.md
-  - name: IonQ
-    items:
-    - name: IonQ provider and targets
-      href: provider-ionq.md
-    - name: IonQ support policy
-      href: provider-support-ionq.md
-  - name: PASQAL
-    items:
-    - name: PASQAL provider and targets
-      href: provider-pasqal.md
-    - name: PASQAL support policy
-      href: provider-support-pasqal.md
-  - name: Quantinuum
-    items:
-    - name: Quantinuum provider and targets
-      href: provider-quantinuum.md
-    - name: Quantinuum support policy
-      href: provider-support-quantinuum.md
-  - name: Rigetti
-    items:
-    - name: Rigetti provider and targets
-      href: provider-rigetti.md
-    - name: Rigetti support policy
-      href: provider-support-rigetti.md
-- name: Key concepts of quantum computing
+- name: Concepts in quantum computing
   items:
   - name: Vectors and matrices
     href: concepts-vectors-and-matrices.md
@@ -235,19 +266,15 @@
     href: concepts-oracles.md
   - name: T gates & T factories
     href: concepts-tfactories.md
-- name: Troubleshooting
-  items:
-  - name: Troubleshooting issues
-    href: azure-quantum-common-issues.md
+  - name: Concepts for hybrid QC
+    href: hybrid-computing-concepts.md
 - name: Resources
   items:
   - name: Build your skills with Microsoft training >>
     href: /training/paths/quantum-computing-fundamentals/
+  - name: Learn about quantum computing with Microsoft Quantum Katas >>
+    href: https://quantum.microsoft.com/en-us/tools/quantum-katas
   - name: Contributing to Azure Quantum
     href: contributing-overview.md
   - name: Further reading
     href: further-reading-qdk.md
-- name: Release notes
-  items:
-  - name: Azure Quantum release notes
-    href: release-notes.md
