@@ -61,7 +61,7 @@ For example, to load a `Structure` object for *p*-benzyne from a `.xyz` file, fo
     from qdk-chemistry import Structure
 
     structure = Structure()
-    structure.from_xyz_file('*p*-benzyne.structure.xyz')
+    structure.from_xyz_file('para-benzyne.structure.xyz')
     ```
 
 For more information about `Structure` objects in the QDK/Chemistry, see [Structure](https:/microsoft.github.io/qdk-chemistry/user/comprehensive/data/structure.html) in the QDK/Chemistry documentation on GitHub.
