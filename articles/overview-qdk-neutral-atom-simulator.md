@@ -54,8 +54,8 @@ The visualizer shows the different zones where qubits are located in a neutral a
 
 ## Get started with the neutral atom simulators
 
-To learn how to install and use the neutral atom device simulators in the QDK, see [How to install and use the neutral atom device simulators in the QDK](microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
+To learn how to install and use the neutral atom device simulators in the QDK, see [How to install and use the neutral atom device simulators in the QDK](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 To learn how to use the neutral atom device simulator, see [How to use the neutral atom device visualizer](xref:microsoft.quantum.how-to.qdk-neutral-atom-visualizer).
 
-For full end-to-end code samples of neutral atom device simulation and visualization, see the neutral atom notebook samples on the [QDK GitHub repository] (https://github.com/microsoft/qdk/tree/main/samples/notebooks).
+For full end-to-end code samples of neutral atom device simulation and visualization, see the neutral atom notebook samples on the [QDK GitHub repository](https://github.com/microsoft/qdk/tree/main/samples/notebooks).

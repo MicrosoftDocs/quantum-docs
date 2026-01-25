@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
 no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
-title: Simulate jobs on neutral atom quantum computers in the QDK
+title: Overview of QDK for Chemistry
 uid: microsoft.quantum.overview.qdk-chemistry
 #customer intent: As a quantum chemistry researcher, I want know what QDK for chemistry offers me for my research
 ---
