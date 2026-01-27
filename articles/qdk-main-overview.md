@@ -13,9 +13,9 @@ uid: microsoft.quantum.overview.qdk-landing-page
 #Customer intent: As a developer, I want to learn about what the QDK has to offer and how to use the QDK.
 ---
 
-# Build quantum solutions with the Azure Quantum Development Kit
+# Build quantum solutions with the Microsoft Quantum Development Kit
 
-The Azure Quantum Development Kit (QDK) is a free open-source software development kit designed specifically for quantum program development. The QDK includes an extension for Microsoft's Visual Studio Code (VS Code) and a set of Python libraries. Install the QDK to get started with state-of-the-art quantum development tools.
+The Microsoft Quantum Development Kit (QDK) is a free open-source software development kit designed specifically for quantum program development. The QDK includes an extension for Microsoft's Visual Studio Code (VS Code) and a set of Python libraries. Install the QDK to get started with state-of-the-art quantum development tools.
 
 ## Overview of the QDK
 
