@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Learn about the role of T gates and T factories in quantum computing and in the Azure Quantum Resource Estimator.
+description: Learn about the role of T gates and T factories in quantum computing and in the Microsoft Quantum Resource Estimator.
 ms.author: quantumdocwriters
 ms.date: 09/16/2024
 ms.service: azure-quantum
@@ -10,13 +10,13 @@ no-loc: ['Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots'
 title: T gates & T factories
 uid: microsoft.quantum.concepts.tfactories
 
-#customer intent: As a quantum computing student, I want to learn about the role of T gates and T factories in in the Azure Quantum Resource Estimator.
+#customer intent: As a quantum computing student, I want to learn about the role of T gates and T factories in in the Microsoft Quantum Resource Estimator.
 
 ---
 
 # The role of T gates and T factories in quantum computing
 
-This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial to determine the feasibility of the algorithm. The Azure Quantum Resource Estimator calculates the number of T states needed to run the algorithm, the number of physical qubits for a single T factory, and the runtime of the T factory.
+This article describes the role of T gates and T factories in fault tolerant quantum computing. Giving a quantum algorithm, the estimation of required resources for running the T gates and T factories becomes crucial to determine the feasibility of the algorithm. The Microsoft Quantum Resource Estimator calculates the number of T states needed to run the algorithm, the number of physical qubits for a single T factory, and the runtime of the T factory.
 
 ## Universal set of quantum gates
 
@@ -54,13 +54,13 @@ $$
 
 Together with the non-Clifford gate (the T gate), these operations can be composed to approximate any unitary transformation on a single qubit.
 
-## T factories in the Azure Quantum Resource Estimator
+## T factories in the Microsoft Quantum Resource Estimator
 
 The non-Clifford T gate preparation is crucial because the other quantum gates are not sufficient for universal quantum computation. To implement non-Clifford operations for practical-scale algorithms, low error rate T gates (or T states) is required. However, they can be difficult to directly implement on logical qubits, and can also be difficult for some physical qubits.
 
-In a fault tolerant quantum computer, the required low error rate T states are produced using a T state distillation factory, or T factory for short. These T factories typically involve a sequence of rounds of distillation, where each round takes in many noisy T states encoded in a smaller distance code, processes them using a distillation unit, and outputs fewer less noisy T states encoded in a larger distance code, with the number of rounds, distillation units, and distances all being parameters which can be varied. This procedure is iterated, where the output T states of one round are fed into the next round as inputs. 
+In a fault tolerant quantum computer, the required low error rate T states are produced using a T state distillation factory, or T factory for short. These T factories typically involve a sequence of rounds of distillation, where each round takes in many noisy T states encoded in a smaller distance code, processes them using a distillation unit, and outputs fewer less noisy T states encoded in a larger distance code, with the number of rounds, distillation units, and distances all being parameters which can be varied. This procedure is iterated, where the output T states of one round are fed into the next round as inputs.
 
-Based on the duration of the T factory, the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) determines how often a T factory can be invoked before it exceeds the total runtime of the algorithm, and thus how many T states can be produced during the algorithm runtime. Usually, more T states are required than what can be produced within the invocations of a single T factory during the algorithm runtime. In order to produce more T states, the Resource Estimator uses copies of the T factories.
+Based on the duration of the T factory, the [Microsoft Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) determines how often a T factory can be invoked before it exceeds the total runtime of the algorithm, and thus how many T states can be produced during the algorithm runtime. Usually, more T states are required than what can be produced within the invocations of a single T factory during the algorithm runtime. In order to produce more T states, the Resource Estimator uses copies of the T factories.
 
 ### T factory physical estimation
 

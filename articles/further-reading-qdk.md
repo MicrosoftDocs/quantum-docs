@@ -9,7 +9,7 @@ ms.topic: concept-article
 no-loc: ['Q#', '$$v', Quantum Approximate Optimization Algorithm, Quantum Development Kit]
 title: Quantum computing learning resources
 uid: microsoft.quantum.more-information
-#customer intent: As a quantum programmer, 
+#customer intent: As a quantum programmer, I want to know where I can learn more about the QDK, Q#, and quantum computing concepts.
 ---
 
 # Further reading: Quantum computing learning resources
@@ -18,11 +18,11 @@ This article compiles some of the most popular resources that you may find usefu
 
 ## Microsoft quantum computing resources
 
-Learn how to develop and apply quantum computing solutions with the Quantum Development Kit (QDK) and Azure Quantum services.
+Learn how to develop and apply quantum computing solutions with the Microsoft Quantum Development Kit (QDK) and Azure Quantum services.
 
-- [Azure Quantum training path](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules, you learn about quantum computing and how to develop quantum solutions using Q# and the Azure Quantum Development Kit.
+- [Azure Quantum training path](/training/paths/quantum-computing-fundamentals/): an interactive, free, hands-on learning path. In these modules, you learn about quantum computing and how to develop quantum solutions using Q# and the QDK.
 - [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas): a collection of self-paced Q# quantum programming tutorials.
-- [Azure Quantum videos](https://quantum.microsoft.com/insights/education): a playlist with videos of Azure Quantum announcements, demos, and discussions from *Quantum Innovator Series*.
+- [Microsoft Quantum videos](https://quantum.microsoft.com/insights/education): a playlist with videos of Microsoft Quantum announcements, demos, and discussions from *Quantum Innovator Series*.
 - [Q# code samples](https://github.com/microsoft/qdk/tree/main/samples): start building your first quantum solution with this collection of ready-to-use code samples.
 - [Q# blog](https://devblogs.microsoft.com/qsharp/): a blog written by developers for developers. You can read about the latest QDK and Q# insights, and find out about quantum challenges and hackathons announcements.
 - [Research publications](https://www.microsoft.com/research/research-area/quantum-computing/?facet%5Btax%5D%5Bmsr-content-type%5D[]=3&facet%5Btax%5D%5Bmsr-research-area%5D[]=243138&sort_by=most-recent): read about the latest advancement in quantum hardware and algorithms developed by Microsoft researchers.

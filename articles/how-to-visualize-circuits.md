@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ["Azure Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "azure-quantum", "qdk[jupyter]", "Jupyter", "Jupyter Notebook"]
+no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "azure-quantum", "qdk[jupyter]", "Jupyter", "Jupyter Notebook"]
 title: Visualize Quantum Circuits with Q#
 uid: microsoft.quantum.how-to.visualize-circuits
 #customer intent: As a quantum programmer, I want to visually represent my quantum algorithms.
@@ -16,7 +16,7 @@ uid: microsoft.quantum.how-to.visualize-circuits
 
 Quantum circuit diagrams are a visual representation of quantum operations. Circuit diagrams show the flow of qubits through the quantum program, including the gates and measurements that the program applies to the qubits.
 
-In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams in the Azure Quantum Development Kit (QDK) using Visual Studio Code (VS Code) and Jupyter Notebook.
+In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams in the Microsoft Quantum Development Kit (QDK) using Visual Studio Code (VS Code) and Jupyter Notebook.
 
 For more information about quantum circuit diagrams, see [Quantum circuit conventions](xref:microsoft.quantum.concepts.circuits).
 

@@ -1,31 +1,31 @@
 ---
 author: azure-quantum-content
-description: Describes how to update your Q# programming language projects and the Quantum Development Kit (QDK) to the current version.
+description: Describes how to update your Q# programming language projects and the QDK to the current version.
 ms.author: quantumdocwriters
 ms.date: 12/20/2024
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.custom: devx-track-azurecli
 ms.topic: install-set-up-deploy
-no-loc: ["Q#", "$$v", "Quantum Development Kit", "QDK", "Qiskit", "Azure Quantum", "Azure"]
+no-loc: ["Q#", "$$v", "Microsoft Quantum Development Kit", "QDK", "Qiskit", "Azure Quantum", "Azure"]
 title: Update the Quantum Development Kit (QDK)
 uid: microsoft.quantum.update-qdk
-#customer intent: as an admin, I want to install the latest components of Azure Quantum
+#customer intent: As an admin, I want to install the latest version of the QDK
 ---
 
-# Update the Azure Quantum Development Kit to the latest version
+# Update the Microsoft Quantum Development Kit to the latest version
 
-Learn how to update the Azure Quantum Development Kit (QDK) to the latest version.
+Learn how to update the Microsoft Quantum Development Kit (QDK) to the latest version.
 
 ## Prerequisites
 
-- This article assumes that you already have the Azure QDK extension installed in Visual Studio Code (VS Code). If you're installing for the first time, then refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).
+- This article assumes that you already have the QDK extension installed in Visual Studio Code (VS Code). If you're installing for the first time, then refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).
 
 ## Update the VS Code extension
 
 By default, VS Code automatically updates extensions. After an extension is updated, you're prompted to reload VS Code. To disable auto-updates and update your extensions manually, see [Extension auto-update](https://code.visualstudio.com/docs/editor/extension-marketplace#_extension-autoupdate) in the VS Code documentation.
 
-## Update the Azure Quantum Python packages
+## Update the QDK Python libraries
 
 > [!IMPORTANT]
 > If you're updating from a previous Qiskit environment, then see [Update the `qdk.azure` module with Qiskit support in a virtual Python environment (recommended)](#update-the-qdkazure-module-with-qiskit-support-in-a-virtual-python-environment-recommended).

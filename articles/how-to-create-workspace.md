@@ -113,5 +113,5 @@ Deployment of your workspace may take a few minutes. The status and deployment d
 
 ## Next steps
 
-- [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum)
+- [Explore Microsoft Quantum](xref:microsoft.quantum.get-started.azure-quantum)
 - [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)

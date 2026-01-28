@@ -34,7 +34,7 @@ For more information, see [Get started with Sessions](xref:microsoft.quantum.hyb
 
 ## Local development
 
-Installing the Azure Quantum Development Kit (QDK) extension for Visual Studio Code on your local computer provides support for Jupyter Notebooks, Python, and Q# files. You can develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
+Installing the Microsoft Quantum Development Kit (QDK) extension for Visual Studio Code (VS COde) on your local computer provides support for Jupyter Notebooks, Python, and Q# files. You can develop quantum computing applications in your preferred IDE and language and run them on quantum simulators and quantum hardware using the Azure Quantum service.
 
 Some scenarios where you may prefer a local environment:
 
@@ -58,4 +58,4 @@ To start using Google Colab notebooks to run your quantum programs on Azure Quan
 
 1. Click **Runtime** and select **Restart runtime**
 1. To access to your Azure Quantum workspace, you need to **Authenticate**. For example, you get a prompt like the following one: `WARNING:azure.identity._internal.interactive:InteractiveBrowserCredential.get_token failed: Failed to open a browser`. To sign in, use a **Web browser** to open the page https://microsoft.com/devicelogin and enter the code **ET8BM63F3** to authenticate.
-1. Once you went through the authentication process, you should be able to run all the cells as if you were doing it from Azure Quantum hosted notebooks or from a local environment.
+1. When you complete the authentication process, you can run all the cells as if you were doing it from a local environment.

@@ -53,7 +53,7 @@ Syntax Checkers usage is offered free-of-charge.
 
 ## Quantinuum Emulator (cloud based)
 
-The Quantinuum Emulator is available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Azure Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H2 quantum computer](#system-model-h2). The quantum simulation performed is the same as the [System Model H2 Emulator](#system-model-h2-emulator) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date.
+The Quantinuum Emulator is available free-of-charge on the [Code with Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) page on the Microsoft Quantum website, where you can write Q# code and submit your jobs to the Quantinuum Emulator without an Azure account. The Quantinuum Emulator is a statevector based quantum emulator that uses a realistic physical noise model and generalized error parameters based on the typical performance of a [System Model H2 quantum computer](#system-model-h2). The quantum simulation performed is the same as the [System Model H2 Emulator](#system-model-h2-emulator) but the classical circuit optimization routine is reduced to increase throughput. Support for [Integrated Hybrid computing](xref:microsoft.quantum.hybrid.integrated) is planned for a future date.
 
 ## System Model H2 Emulator
 

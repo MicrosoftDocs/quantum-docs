@@ -1,12 +1,12 @@
 ---
 author: azure-quantum-content
-description: View Jupyter Notebooks with the device data from Microsoft's research into a scaled quantum machines using topological qubits.
+description: View Jupyter Notebooks with the device data from Microsoft's research into scaled quantum machines using topological qubits.
 ms.date: 11/22/2024
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ['Q#', '$$v', Quantum Development Kit]
+no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, QDK]
 title: Microsoft's quantum machine
 uid: microsoft.quantum.overview.ms-machine
 ---
@@ -19,7 +19,7 @@ In 2022, Microsoft had a major scientific breakthrough that cleared a significan
 
 ## View a Jupyter Notebook of the results
 
-The Azure Quantum team has created a set of Jupyter Notebooks on the [azure-quantum-tgp GitHub site](https://github.com/microsoft/azure-quantum-tgp) which display all the analysis and plots that appear in the paper. From the GitHub page, you can also view the executed notebook results with nbviewer. 
+The Azure Quantum team has created a set of Jupyter Notebooks on the [azure-quantum-tgp GitHub site](https://github.com/microsoft/azure-quantum-tgp) which display all the analysis and plots that appear in the paper. From the GitHub page, you can also view the executed notebook results with nbviewer.
 
 ## Next Steps
 

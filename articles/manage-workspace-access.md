@@ -19,7 +19,7 @@ Learn about the different security principals and roles you can use to manage ac
 
 ## Azure role-based access control (RBAC)
 
-[Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources, such as a workspace. To grant access, you assign roles to a security principal. 
+[Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) is the authorization system you use to manage access to Azure resources, such as a workspace. To grant access, you assign roles to a security principal.
 
 ### Security principal
 
@@ -100,15 +100,12 @@ To check the role assignment you or another user has for a particular resource, 
 
 To add new users to a workspace, you must be an owner of the workspace. To grant access to 10 or less users to your workspace, see [Share access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.share-access-workspace). To grant access to more than 10 users, see [Add a group to your Azure Quantum workspace](xref:microsoft.quantum.how-to.bulk-add-users).
 
-
 To assign roles for any resource at any scope, including the subscription level, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
 ## Troubleshooting
 
 For solutions to common issues, see [Troubleshoot Azure Quantum: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
 
-- When you create a resource in Azure, such as a workspace, you're not directly the owner of the resource. Your role is inherited from the highest scope role that you're authorized against in that subscription. 
+- When you create a resource in Azure, such as a workspace, you're not directly the owner of the resource. Your role is inherited from the highest scope role that you're authorized against in that subscription.
 
 - When you create new role assignments, they can sometimes take up to one hour to take effect over cached permissions across the stack.
-
-

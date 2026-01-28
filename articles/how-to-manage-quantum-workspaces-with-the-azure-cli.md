@@ -14,7 +14,7 @@ uid: microsoft.quantum.workspaces-cli
 
 # Manage quantum workspaces with the Azure CLI
 
-In this guide, learn to use the Azure Command-Line Interface (Azure CLI) to create Azure Quantum workspaces and the required resource groups and storage accounts, and start running your quantum applications in Azure Quantum.
+In this guide, you learn to use the Azure Command-Line Interface (Azure CLI) to create Azure Quantum workspaces and the required resource groups and storage accounts, and start running your quantum applications in Azure Quantum.
 
 ## Prerequisites
 

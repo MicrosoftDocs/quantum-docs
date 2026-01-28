@@ -1,25 +1,25 @@
 ---
 author: azure-quantum-content
-description: This article shows how to interpret the report data of the Resource Estimator and access the output parameters.
+description: This article shows how to interpret the reported data of the Microsoft Quantum resource estimator and access the output parameters.
 ms.date: 08/01/2024
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 no-loc: ['Q#', '$$v', target, targets]
-title: Output of the Resource Estimator
+title: Output of the Microsoft Quantum resource estimator
 uid: microsoft.quantum.overview.resources-estimator-output.data
 ---
 
-# Retrieve the output of the Resource Estimator
+# Retrieve the output of the Microsoft Quantum resource estimator
 
-Learn how to interpret and retrieve the output parameters and diagrams of the Resource Estimator. This article explains how to programmatically access the results of the Resource Estimator in a Jupyter notebook in Visual Studio Code (VS Code).
+Learn how to interpret and retrieve the output parameters and diagrams of the Microsoft Quantum resource estimator. This article explains how to programmatically access the results of the resource estimator in a Jupyter notebook in Visual Studio Code (VS Code).
 
 ## Prerequisites
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- VS Code with the [Microsoft Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The latest `qdk` Python library with the `jupyter` extra.  
 
     ```bash
@@ -27,11 +27,11 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Re
     ```
 
 > [!NOTE]
-> If you run the Resource Estimator in VS Code from the command palette, then the following commands don't apply. For more information, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+> If you run the resource estimator in VS Code from the command palette, then the following commands don't apply. For more information, see [Different ways to run the resource estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Output parameters
 
-The output from the Resource Estimator is a report that's printed to the console and that you can access programmatically. For example, the following code snippet displays the values of all the Resource Estimator parameters:
+The output from the resource estimator is a report that's printed to the console and that you can access programmatically. For example, the following code snippet displays the values of all the resource estimator parameters:
 
 ```python
 result['jobParams']
@@ -153,7 +153,7 @@ The `logicalCounts` dictionary contains the following entries:
 | `measurementCount` | number    | Pre-layout number of single-qubit measurements. |
 
 > [!TIP]
-> If you want to use a pre-calculated set of logical counts for a resource estimation job, you can use the `LogicalCounts` Python operation to pass the known estimates to the Resource Estimator. For more information, see [How to use known estimates with the Resource Estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
+> If you want to use a pre-calculated set of logical counts for a resource estimation job, you can use the `LogicalCounts` Python operation to pass the known estimates to the resource estimator. For more information, see [How to use known estimates with the resource estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
 
 ## Space diagram
 
@@ -184,7 +184,7 @@ In quantum computing, there's a tradeoff between the number of physical qubits a
 When estimating the resources of an algorithm, you can use the space-time diagram to visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm.
 
 > [!NOTE]
-> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation). If you run the Resource Estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** command, the Pareto frontier estimation is enabled by default.
+> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation). If you run the resource estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** command, the Pareto frontier estimation is enabled by default.
 
 The space-time diagram allows you to find the optimal combination of {number of qubits, runtime} pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair.
 
@@ -196,22 +196,22 @@ from qdk.widgets import EstimatesOverview
 EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
 ```
 
-:::image type="content" source="media/qubit-time-diagram-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the Resource Estimator.":::
+:::image type="content" source="media/qubit-time-diagram-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the resource estimator.":::
 
 > [!TIP]
 > To see the estimation details, you can hover over each point in the diagram.
 
 The space-time diagram is specially useful when comparing multiple configurations of target parameters for the same algorithm.
 
-:::image type="content" source="media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the Resource Estimator.":::
+:::image type="content" source="media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the resource estimator.":::
 
 > [!NOTE]
-> If you experience issues when you work with the Resource Estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you experience issues when you work with the resource estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
-- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
-- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Different ways to run the resource estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Handle large programs with the resource estimator](xref:microsoft.quantum.resource-estimator-caching)
 - [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

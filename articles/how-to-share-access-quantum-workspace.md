@@ -36,11 +36,11 @@ Each user must have an account in your organization's Azure Active Directory bef
 1. Select **Access control (IAM)** from the left-side menu. Select **Add**, and then **Add role assignment**.
     :::image type="content" source="media/bulk-invite-users-add-assignment.png" alt-text="Screen shot showing how to add a new role assignment to your Azure Quantum workspace.":::
 
-1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** or **Quantum Workspace Data Contributor** and then select **Next**. 
+1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** or **Quantum Workspace Data Contributor** and then select **Next**.
 
     :::image type="content" source="media/bulk-invite-users-add-contributor.png" alt-text="Screen shot showing how to create a contributor to your Azure Quantum workspace.":::
 
-1. On the **Members** pane, select **Assign access to User, group, or service principal**. Then select **+Select members**. The **Select members** blade opens. Search for and select each of your users. Then select the blue **Select** button. 
+1. On the **Members** pane, select **Assign access to User, group, or service principal**. Then select **+Select members**. The **Select members** blade opens. Search for and select each of your users. Then select the blue **Select** button.
 
     :::image type="content" source="media/add-contributors.png" alt-text="Screen shot showing how to select your users to add to your Azure Quantum workspace.":::
 
@@ -48,7 +48,7 @@ Each user must have an account in your organization's Azure Active Directory bef
 
     :::image type="content" source="media/assign-contributors.png" alt-text="Screen shot showing how to assign your users as a contributor to your Azure Quantum workspace.":::
 
-## Share access using a connection string 
+## Share access using a connection string
 
 You can share the access to your Azure Quantum workspace using a [connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-connection-string). The connection string contains the information needed to connect to your workspace, including the subscription ID, resource group, workspace name, and location.
 

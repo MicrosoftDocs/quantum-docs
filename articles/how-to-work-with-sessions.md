@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ["AI", "azure-quantum", "Azure Quantum", "Azure Quantum Development Kit", "Circuit Editor", "cirq", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "qiskit", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
+no-loc: ["AI", "azure-quantum", "Azure Quantum", "Microsoft Quantum Development Kit", "Circuit Editor", "cirq", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "qiskit", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
 title: Manage your Sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 #customer intent: As a quantum developer, I want understand how to work with multiple sessions. 

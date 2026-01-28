@@ -1,21 +1,21 @@
 ---
-title: Build Quantum Solutions with the Azure Quantum Development Kit
-description: This document is the main landing page for the Quantum Development Kit (QDK), which gives a high level overview of the QDK and links to documentation on all the features in the QDK.
+title: Build Quantum Solutions with the Microsoft Quantum Development Kit
+description: This document is the main landing page for the Microsoft Quantum Development Kit (QDK), which gives a high level overview of the QDK and links to documentation on all the features in the QDK.
 author: azure-quantum-content
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 ms.date: 10/14/2025
-no-loc: ["Azure Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor"]
+no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor"]
 uid: microsoft.quantum.overview.qdk-landing-page
 
 #Customer intent: As a developer, I want to learn about what the QDK has to offer and how to use the QDK.
 ---
 
-# Build quantum solutions with the Azure Quantum Development Kit
+# Build quantum solutions with the Microsoft Quantum Development Kit
 
-The Azure Quantum Development Kit (QDK) is a free open-source software development kit designed specifically for quantum program development. The QDK includes an extension for Microsoft's Visual Studio Code (VS Code) and a set of Python libraries. Install the QDK to get started with state-of-the-art quantum development tools.
+The Microsoft Quantum Development Kit (QDK) is a free open-source software development kit designed specifically for quantum program development. The QDK includes an extension for Microsoft's Visual Studio Code (VS Code) and a set of Python libraries. Install the QDK to get started with state-of-the-art quantum development tools.
 
 ## Overview of the QDK
 

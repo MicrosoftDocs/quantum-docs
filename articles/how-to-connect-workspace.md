@@ -40,7 +40,7 @@ If you use Azure CLI, then you must have the latest version. For installation in
 
 ## Connect with a connection string
 
-You can use a connection string to specify the connection parameters to an Azure Quantum Workspace. Connection strings are useful in the following scenarios:
+You can use a connection string to specify the connection parameters to an Azure Quantum workspace. Connection strings are useful in the following scenarios:
 
 - You want to share access to your workspace with others who don't have an Azure account.
 - You want to share access to your workspace with others for a limited time.

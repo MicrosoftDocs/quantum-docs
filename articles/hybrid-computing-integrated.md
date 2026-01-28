@@ -25,10 +25,10 @@ This article explains how to submit hybrid jobs to Azure Quantum using the [Adap
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-If you want to submit Q# standalone programs, then you also need the following prerequisites:
+If you want to submit Q# standalone programs, then you also need the following prerequisite:
 
-- [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) installed.
-- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
+- Install [Visual Studio Code (VS Code)](https://code.visualstudio.com/download).
+- Install the latest version of the [Microsoft Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 If you want to submit Python and Q# programs, then you also need the following prerequisites:
 
