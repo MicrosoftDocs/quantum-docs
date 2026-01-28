@@ -1,6 +1,6 @@
 ---
-name: Azure Quantum documentation issue
-about: Use this template to report Azure Quantum documentation issues and suggestions
+name: Microsoft Quantum documentation issue
+about: Use this template to report Microsoft Quantum documentation issues and suggestions
 title: Enter a descriptive title for your issue or suggestion
 labels: ''
 assignees: ''

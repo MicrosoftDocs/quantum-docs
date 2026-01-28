@@ -1,7 +1,6 @@
-# Quantum Development Kit documentation
+# Microsoft Quantum Development Kit documentation
 
-In this directory, you can find the documentation for the Quantum
-Development Kit (QDK). This directory contains:
+In this directory, you can find the documentation for the Microsoft Quantum Development Kit (QDK). This directory contains:
 
 - **Articles directories**: contain the articles for each section of
   the documentation. In these directories, you can find the following contents:

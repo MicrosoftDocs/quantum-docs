@@ -116,7 +116,7 @@
       href: install-overview-qdk.md
     - name: Visual Studio Code agent mode
       href: qdk-vscode-agent-setup.md
-    - name: Explore with Copilot in Azure Quantum
+    - name: Explore with Copilot in Microsoft Quantum
       href: get-started-azure-quantum.md
   - name: Quantum language support in the QDK
     items:
@@ -170,19 +170,19 @@
         href: install-qdk-chemistry.md
       - name: How to use the molecule visualizer
         href: how-to-use-molecule-visualizer.md
-  - name: The Resource Estimator
+  - name: The Microsoft Quantum resource estimator
     items:
-    - name: Get started with the Resource Estimator
+    - name: Get started with the resource estimator
       href: intro-to-resource-estimation.md
     - name: Run your first resource estimate
       href: quickstart-microsoft-resources-estimator.md
-    - name: Different ways to run the Resource Estimator
+    - name: Different ways to run the resource estimator
       href: how-to-submit-re-jobs.md
-    - name: Customize the target parameters for the Resource Estimator
+    - name: Customize the target parameters for the resource estimator
       href: overview-resources-estimator.md
-    - name: Get the output of the Resource Estimator
+    - name: Get the output of the resource estimator
       href: overview-resource-estimator-output-data.md
-    - name: How to work with the Resource Estimator
+    - name: How to work with the resource estimator
       items:
       - name: Compare multiple configurations
         href: resource-estimator-batching.md
@@ -238,7 +238,7 @@
       href: tutorial-qdk-grovers-search.md
     - name: Quantum Fourier Transform
       href: tutorial-qdk-qubit-level-program.md
-    - name: Double-factorized chemistry with the Resource Estimator
+    - name: Double-factorized chemistry with the resource estimator
       href: tutorial-resource-estimator-chemistry.md
 - name: Concepts in quantum computing
   items:
