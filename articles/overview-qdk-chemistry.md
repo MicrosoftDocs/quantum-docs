@@ -58,6 +58,6 @@ QDK/Chemistry comes with a suite of code samples to help get started with develo
 
 To get started with QDK/Chemistry, see [How to install QDK for chemistry](xref:microsoft.quantum.how-to.install-qdk-chemistry).
 
-For an end-to-end example of a quantum chemistry state preparation circuit workflow, see the [Quickstart guide](https:/microsoft.github.io/qdk-chemistry/user/quickstart.html) in the QDK/Chemistry documentation on GitHub.
+For an end-to-end example of a quantum chemistry state preparation circuit workflow, see the [Quickstart guide](https://microsoft.github.io/qdk-chemistry/user/quickstart.html) in the QDK/Chemistry documentation on GitHub.
 
-For detailed information on the available tools in QDK/Chemistry, see the [Python API](https:/microsoft.github.io/qdk-chemistry/api/python_api.html) and [C++ API](https:/microsoft.github.io/qdk-chemistry/api/cpp_api.html) references.
+For detailed information on the available tools in QDK/Chemistry, see the [Python API](https://microsoft.github.io/qdk-chemistry/api/python_api.html) and [C++ API](https://microsoft.github.io/qdk-chemistry/api/cpp_api.html) references.
