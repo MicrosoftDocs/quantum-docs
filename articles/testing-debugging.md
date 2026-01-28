@@ -8,13 +8,13 @@ ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: how-to
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
-no-loc: ["Q#", '$$v', Quantum Development Kit, target, targets]
+no-loc: ["Q#", '$$v', Microsoft Quantum Development Kit, target, targets]
 #customer intent: As a quantum developer, I want to understand how to debug and test my quantum programs
 ---
 
 # How to debug and test your quantum code
 
-Testing and debugging are just as important in quantum programming as they are in classical programming. This article discusses how to debug and test your quantum programs with the Azure Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
+Testing and debugging are just as important in quantum programming as they are in classical programming. This article discusses how to debug and test your quantum programs with the Microsoft Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
 
 ## Debug your quantum code
 

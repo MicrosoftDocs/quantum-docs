@@ -1,35 +1,35 @@
 ---
 author: azure-quantum-content
-description: Learn how to use the Resource Estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm.
+description: Learn how to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm.
 ms.date: 09/10/2024
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Resource Estimator for Analyzing Cryptography
+title: Use the Microsoft Quantum Resource Estimator for Analyzing Cryptography
 uid: microsoft.quantum.resource-estimator-cryptography
 
-#customer intent: As a quantum developer, I want to use the Resource Estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm, so that I can analyze the impact of quantum computing on the security of some classical encryption methods and prepare for a quantum-safe future.
+#customer intent: As a quantum developer, I want to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm, so that I can analyze the impact of quantum computing on the security of some classical encryption methods and prepare for a quantum-safe future.
 ---
 
-# Analyze cryptographic protocols with the Resource Estimator
+# Analyze cryptographic protocols with the resource estimator
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
+The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
 
 > [!NOTE]
-> To access the Resource Estimator on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) you only need a Microsoft account.
+> To access the resource estimator on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) you only need a Microsoft account.
 
-The Resource Estimator for quantum-safe planning takes a set of four target parameters as input:
+The resource estimator for quantum-safe planning takes a set of four target parameters as input:
 
 - **Classical encryption algorithm,** which are Rivest-Shamir-Adleman (RSA), Elliptic Curve Cryptography (ECC), and Advanced Encryption Standard (AES).
 - **Key strength,** which are standard, enhanced, and highest.
 - **Qubit type,** which are topological and superconducting.
 - **Qubit error rate,** which are reasonable and optimistic.
 
-## Use the Resource Estimator for quantum-safe planning
+## Use the resource estimator for quantum-safe planning
 
-To use the Resource Estimator for quantum-safe planning, go to the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography).
+To use the resource estimator for quantum-safe planning, go to the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography).
 
 1. Click on the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
 1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
@@ -42,7 +42,7 @@ To use the Resource Estimator for quantum-safe planning, go to the [Microsoft Qu
 
 ## Next steps
 
-- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
-- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Understand the results of the resource estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Different ways to run the resource estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

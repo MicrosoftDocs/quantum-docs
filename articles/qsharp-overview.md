@@ -14,7 +14,7 @@ uid: microsoft.quantum.qsharp-overview
 
 # Introduction to the quantum programming language Q#
 
-Q# is a high-level, [open-source](https://github.com/microsoft/qdk) programming language developed by Microsoft for writing quantum programs. Q# is included in the Quantum Development Kit (QDK). For more information, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+Q# is a high-level, [open-source](https://github.com/microsoft/qdk) programming language developed by Microsoft for writing quantum programs. Q# is included in the Microsoft Quantum Development Kit (QDK). For more information, see [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 As a quantum programming language, Q# meets the following requirements for language, compiler, and runtime:
 
@@ -137,7 +137,7 @@ operation MeasureOneQubit() : Result {
 }
 ```
 
-Another example of a quantum-specific type is the `Qubit` type, which represents a quantum bit. 
+Another example of a quantum-specific type is the `Qubit` type, which represents a quantum bit.
 
 Q# also allows you to define your own custom types. For more information, see [Type declarations](xref:microsoft.quantum.qsharp.typedeclarations).
 
@@ -263,7 +263,7 @@ Run your quantum programs in your preferred development environment. You can use
 
 ### Write your quantum program
 
-You can write quantum programs in Q# using the Quantum Development Kit (QDK). To get started, see [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).
+You can write quantum programs in Q# using the QDK. To get started, see [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).
 
 Besides Q#, the QDK offers support for other languages for quantum computing, such as [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).
 
@@ -286,12 +286,12 @@ When using `%%qsharp`, keep the following in mind:
 
 Before running on real quantum hardware, you need to figure out whether your program can run on existing hardware, and how many resources it'll consume.
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model.
+The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.resources-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model.
 
 For more information, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
 > [!NOTE]
-> The Azure Quantum Resources Estimator is free of charge and doesn't require an Azure account.
+> The Microsoft Quantum resource estimator is free of charge and doesn't require an Azure account.
 
 ### Run your program in simulation
 
@@ -308,5 +308,5 @@ Once you submit your job, Azure Quantum manages the job lifecycle, including job
 ## Related content
 
 - [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work)
-- [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
+- [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)

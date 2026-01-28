@@ -15,7 +15,7 @@ uid: microsoft.quantum.target-profiles
 
 # Different types of target profiles in Azure Quantum
 
-Quantum devices are still an emerging technology and unfortunately not all of them can run every Q# program. As such, you need to keep some restrictions in mind while you develop quantum programs. The target profile types define the capabilities of the quantum devices that you target with your Q# programs. The Quantum Development Kit (QDK) has a set of different target profile types, which together support all the capabilities of the current quantum devices that are available in Azure Quantum.
+Quantum devices are still an emerging technology and unfortunately not all of them can run every Q# program. As such, you need to keep some restrictions in mind while you develop quantum programs. The target profile types define the capabilities of the quantum devices that you target with your Q# programs. The Microsoft Quantum Development Kit (QDK) has a set of different target profile types, which together support all the capabilities of the current quantum devices that are available in Azure Quantum.
 
 This article discusses the different types of target profiles in Azure Quantum, their limitations, and how to configure them in the QDK.
 

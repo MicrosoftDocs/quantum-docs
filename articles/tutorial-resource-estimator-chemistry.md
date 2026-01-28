@@ -14,7 +14,7 @@ uid: microsoft.quantum.tutorial.resource-estimator.chemistry
 
 # Tutorial: Estimate the resources of a quantum chemistry problem
 
-In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
+In this tutorial, you estimate the physical resources required to calculate the energy of a Hamiltonian to chemical accuracy of 1 mHa using the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
 In this tutorial, you will:
 
@@ -27,7 +27,7 @@ In this tutorial, you will:
 ## Prerequisites
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) with the [Azure Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
+- The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
 - The latest `qdk` Python library, and the `numpy` and `scipy` packages.  
 
     ```bash
@@ -35,7 +35,7 @@ In this tutorial, you will:
     ```
 
 > [!TIP]
-> You don't need to have an Azure account to run the Resource Estimator.
+> You don't need to have an Azure account to run the resource estimator.
 
 ## Describe the problem
 
@@ -102,7 +102,7 @@ options:
     ```
 
 > [!NOTE]
-> After you run the `chemistry.py` file, a `resource_estimation.json` file is created in the working folder. The `resource_estimation.json` file contains the detailed [output of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#output-parameters), such as the job parameters, physical counts, T factory properties, logical counts, and logical qubit properties.
+> After you run the `chemistry.py` file, a `resource_estimation.json` file is created in the working folder. The `resource_estimation.json` file contains the detailed [output of the resource estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#output-parameters), such as the job parameters, physical counts, T factory properties, logical counts, and logical qubit properties.
 
 ### Change target parameters
 
@@ -117,7 +117,7 @@ options:
                                   "qecScheme": {"name": "floquet_code"}})
     ```
 
-1. If you want to change the target parameters, then modify the previous code snippet. For example, the following code snippet shows how to change the error budget to 0.333. For more information, see [Customize the target parameters of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator).
+1. If you want to change the target parameters, then modify the previous code snippet. For example, the following code snippet shows how to change the error budget to 0.333. For more information, see [Customize the target parameters of the resource estimator](xref:microsoft.quantum.overview.resources-estimator).
 
     ```python
     # Get resource estimates

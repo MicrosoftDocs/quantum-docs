@@ -6,7 +6,7 @@ ms.service: azure-quantum
 ms.subservice: computing
 ms.custom: devx-track-azurecli
 ms.topic: include
-no-loc: [Quantum Development Kit, target, targets]
+no-loc: [Microsoft Quantum Development Kit, QDK, target, targets]
 ---
 
 ## Submit Python with Q# jobs to Azure Quantum
@@ -20,7 +20,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
+- VS Code with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
 - The `qdk` Python library with the `azure` extra.
 - [Azure CLI](xref:microsoft.quantum.install-qdk.overview#add-support-for-azure-cli) with the latest Azure Quantum extension installed.
 

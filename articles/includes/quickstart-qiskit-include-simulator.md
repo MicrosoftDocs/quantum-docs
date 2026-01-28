@@ -13,7 +13,7 @@ no-loc: [target, targets]
 For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
+- VS Code with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions installed.
 - The `qdk` Python package with the `qiskit` and `jupyter` extras.
 
     ```bash

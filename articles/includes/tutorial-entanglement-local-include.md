@@ -5,7 +5,7 @@ ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
-no-loc: [Quantum Development Kit, target, targets]
+no-loc: [Microsoft Quantum Development Kit, QDK,target, targets]
 #customer intent: As a quantum programmer, I want to learn about quantum entanglement
 ---
 
@@ -14,7 +14,7 @@ no-loc: [Quantum Development Kit, target, targets]
 To develop and run the code sample in your local development environment, install the following tools:
 
 - The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 ## Create a new Q# file
 
