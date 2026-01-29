@@ -1,12 +1,12 @@
 ---
 author: azure-quantum-content
-description: Learn how to run your Q# programs on the Azure Quantum Development Kit sparse simulator.
+description: Learn how to run your Q# programs on the Microsoft Quantum Development Kit sparse simulator.
 ms.author: quantumdocwriters
 ms.date: 10/16/2025
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: concept-article
-no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
 title: Sparse quantum simulator 
 uid: microsoft.quantum.machines.overview.sparse-simulator
 ---
@@ -19,7 +19,7 @@ For more information about the sparse simulator, please see [Jaques and Häner (
 
 ## Calling the sparse simulator
 
-The sparse simulator is the default local simulator in Visual Studio Code with the Azure Quantum Development Kit extension installed.
+The sparse simulator is the default local simulator in Visual Studio Code (VS Code) with the Microsoft Quantum Development Kit (QDK) extension installed.
 
 | Scenario                         | Method |
 |----------------------------------|--------|

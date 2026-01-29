@@ -31,7 +31,7 @@ You can modify your current usage plan for each provider and see the different b
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 1. Select your **Azure Quantum workspace**.
-1. In the left panel, under **Operations**, go to the **Providers** tab. 
+1. In the left panel, under **Operations**, go to the **Providers** tab.
 1. You can check the current usage plan for each provider under **Plan** column.
 1. Click on **Modify** to see and modify the different billing plans available for that provider in your local currency.
 
@@ -47,8 +47,8 @@ To review job costs:
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 1. Select your **Azure Quantum workspace**.
-1. Navigate to the **Job Management** blade within your Azure Quantum workspace. 
-1. In the job list, you see estimated costs reported for each job you run. 
+1. Navigate to the **Job Management** blade within your Azure Quantum workspace.
+1. In the job list, you see estimated costs reported for each job you run.
 
 _Prices below are shown for example purposes only._
 
@@ -99,10 +99,10 @@ The invoices are billed in arrears. For example, the invoice you receive in Febr
 
 ## How can I view my invoices?
 
-You can view your past invoices in Azure portal. 
+You can view your past invoices in Azure portal.
 
 1. Sign in to the [Azure portal](https://portal.azure.com/), using the credentials for your Azure subscription.
-1. In the top search bar, type **Cost Management + Billing**. 
+1. In the top search bar, type **Cost Management + Billing**.
 1. If you have more than one billing scope, select the scope you want to view in the **Billing scope** pane. If not, skip this step.
 1. In the left navigation pane, select **Invoices**.
 

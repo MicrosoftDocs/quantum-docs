@@ -23,7 +23,7 @@ In general, problems using the Rigetti provider on Microsoft Azure Quantum are b
 
 ### Rigetti support
 
-In some situations, the Azure Support team will need to redirect you to Rigetti's support team. You may receive a quicker response by reaching out to Rigetti directly at [https://rigetti.zendesk.com/hc/](https://rigetti.zendesk.com/hc/). 
+In some situations, the Azure Support team will need to redirect you to Rigetti's support team. You may receive a quicker response by reaching out to Rigetti directly at [https://rigetti.zendesk.com/hc/](https://rigetti.zendesk.com/hc/).
 
 ## Support timeline
 

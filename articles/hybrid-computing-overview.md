@@ -17,7 +17,7 @@ uid: microsoft.quantum.overview.hybrid
 
 *Hybrid quantum computing* refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. With the latest generation of hybrid quantum computing architecture available in Azure Quantum you can start programming quantum computers by mixing classical and quantum instructions together.
 
-Azure Quantum embodies a forward-looking vision for hybrid quantum computing, where certain architectures are already operational, while others are actively being developed. This article describes the different approaches to hybrid quantum computing and how they can be used to optimize certain problems. 
+Azure Quantum embodies a forward-looking vision for hybrid quantum computing, where certain architectures are already operational, while others are actively being developed. This article describes the different approaches to hybrid quantum computing and how they can be used to optimize certain problems.
 
 ## Grouping circuits with batch quantum computing
 
@@ -32,7 +32,7 @@ In this architecture, the state of the qubits is lost between each circuit submi
 > [!NOTE]
 > Azure Quantum currently doesn't support batch quantum computing.
 
-## Grouping jobs with sessions 
+## Grouping jobs with sessions
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs. Plus, jobs grouped in sessions are prioritized over non-session jobs.
 
@@ -52,4 +52,3 @@ In this architecture, classical computation is working alongside logical qubits.
 
 > [!NOTE]
 > Azure Quantum currently doesn't support distributed quantum computing.
-

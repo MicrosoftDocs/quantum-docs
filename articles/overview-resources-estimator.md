@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Learn about the input parameters of the Resource Estimator in Azure Quantum and how to customized them.
+description: Learn about the input parameters of the Microsoft Quantum resource estimator in the QDK, and how to customize them.
 ms.date: 03/07/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
@@ -11,18 +11,18 @@ title: Resource Estimator Target Parameters
 uid: microsoft.quantum.overview.resources-estimator
 ---
 
-# Customize the target parameters of the Resource Estimator
+# Customize the target parameters of the resource estimator
 
-This article shows how to customize the target parameters of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. The Resource Estimator uses these parameters to estimate the resources required to run a quantum algorithm on a quantum computer.
+This article shows how to customize the target parameters of the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to match the machine characteristics that you're targeting. The resource estimator uses these parameters to estimate the resources required to run a quantum algorithm on a quantum computer.
 
 > [!NOTE]
-> If you experience issues when you work with the Resource Estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
+> If you experience issues when you work with the resource estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
 
 ## Prerequisites
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- VS Code with the [Microsoft Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The latest `qdk` Python library with the `jupyter` extra.  
 
     ```bash
@@ -31,9 +31,9 @@ This article shows how to customize the target parameters of the [Azure Quantum 
 
 ## Target parameters
 
-The Resource Estimator computes the estimation of resources, such as the number of qubits and the run time, that would be required to implement a given quantum algorithm on a quantum computer with a given qubit technology and fixed set of architectural choices.  
+The resource estimator computes the estimation of resources, such as the number of qubits and the run time, that would be required to implement a given quantum algorithm on a quantum computer with a given qubit technology and fixed set of architectural choices.  
 
-The Resource Estimator takes a set of inputs, with pre-defined values to easily get you started:
+The resource estimator takes a set of inputs, with pre-defined values to easily get you started:
 
 - A [physical qubit model](#physical-qubit-parameters), which defines the properties of the underlying physical qubits.
 - A [Quantum Error Correction (QEC) scheme](#quantum-error-correction-schemes), which is the assumed quantum error correction scheme.
@@ -43,11 +43,11 @@ The Resource Estimator takes a set of inputs, with pre-defined values to easily 
 - [Pareto frontier estimation](#pareto-frontier-estimation) to run multiple estimates for the number of qubits and runtime for the same algorithm.
 
 > [!TIP]
-> If you already know some pre-calculated estimates for an operation, you can incorporate them to optimize the execution of the Resource Estimator. For more information, see [How to use known estimates with the Resource Estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
+> If you already know some pre-calculated estimates for an operation, you can incorporate them to optimize the execution of the resource estimator. For more information, see [How to use known estimates with the resource estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
 
 ## Physical qubit parameters
 
-When the Resource Estimator models the physical qubit assumptions, it uses two different physical instruction sets to operate on the qubits. The physical instruction set can be either gate-based or Majorana. A gate-based instruction set provides single-qubit measurement, single-qubit gates (including T gates), and two-qubit gates. A Majorana instruction set provides a physical T gate, single-qubit measurement, and two-qubit joint measurement operations.
+When the resource estimator models the physical qubit assumptions, it uses two different physical instruction sets to operate on the qubits. The physical instruction set can be either gate-based or Majorana. A gate-based instruction set provides single-qubit measurement, single-qubit gates (including T gates), and two-qubit gates. A Majorana instruction set provides a physical T gate, single-qubit measurement, and two-qubit joint measurement operations.
 
 You can choose from six predefined qubit parameters, four of which have gate-based instruction sets and two with a Majorana instruction set. These qubit models cover a range of operation times and error rates, enabling sufficient exploration of the resource costs needed to enable practical quantum applications.
 
@@ -281,7 +281,7 @@ params.qubit_params.two_qubit_joint_measurement_error_rate = \
 
 To execute practical-scale quantum applications, quantum operations should have low error rates. These error rate targets are typically beyond the capabilities of raw physical qubits. To overcome this limitation, quantum error correction (QEC) and fault-tolerant computation are two crucial techniques that form the building blocks of large-scale quantum computers. First, QEC allows us to compose multiple error-prone physical qubits and build a more reliable logical qubit that preserves quantum information better than the underlying physical qubits.
 
-The Resource Estimator uses the following formula to model logical error rates using an exponential model,
+The resource estimator uses the following formula to model logical error rates using an exponential model,
 
 $$ P = ad^k\left(\frac{p}{p^\*}\right)^{\frac{d+1}{2}} $$
 
@@ -291,7 +291,7 @@ The code distance $d$ is a parameter that controls the number of errors that can
 
 The physical error rate $p$ is extracted from the qubit parameters as the worst-case error rate of any physical Clifford operation performed in the device. In particular, $p = {}$ max(`one_qubit_measurement_error_rate`, `one_qubit_gate_error_rate`, `two_qubit_gate_error_rate`) for qubit parameters with a gate-based instruction set, and $p = {}$ max(`one_qubit_measurement_error_rate`, `two_qubit_joint_measurement_error_rate`) for qubit parameters with a Majorana instruction set. QEC schemes typically have an error rate threshold $p^\*$ below which error correction suppresses errors.
 
-The Azure Quantum Resource Estimator supports two predefined QEC schemes: a surface code and a floquet code.
+The Microsoft Quantum resource estimator supports two predefined QEC schemes: a surface code and a floquet code.
 
 |QEC protocol|Python API class|Description|
 |----|----|-----|
@@ -391,7 +391,7 @@ qsharp.estimate("RunProgram()", params=
 
 ### Customize your QEC schemes
 
-The Resource Estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. You also need to specify the `"logicalCycleTime"`, which is the time to execute a single logical operation, and which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, which is the number of physical qubits required to encode one logical qubit based on the code distance.
+The resource estimator can abstract a customized QEC scheme based on the above formula by providing values for the `"crossingPrefactor"` $a$, the `distanceCoefficientPower` $k$, and the `"errorCorrectionThreshold"` $p^\*$. You also need to specify the `"logicalCycleTime"`, which is the time to execute a single logical operation, and which depends on the code distance and the physical operation time assumptions of the underlying physical qubits. Finally, a second formula computes the `"physicalQubitsPerLogicalQubit"`, which is the number of physical qubits required to encode one logical qubit based on the code distance.
 
 You can use the following code as a template for QEC schemes:
 
@@ -468,9 +468,9 @@ You can use the `"constraints"` class to apply constraints on the [T factory](xr
 | Parameter              | Data type   | Description |
 |------------------------|-------------|-------------|
 | `logical_depth_factor` | float       | Control the execution time. If it has a value greater than 1, the initial number of logical cycles, also called *logical depth*, is multiplied by this number. By reducing `logical_depth_factor`, you can increase the number of invocation of the T factory in a given time, resulting in fewer T factory copies needed to produce the same number of T states. When you reduce the number of T factory copies, the algorithm runtime increases accordingly. The scaling factor for the total runtime may be larger, because the required logical error rate increases due to the additional number of cycles.|
-| `max_t_factories`      | integer     | Maximum number of T factory copies. The Resource Estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `max_t_factories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).|
-| `max_duration`         | time string | Maximum runtime for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_duration` is specified, the Resource Estimator tries to find the best estimate for `max_physical_qubits` among solutions constrained by the maximal number specified.|
-| `max_physical_qubits` | integer      | Maximum number of physical qubits for the algorithm. The Resource Estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_physical_qubits` is specified, the Resource Estimator tries to find the best estimate for `max_duration` among solutions constrained by the maximal number specified. |
+| `max_t_factories`      | integer     | Maximum number of T factory copies. The resource estimator determines the resources required by selecting the optimal number of T factory copies that minimizes the number of physical qubits used, without considering the time overhead. The `max_t_factories` parameter limits the maximum number of copies, and therefore adjust the number of logical cycles accordingly. For more information, see [T factory physical estimation](xref:microsoft.quantum.concepts.tfactories#t-factories-in-the-azure-quantum-resource-estimator).|
+| `max_duration`         | time string | Maximum runtime for the algorithm. The resource estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_duration` is specified, the resource estimator tries to find the best estimate for `max_physical_qubits` among solutions constrained by the maximal number specified.|
+| `max_physical_qubits` | integer      | Maximum number of physical qubits for the algorithm. The resource estimator accepts only one of `max_duration` or `max_physical_qubits` constraints at the time but not two. If `max_physical_qubits` is specified, the resource estimator tries to find the best estimate for `max_duration` among solutions constrained by the maximal number specified. |
 
 The following code shows how to specify the constraints for a quantum algorithm:
 
@@ -485,7 +485,7 @@ params.constraints.max_t_factories = 10
 ```
 
 > [!NOTE]
-> If the value provided to `max_duration` or `max_physical_qubits` is too small to find a feasible solution, the Resource Estimator returns an error. If neither `max_duration` nor `max_physical_qubits` constraints are specified, the Resource Estimator aims to find a solution with the shortest time.
+> If the value provided to `max_duration` or `max_physical_qubits` is too small to find a feasible solution, the resource estimator returns an error. If neither `max_duration` nor `max_physical_qubits` constraints are specified, the resource estimator aims to find a solution with the shortest time.
 
 > [!TIP]
 > You can use `max_duration` and `max_physical_qubits` to influence the solution space, potentially finding solutions with longer runtime but a smaller number of qubits compared to solutions without these constraints. There exists a trade-off between runtime and the number of qubits, and this trade-off can be efficiently managed for some algorithms, with varying effects on different algorithms. Table IV in [[arXiv:2211.07629](https://arxiv.org/abs/2211.07629)] illustrates the effective utilization of the trade-off between the number of qubits and runtime for quantum dynamics algorithms. For more information, see [Quantum resource estimation with time or number of qubits constraints](https://github.com/microsoft/Quantum/blob/main/samples/azure-quantum/resource-estimation/estimation-time-qubits-constraints.ipynb) sample.
@@ -580,9 +580,9 @@ When estimating the resources of an algorithm, it's important to consider the tr
 The Pareto frontier estimation provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime.
 
 > [!NOTE]
-> If you run the Resource Estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** command, then the Pareto frontier estimation is enabled by default.
+> If you run the resource estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** command, then the Pareto frontier estimation is enabled by default.
 
-If you run the Resource Estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
+If you run the resource estimator in Python, you need to specify the `"estimateType"` parameter as `"frontier"`.
 
 ```python
 result = qsharp.estimate("RunProgram()", params=
@@ -602,12 +602,12 @@ EstimatesOverview(result)
 ```
 
 > [!NOTE]
-> If you experience issues when you work with the Resource Estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you experience issues when you work with the resource estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
-- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Understand the results of the resource estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator)
-- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
-- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Different ways to run the resource estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Handle large programs with the resource estimator](xref:microsoft.quantum.resource-estimator-caching)
 - [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

@@ -1,21 +1,21 @@
 ---
 author: azure-quantum-content
-description: This document provides on who to run OpenQASM code in the Quantum Development Kit
+description: This document provides on who to run OpenQASM code in the Microsoft Quantum Development Kit
 ms.author: quantumdocwriters
 ms.date: 07/07/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [target, targets, OpenQASM, "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", ".qasm"]
-title: How to run OpenQASM code in the Quantum Development Kit
+no-loc: [target, targets, OpenQASM, "Microsoft Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", ".qasm"]
+title: How to run OpenQASM code in the Microsoft Quantum Development Kit
 uid: microsoft.quantum.how-to.openqasm-development-qdk
 
-# Customer intent: I want to write and run OpenQASM code in the Quantum Development Kit
+# Customer intent: I want to write and run OpenQASM code in the Microsoft Quantum Development Kit
 ---
 
-# Write and run OpenQASM code in the Quantum Development Kit
+# Write and run OpenQASM code in the Microsoft Quantum Development Kit
 
-The Quantum Development Kit (QDK) provides a development environment for OpenQASM programs with Azure Quantum integration. In this article, you learn how to write, debug, and run OpenQASM code in the QDK.
+The Microsoft Quantum Development Kit (QDK) provides a development environment for OpenQASM programs with Azure Quantum integration. In this article, you learn how to write, debug, and run OpenQASM code in the QDK.
 
 The following QDK features are available in OpenQASM programs:
 
@@ -29,7 +29,7 @@ The following QDK features are available in OpenQASM programs:
 
 ## Work with OpenQASM in Visual Studio Code and Azure Quantum
 
-To write OpenQASM code in Visual Studio Code, open a Q# project and create an OpenQASM file with a `.qasm` extension. The QDK automatically recognizes the `.qasm` file as OpenQASM, and the QDK features for OpenQASM are available as you write your OpenQASM code in VS Code.
+To write OpenQASM code in Visual Studio Code (VS Code), open a Q# project and create an OpenQASM file with a `.qasm` extension. The QDK automatically recognizes the `.qasm` file as OpenQASM, and the QDK features for OpenQASM are available as you write your OpenQASM code in VS Code.
 
 To run your OpenQASM program from VS Code, you can use either a local quantum simulator or you can submit the code as a job to Azure Quantum. The local quantum simulator is a feature of the QDK and has no cost. Azure Quantum jobs have a cost according to the provider and plan that you choose for your job submission.
 

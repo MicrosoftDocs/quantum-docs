@@ -32,7 +32,7 @@ In this tutorial, you learn how to:
 > - Entangle a pair of qubits.
 > - Measure a qubit and observe the results.
 
-[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Microsoft Quantum banner](includes/copilot-banner.md)]
 
 ::: zone pivot="ide-azure-copilot"
 

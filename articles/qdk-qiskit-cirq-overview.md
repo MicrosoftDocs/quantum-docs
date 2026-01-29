@@ -1,5 +1,5 @@
 ---
-title: Use the Qiskit and Cirq Python libraries in the Quantum Development Kit
+title: Use the Qiskit and Cirq Python libraries in the Microsoft Quantum Development Kit
 description: This document gives an overview of the Qiskit and Cirq Python libraries, and how the QDK supports these features.
 author: azure-quantum-content
 ms.author: quantumdocwriters
@@ -7,21 +7,21 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 ms.date: 10/02/2025
-no-loc: ["Azure Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor", "IBM", "Google", "SDK", "azure-quantum", "QDK's"]
+no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor", "IBM", "Google", "SDK", "azure-quantum", "QDK's"]
 uid: microsoft.quantum.overview.qdk-qiskit-cirq
 
 #Customer intent: As a developer, I want to learn about how the QDK supports other quantum programming frameworks, like Qiskit and Cirq.
 ---
 
-# Qiskit and Cirq interoperability with the Quantum Development Kit
+# Qiskit and Cirq interoperability with the Microsoft Quantum Development Kit
 
-The Azure Quantum Development Kit (QDK) supports development in several quantum programming frameworks, including Qiskit and Cirq.
+The Microsoft Quantum Development Kit (QDK) supports development in several quantum programming frameworks, including Qiskit and Cirq.
 
 Qiskit and Cirq are Python libraries that offer tools to create and visualize quantum circuits and write quantum programs. The QDK supports some interoperability with Qiskit versions 1 and 2, and with Cirq. You can write your quantum programs in these frameworks and then run your programs on the local simulator or submit them as jobs to Azure Quantum with the QDK.
 
 ## Get started with Qiskit and Cirq in the QDK
 
-You can install the Qiskit and Cirq libraries, and run Qiskit and Cirq circuits on Azure Quantum, with the `qdk.azure` Python module in the QDK. You can also run Qiskit circuits on the QDK's local simulator.
+You can install the Qiskit and Cirq libraries for the QDK, and run Qiskit and Cirq circuits on Azure Quantum, with the `qdk.azure` Python module. You can also run Qiskit circuits on the QDK's local simulator.
 
 To get started with Qiskit in the QDK, see [How to submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
 

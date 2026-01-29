@@ -12,7 +12,7 @@ uid: microsoft.quantum.overview.qdk-chemistry
 #customer intent: As a quantum chemistry researcher, I want know what QDK for chemistry offers me for my research
 ---
 
-# Welcome to QDK for chemistry 
+# Welcome to QDK for chemistry
 
 > [!div class="nextstepaction"]
 > [Get started here](xref:microsoft.quantum.how-to.install-qdk-chemistry)

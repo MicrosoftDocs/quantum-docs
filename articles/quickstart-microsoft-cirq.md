@@ -11,9 +11,9 @@ title: Submit Cirq quantum circuits to Azure Quantum
 uid: microsoft.quantum.quickstarts.computing.cirq
 --- 
 
-# How to submit a circuit with Cirq to Azure Quantum
+# How to submit a Cirq circuit to Azure Quantum
 
-Learn how to submit a Cirq quantum circuit using the `azure-quantum` Python package. You can submit Cirq circuits to Azure Quantum using the Azure Quantum Development Kit (QDK) and Jupyter Notebook in Visual Studio Code (VS Code) from your local machine.
+Learn how to submit a Cirq quantum circuit using the `qdk.azure.cirq` Python submodule. You can submit Cirq circuits to Azure Quantum using the Microsoft Quantum Development Kit (QDK) and Jupyter Notebook in Visual Studio Code (VS Code) from your local machine.
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 
@@ -23,11 +23,11 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- VS Code with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The Azure Quantum `azure-quantum` package with the `cirq` extra, and the `qdk` and the `ipykernel` packages.
+- VS Code with the [Microsoft Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- The `qdk` Python library with the `cirq` extra, and the `ipykernel` package.
 
     ```bash
-    python -m pip install --upgrade "azure-quantum[cirq]" qdk ipykernel 
+    python -m pip install --upgrade "qdk[cirq]" ipykernel 
     ```
 
     > [!NOTE]
@@ -44,8 +44,8 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 In the first cell of your notebook, run the following code to load the required imports:
 
 ```python
-import azure.quantum
-from azure.quantum.cirq import AzureQuantumService
+from qdk.azure import Workspace
+from qdk.azure.cirq import AzureQuantumService
 ```
 
 ## Connect to the Azure Quantum service
@@ -136,7 +136,6 @@ print(result)
 Before running a job on the QPU, you should estimate how much it will cost to run.
 
 For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
-
 
 #### Run on IonQ QPU
 

@@ -10,7 +10,7 @@ no-loc: [target, targets, "Azure Quantum", Azure, AzCopy, azcopy, Jupyter, "Jupy
 title: How to migrate your Azure Quantum workspace to a new Azure region
 uid: microsoft.quantum.how-to.migrate-quantum-workspace-new-region
 
-# Customer intent: I want to migrate my Azure Quantum Workspace data to a new Azure region because Azure Quantum will be retired in my current region.
+# Customer intent: I want to migrate my Azure Quantum workspace data to a new Azure region because Azure Quantum will be retired in my current region.
 ---
 
 # Migrate your Azure Quantum job data

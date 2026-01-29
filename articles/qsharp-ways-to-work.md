@@ -1,6 +1,6 @@
 ---
 author: haileytap
-description: This article describes the environment options for developing quantum programs with Q# and the Quantum Development Kit.
+description: This article describes the environment options for developing quantum programs with Q# and the QDK.
 ms.author: quantumdocwriters
 ms.date: 01/14/2025
 ms.service: azure-quantum
@@ -14,7 +14,7 @@ uid: microsoft.quantum.qsharp-ways-to-work
 
 # Different ways to run Q# programs
 
-Azure Quantum offers different development options for writing and running quantum programs. Each environment uses the [Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview), a set of open-source tools that includes the Q# programming language. For more information, see [Introduction to Q#](xref:microsoft.quantum.qsharp-overview).
+Azure Quantum offers different development options for writing and running quantum programs. Each environment uses the [Microsoft Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview), a set of open-source tools that includes the Q# programming language. For more information, see [Introduction to Q#](xref:microsoft.quantum.qsharp-overview).
 
 In this article, you learn the differences between each option and how to choose the right one for your needs.
 
@@ -33,7 +33,7 @@ The option you choose for running Q# programs depends on your coding experience,
 | Built-in Q# support        | &#10004;                  | &#10004;     | &nbsp; &#10004; *         |
 | QPU access                 | &#10004;                  | &#10004;     | &nbsp; &nbsp; &#10004; ** |
 | Jupyter  Notebooks         | &nbsp;                    | &nbsp;       | &#10004;                  |
-| Resource Estimator         | &nbsp;                    | &nbsp;       | &#10004;                  |
+| Resource estimator         | &nbsp;                    | &nbsp;       | &#10004;                  |
 | Python support             | &nbsp;                    | &#10004;     | &#10004;                  |
 | Cirq and Qiskit support    | &nbsp;                    | &#10004;     | &#10004;                  |
 | Integrated hybrid          | &nbsp;                    | &nbsp;       | &#10004;                  |
@@ -50,7 +50,7 @@ On the [Microsoft Quantum website](https://quantum.microsoft.com/), you can run 
 
 The Microsoft Quantum website also features blogs, articles, and videos from quantum experts and enthusiasts. The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) deepen your knowledge with self-paced tutorials on the fundamentals of quantum computing and Q#.
 
-For more information, see [Explore Copilot in Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+For more information, see [Explore Copilot in Microsoft Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 ### Is the Microsoft Quantum website right for me?
 
@@ -78,11 +78,11 @@ The following table shows what you can and can't do in the Azure portal:
 
 ## Visual Studio Code
 
-[Visual Studio Code](https://code.visualstudio.com/) is a free, open-source code editor from Microsoft. With the Quantum Development Kit extension for Visual Studio Code, you can create Q# programs, load built-in Q# samples, and use features like error messaging, syntax highlighting, debugging, circuit diagram visualization, CodeLens, and IntelliSense—all in your local development environment. To get started, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+[Visual Studio Code](https://code.visualstudio.com/) is a free, open-source code editor from Microsoft. With the QDK extension for VS Code, you can create Q# programs, load built-in Q# samples, and use features like error messaging, syntax highlighting, debugging, circuit diagram visualization, CodeLens, and IntelliSense—all in your local development environment. To get started, see [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
-With Visual Studio Code and the QDK you also have access to the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Q# programs on quantum computers. For more information, see [Run the Resource Estimator in Visual Studio Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
+With VS Code and the QDK you also have access to the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to estimate the physical resources required to run your Q# programs on quantum computers. For more information, see [Run the resource estimator in Visual Studio Code](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
-You don't need an Azure account to use the QDK in Visual Studio Code. However, if you have an Azure account, you can connect to your Azure Quantum workspace from Visual Studio Code and run Q# programs on the quantum computers and simulators of your selected providers. For more information, see [How to submit Q# programs with Visual Studio Code](xref:microsoft.quantum.submit-jobs).
+You don't need an Azure account to use the QDK in VS Code. However, if you have an Azure account, you can connect to your Azure Quantum workspace from VS Code and run Q# programs on the quantum computers and simulators of your selected providers. For more information, see [How to submit Q# programs with Visual Studio Code](xref:microsoft.quantum.submit-jobs).
 
 > [!NOTE]
 > The QDK extension is also available for [VS Code for the Web](https://vscode.dev/quantum), which provides the same Azure connectivity and Q# language features as the desktop version. However, it doesn't support Python, Qiskit, or Cirq.
@@ -107,7 +107,7 @@ The following table shows what you can and can't do in VS Code:
 
 | You can: | You can't: | You need: |
 | --- | --- | --- |
-| <ul><li>Run Q# and Python programs.</li><li>Load Q# samples.</li><li>Debug your programs.</li><li>Save your programs and results.</li><li>Select any quantum computing provider.</li><li>Visualize quantum circuit diagrams.</li><li> Create and run Jupyter Notebooks.</li><li>Have compiler error messages.</li><li>Use the Resource Estimator.</li></ul> | <ul><li>Access the Quantum Copilot.</li><li>Manage your subscriptions and workspaces.</li><li>Manage your quantum jobs.</li></ul> | <ul><li>To install [VS Code](https://code.visualstudio.com/).</li><li>To install the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).</li><li> An Azure subscription and a quantum workspace (if you want to run programs on real hardware).</li></ul> |
+| <ul><li>Run Q# and Python programs.</li><li>Load Q# samples.</li><li>Debug your programs.</li><li>Save your programs and results.</li><li>Select any quantum computing provider.</li><li>Visualize quantum circuit diagrams.</li><li> Create and run Jupyter Notebooks.</li><li>Have compiler error messages.</li><li>Use the resource estimator.</li></ul> | <ul><li>Access the Quantum Copilot.</li><li>Manage your subscriptions and workspaces.</li><li>Manage your quantum jobs.</li></ul> | <ul><li>To install [VS Code](https://code.visualstudio.com/).</li><li>To install the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).</li><li> An Azure subscription and a quantum workspace (if you want to run programs on real hardware).</li></ul> |
 
 ## Q# learning resources
 
@@ -120,6 +120,6 @@ To learn and explore the Q# programming language, use the following resources:
 
 ## Related content
 
-- [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
+- [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)
 - [Reference: QDK extension for Visual Studio Code](xref:microsoft.quantum.reference.vscode)

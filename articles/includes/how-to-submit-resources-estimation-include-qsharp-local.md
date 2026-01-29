@@ -11,10 +11,10 @@ no-loc: [target, targets]
 ## Prerequisites for VS Code
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!TIP]
-> You don't need to have an Azure account to run the Resource Estimator.
+> You don't need to have an Azure account to run the resource estimator.
 
 ## Create a new Q# file
 
@@ -93,7 +93,7 @@ Copy the following code into the `ShorRE.qs` file:
                 H(c);
             } apply {
                 // `BeginEstimateCaching` and `EndEstimateCaching` are the operations
-                // exposed by Azure Quantum Resource Estimator. These will instruct
+                // exposed by Microsoft Quantum resource estimator. These will instruct
                 // resource counting such that the if-block will be executed
                 // only once, its resources will be cached, and appended in
                 // every other iteration.
@@ -386,13 +386,13 @@ Copy the following code into the `ShorRE.qs` file:
     }
 ```
 
-## Run the Resource Estimator
+## Run the resource estimator
 
-The Resource Estimator offers [six predefined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four of which have gate-based instruction sets and two that have a Majorana instruction set. It also offers two [quantum error correction codes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-codes), `surface_code` and `floquet_code`.
+The resource estimator offers [six predefined qubit parameters](xref:microsoft.quantum.overview.resources-estimator#physical-qubit-parameters), four of which have gate-based instruction sets and two that have a Majorana instruction set. It also offers two [quantum error correction codes](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-codes), `surface_code` and `floquet_code`.
 
-In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code.
+In this example, you run the resource estimator using the `qubit_gate_us_e3` qubit parameter and the `surface_code` quantum error correction code.
 
-1. Select **View -> Command Palette**, and type **resource**, which brings up the **QDK: Calculate Resource Estimates** command. You can also select **Estimate** from the list of commands that precedes the `Main` operation. Select this option to open the Resource Estimator window.
+1. Select **View -> Command Palette**, and type **resource**, which brings up the **QDK: Calculate Resource Estimates** command. You can also select **Estimate** from the list of commands that precedes the `Main` operation. Select this option to open the resource estimator window.
 
     :::image type="content" source="../media/codelens-estimate-shorRE.png" alt-text="Screenshot showing how to select the estimate command from the code lens list.":::
 
@@ -405,7 +405,7 @@ In this example, you run the Resource Estimator using the `qubit_gate_us_e3` qub
 
 ## View the results
 
-The Resource Estimator provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation.  
+The resource estimator provides multiple estimates for the same algorithm, each showing tradeoffs between the number of qubits and the runtime. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation.  
 
 The result of the resource estimation is displayed in the **Q# Estimate** window.
 
@@ -415,20 +415,20 @@ The result of the resource estimation is displayed in the **Q# Estimate** window
 
     In the **Estimate type** column of the results table, you can see the number of optimal combinations of *{number of qubits, runtime}* for your algorithm. These combinations can be seen in the space-time diagram.
 
-1. The **Space-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In this case, the Resource Estimator finds 13 different optimal combinations out of many thousands possible ones. You can hover over each {number of qubits, runtime} point to see the details of the resource estimation at that point.
+1. The **Space-time diagram** shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In this case, the resource estimator finds 13 different optimal combinations out of many thousands possible ones. You can hover over each {number of qubits, runtime} point to see the details of the resource estimation at that point.
 
-    :::image type="content" source="../media/qubit-time-diagram-shorRE.png" alt-text="Screenshot showing the space-time diagram of the Resource Estimator.":::
+    :::image type="content" source="../media/qubit-time-diagram-shorRE.png" alt-text="Screenshot showing the space-time diagram of the resource estimator.":::
 
     For more information, see [Space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram).
 
     > [!NOTE]
     > You need to **click on one point** of the space-time diagram, that is a {number of qubits, runtime} pair, to see the space diagram and the details of the resource estimation corresponding to that point.
-    
+
 1. The **Space diagram** shows the distribution of physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories), corresponding to a {number of qubits, runtime} pair. For example, if you select the leftmost point in the space-time diagram, the number of physical qubits required to run the algorithm are 427726, 196686 of which are algorithm qubits and 231040 of which are T factory qubits.
 
-    :::image type="content" source="../media/vscode-estimates-local-diagram-shorRE.png" alt-text="Screenshot showing the space diagram of the Resource Estimator.":::
+    :::image type="content" source="../media/vscode-estimates-local-diagram-shorRE.png" alt-text="Screenshot showing the space diagram of the resource estimator.":::
 
-1. Finally, the **Resource Estimates** tab displays the full list of output data for the Resource Estimator corresponding to a *{number of qubits, runtime}* pair. You can inspect cost details by collapsing the groups, which have more information. For example, select the leftmost point in the space-time diagram and collapse the **Logical qubit parameters** group. 
+1. Finally, the **Resource Estimates** tab displays the full list of output data for the resource estimator corresponding to a *{number of qubits, runtime}* pair. You can inspect cost details by collapsing the groups, which have more information. For example, select the leftmost point in the space-time diagram and collapse the **Logical qubit parameters** group. 
 
     |Logical qubit parameter| Value |
     |----|---|
@@ -443,21 +443,21 @@ The result of the resource estimation is displayed in the **Q# Estimate** window
     |Physical qubits formula     |                                      2 * `codeDistance` * `codeDistance`|
 
     > [!TIP]
-    > Click **Show detailed rows** to display the description of each output of the report data. 
-    
-    For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
+    > Click **Show detailed rows** to display the description of each output of the report data.
+
+    For more information, see [the full report data of the resource estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
 
 ## Change the target parameters
 
-You can estimate the cost for the same Q# program using other qubit type, error correction code, and error budget. Open the Resource Estimator window by selecting **View -> Command Palette**, and then enter `QDK: Calculate Resource Estimates`.
+You can estimate the cost for the same Q# program using other qubit type, error correction code, and error budget. Open the resource estimator window by selecting **View -> Command Palette**, and then enter `QDK: Calculate Resource Estimates`.
 
-Select a different configuration, for example the Majorana-based qubit parameter, `qubit_maj_ns_e6`. Accept the default error budget value or enter a new one, and then press **Enter**. The Resource Estimator reruns the estimation with the new target parameters.
+Select a different configuration, for example the Majorana-based qubit parameter, `qubit_maj_ns_e6`. Accept the default error budget value or enter a new one, and then press **Enter**. The resource estimator reruns the estimation with the new target parameters.
 
-For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the resource estimator.
 
 ## Run multiple configurations of parameters
 
-The Azure Quantum Resource Estimator can run multiple configurations of target parameters and compare the resource estimation results.
+The Microsoft Quantum resource estimator can run multiple configurations of target parameters and compare the resource estimation results.
 
 1. Select **View -> Command Palette**, or press **Ctrl + Shift + P**, and enter `QDK: Calculate Resource Estimates`.
 1. Select **qubit_gate_us_e3**, **qubit_gate_us_e4**, **qubit_maj_ns_e4 + floquet_code**, and **qubit_maj_ns_e6 + floquet_code**, and click **OK**.
@@ -466,6 +466,6 @@ The Azure Quantum Resource Estimator can run multiple configurations of target p
 1. In the case of multiple configurations of parameters, the results are displayed in different rows in the **Results** tab.
 1. The **Space-time diagram** shows the results for all the configurations of parameters. The first column of the results table displays the legend for each configuration of parameters. You can hover over each point to see the details of the resource estimation at that point.
 
-    :::image type="content" source="../media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the Resource Estimator.":::
+    :::image type="content" source="../media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the resource estimator.":::
 
 1. Click on a **{number of qubits, runtime} point** of the space-time diagram to bring up the corresponding space diagram and report data.

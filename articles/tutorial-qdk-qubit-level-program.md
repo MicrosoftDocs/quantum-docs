@@ -8,7 +8,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
 ms.topic: tutorial
-no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
 #customer intent: As a quantum programmer, I want to understand how to work with the Quantum Fourier Transform.
 ---
 
@@ -31,12 +31,12 @@ In this tutorial, you learn how to:
 > This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in circuit diagrams. For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
 > :::image type="content" source="./media/qft_full.png" alt-text="Diagram of a Quantum Fourier Transform circuit." :::
 
-[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Microsoft Quantum banner](includes/copilot-banner.md)]
 
 ## Prerequisites
 
 - The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 - If you want to use Jupyter Notebooks, then you need to install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions in VS Code.
 - The latest `qdk` Python package with the `jupyter` extra. To install these, open a terminal and run the following command:
 
@@ -558,6 +558,7 @@ Indeed, if you want to develop full-scale, applicable quantum programs, worrying
     
     }
     ```
+
 1. Run the Q# program again and notice that the output is the same as before.
 1. To see the real benefit of using Q# operations, change the number of qubits to something other than `3`:
 

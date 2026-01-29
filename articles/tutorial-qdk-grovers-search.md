@@ -6,7 +6,7 @@ ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
-no-loc: ['Q#', '$$v', Quantum Development Kit,target, targets]
+no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
 title: "Tutorial: Implement Grover's Algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
 #customer intent: As a quantum programmer, I want to learn how to demonstrate Grover's algorithm in a Q# program.
@@ -23,16 +23,16 @@ In this tutorial, you:
 > - Define Grover's algorithm for a search problem
 > - Implement Grover's algorithm in Q#
 
-[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Microsoft Quantum banner](includes/copilot-banner.md)]
 
 ## Prerequisites
 
-- To run the code sample in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding):
+- To run the code sample in the [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding):
   - A Microsoft (MSA) email account.
 
 - To develop and run the code sample in Visual Studio Code:
     - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-    - The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+    - The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 ## Define the problem
 
@@ -200,16 +200,15 @@ operation Main() : Result[] {
 }
 ```
 
-
 ## Run the program
 
 Select the desired platform to run your program.
 
-### [Copilot in Azure Quantum](#tab/tabid-copilot)
+### [Copilot in Microsoft Quantum](#tab/tabid-copilot)
 
-You can test your Q# code with the Copilot in Azure Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot in Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+You can test your Q# code with Copilot in Microsoft Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about Copilot in Microsoft Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
-1. Open the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
+1. Open the [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
@@ -304,7 +303,7 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
     ```
 
 > [!TIP]
-> From Copilot in Azure Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
+> From Copilot in Microsoft Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
 
 ### Run the program using the in-memory simulator
 

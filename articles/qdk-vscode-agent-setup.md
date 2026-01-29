@@ -1,21 +1,21 @@
 ---
 author: azure-quantum-content
-description: This document describes how to set up and use GitHub Copilot's agent mode in VS Code to enhance the Quantum Development Kit user experience.
+description: This document describes how to set up and use GitHub Copilot's agent mode in VS Code to enhance the QDK user experience.
 ms.author: quantumdocwriters
 ms.date: 06/12/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['VS Code', 'Quantum Development Kid', 'QDK', 'GitHub', 'Copilot', 'Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
-title: How to set up and use agent mode in VS Code for the Quantum Development Kit
+title: How to set up and use agent mode in VS Code for the QDK
 uid: microsoft.quantum.how-to.qdk-vscode-agent-setup
 
-#Customer intent: I want to use GitHub Copilot's agent mode in VS Code to help me build my Quantum Development Kit projects.
+#Customer intent: I want to use GitHub Copilot's agent mode in VS Code to help me build my QDK projects.
 ---
 
-# Set up agent mode in VS Code for the Quantum Development Kit
+# Set up agent mode in VS Code for the QDK
 
-Use agent mode in VS Code, powered by GitHub Copilot, to enhance your builder experience with The Quantum Development Kit (QDK) extension.
+Use agent mode in Visual Studio Code (VS Code), powered by GitHub Copilot, to enhance your builder experience with the Microsoft Quantum Development Kit (QDK) extension.
 
 Agent mode is an AI-assisted development experience that helps you write and debug code, and complete other development tasks in VS Code. Although you can use agent mode for the QDK without any setup, follow these tips to get the most out of agent mode in your QDK projects:
 
@@ -45,7 +45,7 @@ To activate the QDK tools for agent mode, follow these steps:
 1. If the chat is in **Ask** mode or **Edit** mode, then select the mode dropdown at the bottom of the chat input box and choose **Agent**.
 1. Select the Tools icon at the bottom of the chat input box.
 
-A list pops up that contains all your available agent tools. Select all the tools under **Azure Quantum Development Kit (QDK)** to activate the QDK tools.
+A list pops up that contains all your available agent tools. Select all the tools under **Microsoft Quantum Development Kit (QDK)** to activate the QDK tools.
 
 :::image type="content" source="media\qdk-agent-tools-list.png" alt-text="Screenshot of the list of available QDK tools for agent mode in VS Code.":::
 

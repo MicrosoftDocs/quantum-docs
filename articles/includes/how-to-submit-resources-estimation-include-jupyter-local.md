@@ -12,7 +12,7 @@ no-loc: [target, targets]
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- VS Code with the [Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- VS Code with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The latest `qdk` Python library with the optional `jupyter` extra.  
 
     ```bash
@@ -20,7 +20,7 @@ no-loc: [target, targets]
     ```
 
 > [!TIP]
-> You don't need to have an Azure account to run the Resource Estimator.
+> You don't need to have an Azure account to run the resource estimator.
 
 ## Create the quantum algorithm
 
@@ -104,7 +104,7 @@ no-loc: [target, targets]
                 H(c);
             } apply {
                 // `BeginEstimateCaching` and `EndEstimateCaching` are the operations
-                // exposed by Azure Quantum Resource Estimator. These will instruct
+                // exposed by Microsoft Quantum resource estimator. These will instruct
                 // resource counting such that the if-block will be executed
                 // only once, its resources will be cached, and appended in
                 // every other iteration.
@@ -406,7 +406,7 @@ result = qsharp.estimate("RunProgram()")
 result
 ```
 
-The `qsharp.estimate` function creates a result object, which can be used to display a table with the overall physical resource counts. You can inspect cost details by expanding the groups, which have more information. For more information, see [the full report data of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
+The `qsharp.estimate` function creates a result object, which can be used to display a table with the overall physical resource counts. You can inspect cost details by expanding the groups, which have more information. For more information, see [the full report data of the resource estimator](xref:microsoft.quantum.overview.resources-estimator-output.data#report-data).
 
 For example, expand the **Logical qubit parameters** group to see that the code distance is 21 and the number of physical qubits is 882.
 
@@ -437,7 +437,7 @@ SpaceChart(result)
 
 In this example, the number of physical qubits required to run the algorithm are 829766, 196686 of which are algorithm qubits and 633080 of which are T factory qubits.
 
-:::image type="content" source="../media/resource-estimator-diagram-jupyter.png" alt-text="Screen shot showing the space diagram of the Resource Estimator.":::
+:::image type="content" source="../media/resource-estimator-diagram-jupyter.png" alt-text="Screen shot showing the space diagram of the resource estimator.":::
 
 ## Change the default values and estimate the algorithm
 
@@ -466,7 +466,7 @@ result['jobParams']
   'twoQubitGateTime': '50 ns'}}
  ```
 
-You can see that the Resource Estimator takes the `qubit_gate_ns_e3` qubit model, the `surface_code` error correction code, and 0.001 error budget as default values for the estimation.
+You can see that the resource estimator takes the `qubit_gate_ns_e3` qubit model, the `surface_code` error correction code, and 0.001 error budget as default values for the estimation.
 
 These are the target parameters that can be customized:
 
@@ -477,7 +477,7 @@ These are the target parameters that can be customized:
 - `distillationUnitSpecifications` - the specifications for T factories distillation algorithms
 - `estimateType` - single or frontier
 
-For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the Resource Estimator.
+For more information, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) for the resource estimator.
 
 ### Change qubit model
 
@@ -523,9 +523,9 @@ result_maj = qsharp.estimate("RunProgram()", params={
 EstimateDetails(result_maj)
 ```
 
-## Batching with the Resource Estimator
+## Batching with the resource estimator
 
-The Azure Quantum Resource Estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets.
+The Microsoft Quantum resource estimator allows you to run multiple configuration of target parameters, and compare the results. This is useful when you want to compare the cost of different qubit models, QEC schemes, or error budgets.
 
 1. You can perform a batch estimation by passing a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run the same algorithm with the default parameters and the Majorana-based qubit parameters with a floquet QEC scheme.
 
@@ -586,7 +586,7 @@ When estimating the resources of an algorithm, it's important to consider the tr
 
 The **Pareto frontier estimation** provides multiple estimates for the same algorithm, each with a tradeoff between the number of qubits and the runtime.
 
-1. To run the Resource Estimator using Pareto frontier estimation, you need to specify the `"estimateType"` target parameter as `"frontier"`. For example, run the same algorithm with the Majorana-based qubit parameters with a surface code using Pareto frontier estimation.
+1. To run the resource estimator using Pareto frontier estimation, you need to specify the `"estimateType"` target parameter as `"frontier"`. For example, run the same algorithm with the Majorana-based qubit parameters with a surface code using Pareto frontier estimation.
 
     ```python
     result = qsharp.estimate("RunProgram()", params=
@@ -604,15 +604,15 @@ The **Pareto frontier estimation** provides multiple estimates for the same algo
     EstimatesOverview(result)
     ```
 
-In the **Estimate type** column of the results table, you can see the number of different combinations of {number of qubits, runtime} for your algorithm. In this case, the Resource Estimator finds 22 different optimal combinations out of many thousands possible ones.
+In the **Estimate type** column of the results table, you can see the number of different combinations of {number of qubits, runtime} for your algorithm. In this case, the resource estimator finds 22 different optimal combinations out of many thousands possible ones.
 
 ### Space-time diagram
 
-The `EstimatesOverview` function also displays the [space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram) of the Resource Estimator.
+The `EstimatesOverview` function also displays the [space-time diagram](xref:microsoft.quantum.overview.resources-estimator-output.data#space-time-diagram) of the resource estimator.
 
 The space-time diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair. You can hover over each point to see the details of the resource estimation at that point.
 
-:::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the space-time diagram with frontier estimation of the Resource Estimator.":::
+:::image type="content" source="../media/qubit-time-frontier-estimation-jupyter-shorRE.png" alt-text="Screenshot showing the space-time diagram with frontier estimation of the resource estimator.":::
 
 ### Batching with Pareto frontier estimation
 
@@ -638,7 +638,7 @@ The space-time diagram shows the number of physical qubits and the runtime of th
     EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
     ```
 
-    :::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot showing the space-time diagram of the Resource Estimator when using Pareto frontier estimation and multiple configurations of parameters.":::
+    :::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot showing the space-time diagram of the resource estimator when using Pareto frontier estimation and multiple configurations of parameters.":::
 
     > [!NOTE]
     > You can define colors and run names for the qubit-time diagram using the `EstimatesOverview` function.

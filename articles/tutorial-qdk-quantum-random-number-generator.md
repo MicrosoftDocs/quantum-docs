@@ -6,7 +6,7 @@ ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
-no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
+no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
 title: 'Tutorial: Create a Quantum Random Number Generator'
 uid: microsoft.quantum.tutorial-qdk.random-number
 #customer intent: As a quantum programmer, I want to generate random numbers on a real quantum computer.
@@ -26,16 +26,16 @@ In this tutorial, you will:
 > - Combine classical and quantum operations to solve a problem.
 > - Work with qubits and superposition to build a quantum random number generator.
 
-[!INCLUDE [Copilot in Azure Quantum banner](includes/copilot-banner.md)]
+[!INCLUDE [Copilot in Microsoft Quantum banner](includes/copilot-banner.md)]
 
 ## Prerequisites
 
-To run the code sample in [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), you must have a Microsoft (MSA) email account.
+To run the code sample in [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding), you must have a Microsoft (MSA) email account.
 
 To develop and run the code sample in Visual Studio Code (VS Code) and Jupyter Notebook, install the following:
 
 - The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
-- The latest version of the [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 - The [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
 - The latest `qdk` Python library with the `jupyter` extra. To install these, open a terminal and run the following command:
 
@@ -250,13 +250,13 @@ operation GenerateRandomBit() : Result {
 
 ## Run the random number generator program
 
-You can run the program in the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), and in Visual Studio Code as a standalone Q# application or using a Python host program.
+You can run the program with [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding), and in Visual Studio Code as a standalone Q# application or using a Python host program.
 
-### [Copilot in Azure Quantum](#tab/tabid-copilot)
+### [Copilot in Microsoft Quantum](#tab/tabid-copilot)
 
-You can test your Q# code with the Copilot in Azure Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about the Copilot in Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+You can test your Q# code with Copilot in Microsoft Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about Copilot in Microsoft Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
-1. Open the [Copilot in Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
+1. Open [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
 1. Copy and paste the following code into the code editor.
 
     ```qsharp
@@ -322,7 +322,7 @@ You can test your Q# code with the Copilot in Azure Quantum free of charge - all
 1. Select **Explain code** to prompt Copilot to explain the code to you.
 
 > [!TIP]
-> From Copilot in Azure Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
+> From Copilot in Microsoft Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
 
 ### [Q# program in Visual Studio Code](#tab/tabid-vscode)
 

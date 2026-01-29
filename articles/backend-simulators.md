@@ -64,7 +64,7 @@ Quantinuum provides two emulator tools:
   - H2-2 Emulator: `quantinuum.sim.h2-2e`
 - Target Execution Profile: QIR Adaptive RI
 
-The Quantinuum Emulator is a System Model H-series based emulator available free-of-charge on the [Code with Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) page. For more information, see the [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based) page.
+The Quantinuum Emulator is a System Model H-series based emulator available free-of-charge on the [Code with Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) page. For more information, see the [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based) page.
 
 For more information about all the Quantinuum emulators, see the [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum) page.
 
