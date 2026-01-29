@@ -6,8 +6,8 @@ ms.date: 03/10/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
-title: PASQAL quantum computing provider    
-uid: microsoft.quantum.providers.pasqal     
+title: PASQAL quantum computing provider
+uid: microsoft.quantum.providers.pasqal
 ---
 
 # PASQAL provider

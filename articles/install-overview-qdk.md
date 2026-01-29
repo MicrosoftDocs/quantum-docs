@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Learn how to set up the Azure Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
+description: Learn how to set up the Microsoft Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: quantumdocwriters
 ms.date: 09/12/2024
 ms.service: azure-quantum
@@ -9,12 +9,12 @@ ms.topic: install-set-up-deploy
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Set up the Quantum Development Kit Extension
 uid: microsoft.quantum.install-qdk.overview
-#customer intent: As a quantum developer, I want to configure my environment with the latest Azure Quantum tools. 
+#customer intent: As a quantum developer, I want to configure my environment with the latest Microsoft Quantum tools. 
 ---
 
-# Set up the Quantum Development Kit extension
+# Set up the Microsoft Quantum Development Kit extension
 
-In this article, you learn how to install the Azure Quantum Development Kit (QDK) extension for Visual Studio Code (VS Code) and add support for Python, Jupyter Notebook, and the Azure CLI.
+In this article, you learn how to install the Microsoft Quantum Development Kit (QDK) extension for Visual Studio Code (VS Code) and add support for Python, Jupyter Notebook, and the Azure CLI.
 
 ## Prerequisites
 

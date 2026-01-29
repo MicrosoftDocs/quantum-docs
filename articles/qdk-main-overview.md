@@ -1,13 +1,13 @@
 ---
-title: Build Quantum Solutions with the Azure Quantum Development Kit
-description: This document is the main landing page for the Quantum Development Kit (QDK), which gives a high level overview of the QDK and links to documentation on all the features in the QDK.
+title: Build Quantum Solutions with the Microsoft Quantum Development Kit
+description: This document is the main landing page for the Microsoft Quantum Development Kit (QDK), which gives a high level overview of the QDK and links to documentation on all the features in the QDK.
 author: azure-quantum-content
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
 ms.date: 10/14/2025
-no-loc: ["Azure Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor"]
+no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor"]
 uid: microsoft.quantum.overview.qdk-landing-page
 
 #Customer intent: As a developer, I want to learn about what the QDK has to offer and how to use the QDK.

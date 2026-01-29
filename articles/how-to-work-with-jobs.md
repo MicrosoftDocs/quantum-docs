@@ -15,8 +15,7 @@ ms.custom: sfi-image-nochange
 
 # Work with Azure Quantum jobs
 
-When you run a quantum program in Azure Quantum,
-you create and run a **job**. The steps to create and run a job depend on
+When you run a quantum program in Azure Quantum, you create and run a **job**. The steps to create and run a job depend on
 the job type and the provider and target that you configure for the workspace.  
 
 ## Job properties
@@ -41,7 +40,7 @@ This diagram shows the basic workflow after you submit your job:
 
 ![azure quantum job flow](~/media/azure-quantum-flow-diagram.png)
 
-First, Azure Quantum uploads the job to the Azure Storage account that you configured in the workspace. Then, the job is added to the job queue for the provider that you specified in the job. Azure Quantum then downloads your program and translates it for the provider. The provider processes the job and returns the output to Azure Storage, where it is available for download. 
+First, Azure Quantum uploads the job to the Azure Storage account that you configured in the workspace. Then, the job is added to the job queue for the provider that you specified in the job. Azure Quantum then downloads your program and translates it for the provider. The provider processes the job and returns the output to Azure Storage, where it is available for download.
 
 ## Monitoring jobs
 

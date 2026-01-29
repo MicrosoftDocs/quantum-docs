@@ -1,27 +1,27 @@
 ---
 author: azure-quantum-content
-description: Learn how to use pre-calculated estimates for your Q# programs with the Azure Quantum Resource Estimator.
+description: Learn how to use pre-calculated estimates for your Q# programs with the Microsoft Quantum resource estimator.
 ms.date: 01/13/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Use Known Estimates with the Resource Estimator
+title: Use Known Estimates with the resource estimator
 uid: microsoft.quantum.resource-estimator-known-estimates
 #customer intent: As a quantum programmer, I want to use pre-calculated estimates. 
 ---
 
-# How to use known estimates with the Resource Estimator
+# How to use known estimates with the resource estimator
 
-In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
+In this article, you learn how to use pre-calculated estimates and optimize the execution of the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator). If you already know some estimates for an operation, for example from a published paper, one way to reduce the execution time is taking the known estimates and incorporate them into the overall program cost.
 
-For information about how to run the Resource Estimator, see [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
+For information about how to run the resource estimator, see [Different ways to run the resource estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
 
-- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 If you want to use Python in VS Code, you also need the following:
 
@@ -41,10 +41,10 @@ Some scenarios where you may want to perform estimation from pre-calculated esti
 
 ### [Use Q#](#tab/tabid-known-estimates-qsharp)
 
-You can use the `AccountForEstimates` Q# operation to pass known estimates to the Resource Estimator.
+You can use the `AccountForEstimates` Q# operation to pass known estimates to the resource estimator.
 
 > [!NOTE]
-> The special operation `AccountForEstimates` is an intrinsic operation for the Resource Estimator. It's not supported by other execution targets.
+> The special operation `AccountForEstimates` is an intrinsic operation for the resource estimator. It's not supported by other execution targets.
 
 For example, consider the following Q# operation called `FactoringFromLogicalCounts` that takes a list of known estimates and a list of qubits.
 
@@ -75,10 +75,10 @@ The `AccountForEstimates` operation can take the following parameters:
 
 ### [Use Python](#tab/tabid-known-estimates-python)
 
-You can use the `LogicalCounts` operation to pass known estimates to the Resource Estimator.
+You can use the `LogicalCounts` operation to pass known estimates to the resource estimator.
 
 > [!NOTE]
-> The special operation `LogicalCounts` is an intrinsic operation for the Resource Estimator. It's not supported by other execution targets.
+> The special operation `LogicalCounts` is an intrinsic operation for the resource estimator. It's not supported by other execution targets.
 
 For example, consider the following code that takes a list of known estimates.
 
@@ -97,11 +97,11 @@ logical_counts.estimate(params)
 ***
 
 > [!NOTE]
-> If you run into any issue while working with the Resource Estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you run into any issue while working with the resource estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Related content
 
-- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
-- [Different ways to run the Resource Estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
+- [Understand the results of the resource estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Different ways to run the resource estimator](xref:microsoft.quantum.submit-resource-estimation-jobs)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
 - [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

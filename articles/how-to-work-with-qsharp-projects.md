@@ -6,7 +6,7 @@ ms.date: 02/14/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ["AI", "azure-quantum", "Azure Quantum", "Azure Quantum Development Kit", "Circuit Editor", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
+no-loc: ["AI", "azure-quantum", "Azure Quantum", "Microsoft Quantum Development Kit", "Circuit Editor", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
 title: "Develop and Manage Q# Projects and Custom Libraries"
 uid: microsoft.quantum.qsharp-projects
 #customer intent: As a quantum developer, I want to understand how to use Q# projects to develop quantum programs and custom libraries
@@ -20,7 +20,7 @@ In this article, you learn how to create, manage, and share Q# projects. A Q# pr
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- Visual Studio Code (VS Code) with the [Azure Quantum Development Kit](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
+- Visual Studio Code (VS Code) with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
 - A GitHub account, if you plan to publish your external project to a public GitHub repository.
 
 To run Python programs, you also need:

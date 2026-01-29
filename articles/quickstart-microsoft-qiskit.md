@@ -14,7 +14,7 @@ uid: microsoft.quantum.quickstarts.computing.qiskit
 
 # How to submit a circuit with Qiskit to Azure Quantum
 
-Learn how to submit a Qiskit quantum circuit with the Azure Quantum Development Kit (QDK). You can submit Qiskit circuits to Azure Quantum using the Azure Quantum Development Kit (QDK) and Jupyter Notebook in Visual Studio Code (VS Code). You can also test your circuits using the local sparse simulator. The QDK supports versions 1 and 2 of Qiskit.
+Learn how to submit a Qiskit quantum circuit with the Microsoft Quantum Development Kit (QDK). You can submit Qiskit circuits to Azure Quantum using the QDK and Jupyter Notebook in Visual Studio Code (VS Code). You can also test your circuits using the local sparse simulator. The QDK supports versions 1 and 2 of Qiskit.
 
 For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
 

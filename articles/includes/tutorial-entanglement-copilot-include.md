@@ -5,20 +5,20 @@ ms.date: 12/03/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
-no-loc: [Quantum Development Kit, target, targets]
+no-loc: [Microsoft Quantum Development Kit, QDK, target, targets]
 ---
 
 ## Prerequisites
 
-To run the code sample with [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), you must have a Microsoft (MSA) email account.
+To run the code sample with [Copilot for Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding), you must have a Microsoft (MSA) email account.
 
-For more information about Copilot for Azure Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+For more information about Copilot for Microsoft Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 ## Initialize a qubit to a known state
 
 The first step is to define a Q# operation that initializes a qubit to a desired classical state, either 0 or 1. This operation measures a qubit in a general quantum state, which returns a Q# `Result` type value of either `Zero` or `One`. If the measurement result is different from the desired state, then the operation flips the state so that the operation returns the desired state 100% of the time.
 
-Open [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding), clear the default code, and then copy the following code into the code editor window. You can't run this code by itself because it isn't a complete Q# program yet.
+Open [Copilot for Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding), clear the default code, and then copy the following code into the code editor window. You can't run this code by itself because it isn't a complete Q# program yet.
 
 ```qsharp
 operation SetQubitState(desired : Result, target : Qubit) : Unit {
@@ -94,7 +94,7 @@ The `Main` operation does the following:
 1. After the loop completes, calls `SetQubitState` again to reset the qubits to a known state (`Zero`). You must reset qubits that you allocate with the `use` statement.
 1. Calls the `Message` function to print your results in the output window.
 
-## Run the code in Copilot for Azure Quantum
+## Run the code in Copilot for Microsoft Quantum
 
 Before you write code for superposition and entanglement, test your current program to see the initialization and measurement of the qubits.
 
@@ -148,7 +148,7 @@ operation Main() : (Int, Int, Int, Int) {
 }
 ```
 
-Copy and paste the complete code sample into the [Copilot for Azure Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slider for the number of shots to "1", and then choose **Run**. The results display in the histogram and in the **Results** fields.
+Copy and paste the complete code sample into the [Copilot for Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slider for the number of shots to "1", and then choose **Run**. The results display in the histogram and in the **Results** fields.
 
 ```output
 Q1 - Zeros: 0
@@ -205,7 +205,7 @@ Every time you run the program, the results for the first qubit vary slightly, b
 Initialize the first qubit to `Zero` instead of `One` and run the program again. You get similar results because the `H` operation turns both a pure `Zero` state and a pure `One` state into an equal superposition state.
 
 > [!NOTE]
-> To see how the superposition results vary over the distribution of the shots, move the slider in Copilot for Azure Quantum and increase the number of shots.
+> To see how the superposition results vary over the distribution of the shots, move the slider in Copilot for Microsoft Quantum and increase the number of shots.
 
 ## Entangle two qubits
 

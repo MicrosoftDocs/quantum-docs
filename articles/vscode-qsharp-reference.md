@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Learn about the features that are included with the Azure Quantum Development Kit extension for VS Code. 
+description: Learn about the features that are included with the QDK extension for VS Code. 
 ms.date: 09/25/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
@@ -11,9 +11,9 @@ uid: microsoft.quantum.reference.vscode
 #customer intent: As a quantum programmer, I want to know how to access the QDK related features in VS Code.  
 ---
 
-# Reference: Azure Quantum Development Kit extension for Visual Studio Code
+# Reference: Microsoft Quantum Development Kit extension for Visual Studio Code
 
-The Azure Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio Code (VS Code), along with Q#-specific features when you work with `.qs` files. This reference guide describes all the QDK commands that you can access in the VS Code Command Palette, along with other features and links to additional content. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
+The Microsoft Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio Code (VS Code), along with Q#-specific features when you work with `.qs` files. This reference guide describes all the QDK commands that you can access in the VS Code Command Palette, along with other features and links to additional content. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
 > [!TIP]
 > Most commands from the QDK extension are accessible from the **View > Command Palette** menu. While in a `.qs` file, open the Command Palette and enter **QDK:** to view a filtered list of commands.
@@ -30,7 +30,7 @@ The following table describes the commands from the QDK extension that appear in
 | Command | Action | Notes | Alternate user action |
 |---------|--------|-------|-----------------------|
 | **QDK: Create Q# Project** | Creates a Q# project in the active folder, including  a `qsharp.json` manifest file and a `src` subfolder with a default `main.qs` file. | For more information about Q# projects, see [Working with Q# projects](xref:microsoft.quantum.qsharp-projects). | In File Explorer, right-click the target folder and select **Create Q# project**. |
-| **QDK: Create an Azure Quantum notebook**  | Opens a sample Jupyter Notebook that runs a Q# + Python program and submits a job to Azure Quantum. | For more information about Azure Quantum notebooks, see [Work with Azure Quantum notebooks](xref:microsoft.quantum.submit-jobs). | N/A |
+| **QDK: Create a Microsoft Quantum notebook**  | Opens a sample Jupyter Notebook that runs a Q# + Python program and submits a job to Azure Quantum. | For more information about Microsoft Quantum notebooks, see [Work with Microsoft Quantum notebooks](xref:microsoft.quantum.submit-jobs). | N/A |
 | **QDK: Connect to an Azure Quantum workspace** | Connect to an Azure Quantum workspace using your Azure account or a connection string. Once you're authenticated, your workspace appears in File Explorer in **Quantum Workspaces**. | For more information about Azure Quantum connections, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace). | In File Explorer, hover over **Quantum workspaces** and select the **＋ icon**. |
 | **QDK: Open QDK playground** | Opens an online folder of Q# sample programs in File Explorer. You can edit and run the programs in the local quantum simulator, and also set breakpoints and step through the code with the built-in debugger. | For more information, see the **README** file in the sample folder. | N/A |
 | **QDK: Refresh Azure Quantum workspaces** | Syncs the latest changes from your connected quantum workspaces. | If there's a connection issue, an alert icon appears next to the workspace name. | In File Explorer, hover over **Quantum Workspaces** and select the refresh icon. |
@@ -43,10 +43,10 @@ The following commands are available when a `.qs` file is active.
 | **QDK: Show circuit** | Displays a circuit diagram for the Q# program before it runs. | For more information, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits). | Select the code lens option **Circuit** from the menu next to the entry point operation or above each user-defined operation in the program. |
 | **QDK: Run file and show histogram** | Runs the current Q# program and displays a histogram of the results in a new pane. | To access the sort and filter options for the histogram display, select the filter icon in the histogram pane. | Select the code lens option **Histogram** from the menu next to the entry point operation. |
 | **QDK: Get QIR for current QDK program** | Opens the QIR source for the current Q# code in a new edit window. Your program must use the Base, Adaptive RI, or Adaptive RIF target profile to export QIR source. | For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir), and the Q# [developer blog](https://github.com/microsoft/qdk/wiki/QIR). | N/A |
-| **QDK: Calculate Resource Estimates** | Invokes the built-in version of the Resource Estimator. | For more information, see [Introduction to the Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). | N/A |
-| **QDK: Help** | A brief overview of the QDK extension in VS Code. | For complete Azure Quantum documentation, see [Azure Quantum documentation](/azure/quantum/). | N/A  |
+| **QDK: Calculate Resource Estimates** | Invokes the built-in version of the resource estimator. | For more information, see [Introduction to the Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator). | N/A |
+| **QDK: Help** | A brief overview of the QDK extension in VS Code. | For complete Microsoft Quantum documentation, see [Microsoft Quantum documentation](/azure/quantum/). | N/A  |
 | **QDK: Run file and show circuit diagram** | Runs the current Q# program and displays a circuit of the program with outputs. | For more information, see [Visualize quantum circuit diagrams](xref:microsoft.quantum.how-to.visualize-circuits). | N/A |
-| **QDK: Add Copilot instructions file for Q# and OpenQASM** | Opens a prompt that gives you the option to add Copilot instructions to help you write and run Q# anf OpenQASM code. | For more information, see [Set up agent mode in VS Code for the Quantum Development Kit](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup). | N/A |
+| **QDK: Add Copilot instructions file for Q# and OpenQASM** | Opens a prompt that gives you the option to add Copilot instructions to help you write and run Q# anf OpenQASM code. | For more information, see [Set up agent mode in VS Code for the Microsoft Quantum Development Kit](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup). | N/A |
 | **QDK: Show API documentation** | Opens the API documentation in a new pane. To search this pane, press **Ctrl + F**. | For more information, see the [Azure Quantum API reference](xref:microsoft.quantum.apiref-intro). | N/A  |
 | **QDK: Show Changelog** | Opens a changelog in a new tab that shows the QDK updates for the current and all previous release versions.| The changelog is also available on the open-source [QDK GitHub repository](https://github.com/microsoft/qdk). | N/A |
 | **Debug: Start Debugging** | Opens the current Q# program in the debugger. | For more information, see [Debugging and testing your quantum code](xref:microsoft.quantum.user-guide-qdk.overview.testingdebugging). | Press **F5**, or select the code lens option **Debug** from the menu next to the entry point operation, or select the **Run** icon in the upper right and choose **Start Debugging**. |

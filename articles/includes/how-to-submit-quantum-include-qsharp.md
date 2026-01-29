@@ -5,7 +5,7 @@ ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: include
-no-loc: [Quantum Development Kit, QDK, target, targets]
+no-loc: [Microsoft Quantum Development Kit, QDK, target, targets]
 ---
 
 ## Submitting Q# jobs to Azure Quantum
@@ -18,8 +18,8 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace,
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
-- The latest version of the [Azure Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
+- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
 ## Load a Q# sample program
 

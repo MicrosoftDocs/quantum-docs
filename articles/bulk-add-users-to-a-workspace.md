@@ -65,7 +65,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 1. Allow your group to access your workspace. Select **Access control (IAM)** from the left-side menu. Select **Add**, and then **Add role assignment**.
     :::image type="content" source="media/bulk-invite-users-add-assignment.png" alt-text="Screen shot showing how to add a new role assignment to your Azure Quantum workspace.":::
 
-1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** or **Quantum Workspace Data Contributor** and then select **Next**. 
+1. The **Add role assignment** page opens. On the **Role** pane, select **Contributor** or **Quantum Workspace Data Contributor** and then select **Next**.
 
     :::image type="content" source="media/bulk-invite-users-add-contributor.png" alt-text="Screen shot showing how to create a contributor to your Azure Quantum workspace.":::
 

@@ -61,7 +61,7 @@ There are many different types of QEC codes, each with its own properties and ad
 
 - **Steane code:** This is a seven-qubit code that can correct both bit flip and phase flip errors. It has the advantage of being fault-tolerant, meaning that the error correction process itself doesn't introduce extra errors.
 
-- **Surface code:** This is a topological error correction code that uses a two-dimensional lattice of qubits to encode logical qubits. It has a high error correction threshold and is considered one of the most promising techniques for large-scale, fault-tolerant quantum computing. The surface code is used by the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
+- **Surface code:** This is a topological error correction code that uses a two-dimensional lattice of qubits to encode logical qubits. It has a high error correction threshold and is considered one of the most promising techniques for large-scale, fault-tolerant quantum computing. The surface code is used by the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.resources-estimator#quantum-error-correction-schemes).
 
 - **Hastings-Haah code:** This quantum error correction code offers better space-time costs than surface codes on Majorana qubits in many regimes. For gate-based instruction sets, the overhead is larger, which makes this approach less efficient than the surface code.
 

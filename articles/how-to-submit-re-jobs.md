@@ -6,17 +6,17 @@ ms.date: 12/18/2024
 ms.service: azure-quantum
 ms.custom:
 ms.topic: how-to
-title: Run the Resource Estimator
+title: Run the Microsoft Quantum resource estimator
 uid: microsoft.quantum.submit-resource-estimation-jobs
 no-loc: ["Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Azure", "Q#", "Python", "Jupyter Notebook", "Jupyter", "target", "targets"]
 zone_pivot_groups: ide-local-jupyter-qiskit
 ---
 
-# Different ways to run the Resource Estimator
+# Different ways to run the Microsoft Quantum resource estimator
 
-In this article, you learn how to work with the [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The Resource Estimator helps you estimate the resources required to run a quantum program on a quantum computer. You can use the Resource Estimator to estimate the number of qubits, the number of gates, and the depth of the circuit required to run a quantum program.
+In this article, you learn how to work with the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The resource estimator helps you estimate the resources required to run a quantum program on a quantum computer. You can use the resource estimator to estimate the number of qubits, the number of gates, and the depth of the circuit required to run a quantum program.
 
-The Resource Estimator is available in Visual Studio Code (VS Code) as part of the Azure Quantum Development Kit (QDK) extension. For more information, see [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+The resource estimator is available in Visual Studio Code (VS Code) as part of the Microsoft Quantum Development Kit (QDK) extension. For more information, see [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ::: zone pivot="platform-local"
 
@@ -37,11 +37,11 @@ The Resource Estimator is available in Visual Studio Code (VS Code) as part of t
 ::: zone-end
 
 > [!NOTE]
-> If you experience issues when you work with the Resource Estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you experience issues when you work with the resource estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Next steps
 
-- [Understand the results of the Resource Estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
+- [Understand the results of the Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.resources-estimator-output.data)
 - [Customize resource estimates to machine characteristics](xref:microsoft.quantum.overview.resources-estimator)
-- [Handle large programs with the Resource Estimator](xref:microsoft.quantum.resource-estimator-caching)
+- [Handle large programs with the Microsoft Quantum resource estimator](xref:microsoft.quantum.resource-estimator-caching)
 - [Tutorial: Estimate the resources of a quantum chemistry problem](xref:microsoft.quantum.tutorial.resource-estimator.chemistry)

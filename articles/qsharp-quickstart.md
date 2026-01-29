@@ -1,6 +1,6 @@
 ---
 author: haileytap
-description: This article explains how to create your first Q# program using the Quantum Development Kit and Visual Studio Code.
+description: This article explains how to create your first Q# program using the QDK and VS Code.
 ms.author: quantumdocwriters
 ms.date: 08/23/2024
 ms.service: azure-quantum
@@ -29,7 +29,7 @@ In this quickstart, you:
 ## Prerequisites
 
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download).
-- The [Azure Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+- The [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 ## Create a Q# file
 

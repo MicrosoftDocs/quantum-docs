@@ -17,13 +17,13 @@ This article describes the Microsoft support policy that applies when you use th
 
 If you're using the Quantinuum provider and hit unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
-In some situations, the Azure Support team needs to redirect you to Quantinuum's support team. You may receive a quicker response by reaching out to Quantinuum directly at <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. 
+In some situations, the Azure Support team needs to redirect you to Quantinuum's support team. You may receive a quicker response by reaching out to Quantinuum directly at <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>.
 
 ## Quantinuum support policy - Public Preview
 
-The goal of support is to identify and remedy defects or malfunctions causing the Quantinuum hardware target to fail to perform in accordance with the agreed specifications and documentation (“Problems”). Support only covers the current released version generally available to customers. Although our quantum experts can help you troubleshoot algorithm issues, we're not responsible for any issues, problems, or defects with your algorithm. To minimize programming issues, users are able to run their algorithms through the syntax checker prior to running on hardware. 
+The goal of support is to identify and remedy defects or malfunctions causing the Quantinuum hardware target to fail to perform in accordance with the agreed specifications and documentation (“Problems”). Support only covers the current released version generally available to customers. Although our quantum experts can help you troubleshoot algorithm issues, we're not responsible for any issues, problems, or defects with your algorithm. To minimize programming issues, users are able to run their algorithms through the syntax checker prior to running on hardware.
 
-### 1.1	Contacting technical support within Quantinuum
+### Contacting technical support within Quantinuum
 
 To create a support request with Quantinuum, submit an incident report via email to <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). The Quantinuum team only receives incident reports that contain all of the following information and have the appropriate SLA resolution window. Reports without the necessary information don't trigger this response. All requests must be provided in the English language and are answered in the English language.
 
@@ -41,17 +41,17 @@ The incident report requires the following information:
 - **Primary contact**: A primary contact name and phone number in case we require more information
 - **Incident severity**: the severity of the incident, according to our severity definitions
 
-Once a report is filed, the Quantinuum team is notified and responds within the required SLA window. You'll receive an acknowledgment of the issue once it has been received and the on-call engineer has been notified. The on-call engineer may request more information, or may call you at the contact number listed in the report depending on the severity. 
+Once a report is filed, the Quantinuum team is notified and responds within the required SLA window. You'll receive an acknowledgment of the issue once it has been received and the on-call engineer has been notified. The on-call engineer may request more information, or may call you at the contact number listed in the report depending on the severity.
 
 During Reserved (dedicated) Sessions, Quantinuum provides at least one quantum specialist available to you for customer support for the entirety of your dedicated session. Quantinuum reserves the right to change out the specialist during your session, but will use commercially reasonable efforts to ensure the new specialist is prepared to continue providing support.
 
-During queued runs, if your job is running in the general queue and you encounter an issue, you may submit your issue request online at: <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. You can expect to receive an answer within three (3) business days. 
+During queued runs, if your job is running in the general queue and you encounter an issue, you may submit your issue request online at: <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. You can expect to receive an answer within three (3) business days.
 
-### 1.2	Quantinuum severity index and response SLA
+### Quantinuum severity index and response SLA
 
 If the Quantinuum engineer determines that the issue doesn't fall within the bounds of our incident response commitments, or doesn't have the right severity classification, they may opt at their sole discretion to adjust the severity and/or end support if the new severity doesn't require it.
 
-Certain problems may be easier to address than others, and we may not be able to completely resolve the problem with our initial response. If we're unable to reasonably resolve the problem, we'll make a good faith effort to give an assessment of the issue and an estimated time for resolution. 
+Certain problems may be easier to address than others, and we may not be able to completely resolve the problem with our initial response. If we're unable to reasonably resolve the problem, we'll make a good faith effort to give an assessment of the issue and an estimated time for resolution.
 
 _Table 2: Definition of severity index_
 

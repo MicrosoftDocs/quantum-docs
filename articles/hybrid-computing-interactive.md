@@ -6,7 +6,7 @@ ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
-no-loc: ['Q#', '$$v', "Variational Quantum Eigensolver", "Quantum Approximate Optimization Algorithm", "target", "targets", "AI", "azure-quantum", "Azure Quantum", "Azure Quantum Development Kit", "Circuit Editor", "cirq", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "qiskit", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
+no-loc: ['Q#', '$$v', "Variational Quantum Eigensolver", "Quantum Approximate Optimization Algorithm", "target", "targets", "AI", "azure-quantum", "Azure Quantum", "Microsoft Quantum Development Kit", "Circuit Editor", "cirq", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "qiskit", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
 title: Get Started with Sessions
 uid: microsoft.quantum.hybrid.interactive
 

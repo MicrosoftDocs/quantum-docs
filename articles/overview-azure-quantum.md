@@ -1,12 +1,12 @@
 ---
 author: azure-quantum-content
-description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs problems in the cloud.
+description: Azure Quantum is a Microsoft Azure service that you can use to run quantum computing programs in the cloud.
 ms.date: 10/30/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Quantum Development Kit, Quantum Intermediate Representation, target, targets]
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum Development Kit, Quantum Intermediate Representation, target, targets]
 title: What is Azure Quantum?
 uid: microsoft.quantum.azure-quantum-overview
 #customer intent: As a quantum programmer, I want to know how I can use Azure Quantum. 
@@ -27,8 +27,8 @@ How you get started with Azure Quantum depends on your current setup and require
 | User type                                             | How to get started |
 |-------------------------------------------------------|--------------------|
 | I don't have an Azure account and I'm not a developer | Visit the [Microsoft Quantum website](#the-microsoft-quantum-website) |
-| I don't have an Azure account and I'm a developer     | Install the [Azure Quantum Development Kit for Visual Studio Code](#visual-studio-code) |
-| I have an Azure account                               | Create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Then, either use the [Azure portal](#the-azure-portal) or install the [Quantum Development Kit for Visual Studio Code](#visual-studio-code) |
+| I don't have an Azure account and I'm a developer     | Install the [Microsoft Quantum Development Kit extension for Visual Studio Code](#visual-studio-code) |
+| I have an Azure account                               | Create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Then, either use the [Azure portal](#the-azure-portal) or install the [Quantum Development Kit for Visual studio code](#visual-studio-code) |
 
 You don't need to have an Azure account to use Azure Quantum. But, if you want to submit your quantum programs to real quantum hardware in Azure Quantum, then you need to have an Azure account and an Azure Quantum workspace.
 
@@ -36,24 +36,24 @@ To get an Azure account, register for free and sign up for a [pay-as-you-go subs
 
 ### The Microsoft Quantum website
 
-The [Microsoft Quantum website](https://quantum.microsoft.com/) is a central resource where you can explore quantum computing. You can engage with Copilot in Azure Quantum, a quantum-focused AI agent that helps you write code and better understand quantum concepts. You can also learn from experts and enthusiasts through blogs, articles, and videos.
+The [Microsoft Quantum website](https://quantum.microsoft.com/) is a central resource where you can explore quantum computing. You can engage with Copilot in Microsoft Quantum, a quantum-focused AI agent that helps you write code and better understand quantum concepts. You can also learn from experts and enthusiasts through blogs, articles, and videos.
 
 You can try out Q# code samples in the [online code editor](https://quantum.microsoft.com/tools/quantum-coding), submit your code to the cloud-based Quantinuum Emulator, and open your code in [VS Code for the Web](https://vscode.dev/quantum) to work in a pre-configured quantum environment.
 
-The Microsoft Quantum website is free to use and doesn't require an Azure account. To get started, you need only a Microsoft (MSA) email account. For more information, see [Explore Copilot in Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
+The Microsoft Quantum website is free to use and doesn't require an Azure account. To get started, you need only a Microsoft (MSA) email account. For more information, see [Explore Copilot in Microsoft Quantum](xref:microsoft.quantum.get-started.azure-quantum).
 
 ### Visual Studio Code
 
-Azure Quantum offers the Quantum Development Kit (QDK), a software development kit designed specifically for quantum development. With the QDK, you can write programs in different quantum programming languages, debug your code, get real-time code feedback, and submit jobs to real quantum hardware through Azure Quantum. The QDK supports Microsoft's Q# programming language, along with other languages like Qiskit, Cirq, and OpenQASM.
+Azure Quantum offers the Microsoft Quantum Development Kit (QDK), a software development kit designed specifically for quantum development. With the QDK, you can write programs in different quantum programming languages, debug your code, get real-time code feedback, and submit jobs to real quantum hardware through Azure Quantum. The QDK supports Microsoft's Q# programming language, along with other languages like Qiskit, Cirq, and OpenQASM.
 
-The Quantum Development Kit is free and open source. To get started, install the QDK extension in Visual Studio Code (VS Code). For more information, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+The QDK is free and open source. To get started, install the QDK extension in Visual Studio Code (VS Code). For more information, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 > [!NOTE]
 > An Azure Quantum workspace is required to run your local quantum programs on Azure Quantum provider hardware. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 ### The Azure portal
 
-If you have an Azure account, then use the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum) to create an Azure Quantum workspace. An Azure Quantum workspace is a collection of assets that are associated with running  quantum programs. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+If you have an Azure account, then use the [Azure portal](https://ms.portal.azure.com/#create/Microsoft.AzureQuantum) to create an Azure Quantum workspace. An Azure Quantum workspace is a collection of assets that are associated with running quantum programs. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 With the Azure portal, you can submit your quantum programs to real quantum hardware, manage your Azure Quantum workspace, view information about your quantum jobs, and monitor your quantum programs.
 
@@ -83,13 +83,13 @@ For more information, see [Hybrid quantum computing](xref:microsoft.quantum.over
 
 In quantum computing, resource estimation is the ability to understand the resources that are required to run an algorithm on a quantum computer. When you understand the resource requirements to run your programs on different types of quantum hardware, you can prepare and refine your quantum solutions to run on future scaled quantum machines. For example, resource estimation can help you determine the feasibility of breaking a particular encryption algorithm on a quantum computer.
 
-The [Azure Quantum Resource Estimator](xref:microsoft.quantum.overview.intro-resource-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources that you need to run a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols, or set your own estimation parameters. The Resource Estimator computes post-layout physical resource estimates given a set of inputs such as qubit parameters, the quantum error correction (QEC) code, the error budget, and [other parameters](xref:microsoft.quantum.overview.resources-estimator).
+The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources that you need to run a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols, or set your own estimation parameters. The resource estimator computes post-layout physical resource estimates given a set of inputs such as qubit parameters, the quantum error correction (QEC) code, the error budget, and [other parameters](xref:microsoft.quantum.overview.resources-estimator).
 
 To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
 
-:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by Resource Estimator and corresponding customizations.":::
+:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by resource estimator and corresponding customizations.":::
 
-### Quantum chemistry simulations with Azure Quantum
+### Quantum chemistry simulations with Azure Quantum and the QDK
 
 Quantum mechanics is like the underlying operating system of our universe, and describes how the fundamental building blocks of nature behave. Chemical reactions, cellular processes, and material properties are all quantum mechanical in nature, and often involve interactions between a huge number of quantum particles. Quantum computers have promise to simulate intrinsically quantum mechanical systems, such as molecules, because qubits can be used to represent the natural quantum states in these systems. Examples of quantum systems that we can model include photosynthesis, superconductivity, and complex molecular formations.
 
@@ -128,5 +128,5 @@ To start using Azure Quantum, explore the following links:
 
 - [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace)
 - [Get started with Q# and Visual Studio Code](xref:microsoft.quantum.submit-jobs)
-- [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
+- [Install the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Run a Qiskit circuit in Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
