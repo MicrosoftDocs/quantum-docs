@@ -148,7 +148,7 @@ operation Main() : (Int, Int, Int, Int) {
 }
 ```
 
-Copy and paste the complete code sample into [Copilot for Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slider for the number of shots to "1", and then choose **Run**. The results display in the histogram and in the **Results** fields.
+Copy and paste the complete code sample into the [Copilot for Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) code window, set the slider for the number of shots to "1", and then choose **Run**. The results display in the histogram and in the **Results** fields.
 
 ```output
 Q1 - Zeros: 0

@@ -5,7 +5,7 @@ ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: include
-no-loc: [Microsoft Quantum Development Kit, QDK,target, targets]
+no-loc: [Microsoft Quantum Development Kit, QDK, target, targets]
 #customer intent: As a quantum programmer, I want to learn about quantum entanglement
 ---
 

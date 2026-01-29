@@ -6,7 +6,7 @@ ms.date: 01/13/2025
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
-no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit,target, targets]
+no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
 title: "Tutorial: Implement Grover's Algorithm in Q#"
 uid: microsoft.quantum.tutorial-qdk.grovers
 #customer intent: As a quantum programmer, I want to learn how to demonstrate Grover's algorithm in a Q# program.

@@ -7,7 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ['Q#', '$$v', target, targets]
-title: Use the Microsoft Quantum Resource Estimator for Analyzing Cryptography
+title: Use the Microsoft Quantum resource estimator to analyzing cryptography
 uid: microsoft.quantum.resource-estimator-cryptography
 
 #customer intent: As a quantum developer, I want to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm, so that I can analyze the impact of quantum computing on the security of some classical encryption methods and prepare for a quantum-safe future.
