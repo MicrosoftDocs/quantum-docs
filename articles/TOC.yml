@@ -274,7 +274,7 @@
     href: /training/paths/quantum-computing-fundamentals/
   - name: Learn about quantum computing with Microsoft Quantum Katas >>
     href: https://quantum.microsoft.com/en-us/tools/quantum-katas
-  - name: Contributing to Azure Quantum
+  - name: Contributing to the Microsoft Quantum Development Kit
     href: contributing-overview.md
   - name: Further reading
     href: further-reading-qdk.md
