@@ -27,6 +27,7 @@ The QDK offers a rich set of tools and features to help you excel in quantum dev
 - Visualization tools for quantum circuits and output from your quantum programs.
 - Full integration with Azure Quantum to submit jobs that run on real quantum hardware.
 - Local simulators to test and run quantum programs on your local device.
+- Python libraries for quantum chemistry calculations on classical and quantum computers.
 
 In addition to a robust set of quantum-specific features, the QDK offers standard VS Code development tools such as syntax highlighting, code suggestions with IntelliSense, CodeLens shortcuts, error checking and debugging, and code references.
 
@@ -45,5 +46,6 @@ Explore the following documentation to learn more about the main features of the
 - [Microsoft's Q# programming language](xref:microsoft.quantum.qsharp-overview)
 - [The OpenQASM programming language](xref:microsoft.quantum.how-to.openqasm-development-qdk)
 - [Qiskit and Cirq Python libraries](xref:microsoft.quantum.overview.qdk-qiskit-cirq)
+- [Chemistry applications with QDK for chemistry](xref:microsoft.quantum.overview.qdk-chemistry)
 - [Build circuits with the Circuit Editor](xref:microsoft.quantum.how-to.qdk-circuit-editor)
 - [Copilot integration in VS Code](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup)
