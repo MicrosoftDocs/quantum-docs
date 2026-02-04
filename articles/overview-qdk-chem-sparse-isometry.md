@@ -26,4 +26,4 @@ The sparse isometry implementation in QDK/Chemistry allows you to encode ab init
 
 ## Learn more
 
-To learn more about state preparation circuits and sparse isometry in QDK/Chemistry, see [State preparation](https:/microsoft.github.io/qdk-chemistry/user/comprehensive/algorithms/state_preparation.html) in the QDK/Chemistry documentation on GitHub.
+To learn more about state preparation circuits and sparse isometry in QDK/Chemistry, see [State preparation](https://microsoft.github.io/qdk-chemistry/user/comprehensive/algorithms/state_preparation.html) in the QDK/Chemistry documentation on GitHub.
