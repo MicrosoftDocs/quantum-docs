@@ -43,7 +43,7 @@ groups:
   - id: ide-azure-portal
     title: Azure Quantum portal
   - id: ide-azure-copilot
-    title: Copilot for Azure Quantum
+    title: Copilot for Microsoft Quantum
   - id: ide-local
     title: Local computer
 - id: ide-platforms-copilot-vscode
@@ -51,7 +51,7 @@ groups:
   prompt: Select your preferred development environment
   pivots:
   - id: ide-azure-copilot
-    title: Copilot for Azure Quantum
+    title: Copilot for Microsoft Quantum
   - id: ide-local
     title: Local computer
 - id: ide-local-portal-jupyter
