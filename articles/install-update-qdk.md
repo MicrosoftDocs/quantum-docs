@@ -19,7 +19,7 @@ Learn how to update the Microsoft Quantum Development Kit (QDK) to the latest ve
 
 ## Prerequisites
 
-- This article assumes that you already have the QDK extension installed in Visual Studio Code (VS Code). If you're installing for the first time, then refer to the [installation guide](xref:microsoft.quantum.install-qdk.overview).
+- This article assumes that you already have the QDK extension installed in Visual Studio Code (VS Code). If you're installing for the first time, then refer to [Install the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 
 ## Update the VS Code extension
 

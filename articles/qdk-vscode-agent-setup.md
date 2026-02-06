@@ -43,7 +43,7 @@ To activate the QDK tools for agent mode, follow these steps:
 
 1. Open Copilot Chat in VS Code.
 1. If the chat is in **Ask** mode or **Edit** mode, then select the mode dropdown at the bottom of the chat input box and choose **Agent**.
-1. Select the Tools icon at the bottom of the chat input box.
+1. Select the Configure Tools icon at the bottom of the chat input box.
 
 A list pops up that contains all your available agent tools. Select all the tools under **Microsoft Quantum Development Kit (QDK)** to activate the QDK tools.
 
