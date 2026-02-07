@@ -32,43 +32,44 @@ All you need to start exploring Microsoft Quantum is a Microsoft (MSA) email acc
 To start exploring Copilot and coding in Microsoft Quantum site, use one of the samples from the **Quantum Samples** dropdown.
 
 1. Navigate to [Quantum coding](https://quantum.microsoft.com/tools/quantum-coding) using any Microsoft (MSA) account.
-1. Select **Quantum Samples** and then select **Random Number Generator**. The following code is copied to the code window.
+1. Select **Quantum Samples** and then select **Random Bits**. The following code is copied to the code window.
 
     ```qsharp
-    /// # Sample
-    /// Quantum Random Number Generator
+    /// # Summary
+    /// Simple Quantum Random Number Generator sample 
     ///
     /// # Description
     /// This program implements a quantum random number generator by setting qubits
-    /// in superposition and then using the measurement results as random bits.
-
-    import Std.Measurement;
-    import Std.Intrinsic;
-
+    /// into superposition and then using the measurement results as random bits.
+    /// This is equivalent to generating a random number in the range of 0..2ᴺ-1.
     operation Main() : Result[] {
         // Generate 5-bit random number.
-        let nBits = 5;
-        return GenerateNRandomBits(nBits);
+        GenerateNRandomBits(5);
     }
 
     /// # Summary
-    /// Generates N random bits.
+    /// Generates N random bits in the form of `Zero` or `One` results.
     operation GenerateNRandomBits(nBits : Int) : Result[] {
-        // Allocate N qubits.
-        use register = Qubit[nBits];
-
-        // Set the qubits into superposition of 0 and 1 using the Hadamard
-        // operation `H`.
-        for qubit in register {
-            H(qubit);
+        // Array for the results  
+        mutable results = [];
+        for _ in 1..nBits {
+            // Append next random result to the array
+            results +=  [GenerateRandomBit()];                
         }
+        results
+    }
 
-        // At this point each has 50% chance of being measured in the |0〉 state
-        // and 50% chance of being measured in the |1〉 state.
-        // Measure each qubit and reset them all so they can be safely deallocated.
-        let results = MeasureEachZ(register);
-        ResetAll(register);
-        return results;
+    /// # Summary
+    /// Generates a random bit in the form of `Zero` or `One` result.
+    operation GenerateRandomBit() : Result {
+        // Allocate a qubit
+        use q = Qubit();
+        // Set the qubit into uniform superposition of |0〉 and |1〉
+        H(q);
+        // Now the qubit has 50% chance of being measured as `One`
+        // and 50% chance of being measured as `Zero`.
+        // Measure and reset the qubit. Return the result.
+        MResetZ(q)
     }
     ```
 
@@ -81,7 +82,7 @@ To start exploring Copilot and coding in Microsoft Quantum site, use one of the 
 
 To run your program again using a different simulator:
 
-1. Select the **In-Memory Simulator** dropdown and select **Quantinuum Emulator**.
+1. Select the **In-Memory Simulator** dropdown and select **Quantinuum's H-Series Emulator**.
 1. Select the number of shots (currently limited to 20) and select **Run**.
 
 - The job status is displayed at the top of the code window.
