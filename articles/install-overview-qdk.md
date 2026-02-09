@@ -12,8 +12,7 @@ uid: microsoft.quantum.install-qdk.overview
 #customer intent: As a quantum developer, I want to configure my environment with the latest Microsoft Quantum tools. 
 ---
 
-# Set up the Microsoft Quantum Development Kit extension
-
+# Set up the Microsoft Quantum Development Kit
 In this article, you learn how to install the Microsoft Quantum Development Kit (QDK) extension for Visual Studio Code (VS Code) and add support for Python, Jupyter Notebook, and the Azure CLI.
 
 ## Prerequisites
