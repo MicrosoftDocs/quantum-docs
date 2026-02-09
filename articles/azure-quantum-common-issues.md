@@ -189,13 +189,13 @@ job.wait_for_final_state()
 result = job.result()
 ```
 
-## Azure Quantum Resource Estimator
+## Microsoft Quantum resource estimator
 
 The following issues might prevent resource estimation jobs from completing. See how to resolve these issues.
 
 ### Issue: Quantum algorithm must contain at least one T state or measurement
 
-To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the Resource Estimator assumes that *Parallel Synthesis Sequential Pauli Computation (PSSPC)*  is performed on the input program. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
+To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the resource estimator assumes that *Parallel Synthesis Sequential Pauli Computation (PSSPC)*  is performed on the input program. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford
 operation that can be efficiently evaluated classically. Therefore, a quantum program that does not contain T states, for example from T gates or rotation gates, or measurement operations does not require any physical quantum computing resources. For more information about Parallel Synthesis Sequential Pauli Computation, see [arXiv:2211.07629, Appendix D](https://arxiv.org/pdf/2211.07629.pdf#page=25).
 
 ```output
