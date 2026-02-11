@@ -22,7 +22,7 @@ To use the neutral atom device simulators, you must install the following:
 
 - Python environment (version 3.10 or greater) with Python and Pip
 - Visual Studio Code (VS Code) with the Jupyter Notebook extension, or open VS Code for the Web
-- The latest version of the QDK extension in VS Code
+- The latest version of the [QDK extension in VS Code](xref:microsoft.quantum.install-qdk.overview)
 
 ## Install the neutral atom device simulators
 
