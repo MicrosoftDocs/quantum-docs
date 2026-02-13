@@ -41,14 +41,14 @@ The following example demonstrates how to use the debugger with a Q# program. Fo
    }
    ```
 
-1. On line 6, `H(qubit)`, click to the left of the line number to set a breakpoint. A red circle appears.
-1. In the Primary Side Bar, choose the debugger icon to open the debugger pane, and then choose **Run and Debug**. The debugger control bar appears.
+1. On line 6, `H(qubit)`, click to the left of the line number to set a breakpoint. A red circle is shown.
+1. In the Primary Side Bar, choose the debugger icon to open the debugger pane, and then choose **Run and Debug**. The debugger control bar opens.
 1. Press **F5** to start the debugger and continue to the breakpoint. In **Variables** menu of the debugger pane, expand the **Quantum State** dropdown to see that the qubit has been initialized in the $\ket{0}$ state.
 1. Press **F11** to step into the `H` operation. The source code for the `H` operation appears. Notice that **Quantum State** changes to a superposition as you step through the `H` operation.
-1. Press **F10** to step over the `M` operation. Notice that **Quantum State** resolves to either $\ket{0}$ or $\ket{1}$ after the measurement. The `result` variable also appears under **Locals**.
+1. Press **F10** to step over the `M` operation. Notice that **Quantum State** resolves to either $\ket{0}$ or $\ket{1}$ after the measurement. The `result` variable is listed under **Locals**.
 1. Press **F10** again to step over the `Reset` operation. Notice that **Quantum State** is reset to $\ket{0}$.
 
-When you're finished exploring the debugger, press ***Ctrl + F5** to exit the debugger.
+When you're finished exploring the debugger, press **Shift + F5** to exit the debugger.
 
 > [!NOTE]
 > The VS Code debugger works only with Q# (`.qs`) and OpenQASM (`.qasm`) files. You can't use the VS Code debugger on Q# cells in Jupyter Notebook.

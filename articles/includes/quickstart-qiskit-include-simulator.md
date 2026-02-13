@@ -44,7 +44,7 @@ print(counts)
 
 To run the program, select the Run icon in the upper right, and select **Run Python file**. The output displays in a new terminal window.
 
-```html
+```output
                   ┌─────────────────────────┐┌─┐
 q_0: ─■───────────┤0                        ├┤M├───
       │P(0.79983) │  (XX-YY)(1.9337,1.7385) │└╥┘┌─┐
