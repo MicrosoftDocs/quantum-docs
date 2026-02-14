@@ -407,7 +407,7 @@ The resource estimator provides multiple estimates for the same algorithm. Compa
 1. Go to the **QDK Estimates** tab.
 1. The **Results** dropdown displays a summary of the resource estimation. Choose the **menu icon** in the first row to select the columns that display. For example, select **Estimate type**, **Qubit type**, **QEC scheme**, **Error budget**, **Code distance**, **Runtime**, and **Physical qubits**.
 
-    :::image type="content" source="media/vscode-estimates-local-results-tab-shorRE.png" alt-text="Screen shot that shows how to use the menu to select the resource estimate output columns.":::
+    :::image type="content" source="../media/vscode-estimates-local-results-tab-shorRE.png" alt-text="Screen shot that shows how to use the menu to select the resource estimate output columns.":::
 
     The number of optimal combinations of *{number of qubits, runtime}* for your algorithm is in the **Estimate type** column of the results table. Each combination appears as a point in the space-time diagram. In this case, there are 14 combinations.
 
@@ -416,14 +416,14 @@ The resource estimator provides multiple estimates for the same algorithm. Compa
 
 1. The **Space-time diagram** dropdown shows the tradeoffs between the number of physical qubits and the runtime of the algorithm. In this case, the resource estimator finds 14 optimal combinations out of many thousands of possible combinations. To view an estimation summary for a combination, hover over or select the corresponding point in the diagram.
 
-    :::image type="content" source="media/qubit-time-diagram-shorRE.png" alt-text="Screen shot showing the space-time diagram of the resource estimator.":::
+    :::image type="content" source="../media/qubit-time-diagram-shorRE.png" alt-text="Screen shot showing the space-time diagram of the resource estimator.":::
 
     > [!NOTE]
     > Select a point in the space-time diagram to see the space diagram and the details of the resource estimation that correspond to that point.
 
 1. The **Space diagram** dropdown displays the distribution of physical qubits that your algorithm uses and the [T factories](xref:microsoft.quantum.concepts.tfactories). Select different points in the space-time diagram to see how the total number of physical qubits, algorithm qubits, and T factory qubits change for each point.
 
-    :::image type="content" source="media/vscode-estimates-local-diagram-shorRE.png" alt-text="Screen shot that shows the space diagram of the resource estimator.":::
+    :::image type="content" source="../media/vscode-estimates-local-diagram-shorRE.png" alt-text="Screen shot that shows the space diagram of the resource estimator.":::
 
 1. The **Resource Estimates** dropdown displays the full list of output data from the resource estimator. To view more information about each resource category, expand the corresponding dropdown. For example, expand the **Logical qubit parameters** group for the point shown in the previous steps.
 

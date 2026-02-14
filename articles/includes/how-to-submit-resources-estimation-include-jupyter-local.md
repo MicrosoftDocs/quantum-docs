@@ -438,7 +438,7 @@ from qdk.widgets import SpaceChart, EstimateDetails
 SpaceChart(result)
 ```
 
-:::image type="content" source="../media/resource-estimator-diagram-jupyter.png" alt-text="Screen shot showing the space diagram of the resource estimator.":::
+:::image type="content" source="../media/resource-estimator-diagram-jupyter.png" alt-text="Screen shot that shows the space diagram of the resource estimator.":::
 
 The space diagram shows the proportion of algorithm qubits and T factory qubits. The number of T factory copies, in this case 19, contributes to the number of physical qubits that are used for T factories according to the following equation:
 
@@ -643,7 +643,7 @@ The space-time diagram shows the number of physical qubits and the runtime of th
     EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
     ```
 
-    :::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot tnat shows the space-time diagram of the resource estimator when you use Pareto frontier estimation and multiple configurations of parameters.":::
+    :::image type="content" source="../media/qubit-time-frontier-multiple-config-shorRE.png" alt-text="Screenshot that shows the space-time diagram of the resource estimator when you use Pareto frontier estimation and multiple configurations of parameters.":::
 
     > [!NOTE]
     > To define colors and run names for the qubit-time diagram, use the `EstimatesOverview` function.
