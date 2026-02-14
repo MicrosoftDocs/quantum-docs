@@ -74,6 +74,7 @@ The diagram has interactive elements that let you explore a simulation of how qu
 The diagram contains three zones:
 
 | Zone             | Description |
+|------------------|-------------|
 | Storage zone     | This zone is labeled **Register 1**. The qubits start in the storage zone and stay there until they're ready for processing or measurement. Qubits always move back to the storage zone after operations and measurements. |
 | Interaction zone | This zone is where quantum gates are applied to the qubits for processing. |
 | Measurement zone | This zone is where the qubits are measured. |
@@ -83,8 +84,9 @@ The diagram contains three zones:
 Use the elements at the top of the diagram to interact with the diagram and view a simulation of how your program runs. The diagram contains the following elements:
 
 | UI element                   | Description |
-| Play button (▶)              | Plays an animation that goes through each step of the program. During the animation, choose this button again to pause the animation on the current step. |
+|------------------------------|-------------|
+| Play button                  | Plays an animation that goes through each step of the program. During the animation, choose this button again to pause the animation on the current step. |
 | Forward and backward buttons | Goes through the program one step at a time without playing the full animation. |
 | Progress slider              | Move the slider to go through the program and choose a specific step. At each step, hover over a qubit to see where the qubit moved from in the previous step. |
 | Resize buttons               | Choose the up arrow button to increase the size of the diagram, and choose the down arrow button to decrease the size of the diagram. |
-|Information icon (i)          | Displays a list of keyboard shortcuts that let you interact with the diagram. |
+| Information icon (i)         | Displays a list of keyboard shortcuts that let you interact with the diagram. |

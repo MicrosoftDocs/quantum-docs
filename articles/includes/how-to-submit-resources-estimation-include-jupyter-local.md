@@ -535,7 +535,7 @@ result_maj = qsharp.estimate("RunProgram()", params=inputParams)
 EstimateDetails(result_maj)
 ```
 
-# Run batch resource estimates
+## Run batch resource estimates
 
 The Microsoft Quantum resource estimator allows you to run multiple configurations of target parameters and compare the results for each configuration. To run a batch resource estimate, follow these steps:
 
