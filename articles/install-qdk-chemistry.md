@@ -19,10 +19,11 @@ In this article, you learn how to install QDK for chemistry (QDK/Chemistry), a P
 ## Prerequisites
 
 - Install the latest version of [Visual Studio (VS) Code](https://code.visualstudio.com/download).
+- Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions in VS Code.
 - Install a Python interpreter (version 3.11, 3.12 or 3.13).
 
 > [!IMPORTANT]
-> Windows support for QDK/Chemistry is provided through the Windows Subsystem for Linux (WSL). To use QDK/Chemistry on Windows machines, you must [install WSL](https://learn.microsoft.com/windows/wsl/install).
+> Windows support for QDK/Chemistry is provided through the Windows Subsystem for Linux (WSL). To use QDK/Chemistry on Windows machines, you must [install WSL](https://learn.microsoft.com/windows/wsl/install). To use VS Code in WSL, [install the WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
 
 ## Install the `qdk-chemistry` library
 
@@ -37,6 +38,9 @@ To use the `qdk-chemistry` library in Jupyter Notebook, run the following comman
 ```bash
 python -m pip install "qdk-chemistry[jupyter]"
 ```
+
+> [!NOTE]
+> To use QDK/Chemistry with Jupyter Notebook in VS Code, make sure that your notebook uses the Python interpreter in the virtual environment where you installed `qdk-chemistry`.
 
 To optimize your build, see [Installation Instructions for QDK/Chemistry](https://github.com/microsoft/qdk-chemistry/blob/main/INSTALL.md) on GitHub for detailed manual installation instructions.
 

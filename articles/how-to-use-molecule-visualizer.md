@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: This article describes how to install, create, and use the molecule visualizer with QDK for chemistry. 
+description: This article describes how to install, open, and use the molecule visualizer with QDK for chemistry. 
 ms.date: 01/23/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
@@ -58,10 +58,11 @@ For example, to load a `Structure` object for *p*-benzyne from a `.xyz` file, fo
 1. In the first cell of your notebook, copy and run the following code to load the structure:
 
     ```python
-    from qdk-chemistry import Structure
+    from qdk_chemistry.data import Structure
 
-    structure = Structure()
-    structure.from_xyz_file('para-benzyne.structure.xyz')
+    structure = Structure.from_xyz_file('para-benzyne.structure.xyz')
+
+    structure
     ```
 
 For more information about `Structure` objects in the QDK/Chemistry, see [Structure](https:/microsoft.github.io/qdk-chemistry/user/comprehensive/data/structure.html) in the QDK/Chemistry documentation on GitHub.
@@ -78,6 +79,8 @@ viewer
 ```
 
 The molecule visualizer opens in the output cell and renders a 3D representation of the molecular structure. The visualizer automatically draws bonds between atoms that are within a chemically reasonable distance threshold.
+
+:::image type="content" source="media/molecule-visualizer-style.png" alt-text="Screenshot of the molecule visualizer with the style dropdown menu open.":::
 
 To change the visual representation, open the **Visualization Style** dropdown and choose one of the following options:
 
@@ -114,11 +117,13 @@ cube_data = {
 MoleculeViewer(molecule_data=structure.to_xyz(), cube_data=cube_data, isoval=0.03)
 ```
 
+:::image type="content" source="media/molecule-visualizer-mos.png" alt-text="Screenshot of the molecule visualizer with display options for molecular orbitals.":::
+
 When you pass cube data to the `MoleculeViewer` widget, the visualizer has the following additional UI elements:
 
 | UI element          | Description                                                                                |
 |---------------------|--------------------------------------------------------------------------------------------|
-| **Cube selection**  | Choose the MO that visualizer displays. You can view only one MO at a time.                |
+| **Cube selection**  | Choose the MO that the visualizer displays. You can view only one MO at a time.                |
 | **Adjust isovalue** | Set the isovalue of the MO coefficients. The isovalue determines how the MOs are rendered. |
 
 For information on how to generate `.cube` files, see [`qdk_chemistry.utils.cubegen module](https://microsoft.github.io/qdk-chemistry/api/api_autogen/qdk_chemistry.utils.cubegen.html#qdk_chemistry.utils.cubegen.generate_cubefiles_from_orbitals) in the QDK/Chemistry API reference on GitHub.
