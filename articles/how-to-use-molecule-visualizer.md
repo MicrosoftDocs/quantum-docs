@@ -58,7 +58,7 @@ For example, to load a `Structure` object for *p*-benzyne from a `.xyz` file, fo
 1. In the first cell of your notebook, copy and run the following code to load the structure:
 
     ```python
-    from qdk-chemistry import Structure
+    from qdk_chemistry import Structure
 
     structure = Structure()
     structure.from_xyz_file('para-benzyne.structure.xyz')
