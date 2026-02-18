@@ -41,7 +41,7 @@ To visualize quantum circuits of Q# programs in VS Code, complete the following 
 
     :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot of a Q# file in Visual Studio Code that shows where to find the code lens circuit command.":::
 
-The Q# circuit window appears and displays the circuit diagram for your program. For example, the following circuit corresponds to an operation that puts a qubit in a superposition state and then measures the qubit. The circuit diagram shows one qubit register that's initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol. In this case, the measurement result is zero.
+The Q# circuit window opens and displays the circuit diagram for your program. For example, the following circuit corresponds to an operation that puts a qubit in a superposition state and then measures the qubit. The circuit diagram shows one qubit register that's initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol. In this case, the measurement result is zero.
 
 :::image type="content" source="media/circuit-vscode-randombit.png" alt-text="Screenshot of the Q# circuit window that shows the circuit diagram for the random bit operation.":::
 
