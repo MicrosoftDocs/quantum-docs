@@ -44,17 +44,6 @@ print(counts)
 
 To run the program, select the Run icon in the upper right, and select **Run Python file**. The output displays in a new terminal window.
 
-```output
-                  ┌─────────────────────────┐┌─┐
-q_0: ─■───────────┤0                        ├┤M├───
-      │P(0.79983) │  (XX-YY)(1.9337,1.7385) │└╥┘┌─┐
-q_1: ─■───────────┤1                        ├─╫─┤M├
-                  └─────────────────────────┘ ║ └╥┘
-c: 2/═════════════════════════════════════════╩══╩═
-                                              0  1
-{'11': 680, '00': 344}
-```
-
 ## Generate QIR for the circuit
 
 From that same circuit, you can generate QIR that's used to run on quantum hardware.
@@ -89,70 +78,6 @@ print(circuit)
 
 # generate QIR for the circuit
 print(backend.qir(circuit, target_profile=TargetProfile.Adaptive_RI))
-```
-
-Your code's output should look like this:
-
-```output
-     ┌────────────┐             ┌─┐   
-q_0: ┤ Rx(2.7195) ├─■───────────┤M├───
-     └──┬─────┬───┘ │U1(5.5924) └╥┘┌─┐
-q_1: ───┤ Tdg ├─────■────────────╫─┤M├
-        └─────┘                  ║ └╥┘
-c: 2/════════════════════════════╩══╩═
-                                 0  1
-%Result = type opaque
-%Qubit = type opaque
-
-define void @ENTRYPOINT__main() #0 {
-block_0:
-  call void @__quantum__qis__rx__body(double 2.7194945105768586, %Qubit* inttoptr (i64 0 to %Qubit*))
-  call void @__quantum__qis__rz__body(double 2.796204066686262, %Qubit* inttoptr (i64 0 to %Qubit*))
-  call void @__quantum__qis__t__adj(%Qubit* inttoptr (i64 1 to %Qubit*))
-  call void @__quantum__qis__cx__body(%Qubit* inttoptr (i64 0 to %Qubit*), %Qubit* inttoptr (i64 1 to %Qubit*))
-  call void @__quantum__qis__rz__body(double -2.796204066686262, %Qubit* inttoptr (i64 1 to %Qubit*))
-  call void @__quantum__qis__cx__body(%Qubit* inttoptr (i64 0 to %Qubit*), %Qubit* inttoptr (i64 1 to %Qubit*))
-  call void @__quantum__qis__rz__body(double 2.796204066686262, %Qubit* inttoptr (i64 1 to %Qubit*))
-  call void @__quantum__qis__m__body(%Qubit* inttoptr (i64 0 to %Qubit*), %Result* inttoptr (i64 0 to %Result*))
-  call void @__quantum__qis__m__body(%Qubit* inttoptr (i64 1 to %Qubit*), %Result* inttoptr (i64 1 to %Result*))
-  call void @__quantum__rt__array_record_output(i64 2, i8* null)
-  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 1 to %Result*), i8* null)
-  call void @__quantum__rt__result_record_output(%Result* inttoptr (i64 0 to %Result*), i8* null)
-  ret void
-}
-
-declare void @__quantum__qis__rx__body(double, %Qubit*)
-
-declare void @__quantum__qis__rz__body(double, %Qubit*)
-
-declare void @__quantum__qis__t__adj(%Qubit*)
-
-declare void @__quantum__qis__cx__body(%Qubit*, %Qubit*)
-
-declare void @__quantum__qis__m__body(%Qubit*, %Result*) #1
-
-declare void @__quantum__rt__array_record_output(i64, i8*)
-
-declare void @__quantum__rt__result_record_output(%Result*, i8*)
-
-attributes #0 = { "entry_point" "output_labeling_schema" "qir_profiles"="adaptive_profile" "required_num_qubits"="2" "required_num_results"="2" }
-attributes #1 = { "irreversible" }
-
-; module flags
-
-!llvm.module.flags = !{!0, !1, !2, !3, !4, !5, !6, !7, !8, !9, !10}
-
-!0 = !{i32 1, !"qir_major_version", i32 1}
-!1 = !{i32 7, !"qir_minor_version", i32 0}
-!2 = !{i32 1, !"dynamic_qubit_management", i1 false}
-!3 = !{i32 1, !"dynamic_result_management", i1 false}
-!4 = !{i32 1, !"classical_ints", i1 true}
-!5 = !{i32 1, !"qubit_resetting", i1 true}
-!6 = !{i32 1, !"classical_floats", i1 false}
-!7 = !{i32 1, !"backwards_branching", i1 false}
-!8 = !{i32 1, !"classical_fixed_points", i1 false}
-!9 = !{i32 1, !"user_functions", i1 false}
-!10 = !{i32 1, !"multiple_target_branching", i1 false}
 ```
 
 Not all programs can run on all hardware. Here, if you try to target the `Base` profile, then you get detailed errors about which parts of the program aren't supported.
