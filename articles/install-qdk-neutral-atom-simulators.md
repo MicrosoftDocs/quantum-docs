@@ -101,6 +101,8 @@ For example, to run a neutral atom simulation for a basic quantum program and vi
     Histogram(results, labels="kets")
     ```
 
+    :::image type="content" source="media/neutral-atom-simulator-histogram.png" alt-text="Screenshot of the molecule visualizer with display options for molecular orbitals.":::
+
 ## Related content
 
 - [Neutral atom simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
