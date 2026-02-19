@@ -42,7 +42,7 @@ For example, to run a neutral atom simulation for a basic quantum program and vi
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
 1. Enter and select **Create: New Jupyter Notebook**. A new tab opens with an empty Jupyter Notebook file.
-1. To import the required libraries and objects, enter and run the following code in the first cell:
+1. To import the required libraries and objects, run the following code in the first cell:
 
     ```python
     from qdk import init, TargetProfile
@@ -51,13 +51,16 @@ For example, to run a neutral atom simulation for a basic quantum program and vi
     from qdk.widgets import Histogram
     ```
 
-1. To generate QIR for a neutral atom quantum computer, you must set the target QIR profile to the `Base`. To set the target profile, enter and run the following code in a new cell:
+1. To generate QIR for a neutral atom quantum computer, you must set a target profile. For this example, set the target profile to the `Base`. To set the target profile, run the following code in a new cell:
 
     ```python
     init(target_profile=TargetProfile.Base)
     ```
 
-1. To create a quantum circuit in OpenQASM code and compile the circuit into QIR, copy and run the following code in a new cell:
+    > [!NOTE]
+    > The neutral atom device simulators can't run quantum programs that contain branching, even when the target profile supports branching.
+
+1. To create a quantum circuit in OpenQASM code and compile the circuit into QIR, run the following code in a new cell:
 
     ```python
     qasm_src = """
