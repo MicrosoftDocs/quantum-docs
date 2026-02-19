@@ -77,12 +77,16 @@ The diagram contains three zones:
 - **Interaction zone:** This zone is where quantum gates are applied to the qubits for processing. Qubits move from the storage zone to the interaction zone, quantum gates are applied, and then the qubits move back to the storage zone.
 - **Measurement zone:** This zone is where the qubits are measured. After qubits are processed and move back to the storage zone, they move to the measurement zone for measurement. After measurement, qubits move back to the storage zone.
 
+:::image type="content" source="media/neutral-atom-visualizer-zones.png" alt-text="Screenshot that shows the three zones in the neutral atom device visualizer":::
+
 ### Interactive elements in the visualizer diagram
 
 Use the elements at the top of the diagram to interact with the diagram and view a simulation of how your program runs. The diagram contains the following elements:
 
-- **Play button:** Choose this button to play an animation of your program run. The animation goes through each step of the program until the program ends. During the animation, choose this button again to pause the animation on the current step. When the animation ends, choose this button again to start the animation from the beginning.
-- **Forward and backward buttons:** Choose these buttons to go through the program one step at a time without playing the full animation.
-- **Progress slider:** This element shows the current step of the program. Move the slider to go through the program and choose a specific step. At each step, hover over a qubit to see where the qubit moved from in the previous step.
-- **Resize buttons:** Choose the up arrow button to increase the size of the diagram, and choose the down arrow button to decrease the size of the diagram.
-- **Information icon:** Hover over this icon to view a list of keyboard shortcuts that let you interact with the diagram. The keyboard shortcut **F** speeds up the animation and **S** slows down the animation when you choose the **Play** button.
+1. **Play button:** Choose this button to play an animation of your program run. The animation goes through each step of the program until the program ends. During the animation, choose this button again to pause the animation on the current step. When the animation ends, choose this button again to start the animation from the beginning.
+1. **Forward and backward buttons:** Choose these buttons to go through the program one step at a time without playing the full animation.
+1. **Progress slider:** This element shows the current step of the program. Move the slider to go through the program and choose a specific step. At each step, hover over a qubit to see where the qubit moved from in the previous step.
+1. **Resize buttons:** Choose the up arrow button to increase the size of the diagram, and choose the down arrow button to decrease the size of the diagram.
+1. **Information icon:** Hover over this icon to view a list of keyboard shortcuts that let you interact with the diagram. The keyboard shortcut **F** speeds up the animation and **S** slows down the animation when you choose the **Play** button.
+
+:::image type="content" source="media/neutral-atom-visualizer-elements.png" alt-text="Screenshot with labeled UI elements of the neutral atom device visualizer.":::

@@ -65,7 +65,7 @@ For example, to load a `Structure` object for *p*-benzyne from a `.xyz` file, fo
     structure
     ```
 
-For more information about `Structure` objects in the QDK/Chemistry, see [Structure](https:/microsoft.github.io/qdk-chemistry/user/comprehensive/data/structure.html) in the QDK/Chemistry documentation on GitHub.
+For more information about `Structure` objects in the QDK/Chemistry, see [Structure](https://microsoft.github.io/qdk-chemistry/user/comprehensive/data/structure.html) in the QDK/Chemistry documentation on GitHub.
 
 ## View the molecular structure
 
