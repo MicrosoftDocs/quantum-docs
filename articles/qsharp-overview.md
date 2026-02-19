@@ -312,3 +312,5 @@ Once you submit your job, Azure Quantum manages the job lifecycle, including job
 - [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work)
 - [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
 - [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart)
+
+👉 **[Learn more about the Microsoft Quantum platform](https://quantum.microsoft.com/en-us/solutions/microsoft-quantum-platform)**
