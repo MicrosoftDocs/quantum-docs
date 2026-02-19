@@ -104,3 +104,5 @@ If you want to learn more, see [Tutorial: Explore quantum entanglement with Q#](
 - [Quantum circuit diagram conventions](xref:microsoft.quantum.concepts.circuits)
 - [Entanglement in quantum computing](xref:microsoft.quantum.concepts.entanglement)
 - [Introduction to the quantum programming language Q#](xref:microsoft.quantum.qsharp-overview)
+
+👉 **[Discover what's new at Microsoft Quantum](https://quantum.microsoft.com/)**
