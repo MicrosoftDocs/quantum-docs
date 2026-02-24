@@ -110,24 +110,6 @@ pl.xlabel("Result")
 
 The histogram shows that the random number generator returns 0 every time, which isn't random. The results aren't random because, while the API Validator ensures that your code runs successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
-## Estimate job cost
-
-Before running a job on the QPU, you can estimate how much it costs to run. To estimate the cost of running a job on the QPU, you can use the `estimate_cost` method:
-
-```python
-cost = service.estimate_cost(
-    program=circuit,
-    repetitions=100,
-    target="quantinuum.qpu.h2-1sc"
-)
-
-print(f"Estimated cost: {cost.estimated_total}")
-```
-
-This prints the estimated cost in H-System Credits (HQCs).
-
-For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
-
 ## Asynchronous workflow using Jobs
 
 For long-running circuits, it can be useful to run them asynchronously. The `service.create_job` method returns a `Job` object, which you can use to get the results after the job runs successfully.
