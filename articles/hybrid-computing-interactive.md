@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Understand the architecture of sessions in hybrid quantum computing and learn how to create a new session.
-ms.date: 10/24/2024
+ms.date: 02/24/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -15,36 +15,29 @@ uid: microsoft.quantum.hybrid.interactive
 
 # Get started with sessions
 
-Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together. A session is a logical grouping of one or more jobs submitted to a single target. Each session has a unique ID attached to each job in that session. Sessions are useful when you want to run multiple quantum computing jobs in sequence, with the ability to run classical code between quantum jobs.
+Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together. A session is a logical grouping of one or more jobs that you submit to a single target. Each session has a unique ID attached to each job in that session. Sessions are useful when you want to run multiple quantum computing jobs in sequence, and run classical code between quantum jobs.
 
-This article explains the architecture of sessions in hybrid quantum computing and how to create a new session.
+This article explains the architecture of sessions in hybrid quantum computing and how to create a new session in Azure Quantum.
 
 ## Prerequisites
 
 To create a session, you need the following prerequisites:
 
-- An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- An Azure account with an active subscription. If you don’t have an Azure account, then register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The `qdk` Python library. If you want to use Qiskit or Cirq, you need to install the `azure` and `qiskit` extras.
+- The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download), with the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed.
+- The `qdk` Python library. To submit Qiskit and Cirq programs, install the `azure`, `qiskit`, and `cirq` extras.
 
     ```bash
-    pip install --upgrade qdk
-    ```
-
-    or
-
-    ```bash
-    pip install --upgrade "qdk[azure,qiskit]" 
+    pip install --upgrade "qdk[azure,qiskit,cirq]" 
     ```
 
 ## What is a session?
 
-In sessions, the client compute resource may be moved to the cloud, resulting in lower-latency and the ability to repeat execution of the quantum circuit with different parameters. Jobs can be grouped logically into one session, and the jobs in that session can be prioritized over non-session jobs. Although the qubit states don't persist between jobs, a session allows for shorter queue times for jobs and longer running problems.
+In sessions, you can move the client compute resource to the cloud for lower-latency and the ability to run your quantum program multiple times with different parameters. You can logically group jobs into one session, and you can prioritize jobs in that session over non-session jobs. Qubit states don't persist between jobs, but jobs in a session have shorter queue times. Shorter queue times allow you to run complex algorithms to better organize and track your individual quantum computing jobs.
 
-Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs.
-
-A key user scenario where you may want to combine jobs in a session is *parameterized* quantum algorithms where the output of one quantum computing job informs the parameters of the next quantum computing job. The most common examples of this type of algorithm are :::no-loc text="Variational Quantum Eigensolvers"::: (VQE) and :::no-loc text="Quantum Approximate Optimization Algorithms":::  (QAOA).
+Sessions are useful for parameterized quantum algorithms, where the output of one quantum computing job is used to define input parameters for the next quantum computing job. The most common examples of this type of algorithm are :::no-loc text="Variational Quantum Eigensolvers"::: (VQE) and :::no-loc text="Quantum Approximate Optimization Algorithms"::: (QAOA).
 
 ## Supported hardware
 
@@ -56,7 +49,7 @@ To create a session, follow these steps:
 
 ### [Q# + Python](#tab/tabid-iqsharp)
 
-This example shows how to create a session with Q# inline code using a Jupyter Notebook in Visual Studio Code (VS Code). You can also create sessions using a [Python program](xref:microsoft.quantum.submit-jobs?pivots=ide-python) that invokes an adjacent Q# program.
+This example shows how to create a session with Q# inline code in a Jupyter notebook in VS Code.
 
 > [!NOTE]
 > Sessions are managed with Python, even when running Q# inline code.
@@ -87,7 +80,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 1. Select the configurations of the [target profile](xref:microsoft.quantum.target-profiles), either `Base`, `Adaptive_RI`, or `Unrestricted`.
 
     ```python
-    qsharp.init(target_profile=qsharp.TargetProfile.Base) # or qsharp.TargetProfile.Adaptive_RI, qsharp.TargetProfile.Unrestricted
+    qsharp.init(target_profile=qsharp.TargetProfile.Base)
     ```
 
     > [!NOTE]
@@ -146,9 +139,7 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 1. Create a `provider` object with your Quantum workspace information.
 
     ```python
-    workspace = Workspace(
-                resource_id = "", # add your resource ID
-                location = "") # add your location
+    workspace = Workspace(resource_id = "") # add your resource ID
     
     provider = AzureQuantumProvider(workspace)
     ```
@@ -190,33 +181,32 @@ This example shows how to create a session with Q# inline code using a Jupyter N
 1. Write your quantum circuit. For example, the following circuit generates a random bit.
 
     ```python
-    import cirq
+    from cirq import LineQubit, Circuit, H, CNOT, measure
 
-    q0 = cirq.LineQubit(0)
-    q1 = cirq.LineQubit(1)
-    circuit = cirq.Circuit(
-        cirq.H(q0),  # H gate
-        cirq.CNOT(q0, q1),
-        cirq.measure(q0, key='q0'),
-        cirq.measure(q1, key='q1')
+    q0 = LineQubit(0)
+    q1 = LineQubit(1)
+    circuit = Circuit(
+        H(q0),
+        CNOT(q0, q1),
+        measure(q0, key='q0'),
+        measure(q1, key='q1')
     )
+
     print(circuit)
     ```
 
 1. Create a `service` object with your Quantum workspace information.
 
     ```python
-    from azure.quantum.cirq import AzureQuantumService
+    from qdk.azure.cirq import AzureQuantumService
 
-    service = AzureQuantumService(
-                resource_id = "", # add your resource ID
-                location = "") # add your location
+    service = AzureQuantumService(resource_id = "") # add your resource ID
     ```
 
 1. Choose your [quantum target](xref:microsoft.quantum.reference.qc-target-list). In this example, the target is the [IonQ simulator](xref:microsoft.quantum.providers.ionq).
 
     > [!NOTE]
-    > Cirq circuits can only use IonQ or Quantinuum targets.
+    > Cirq circuits can use only IonQ or Quantinuum targets.
 
     ```python
     target = service.get_target("ionq.simulator")
