@@ -28,9 +28,8 @@ create a `service` object that connects to your Azure Quantum workspace.
 Optionally, specify a default target:
 
 ```python
-from azure.quantum.cirq import AzureQuantumService
 service = AzureQuantumService(
-    resource_id="",
+    resource_id="", # Enter your resource ID
     default_target="quantinuum.sim.h2-1sc"
 )
 ```
@@ -71,6 +70,7 @@ circuit = cirq.Circuit(
     cirq.CNOT(q0, q1), # CNOT
     cirq.measure(q0, q1, key='b') # Measure both qubits
 )
+
 print(circuit)
 ```
 
