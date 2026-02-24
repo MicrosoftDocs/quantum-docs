@@ -12,7 +12,7 @@ uid: microsoft.quantum.hybrid.interactive.how-to-sessions
 #customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
 ---
 
-# How to manage your sessions 
+# How to manage your sessions
 
 In Azure Quantum, you can group multiple jobs against a single target to effectively manage your jobs. This is called a session. For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
 
@@ -23,10 +23,16 @@ In this article, you learn how use sessions to manually manage your jobs. You al
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The `qdk` Python library. If you want to use Qiskit or Cirq, then you need to install the `azure` and `qiskit` extras.
+- The latest version of the `qdk` Python library.
 
     ```bash
     pip install --upgrade "qdk[azure,qiskit]"
+    ```
+
+     If you want to use Qiskit and Cirq, then you need to install the `azure`, `qiskit`, and `cirq` extras.
+
+    ```bash
+    pip install --upgrade "qdk[azure,qiskit,cirq]"
     ```
 
 > [!NOTE]
