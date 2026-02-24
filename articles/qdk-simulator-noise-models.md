@@ -22,15 +22,15 @@ For instructions on how to install and use the neutral atom device simulators fr
 
 In neutral atom devices, lasers physically move the neutral atom qubits between different zones in the device. Noise can occur on a neutral atom device at runtime in the following situations:
 
-- Qubit moves between zones
-- Quantum gates operate on qubits in the interaction zone
-- Qubit is measured in the measurement zone
+- Qubit movements between zones
+- Quantum gate operations on qubits in the interaction zone
+- Qubit measurements in the measurement zone
 
 The neutral atom device simulators in the QDK support noise from the following sources:
 
 | Noise source       | Noise model parameter | Source description                        |
 |--------------------|-----------------------|-------------------------------------------|
-| $S_X$ quantum gate | `sx`                  | Single-qubit gate, $90\degree$ phase flip |
+| $S_X$ quantum gate | `sx`                  | Single-qubit gate, $90^\circ$ phase flip  |
 | $R_Z$ quantum gate | `rz`                  | Single-qubit gate, general phase rotation |
 | $CZ$ quantum gate  | `cz`                  | Two-qubit gate, controlled-$Z$ phase flip |
 | Qubit movement     | `mov`                 | Qubit movement between device zones       |
@@ -49,7 +49,7 @@ Each of the noise sources can produce the following types of noise:
 | Qubit loss      | `loss`                | Qubit is lost from the device | `noise.mov.loss = 0.03` | Qubit is lost in 3% of movements between zones                    |
 
 > [!NOTE]
-> To specify Pauli noise for $CZ$ gates, you must include two noise parameters. The first noise parameter applies to the control qubit and other parameter applies to the target qubit. Qubit loss on $CZ$ gates applies to both qubits and can't be combined with Pauli noise.
+> To specify Pauli noise for $CZ$ gates, you must include two noise parameters. The first noise parameter applies to the control qubit and the other parameter applies to the target qubit. Qubit loss on $CZ$ gates applies to both qubits and can't be combined with Pauli noise.
 
 ## Build a noise model
 
@@ -111,7 +111,7 @@ To build a noise model for a quantum program on a neutral atom device and view t
     Histogram(results, labels="kets")
     ```
 
-1. To compare the noisy results with a simulation that doesn't include noise, run the simulation but don't pass the noise model.
+1. To compare the noisy results with a simulation that doesn't include noise, run the simulation again but don't pass the noise model.
 
     ```python
     results = device.simulate(qir, shots=1000, type="clifford")
@@ -120,7 +120,7 @@ To build a noise model for a quantum program on a neutral atom device and view t
 
 ## Correlated noise
 
-Multi-qubit gates can produce correlated noise, which is when the same noise pattern applies together to all qubits that the gate operates on. For the neutral atom device simulators, you can include correlated noise from the two-qubit $CZ$ gate.
+Multi-qubit gates can produce correlated noise, where the same noise pattern applies to all qubits that the gate operates on. For the neutral atom device simulators, you can model correlated noise from the two-qubit $CZ$ gate.
 
 For example, the following $CZ$ noise is correlated because a bit flip on the control qubit always occurs with a phase flip on the target qubit:
 
@@ -128,7 +128,9 @@ For example, the following $CZ$ noise is correlated because a bit flip on the co
 noise.cz.xz = 0.02
 ```
 
-In the correlated model, the noise occurs in 2% of $CZ$ operations and always affects both qubits in the same operations. Compare that model with the following uncorrelated noise model:
+In the correlated model, the noise occurs in 2% of $CZ$ operations and always affects both qubits in the same operations.
+
+Compare that model with the following uncorrelated noise model:
 
 ```python
 noise.cz.xi = 0.02
@@ -137,11 +139,11 @@ noise.cz.iz = 0.02
 
 In the uncorrelated model, a bit flip occurs on the control qubit in 2% of $CZ$ operations and a phase flip occurs on the target qubit in 2% of $CZ$ operations, but the noise doesn't necessarily happen together in the same operation.
 
-## Alternative methods to build
+## Alternative methods to build noise models
 
 Instead of noise model parameters, you can use the following set of noise model functions to build your noise model.
 
-### `set_puali_noise`
+### Set Pauli noise
 
 To include Pauli noise in your model, call the `set_pauli_noise` function on a gate or movement operation.
 
@@ -159,7 +161,7 @@ For the two-qubit $CZ$ operation, pass a two-character Pauli string and a noise 
 noise.cz.set_pauli_noise('ZZ', 0.01)
 ```
 
-### `set_depolarizing`
+### Set depolarizing noise
 
 The `set_depolarizing` function sets equal but uncorrelated noise rates for all three types of Pauli noise. For example, the following code sets a 1% chance that one of the Pauli noise types occurs in $S_X$ operations:
 
@@ -171,7 +173,7 @@ The `set_depolarizing` function sets equal but uncorrelated noise rates for all 
 noise.sx.set_depolarizing(0.01)
 ```
 
-### `set_bitflip`
+### Set bit flip noise
 
 To set the noise rate for bit flips in an operation, use the `set_bitflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs in an $R_Z$ operation:
 
@@ -180,7 +182,7 @@ To set the noise rate for bit flips in an operation, use the `set_bitflip` funct
 noise.rz.set_bitflip(0.01)
 ```
 
-### `set_phaseflip`
+### Set phase flip noise
 
 To set the noise rate for phase flips in an operation, use the `set_phaseflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs in an $R_Z$ operation:
 
