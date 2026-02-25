@@ -65,7 +65,7 @@ Suppose there are $N=2^n$ eligible items for the search problem and they are ind
 
 ## Write the code for Grover's algorithm in Q\#
 
-This section discusses how to implement the algorithm in Q#. There are few things to consider when implementing Grover's algorithm. You need to define what is your marked state, how to reflect about it, and how many iterations to run the algorithm for. You also need to define the oracle that implements the function of the Grover's task.
+This section discusses how to implement the algorithm in Q#. There are a few things to consider when implementing Grover's algorithm. You need to define what is your marked state, how to reflect about it, and how many iterations to run the algorithm for. You also need to define the oracle that implements the function of the Grover's task.
 
 ### Define the marked state
 
@@ -120,13 +120,13 @@ function CalculateOptimalIterations(nQubits : Int) : Int {
 }
 ```
 
-The `CalculateOptimalIterations` function uses the formula above to calculate the number of iterations, and then rounds it to the nearest integer.
+The `CalculateOptimalIterations` function uses the formula shown earlier to calculate the number of iterations, and then rounds it to the nearest integer.
 
 ### Define the Grover's operation
 
 The Q# operation for Grover's search algorithm has three inputs:
 
-* The number of qubits, `nQubits : Int`, in the qubit register. This register will encode the tentative solution to the search problem. After the operation, it will be measured.
+* The number of qubits, `nQubits : Int`, in the qubit register. This register encodes the tentative solution to the search problem, and is measured after the operation.
 * The number of optimal iterations, `iterations : Int`.
 * An operation, `phaseOracle : Qubit[] => Unit) : Result[]`, that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
 
@@ -160,7 +160,7 @@ operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
 }
 ```
 
-The ``ReflectAboutAllOnes` operation reflects about the all-ones state.
+The `ReflectAboutAllOnes` operation reflects about the all-ones state.
 
 ```qsharp
 operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
@@ -309,7 +309,7 @@ You can test your Q# code with Copilot in Microsoft Quantum free of charge - all
 
 1. Select **In-memory Simulator**.
 1. Select the number of shots to run, and select **Run**.
-1. The results are displayed in the histogram and in the **Results** fields.
+1. The results display in the histogram and in the **Results** fields.
 1. Select **Explain code** to prompt Copilot to explain the code to you.
 
 ### Run the program using the Quantinuum Emulator
@@ -317,12 +317,12 @@ You can test your Q# code with Copilot in Microsoft Quantum free of charge - all
 You can also submit your program to the free [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based). The emulator simulates a quantum computer with 20 qubits.
 
 1. Select the **In-Memory Simulator** dropdown and select **Quantinuum Emulator**.
-1. Select the number of shots (currently limited to 20) and select Run.
+1. Select the number of shots (currently limited to 20) and select **Run.
 
 ### [Visual Studio Code](#tab/tabid-vscode)
 
 1. Open Visual Studio Code and select **File > New Text File** to create a new file.
-1. Save the file as `GroversAlgorithm.qs`. This file will contain the Q# code for your program.
+1. Save the file as `GroversAlgorithm.qs`. This file contains the Q# code for your program.
 1. Copy the following code into the `GroversAlgorithm.qs` file.
 
     ```qsharp
@@ -418,8 +418,8 @@ You can also submit your program to the free [Quantinuum Emulator](xref:microsof
     }
     ```
 
-1. To run your program, choose **Run** from the list of commands above the `Main` operation, or press **Ctrl + F5**. By default, the compiler runs the `Main` operation or function on the default simulator.
-1. Your output appears in the debug console in the terminal.
+1. To run your program, choose **Run** from the menu for the `Main` operation, or press **Ctrl + F5**. By default, the compiler runs the `Main` operation or function on the default simulator.
+1. Your output displays in the debug console in the terminal.
 
 > [!NOTE]
 > If the QIR target profile isn't set to **Unrestricted**, then you get an error when you run the program. For this program, the compiler automatically sets the target profile to **Unrestricted** unless you set the profile yourself.
