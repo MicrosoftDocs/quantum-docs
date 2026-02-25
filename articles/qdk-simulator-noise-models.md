@@ -57,7 +57,7 @@ To build a noise model for a neutral atom device and view the effects of that no
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
 1. Enter **Create: New Jupyter Notebook**. An empty Jupyter Notebook file opens in a new tab.
-1. In the first the cell of the notebook, import the required Python objects:
+1. In the first cell of the notebook, import the required Python objects:
 
     ```python
     from qdk import init, TargetProfile
@@ -104,7 +104,7 @@ To build a noise model for a neutral atom device and view the effects of that no
     | $CZ$ gate      | Bit flip and phase flip on target qubit | 2%         |
     | Qubit movement | Qubit loss                              | 0.5%       |
 
-1. Run the simulator with the noise model and view a histogram of measurement results. For example, run the following code in a new cell to run 1000 shots of your program on the Clifford simulator:
+1. Run the simulator with the noise model and view a histogram of measurement results. For example, run the following code in a new cell to run 1,000 shots of your program on the Clifford simulator:
 
     ```python
     results = device.simulate(qir, shots=1000, noise=noise, type="clifford")
