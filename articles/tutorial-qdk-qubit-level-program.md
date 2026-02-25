@@ -14,7 +14,7 @@ no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
 
 # Tutorial: Implement the Quantum Fourier Transform in Q\#
 
-This tutorial shows you how to write and simulate a basic quantum program that operates on individual qubits.
+This tutorial shows how to write and simulate a basic quantum program that operates on individual qubits.
 
 Although Q# was primarily created as a high-level programming language for large-scale quantum programs, it can also be used to explore the lower level of quantum programming, that is, directly addressing specific qubits. Specifically, this tutorial takes a closer look at the [Quantum Fourier Transform (QFT)](https://en.wikipedia.org/wiki/Quantum_Fourier_transform), a subroutine that is integral to many larger quantum algorithms.
 
@@ -23,7 +23,7 @@ In this tutorial, you learn how to:
 > [!div class="checklist"]
 >
 > - Define quantum operations in Q#.
-> - Write the Quantum Fourier Transform circuit
+> - Write the Quantum Fourier Transform circuit.
 > - Simulate a quantum operation from qubit allocation to measurement output.
 > - Observe how the quantum system's simulated wavefunction evolves throughout the operation.
 
@@ -37,7 +37,7 @@ In this tutorial, you learn how to:
 
 - The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
 - The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-- If you want to use Jupyter Notebooks, then you need to install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions in VS Code.
+- To use Jupyter Notebooks, install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions in VS Code.
 - The latest `qdk` Python package with the `jupyter` extra. To install these, open a terminal and run the following command:
 
     ```bash
@@ -98,10 +98,10 @@ As in real quantum computations, Q# doesn't allow you to directly access qubit s
 
 ### Apply single-qubit and controlled operations
 
-Next, you apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Std.Intrinsic` namespace.
+Next, apply the operations that comprise the `Main` operation itself. Q# already contains many of these, and other basic quantum operations, in the `Std.Intrinsic` namespace.
 
 > [!NOTE]
-> Note that `Std.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
+> `Std.Intrinsic` wasn't imported in the earlier code snippet with the other namespaces, as it is loaded automatically by the compiler for all Q# programs.
 
 The first operation applied is the `H` (Hadamard) operation to the first qubit:
 
@@ -137,7 +137,7 @@ The `PI()` function is used to define the rotations in terms of pi radians.
 
 ### Apply SWAP operation
 
-After you apply the relevant `H` operations and controlled rotations to the second and third qubits, the circuit looks like this:
+After applying the relevant `H` operations and controlled rotations to the second and third qubits, the circuit looks like this:
 
 ```qsharp
 //second qubit:
@@ -154,7 +154,7 @@ Finally, you apply a `SWAP` operation to the first and third qubits to complete 
 SWAP(qs[2], qs[0]);
 ```
 
-Now you have finished writing the qubit-level operations of the quantum Fourier transform into your Q# operation:
+The Q# operation now includes the qubit-level operations of the quantum Fourier transform:
 
 :::image type="content" source="./media/qft_full.png" alt-text="Diagram showing a circuit for three qubit Quantum Fourier Transform." :::
 
@@ -175,7 +175,7 @@ ResetAll(qs); // deallocate qubits
 
 ### The complete QFT operation
 
-The Q# program is completed. Your **QFTcircuit.qs** file should now look like this:
+The Q# program is complete. Your **QFTcircuit.qs** file should now look like this:
 
 ```qsharp
 import Std.Diagnostics.*;
@@ -219,18 +219,18 @@ For now, the `Main` operation doesn't return any value - the operation returns `
 ### [Q# standalone program](#tab/tabid-qsharp)
 
 1. To run your program, choose **Run Q# File** from the menu that precedes `Main`, or press **Ctrl + F5**. The program runs the `Main` operation on the default simulator.
-1. The `Message` and `DumpMachine` outputs appear in the debug console.
+1. The `Message` and `DumpMachine` outputs display in the debug console.
 
 ### [Jupyter Notebook](#tab/tabid-python)
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. In the first cell, import the `qsharp` package in your Python code:
+1. In the first cell, import the `qsharp` package:
 
     ```python
     from qdk import qsharp
     ```
 
-1. Add the Q# program with the `Main` operation. To do so, you use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`. Copy this code into the second cell.
+1. Add the Q# program with the `Main` operation. Use the `%%qsharp` magic command. Note that the `%%qsharp` command changes the notebook cell from type `Python` to type `Q#`. Copy this code into the second cell.
 
     ```qsharp
     %%qsharp
@@ -275,11 +275,11 @@ For now, the `Main` operation doesn't return any value - the operation returns `
     print(results)
     ```
 
-The `Message` and `DumpMachine` outputs are displayed in an output cell.
+The `Message` and `DumpMachine` outputs display in an output cell.
 
 ***
 
-If you're curious about how other input states are affected, you're encouraged to experiment with applying other qubit operations before the transform.
+If you're curious about how other input states are affected, experiment with applying other qubit operations before the transform.
 
 ## Add measurements to the QFT circuit
 
@@ -307,7 +307,7 @@ Before allocating qubits, declare and bind a three-element array (one `Result` f
 mutable resultArray = [Zero, size = 3];
 ```
 
-The `mutable` keyword prefacing `resultArray` allows the variable to be modified later in the code, for example, when adding your measurement results.
+The `mutable` keyword prefacing `resultArray` allows the variable to be modified later in the code, for example, when adding measurement results.
 
 ### Perform measurements in a `for` loop and add results to array
 
@@ -392,7 +392,7 @@ operation Main() : Result[] {
 ### [Q# standalone program](#tab/tabid-qsharp2)
 
 1. To run your program, choose **Run Q#** from the menu that precedes `Main`, or press **Ctrl + F5**. The program runs the `Main` operation on the default simulator.
-1. The `Message` and `DumpMachine` outputs appear in the debug console.
+1. The `Message` and `DumpMachine` outputs display in the debug console.
 
 Your output should look similar to this:
 
@@ -506,12 +506,12 @@ Post-QFT measurement results [qubit0, qubit1, qubit2]:
 
 This output illustrates a few different things:
 
-1. When you compare the returned result to the pre-measurement `DumpMachine`, it clearly does _not_ illustrate the post-QFT superposition over basis states. A measurement only returns a single basis state, with a probability determined by the amplitude of that state in the system's wavefunction.
-2. From the post-measurement `DumpMachine`, you see that measurement _changes_ the state itself, projecting it from the initial superposition over basis states to the single basis state that corresponds to the measured value.
+1. When comparing the returned result to the pre-measurement `DumpMachine`, it clearly does _not_ illustrate the post-QFT superposition over basis states. A measurement only returns a single basis state, with a probability determined by the amplitude of that state in the system's wavefunction.
+2. From the post-measurement `DumpMachine`, measurement _changes_ the state itself, projecting it from the initial superposition over basis states to the single basis state that corresponds to the measured value.
 
-If you repeat this operation many times, you see the result statistics begin to illustrate the equally weighted superposition of the post-QFT state that gives rise to a random result on each shot.
+If you repeat this operation many times, the result statistics begin to illustrate the equally weighted superposition of the post-QFT state that gives rise to a random result on each shot.
 _However_, besides being inefficient and still imperfect, this would nevertheless only reproduce the relative amplitudes of the basis states, not the relative phases between them.
-The latter isn't an issue in this example, but you would see relative phases appear if given a more complex input to the QFT than $\ket{000}$.
+The latter isn't an issue in this example, but relative phases display if given a more complex input to the QFT than $\ket{000}$.
 
 ## Use the Q# operations to simplify the QFT circuit
 
