@@ -154,6 +154,8 @@
         href: install-qdk-neutral-atom-simulators.md
       - name: How to use the neutral atom device visualizers
         href: how-to-use-neutral-atom-visualizer.md
+      - name: Build noise models for neutral atom simulations
+        href: qdk-simulator-noise-models.md
   - name: "Applications: Chemistry"
     items:
     - name: Welcome to QDK for chemistry
