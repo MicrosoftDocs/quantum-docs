@@ -170,7 +170,7 @@ The `set_depolarizing` function sets equal but uncorrelated noise rates for all 
 #     noise.sx.x = 0.01
 #     noise.sx.y = 0.01
 #     noise.sx.z = 0.01
-noise.sx.set_depolarizing(0.01)
+noise.sx.set_depolarizing(0.03)
 ```
 
 ### Set bit flip noise
