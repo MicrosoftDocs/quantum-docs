@@ -107,6 +107,8 @@ To build a noise model for a neutral atom device and view the effects of that no
 1. Run the simulator with the noise model and view a histogram of measurement results. For example, run the following code in a new cell to run 1,000 shots of your program on the Clifford simulator:
 
     ```python
+    device = NeutralAtomDevice()
+
     results = device.simulate(qir, shots=1000, noise=noise, type="clifford")
     Histogram(results, labels="kets")
     ```
@@ -175,7 +177,7 @@ noise.sx.set_depolarizing(0.03)
 
 ### Set bit flip noise
 
-To set the noise rate for bit flips in an operation, use the `set_bitflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs in an $R_Z$ operation:
+To set the noise rate for bit flips, use the `set_bitflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs in an $R_Z$ operation:
 
 ```python
 # Equivalent to: noise.rz.x = 0.01
