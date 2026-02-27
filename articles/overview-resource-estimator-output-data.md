@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: This article shows how to interpret the reported data of the Microsoft Quantum resource estimator and access the output parameters.
-ms.date: 08/01/2024
+ms.date: 02/13/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -17,9 +17,9 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Mi
 
 ## Prerequisites
 
-- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- VS Code with the [Microsoft Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed (Python version 3.10 or greater).
+- The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
+- VS Code with the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The latest `qdk` Python library with the `jupyter` extra.  
 
     ```bash
@@ -52,12 +52,12 @@ The following table contains the data type and a brief description for each outp
 
 ### Physical counts
 
-The `physicalCounts` dictionary containsS the following entries:
+The `physicalCounts` dictionary contains the following entries:
 
 | Output parameter | Data type  | Description                                                                                                |
 |------------------|------------|------------------------------------------------------------------------------------------------------------|
 | `physicalQubits` | number     | The total number of physical qubits.                                                                       |
-| `runtime`        | number     | The total runtime to execute the algorithm in nanoseconds.                                                 |
+| `runtime`        | number     | The total run time to execute the algorithm in nanoseconds.                                                 |
 | `rqops`          | number     | The number of reliable quantum operations per second (QOPS).                                               |
 | `breakdown`      | dictionary | Breakdown of estimates. For more information, see [Physical counts breakdown](#physical-counts-breakdown). |
 
@@ -87,7 +87,7 @@ The `physicalCountsFormatted` dictionary contains the following entries:
 
 | Output parameter                        | Data type | Description                                                                                                                          |
 |-----------------------------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------|
-| `runtime`                               | string    | Total runtime as human friendly string.                                                                                              |
+| `runtime`                               | string    | Total run time as human friendly string.                                                                                              |
 | `rqops`                                 | string    | The number of reliable quantum operations per second (QOPS) formatted with metric suffix.                                            |
 | `physicalQubits`                        | string    | Total number of physical qubits with metric suffix.                                                                                  |
 | `algorithmicLogicalQubits`              | string    | Algorithmic logical qubits with metric suffix.                                                                                       |
@@ -106,13 +106,13 @@ The `physicalCountsFormatted` dictionary contains the following entries:
 | `clockFrequency`                        | string    | The number of logical cycles per second as a human friendly string.                                                                  |
 | `logicalErrorRate`                      | string    | Truncated logical error rate.                                                                                                        |
 | `tfactoryPhysicalQubits`                | string    | Number of physical qubits in T factory with metric suffix (or message that there is no T factory).                                   |
-| `tfactoryRuntime`                       | string    | The runtime of a single T factory as human friendly string (or message that there is no T factory).                                  |
+| `tfactoryRuntime`                       | string    | The run time of a single T factory as human friendly string (or message that there is no T factory).                                  |
 | `numInputTstates`                       | string    | The number of input T states (or message that there is no T factory).                                                                |
 | `numUnitsPerRound`                      | string    | The number of units per distillation round, comma separated in a string (or message that there is no T factory).                     |
 | `unitNamePerRound`                      | string    | The unit names of each distillation round, comma separated in a string (or message that there is no T factory).                      |
 | `codeDistancePerRound`                  | string    | The code distances per distillation round, comma separated in a string (or message that there is no T factory).                      |
 | `physicalQubitsPerRound`                | string    | The number of physical qubits per distillation round, comma separated in a string (or message that there is no T factory).           |
-| `tfactoryRuntimePerRound`               | string    | The runtime of each distillation round, displayed as comma separated human friendly strings (or message that there is no T factory). |
+| `tfactoryRuntimePerRound`               | string    | The run time of each distillation round, displayed as comma separated human friendly strings (or message that there is no T factory). |
 | `tstateLogicalErrorRate`                | string    | Truncated logical T state error rate (or message that there is no T factory).                                                        |
 | `logicalCountsNumQubits`                | string    | Number of qubits (pre-layout) with metric suffix.                                                                                    |
 | `logicalCountsTCount`                   | string    | Number of T gates (pre-layout) with metric suffix.                                                                                   |
@@ -153,15 +153,13 @@ The `logicalCounts` dictionary contains the following entries:
 | `measurementCount` | number    | Pre-layout number of single-qubit measurements. |
 
 > [!TIP]
-> If you want to use a pre-calculated set of logical counts for a resource estimation job, you can use the `LogicalCounts` Python operation to pass the known estimates to the resource estimator. For more information, see [How to use known estimates with the resource estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
+> If you want to use a pre-calculated set of logical counts for a resource estimation job, then use the `LogicalCounts` Python object to pass the known estimates to the resource estimator. For more information, see [How to use known estimates with the resource estimator](xref:microsoft.quantum.resource-estimator-known-estimates).
 
 ## Space diagram
 
-The overall physical resource estimation consists of total number of physical qubits used for both the algorithm and T factory copies. You can inspect the distribution between these two using the space diagram.
+The overall physical resource estimation consists of the total number of physical qubits that used for both the algorithm and the T factory copies. The space diagram shows the distribution of physical qubits between the algorithm and [T factories](xref:microsoft.quantum.concepts.tfactories). The number of T factory copies contributes to the number of physical qubits that are used for T factories.
 
-The space diagram shows the proportion of the physical qubits used for the algorithm and the [T factories](xref:microsoft.quantum.concepts.tfactories). Note that the number of T factory copies contributes to the number of physical qubits for T factories.
-
-In Jupyter Notebook, you can access the space diagram using the `SpaceChart` widget from the `widgets` package.
+In Jupyter Notebook, you can use the `SpaceChart` widget from the `qdk.widgets` module to open the space diagram.
 
 ```python
 from qdk.widgets import SpaceChart
@@ -171,24 +169,24 @@ SpaceChart(result)
 
 :::image type="content" source="media/vscode-estimates-local-diagram-shorRE.png" alt-text="Pie diagram showing the distribution of total physical qubits between algorithm qubits and T factory qubits. There's a table with the breakdown of number of T factory copies and number of physical qubits per T factory.":::
 
-When running multiple configurations of target parameters with the [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation), you can plot the space diagram for a specific solution of the. For example, the following code shows how to plot the space diagram for the first configuration of parameters and the third shortest runtime.
+When you run multiple configurations of target parameters with the [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation), you can plot the space diagram for a specific solution of the resource estimator. For example, the following code shows how to plot the space diagram for the first configuration of parameters and the third shortest run time.
 
 ```python
-SpaceChart(result[0], 2) # First (estimate index=0) run and third (point index=2) shortest runtime
+SpaceChart(result[0], 2) # First (estimate index=0) run and third (point index=2) shortest run time
 ```
 
 ## Space-time diagram
 
-In quantum computing, there's a tradeoff between the number of physical qubits and the runtime of the algorithm. You could consider allocation of as many physical qubits as possible to reduce the runtime of the algorithm. However, the number of physical qubits is limited by the number of physical qubits available in the quantum hardware. Understanding the tradeoff between runtime and system scale is one of the more important aspects of resource estimation.
+In quantum computing, there's a tradeoff between the number of physical qubits and the run time of the algorithm. If you allocate more physical qubits, then you can reduce the run time of your algorithm. However, the number of physical qubits is limited by the quantum hardware. Use resource estimation to help you understand the tradeoff between the number of physical qubits and the run time.
 
-When estimating the resources of an algorithm, you can use the space-time diagram to visualize the tradeoffs between the number of physical qubits and the runtime of the algorithm.
+When you estimate the resources required to run an algorithm, you can use the space-time diagram to visualize the tradeoffs between the number of physical qubits and the run time of the algorithm.
 
 > [!NOTE]
-> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation). If you run the resource estimator in Visual Studio Code with the **QDK: Calculate Resource Estimates** command, the Pareto frontier estimation is enabled by default.
+> To see multiple optimal combinations in the space-time diagram, you need to set the estimation type to [Pareto frontier estimation](xref:microsoft.quantum.overview.resources-estimator#pareto-frontier-estimation). If you run the resource estimator in VS Code with the **QDK: Calculate Resource Estimates** command, then the Pareto frontier estimation is enabled by default.
 
-The space-time diagram allows you to find the optimal combination of {number of qubits, runtime} pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the runtime of the algorithm for each {number of qubits, runtime} pair.
+The space-time diagram allows you to find the optimal combination of {number of qubits, run time} pairs that satisfy the constraints of the quantum hardware. The diagram shows the number of physical qubits and the run time of the algorithm for each {number of qubits, run time} pair.
 
-To run the space-time diagram in Jupyter Notebook, use the `EstimatesOverview` widget from the `widgets` package.
+To run the space-time diagram in Jupyter Notebook, use the `EstimatesOverview` widget from the `qdk.widgets` module.
 
 ```python
 from qdk.widgets import EstimatesOverview
@@ -196,14 +194,14 @@ from qdk.widgets import EstimatesOverview
 EstimatesOverview(result, colors=["#1f77b4", "#ff7f0e"], runNames=["e4 Surface Code", "e6 Floquet Code"])
 ```
 
-:::image type="content" source="media/qubit-time-diagram-shorRE.png" alt-text="Screenshot showing the qubit-time diagram of the resource estimator.":::
+:::image type="content" source="media/qubit-time-diagram-shorRE.png" alt-text="Screenshot that shows the qubit-time diagram of the resource estimator.":::
 
 > [!TIP]
-> To see the estimation details, you can hover over each point in the diagram.
+> To see the estimation details, hover over each point in the diagram.
 
-The space-time diagram is specially useful when comparing multiple configurations of target parameters for the same algorithm.
+The space-time diagram is especially useful to compare multiple configurations of target parameters for the same algorithm.
 
-:::image type="content" source="media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot showing the space-time diagram and the table of results when running multiple configurations of parameter in the resource estimator.":::
+:::image type="content" source="media/multiple-configurations-frontier-shorRE.png" alt-text="Screenshot that shows the space-time diagram and the table of results when you run multiple configurations of parameters in the resource estimator.":::
 
 > [!NOTE]
 > If you experience issues when you work with the resource estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).

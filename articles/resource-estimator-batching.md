@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Learn how to run multiple configurations of target parameters and compare them using the resource estimator.
-ms.date: 01/13/2025
+ms.date: 02/12/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -14,25 +14,18 @@ uid: microsoft.quantum.resource-estimator-batching
 
 # How to compare multiple configurations of target parameters with the resource estimator
 
-In this article, you learn how to run multiple configurations of target parameters at the same time and compare them using the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
+In this article, you learn how to use the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) to run estimates for multiple configurations of [target parameters](xref:microsoft.quantum.overview.resources-estimator) at the same time and compare the results for each configuration.
 
-The Microsoft Quantum resource estimator allows you to run multiple configurations of [target parameters](xref:microsoft.quantum.overview.resources-estimator) as a single job so that you don't need to rerun multiple jobs on the same quantum program.
-
-One job may consists of multiple items or configurations of target parameters. Some scenarios where you may want to run multiple items as a single job:
-
-- Run multiple target parameters with same operation arguments in all items.
-- Run multiple target parameters with different operation arguments in all items.
-- Easily compare multiple results in a tabular format.
-- Easily compare multiple results in a chart.
+To compare resource estimates for different configurations of target parameters, you can run one estimate at a time or you can run a batch job that estimates the resource requirements for all configurations. Batch estimates are useful because they display the results for all configurations together in tables and visual charts.
 
 For information about how to run the resource estimator, see [Different ways to use the resource estimator](xref:microsoft.quantum.submit-resource-estimation-jobs).
 
 ## Prerequisites
 
-- The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
-- Install the latest version of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest `qdk` Python library.  
+- The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
+- The latest versions of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
+- The latest version of the `qdk` Python library.  
 
     ```bash
     python -m pip install --upgrade qdk
@@ -40,29 +33,50 @@ For information about how to run the resource estimator, see [Different ways to 
 
 ## Run multiple configurations with the resource estimator
 
-You can run multiple configurations of target parameters as a single job in Q# with [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs). You can pass a list of target parameters to the `params` parameter of the `qsharp.estimate` function.
+You can run multiple configurations of target parameters as a single batch job in Q# with [Jupyter Notebook in VS Code](xref:microsoft.quantum.submit-resource-estimation-jobs). To run a batch estimate, pass a list of target parameters dictionaries to the `params` parameter of the `qsharp.estimate` function.
 
-The following example shows how to run two configurations of target parameters as a single job. The first configuration uses the default target parameters, and the second configuration uses the `qubit_maj_ns_e6` qubit parameter and the `floquet_code` QEC scheme.
+The following example shows how to run two configurations of target parameters as a single batch job for a Q# algorithm that puts a qubit into an equal superposition state. The first configuration uses the default target parameters, and the second configuration uses the `qubit_maj_ns_e6` qubit parameter and the `floquet_code` quantum error correction (QEC) scheme.
 
-In the same Jupyter Notebook of your Q# program, add a new cell and run the following code:
+To compare estimates for the Q# program, follow these steps:
 
-```python
-from qdk import qsharp
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter **Create: New Jupyter Notebook**.
+1. To import the `qsharp` Python module, run the following code in the first cell:
 
-result_batch = qsharp.estimate("RunProgram()", params=
-                [{}, # Default parameters
-                {
-                    "qubitParams": {
-                        "name": "qubit_maj_ns_e6"
-                    },
-                    "qecScheme": {
-                        "name": "floquet_code"
+    ```python
+    from qdk import qsharp
+    ```
+
+1. Write your Q# program in a new `%%qsharp` cell:
+
+    ```python
+    %%qsharp
+
+    operation Main() : Result {
+        use qubit = Qubit();
+        H(qubit);
+        MResetZ(qubit)
+    }
+    ```
+
+1. Create a list of parameter set dictionaries and then pass the list as the `params` argument to the `qsharp.estimate` function. Run the following code in a new cell:
+
+    ```python
+    defaultParams = {} # Use an empty dictionary for the default input parameter set
+    customParams = {"qubitParams": {"name": "qubit_maj_ns_e6"},
+                    "qecScheme": {"name": "floquet_code"}
                     }
-                }])
-result_batch.summary_data_frame(labels=["Gate-based ns, 10⁻³", "Majorana ns, 10⁻⁶"])
-```
 
-You can also construct a list of estimation target parameters using the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams). The following code shows how to batch six configurations of target parameters as a single job.
+    result_batch = qsharp.estimate("Main()", params=[defaultParams, customParams])
+
+    result_batch.summary_data_frame(labels=["Gate-based ns, 10⁻³", "Majorana ns, 10⁻⁶"])
+    ```
+
+A summary of resource estimation results appears in a table so that you can easily compare how the algorithm runs with different qubit types and error correction schemes.
+
+### Run a batch job with the `EstimatorParams` class
+
+You can also construct a list of estimation target parameters as attributes of the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams). The following code shows how to batch six configurations of target parameters as a single job.
 
 ```python
 from qdk import qsharp
@@ -81,11 +95,11 @@ params.items[4].qec_scheme.name = QECScheme.FLOQUET_CODE
 params.items[5].qubit_params.name = QubitParams.MAJ_NS_E6
 params.items[5].qec_scheme.name = QECScheme.FLOQUET_CODE
 
-qsharp.estimate("RunProgram()", params=params).summary_data_frame(labels=labels)
+qsharp.estimate("Main()", params=params).summary_data_frame(labels=labels)
 ```
 
 > [!NOTE]
-> If you run into any issue while working with the resource estimator, check out the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator), or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
+> If you experience issues when you work with the resource estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator) or contact [AzureQuantumInfo@microsoft.com](mailto:AzureQuantumInfo@microsoft.com).
 
 ## Related content
 
