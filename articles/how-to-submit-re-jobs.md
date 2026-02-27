@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document provides a basic guide to run resource estimates both locally and online using different SDKs and IDEs.
 ms.author: quantumdocwriters
-ms.date: 12/18/2024
+ms.date: 02/09/2026
 ms.service: azure-quantum
 ms.custom:
 ms.topic: how-to
@@ -14,9 +14,9 @@ zone_pivot_groups: ide-local-jupyter-qiskit
 
 # Different ways to run the Microsoft Quantum resource estimator
 
-In this article, you learn how to work with the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The resource estimator helps you estimate the resources required to run a quantum program on a quantum computer. You can use the resource estimator to estimate the number of qubits, the number of gates, and the depth of the circuit required to run a quantum program.
+In this article, you learn how to work with the [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator). The resource estimator helps you estimate the resources required to run a quantum program on a quantum computer. Use the resource estimator to estimate the number of qubits, the number of gates, and the depth of the circuit required to run a quantum program.
 
-The resource estimator is available in Visual Studio Code (VS Code) as part of the Microsoft Quantum Development Kit (QDK) extension. For more information, see [Install the Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+The resource estimator is available in Visual Studio Code (VS Code) as part of the Microsoft Quantum Development Kit (QDK) extension. For more information, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
 
 ::: zone pivot="platform-local"
 

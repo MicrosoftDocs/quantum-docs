@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: This article gives an overview of the neutral atom simulator tools in the QDK, which allow users to simulate and visualize how their quantum programs run on neutral atom quantum computers.
-ms.date: 01/23/2026
+ms.date: 02/09/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
@@ -14,9 +14,9 @@ uid: microsoft.quantum.how-to.qdk-neutral-atom-visualizer
 
 # How to use the neutral atom device visualizer
 
-The Microsoft Quantum Development Kit (QDK) offers several quantum simulators, including three simulators and a visualizer for neutral atom quantum computers. The neutral atom visualizer produces an interactive diagram where you can track how qubits move and get processed when your program runs on a basic neutral atom device. This article explains how to create and interact with neutral atom diagrams from the visualizer.
+The Microsoft Quantum Development Kit (QDK) offers several quantum simulators, including three simulators and a visualizer for neutral atom quantum computers. The neutral atom device visualizer produces an interactive diagram where you can track how qubits move and get processed when your program runs on a basic neutral atom device. This article explains how to create and interact with neutral atom diagrams from the visualizer.
 
-To use the neutral atom visualizer, you must run your code in a Jupyter notebook in VS Code. For instructions on how to install the simulators and visualizer, see [How to install and use the neutral atom device simulators in the QDK](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
+For instructions on how to install the simulators and visualizer, see [How to install and use the neutral atom device simulators in the QDK](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 ## How to create a neutral atom qubit diagram
 
@@ -33,7 +33,7 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
     from qdk.widgets import Histogram
     ```
 
-1. Write your quantum circuit and compile the circuit into QIR. Copy and run the following code in a new cell:
+1. Write your OpenQASM quantum circuit and compile the circuit into QIR. Copy and run the following code in a new cell:
 
     ```python
     init(target_profile=TargetProfile.Base)
@@ -73,9 +73,11 @@ The diagram has interactive elements that let you explore a simulation of how qu
 
 The diagram contains three zones:
 
-- **Storage zone:** This zone is labeled **Register 1**. The qubits start in the storage zone and stay there until they're ready for processing or measurement. Qubits always move back to the storage zone after operations and measurement.
-- **Interaction zone:** This zone is where quantum gates are applied to the qubits for processing. Qubits move from the storage zone to the interaction zone, quantum gates are applied, and then the qubits move back to the storage zone.
-- **Measurement zone:** This zone is where the qubits are measured. After qubits are processed and move back to the storage zone, they move to the measurement zone for measurement. After measurement, qubits move back to the storage zone.
+| Zone             | Description |
+|------------------|-------------|
+| Storage zone     | This zone is labeled **Register 1**. The qubits start in the storage zone and stay there until they're ready for processing or measurement. Qubits always move back to the storage zone after operations and measurements. |
+| Interaction zone | This zone is where quantum gates are applied to the qubits for processing. |
+| Measurement zone | This zone is where the qubits are measured. |
 
 :::image type="content" source="media/neutral-atom-visualizer-zones.png" alt-text="Screenshot that shows the three zones in the neutral atom device visualizer":::
 
