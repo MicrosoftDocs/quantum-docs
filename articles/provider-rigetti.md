@@ -27,7 +27,7 @@ The Rigetti provider makes the following targets available:
 | [Cepheus-1-36Q](#cepheus-1-36q)              | rigetti.qpu.cepheus-1-36q | 36 qubits        |  |
 
 > [!NOTE]
-> Rigetti simulators and hardware targets do not support Cirq programs.
+> Rigetti simulators and hardware targets don't support Cirq programs.
 
 Rigetti's targets correspond to a **:::no-loc text="QIR Base":::** profile. For more information about this target profile and its limitations, see [Understanding target profile types in Azure Quantum](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets).
 

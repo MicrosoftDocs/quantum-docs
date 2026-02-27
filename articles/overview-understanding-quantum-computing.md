@@ -15,6 +15,8 @@ ai-usage: ai-assisted
 
 # What is quantum computing?
 
+👉 **[Discover what's new at Microsoft Quantum](https://quantum.microsoft.com/)**
+
 Quantum computing holds the promise of solving some of our planet's biggest challenges - in the areas of environment, agriculture, health, energy, climate, materials science, and more. For some of these problems, classical computing is increasingly challenged as the size of the system grows. When designed to scale, quantum systems will likely have capabilities that exceed those of today's most powerful supercomputers.
 
 This article explains the principles of quantum computing, how it compares to classical computing, and how it uses the principles of quantum mechanics.
@@ -102,3 +104,5 @@ If you want to learn more, see [Tutorial: Explore quantum entanglement with Q#](
 - [Quantum circuit diagram conventions](xref:microsoft.quantum.concepts.circuits)
 - [Entanglement in quantum computing](xref:microsoft.quantum.concepts.entanglement)
 - [Introduction to the quantum programming language Q#](xref:microsoft.quantum.qsharp-overview)
+
+👉 **[Discover what's new at Microsoft Quantum](https://quantum.microsoft.com/)**
