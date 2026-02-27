@@ -262,7 +262,7 @@ params.qubit_params.one_qubit_measurement_error_rate = 0.01
 ```
 
 > [!NOTE]
-> The default value for `two_qubitJointMeasurementTime` and `t_gate_time` is the value of `one_qubit_measurement_time` The default value for `two_qubit_joint_measurement_error_rate` and `t_gate_error_rate` is the value of `one_qubit_measurement_error_rate`. The default value for `idle_error_rate` is the value of `one_qubit_measurement_error_rate`.
+> The default value for `two_qubitJointMeasurementTime` and `t_gate_time` is the value of `one_qubit_measurement_time`. The default value for `two_qubit_joint_measurement_error_rate` and `t_gate_error_rate` is the value of `one_qubit_measurement_error_rate`. The default value for `idle_error_rate` is the value of `one_qubit_measurement_error_rate`.
 
 For `one_qubit_measurement_error_rate` and `two_qubit_joint_measurement_error_rate`, you can specify the error rates that correspond to measurement readouts, `readout`, and measurement processing, `process`. These values can be either `<double>` numbers or pairs of numbers. For example:
 
@@ -274,7 +274,7 @@ params.qubit_params.two_qubit_joint_measurement_error_rate = \
 > [!NOTE]
 > If you specify a single numeric value for single-qubit and two-qubit error rates in Majorana qubit measurement, then both the readout and process error rates might be equal.
 
- All values that you don't specify take a default value. For example, if you specify `"qubit": {"oneQubitGateTime":"200 ns"}`, then the resource estimator models a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers followed by a space and the time unit for such values. The supported time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.  
+All values that you don't specify take a default value. For example, if you specify `"qubit": {"oneQubitGateTime":"200 ns"}`, then the resource estimator models a gate-based qubit in which both the two-qubit gate time and the one-qubit gate time are 200 ns. For units, you need to specify time strings, which are double-precision floating point numbers followed by a space and the time unit for such values. The supported time suffixes are `ns`, `µs` (or `us`), `ms`, and `s`.
 
 ## Quantum error correction schemes
 

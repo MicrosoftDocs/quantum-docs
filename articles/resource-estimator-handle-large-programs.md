@@ -23,7 +23,7 @@ For information about how to run the resource estimator, see [Different ways to 
 - The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
 - The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
 
-To use Python in VS Code, you also need to do the following:
+If you want to use Python in VS Code, then you also need to do the following:
 
 - Install the latest versions of the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions in VS Code.
 - Install the latest version of the `qdk` Python library.  

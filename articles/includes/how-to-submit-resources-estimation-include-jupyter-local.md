@@ -508,7 +508,7 @@ EstimateDetails(result_maj)
 
 ### Change quantum error correction scheme
 
-Rerun the resource estimation job for the same example on the Majorana-based qubit parameter, but with a floquet QEC scheme instead. Run the following code in a new cell:
+Rerun the resource estimation job for the same example on the Majorana-based qubit parameter, but with a Floquet QEC scheme instead. Run the following code in a new cell:
 
 ```python
 inputParams = {"qubitParams": {"name": "qubit_maj_ns_e6"},
@@ -539,7 +539,7 @@ EstimateDetails(result_maj)
 
 The Microsoft Quantum resource estimator allows you to run multiple configurations of target parameters and compare the results for each configuration. To run a batch resource estimate, follow these steps:
 
-1. Pass a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run your algorithm with the default parameters and with the Majorana-based qubit parameter with a floquet QEC scheme. Run the following code in a new cell:
+1. Pass a list of target parameters to the `params` parameter of the `qsharp.estimate` function. For example, run your algorithm with the default parameters and with the Majorana-based qubit parameter with a Floquet QEC scheme. Run the following code in a new cell:
 
     ```python
     inputParams = {"qubitParams": {"name": "qubit_maj_ns_e6"},
@@ -648,7 +648,7 @@ The space-time diagram shows the number of physical qubits and the runtime of th
     > [!NOTE]
     > To define colors and run names for the qubit-time diagram, use the `EstimatesOverview` function.
 
-1. When you run multiple configurations of target parameters for Pareto frontier estimations, you can programatically access the resource estimates for a specific point in the space-time diagram. For example, run the following code in a new cell to show the estimation results for the second (estimate index = 0) run and the fourth (point index = 3) shortest runtime.
+1. When you run multiple configurations of target parameters for Pareto frontier estimations, you can programmatically access the resource estimates for a specific point in the space-time diagram. For example, run the following code in a new cell to show the estimation results for the second (estimate index = 0) run and the fourth (point index = 3) shortest runtime.
 
     ```python
     EstimateDetails(result[1], 4)
