@@ -304,14 +304,14 @@ from qdk import qsharp
 ```
 
 ```python
-# set the root folder for the Q# project
-# make adjustments to the path depending on where your program is saved
+# Set the root folder for the Q# project
+# Make adjustments to the path depending on where your program is saved
 
-# this example assumes your program is in the /src folder
+# This example assumes that your program is in the /src folder
 qsharp.init(project_root = '../Teleportation_project')
 ```
 
-If your path is valid, then you get a confirmation message that begins with the following: `Q# initialized with configuration:`.
+If your path is valid, then you get a confirmation message that shows you the configuration of your Q# initialization.
 
 To run the program, use the `%%qsharp` magic command to call the `Main` operation.
 
