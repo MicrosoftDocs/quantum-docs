@@ -349,18 +349,18 @@ print (qsharp.eval("Main.Main()"))
 
 ## Configure Q# projects as external dependencies
 
-You can configure Q# projects as an external dependencies for other projects, similar to a library. The functions and operations in the external Q# project are made available to multiple Q# projects. An external dependency can reside on a drive share or be published to a public GitHub repository.
+You can configure Q# projects as an external dependency for other projects, similar to a library, to make functions and operations in the external Q# project available to other Q# projects. An external dependency can reside on a drive share or be published to a public GitHub repository.
 
 To use a Q# project as an external dependency, you must:
 
 - Add the external project as a dependency in the manifest file of the calling project.
-- If the external project is published to GitHub, then add the **files** property to the manifest file of the external project.
+- If the external project is published to GitHub, then add the `files` property to the manifest file of the external project.
 - Add `export` statements to the external project.
 - Add `import` statements to the calling project.
 
 ### Configure the manifest files
 
-External Q# projects can reside on a local or network drive share, or be published to a public GitHub repository.
+External Q# projects can reside on a local or network drive share, or you can publish them to a public GitHub repository.
 
 #### The calling project manifest file
 
@@ -378,7 +378,7 @@ To add a dependency to an external project on a drive share, define the dependen
 }
 ```
 
-In the preceding manifest file, **MyDependency** is a user-defined string that identifies the namespace when you call an operation. For example, if you create a dependency named `MyMathFunctions`, then you can call a function from that dependency with `MyMathFunctions.MyFunction()`.
+In the preceding manifest file, `MyDependency` is a user-defined string that identifies the namespace when you call an operation. For example, if you create a dependency named `MyMathFunctions`, then you can call a function from that dependency with `MyMathFunctions.MyFunction()`.
 
 To add a dependency to a project that's published to a public GitHub repository, use the following example manifest file:
 
@@ -399,11 +399,11 @@ To add a dependency to a project that's published to a public GitHub repository,
 ```
 
 > [!NOTE]
-> For GitHub dependencies, **ref** refers to a GitHub [refspec](https://git-scm.com/book/en/v2/Git-Internals-The-Refspec). Microsoft recommends that you always use a commit hash so that you can rely on a specific version of your dependency.
+> For GitHub dependencies, `ref` refers to a GitHub [refspec](https://git-scm.com/book/en/v2/Git-Internals-The-Refspec). Microsoft recommends that you always use a commit hash so that you can rely on a specific version of your dependency.
 
 #### The external project manifest file
 
-If your external Q# project is published to a public GitHub repository, then you must add the **files** property to the manifest file of the external project, including all files used in the project.
+If your external Q# project is published to a public GitHub repository, then you must add the `files` property to the manifest file of the external project, including all files that the project uses.
 
 ```json
 {
@@ -413,11 +413,11 @@ If your external Q# project is published to a public GitHub repository, then you
 }
 ```
 
-The **files** property is optional for an external project that's imported via `"path"` (that is, a local filepath-based import). The **files** property is required only for projects that are published to GitHub.
+The `files` property is optional for an external project that you import via `"path"` with a local filepath-based import. The `files` property is required only for projects that are published to GitHub.
 
 ### Use the `export` statement
 
-To make functions and operations in an external project accessible to calling projects, use the `export` statement. You can export any or all of the callables in the file. Wild card syntax isn't supported, so you must specify each callable that you want to export.
+To make functions and operations in an external project accessible to calling projects, use the `export` statement. You can export any or all of the callables in the file. You can't use wild card syntax, so you must specify each callable that you want to export.
 
 ```qsharp
 operation Operation_A() : Unit {
@@ -439,7 +439,7 @@ export Operation_A as OpA;
 
 ### Use the `import` statement
 
-To make items from an external dependency available, use `import` statements from the calling program. The `import` statement uses the namespace that's defined for the dependency in the manifest file.
+To make items from an external dependency available, use `import` statements from the calling program. The `import` statement uses the namespace that you define for the dependency in the manifest file.
 
 For example, consider the dependency in the following manifest file:
 
@@ -479,12 +479,9 @@ import MyMathFunctions.MyFunction as Add;
 import MyMathFunctions.MyFunction, MyMathFunctions.AnotherFunction as Multiply; 
 ```
 
-> [!NOTE]
-> The currently used `open` statement in Q#, which is used to reference libraries and namespaces, is still supported but will be deprecated eventually. In the meantime, you can optionally update your current files to use the `import` statement. For example, `open Std.Diagnostics;` can be replaced with `import Std.Diagnostics.*;`.
-
 ### Example external project
 
-For this example, you use the same teleportation program as the earlier example, but separate the calling program and the callables into different projects.
+For this example, use the same teleportation program as the earlier example, but separate the calling program and the callables into different projects.
 
 1. Create two folders on your local drive, for example `Project_A` and `Project_B`.
 1. Create a Q# project in each folder. For details, see the steps in [How to create a Q# project](#how-to-create-a-q-project).
@@ -548,13 +545,13 @@ For this example, you use the same teleportation program as the earlier example,
     ```
 
     > [!NOTE]
-    > Note that the `PrepareBellPair` operation does not need to be exported because it's not called directly from your program in `Project_A`. Because `PrepareBellPair` is in the local scope of `Project_B`, it's already accessible by the `Teleport` operation.
+    > You don't need to export the `PrepareBellPair` operation your program in `Project_A` doesn't directly call that operation. The `PrepareBellPair` operation is already accessible by the `Teleport` operation because `PrepareBellPair` is in the local scope of `Project_B`.
 
 1. To run the program, open `/Project_A/Main.qs` in VS Code and choose **Run**.
 
 ## Projects and implicit namespaces
 
-In Q# projects, if a namespace isn't specified in a `.qs` program, then the compiler uses the file name as the namespace. Then, when you reference a callable from an external dependency, you use the syntax `<dependencyName>.<namespace>.<callable>`. However, if the file is named `Main.qs`, then the compiler assumes that the namespace and the calling syntax is `<dependencyName>.<callable>`, as in the previous example, `import MyTeleportLib.Teleport`.
+In Q# projects, if you don't specify a namespace in a `.qs` program, then the compiler uses the file name as the namespace. Then, when you reference a callable from an external dependency, you use the syntax `<dependencyName>.<namespace>.<callable>`. However, if the file is named `Main.qs`, then the compiler assumes that the namespace and the calling syntax is `<dependencyName>.<callable>`. For example, `import MyTeleportLib.Teleport`.
 
 Because you might have multiple project files, you need to account for the correct syntax when you reference callables. For example, consider a project with the following file structure:
 
