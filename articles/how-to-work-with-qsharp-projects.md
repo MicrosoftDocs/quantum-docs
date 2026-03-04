@@ -43,7 +43,7 @@ An external Q# project is a standard Q# project that's located in another direct
 
 ## Define a Q# project
 
-A Q# project is defined by the presence of a `qsharp.json` manifest file and a `src` folder, both of which must be in the root folder of the project. The `src` folder contains the Q# source files. For Q# programs and external projects, the Q# compiler automatically detects the project folder. For Python programs and Jupyter Notebook files, you must [specify the Q# project folder](#define-the-project-folder-python-and-jupyter-notebook-programs) with a `qsharp.init` call. However, the folder structure for a Q# project is the same for all types of programs.
+A Q# project is defined by the presence of a `qsharp.json` manifest file and a `src` folder, both of which must be in the root folder of the project. The `src` folder contains the Q# source files. For Q# programs and external projects, the Q# compiler automatically detects the project folder. For Python programs and Jupyter Notebook files, you must [specify the Q# project folder](#define-the-project-folder-for-python-and-jupyter-notebook-programs) with a `qsharp.init` call. However, the folder structure for a Q# project is the same for all types of programs.
 
 :::image type="content" source="media/multi-file-art.png" alt-text="The folder structure and hierarchy for a Q# project.":::
 
@@ -201,7 +201,7 @@ To create a Q# project, follow these steps:
 1. Enter **QDK: Create Q# project**. VS Code creates a minimal manifest file in the folder, and adds a `/src` folder with a `Main.qs` template file.
 1. Edit the manifest file for your project. See [Manifest file examples](#manifest-file-examples).
 1. Add and organize your Q# source files under the `/src` folder.
-1. If you're accessing the Q# project from a Python program or Jupyter Notebook, then set the [root folder path](#define-the-project-folder-python-and-jupyter-notebook-programs) with `qsharp.init`. This example assumes that your program is in the `/src` folder of the Q# project:
+1. If you're accessing the Q# project from a Python program or Jupyter Notebook, then set the [root folder path](#define-the-project-folder-for-python-and-jupyter-notebook-programs) with `qsharp.init`. This example assumes that your program is in the `/src` folder of the Q# project:
 
     ```python
     qsharp.init(project_root = '../Teleportation_project')
