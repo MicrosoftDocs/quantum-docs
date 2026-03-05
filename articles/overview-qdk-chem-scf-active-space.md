@@ -34,8 +34,8 @@ Active space selection is the process of choosing which MOs from the SCF calcula
 
 ## Get started with SCF calculations and active space selection in QDK the chemistry libraries
 
-To learn more about SCF calculations in the QDK/Chemistry, see [Self-consistent field (SCF) solver](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/scf_solver.html).
+To learn more about SCF calculations in the QDK/Chemistry, see [Self-consistent field (SCF) solver](https://microsoft.github.io/qdk-chemistry/user/comprehensive/algorithms/scf_solver.html).
 
-To learn more about active space selection in the QDK/Chemistry, see [Active space selection](https://animated-adventure-mwrpnpe.pages.github.io/user/comprehensive/algorithms/active_space.html).
+To learn more about active space selection in the QDK/Chemistry, see [Active space selection](https://microsoft.github.io/qdk-chemistry/user/comprehensive/algorithms/active_space.html).
 
-For code examples of SCF calculations and active space selection in the QDK/Chemistry, see [Run a self-consistent field (SCF) calculation](https:/microsoft.github.io/qdk-chemistry/user/quickstart.html#run-a-self-consistent-field-scf-calculation) and [Select an active space](https:/microsoft.github.io/qdk-chemistry/user/quickstart.html#select-an-active-space) in the QDK/Chemistry quickstart guide.
+For code examples of SCF calculations and active space selection in the QDK/Chemistry, see [Run a self-consistent field (SCF) calculation](https://microsoft.github.io/qdk-chemistry/user/quickstart.html#run-a-self-consistent-field-scf-calculation) and [Select an active space](https://microsoft.github.io/qdk-chemistry/user/quickstart.html#select-an-active-space) in the QDK/Chemistry quickstart guide.
