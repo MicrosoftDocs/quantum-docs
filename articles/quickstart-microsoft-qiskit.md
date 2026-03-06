@@ -72,7 +72,7 @@ To submit a Qiskit program to run on an Azure Quantum target, follow these steps
 
     providers = AzureQuantumProvider(workspace)
 
-    for backend in provider.backends():
+    for backend in providers.backends():
         print("- " + backend.name)
     ```
 
