@@ -116,16 +116,18 @@ plot_histogram(counts)
 
 Some types of quantum hardware can experience qubit loss during a program run. If qubit loss occurs at any point during a shot for a Qiskit program, then that shot is removed from the Azure Quantum job results. For example, if qubit loss occurs in 10 out of 200 shots, then the job results have only 190 total measurement counts.
 
+The raw results for all shots, including shots where qubit loss occurred, are still available in the `results` object. The following code gets both sets of results:
+
 ```python
 # Get results only for shots without qubit loss
-print('Counts:', job.result().results[0].data.counts)
-print('Probabilities:', job.result().results[0].data.probabilities)
-print('Memory:', job.result().results[0].data.memory)
+print('Counts:', result.results[0].data.counts)
+print('Probabilities:', result.results[0].data.probabilities)
+print('Memory:', result.results[0].data.memory)
 
 # Get the raw total shot results
-print('Raw counts:', job.result().results[0].data.raw_counts)
-print('Raw probabilities:', job.result().results[0].data.raw_probabilities)
-print('Raw memory:', job.result().results[0].data.raw_memory)
+print('Raw counts:', result.results[0].data.raw_counts)
+print('Raw probabilities:', result.results[0].data.raw_probabilities)
+print('Raw memory:', result.results[0].data.raw_memory)
 ```
 
 > [!NOTE]
