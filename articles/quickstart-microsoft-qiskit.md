@@ -27,11 +27,11 @@ To submit Qiskit jobs to Azure Quantum and to run Qiskit programs on the local s
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A local Python environment (version 3.10 or higher) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
-- Visual Studio Code (VS Code) with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
+- Visual Studio Code (VS Code) with the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The `qdk` Python library with the `azure` and `qiskit` extras, and the `ipykernel` package.
 
     ```bash
-    pip install --upgrade "qdk[azure,qiskit]" ipykernel 
+    pip install --upgrade "qdk[azure,qiskit]" ipykernel
     ```
 
 ## Submit a job to an Azure Quantum target in your Quantum workspace
@@ -51,7 +51,7 @@ To submit a Qiskit program to run on an Azure Quantum target, follow these steps
     circuit.h(0)
     circuit.cx(0, 1)
     circuit.cx(1, 2)
-    circuit.measure([0,1,2], [0, 1, 2])
+    circuit.measure([0, 1, 2], [0, 1, 2])
 
     # Print out the circuit
     circuit.draw()
@@ -70,16 +70,16 @@ To submit a Qiskit program to run on an Azure Quantum target, follow these steps
     ```python
     from qdk.azure.qiskit import AzureQuantumProvider
 
-    providers = AzureQuantumProvider(workspace)
+    provider = AzureQuantumProvider(workspace)
 
-    for backend in providers.backends():
+    for backend in provider.backends():
         print("- " + backend.name)
     ```
 
 1. Set the Azure Quantum backend with the target that you want to submit your job to. For example, the following code sets up a backend to run your program as a simulation on the Quantinuum H2-1 emulator:
 
      ```python
-    backend = providers.get_backend('quantinuum.sim.h2-1e')
+    backend = provider.get_backend('quantinuum.sim.h2-1e')
     ```
 
 1. Run your program on the Azure Quantum target and get the results. The following code runs 1,000 shots of your program on the specified target and stores the results:
@@ -103,14 +103,21 @@ from qiskit.visualization import plot_histogram
 print("Job ID:", job.job_id())
 
 counts = result.get_counts(circuit)
-
-# Reformat counts to include all possible measurement outcomes, even those with zero counts
-counts = {format(n, "03b"): 0 for n in range(8)}
-counts.update(result.get_counts(circuit))
 print('Counts:', counts)
 
-plot_histogram(counts)
+# Reformat counts to include all possible measurement outcomes, even those with zero counts
+full_counts = {format(n, "03b"): 0 for n in range(8)}
+full_counts.update(counts)
+
+plot_histogram(full_counts)
 ```
+
+> [!NOTE]
+> To use the `plot_histogram` function from Qiskit, you must install Matplotlib.
+>
+> ```bash
+> pip install matplotlib
+> ```
 
 ### Qiskit job results for programs with qubit loss
 
@@ -129,6 +136,8 @@ print('Raw counts:', result.results[0].data.raw_counts)
 print('Raw probabilities:', result.results[0].data.raw_probabilities)
 print('Raw memory:', result.results[0].data.raw_memory)
 ```
+
+For jobs or targets that don't have qubit loss, the default results and raw results are identical.
 
 > [!NOTE]
 > The `memory` attribute for Qiskit job results is a list of the measurement result for each shot.
