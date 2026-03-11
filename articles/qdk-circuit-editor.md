@@ -13,23 +13,23 @@ uid: microsoft.quantum.how-to.qdk-circuit-editor
 #Customer intent: I want to learn how to use the Circuit Editor from the QDK to build quantum circuits and use them in my Q# program.
 ---
 
-# Create and visualize circuits with the Circuit editor
+# Create and visualize circuits with the circuit editor
 
-The Circuit editor is a feature in the Quantum Development Kit (QDK) that provides a graphical interface where you can create, edit, and visualize quantum circuit diagrams inside your Q# projects. You can use the circuits that you build directly in your Q# programs as callable operations.
+The circuit editor is a feature in the Quantum Development Kit (QDK) that provides a graphical interface where you can create, edit, and visualize quantum circuit diagrams inside your Q# projects. You can use the circuits that you build directly in your Q# programs as callable operations.
 
-## How to access the Circuit editor
+## How to access the circuit editor
 
-To get started with the Circuit editor, follow these steps:
+To get started with the circuit editor, follow these steps:
 
 1. Create a new Q# project in VS Code, or open an existing project.
 2. Create a new circuit file with the extension `.qsc`.
 3. Open the circuit file in VS Code.
 
-The Circuit editor is the default view for `.qsc` files.
+The circuit editor is the default view for `.qsc` files.
 
-## Circuit editor features
+## circuit editor features
 
-Here's what you can do with the Circuit editor:
+Here's what you can do with the circuit editor:
 
 | **Feature** | **How to Use** |
 |-------------|----------------|
@@ -46,7 +46,7 @@ Here's what you can do with the Circuit editor:
 | **Convert a gate to its adjoint** | Right-click the gate icon and choose **Toggle Adjoint** from the context menu. |
 | **Define an argument for a gate** | When you place a gate that requires an argument, a prompt box appears. Enter a number or expression in the prompt box. To update the argument, right-click the gate and choose **Edit Argument**. Or, left-click the argument text on the gate icon. |
 
-## How to use Circuit editor circuits in your Q# projects
+## How to use circuit editor circuits in your Q# projects
 
 Circuit files with the `.qsc` extension define operations that you can reference from Q# code within the same Q# project. The circuits from the `.qsc` files appear like any other Q# operation and are supported by the Q# language service with features like completions, signature help, and go-to definition.
 
@@ -69,3 +69,4 @@ The following Q# program imports a circuit from the file `JointMeasurement.qsc`,
 ## Related content
 
 - [Visualize quantum circuit diagrams with Q#](xref:microsoft.quantum.how-to.visualize-circuits)
+- [Quantum circuit diagram conventions](xref:microsoft.quantum.how-to.concepts-circuits)
