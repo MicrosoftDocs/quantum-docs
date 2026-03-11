@@ -33,7 +33,7 @@ Here's what you can do with the Circuit editor:
 
 | **Feature** | **How to Use** |
 |-------------|----------------|
-| **Expand the State visualizer panel** | Click **State Visualization** to expand the State Visualizer panel to view the resulting quantum state from running the circuit. The panel updates live when editing the circuit and shows the probability density and phase for each basis state. | 
+| **Expand the State visualizer panel** | Click **State Visualization** to expand the State Visualizer panel to view the resulting quantum state from running the circuit. The panel shows the probability density and phase for each basis state. You can use the Toolbox to edit the circuit and view panel updates live. |
 | **Insert a circuit element** | Click-and-drag the element from the toolbox into the circuit diagram. |
 | **Remove a circuit element** | Click-and-drag the element out of the circuit diagram. Or, right-click the element and choose **Delete** from the context menu. |
 | **Move a circuit element** | Click-and-drag the element to a new location in the circuit diagram. |
