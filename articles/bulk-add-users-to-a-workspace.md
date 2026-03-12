@@ -20,10 +20,10 @@ We recommend using the instructions in this article if you need to grant access 
 
 In this article you'll:
 
-1. [Create a group using the Azure Active Directory portal.](#create-a-group-in-the-azure-active-directory)
-1. [Add the group as a contributor to your Quantum workspace.](#add-your-group-to-your-quantum-workspace)
-1. [Bulk invite your users to the Azure Active Directory.](#bulk-invite-users-to-the-azure-active-directory)
-1. [Bulk import those users to your group.](#bulk-import-members-to-your-group)
+1. [Create a group in the Microsoft Entra ID portal.](#create-a-group-in-the-microsoft-entra-id-portal)
+1. [Add the group as a contributor to your Quantum workspace.](#add-the-group-as-a-contributor-to-your-quantum-workspace)
+1. [Bulk invite users to the Microsoft Entra ID.](#bulk-invite-users-to-the-microsoft-entra-id)
+1. [Bulk import members to your group.](#bulk-import-members-to-your-group)
 
 ## Prerequisites
 
@@ -33,15 +33,13 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A link for your Azure Quantum Workspace. To get the link for your Quantum workspace, go to your Azure Quantum workspace in the Azure portal and copy the URL from the address bar of your browser.
 
-## Create a group in the Azure Active Directory
+## Create a group in the Microsoft Entra ID portal
 
 1. Sign in to the [Azure portal](https://portal.azure.com). You must be an **Owner** of the workspace, or have role assignment privileges, in order to add the group in the next section.
 
-1. Search for and select **Azure Active Directory**.
+1. Search for and select **Microsoft Entra ID**.
 
-1. On the **Active Directory** page, select **Groups** from the left menu and then select **New group**.
-
-    :::image type="content" source="media/bulk-invite-users-new-group.png" alt-text="Screen shot showing how to select new group.":::
+1. On the **Microsoft Entra ID** page, select **Groups** from the left menu and then select **New group**.
 
 1. Fill out the required information on the **New Group** page.
 
@@ -55,7 +53,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. Select **Create**. You should get a notification that you've successfully created your group.
 
-## Add your group to your Quantum workspace
+## Add the group as a contributor to your Quantum workspace
 
 > [!NOTE]
 > You can add your group as a **Contributor** role or as a **Quantum Workspace Data Contributor** role. The Contributor role allows users to manage the workspace properties, whereas the Quantum Workspace Data Contributor role only allows users to submit and view jobs in the workspace. For more information, see [Manage access to your Azure Quantum workspace](xref:microsoft.quantum.how-to.manage-workspace-access).
@@ -78,7 +76,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
     :::image type="content" source="media/bulk-invite-users-assign-group-contributor.png" alt-text="Screen shot showing how to assign your group as a contributor to your Azure Quantum workspace.":::
 
-## Bulk invite users to the Azure Active Directory
+## Bulk invite users to the Microsoft Entra ID
 
 1. Go to [Users - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers). On the left-side menu, go to **All users**.
 
@@ -96,7 +94,7 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
     :::image type="content" source="media/bulk-invite-users-CSV.png" alt-text="Screen shot showing the template CSV and how to list the users' email addresses and a custom invitation message.":::
 
-1. Save the file. 
+1. Save the file.
 
 1. On the **Bulk invite users** pane, under **Upload your csv file**, browse to the file. When you select the file, validation of the CSV file starts. Once the **File uploaded successfully** message appears, select **Submit** to start the bulk invite operation.
 
@@ -106,17 +104,17 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 
 1. On the **Review permissions** page, users must select **Accept** before they can continue.
 
-1. After permissions are accepted, your users will be added to the Azure Active Directory.
+1. After permissions are accepted, your users will be added to the Microsoft Entra ID.
 
 ## Bulk import members to your group
 
-1. After the bulk invite is complete, download all Azure Active Directory users into a CSV file. Go to **All users**, and select **Download users**. 
+1. After the bulk invite is complete, download all Microsoft Entra ID users into a CSV file. Go to **All users**, and select **Download users**.
 
 1. In the **Download users** pane, select **Start**.
 
     :::image type="content" source="media/bulk-invite-users-download-users.png" alt-text="Screen shot showing how to download users into a CSV.":::
     
-1. After the bulk users export is complete, click on **Download results** to download the CSV file with all your Azure Active Directory users.
+1. After the bulk users export is complete, click on **Download results** to download the CSV file with all your Microsoft Entra ID users.
 
 1. After the download is complete, import your group members. Go to [Groups - Microsoft Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/AllGroups). Select your group, on the left-side menu, go to **Members**. In this blade, select **Bulk operations**, and then **Import members**.
 
@@ -133,4 +131,3 @@ You need the following prerequisites to bulk add users to an Azure Quantum works
 1. Once the **File uploaded successfully** message appears, select **Submit** to start the bulk import operation.
 
 1. After the bulk import group operation completes, your group members will be added to the group successfully.
-

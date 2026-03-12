@@ -17,7 +17,10 @@ uid: microsoft.quantum.how-to.migrate-quantum-workspace-new-region
 
 If you have an existing Azure Quantum workspace and you create new workspace, then you can migrate your job data from the old workspace to the new workspace. When you do the migration, your job input and output data are available in your new workspace. But you can't see the job history for those jobs anymore in the Azure portal, Azure Quantum SDK, or the Azure CLI.
 
-Migration instructions depend on whether your old workspace's storage account is managed or unmanaged.
+Migration instructions depend on whether the existing Azure Quantum workspace uses **managed** or **unmanaged** storage:
+
+- An **unmanaged** workspace uses a user‑specified Azure Storage account that already exists and is explicitly selected during workspace creation.
+- A **managed workspace** uses a storage account that Azure automatically creates and manages as part of the workspace.
 
 > [!IMPORTANT]
 > Don't delete your old workspace until after you migrate your data to your new workspace. Before you migrate your job data, make sure that you don't have open jobs in the queue. To remove an open job from the queue, either wait for the job to finish running or cancel the job.
@@ -31,7 +34,7 @@ If your old workspace uses an unmanaged storage account, then link that storage 
 
 To create a new Quantum workspace and link your storage account, follow these steps:
 
-1. Log in to the Azure portal, go to **Quantum Workspaces**, and then choose **Create**.
+1. Sign in to the [Azure portal](https://portal.azure.com/), go to **Quantum Workspaces**, and then choose **Create**.
 1. Choose your subscription in the **Subscription** dropdown list, and then select **Advanced create**.
 1. In the **Project details** section, open the **Resource group** dropdown list and choose the resource group that contains the storage account for your old workspace.
 1. In the **Instance details** section, enter a name for your new workspace in the **Workspace name** field, and then choose one of the supported regions from the **Region** dropdown list (East US, West US, North Europe, or West Europe).
@@ -52,7 +55,7 @@ If your old workspace uses a managed storage account, then create a new workspac
 
 To create a new workspace with a managed storage account, follow these steps:
 
-1. Log in to the Azure portal, go to **Quantum Workspaces**, and then choose **Create**.
+1. Sign in to the [Azure portal](https://portal.azure.com/), go to **Quantum Workspaces**, and then choose **Create**.
 1. Choose your subscription in the **Subscription** dropdown list, and then select **Advanced create**.
 1. In the **Project details** section, open the **Resource group** dropdown list and choose a resource group for your new workspace.
 1. In the **Instance details** section, enter a name for your new workspace in the **Workspace name** field, and then choose one of the supported regions from the **Region** dropdown list (East US, West US, North Europe, or West Europe).
@@ -66,7 +69,7 @@ You can't link your old workspace's managed storage account to your new workspac
 
 To generate a SAS for each storage account, follow these steps:
 
-1. Log in to the Azure portal, go to **Quantum Workspaces**, and then choose your old workspace.
+1. Sign in to the Azure portal, go to **Quantum Workspaces**, and then choose your old workspace.
 1. In the **Overview** menu, choose the **Storage account** link.
 1. In the **Security + networking** dropdown on the Storage account blade, choose **Shared access signature**.
 1. For **Allowed services**, select only **Blob**.
