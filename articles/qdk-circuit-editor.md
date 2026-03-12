@@ -69,4 +69,4 @@ The following Q# program imports a circuit from the file `JointMeasurement.qsc`,
 ## Related content
 
 - [Visualize quantum circuit diagrams with Q#](xref:microsoft.quantum.how-to.visualize-circuits)
-- [Quantum circuit diagram conventions](xref:microsoft.quantum.how-to.concepts-circuits)
+- [Quantum circuit diagram conventions](xref:microsoft.quantum.concepts-circuits)
