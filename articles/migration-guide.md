@@ -69,7 +69,7 @@ You can't link your old workspace's managed storage account to your new workspac
 
 To generate a SAS for each storage account, follow these steps:
 
-1. Sign in to the Azure portal, go to **Quantum Workspaces**, and then choose your old workspace.
+1. Sign in to the [Azure portal](https://portal.azure.com/), go to **Quantum Workspaces**, and then choose your old workspace.
 1. In the **Overview** menu, choose the **Storage account** link.
 1. In the **Security + networking** dropdown on the Storage account blade, choose **Shared access signature**.
 1. For **Allowed services**, select only **Blob**.

@@ -125,6 +125,7 @@ Every Azure Quantum workspace has a unique set of parameters that you can use to
 | `subscription_id` | The Azure subscription ID.                            |
 | `resource_group`  | The Azure resource group name.                        |
 | `name`            | The name of your Azure Quantum workspace.             |
+| `location`        | The Azure region that your workspace is in.           |
 | `resource_id`     | The Azure resource ID of the Azure Quantum workspace. |
 
 To find your workspace parameters, follow these steps:
@@ -195,11 +196,14 @@ You can use Azure CLI to connect to your workspace. For more information, see [M
     az account set --subscription SubscriptionName
     ```
 
-1. Set the workspace that you want to use. Replace `ResourceGroupName` and `WorkspaceName` with your workspace's resource group name and workspace name.
+1. Set the workspace that you want to use. Replace `ResourceGroupName`, `WorkspaceName`, and `Location` with your workspace's resource group name, workspace name, and location.
 
     ```azurecli
-    az quantum workspace set --resource-group ResourceGroupName --workspace-name WorkspaceName 
+    az quantum workspace set --resource-group ResourceGroupName --workspace-name WorkspaceName --location Location
     ```
+
+> [!WARNING]
+> The `location` option has been deprecated and will be removed in May 2026.
 
 ***
 
