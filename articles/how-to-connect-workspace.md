@@ -196,11 +196,14 @@ You can use Azure CLI to connect to your workspace. For more information, see [M
     az account set --subscription SubscriptionName
     ```
 
-1. Set the workspace that you want to use. Replace `ResourceGroupName`, `WorkspaceName`, and `Location` with your workspace's resource group name, workspace name, and Azure region respectively.
+1. Set the workspace that you want to use. Replace `ResourceGroupName`, `WorkspaceName`, and `Location` with your workspace's resource group name, workspace name, and location.
 
     ```azurecli
     az quantum workspace set --resource-group ResourceGroupName --workspace-name WorkspaceName --location Location
     ```
+
+> [!WARNING]
+> The `location` option has been deprecated and will be removed in May 2026.
 
 ***
 

@@ -86,14 +86,14 @@ Use this option to manually configure your resource group and storage account, s
 
 1. Select or create a storage account for the workspace:
 
-   - To have Azure automatically create a storage account, select **Create a new storage account with default settings**.
-   - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings**.
+   - To have Azure automatically create a storage account, select **Use a managed storage account with default settings (recommended)**.
+   - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings (advanced)**.
    > [!NOTE]
    >The storage account you select must be enabled for public internet access. For more information, see [Authorization failure](xref:microsoft.quantum.azure.common-issues#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation).
 
 1. Select **Next**.
 
-1. The IonQ, Quantinuum, Rigetti, and Microsoft Quantum Computing providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**.
+1. A list of providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**.
 
    > [!NOTE]
    > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
@@ -106,7 +106,7 @@ Use this option to manually configure your resource group and storage account, s
 
 ***
 
-Deployment of your workspace may take a few minutes. The status and deployment details will be updated in the portal.
+Deployment of your workspace may take a few minutes. The portal updates the status and deployment details.
 
 > [!NOTE]
 > If you run into any issues, see [Azure Quantum common issues: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
