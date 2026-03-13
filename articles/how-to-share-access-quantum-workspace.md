@@ -25,9 +25,9 @@ You need the following prerequisites to share access to your Azure Quantum works
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. See [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
-## Azure Active Directory
+## Microsoft Entra ID
 
-Each user must have an account in your organization's Azure Active Directory before you can grant them access to your workspace. To add new users, you must be at least a **User Administrator**. For instructions, see [Add a new user](/azure/active-directory/fundamentals/add-users-azure-active-directory#add-a-new-user).
+Each user must have an account in your organization's Microsoft Entra ID before you can grant them access to your workspace. To add new users, you must be at least a **User Administrator**. For instructions, see [Add a new user](/azure/active-directory/fundamentals/add-users-azure-active-directory#add-a-new-user).
 
 ## Add users to your Azure Quantum workspace
 
