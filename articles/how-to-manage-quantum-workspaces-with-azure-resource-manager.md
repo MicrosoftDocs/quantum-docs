@@ -15,7 +15,7 @@ uid: microsoft.quantum.workspaces-arm
 
 In this guide, learn to use a Bicep template to create Azure Quantum workspaces and the required resource groups and storage accounts. After template deployment, you can start running your quantum applications in Azure Quantum. Treating your infrastructure as code enables you to track changes to your infrastructure requirements and makes your deployments more consistent and repeatable.
 
-Bicep uses a declarative syntax that you treat like application code. If you're familiar with the JSON syntax for writing Azure Resource Manager templates (ARM templates), you'll find that Bicep provides a more concise syntax and improved type safety.
+Bicep uses a declarative syntax that you treat like application code. If you're familiar with the JSON syntax for writing Azure Resource Manager (ARM) templates, you'll find that Bicep provides a more concise syntax and improved type safety.
 
 ## Prerequisites
 
@@ -158,7 +158,7 @@ The following Azure resources are created by the template:
 - [**Azure Storage Account**](/azure/storage/blobs/): storage account for storing input and output data for quantum jobs.
 - [**Azure Quantum workspace**](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum applications.
 
-The template also grants the quantum workspace **Contributor**-permissions to the storage account. This step is needed so that the workspace can read and write job data.
+The template also grants the quantum workspace **Contributor** permission to the storage account. This step is needed so that the workspace can read and write job data.
 
 The template generates the following output. You can use these values later to identify the generated quantum workspace and authenticate to it:
 
