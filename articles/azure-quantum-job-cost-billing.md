@@ -2,7 +2,7 @@
 author: azure-quantum-content
 ms.author: quantumdocwriters
 description: Learn about how to view job cost reports for running quantum programs in Azure Quantum and how to manage your invoices.
-ms.date: 09/25/2024
+ms.date: 03/16/2026
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: faq
@@ -10,45 +10,41 @@ title: 'FAQ: Understanding Job Costs and Billing'
 uid: microsoft.quantum.azure.job-cost-billing
 ms.custom: sfi-image-nochange
 
-#customer intent: As a quantum developer, I want to understand how to view the job cost report, and how to manage my invoices so that I can track my spending and manage my budget.
+#customer intent: As a quantum developer, I want to understand how to view the job cost report and how to manage my invoices so that I can track my spending and manage my budget.
 ---
 
 # FAQ: Understanding Job Costs and Billing in Azure Quantum
 
-In this article, you'll find the guidelines to understand the cost of running quantum programs in Azure Quantum and how to manage your invoices.
+This article explains the guidelines to understand the cost of running quantum programs in Azure Quantum and how to manage your invoices.
 
 ## How many usage plans are available in Azure Quantum?
 
-Azure Quantum makes solutions available from Microsoft and from our partner companies, so the billing details will depend on the provider and the pricing plan you select. In the following table you can see the general pricing guidance for using Azure Quantum.
+Azure Quantum provides services from Microsoft and from our partner companies, so billing details depend on the provider and the pricing plan that you select.
 
-|Plan|Description|
-|---|---|
-|Billing plans| Most providers bill based on the resources you consume by running a job (pay-as-you-go), though some also offer subscription plans. For more information about how each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).|
+Most providers have a pay-as-you-go billing plan, which is based on the resources that you consume when you run a job. Some providers also offer subscription plans. For more information about how each provider charges, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
-## How can I modify the usage plan for my Azure Quantum workspace?
+## How do I modify the usage plan for my Azure Quantum workspace?
 
-You can modify your current usage plan for each provider and see the different billing plans available in your local currency.
+To modify your current usage plans for your providers and see the different billing plans available in your local currency, follow these steps:
 
-1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-1. Select your **Azure Quantum workspace**.
-1. In the left panel, under **Operations**, go to the **Providers** tab.
-1. You can check the current usage plan for each provider under **Plan** column.
-1. Click on **Modify** to see and modify the different billing plans available for that provider in your local currency.
+1. Sign in to the [Azure portal](https://portal.azure.com) with the credentials for your Azure subscription.
+1. Go to your Azure Quantum workspace.
+1. In the workspace panel, under the **Operations** dropdown, go to the **Providers** blade.
+1. View the current usage plan for each provider in the **Plan** column.
+1. Choose **Modify** to see and modify the different billing plans that are available for that provider in your local currency.
 
-     :::image type="content" source="media/azure-portal-billing-plans.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace." lightbox="media/azure-portal-billing-plans.png":::
+The billing plans are set by the quantum hardware providers. For more information about each provider's pricing, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing).
 
-The billing plans are set by the quantum hardware providers. For more information about the pricing offer, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing) page.
+## How do I view the job cost report after I run a job?
 
-## How can I view the job cost report after running?
+After you run a job, you can check the detailed cost estimates and use this information to understand the cost of individual jobs. This cost is the cost billed by the provider. Refer to your final bill for the exact charges including relevant taxes. For more information, see [How do I receive my invoices?](#how-do-i-receive-my-invoices).
 
-After you run a job, you can check the detailed cost estimates and use this information to understand the cost of individual jobs. This cost is the cost billed by the provider; refer to your final bill for the exact charges including relevant taxes. For more information, see [How do I receive my invoices?](#how-do-i-receive-my-invoices).
-
-To review job costs:
+To review job costs, follow these steps:
 
 1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
 1. Select your **Azure Quantum workspace**.
-1. Navigate to the **Job Management** blade within your Azure Quantum workspace.
-1. In the job list, you see estimated costs reported for each job you run.
+1. In the workspace panel, under the **Operations** dropdown, go to the **Job Management** blade.
+1. View the estimated costs for each job in the **Cost estimate** column.
 
 _Prices below are shown for example purposes only._
 
