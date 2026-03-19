@@ -20,49 +20,50 @@ When you work with the Azure Quantum service, you might experience connection or
 
 ## Workspace connection issues
 
-### Issue: Unable to authenticate to Azure Quantum via `pytket-azure` CI
+### Issue: I can't authenticate to Azure Quantum with `pytket-azure`
 
-When you try to authenticate to Azure Quantum with the `pytket-azure` package in a CI environment using the environment variables `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, and `AZURE_CLIENT_SECRET`, you might encounter the following error:
+When you try to authenticate to Azure Quantum with the `pytket-azure` package in a CI environment using the environment variables `"AZURE_TENANT_ID"`, `"AZURE_CLIENT_ID"`, and `"AZURE_CLIENT_SECRET"`, you might encounter the following error:
 
 ```cmd
 Code: InsufficientPermissions
 Message: There are not enough permissions to perform this operation.
 ```
 
-To resolve this issue, use a connection string and the environment variable `AZURE_QUANTUM_CONNECTION_STRING` to authenticate instead. For more information, see [Connect with a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
+To resolve this issue, use a connection string and the environment variable `"AZURE_QUANTUM_CONNECTION_STRING"` to authenticate instead. For more information, see [Connect with a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
 
 ```python
-connection_string = "[Copy connection string]" 
+connection_string = "" # Add your connection string
 
 import os 
 
 os.environ["AZURE_QUANTUM_CONNECTION_STRING"] = connection_string 
 ```
 
-## Submitting jobs
+## Job submission issues
 
-### Issue: Missing targets
+### Issue: I can't find the target that I want to submit my job to
 
-If the target where you want to run your job is missing from the available target list, you likely need to update to the latest version of the [Quantum Development Kit (QDK) for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
+If the Azure Quantum target that you want to run your job on isn't in the available target list, then update to the latest version of the [Quantum Development Kit (QDK) for Visual Studio Code (VS Code)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For more information, see [Update the QDK](xref:microsoft.quantum.update-qdk).
 
 ### Issue: Operation returns an invalid status code 'Unauthorized'
 
 Steps to resolve this issue:
 
-1. Open your Azure portal (https://portal.azure.com) and authenticate your account.
-2. Under **Navigate**, select **Subscriptions** and select your subscription.
-3. Select **Access control (IAM)**.
-4. Under **Check access**, search for your email address and select the account.
-5. You shouldn't see an **Owner** or a **Contributor** role listed.
-6. Select the **Role assignments** tab.
+1. Sign in to the [Azure portal](https://portal.azure.com) and authenticate your account.
+1. In the **Navigate** section of the portal home page, choose **Subscriptions** and then select your subscription.
+1. In the subscription nacigation pane, choose **Access control (IAM)**.
+1. Choose the **Check access** button to open the **Check access** pane.
+1. Search for your email address and select the account.
+1. You shouldn't see an **Owner** or a **Contributor** role listed.
+1. Select the **Role assignments** tab.
 
     > [!NOTE]
     > If you don't see the **Role assignments** tab, you might need to expand the portal to full screen or close the **\<your name\> assignments** pane.
 
-7. Select the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
-8. Select **Save**.
-9. You should now see your account set configured with either the **Owner** or **Contributor** role.
-10. Create your Azure Quantum workspace again and then submit a job against this new Workspace.
+1. Select the **Role** dropdown, select either **Owner** or **Contributor**, then enter your email address and select your account.
+1. Select **Save**.
+1. You should now see your account set configured with either the **Owner** or **Contributor** role.
+1. Create your Azure Quantum workspace again and then submit a job against this new Workspace.
 
 ### Issue: "AuthorizationFailure - This request is not authorized to perform this operation"
 
