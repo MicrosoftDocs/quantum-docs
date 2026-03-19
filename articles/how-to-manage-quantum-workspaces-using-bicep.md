@@ -86,7 +86,7 @@ New-AzResourceGroup -Name myResourceGroup -Location "East US"
 
 ## Review the Azure Bicep template
 
-```bicep
+```azurecli
 @description('Application name used as prefix for the Azure Quantum workspace and its associated Storage account.')
 param appName string
 
