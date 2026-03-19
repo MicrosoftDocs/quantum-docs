@@ -92,16 +92,11 @@ param appName string
 
 @description('Location of the Azure Quantum workspace and its associated Storage account.')
 @allowed([
-  'eastus'
-  'japaneast'
-  'japanwest'
-  'northeurope'
-  'uksouth'
-  'ukwest'
-  'westcentralus'
-  'westeurope'
   'westus'
-  'westus2'
+  'eastus'
+  'northeurope'
+  'westeurope'
+  'canary'
 ])
 param location string
 
