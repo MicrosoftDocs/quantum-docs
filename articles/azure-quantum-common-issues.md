@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: This article provides troubleshooting steps for common issues encountered when using the Azure Quantum service.
+description: This article provides troubleshooting steps for issues that users might experience when they use the Azure Quantum service.
 ms.author: quantumdocwriters
 ms.date: 10/16/2025
 ms.service: azure-quantum
@@ -11,25 +11,25 @@ title: Troubleshoot Issues with Azure Quantum
 uid: microsoft.quantum.azure.common-issues
 ms.custom: sfi-ropc-nochange
 
-#customer intent: As a quantum developer, I want to troubleshoot common issues with Azure Quantum so that I can continue to use the service effectively.
+#customer intent: As a quantum developer, I want to troubleshoot issues that I might experience with Azure Quantum so that I can continue to effectively use the service.
 ---
 
 # Troubleshooting issues in Azure Quantum
 
-When you work with the Azure Quantum service, you might experience connection or job-related issues. See how you can solve these issues.
+When you work with the Azure Quantum service, you might experience connection or job-related issues. This article explains how to troubleshoot these issues.
 
-## Connecting to your workspace
+## Workspace connection issues
 
 ### Issue: Unable to authenticate to Azure Quantum via `pytket-azure` CI
 
-When trying to authenticate to Azure Quantum via the `pytket-azure` package in a CI environment using the environment variables "AZURE_TENANT_ID", "AZURE_CLIENT_ID", and "AZURE_CLIENT_SECRET", you might encounter the error:
+When you try to authenticate to Azure Quantum with the `pytket-azure` package in a CI environment using the environment variables `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, and `AZURE_CLIENT_SECRET`, you might encounter the following error:
 
 ```cmd
 Code: InsufficientPermissions
 Message: There are not enough permissions to perform this operation.
 ```
 
-To resolve this issue, try to authenticate using a connection string and the environment variable "AZURE_QUANTUM_CONNECTION_STRING" instead. For more information, see [Connect with a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
+To resolve this issue, use a connection string and the environment variable `AZURE_QUANTUM_CONNECTION_STRING` to authenticate instead. For more information, see [Connect with a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
 
 ```python
 connection_string = "[Copy connection string]" 

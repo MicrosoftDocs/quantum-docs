@@ -29,7 +29,7 @@ To modify your current usage plans for your providers and see the different bill
 
 1. Sign in to the [Azure portal](https://portal.azure.com) with the credentials for your Azure subscription.
 1. Go to your Azure Quantum workspace.
-1. In the workspace panel, under the **Operations** dropdown, go to the **Providers** blade.
+1. In the workspace navigation pane, expand the **Operations** dropdown and choose **Providers**.
 1. View the current usage plan for each provider in the **Plan** column.
 1. Choose **Modify** to see and modify the different billing plans that are available for that provider in your local currency.
 
@@ -37,76 +37,66 @@ The billing plans are set by the quantum hardware providers. For more informatio
 
 ## How do I view the job cost report after I run a job?
 
-After you run a job, you can check the detailed cost estimates and use this information to understand the cost of individual jobs. This cost is the cost billed by the provider. Refer to your final bill for the exact charges including relevant taxes. For more information, see [How do I receive my invoices?](#how-do-i-receive-my-invoices).
+After you run a job, you can check the detailed cost estimates and use this information to understand the cost of individual jobs. This cost is the amount that the provider bills. Refer to your final bill for the exact charges including relevant taxes. For more information, see [How do I receive my invoices?](#how-do-i-receive-my-invoices)
 
 To review job costs, follow these steps:
 
-1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-1. Select your **Azure Quantum workspace**.
-1. In the workspace panel, under the **Operations** dropdown, go to the **Job Management** blade.
+1. Sign in to the [Azure portal](https://portal.azure.com), using the credentials for your Azure subscription.
+1. Go to your Azure Quantum workspace.
+1. In the workspace navigation pane, expand the **Operations** dropdown and choose **Job Management**.
 1. View the estimated costs for each job in the **Cost estimate** column.
+1. To open the **Job details** pane for a job, choose the job in the **Name** column.
+1. To view detailed cost estimate information, choose the **Cost Estimation** tab. The table displays the billing dimensions and associated costs for the job run.
 
-_Prices below are shown for example purposes only._
+The cost estimation table contains the following columns:
 
-:::image type="content" source="./media/job-costs/job-table-with-costs.png" alt-text="Screenshot of the Job Management blade, with the Cost Estimate column highlighted." lightbox="./media/job-costs/job-table-with-costs.png":::
-
-To review detailed cost estimate information for a job, select the job in the **Job Management** pane and then open the **Cost Estimation** tab. The table displays the billing dimensions used by the job and their associated cost.
-
-_Prices below are shown for example purposes only._
-
-:::image type="content" source="./media/job-costs/job-cost-details.png" alt-text="Screenshot of the Job Details pane for a quantum job, with the Cost Estimation tab selected.":::
-
-The following definitions help you understand the cost estimation table:
-
-- **Dimension**: The name of the dimension you're charged for by the provider.
+- **Dimension**: The billing item that the provider charges you for.
 - **Unit Price**: The cost per one unit of the dimension.
-- **Consumed Units**: The number of units of the dimension the job consumed.
-- **Billed Units**: The number of units you're billed for. In some cases, this column may be less than consumed units if the providers billing plan offers an amount of included free usage or is credits-based. This column may also be less than consumed units in the event that a provider has a minimum job cost and the actual units consumed were less than required to satisfy the requirement.
-- **Estimated Cost**: The estimated cost for this dimension. It equals [Billed Units] * [Unit Price].
+- **Consumed Units**: The number of units of the dimension that the job consumed.
+- **Billed Units**: The number of units that you're billed for. This number might be less than the consumed units when, for example, the provider's billing plan offers an amount of free usage or is credits-based.
+- **Estimated Cost**: The estimated cost for this dimension, calculated as $\text{Billed Units} \times\text{Unit Price}$.
 
 > [!NOTE]
-> IonQ has USD1.00 minimum cost to run a job on the IonQ QPU. For small jobs, you may notice that `Consumed Units` reported on the job cost estimation table are less than the `Billed Units` for this reason.
+> IonQ has a USD 1.00 minimum cost to run a job on the IonQ QPU, so the `Consumed Units` reported on the job cost estimation table might be less than the `Billed Units` for small jobs.
 
-## Why I don't see the cost of my job?
+## Why don't I see the cost of my job?
 
-Some Azure Quantum providers don't support reporting per-job costs, however you can still see your invoice under **Cost Management** in the Azure portal. For more information, see [How can I view my invoices?](#how-can-i-view-my-invoices).
+Some Azure Quantum providers don't support reports for per-job costs, but your invoice is still available in the **Cost Management** page in the Azure portal. For more information, see [How can I view my invoices?](#how-can-i-view-my-invoices)
 
 ## How do I receive my invoices?
 
-The invoices are sent to the email address you used to sign up for Azure. If you need to change the email address, contact [Azure Support](https://azure.microsoft.com/support/create-ticket/).
+Invoices are sent to the email address that you used to sign up for Azure. If you need to change the email address, then contact [Azure Support](https://azure.microsoft.com/support/create-ticket/).
 
-If you're using a custom subscription, invoices might be sent to the email address of the person who setup the subscription.
+If you're using a custom subscription, then invoices might be sent to the email address of the person who set up the subscription.
 
-The invoices from Azure Quantum third party providers are of type **Azure Marketplace and Reservations**. You receive a single invoice from Azure Marketplace and Reservation, which provides a breakdown of the charges from each quantum provider.
+The invoices from Azure Quantum third party providers have the **Azure Marketplace and Reservations** billing type. You receive a single invoice from Azure Marketplace and Reservations, which provides a breakdown of the charges from each quantum provider.
 
 ## What does my Azure Quantum invoice include?
 
-The Azure Marketplace and Reservations invoices include spending against Azure 3rd party providers. Azure Quantum currently offers quantum hardware from IonQ, Quantinuum and Rigetti. For more information, see [Azure Quantum provider list](xref:microsoft.quantum.reference.qc-target-list).
+The Azure Marketplace and Reservations invoices include spending against Azure 3rd party providers. Azure Quantum currently offers quantum hardware from IonQ, Quantinuum, and Rigetti. For more information, see [Azure Quantum provider list](xref:microsoft.quantum.reference.qc-target-list).
 
-The Azure Marketplace and Reservations invoices **don't** include spending against first party Azure services, such as storage accounts attached to the Azure Quantum workspace. These typically represent very small amounts.
+The Azure Marketplace and Reservations invoices don't include spending against first party Azure services, such as storage accounts that are attached to the Azure Quantum workspace. These first party Azure charges are typically very small amounts for QPU jobs.
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ## How are invoices billed?
 
-The invoices are paid using the same payment method you use for the Azure subscription of your Azure Quantum workspace. You may have different payment methods for different subscriptions.
-
 The invoices are billed in arrears. For example, the invoice you receive in February corresponds to the usage you incurred in January.
+
+You pay your invoices with the same payment method that you use for the Azure subscription of your Azure Quantum workspace. You might have different payment methods for different subscriptions.
 
 ## How can I view my invoices?
 
-You can view your past invoices in Azure portal.
+To view your past invoices in the Azure portal, follow these steps:
 
-1. Sign in to the [Azure portal](https://portal.azure.com/), using the credentials for your Azure subscription.
-1. In the top search bar, type **Cost Management + Billing**.
-1. If you have more than one billing scope, select the scope you want to view in the **Billing scope** pane. If not, skip this step.
-1. In the left navigation pane, select **Invoices**.
+1. Sign in to the [Azure portal](https://portal.azure.com/) with the credentials for your Azure subscription.
+1. In the top search bar, enter **Cost Management + Billing**.
+1. If you have more than one billing scope, then select the scope that you want to view in the **Billing scopes** pane.
+1. In the navigation pane, choose **Cost Management**.
+1. In the navigation pane, expand the **Billing** dropdown and choose **Invoices**.
+1. To view invoice details from Azure Quantum third party providers, choose the **Invoice ID** in rows that have **Azure Marketplace and Reservations** in the **Type** column.
 
-     :::image type="content" source="media/cost-management-invoice-portal.png" alt-text="Screen shot of Azure portal showing the Invoices view and how to select and download the invoices." lightbox="media/cost-management-invoice-portal.png":::
-
-In the **Invoices** view, you can see all your invoices. The invoices from Azure Quantum third party providers are of type **Azure Marketplace and Reservations**.
-
-You can filter by date, subscription, and status. You can also download the invoices as PDF files. You can see the invoice date and the billing period. The billing period isn't the same as the month in which you receive the invoice.
+You can filter invoices by date, subscription, and status. You can also download the invoices as PDF files. You can see the invoice date and the billing period. The billing period isn't the same as the month that you receive the invoice in.
 
 ## Related content
 

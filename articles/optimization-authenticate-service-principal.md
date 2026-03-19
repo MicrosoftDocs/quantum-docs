@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document provides instructions on how to authenticate in your Azure Quantum workspace using a service principal.
 ms.author: quantumdocwriters
-ms.date: 02/26/2025
+ms.date: 03/17/2026
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -12,28 +12,28 @@ uid: microsoft.quantum.optimization.authenticate-service-principal
 #customer intent: As a quantum developer, I want to understand how to authenticate using a service principal to submit jobs to Azure Quantum.
 ---
 
-# Authenticate in your workspace using a service principal 
+# Authenticate in your workspace using a service principal
 
-Sometimes it's unsuitable to use interactive authentication or to authenticate
-as a user account. These cases may arise when you want to submit jobs from a
-web service, another worker role, or an automated system. One option is to configure a managed identity, another option is to use a [Service
-Principal](/azure/active-directory/develop/app-objects-and-service-principals), which this article will explain.
+In this article, you learn how to use a a [service principal](/entra/identity-platform/app-objects-and-service-principals) to authenticate in your Azure Quantum workspace. Service principles are a good option for authentication when you can't use interactive authentication or can't authenticate a user account. For example, when you want to submit jobs to Azure Quantum from a web service, from another worker role, or from an automated system.
 
-## Prerequisite: Create a service principal and application secret
+## Prerequisites: Create a service principal and application secret
 
-To authenticate as a service principal, you must first [create a service
-principal](/azure/active-directory/develop/howto-create-service-principal-portal).
+### Create a service principal
 
-To create a service principal, assign access, and generate a credential:
+--To create a service principal, assign access, and generate a credential:
 
-1. [Create an Azure AD application](/azure/active-directory/develop/howto-create-service-principal-portal):
-    >[!NOTE]
-    > You don't need to set a redirect URI.
+To create a service principal, follow the steps to create a Microsoft Entra application in [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
 
-    1. Once created, write down the *Application (client) ID* and the *Directory (tenant) ID*.
+>[!NOTE]
+> You don't need to set a redirect URI.
 
-1. [Create a
-   credential](/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
+After you create the application, write down the **Application (client) ID** and the **Directory (tenant) ID**.
+
+### Generate a credential
+
+To generate a credential, 
+
+1. [Create a credential](/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
    to sign in as the application:
     1. In the settings for your application, select **Certificates & secrets**.
     1. Under **Client Secrets**, select **Create New Secret**.
@@ -81,5 +81,3 @@ workspace.credentials = credential
 
 > [!NOTE]
 > The `workspace.login()` method has been deprecated and is no longer necessary. The first time there's a call to the service, an authentication will be attempted using the credentials passed in the `Workspace` constructor or its `credentials` property. If no credentials were passed, several authentication methods will be attempted by the [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential).
-
-

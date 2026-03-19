@@ -40,10 +40,10 @@ Azure Quantum usage and quotas are measured in terms of each provider's unit of 
 
 ### Track quotas in the Azure portal
 
-1. Sign in to the [**Azure portal**](https://portal.azure.com) with the credentials for your Azure subscription.
-1. Go to your **Azure Quantum workspace**.
-1. In the left panel, under the **Operations** dropdown, go to the **Quotas** blade.
-1. See the consumed and the remaining quotas for each selected provider.
+1. Sign in to the [Azure portal](https://portal.azure.com) with the credentials for your Azure subscription.
+1. Go to your Azure Quantum workspace.
+1. In the workspace navigation pane, expand the **Operations** dropdown and choose **Quotas**.
+1. See the consumed and the remaining quotas for each of your workspace's providers.
 
 Quota information is displayed in three columns:
 
@@ -67,20 +67,16 @@ You can see your quotas by using the Azure Command-Line Interface (Azure CLI). F
    az login
    ```
 
-1. If you're prompted to select a subscription, then enter the number that corresponds to your subscription. Or, press **Enter** and then set the subscription that you want to use.
+1. If you're prompted to select a subscription, then enter the number that corresponds to your subscription. Or, press **Enter** and then set the subscription that you want to use. Replace `MySubscription` with your subscription ID.
 
    ```azurecli
-   az account set -s <Your subscription ID>
+   az account set -s MySubscription
    ```
 
-1. Set the workspace that you want to use. Replace `MyResourceGroup`, `MyWorkspace`, and `MyLocation` with your resource group, workspace name, and workspace location.
+1. Set the workspace that you want to use. Replace `MyResourceGroup` and `MyWorkspace` with your resource group and workspace name.
 
    ```azurecli
-   az quantum workspace set \
-       -g MyResourceGroup \
-       -w MyWorkspace \
-       -l MyLocation \
-       -o table
+   az quantum workspace set -g MyResourceGroup -w MyWorkspace -o table
    ```
 
 1. Display your quota information in a table for the selected workspace.
@@ -108,7 +104,7 @@ The `Scope` column indicates whether the quota refers to the current workspace o
 The `Period` column indicates the period when your quota is renewed.
 
 - `Monthly`: The usage is reset on the 1st of every month.
-- `Infinite`: The usage is never reset (also referred as **one-time** in the [Azure portal](https://portal.azure.com) view).
+- `Infinite`: The usage is never reset (also referred as **One-Time** in the [Azure portal](https://portal.azure.com) view).
 
 ### Track quotas with the QDK Python library
 
@@ -132,101 +128,48 @@ The `Period` column indicates the period when your quota is renewed.
         print(quota)
     ```
 
-> [!TIP]
-> The `get_quotas` method returns the results in the form of a Python dictionary. For a more human-readable format, use the following code samples to print a summary of the remaining quotas at the subscription and workspace level.
->
-> To track quotas at the subscription level, run the following code:
->
-> ```python
-> # This gathers usage against quotas for the various providers (quota is set at the subscription level).
-> # Note that a provider might have multiple quotas, such as Quantinuum that limits usage of their Emulator.
-> 
-> rigetti_quota = 0
-> ionq_quota = 0
-> quantinuum_hqc_quota = 0
-> quantinuum_ehqc_quota = 0
->
-> rigetti_quota_utilization = 0
-> ionq_quota_utilization = 0
-> quantinuum_hqc_quota_utilization = 0
-> quantinuum_ehqc_quota_utilization = 0
->
-> for quota in workspace.get_quotas():
->     if (quota['providerId'] == 'rigetti'):
->         rigetti_quota = quota['limit']
->         rigetti_quota_utilization = quota['utilization']
->     if (quota['providerId'] == 'ionq'):
->         ionq_quota = quota['limit']
->         ionq_quota_utilization = quota['utilization']
->     if (quota['dimension'] == 'hqc'):
->         quantinuum_hqc_quota = quota['limit']
->         quantinuum_hqc_quota_utilization = quota['utilization']
->     if (quota['dimension'] == 'ehqc'):
->         quantinuum_ehqc_quota = quota['limit']
->         quantinuum_ehqc_quota_utilization = quota['utilization']
-> 
-> print('Rigetti quota use: ', "{:,}".format(rigetti_quota_utilization), '/', "{:,}".format(rigetti_quota))
-> print('IonQ quota use:', "{:,}".format(ionq_quota_utilization), '/', "{:,}".format(ionq_quota))
-> print('Quantinuum HQC quota use:', "{:,}".format(quantinuum_hqc_quota_utilization), '/', "{:,}".format(quantinuum_hqc_quota))
-> print('Quantinuum eHQC quota use:', "{:,}".format(quantinuum_ehqc_quota_utilization), '/', "{:,}".format(quantinuum_ehqc_quota))
-> ```
->
-> Copy the following code to track quota at **workspace level**.
->
-> ```python
-> # This gathers usage against quotas for the various providers for the current workspace
-> 
-> amount_utilized_rigetti = 0
-> amount_utilized_ionq = 0
-> amount_utilized_quantinuum_hqc = 0
-> amount_utilized_quantinuum_ehqc = 0
->
-> for job in workspace.list_jobs():
->     if (job.details.cost_estimate != None):
->         for event in job.details.cost_estimate.events:
->             if (event.amount_consumed > 0):
->                 if (job.details.provider_id == 'rigetti'):
->                     amount_utilized_rigetti += event.amount_consumed
->                 if (job.details.provider_id == 'ionq'):
->                     amount_utilized_ionq += event.amount_consumed
->                 if (job.details.provider_id == 'quantinuum'):
->                     if (event.dimension_id == 'hqc'):
->                         amount_utilized_quantinuum_hqc += event.amount_consumed
->                     else:
->                         amount_utilized_quantinuum_ehqc += event.amount_consumed
->                         print(job.id, event)
->
-> print('Rigetti quota use in current workspace: ', "{:,}".format(amount_utilized_rigetti), '/', "{:,}".format(rigetti_quota))
-> print('IonQ quota use in current workspace:', "{:,}".format(amount_utilized_ionq), '/', "{:,}".format(ionq_quota))
-> print('Quantinuum HQC quota use in current workspace:', "{:,}".format(amount_utilized_quantinuum_hqc), '/', "{:,}".format(quantinuum_hqc_quota))
-> print('Quantinuum eHQC quota use in current workspace:', "{:,}".format(amount_utilized_quantinuum_ehqc), '/', "{:,}".format(quantinuum_ehqc_quota))
-> ```
-
-## How do I request more quotas?
+## How do I request a quota increase?
 
 To request a quota increase, submit a support ticket.
 
-1. Sign in to the [**Azure portal**](https://portal.azure.com), using the credentials for your Azure subscription.
-1. Select your **Azure Quantum workspace**.
-1. In the left panel, under **Operations**, go to the **Quotas** blade.
-1. Either press the **Increase** button on the quota page or select the **New support request** button on the side panel in the portal.
+### Create a support request
 
-A support ticket opens. Follow these steps to fill out the request.
+1. Sign in to the [Azure portal](https://portal.azure.com) with the credentials for your Azure subscription.
+1. Go to your Azure Quantum workspace.
+1. In the workspace navigation pane, under the **Operations** dropdown, go to the **Quotas** blade.
+1. Choose the **Increase** button on the quota page.
 
-1. Describe the issue as **Azure Quantum Quota Override Request**
-1. Select **Technical** for “Issue Type”
-1. Select the subscription that the workspace is in
-1. Select **All services**
-1. Choose **Azure Quantum – Preview** as “Service Type”
-1. Choose the workspace you want to change quota for under **Resource**
-1. Choose **Other** for problem type
-1. Advance to **Solutions** and then again to **Details**
-1. Fill out all fields. For **Description** include the following:
+   Or, under the **Help** dropdown, got to the **Support + Troubleshooting** blade.
 
-      - Name of the provider you want to change quotas for
-      - Whether you want to change quotas for the subscription scope or workspace scope
-      - Which quotas you want to change, and by how much
-      - Any justification for why you are increasing your quota can help us to decide in some cases.
+1. In the issue description box, enter **Azure Quantum quota override request**.
+1. For the service issue, choose **None of the above**.
+1. In the **Select a service** menu, choose **Service and subscription limits (quotas)**.
+1. Choose the **Next** button.
+1. Choose the **Create a support request** button. A **New support request** ticket opens on the **1. Problem description** tab.
+
+### Fill out the support request
+
+ To fill out the support request, follow these steps:
+
+1. For **Issue type**, choose **Service and subscription limits (quotas)**.
+1. For **Subscription**, choose the the subscription that contains the workspace that you want a quota increase for.
+1. For **Quota type**, choose **Azure Quantum**.
+1. Choose the **Next** button to go to the **3. Additional details** tab.
+1. In the **Description** box of the **Problem details** section, enter the following information:
+
+    - The name of the provider that you want to increase quotas for
+    - Whether you want to increase quotas at the subscription level or workspace level
+    - The quotas that you want to increase, and what you want the increased quota to be
+    - Reasons why you want to increase the quotas
+
+1. Choose your preferred options for **Advanced diagnostic information** and **Support method** sections.
+1. Fill out the **Contact info** section.
+1. Choose the **Next** button to go to the **4. Review + create** tab.
+1. If all the information is correct, then choose the **Create** button.
+
+> [!NOTE]
+>
+> To submit a support ticket for a quota increase in a workspace, you must be the owner of the workspace.
 
 ## Related content
 
