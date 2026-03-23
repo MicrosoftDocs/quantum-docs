@@ -62,17 +62,7 @@ To create a new Azure Quantum workspace, you need to know:
 - The name of the quantum workspace to create, for example, **MyQuantumWorkspace**.
 - The list of Azure Quantum providers to use in the workspace. A provider offers a set of plans, each of them representing a plan with associated terms and conditions, costs, and quotas. To create workspaces, you need to specify the corresponding plan along with the providers.
 
-If you already know the provider and plan names to use in your workspace, you can skip to step four, below. If you want to start with the providers that offer free credit, you can enter the following command:
-
-   ```azurecli
-   az quantum workspace create \
-      -l MyLocation \
-      -g MyResourceGroup \
-      -w MyQuantumWorkspace \
-      -a MyStorageAccount
-   ```
-
-You might be prompted to accept terms of use. Enter `Y` to accept the terms. Note that the `-r` parameter shown in step four, below, wasn't required.
+If you already know the provider and plan names to use in your workspace, you can skip to step four, below.
 
 If you need to determine which providers and plans to use, proceed as follows:
 
@@ -86,8 +76,7 @@ If you need to determine which providers and plans to use, proceed as follows:
 
    > [!TIP]
    > If want to see which providers give free credit, use the `--autoadd-only` parameter, for example:<br />
-   > `az quantum offerings list --autoadd-only -l westus -o table`<br />
-   > As mentioned previously, those providers are automatically added to your workspace. You don't need to specify them with the `-r` parameter.
+   > `az quantum offerings list --autoadd-only -l westus -o table`
 
 1. Once you determine the provider and plan to include in your workspace, you can review terms using the `show-terms` command (adding your **MyProviderID** and **MyPlan** as example values):
 
