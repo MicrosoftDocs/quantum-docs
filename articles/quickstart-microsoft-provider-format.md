@@ -397,7 +397,7 @@ def prepare_input_data(seq):
     }
     ```
 
-### Submit an OpenWASM circuit to Quantinuum
+### Submit an OpenQASM circuit to Quantinuum
 
 1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following code creates a Teleportation circuit:
 
