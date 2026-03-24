@@ -154,10 +154,10 @@ To submit a QIR-formatted circuit, follow these steps:
 
 Each Azure Quantum provider has its own format to represent quantum circuits. You can submit circuits to Azure Quantum in provider-specific formats instead of QIR languages, such as Q# or Qiskit.
 
-- [IonQ](#submit-a-circuit-to-ionq-using-json-format)
-- [PASQAL](#submit-a-circuit-to-pasqal-using-pulser-sdk)
-- [Quantinuum](#submit-a-circuit-to-quantinuum-using-openqasm)
-- [Rigetti](#submit-a-circuit-to-rigetti-using-quil)
+- [IonQ](#submit-a-circuit-to-ionq-in-json-format)
+- [PASQAL](#submit-a-circuit-to-pasqal-in-pulser-sdk-format)
+- [Quantinuum](#submit-an-openqasm-circuit-to-quantinuum)
+- [Rigetti](#submit-a-quil-circuit-to-rigetti)
 
 ### Submit a circuit to IonQ in JSON format
 
