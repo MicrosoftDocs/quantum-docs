@@ -1,14 +1,14 @@
 ---
 author: azure-quantum-content
-description: Learn how to visually represent Q# and OpenQASM quantum algorithms with circuit diagrams in VS Code, Python, and Jupyter Notebook.
+description: The article gives an overview of circuit diagram elements and how to interact with circuit diagrams using the QDK extension in VS Code
 ms.date: 12/08/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "azure-quantum", "qdk[jupyter]", "Jupyter", "Jupyter Notebook"]
-title: Visualize Quantum Circuits with the QDK
-uid: microsoft.quantum.how-to.visualize-circuits
+title: Overview of QDK circuit diagrams
+uid: microsoft.quantum.overview.qdk-circuit-diagrams
 #customer intent: As a quantum programmer, I want to visually represent my quantum algorithms as circuit diagrams.
 ---
 
@@ -19,6 +19,8 @@ Quantum circuit diagrams are a visual representation of quantum algorithms. Circ
 In this article, you learn how to create circuit diagrams for Q# and OpenQASM programs with the Microsoft Quantum Development Kit (QDK) using Visual Studio Code (VS Code) and Jupyter Notebook.
 
 For more information about quantum circuit diagrams, see [Quantum circuit diagram conventions](xref:microsoft.quantum.concepts.circuits).
+
+For more information on how to interact with QDK circuit diagrams, see [NEW ARTICLE HERE](xref:microsoft.quantum...)
 
 ## Prerequisites
 
@@ -48,19 +50,22 @@ The **QDK Circuit** window opens and displays the circuit diagram for your progr
 > [!TIP]
 > Select an element in the circuit diagram to highlight the code that creates the circuit element.
 
-### View circuit diagrams for individual Q# operations [ENTIRE PROGRAM VS INDIVIDUAL OPERATIONS]
+### View circuit diagrams for individual Q# operations
 
-To visualize the quantum circuit for an individual operation in a Q# file, choose the **Circuit** command from the code lens that precedes the operation.
+For Q# programs, you can view circuit diagrams for individual operations that take qubits as input. To view the circuit diagram for an operation in your program, choose the **Circuit** command from the code lens that precedes the operation.
 
 :::image type="content" source="media/circuit-codelens-operation.png" alt-text="Screenshot of Visual Studio Code that shows how to visualize the circuit of a single Q# operation in a Q# program.":::
+
+> [!NOTE]
+> For OpenQASM programs, you can only create circuit diagrams for the whole program. You can't create circuit diagrams for individual functions.
 
 ### View circuit diagrams when you're debugging
 
 When you use the VS Code debugger in a Q# program, you can visualize the quantum circuit based on the state of the program at the current debugger breakpoint.
 
 1. Choose the **Debug** command from the code lens that precedes your entry point operation.
-1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu. The **QDK Circuit** panel opens, which shows the circuit while you step through the program.
-1. Set breakpoints and step through your code to see how the circuit updates as your program runs.
+1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown under the **VARIABLES** dropdown. The **QDK Circuit** tab opens.
+1. Set breakpoints and step through your code. The circuit diagram updates in the **QDK Circuit** tab as your program runs to each breakpoint.
 
 ## Quantum circuits in Jupyter Notebook
 
@@ -69,7 +74,7 @@ In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` an
 ### View circuit diagrams for an entry expression
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
-1. Enter and select **Create: New Jupyter Notebook**.
+1. Enter **Create: New Jupyter Notebook**.
 1. In the first cell of the notebook, run the following code to import the `qsharp` package.
 
     ```python
