@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: The article gives an overview of how to interact with circuit diagram elements in the QDK extension for VS code
+description: The article gives an overview of how to interact with circuit diagram elements in the QDK extension for VS Code
 ms.date: 12/08/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum

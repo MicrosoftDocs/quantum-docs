@@ -214,7 +214,6 @@ To view a circuit diagram for an OpenQASM program in Jupyter Notebook, follow th
 > [!NOTE]
 > For OpenQASM programs, you can't view circuit diagrams for individual functions. You can view circuit diagrams for only the whole program.
 
-
 ## Related content
 
 - [Explore circuit diagrams in the QDK](xref:microsoft.quantum.overview.qdk-circuit-diagrams)
