@@ -62,9 +62,7 @@ The frequency histogram represents the distribution of results obtained from run
 
 Quantum circuit diagrams are a visual representation of quantum operations. They show the flow of qubits through the quantum program, including the gates and measurements applied to them. For more information, see [Quantum circuit diagrams in Visual Studio Code](xref:microsoft.quantum.how-to.visualize-circuits#quantum-circuits-with-visual-studio-code).
 
-1. Select **View -> Command Palette** and type **circuit**, which brings up the **QDK: Show circuit** command. You can also select **Circuit** from the list of commands next to the entry point operation.
-
-    :::image type="content" source="../media/codelens-circuit.png" alt-text="Screenshot the Q# file in Visual Studio Code showing where to find the code lens circuit command.":::
+1. Select **View -> Command Palette** and type **circuit**, which brings up the **QDK: Show circuit** command. You can also select **Circuit** from the code lens above the entry point operation.
 
 1. The circuit is displayed in the Q# circuit window. The circuit diagram shows one qubit register which it's initialized to the |0⟩ state. Then, a Hadamard gate, **H**, is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol. For more information, see [Quantum circuits conventions](xref:microsoft.quantum.concepts.circuits).
 
