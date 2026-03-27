@@ -19,32 +19,83 @@ PASQAL's quantum computers control neutral atoms with optical tweezers, using la
 
 The following targets available from this provider:
 
-| Target name         | Target ID          | Number of qubits              | Description |
-|---------------------|--------------------|-------------------------------|-------------|
-| [Emu-TN](#emulator) | pasqal.sim.emu-tn  | 100 qubits 1D and 2D networks | Simulates the time-evolution of a quantum state using the Schrödinger equation corresponding to the actions that the lasers perform. |
-| [Fresnel](#fresnel) | pasqal.qpu.fresnel | 100 qubits                    | PASQAL's neutral atoms quantum computer. |
+| Target name                   | Target ID               | Number of qubits              | Description                                                                                                   |
+| ----------------------------- | ----------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [EMU_SV](#emu_sv)             | pasqal.sim.emu-sv       | 25 qubits 1D and 2D networks  | Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.              |
+| [EMU_MPS](#emu_mps)           | pasqal.sim.emu-mps      | 80 qubits 1D and 2D networks  | Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.              |
+| [EMU_FREE](#emu_free)         | pasqal.sim.emu-free     | 12 qubits 1D and 2D networks  | Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.              |
+| [FRESNEL](#fresnel)           | pasqal.qpu.fresnel      | 100 qubits                    | FRESNEL is a hardware neutral atoms - QPU Orion Beta generation.                                              |
+| [FRESNEL_CAN1](#fresnel_can1) | pasqal.qpu.fresnel-can1 | 100 qubits                    | FRESNEL_CAN1 is a hardware neutral atoms QPU - Orion Beta generation.                                         |
+| [EMU_TN](#emu_tn)             | pasqal.sim.emu-tn       | 100 qubits 1D and 2D networks | (deprecated) Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms. |
 
-## Emulator
+## EMU_SV
 
-PASQAL's Emu-TN emulator simulates the time-evolution of a quantum state using the Schrödinger's equation corresponding to the actions that the lasers perform.
+Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.
 
-Emu-TN emulator runs on a cluster of DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of PASQAL’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU . Up to 100 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
+EMU_SV is a Pulser backend emulating this dynamic with state vectors (SV). State vector representation provides a complete description of the quantum state, enabling highly accurate simulations with GPU acceleration if enabled. Check our documentation for more information: https://docs.pasqal.com/cloud/emu-sv/
 
 - Job Type: `Simulation`
 - Data Format: `application/json`
-- Target ID: `pasqal.sim.emu-tn`
-- Target Execution Profile: N/A
+- Target ID: `pasqal.sim.emu-sv`
 
-## Fresnel
+## EMU_MPS
 
-Fresnel is PASQAL's quantum computer based on neutral atoms. The neutral atoms, controlled by optical tweezers, compose an array of 100 qubits.
+Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.
 
-Neutral atoms quantum devices use highly focused lasers, so-called optical tweezers, to trap and manipulate neutral atoms individually to create 1D or 2D  qubit arrays  in arbitrary configurations. Current PASQAL generation of devices use around 100 rubidium atoms for computations. Each qubit is represented by a two-level energy state in a Rubidium atom, usually a ground state and a Rydberg state which is a high energy state.  
+EMU_MPS is a Pulser backend emulating this dynamic with matrix product states (MPS). Matrix Product States (MPS) or tensor train (TT) are a specific class of tensor networks that provide a tractable parametrization of quantum states.
+
+Check our documentation for more information: https://docs.pasqal.com/cloud/emu-mps/
+
+- Job Type: `Simulation`
+- Data Format: `application/json`
+- Target ID: `pasqal.sim.emu-mps`
+
+## EMU_FREE
+
+Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.
+
+EMU_FREE is a small Pulser backend on which you can emulate small systems (not more than 12 qubits).
+
+- Job Type: `Simulation`
+- Data Format: `application/json`
+- Target ID: `pasqal.sim.emu-free`
+
+## FRESNEL
+
+FRESNEL is a hardware neutral atoms QPU (Quantum Processing Unit) - Orion Beta generation. It is an optical machine at heart, utilizing light to trap and manipulate arrays of Rubidium atoms.
+
+By making use of optical tweezers we can assemble an adjustable quantum register for the atoms which will serve as our computational basis. For the Pasqal machine one single trapped atom corresponds to one qubit.
 
 - Job Type: `Quantum program`
 - Data Format: `application/json`
 - Target ID: `pasqal.qpu.fresnel`
-- Target Execution Profile: N/A
+
+## FRESNEL_CAN1
+
+FRESNEL_CAN1 is a hardware neutral atoms QPU (Quantum Processing Unit) - Orion Beta generation.
+
+It is an optical machine at heart, utilizing light to trap and manipulate arrays of Rubidium atoms.
+
+By making use of optical tweezers we can assemble an adjustable quantum register for the atoms which will serve as our computational basis. For the Pasqal machine one single trapped atom corresponds to one qubit.
+
+- Job Type: `Quantum program`
+- Data Format: `application/json`
+- Target ID: `pasqal.qpu.fresnel-can1`
+
+## EMU_TN
+
+**This emulator is deprecated and we encourage you to use EMU_MPS instead.**
+
+Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.
+
+Tensor networks are powerful mathematical tools for efficiently representing and simulating many-body quantum systems. They are formed by connecting multi-dimensional arrays, called tensors, through a series of contracted indices or bonds, resulting in a compact representation of complex quantum states. This approach is particularly effective for capturing low-entanglement states.
+
+Check our documentation for more information: https://docs.pasqal.com/cloud/emu-tn/
+
+- Job Type: `Simulation`
+- Data Format: `application/json`
+- Target ID: `pasqal.sim.emu-tn`
+
 
 ## Pulser SDK
 

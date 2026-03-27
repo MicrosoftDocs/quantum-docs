@@ -253,13 +253,13 @@ You need to define both a register and a layout before proceeding. The register 
 
 For details on layouts, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html).
 
-- First, you create a 'devices' object to import the PASQAL quantum computer target, [Fresnel](xref:microsoft.quantum.providers.pasqal#fresnel).
+- First, you create a 'devices' object to import the PASQAL quantum computer target, [FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1).
 
     ```python
     from pulser_pasqal import PasqalCloud
 
     devices = PasqalCloud().fetch_available_devices()
-    QPU = devices["FRESNEL"]
+    QPU = devices["FRESNEL_CAN1"]
     ```
 
 ##### Pre-calibrated layouts
@@ -339,7 +339,7 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
 1. First,  you define the pulse sequence attributes by declaring the channels that will be used to control the atoms. To create a `Sequence`, you need to provide a `Register` instance along with the device where the sequence will be executed. For example, the following code declares one channel: `ch0`.
 
    > [!NOTE]
-   > You can use the `QPU = devices["FRESNEL"]`  device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
+   > You can use the `QPU = devices["FRESNEL_CAN1"]`  device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
 
     ```python
     from pulser import Sequence
@@ -406,10 +406,10 @@ def prepare_input_data(seq):
     > [!NOTE]
     > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-1. Submit the program to PASQAL. Before you submit your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-tn` as a target.
+1. Submit the program to PASQAL. Before you submit your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-mps` as a target.
 
     ```python
-    target = workspace.get_targets(name="pasqal.sim.emu-tn") # Change to "pasqal.qpu.fresnel" to use Fresnel QPU
+    target = workspace.get_targets(name="pasqal.sim.emu-mps") # Change to "pasqal.qpu.fresnel-can1" to use FRESNEL_CAN1 QPU
     job = submit_job(target, seq, 10)
 
     job.wait_until_completed()

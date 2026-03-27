@@ -37,8 +37,12 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 | [IonQ Aria 1](xref:microsoft.quantum.providers.ionq#ionq-aria-quantum-computer)                         | 25 qubits        |
 | [IonQ Forte 1](xref:microsoft.quantum.providers.ionq#ionq-forte-quantum-computer)                       | 36 qubits        |
 | [IonQ Forte Enterprise 1](xref:microsoft.quantum.providers.ionq#ionq-forte-enterprise-quantum-computer) | 36 qubits        |
-| [PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emulator)                                       | 100 qubits       |
-| [PASQAL Fresnel1](xref:microsoft.quantum.providers.pasqal#fresnel1)                                     | 100 qubits       |
+| [PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emu_tn)                                         | 100 qubits       |
+| [PASQAL Emu-SV](xref:microsoft.quantum.providers.pasqal#emu_sv)                                         | 25 qubits        |
+| [PASQAL Emu-MPS](xref:microsoft.quantum.providers.pasqal#emu_mps)                                       | 80 qubits        |
+| [PASQAL Emu-FREE](xref:microsoft.quantum.providers.pasqal#emu_free)                                     | 12 qubits        |
+| [PASQAL FRESNEL](xref:microsoft.quantum.providers.pasqal#fresnel)                                       | 100 qubits       |
+| [PASQAL FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1)                             | 100 qubits       |
 | [Quantinuum H2-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)           | 32 qubits        |
 | [Quantinuum H2-2 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)           | 32 qubits        |
 | [Quantinuum H2-1 Emulator](xref:microsoft.quantum.providers.quantinuum#system-model-h2-emulator)        | 20 qubits        |
@@ -53,6 +57,6 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 
 Azure Quantum is a platform for innovation. As the quantum hardware partners across the Azure Quantum ecosystem keep growing, you can explore these upcoming quantum hardware solutions.
 
-| Provider | Description  |
-|---|---|
-|<img src="~/media/logo-qci.png" alt="logo of Quantum Circuits" title="logo of Quantum Circuits" width="200" height="200"/>| Quantum Circuits’ full-stack superconducting circuits have real-time feedback that enables error-correcting, encoding-agnostic entangling gates. You can pre-register today for Azure Quantum’s [private preview](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxm1OO5DJVRBs-fh9Rmd-nRURVRKVUJDM05WV1hDRlU2OFFZUlhUN1Q4SCQlQCN0PWcu) of QCI. |
+| Provider                                                                                                                   | Description                                                                                                                                                                                                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="~/media/logo-qci.png" alt="logo of Quantum Circuits" title="logo of Quantum Circuits" width="200" height="200"/> | Quantum Circuits’ full-stack superconducting circuits have real-time feedback that enables error-correcting, encoding-agnostic entangling gates. You can pre-register today for Azure Quantum’s [private preview](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxm1OO5DJVRBs-fh9Rmd-nRURVRKVUJDM05WV1hDRlU2OFFZUlhUN1Q4SCQlQCN0PWcu) of QCI. |
