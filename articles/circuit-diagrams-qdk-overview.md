@@ -22,7 +22,7 @@ For information on how to create circuit diagrams with the QDK in VS Code, see [
 
 ## Classical control groups in quantum circuit diagrams
 
-In some quantum algorithms, the circuit changes depending on the result of a mid-circuit measurement. For example, the circuit applies a gate to a specific qubit only if the measurement result for another qubit is 1. Or, the circuit iterates over a loop until the measurement result for a specific qubit is 0. Quantum circuit diagrams in the QDK include these classical control groups when you set the circuit generation method to `Static`.
+In some quantum algorithms, the circuit changes depending on the result of a mid-circuit measurement. For example, the circuit applies a gate to a specific qubit only if the measurement result for another qubit is 1. Or, the circuit iterates over a loop until the measurement result for a specific qubit is 0.
 
 For example, the following two-qubit Q# program puts a qubit into a superposition state, measures the qubit, and then applies a different gate to the other qubit depending on the measurement result of the first qubit.
 
