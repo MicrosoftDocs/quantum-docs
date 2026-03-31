@@ -314,7 +314,7 @@ To plot a frequency histogram that shows the distribution of results when you ru
 
     Each bar in the histogram corresponds to a possible outcome when the entanglement circuit runs 1000 times. The height of a bar represents the number of times that outcome occurs. For example, the following histogram shows a distribution with 50 unique results. Note that for each outcome, the measurement results for the first and the second qubit are always the same.
 
-    :::image type="content" source="/media/histogram-vscode-entanglement.png" alt-text="Screenshot of the Q# histogram window in Visual Studio Code.":::
+    :::image type="content" source="media/histogram-vscode-entanglement.png" alt-text="Screenshot of the Q# histogram window in Visual Studio Code.":::
 
     > [!TIP]
     > To zoom in on the histogram, use the mouse scroll wheel or a trackpad gesture. To pan the chart when you're zoomed in, hold **Alt** while you scroll.
@@ -322,7 +322,7 @@ To plot a frequency histogram that shows the distribution of results when you ru
 1. Choose a bar to display the percentage of total shots that produced that outcome.
 1. Choose the **settings icon** in the top-left to display visualization options.
 
-    :::image type="content" source="/media/histogram-vscode-entanglement-tab.png" alt-text="Screenshot of the display settings for the Q# histogram window in Visual Studio Code.":::
+    :::image type="content" source="media/histogram-vscode-entanglement-tab.png" alt-text="Screenshot of the display settings for the Q# histogram window in Visual Studio Code.":::
 
 1. Run the code again, but this time with 1000 shots. As the number of shots increases, the distribution of results approaches a normal distribution.
 
