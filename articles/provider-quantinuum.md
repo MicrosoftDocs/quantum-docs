@@ -66,11 +66,11 @@ System Model H2 Emulator usage is offered free-of-charge with a hardware subscri
 
 ## System Model H2
 
-The Quantinuum System Model H2 generation of quantum computers, Powered by Honeywell, is comprised of a Quantum charge-coupled device (QCCD) with two connected linear sections and currently has 1 machine, the H2-1. More information can be found in the *System Model H2 Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H2 Emulator](#system-model-h2-emulator) prior to submitting them to the target machines.  
+The Quantinuum System Model H2 generation of quantum computers, Powered by Honeywell, is composed of a Quantum charge-coupled device (QCCD) with two connected linear sections and currently has 1 machine, the H2-1. More information can be found in the *System Model H2 Product Data Sheet* found on the [System Model H2](https://www.quantinuum.com/hardware/h2) page. Users are encouraged to test compatibility of their code by submitting jobs to a [syntax checker](#syntax-checkers) and [System Model H2 Emulator](#system-model-h2-emulator) prior to submitting them to the target machines.  
 
 If a user submits a job to the H2-1 machine and the H2-1 machine is not available, the job remains in that machine's queue until the machine becomes available.
 
-System Model H2 hardware is continuously upgraded throughout it's product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
+System Model H2 hardware is continuously upgraded throughout its product lifecycle. Users are given access to the most up-to-date, advanced, and capable hardware available.
 
 - Job type: `Quantum Program`
 - Data Format: `quantinuum.openqasm.v1`
@@ -442,7 +442,7 @@ option_params = {
 
 ### TKET Compilation in Quantinuum Stack
 
-Circuits submitted to Quantinuum Quantinuum systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for Quantinuum hardware. This enables circuits to be automatically optimized for Quantinuum systems and run more efficiently.
+Circuits submitted to Quantinuum systems, **except for integrated hybrid submissions**, are automatically run through TKET compilation passes for Quantinuum hardware. This enables circuits to be automatically optimized for Quantinuum systems and run more efficiently.
 
 More information on the specific compilation passes applied can be found in the [`pytket-quantinuum`] documentation, specifically the [`pytket-quantinuum` Compilation Passes] section.
 

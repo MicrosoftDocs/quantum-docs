@@ -67,7 +67,7 @@ For an overview of the `qdk` Python library and module features, see the [QDK pr
 
 ### Is Python and Jupyter Notebook right for me?
 
-Jupyter Notebook is convenient to write Python code and visualize output all in one development environment. If you prefer to develop in Python and want support for multiple quantum programming languages, then the QDK Python library and Jupyter Notebook is for you.
+Jupyter Notebook is convenient to write Python code and visualize output all in one development environment. If you prefer to develop in Python and want support for multiple quantum programming languages, then the QDK Python library and Jupyter Notebook are for you.
 
 The following table shows what you can and can't do in Python and Jupyter Notebook:
 

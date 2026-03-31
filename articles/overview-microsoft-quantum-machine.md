@@ -19,7 +19,7 @@ In 2022, Microsoft had a major scientific breakthrough that cleared a significan
 
 ## View a Jupyter Notebook of the results
 
-The Azure Quantum team has created a set of Jupyter Notebooks on the [azure-quantum-tgp GitHub site](https://github.com/microsoft/azure-quantum-tgp) which display all the analysis and plots that appear in the paper. From the GitHub page, you can also view the executed notebook results with [nbviewer](https://github.com/jupyter/nbviewer).
+The Azure Quantum team has created a set of Jupyter Notebooks on the [azure-quantum-tgp GitHub site](https://github.com/microsoft/azure-quantum-tgp), which display all the analysis and plots that appear in the paper. From the GitHub page, you can also view the executed notebook results with [nbviewer](https://github.com/jupyter/nbviewer).
 
 ## Next Steps
 

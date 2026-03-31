@@ -36,7 +36,7 @@ Grover's algorithm is one of the most famous algorithms in quantum computing. Th
 
 Any search problem can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search problem, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$.
 
-Thus, you can formulate the any search problem as: given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
+Thus, you can formulate any search problem as: given a classical function $f(x):\\{0,1\\}^n \rightarrow\\{0,1\\}$, where $n$ is the bit-size of the search space, find an input $x_0$ for which $f(x_0)=1$.
 
 To implement Grover's algorithm to solve a search problem, you need to:
 
@@ -124,7 +124,7 @@ The Q# operation for Grover's search algorithm has three inputs:
 
 * The number of qubits, `nQubits : Int`, in the qubit register. This register encodes the tentative solution to the search problem, and is measured after the operation.
 * The number of optimal iterations, `iterations : Int`.
-* An operation, `phaseOracle : Qubit[] => Unit) : Result[]`, that represents the phase oracle for the Grover's task. This operation applies an unitary transformation over a generic qubit register.
+* An operation, `phaseOracle : Qubit[] => Unit) : Result[]`, that represents the phase oracle for the Grover's task. This operation applies a unitary transformation over a generic qubit register.
 
 ```qsharp
 operation GroverSearch( nQubits : Int, iterations : Int, phaseOracle : Qubit[] => Unit) : Result[] {

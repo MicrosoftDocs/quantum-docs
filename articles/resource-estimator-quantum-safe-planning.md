@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Learn how to use the resource estimator to estimate the resources needed for future scaled quantum computers to break a different encryption algorithms.
+description: Learn how to use the resource estimator to estimate the resources needed for future scaled quantum computers to break different encryption algorithms.
 ms.date: 03/31/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
@@ -10,7 +10,7 @@ no-loc: ['Q#', '$$v', target, targets]
 title: Use the Microsoft Quantum resource estimator to analyzing cryptography
 uid: microsoft.quantum.resource-estimator-cryptography
 
-#customer intent: As a quantum developer, I want to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break different encryption algorithm, so that I can analyze the impact of quantum computing on the security of classical encryption methods and prepare for a quantum-safe future.
+#customer intent: As a quantum developer, I want to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break different encryption algorithms, so that I can analyze the impact of quantum computing on the security of classical encryption methods and prepare for a quantum-safe future.
 ---
 
 # Analyze cryptographic protocols with the resource estimator
