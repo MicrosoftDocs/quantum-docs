@@ -110,8 +110,3 @@ Deployment of your workspace may take a few minutes. The portal updates the stat
 
 > [!NOTE]
 > If you run into any issues, see [Azure Quantum common issues: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
-
-## Next steps
-
-- [Explore Microsoft Quantum](xref:microsoft.quantum.get-started.azure-quantum)
-- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)

@@ -22,18 +22,12 @@ To learn more about how you can use quantum computing and quantum algorithms, se
 
 ## How to get started with Azure Quantum
 
-To use Azure Quantum, you need to have an Azure account and an Azure Quantum workspace. To develop quantum programs and submit jobs to run your programs on Azure Quantum, use the Microsoft Quantum Development Kit (QDK).  How you get started with Azure Quantum depends on your current setup and requirements.
+To use Azure Quantum, you need to have an Azure account and an Azure Quantum workspace. To develop quantum programs and submit jobs to run your programs on Azure Quantum, use the Microsoft Quantum Development Kit (QDK).
 
 To get an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go). If you're a student, then you can take advantage of a [free Azure account for students](https://azure.microsoft.com/free/students/?cid=msft_learn).
 
-| User type                     | How to get started |
-|-------------------------------|--------------------|
-| I have an Azure account       | Create an [Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace). Then, either use the [Azure portal](#the-azure-portal) or install the [Microsoft Quantum Development Kit for Visual studio code](#visual-studio-code) |
-| I don't have an Azure account | Install the [Microsoft Quantum Development Kit extension for Visual Studio Code](#visual-studio-code) |
-
-You don't need to have an Azure account to use Azure Quantum. But, if you want to submit your quantum programs to real quantum hardware in Azure Quantum, then you need to have an Azure account and an Azure Quantum workspace.
-
-jgc
+> [!NOTE]
+> You don't need to have an Azure account to use the QDK.
 
 ### The Microsoft Quantum website
 
