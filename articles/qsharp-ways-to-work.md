@@ -24,35 +24,7 @@ Develop Q# programs and manage Q# jobs that you submit to Azure Quantum through 
 - [**Jupyter Notebook:**](#jupyter-notebook) Develop Q# code and submit jobs to Azure Quantum in Jupyter Notebook with the `qdk.qsharp` Python module. Installation required.
 - [**Azure portal:**](#azure-portal)  Manage your Azure subscription and Azure Quantum workspace, and access information about your quantum providers and job submissions. Requires an Azure account.
 
-The option that you choose to run Q# programs depends on your coding experience, quantum knowledge, and goals. Each option has different features and functionality, so you can can use them together. For example, write Q# programs with the QDK extension in VS Code and manage your quantum workspace in the Azure portal. For more information, see the following table:
-
-| &nbsp;                     | Microsoft Quantum website | Azure portal | Visual Studio Code        |
-|----------------------------|---------------------------|--------------|---------------------------|
-| Built-in Q# support        | &#10004;                  | &#10004;     | &nbsp; &#10004; *         |
-| QPU access                 | &#10004;                  | &#10004;     | &nbsp; &nbsp; &#10004; ** |
-| Jupyter Notebook           | &nbsp;                    | &nbsp;       | &#10004;                  |
-| Resource estimator         | &nbsp;                    | &nbsp;       | &#10004;                  |
-| Python support             | &nbsp;                    | &#10004;     | &#10004;                  |
-| Cirq and Qiskit support    | &nbsp;                    | &#10004;     | &#10004;                  |
-| Integrated hybrid          | &nbsp;                    | &nbsp;       | &#10004;                  |
-| Local setup                | &nbsp;                    | &nbsp;       | &#10004;                  |
-| Quantum workspace creation | &nbsp;                    | &#10004;     | &nbsp;                    |
-
-| &nbsp;                     | Visual Studio Code        | Jupyter Notebook          | Azure portal |
-|----------------------------|---------------------------|---------------------------|--------------|
-| Built-in Q# support        | &nbsp; &#10004; *         | &#10004;                  | &#10004;     |
-| QPU access                 | &nbsp; &nbsp; &#10004; ** | &#10004;                  | &#10004;     |
-| Jupyter Notebook           | &#10004;                  | &nbsp;                    | &nbsp;       |
-| Resource estimator         | &#10004;                  | &nbsp;                    | &nbsp;       |
-| Python support             | &#10004;                  | &nbsp;                    | &#10004;     |
-| Cirq and Qiskit support    | &#10004;                  | &nbsp;                    | &#10004;     |
-| Integrated hybrid          | &#10004;                  | &nbsp;                    | &nbsp;       |
-| Local setup                | &#10004;                  | &nbsp;                    | &nbsp;       |
-| Quantum workspace creation | &nbsp;                    | &nbsp;                    | &#10004;     |
-
-**\*** VS Code provides rich Q# support, such as CodeLens, IntelliSense, and debugging.
-
-**\*\*** QPU access in VS Code requires an Azure subscription.
+The option that you choose to run Q# programs depends on your coding experience, quantum knowledge, and goals. Each option has different features and functionality, so you can use them together. For example, write Q# programs with the QDK extension in VS Code and manage your quantum workspace in the Azure portal.
 
 ## Visual Studio Code
 
@@ -93,7 +65,7 @@ The `qdk` Python library includes several modules to help you develop quantum pr
 
 For an overview of the `qdk` Python library and module features, see the [QDK project description](https://pypi.org/project/qdk/) on the PyPi website.
 
-### Is Jupyter Notebook and Python right for me?
+### Is Python and Jupyter Notebook right for me?
 
 Jupyter Notebook is convenient to write Python code and visualize output all in one development environment. If you prefer to develop in Python and want support for multiple quantum programming languages, then the QDK Python library and Jupyter Notebook is for you.
 
