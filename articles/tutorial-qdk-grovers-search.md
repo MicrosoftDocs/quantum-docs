@@ -1,8 +1,8 @@
 ---
 author: azure-quantum-content
-description: In this tutorial, you will build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
+description: In this tutorial, you build a Q# project that demonstrates Grover's search algorithm, one of the canonical quantum algorithms.
 ms.author: quantumdocwriters
-ms.date: 01/13/2025
+ms.date: 03/31/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: tutorial
@@ -23,20 +23,16 @@ In this tutorial, you:
 > - Define Grover's algorithm for a search problem
 > - Implement Grover's algorithm in Q#
 
-[!INCLUDE [Copilot in Microsoft Quantum banner](includes/copilot-banner.md)]
-
 ## Prerequisites
 
-- To run the code sample in the [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding):
-  - A Microsoft (MSA) email account.
+To develop and run the code sample in Visual Studio Code (VS Code), you need to install the following tools:
 
-- To develop and run the code sample in Visual Studio Code:
-    - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
-    - The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
+- The latest version of [VS Code](https://code.visualstudio.com/download), or open [VS Code for the Web](https://vscode.dev/quantum).
+- The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
 
 ## Define the problem
 
-Grover's algorithm is one of the most famous algorithms in quantum computing. The type of problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the *search problem*.
+Grover's algorithm is one of the most famous algorithms in quantum computing. The type of problem it solves is often referred to as "searching a database", but it's more accurate to think of it in terms of the search problem.
 
 Any search problem can be mathematically formulated with an abstract function $f(x)$ that accepts search items $x$. If the item $x$ is a solution to the search problem, then $f(x)=1$. If the item $x$ isn't a solution, then $f(x)=0$. The search problem consists of finding any item $x_0$ such that $f(x_0)=1$.
 
@@ -202,126 +198,7 @@ operation Main() : Result[] {
 
 ## Run the program
 
-Select the desired platform to run your program.
-
-### [Copilot in Microsoft Quantum](#tab/tabid-copilot)
-
-You can test your Q# code with Copilot in Microsoft Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about Copilot in Microsoft Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
-
-1. Open the [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
-1. Copy and paste the following code into the code editor.
-
-    ```qsharp
-    import Std.Convert.*;
-    import Std.Math.*;
-    import Std.Arrays.*;
-    import Std.Measurement.*;
-    import Std.Diagnostics.*;
-    
-    operation Main() : Result[] {
-        let nQubits = 5;
-        let iterations = CalculateOptimalIterations(nQubits);
-        Message($"Number of iterations: {iterations}");
-        
-        // Use Grover's algorithm to find a particular marked state.
-        let results = GroverSearch(nQubits, iterations, ReflectAboutMarked);
-        return results;
-    }
-    
-    operation GroverSearch(
-        nQubits : Int,
-        iterations : Int,
-        phaseOracle : Qubit[] => Unit) : Result[] {
-    
-        use qubits = Qubit[nQubits];
-    
-        PrepareUniform(qubits);
-    
-        for _ in 1..iterations {
-            phaseOracle(qubits);
-            ReflectAboutUniform(qubits);
-        }
-    
-        // Measure and return the answer.
-        return MResetEachZ(qubits);
-    }
-    
-    function CalculateOptimalIterations(nQubits : Int) : Int {
-        if nQubits > 63 {
-            fail "This sample supports at most 63 qubits.";
-        }
-        let nItems = 1 <<< nQubits; // 2^nQubits
-        let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
-        let iterations = Round(0.25 * PI() / angle - 0.5);
-        return iterations;
-    }
-    
-    operation ReflectAboutMarked(inputQubits : Qubit[]) : Unit {
-        Message("Reflecting about marked state...");
-        use outputQubit = Qubit();
-        within {
-            // We initialize the outputQubit to (|0⟩ - |1⟩) / √2, so that
-            // toggling it results in a (-1) phase.
-            X(outputQubit);
-            H(outputQubit);
-            // Flip the outputQubit for marked states.
-            // Here, we get the state with alternating 0s and 1s by using the X
-            // operation on every other qubit.
-            for q in inputQubits[...2...] {
-                X(q);
-            }
-        } apply {
-            Controlled X(inputQubits, outputQubit);
-        }
-    }
-    
-    operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
-        for q in inputQubits {
-            H(q);
-        }
-    }
-    
-    operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
-        Controlled Z(Most(inputQubits), Tail(inputQubits));
-    }
-    
-    operation ReflectAboutUniform(inputQubits : Qubit[]) : Unit {
-        within {
-            // Transform the uniform superposition to all-zero.
-            Adjoint PrepareUniform(inputQubits);
-            // Transform the all-zero state to all-ones
-            for q in inputQubits {
-                X(q);
-            }
-        } apply {
-            // Now that we've transformed the uniform superposition to the
-            // all-ones state, reflect about the all-ones state, then let the
-            // within/apply block transform us back.
-            ReflectAboutAllOnes(inputQubits);
-        }
-    }
-    ```
-
-> [!TIP]
-> From Copilot in Microsoft Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
-
-### Run the program using the in-memory simulator
-
-1. Select **In-memory Simulator**.
-1. Select the number of shots to run, and select **Run**.
-1. The results display in the histogram and in the **Results** fields.
-1. Select **Explain code** to prompt Copilot to explain the code to you.
-
-### Run the program using the Quantinuum Emulator
-
-You can also submit your program to the free [Quantinuum Emulator](xref:microsoft.quantum.providers.quantinuum#quantinuum-emulator-cloud-based). The emulator simulates a quantum computer with 20 qubits.
-
-1. Select the **In-Memory Simulator** dropdown and select **Quantinuum Emulator**.
-1. Select the number of shots (currently limited to 20) and select **Run.
-
-### [Visual Studio Code](#tab/tabid-vscode)
-
-1. Open Visual Studio Code and select **File > New Text File** to create a new file.
+1. In VS Code, open the **File** menu and choose **New Text File** to create a new file.
 1. Save the file as `GroversAlgorithm.qs`. This file contains the Q# code for your program.
 1. Copy the following code into the `GroversAlgorithm.qs` file.
 
