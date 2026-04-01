@@ -14,17 +14,17 @@ uid: microsoft.quantum.qsharp-ways-to-work
 
 # Different ways to run Q\# programs
 
-Microsoft Quantum offers different development options to write and run Q\# quantum programs. These development environments use the [Microsoft Quantum Development Kit (QDK)](xref:microsoft.quantum.install-qdk.overview), a set of open-source tools that includes the Q# programming language. For more information, see [Introduction to Q#](xref:microsoft.quantum.qsharp-overview).
+The Microsoft Quantum Development Kit (QDK) offers two development options to write and run Q\# programs. Both options interface with Azure Quantum so that you can run Q# programs on simulators and quantum hardware from Azure Quantum providers. The QDK also includes several local simulators to run Q# programs on your personal computer.
 
-## Options to work with Q# programs
+## Options to develop and run Q# programs
 
 Develop Q# programs and manage Q# jobs that you submit to Azure Quantum through the following development environments:
 
 - [**Visual Studio Code:**](#visual-studio-code) Write, run, and debug Q# code in your local environment, and submit jobs to Azure Quantum with the QDK extension in Visual Studio Code (VS Code). Installation required.
 - [**Jupyter Notebook:**](#jupyter-notebook) Develop Q# code and submit jobs to Azure Quantum in Jupyter Notebook with the `qdk.qsharp` Python module. Installation required.
-- [**Azure portal:**](#azure-portal)  Manage your Azure subscription and Azure Quantum workspace, and access information about your quantum providers and job submissions. Requires an Azure account.
+- [**Azure portal:**](#azure-portal) Manage your Azure subscription and Azure Quantum workspace, and access information about your quantum providers and job submissions. Requires an Azure account.
 
-The option that you choose to run Q# programs depends on your coding experience, quantum knowledge, and goals. Each option has different features and functionality, so you can use them together. For example, write Q# programs with the QDK extension in VS Code and manage your quantum workspace in the Azure portal.
+The option that you choose depends on your coding experience, quantum knowledge, and goals. Each option has different features and functionality, so you can use them together. For example, write Q# programs with the QDK extension in VS Code and manage your quantum workspace in the Azure portal.
 
 ## Visual Studio Code
 
