@@ -24,7 +24,7 @@ The following targets available from this provider:
 | [EMU_SV](#emu_sv)             | pasqal.sim.emu-sv       | 25 qubits 1D and 2D networks  | Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.              |
 | [EMU_MPS](#emu_mps)           | pasqal.sim.emu-mps      | 80 qubits 1D and 2D networks  | Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.              |
 | [EMU_FREE](#emu_free)         | pasqal.sim.emu-free     | 12 qubits 1D and 2D networks  | Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.              |
-| [FRESNEL](#fresnel)           | pasqal.qpu.fresnel      | 100 qubits                    | FRESNEL is a hardware neutral atoms - QPU Orion Beta generation.                                              |
+| [FRESNEL](#fresnel)           | pasqal.qpu.fresnel      | 100 qubits                    | FRESNEL is a hardware neutral atoms QPU - Orion Beta generation.                                              |
 | [FRESNEL_CAN1](#fresnel_can1) | pasqal.qpu.fresnel-can1 | 100 qubits                    | FRESNEL_CAN1 is a hardware neutral atoms QPU - Orion Beta generation.                                         |
 | [EMU_TN](#emu_tn)             | pasqal.sim.emu-tn       | 100 qubits 1D and 2D networks | (deprecated) Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms. |
 
