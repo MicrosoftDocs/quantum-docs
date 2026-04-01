@@ -1,30 +1,36 @@
 ---
 author: azure-quantum-content
-description: Learn how to how to visually represent quantum algorithms with quantum circuit diagrams using VS Code, Python, and Jupyter Notebooks.
+description: Learn how to visually represent Q# and OpenQASM quantum algorithms with circuit diagrams in VS Code, Python, and Jupyter Notebook.
 ms.date: 12/08/2025
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "azure-quantum", "qdk[jupyter]", "Jupyter", "Jupyter Notebook"]
-title: Visualize Quantum Circuits with Q#
+title: Visualize Quantum Circuits with the QDK
 uid: microsoft.quantum.how-to.visualize-circuits
-#customer intent: As a quantum programmer, I want to visually represent my quantum algorithms.
+#customer intent: As a quantum programmer, I want to visually represent my quantum algorithms as circuit diagrams.
 ---
 
-# How to visualize quantum circuit diagrams with Q#
+# How to visualize quantum circuit diagrams with the QDK
 
-Quantum circuit diagrams are a visual representation of quantum operations. Circuit diagrams show the flow of qubits through the quantum program, including the gates and measurements that the program applies to the qubits.
+Quantum circuit diagrams are a visual representation of quantum algorithms. Circuit diagrams show the flow of qubits through a quantum program, including the gates and measurements that the program applies to the qubits.
 
-In this article, you learn how to visually represent quantum algorithms with quantum circuit diagrams in the Microsoft Quantum Development Kit (QDK) using Visual Studio Code (VS Code) and Jupyter Notebook.
+In this article, you learn how to create circuit diagrams for Q# and OpenQASM programs with the Microsoft Quantum Development Kit (QDK) using Visual Studio Code (VS Code) and Jupyter Notebook.
 
-For more information about quantum circuit diagrams, see [Quantum circuit conventions](xref:microsoft.quantum.concepts.circuits).
+For more information about quantum circuit diagrams, see [Quantum circuit diagram conventions](xref:microsoft.quantum.concepts.circuits).
 
 ## Prerequisites
 
+To create circuit diagrams from Q# and OpenQASM files in VS Code, install the following:
+
 - The latest version of [VS Code](https://code.visualstudio.com/download), or open [VS Code for the Web](https://vscode.dev/).
-- The latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed in VS Code.
-- The latest version of the `qdk` Python library with the optional `jupyter` extra.
+- The latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) in VS Code.
+
+To create circuit diagrams from Python programs in Jupyter Notebook, install the following:
+
+- The [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) in VS Code.
+- The latest version of the `qdk` Python library with the `jupyter` extra.
 
     ```bash
     python -m pip install --upgrade "qdk[jupyter]"
@@ -32,23 +38,21 @@ For more information about quantum circuit diagrams, see [Quantum circuit conven
 
 ## Visualize quantum circuits in VS Code
 
-To visualize quantum circuits of Q# programs in VS Code, complete the following steps.
+With the QDK extension in VS Code, you can create circuit diagrams for Q# (`.qs`) and OpenQASM (`.qasm`) files.
 
-### View circuit diagrams for a Q# program
+To view a circuit diagram in VS Code, follow these steps:
 
-1. Open a Q# file in VS Code, or [load one of the quantum samples](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program).
-1. Choose the **Circuit** command from the code lens that precedes your entry point operation.
+1. Open a Q# or OpenQASM file in VS Code, or [load one of the quantum samples from the QDK](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program).
+1. Choose the **Circuit** command from the code lens that precedes your program.
 
-    :::image type="content" source="media/codelens-circuit.png" alt-text="Screenshot of a Q# file in Visual Studio Code that shows where to find the code lens circuit command.":::
+The **QDK Circuit** window opens and displays the circuit diagram for your program. For example, the following circuit diagram corresponds to a program that produces a random bit. The circuit puts the qubit into a superposition state and then measures the qubit.
 
-The Q# circuit window opens and displays the circuit diagram for your program. For example, the following circuit corresponds to an operation that puts a qubit in a superposition state and then measures the qubit. The circuit diagram shows one qubit register that's initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the qubit, followed by a [measurement operation](xref:microsoft.quantum.concepts.circuits#measurement-operator), which is represented by a meter symbol. In this case, the measurement result is zero.
-
-:::image type="content" source="media/circuit-vscode-randombit.png" alt-text="Screenshot of the Q# circuit window that shows the circuit diagram for the random bit operation.":::
+:::image type="content" source="media/circuit-vscode-randombit.png" alt-text="Screenshot of the QDK Circuit window that shows the circuit diagram for a random bit program.":::
 
 > [!TIP]
-> In Q# and OpenQASM files, select an element in the circuit diagram to highlight the code that creates the circuit element.
+> Select an element in the circuit diagram to highlight the code that creates the circuit element.
 
-### View circuit diagrams for individual operations
+### View circuit diagrams for individual Q# operations
 
 To visualize the quantum circuit for an individual operation in a Q# file, choose the **Circuit** command from the code lens that precedes the operation.
 
@@ -62,15 +66,19 @@ When you use the VS Code debugger in a Q# program, you can visualize the quantum
 1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu. The **QDK Circuit** panel opens, which shows the circuit while you step through the program.
 1. Set breakpoints and step through your code to see how the circuit updates as your program runs.
 
-## Quantum circuits in Jupyter Notebook
+## Visualize quantum circuits in Jupyter Notebook
 
-In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` and `qdk.widgets` Python modules. The `widgets` module provides a widget that renders a quantum circuit diagram as an SVG image.
+In Jupyter Notebook, you can visualize quantum circuits for Q# and OpenQASM programs with the `qdk.qsharp` and `qdk.widgets` Python modules. The `widgets` module provides a widget that renders a quantum circuit diagram as an SVG image.
 
-### View circuit diagrams for an entry expression
+For more examples of circuit diagram generation in Jupyter Notebook, see the [Circuits sample notebook](https://github.com/microsoft/qdk/blob/main/samples/notebooks/circuits.ipynb) on the QDK GitHub repository.
+
+### View circuit diagrams for Q# programs
+
+To view a circuit diagram for a Q# program in Jupyter Notebook, follow these steps:
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
-1. Enter and select **Create: New Jupyter Notebook**.
-1. In the first cell of the notebook, run the following code to import the `qsharp` package.
+1. Enter **Create: New Jupyter Notebook**. An empty Jupyter Notebook file opens in a new tab.
+1. In the first cell of the notebook, run the following code to import the `qsharp` module.
 
     ```python
     from qdk import qsharp
@@ -89,18 +97,20 @@ In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` an
     }
     ```
 
-1. To display a simple quantum circuit based on the current state of your program, pass an entry point expression to the `qsharp.circuit` function. For example, the circuit diagram of the preceding code shows two qubit registers that are initialized to the $\ket{0}$ state. Then, a Hadamard gate is applied to the first qubit. Finally, a CNOT gate is applied where the first qubit is the control, represented by a dot, and the second qubit is the target, represented by an X.
+1. To display a quantum circuit diagram, pass the Q# operation to the `qsharp.circuit` function. Run the following code in a new cell:
 
     ```python
     qsharp.circuit("BellState()")
     ```
+
+    The output looks like this:
 
     ```output
     q_0    ── H ──── ● ──
     q_1    ───────── X ──
     ```
 
-1. To visualize a quantum circuit as an SVG image, use the `widgets` module. Create a new cell, then run the following code to visualize the circuit that you created in the previous cell.
+1. To render an SVG image of the quantum circuit, use the `widgets` module. Create a new cell, then run the following code to visualize the same circuit that you created in the previous cell.
 
     ```python
     from qdk.widgets import Circuit
@@ -108,13 +118,17 @@ In Jupyter Notebook, you can visualize quantum circuits with the `qdk.qsharp` an
     Circuit(qsharp.circuit("BellState()"))
     ```
 
-    :::image type="content" source="media/circuits-jupyter-notebook-bellstate.png" alt-text="Screenshot of a Jupyter Notebook that shows how to visualize the circuit for a Q# operation.":::
+    The circuit diagram looks like this:
 
-### View circuit diagrams for operations with qubits
+    :::image type="content" source="media/circuits-jupyter-notebook-bellstate.png" alt-text="Screenshot of a Jupyter Notebook that shows how to visualize the circuit for a Q# program.":::
 
-You can generate circuit diagrams of operations that take qubits, or arrays of qubits, as input. The diagram shows a wire for each input qubit, along with wires for additional qubits that you allocate within the operation. When the operation takes an array of qubits `(Qubit[])`, the circuit shows the array as a register of 2 qubits.
+#### View circuit diagrams for operations that take qubits as input
 
-1. Add a new cell, and then copy and run the following Q# code. This code prepares a cat state.
+In the previous Bell state example, the operation `BellState` doesn't take qubits as input. If the operation takes qubits or qubit arrays as input, then omit the parentheses when you pass the operation to draw circuit diagrams.
+
+For example, follow these steps to draw circuit diagrams for an operation that takes qubits:
+
+1. In a new cell, run the following Q# code. This code prepares a cat state.
 
     ```qsharp
     %%qsharp
@@ -125,26 +139,88 @@ You can generate circuit diagrams of operations that take qubits, or arrays of q
     }
     ```
 
-1. Add a new cell and run the following code to visualize the circuit of the `PrepareCatState` operation.
+1. To draw the circuit as a text diagram, run the following code:
 
     ```python
     Circuit(qsharp.circuit(operation="PrepareCatState"))
     ```
 
-## Circuit diagrams for dynamic circuits
+1. To render the circuit diagram as an SVG image, run the following code:
 
-Circuit diagrams are generated by executing the classical logic within a Q# program and keeping track of all allocated and applied gates. Loops and conditionals are supported when they deal only with classical values.
+    ```python
+    Circuit(qsharp.circuit(operation="PrepareCatState"))
+    ```
 
-However, programs that contain loops and conditional expressions that use qubit measurement results are trickier to represent with a circuit diagram. For example, consider the following expression:
+When the operation takes an array of qubits `(Qubit[])`, the circuit shows the array as a register of two qubits.
 
-```qsharp
-if (M(q) == One) {
-   X(q)
-}
-```
+### View circuit diagrams for OpenQASM programs
 
-This expression can't be represented with a straightforward circuit diagram because the gates are conditional on a measurement result. Circuits with gates that depend on measurement results are called dynamic circuits.
+To view a circuit diagram for an OpenQASM program in Jupyter Notebook, follow these steps:
 
-You can generate diagrams for dynamic circuits by running the program in the quantum simulator, and tracing the gates as they're applied. This is called trace mode because the qubits and gates are traced as the simulation is performed.
+1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. Enter **Create: New Jupyter Notebook**. An empty Jupyter Notebook file opens in a new tab.
+1. In the first cell of the notebook, run the following code to import the necessary objects to create and call OpenQASM functions with the QDK Python library:
 
-The downside of traced circuits is that they only capture the measurement outcome and the consequent gate applications for a single simulation. In the above example, if the measurement outcome is `Zero`, then the `X` gate isn't in the diagram. If you run the simulation again, then you might get a different circuit.
+    ```python
+    from qsharp.openqasm import import_openqasm, ProgramType
+    ```
+
+1. In a new cell, write your OpenQASM program in a Python string and pass the string to the `import_openqasm` function. To call the program in your Python code, give the function a name and set `program_type` to `ProgramType.File`.
+
+    ```python
+    source = """
+        include "stdgates.inc";
+        bit[2] c;
+        qubit[2] q;
+        h q[0];
+        cx q[0], q[1];
+        c = measure q;
+    """
+
+    import_openqasm(source, name="bell", program_type=ProgramType.File)
+    ```
+
+1. In a new cell, import the OpenQASM program as a Python function and call the program to get the measurement results.
+
+    ```python
+    from qsharp.code.qasm_import import bell
+
+    bell()
+    ```
+
+1. To draw the circuit as a text diagram, run the following code in a new cell:
+
+    ```python
+    from qdk.qsharp import circuit
+
+    circuit(bell)
+    ```
+
+    The output looks like this:
+
+    ```output
+    q_0    ── H ──── ● ──── M ──
+                 │      ╘═══
+    q_1    ───────── X ──── M ──
+                        ╘═══
+    ```
+
+1. To render the circuit diagram as an SVG image, run the following code in a new cell:
+
+    ```python
+    from qsharp_widgets import Circuit
+
+    Circuit(qsharp.circuit(bell))
+    ```
+
+    The circuit diagram looks like this:
+
+    :::image type="content" source="media/circuits-jupyter-openqasm-bellstate.png" alt-text="Screenshot of a Jupyter Notebook that shows how to visualize the circuit for an OpenQASM program.":::
+
+> [!NOTE]
+> For OpenQASM programs, you can't view circuit diagrams for individual functions. You can view circuit diagrams for only the whole program.
+
+## Related content
+
+- [Explore circuit diagrams in the QDK](xref:microsoft.quantum.overview.qdk-circuit-diagrams)
+- [Quantum circuit diagram conventions](xref:microsoft.quantum.concepts.circuits)
