@@ -144,6 +144,8 @@
       href: sparse-simulator.md
     - name: Backend simulators
       href: backend-simulators.md
+    - name: The circuit visualizer
+      href: circuit-diagrams-qdk-overview.md
     - name: The circuit editor
       href: qdk-circuit-editor.md
     - name: Neutral atom device simulators
