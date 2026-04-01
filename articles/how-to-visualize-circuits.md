@@ -22,8 +22,14 @@ For more information about quantum circuit diagrams, see [Quantum circuit diagra
 
 ## Prerequisites
 
+To create circuit diagrams from Q# and OpenQASM files in VS Code, install the following:
+
 - The latest version of [VS Code](https://code.visualstudio.com/download), or open [VS Code for the Web](https://vscode.dev/).
-- The latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed in VS Code.
+- The latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) in VS Code.
+
+To create circuit diagrams from Python programs in Jupyter Notebook, install the following:
+
+- The [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) in VS Code.
 - The latest version of the `qdk` Python library with the `jupyter` extra.
 
     ```bash
