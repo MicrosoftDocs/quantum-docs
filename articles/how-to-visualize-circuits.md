@@ -124,7 +124,7 @@ To view a circuit diagram for a Q# program in Jupyter Notebook, follow these ste
 
 #### View circuit diagrams for operations that take qubits as input
 
-In the previous Bell state example, the operation `BellState` doesn't take qubits as input. If the operation takes qubits or qubit arrays as input, then you must omit the parentheses when you pass the operation to draw circuit diagrams.
+In the previous Bell state example, the operation `BellState` doesn't take qubits as input. If the operation takes qubits or qubit arrays as input, then omit the parentheses when you pass the operation to draw circuit diagrams.
 
 For example, follow these steps to draw circuit diagrams for an operation that takes qubits:
 
@@ -165,7 +165,7 @@ To view a circuit diagram for an OpenQASM program in Jupyter Notebook, follow th
     from qsharp.openqasm import import_openqasm, ProgramType
     ```
 
-1. In a new cell, write your OpenQASM program in a Python string pass the string to the `import_openqasm` function. To call the program in your Python code, give the function a name and set `program_type` to `ProgramType.File`.
+1. In a new cell, write your OpenQASM program in a Python string and pass the string to the `import_openqasm` function. To call the program in your Python code, give the function a name and set `program_type` to `ProgramType.File`.
 
     ```python
     source = """
