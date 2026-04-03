@@ -253,7 +253,7 @@ You need to define both a register and a layout before proceeding. The register 
 
 For details on layouts, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html).
 
-- First, you create a 'devices' object to import the PASQAL quantum computer target, [FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1).
+- First, you create a `devices` object to import the PASQAL quantum computer target, [FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1).
 
     ```python
     from pulser_pasqal import PasqalCloud
