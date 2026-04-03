@@ -25,6 +25,7 @@ The Rigetti provider makes the following targets available:
 | [Quantum Virtual Machine (QVM)](#simulators) | rigetti.sim.qvm           | -                | Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost. |
 | [Ankaa-3](#ankaa-3)                          | rigetti.qpu.ankaa-3       | 84 qubits        |  |
 | [Cepheus-1-36Q](#cepheus-1-36q)              | rigetti.qpu.cepheus-1-36q | 36 qubits        |  |
+| [Cepheus-1-108Q](#cepheus-1-108q)            | rigetti.qpu.cepheus-1-108q | 108 qubits      |  |
 
 > [!NOTE]
 > Rigetti simulators and hardware targets don't support Cirq programs.
@@ -51,6 +52,15 @@ A 36-qubit quantum processor built from an array of 9-qubit chips tiled together
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
 - Target ID: `rigetti.qpu.cepheus-1-36q`
+- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
+
+### Cepheus-1-108Q
+
+A 108-qubit quantum processor built from an array of 9-qubit chips tiled together.
+
+- Job Type: `Quantum Program`
+- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
+- Target ID: `rigetti.qpu.cepheus-1-108q`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
 ## Simulators

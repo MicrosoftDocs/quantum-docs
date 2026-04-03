@@ -48,6 +48,7 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 | [Rigetti Quantum Virtual Machine (QVM)](xref:microsoft.quantum.providers.rigetti#simulators)            | 30 qubits        |
 | [Rigetti Ankaa-3](xref:microsoft.quantum.providers.rigetti#ankaa-3)                                     | 84 qubits        |
 | [Rigetti Cepheus-1-36Q](xref:microsoft.quantum.providers.rigetti#cepheus-1-36q)                         | 36 qubits        |
+| [Rigetti Cepheus-1-108Q](xref:microsoft.quantum.providers.rigetti#cepheus-1-108q)                       | 108 qubits       |
 
 ## Coming soon to Azure Quantum
 
