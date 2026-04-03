@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, PASQAL, Quantinuum, and Rigetti.
+description: Learn how to run your Q# programs on the backend simulators available from quantum providers, such as IonQ, Pasqal, Quantinuum, and Rigetti.
 ms.author: quantumdocwriters
 ms.date: 07/23/2025
 ms.service: azure-quantum
@@ -28,18 +28,18 @@ IonQ provides a GPU-accelerated idealized simulator supporting up to 29 qubits, 
 
 For more information, see the [IonQ provider](xref:microsoft.quantum.providers.ionq) page.
 
-## PASQAL
+## Pasqal
 
-PASQAL's EMU_MPS is a Pulser backend emulating this dynamic with matrix product states (MPS). Matrix Product States (MPS) or tensor train (TT) are a specific class of tensor networks that provide a tractable parametrization of quantum states.
+Pasqal's EMU_MPS is a Pulser backend emulating this dynamic with matrix product states (MPS). Matrix Product States (MPS) or tensor train (TT) are a specific class of tensor networks that provide a tractable parametrization of quantum states.
 
-EMU_MPS emulator runs on a cluster of NVIDIA DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of PASQAL’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU (quantum processing unit). Up to 80 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
+EMU_MPS emulator runs on a cluster of NVIDIA DGX nodes, each equipped with NVIDIA A100 GPUs, enabling the emulation of Pasqal’s quantum processors. It's a key tool to prototype and validate quantum programs before running them on the QPU (quantum processing unit). Up to 80 qubits in 2D arrays can be emulated to develop industrial applications and to advance scientific discovery.
 
 - Job Type: `Simulation`
 - Data Format: `application/json`
 - Target ID: `pasqal.sim.emu-mps`
 - Target Execution Profile: N/A
 
-For more information, see the [PASQAL provider](xref:microsoft.quantum.providers.pasqal) page.
+For more information, see the [Pasqal provider](xref:microsoft.quantum.providers.pasqal) page.
 
 ## Quantinuum
 

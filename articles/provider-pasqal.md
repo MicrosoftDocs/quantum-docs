@@ -1,20 +1,20 @@
 ---
 author: azure-quantum-content
 ms.author: quantumdocwriters
-description: This document provides the technical details of the simulators and QPU of the PASQAL quantum provider.
+description: This document provides the technical details of the simulators and QPU of the Pasqal quantum provider.
 ms.date: 03/10/2025
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: concept-article
-title: PASQAL quantum computing provider
+title: Pasqal quantum computing provider
 uid: microsoft.quantum.providers.pasqal
 ---
 
-# PASQAL provider
+# Pasqal provider
 
-PASQAL's quantum computers control neutral atoms with optical tweezers, using laser light to manipulate quantum registers with up to a hundred qubits.
+Pasqal's quantum computers control neutral atoms with optical tweezers, using laser light to manipulate quantum registers with up to a hundred qubits.
 
-- Publisher: [PASQAL](https://www.pasqal.com/)
+- Publisher: [Pasqal](https://www.pasqal.com/)
 - Provider ID: `pasqal`
 
 The following targets available from this provider:
@@ -85,7 +85,7 @@ By making use of optical tweezers we can assemble an adjustable quantum register
 
 ## Pulser SDK
 
-In PASQAL QPU, individual atoms are trapped at well-defined positions in 1D or 2D lattices. [Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences on neutral atoms quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
+In Pasqal QPU, individual atoms are trapped at well-defined positions in 1D or 2D lattices. [Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences on neutral atoms quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
 
 To install Pulser SDK packages, run the following code:
 
@@ -96,7 +96,7 @@ To install Pulser SDK packages, run the following code:
 
 ## Input data format
 
-PASQAL targets accept JSON files as input data format. To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
+Pasqal targets accept JSON files as input data format. To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
 
 ```python
 # Convert the sequence to a JSON string
@@ -108,7 +108,7 @@ def prepare_input_data(seq):
     return to_send
 ```
 
-Before submitting your quantum job to PASQAL, you need to set proper input and output data format parameters. For example, the following code sets the input data format to `pasqal.pulser.v1` and the output data format to `pasqal.pulser-results.v1`.
+Before submitting your quantum job to Pasqal, you need to set proper input and output data format parameters. For example, the following code sets the input data format to `pasqal.pulser.v1` and the output data format to `pasqal.pulser-results.v1`.
 
 ```python
 # Submit the job with proper input and output data formats
@@ -117,17 +117,17 @@ def submit_job(target, seq):
         input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
         input_data_format="pasqal.pulser.v1",
         output_data_format="pasqal.pulser-results.v1",
-        name="PASQAL sequence",
+        name="Pasqal sequence",
         shots=100 # Number of shots
     )
 ```
 
-For more information about how to submit jobs to the PASQAL provider, see [Submit a circuit to PASQAL using Pulser SDK](xref:microsoft.quantum.quickstarts.computing.provider#submit-a-circuit-to-pasqal-using-pulser-sdk).
+For more information about how to submit jobs to the Pasqal provider, see [Submit a circuit to Pasqal using Pulser SDK](xref:microsoft.quantum.quickstarts.computing.provider#submit-a-circuit-to-pasqal-using-pulser-sdk).
 
 ## Pricing
 
-To see the PASQAL billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#pasqal).
+To see the Pasqal billing plan, visit [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#pasqal).
 
 ## Limits and quotas
 
-PASQAL quotas apply to the usage of the emulator and QPU and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). Refer to [Azure Quantum quotas](xref:microsoft.quantum.quotas) for more information.
+Pasqal quotas apply to the usage of the emulator and QPU and can be increased with a support ticket. To see your current limits and quotas, go to the **Operations** section and select the **Quotas** blade of your workspace on the [Azure portal](https://portal.azure.com). Refer to [Azure Quantum quotas](xref:microsoft.quantum.quotas) for more information.

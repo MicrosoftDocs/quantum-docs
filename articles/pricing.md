@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, PASQAL, Quantinuum, and Rigetti.
+description: Learn about the different pricing plans for Azure Quantum providers, including IonQ, Pasqal, Quantinuum, and Rigetti.
 ms.author: quantumdocwriters
 ms.date: 09/17/2025
 ms.service: azure-quantum
@@ -78,11 +78,11 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ***
 
-## PASQAL
+## Pasqal
 
-[PASQAL](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor - the 100-qubit Orion Beta generation called Fresnel - and its state-of-the-art emulators - EMU-MPS and EMU-SV.
+[Pasqal](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor - the 100-qubit Orion Beta generation called Fresnel - and its state-of-the-art emulators - EMU-MPS and EMU-SV.
 
-PASQAL offers one billing plan: **Pay As You Go**.
+Pasqal offers one billing plan: **Pay As You Go**.
 
 
 ### [Pay As You Go](#tab/tabid-paygoPasqal)
@@ -91,7 +91,7 @@ In the Pay-as-you-go plan the usage is charged based on the job execution time o
 
 |Pricing | Includes access to  |
 |---|---|  
-|<ul><li>EUR 3,000 per QPU-hour + Azure infrastructure costs</li><li>EUR 15 per emulator-hour + Azure infrastructure costs </li></ul> | <ul><li>PASQAL FRESNEL, FRESNEL_CAN1 QPUs</li><li>PASQAL EMU-MPS, EMU-SV emulators</li></ul>|
+|<ul><li>EUR 3,000 per QPU-hour + Azure infrastructure costs</li><li>EUR 15 per emulator-hour + Azure infrastructure costs </li></ul> | <ul><li>Pasqal FRESNEL, FRESNEL_CAN1 QPUs</li><li>Pasqal EMU-MPS, EMU-SV emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 

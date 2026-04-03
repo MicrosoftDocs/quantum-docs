@@ -114,7 +114,7 @@ Azure Quantum offers some of the most compelling and diverse quantum resources a
 Choose the provider that best suits the characteristics of your problem and your needs.
 
 - [IONQ](xref:microsoft.quantum.providers.ionq): Dynamically reconfigurable trapped-ion quantum computers for up to 36 fully connected qubits, that lets you run a two-qubit gate between any pair.
-- [PASQAL](xref:microsoft.quantum.providers.pasqal): Neutral atom-based quantum processors that operate at room temperature, with long coherence times and impressive qubit connectivity.
+- [Pasqal](xref:microsoft.quantum.providers.pasqal): Neutral atom-based quantum processors that operate at room temperature, with long coherence times and impressive qubit connectivity.
 - [Quantinuum](xref:microsoft.quantum.providers.quantinuum): Trapped-ion systems with high-fidelity, fully connected qubits, low error rates, qubit reuse, and the ability to perform mid-circuit measurements.
 - [Rigetti](xref:microsoft.quantum.providers.rigetti): Powered by superconducting qubit-based quantum processors, these systems offer fast gate times, low-latency conditional logic, and fast program execution times.
 

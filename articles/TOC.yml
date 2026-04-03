@@ -84,11 +84,11 @@
         href: provider-ionq.md
       - name: IonQ support policy
         href: provider-support-ionq.md
-    - name: PASQAL
+    - name: Pasqal
       items:
-      - name: PASQAL provider and targets
+      - name: Pasqal provider and targets
         href: provider-pasqal.md
-      - name: PASQAL support policy
+      - name: Pasqal support policy
         href: provider-support-pasqal.md
     - name: Quantinuum
       items:
