@@ -43,7 +43,7 @@ QDK/Chemistry is distributed as the `qdk-chemistry` Python library through PyPI.
 1. Install the `qdk-chemistry` library with all extras:
 
     ```bash
-    python -m pip install "qdk-chemistry[all]"
+    python3 -m pip install "qdk-chemistry[all]"
     ```
 
 > [!NOTE]
