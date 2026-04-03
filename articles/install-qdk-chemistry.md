@@ -27,17 +27,24 @@ In this article, you learn how to install QDK for chemistry (QDK/Chemistry), a P
 
 ## Install the `qdk-chemistry` library
 
-QDK/Chemistry is distributed as the `qdk-chemistry` Python library through PyPI. To install the package, run the following command in a Python virtual environment:
+QDK/Chemistry is distributed as the `qdk-chemistry` Python library through PyPI. To install the package, follow these steps:
 
-```bash
-python -m pip install qdk-chemistry
-```
+1. Create a Python virtual environment. For example, `myenv`:
 
-To use the `qdk-chemistry` library in Jupyter Notebook, run the following command:
+    ```bash
+    python3 -m venv myenv
+    ```
 
-```bash
-python -m pip install "qdk-chemistry[jupyter]"
-```
+1. Activate the virtual environment:
+
+    ```bash
+    source myvenv/bin/activate
+
+1. Install the `qdk-chemistry` library with all extras:
+
+    ```bash
+    python -m pip install "qdk-chemistry[all]"
+    ```
 
 > [!NOTE]
 > To use QDK/Chemistry with Jupyter Notebook in VS Code, make sure that your notebook uses the Python interpreter in the virtual environment where you installed `qdk-chemistry`.
