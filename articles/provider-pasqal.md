@@ -32,7 +32,7 @@ The following targets available from this provider:
 
 Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.
 
-EMU_SV is a Pulser backend emulating this dynamic with state vectors (SV). State vector representation provides a complete description of the quantum state, enabling highly accurate simulations with GPU acceleration if enabled. Check our documentation for more information: https://docs.pasqal.com/cloud/emu-sv/
+EMU_SV is a Pulser backend emulating these dynamics using state vectors (SV). State vector representation provides a complete description of the quantum state, enabling highly accurate simulations with GPU acceleration if enabled. Check our documentation for more information: https://docs.pasqal.com/cloud/emu-sv/
 
 - Job Type: `Simulation`
 - Data Format: `application/json`

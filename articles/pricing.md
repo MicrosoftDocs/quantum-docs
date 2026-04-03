@@ -80,7 +80,7 @@ For more information about Azure infrastructure costs, see [Azure Blob Storage p
 
 ## PASQAL
 
-[PASQAL](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor - the 100-qubit Orion Beta generation called Fresnel - and its state of the art emulators - EMU-MPS & EMU-SV.
+[PASQAL](xref:microsoft.quantum.providers.pasqal) charges for job execution time on its quantum processor - the 100-qubit Orion Beta generation called Fresnel - and its state-of-the-art emulators - EMU-MPS and EMU-SV.
 
 PASQAL offers one billing plan: **Pay As You Go**.
 
@@ -91,7 +91,7 @@ In the Pay-as-you-go plan the usage is charged based on the job execution time o
 
 |Pricing | Includes access to  |
 |---|---|  
-|<ul><li>3,000€/QPU hour + Azure infrastructure costs</li><li>15€/EMU hour + Azure infrastructure costs </li></ul> | <ul><li>PASQAL FRESNEL, FRESNEL_CAN1 QPUs</li><li>PASQAL EMU-MPS, EMU-SV, EMU-TN (deprecated) emulators</li></ul>|
+|<ul><li>EUR 3,000 per QPU-hour + Azure infrastructure costs</li><li>EUR 15 per emulator-hour + Azure infrastructure costs </li></ul> | <ul><li>PASQAL FRESNEL, FRESNEL_CAN1 QPUs</li><li>PASQAL EMU-MPS, EMU-SV, EMU-TN (deprecated) emulators</li></ul>|
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
