@@ -37,10 +37,9 @@ Microsoft's provider partners offer a wide-range of qubit availability for their
 | [IonQ Aria 1](xref:microsoft.quantum.providers.ionq#ionq-aria-quantum-computer)                         | 25 qubits        |
 | [IonQ Forte 1](xref:microsoft.quantum.providers.ionq#ionq-forte-quantum-computer)                       | 36 qubits        |
 | [IonQ Forte Enterprise 1](xref:microsoft.quantum.providers.ionq#ionq-forte-enterprise-quantum-computer) | 36 qubits        |
-| [PASQAL Emu-TN](xref:microsoft.quantum.providers.pasqal#emu_tn)                                         | 100 qubits       |
-| [PASQAL Emu-SV](xref:microsoft.quantum.providers.pasqal#emu_sv)                                         | 25 qubits        |
-| [PASQAL Emu-MPS](xref:microsoft.quantum.providers.pasqal#emu_mps)                                       | 80 qubits        |
-| [PASQAL Emu-FREE](xref:microsoft.quantum.providers.pasqal#emu_free)                                     | 12 qubits        |
+| [PASQAL EMU_SV](xref:microsoft.quantum.providers.pasqal#emu_sv)                                         | 25 qubits        |
+| [PASQAL EMU_MPS](xref:microsoft.quantum.providers.pasqal#emu_mps)                                       | 80 qubits        |
+| [PASQAL EMU_FREE](xref:microsoft.quantum.providers.pasqal#emu_free)                                     | 12 qubits        |
 | [PASQAL FRESNEL](xref:microsoft.quantum.providers.pasqal#fresnel)                                       | 100 qubits       |
 | [PASQAL FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1)                             | 100 qubits       |
 | [Quantinuum H2-1 Syntax Checker](xref:microsoft.quantum.providers.quantinuum#syntax-checkers)           | 32 qubits        |

@@ -26,13 +26,14 @@ The following targets available from this provider:
 | [EMU_FREE](#emu_free)         | pasqal.sim.emu-free     | 12 qubits 1D and 2D networks  | Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.              |
 | [FRESNEL](#fresnel)           | pasqal.qpu.fresnel      | 100 qubits                    | FRESNEL is a hardware neutral atoms QPU - Orion Beta generation.                                              |
 | [FRESNEL_CAN1](#fresnel_can1) | pasqal.qpu.fresnel-can1 | 100 qubits                    | FRESNEL_CAN1 is a hardware neutral atoms QPU - Orion Beta generation.                                         |
-| [EMU_TN](#emu_tn)             | pasqal.sim.emu-tn       | 100 qubits 1D and 2D networks | (deprecated) Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms. |
 
 ## EMU_SV
 
 Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.
 
-EMU_SV is a Pulser backend emulating these dynamics using state vectors (SV). State vector representation provides a complete description of the quantum state, enabling highly accurate simulations with GPU acceleration if enabled. Check our documentation for more information: https://docs.pasqal.com/cloud/emu-sv/
+EMU_SV is a Pulser backend emulating these dynamics using state vectors (SV). State vector representation provides a complete description of the quantum state, enabling highly accurate simulations with GPU acceleration if enabled.
+
+For more information, see the [Pasqal EMU_MPS documentation](https://docs.pasqal.com/emulationtools/emusv/)
 
 - Job Type: `Simulation`
 - Data Format: `application/json`
@@ -44,7 +45,7 @@ Emulators are backends designed to emulate the dynamics of programmable arrays o
 
 EMU_MPS is a Pulser backend emulating this dynamic with matrix product states (MPS). Matrix Product States (MPS) or tensor train (TT) are a specific class of tensor networks that provide a tractable parametrization of quantum states.
 
-Check our documentation for more information: https://docs.pasqal.com/cloud/emu-mps/
+For more information, see the [Pasqal EMU_MPS documentation](https://docs.pasqal.com/emulationtools/emumps/)
 
 - Job Type: `Simulation`
 - Data Format: `application/json`
@@ -81,21 +82,6 @@ By making use of optical tweezers we can assemble an adjustable quantum register
 - Job Type: `Quantum program`
 - Data Format: `application/json`
 - Target ID: `pasqal.qpu.fresnel-can1`
-
-## EMU_TN
-
-**This emulator is deprecated and we encourage you to use EMU_MPS instead.**
-
-Emulators are backends designed to emulate the dynamics of programmable arrays of neutral atoms.
-
-Tensor networks are powerful mathematical tools for efficiently representing and simulating many-body quantum systems. They are formed by connecting multi-dimensional arrays, called tensors, through a series of contracted indices or bonds, resulting in a compact representation of complex quantum states. This approach is particularly effective for capturing low-entanglement states.
-
-Check our documentation for more information: https://docs.pasqal.com/cloud/emu-tn/
-
-- Job Type: `Simulation`
-- Data Format: `application/json`
-- Target ID: `pasqal.sim.emu-tn`
-
 
 ## Pulser SDK
 
