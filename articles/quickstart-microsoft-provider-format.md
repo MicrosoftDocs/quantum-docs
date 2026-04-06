@@ -162,7 +162,7 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
 Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in provider-specific formats to Azure Quantum. Each provider has its own format for representing quantum circuits.
 
 - [IonQ](#submit-a-circuit-to-ionq-using-json-format)
-- [PASQAL](#submit-a-circuit-to-pasqal-using-pulser-sdk)
+- [Pasqal](#submit-a-circuit-to-pasqal-using-pulser-sdk)
 - [Quantinuum](#submit-a-circuit-to-quantinuum-using-openqasm)
 - [Rigetti](#submit-a-circuit-to-rigetti-using-quil)
 
@@ -229,13 +229,13 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
     > [!NOTE]
     > For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
 
-### Submit a circuit to PASQAL using Pulser SDK
+### Submit a circuit to Pasqal using Pulser SDK
 
-To submit a circuit to PASQAL, you can use the Pulser SDK to create pulse sequences and submit them to the PASQAL target.
+To submit a circuit to Pasqal, you can use the Pulser SDK to create pulse sequences and submit them to the Pasqal target.
 
 #### Install the Pulser SDK
 
-[Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. It's designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
+[Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. It's designed by Pasqal as a pass-through to submit quantum experiments to their quantum processors. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
 
 To submit the pulse sequences, first install the Pulser SDK packages:
 
@@ -253,13 +253,13 @@ You need to define both a register and a layout before proceeding. The register 
 
 For details on layouts, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html).
 
-- First, you create a 'devices' object to import the PASQAL quantum computer target, [Fresnel](xref:microsoft.quantum.providers.pasqal#fresnel).
+- First, you create a `devices` object to import the Pasqal quantum computer target, [FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1).
 
     ```python
     from pulser_pasqal import PasqalCloud
 
     devices = PasqalCloud().fetch_available_devices()
-    QPU = devices["FRESNEL"]
+    QPU = devices["FRESNEL_CAN1"]
     ```
 
 ##### Pre-calibrated layouts
@@ -339,7 +339,7 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
 1. First,  you define the pulse sequence attributes by declaring the channels that will be used to control the atoms. To create a `Sequence`, you need to provide a `Register` instance along with the device where the sequence will be executed. For example, the following code declares one channel: `ch0`.
 
    > [!NOTE]
-   > You can use the `QPU = devices["FRESNEL"]`  device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
+   > You can use the `QPU = devices["FRESNEL_CAN1"]`  device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
 
     ```python
     from pulser import Sequence
@@ -384,7 +384,7 @@ def prepare_input_data(seq):
     return to_send
 ```
 
-#### Submit the pulse sequence to PASQAL target
+#### Submit the pulse sequence to Pasqal target
 
 1. First, you need to set the proper input and output data formats. For example, the following code sets the input data format to `pasqal.pulser.v1` and the output data format to `pasqal.pulser-results.v1`.
 
@@ -395,7 +395,7 @@ def prepare_input_data(seq):
             input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
             input_data_format="pasqal.pulser.v1",
             output_data_format="pasqal.pulser-results.v1",
-            name="PASQAL sequence",
+            name="Pasqal sequence",
             shots=shots # Number of shots
         )
 
@@ -406,10 +406,10 @@ def prepare_input_data(seq):
     > [!NOTE]
     > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
 
-1. Submit the program to PASQAL. Before you submit your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-tn` as a target.
+1. Submit the program to Pasqal. Before you submit your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-mps` as a target.
 
     ```python
-    target = workspace.get_targets(name="pasqal.sim.emu-tn") # Change to "pasqal.qpu.fresnel" to use Fresnel QPU
+    target = workspace.get_targets(name="pasqal.sim.emu-mps") # Change to "pasqal.qpu.fresnel-can1" to use FRESNEL_CAN1 QPU
     job = submit_job(target, seq, 10)
 
     job.wait_until_completed()
