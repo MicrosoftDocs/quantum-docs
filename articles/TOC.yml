@@ -32,8 +32,8 @@
       href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
     - name: Azure CLI commands >>
       href: /cli/azure/quantum
-    - name: Work with Azure Quantum using the Azure Resource Manager
-      href: how-to-manage-quantum-workspaces-with-azure-resource-manager.md
+    - name: Work with Azure Quantum using Bicep
+      href: how-to-manage-quantum-workspaces-using-bicep.md
   - name: Pricing and quota information
     items:
     - name: Azure Quantum pricing
@@ -144,6 +144,8 @@
       href: sparse-simulator.md
     - name: Backend simulators
       href: backend-simulators.md
+    - name: The circuit visualizer
+      href: circuit-diagrams-qdk-overview.md
     - name: The circuit editor
       href: qdk-circuit-editor.md
     - name: Neutral atom device simulators

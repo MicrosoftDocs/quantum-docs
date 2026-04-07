@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
-title: Manage quantum workspaces with the Azure Resource Manager
-description: This guide shows you how to create and delete quantum workspaces using the Azure Resource Manager. 
+title: Manage quantum workspaces using Bicep
+description: This guide shows you how to create and delete quantum workspaces using Bicep. 
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.topic: how-to
@@ -11,11 +11,11 @@ no-loc: [target, targets]
 uid: microsoft.quantum.workspaces-arm
 ---
 
-# Manage quantum workspaces with the Azure Resource Manager
+# Manage quantum workspaces using Bicep
 
-In this guide, learn to use an Azure Resource Manager template (ARM template) or a Bicep template to create Azure Quantum workspaces and the required resource groups and storage accounts. After template deployment, you can start running your quantum applications in Azure Quantum. Treating your infrastructure as code enables you to track changes to your infrastructure requirements and makes your deployments more consistent and repeatable.
+In this guide, learn to use a Bicep template to create Azure Quantum workspaces and the required resource groups and storage accounts. After template deployment, you can start running your quantum applications in Azure Quantum. Treating your infrastructure as code enables you to track changes to your infrastructure requirements and makes your deployments more consistent and repeatable.
 
-An ARM template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. The template uses declarative syntax. In declarative syntax, you describe your intended deployment without writing the sequence of programming commands to create the deployment. Bicep uses a declarative syntax that you treat like application code. If you're familiar with the JSON syntax for writing Azure Resource Manager templates (ARM templates), you'll find that Bicep provides a more concise syntax and improved type safety. In fact, Bicep files compile to standard ARM templates.
+Bicep uses a declarative syntax that you treat like application code. If you're familiar with the JSON syntax for writing Azure Resource Manager (ARM) templates, you'll find that Bicep provides a more concise syntax and improved type safety.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Before you begin, you must have an Azure account with an active subscription. If
 
 ### Editor
 
-To create ARM or Bicep templates, you need a good editor. We recommend Visual Studio Code with the Resource Manager Tools extension. If you need to install these tools, see [Quickstart: Create ARM templates with Visual Studio Code](/azure/azure-resource-manager/templates/quickstart-create-templates-use-visual-studio-code).
+To create Bicep templates, you need a good editor. We recommend the latest version of [VS Code](https://code.visualstudio.com/download) with the [Bicep extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep).
 
 ### Command-line deployment
 
@@ -84,28 +84,19 @@ New-AzResourceGroup -Name myResourceGroup -Location "East US"
 
 ---
 
-## Review the template
+## Review the Azure Bicep template
 
-
-
-# [Azure Bicep](#tab/bicep-template)
-
-```bicep
+```azurecli
 @description('Application name used as prefix for the Azure Quantum workspace and its associated Storage account.')
 param appName string
 
 @description('Location of the Azure Quantum workspace and its associated Storage account.')
 @allowed([
-  'eastus'
-  'japaneast'
-  'japanwest'
-  'northeurope'
-  'uksouth'
-  'ukwest'
-  'westcentralus'
-  'westeurope'
   'westus'
-  'westus2'
+  'eastus'
+  'northeurope'
+  'westeurope'
+  'canary'
 ])
 param location string
 
@@ -157,132 +148,14 @@ output tenant_id string = subscription().tenantId
 
 ```
 
-# [ARM Template](#tab/arm-template)
+The following Azure resources are created by the template:
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "metadata": {
-    "_generator": {
-      "name": "bicep",
-      "version": "0.4.1124.51302",
-      "templateHash": "7692970140494302547"
-    }
-  },
-  "parameters": {
-    "appName": {
-      "type": "string",
-      "metadata": {
-        "description": "Application name used as prefix for the Azure Quantum workspace and its associated Storage account."
-      }
-    },
-    "location": {
-      "type": "string",
-      "allowedValues": [
-        "eastus",
-        "japaneast",
-        "japanwest",
-        "northeurope",
-        "uksouth",
-        "ukwest",
-        "westcentralus",
-        "westeurope",
-        "westus",
-        "westus2"
-      ],
-      "metadata": {
-        "description": "Location of the Azure Quantum workspace and its associated Storage account."
-      }
-    }
-  },
-  "variables": {
-    "quantumWorkspaceName": "[format('{0}-ws', parameters('appName'))]",
-    "storageAccountName": "[format('{0}{1}', parameters('appName'), substring(uniqueString(resourceGroup().id), 0, 5))]"
-  },
-  "resources": [
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2021-06-01",
-      "name": "[variables('storageAccountName')]",
-      "location": "[parameters('location')]",
-      "sku": {
-        "name": "Standard_LRS"
-      },
-      "kind": "StorageV2"
-    },
-    {
-      "type": "Microsoft.Quantum/workspaces",
-      "apiVersion": "2019-11-04-preview",
-      "name": "[variables('quantumWorkspaceName')]",
-      "location": "[parameters('location')]",
-      "identity": {
-        "type": "SystemAssigned"
-      },
-      "properties": {
-        "providers": [
-          {
-            "providerId": "Microsoft",
-            "providerSku": "DZH3178M639F",
-            "applicationName": "[format('{0}-Microsoft', variables('quantumWorkspaceName'))]"
-          }
-        ],
-        "storageAccount": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
-      },
-      "dependsOn": [
-          "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
-      ]
-    },
-    {
-      "type": "Microsoft.Authorization/roleAssignments",
-      "apiVersion": "2020-04-01-preview",
-      "scope": "[format('Microsoft.Storage/storageAccounts/{0}', variables('storageAccountName'))]",
-      "name": "[guid(resourceId('Microsoft.Quantum/workspaces', variables('quantumWorkspaceName')), format('/subscriptions/{0}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c', subscription().subscriptionId), resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')))]",
-      "properties": {
-        "roleDefinitionId": "[format('/subscriptions/{0}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c', subscription().subscriptionId)]",
-        "principalId": "[reference(resourceId('Microsoft.Quantum/workspaces', variables('quantumWorkspaceName')), '2019-11-04-preview', 'full').identity.principalId]"
-      },
-      "dependsOn": [
-        "[resourceId('Microsoft.Quantum/workspaces', variables('quantumWorkspaceName'))]",
-        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
-      ]
-    }
-  ],
-  "outputs": {
-    "subscription_id": {
-      "type": "string",
-      "value": "[subscription().subscriptionId]"
-    },
-    "resource_group": {
-      "type": "string",
-      "value": "[resourceGroup().name]"
-    },
-    "name": {
-      "type": "string",
-      "value": "[variables('quantumWorkspaceName')]"
-    },
-    "location": {
-      "type": "string",
-      "value": "[reference(resourceId('Microsoft.Quantum/workspaces', variables('quantumWorkspaceName')), '2019-11-04-preview', 'full').location]"
-    },
-    "tenant_id": {
-      "type": "string",
-      "value": "[subscription().tenantId]"
-    }
-  }
-}
-```
+- [**Azure Storage Account**](/azure/storage/blobs/): storage account for storing input and output data for quantum jobs.
+- [**Azure Quantum workspace**](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum applications.
 
----
+The template also grants the quantum workspace **Contributor** permission to the storage account. This step is needed so that the workspace can read and write job data.
 
-The following Azure resources are created by both templates:
-
-+ [**Azure Storage Account**](/azure/storage/blobs/): storage account for storing input and output data for quantum jobs.
-+ [**Azure Quantum workspace**](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum applications.
-
-The templates also grant the quantum workspace **Contributor**-permissions to the storage account. This step is needed so that the workspace can read and write job data.
-
-Both templates generate following output. You can use these values later to identify the generated quantum workspace and authenticate to it:
+The template generates the following output. You can use these values later to identify the generated quantum workspace and authenticate to it:
 
 - **Subscription ID** hosting all the deployed resources.
 - **Resource Group** containing all deployed resources.

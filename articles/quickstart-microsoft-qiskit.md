@@ -76,10 +76,10 @@ To submit a Qiskit program to run on an Azure Quantum target, follow these steps
         print("- " + backend.name)
     ```
 
-1. Set the Azure Quantum backend with the target that you want to submit your job to. For example, the following code sets up a backend to run your program as a simulation on the Quantinuum H2-1 emulator:
+1. Set the Azure Quantum backend with the target that you want to submit your job to. For example, the following code sets up a backend to run your program on the Rigetti simulator:
 
      ```python
-    backend = provider.get_backend('quantinuum.sim.h2-1e')
+    backend = provider.get_backend('rigetti.sim.qvm')
     ```
 
 1. Run your program on the Azure Quantum target and get the results. The following code runs 1,000 shots of your program on the specified target and stores the results:
