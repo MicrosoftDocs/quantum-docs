@@ -50,12 +50,11 @@ If the Azure Quantum target that you want to run your job on isn't in the availa
 To resolve this issue, follow these steps:
 
 1. Sign in to the [Azure portal](https://portal.azure.com) and authenticate your account.
-1. In the **Navigate** section of the portal home page, choose **Subscriptions** and then select your subscription.
-1. In the subscription navigation pane, choose **Access control (IAM)**.
-1. Choose the **Role assignments** tab.
-1. Expand the **Role** dropdown, select either **Owner** or **Contributor**, and then enter your email address and select your account.
-1. Choose **Save**. Your account is now configured with either the **Owner** or **Contributor** role.
-1. Create your Azure Quantum workspace again and then submit a job from the new workspace.
+1. Go the Quantum workspace that you're trying to submit a job to.
+1. In the workspace navigation pane, select **Access control (IAM)**.
+1. Select the **View my access** button. The **assignments** pane opens.
+1. In the **Role** column of the **Role assignments** table, check whether you have either the **Owner** or **Contributor** role.
+1. If you don't have either role, ask your subscription administrator to assign you the **Owner** or **Contributor** role for this workspace.
 
 ### Issue: "AuthorizationFailure - This request is not authorized to perform this operation"
 
@@ -63,12 +62,13 @@ If you get this message even when you have a valid connection to the Azure Quant
 
 To check the storage account settings, follow these steps:
 
-1. Sign in to the Azure portal.
+1. Sign in to [Azure portal](https://portal.azure.com).
 1. Go to your Quantum workspace.
-1. In the **Overview** page, choose the **Storage account**.
-1. In the navigation pane, expand the **Security + networking** dropdown and choose **Networking**.
-1. In the **Public network access** section of the **Public access** tab, choose the **Manage** button.
-1. For the **Public access network scope** setting, select **Enable from all networks**.
+1. In the **Overview** page, select the **Storage account**.
+1. In the navigation pane, expand the **Security + networking** dropdown and select **Networking**.
+1. In the **Public network access** section of the **Public access** tab, select the **Manage** button.
+1. For the **Public network access** setting, select **Enable**. For the **Public network access scope** setting, select **Enable from all networks**.
+1. Select the **Save** button.
 
 ### Issue: "Failed to compile program" when you submit a Q# program from Azure CLI
 
@@ -119,15 +119,15 @@ This issue occurs when you create a new workspace in the Azure portal and Azure 
 To verify that you're running into this role assignment issue, follow these steps:
 
 1. Go to your Quantum workspace in the Azure portal.
-1. In the **Overview** page, choose the **Storage account**.
-1. In the navigation pane, choose **Access Control (IAM)**.
+1. In the **Overview** page, select the **Storage account**.
+1. In the navigation pane, select **Access Control (IAM)**.
 1. Choose the **Role assignments** tab.
-1. In the **Role** column, verify whether your workspace's storage account has the **Storage Account Contributor** role.
+1. In the **Role** column, check whether your workspace's storage account has the **Storage Account Contributor** role and the **Storage Blob Data Contributor** role.
 
-If the storage account doesn't have the **Storage Account Contributor** role, then do one of the following:
+If the workspace doesn't have both of these roles on the storage account, then do one of the following:
 
 - Create a new workspace and make sure that workspace creation completes before you close the web browser window or tab.
-- Assign the **Storage Account Contributor** role to the storage account.
+- Assign the **Storage Account Contributor** and **Storage Blob Data Contributor** roles to your workspace on the storage account.
 
 ### Issue: Job fails with error code: QIRPreProcessingFailed
 
@@ -156,8 +156,8 @@ To retrieve more information about the job failure, do one of the following:
     job.get_results()
     ```
 
-- In your Quantum workspace in the Azure portal, go to the **Job Management** pane form the **Operations** dropdown, and then choose the job **Name** to open the **Job details** pane.
-- In your Quantum workspace in the Azure portal, go to the **Providers** pane form the **Operations** dropdown. Verify that the target hardware is available. If the target status is **Degraded**, then jobs might stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of **target unavailable**.
+- In your Quantum workspace in the Azure portal, go to the **Job Management** pane from the **Operations** dropdown, and then choose the job **Name** to open the **Job details** pane.
+- In your Quantum workspace in the Azure portal, go to the **Providers** pane from the **Operations** dropdown. Verify that the target hardware is available. If the target status is **Degraded**, then jobs might stay in the queue longer than usual. Sometimes the jobs get processed, but sometimes they time out and return an error of **target unavailable**.
 
 ### Issue: Azure Quantum asks me to authenticate when I programmatically connect to my workspace
 
@@ -235,11 +235,14 @@ You might experience the following issues when you create a Quantum workspace in
 
 ### Issue: You can't access the workspace creation form in the Azure portal, and you're asked to sign up for a subscription instead
 
-This issue occurs because you don't have an active subscription.
+This issue occurs because you don't have an active Azure subscription.
 
-For example, Azure credits from the [30 day free trial Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) aren't eligible to use on quantum hardware providers. After 30 days of sign-up, or after you use all your free Azure credits, you must upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. When you have an active subscription, the Azure portal allows you to access the workspace creation form.
+When you sign up for a [30 day free trial Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn), you get free Azure credits. After you use all your free credits, or 30 days after you sign up, you need to upgrade to a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to continue using Azure Quantum services. When you have an active subscription, the Azure portal allows you to access the workspace creation form.
 
 To see a list of your subscriptions and associated roles, see [Check your subscriptions](xref:microsoft.quantum.how-to.manage-workspace-access#check-your-subscriptions).
+
+> [!NOTE]
+> Azure credits from the 30 day free trial Azure subscription aren't eligible to use on quantum hardware providers.
 
 ### Issue: The Quick create option is unavailable
 
