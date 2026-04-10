@@ -517,7 +517,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
 
     ```python
     qc = get_qvm()  # For simulation
-    # qc = get_qpu("Ankaa-3") for submitting to a QPU
+    # qc = get_qpu("Cepheus-1-108Q") for submitting to a QPU
     ```
 
 1. Create a Quil program. Any valid Quil program is accepted, but the readout **must** be named `ro`.
