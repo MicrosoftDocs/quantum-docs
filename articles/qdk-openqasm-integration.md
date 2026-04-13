@@ -139,7 +139,7 @@ After `bell` is part of your environment, you can run it directly from a Q# cell
 bell()
 ```
 
-You can also use all the QDK package functionality with `bell`, such as noisy simulation, circuit rendering, and code generation.
+You can also use the QDK package functionality with `bell`, such as noisy simulation, circuit rendering, and code generation.
 
 #### Parameterized OpenQASM programs
 
@@ -171,7 +171,7 @@ parameterized_circuit(1.57)
 
 ### Pass an OpenQASM program to Q\#
 
-With the QDK Python library, you can directly pass an OpenQASM program to a Q# program. For example, the following code create an OpenQASM program called `Entangle` and then uses `Entangle` as an operation in a Q# program:
+With the QDK Python library, you can directly pass an OpenQASM program to a Q# program. For example, the following code creates an OpenQASM program called `Entangle` and then uses `Entangle` as an operation in a Q# program:
 
 ```python
 from qdk import TargetProfile
