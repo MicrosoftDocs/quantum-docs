@@ -152,7 +152,7 @@ To request a quota increase, submit a support ticket.
  To fill out the support request, follow these steps:
 
 1. For **Issue type**, choose **Service and subscription limits (quotas)**.
-1. For **Subscription**, choose the the subscription that contains the workspace that you want a quota increase for.
+1. For **Subscription**, choose the subscription that contains the workspace that you want a quota increase for.
 1. For **Quota type**, choose **Azure Quantum**.
 1. Choose the **Next** button to go to the **3. Additional details** tab.
 1. In the **Description** box of the **Problem details** section, enter the following information:

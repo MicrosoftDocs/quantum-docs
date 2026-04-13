@@ -218,7 +218,7 @@ To resolve this issue, do one of the following:
 
 ### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
 
-The resource estimator accepts only one of [`maxDuration`](xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints. If your provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, then the job returns the `BothDurationAndPhysicalQubitsProvided` error.
+The resource estimator accepts only one of [`maxDuration`](xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints. If you provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, then the job returns the `BothDurationAndPhysicalQubitsProvided` error.
 
 ### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
 

@@ -456,7 +456,7 @@ To submit a Quil job to a Rigetti target, use the `qdk.azure` Python module.
     target = Rigetti(workspace=workspace, name=RigettiTarget.QVM)
     ```
 
-1. Create a Quil program. For your program to be accepted, you must set the readout to`"ro"`.
+1. Create a Quil program. For your program to be accepted, you must set the readout to `"ro"`.
 
     ```python
     readout = "ro"
