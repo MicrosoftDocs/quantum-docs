@@ -1,39 +1,42 @@
 ---
 author: azure-quantum-content
-description: Add or remove a provider in an existing Azure Quantum workspace
+description: This article explains how to add or remove a provider to an existing Azure Quantum workspace
 ms.author: quantumdocwriters
-ms.date: 11/22/2024
+ms.date: 03/18/2026
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-title: Add or remove a provider
+title: Add or remove a provider to an existing workspace
 uid: microsoft.quantum.add-provider
 ---
 
-# Add or remove a provider
+# Add or remove a provider in an existing workspace
 
-Providers are usually added to an Azure Quantum workspace when the workspace is created. However, additional providers can be added (or existing providers removed) anytime after that. If you submit a quantum job to a provider that is not yet in your workspace, you will receive an error message prompting you to install the necessary provider.
+When you create an Azure Quantum workspace, you choose the providers and plans that are available in the workspace. However, you can add new providers or remove existing providers at any time. If you submit a quantum job to a provider that isn't in your workspace, then you receive an error message that prompts you to add that provider to your workspace.
 
-To add a provider to an existing workspace:
+## Add a provider or plan
 
-1. Sign in to the [Azure portal](https://portal.azure.com), using the credentials for your Azure subscription.
-1. Select **Home** and navigate to your Azure Quantum workspace.
-1. Select **Providers**. All your current providers are listed.
-1. Select **Add a Provider**. All the available providers are displayed in **Add additional providers**, along with pricing information.
+To add a provider to your workspace, follow these steps:
 
-    :::image type="content" source="media/add-providers-portal.png" alt-text="Screen shot showing how to select a provider to add to an Azure Quantum workspace.":::
+1. Sign in to the [Azure portal](https://portal.azure.com) with the credentials for your Azure subscription.
+1. Go to your Azure Quantum workspace.
+1. In the workspace navigation pane, expand the **Operations** dropdown and choose **Providers**.
+1. Above the list of your existing providers, choose **+ Add a Provider**. The **Add additional providers** pane opens and shows all the providers that you can add to your workspace.
 
     > [!NOTE]
-    > If the provider you want to add is not in the list of available providers, then your billing account may be located in a country/region that is not supported by that provider. For more information, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability).
+    > If the provider that you want to add isn't in the list of available providers, then your billing account might be located in a country or region that the provider doesn't support. For more information, see [Global availability of Azure Quantum providers](xref:microsoft.quantum.provider-availability).
 
-1. Select **+Add** next to the desired provider, select a pricing option, and then click **Add**.
-1. Once the provider is deployed, it appears in your provider list. To ensure that the deployment is complete, wait until the **Status** for the provider displays a green checkmark.
-1. If the deployment fails, review the notification or check the Activity log.
+1. Choose **+ Add** next to the provider that you want to add, and then choose a pricing plan.
+1. Select the **I accept this provider's terms and conditions** box, and then choose the **Add** button to begin deployment.
 
-To remove a provider from a workspace:
+When the deployment finishes, the provider is the list on the **Providers** page. If the deployment succeeds, then you see a green checkmark for the provider **Status**. If the deployment fails, then review the notification or check the **Activity log**.
 
-1. Sign in to the [Azure portal](https://portal.azure.com), using the credentials for your Azure subscription.
-1. Select **Home** and navigate to your Azure Quantum workspace.
-1. Select **Providers**.
-1. In the displayed list of providers, select **Remove** for the desired provider.
-1. Select **Yes** to remove the provider.
+## Remove a provider or plan
+
+To remove a provider from your workspace, follow these steps:
+
+1. Sign in to the [Azure portal](https://portal.azure.com) with the credentials for your Azure subscription.
+1. Go to your Azure Quantum workspace.
+1. In the workspace navigation pane, expand the **Operations** dropdown and choose **Providers**.
+1. For the provider that you want to remove, choose **Remove** in the last column of the providers list.
+1. Choose the **Yes** button to remove the provider.

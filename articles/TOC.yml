@@ -200,8 +200,6 @@
     items:
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
-    - name: Perform long-running experiments
-      href: how-to-long-running-experiments.md
     - name: Hybrid quantum computing (QC)
       items:
       - name: Introduction to hybrid QC

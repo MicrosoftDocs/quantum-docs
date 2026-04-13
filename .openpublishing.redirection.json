@@ -1160,6 +1160,11 @@
 			"source_path": "articles/notebook-portal-download.md",
 			"redirect_url": "/azure/quantum/",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-long-running-experiments.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
 		}
 	]
 }
