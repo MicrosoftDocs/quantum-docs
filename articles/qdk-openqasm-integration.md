@@ -105,7 +105,7 @@ You can use the `import_openqasm` function to store an OpenQASM program as a Pyt
 
 ```python
 from qdk import TargetProfile
-from qdk.openqasm import import_openqasm, ProgramType
+from qdk.openqasm import import_openqasm
 from qdk import qsharp
 
 # Set the QIR target profile
@@ -120,23 +120,16 @@ qasm_code = """
     bit c = measure q[1];
     """
 
-import_openqasm(qasm_code, name="bell", program_type=ProgramType.File)
+import_openqasm(qasm_code, name="bell")
 ```
 
-This next cell imports and calls the `bell` circuit:
-
-```python
-from qsharp.code import bell
-
-bell()
-```
-
-After `bell` is part of your environment, you can run it directly from a Q# cell:
+When `bell` is part of your environment, you can run it directly from a Q# cell:
 
 ```qsharp
 %%qsharp
 
-bell()
+use qs = Qubit[2];
+bell(qs)
 ```
 
 You can also use the QDK package functionality with `bell`, such as noisy simulation, circuit rendering, and code generation.
