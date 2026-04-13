@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to submit specific formatted quantum circuits with QIR, OpenQASM, or Pulser SDK to the Azure Quantum service.
 ms.author: quantumdocwriters
-ms.date: 02/26/2025
+ms.date: 03/23/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -23,7 +23,7 @@ For more information, see [Quantum circuits](xref:microsoft.quantum.concepts.cir
 
 ## Prerequisites
 
-To develop and run your circuits in Visual Studio Code (VS Code), you need:
+To develop and run your circuits in Visual Studio Code (VS Code), you must have the following:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
@@ -35,18 +35,13 @@ To develop and run your circuits in Visual Studio Code (VS Code), you need:
     python -m pip install --upgrade "qdk[azure]" ipykernel
     ```
 
-## Create a new Jupyter notebook
+## Create a new Jupyter notebook and connect to your Quantum workspace
 
-To create a notebook in VS Code, follow these steps:
+To connect to your workspace in a Jupyter notebook in VS Code, follow these steps:
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
-1. Enter and select **Create: New Jupyter Notebook**.
-1. To connect to the Azure Quantum service, your program needs the resource ID of your Azure Quantum workspace.
-    1. Log in to the [Azure portal](<https://portal.azure.com>).
-    1. Select your Azure Quantum workspace, and navigate to **Overview**.
-    1. Copy the parameters in the fields.
-1. In the first cell of your notebook, paste the values into the following `Workspace` constructor to
-create a `workspace` object that connects to your Azure Quantum workspace.
+1. Enter **Create: New Jupyter Notebook**. An empty Jupyter Notebook file opens in a new tab.
+1. In the first cell of the notebook, run the following code. You can find the resource ID in the **Overview** pane for your workspace in the Azure portal.
 
     ```python
     from qdk.azure import Workspace
@@ -56,9 +51,11 @@ create a `workspace` object that connects to your Azure Quantum workspace.
 
 ## Submit QIR-formatted circuits
 
-Quantum Intermediate Representation (QIR) is an intermediate representation which serves as a common interface between quantum programming languages/frameworks and targeted quantum computation platforms. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
+Quantum Intermediate Representation (QIR) is an intermediate representation that serves as a common interface between quantum programming languages and targeted quantum computation platforms. For more information, see [Quantum Intermediate Representation](xref:microsoft.quantum.concepts.qir).
 
-1. Create the QIR circuit. For example, the following code creates a simple entanglement circuit.
+To submit a QIR-formatted circuit, follow these steps:
+
+1. Create the QIR circuit. For example, run the following code in a new cell to create a simple entanglement circuit.
 
     ```python
     QIR_routine = """%Result = type opaque
@@ -119,7 +116,7 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
     """
     ```
 
-1. Create a `submit_qir_job` helper function to submit the QIR circuit to a target. Note that the input and output data formats are specified as `qir.v1` and `microsoft.quantum-results.v1`, respectively.
+1. Create a `submit_qir_job` helper function to submit the QIR circuit to a target. In this example, the input and output data formats are `qir.v1` and `microsoft.quantum-results.v1`, respectively.
 
     ```python
     # Submit the job with proper input and output data formats
@@ -145,7 +142,7 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
         return result
     ```
 
-1. Select a target and submit the QIR circuit to Azure Quantum. For example, to submit the QIR circuit to the IonQ simulator target:
+1. Submit the QIR circuit to a specific Azure Quantum target. For example, to submit the QIR circuit to the IonQ simulator target, run the following code:
 
     ```python
     target = workspace.get_targets(name="ionq.simulator") 
@@ -153,22 +150,22 @@ Quantum Intermediate Representation (QIR) is an intermediate representation whic
     result
     ```
 
-    ```output
-    {'Histogram': ['(0, 0)', 0.5, '(1, 1)', 0.5]}
-    ```
-
 ## Submit a circuit with a provider-specific format to Azure Quantum
 
-Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in provider-specific formats to Azure Quantum. Each provider has its own format for representing quantum circuits.
+Each Azure Quantum provider has its own format to represent quantum circuits. You can submit circuits to Azure Quantum in provider-specific formats instead of QIR languages, such as Q# or Qiskit.
 
-- [IonQ](#submit-a-circuit-to-ionq-using-json-format)
-- [PASQAL](#submit-a-circuit-to-pasqal-using-pulser-sdk)
-- [Quantinuum](#submit-a-circuit-to-quantinuum-using-openqasm)
-- [Rigetti](#submit-a-circuit-to-rigetti-using-quil)
+- [IonQ](#submit-a-circuit-to-ionq-in-json-format)
+- [PASQAL](#submit-a-circuit-to-pasqal-in-pulser-sdk-format)
+- [Quantinuum](#submit-an-openqasm-circuit-to-quantinuum)
+- [Rigetti](#submit-a-quil-circuit-to-rigetti)
 
-### Submit a circuit to IonQ using JSON format
+### Submit a circuit to IonQ in JSON format
 
-1. Create a quantum circuit using the language-agnostic JSON format supported by the [IonQ targets](xref:microsoft.quantum.providers.ionq), as described in the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs). For example, the following sample creates a superposition between three qubits:
+IonQ uses JSON format to run circuits on their targets. For more information, see [IonQ targets](xref:microsoft.quantum.providers.ionq) and the [IonQ API documentation](https://docs.ionq.com/#tag/quantum_programs).
+
+The following sample creates a superposition between three qubits in JSON format.
+
+1. In a new cell, create a quantum circuit in JSON format.
 
     ```python
     circuit = {
@@ -199,43 +196,20 @@ Besides QIR languages, such as Q# or Qiskit, you can submit quantum circuits in 
     job = target.submit(circuit)
     ```
 
-1. Wait until the job is complete and then fetch the results.
+1. When the job completes, get the results.
 
     ```python
     results = job.get_results()
     print(results)
     ```
 
-    ```output
-    .....
-    {'duration': 8240356, 'histogram': {'0': 0.5, '7': 0.5}}
-    ```
+### Submit a circuit to PASQAL in Pulser SDK format
 
-1. You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing/index.html).
-
-    ```python
-    import pylab as pl
-    pl.rcParams["font.size"] = 16
-    hist = {format(n, "03b"): 0 for n in range(8)}
-    hist.update({format(int(k), "03b"): v for k, v in results["histogram"].items()})
-    pl.bar(hist.keys(), hist.values())
-    pl.ylabel("Probabilities")
-    ```
-
-    ![IonQ job output](media/ionq-results.png)
-
-1. Before running a job on the QPU, you should estimate how much it will cost to run.
-
-    > [!NOTE]
-    > For the most current pricing details, see [IonQ Pricing](xref:microsoft.quantum.providers.ionq#pricing), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
-
-### Submit a circuit to PASQAL using Pulser SDK
-
-To submit a circuit to PASQAL, you can use the Pulser SDK to create pulse sequences and submit them to the PASQAL target.
+You can use the Pulser SDK to create pulse sequences and submit them to PASQAL targets.
 
 #### Install the Pulser SDK
 
-[Pulser](https://github.com/pasqal-io/Pulser) is a framework for composing, simulating and executing pulse sequences for neutral-atom quantum devices. It's designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
+[Pulser](https://github.com/pasqal-io/Pulser) is a framework that allows you to create, simulate, and run pulse sequences for neutral-atom quantum devices. Pulser is designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see the [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
 
 To submit the pulse sequences, first install the Pulser SDK packages:
 
@@ -249,50 +223,48 @@ except ImportError:
 
 #### Create a quantum register
 
-You need to define both a register and a layout before proceeding. The register specify where atoms will be arranged, while the layout specifies the positioning of traps necessary to capture and structure these atoms within the register. 
+Define both a register and a layout. The register specifies where to arrange the atoms, and the layout specifies the positions of traps that capture and structure the atoms within the register.
 
 For details on layouts, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html).
 
-- First, you create a 'devices' object to import the PASQAL quantum computer target, [Fresnel](xref:microsoft.quantum.providers.pasqal#fresnel).
+Create a `devices` object to import the PASQAL quantum computer target, [Fresnel](xref:microsoft.quantum.providers.pasqal#fresnel).
 
-    ```python
-    from pulser_pasqal import PasqalCloud
+```python
+from pulser_pasqal import PasqalCloud
 
-    devices = PasqalCloud().fetch_available_devices()
-    QPU = devices["FRESNEL"]
-    ```
+devices = PasqalCloud().fetch_available_devices()
+QPU = devices["FRESNEL"]
+```
 
 ##### Pre-calibrated layouts
 
-The device defines a list of [pre-calibrated layouts](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Devices-with-pre-calibrated-layouts). You can build your register out of one of these layouts.
+The device defines a list of [pre-calibrated layouts](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Devices-with-pre-calibrated-layouts). You can build your register from one of these layouts.
 
-This is the recommended option because it will improve the performance of the QPU.
+Use pre-calibrated layouts when possible because they improve the performance of the QPU.
 
-- Option 1: Define your register using pre-calibrated layouts
+The following example uses the first pre-calibrated layout on the device:
 
-    Inspect the layouts available on Fresnel and define your register from this layout. Check the pulser documentation for more information on how to do that.
+```python
+# Use the first layout available on the device
+layout = QPU.pre_calibrated_layouts[0]
 
-    Example:
+# Select traps 1, 3 and 5 of the layout to define the register
+traps = [1,v3,v5]
+reg = layout.define_register(*traps)
 
-    ```python
-    # let's say we are interested in the first layout available on the device
-    layout = QPU.pre_calibrated_layouts[0]
-    # Select traps 1, 3 and 5 of the layout to define the register
-    traps = [1,3,5]
-    reg = layout.define_register(*traps)
-    # You can draw the resulting register to verify it matches your expectations
-    reg.draw()
-    ```
+# Draw the register to verify that it matches your expectations
+reg.draw()
+```
 
 ##### Arbitrary layouts
 
-If pre-calibrated layouts don't satisfy the requirements of your experiment, then you can create a custom layout.
+Use a custom layout when the pre-calibrated layouts don't satisfy the requirements of your experiment.
 
-For any given arbitrary register, a neutral-atom QPU will place traps according to the layout, which must then undergo calibration. Since each calibration requires time, it is generally advisable to reuse an existing calibrated layout whenever possible
+For a given arbitrary register, a neutral-atom QPU places traps according to the layout, which must then be calibrated. Because each calibration takes time, it's a best practice to reuse an existing calibrated layout when possible.
 
-- Option 2: Automatically derive a layout from your defined register
+To create an arbitrary layout, choose one of the following options:
 
-    This option allows for the automatic generation of a layout based on a specified register. However, for large registers, this process may yield sub-optimal solutions due to limitations in the algorithm used to create the layout.
+- Automatically generate a layout based on a specified register. For large registers, this process can produce sub-optimal solutions. For example:
 
     ```python
     from pulser import Register
@@ -308,25 +280,21 @@ For any given arbitrary register, a neutral-atom QPU will place traps according 
     reg = Register(qubits).with_automatic_layout(device) 
     ```
 
-- Option 3: Define your register using a manually defined layout
-
-  - Create an arbitrary layout with 20 traps randomly positioned in a 2D plane
+- Manually define a layout to create your register. For example, create an arbitrary layout with 20 traps that are randomly positioned in a 2D plane:
 
     ```python
     import numpy as np
     from pulser.register.register_layout import RegisterLayout
 
-    # Generating random coordinates
+    # Generate random coordinates
     np.random.seed(301122)  # Keeps results consistent between runs
     traps = np.random.randint(0, 30, size=(20, 2))
     traps = traps - np.mean(traps, axis=0)
-    # Creating the layout
+    
+    # Create the layout
     layout = RegisterLayout(traps, slug="random_20")
-    ```
-
-    - Define your register with specific trap IDs
-
-    ```python
+    
+    # Define your register with specific trap IDs
     trap_ids = [4, 8, 19, 0]
     reg = layout.define_register(*trap_ids, qubit_ids=["a", "b", "c", "d"])
     reg.draw()
@@ -334,24 +302,26 @@ For any given arbitrary register, a neutral-atom QPU will place traps according 
 
 #### Write a pulse sequence
 
-The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the quantum register.
+Neutral atoms are controlled with laser pulses. The Pulser SDK allows you to create pulse sequences to apply to the quantum register.
 
-1. First,  you define the pulse sequence attributes by declaring the channels that will be used to control the atoms. To create a `Sequence`, you need to provide a `Register` instance along with the device where the sequence will be executed. For example, the following code declares one channel: `ch0`.
-
-   > [!NOTE]
-   > You can use the `QPU = devices["FRESNEL"]`  device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that is less constrained by device specifications, making it suitable for execution on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
+1. Define the pulse sequence attributes by declaring the channels that control the atoms. To create a `Sequence`, provide a `Register` instance along with the device where the sequence will be executed. For example, the following code declares one channel: `ch0`.
 
     ```python
     from pulser import Sequence
 
     seq = Sequence(reg, QPU)
-    # print the available channels for your sequence
+    
+    # Print the available channels for your sequence
     print(seq.available_channels)
-    # Declare a channel. In this example we will be using `rydberg_global`
+    
+    # Declare a channel. For example, `rydberg_global`
     seq.declare_channel("ch0", "rydberg_global")
     ```
 
-1. Add pulses to your sequence. To do so, you create and add pulses to the channels you declared. For example, the following code creates a pulse and adds it to channel `ch0`.
+    > [!NOTE]
+    > You can use the `QPU = devices["FRESNEL"]` device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that's less constrained by device specifications, which lets you run on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
+
+1. Add pulses to your sequence. To do so, create and add pulses to the channels that you declared. For example, the following code creates a pulse and adds it to channel `ch0`:
 
     ```python
     from pulser import Pulse
@@ -366,12 +336,13 @@ The neutral atoms are controlled with laser pulses. The Pulser SDK allows you to
     seq.draw()
     ```
 
-    The following image shows the pulse sequence.
+    The following image shows the pulse sequence:
+
     :::image type="content" source="media/provider-format-pasqal-sequence.png" alt-text="Pulse sequence":::
 
 #### Convert the sequence to a JSON string
 
-To submit the pulse sequences, you need to convert the Pulser objects into a JSON string that can be used as input data.
+To submit the pulse sequences, convert the Pulser objects into a JSON string that can be used as input data.
 
 ```python
 import json
@@ -384,9 +355,9 @@ def prepare_input_data(seq):
     return to_send
 ```
 
-#### Submit the pulse sequence to PASQAL target
+#### Submit the pulse sequence to a PASQAL target
 
-1. First, you need to set the proper input and output data formats. For example, the following code sets the input data format to `pasqal.pulser.v1` and the output data format to `pasqal.pulser-results.v1`.
+1. Set the proper input and output data formats. For example, the following code sets the input data format to `pasqal.pulser.v1` and the output data format to `pasqal.pulser-results.v1`.
 
     ```python
     # Submit the job with proper input and output data formats
@@ -404,9 +375,9 @@ def prepare_input_data(seq):
     ```
 
     > [!NOTE]
-    > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target by selecting the **Providers** blade of your workspace.
+    > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target in the **Providers** pane of your workspace.
 
-1. Submit the program to PASQAL. Before you submit your code to real quantum hardware, you can test your code using the emulator `pasqal.sim.emu-tn` as a target.
+1. Submit the program to PASQAL. Before you submit your code to real quantum hardware, it's a best practice to test your code on the emulator `pasqal.sim.emu-tn` target.
 
     ```python
     target = workspace.get_targets(name="pasqal.sim.emu-tn") # Change to "pasqal.qpu.fresnel" to use Fresnel QPU
@@ -426,9 +397,9 @@ def prepare_input_data(seq):
     }
     ```
 
-### Submit a circuit to Quantinuum using OpenQASM
+### Submit an OpenQASM circuit to Quantinuum
 
-1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following example creates a Teleportation circuit:
+1. Create a quantum circuit in the [OpenQASM](https://en.wikipedia.org/wiki/OpenQASM) representation. For example, the following code creates a Teleportation circuit:
 
     ```py
     circuit = """OPENQASM 2.0;
@@ -444,14 +415,14 @@ def prepare_input_data(seq):
     """
     ```
 
-    Optionally, you can load the circuit from a file:
+    Or, load the circuit from an OpenQASM file:
 
     ```py
     with open("my_teleport.qasm", "r") as f:
         circuit = f.read()
     ```
 
-1. Submit the circuit to the Quantinuum target. The following example uses the Quantinuum API validator, which returns a `Job` object.
+1. Submit the circuit to a Quantinuum target. The following example submits the job to one of the Quantinuum simulator targets.
 
     ```python
     target = workspace.get_targets(name="quantinuum.sim.h2-1sc")
@@ -465,113 +436,27 @@ def prepare_input_data(seq):
     print(results)
     ```
 
-    ```output
-    ........
-    {'c0': ['000',
-    '000',
-    '000',
-    '000',
-    '000',
-    '000',
-    '000',
-    ...
-    ]}
-    ```
+> [!NOTE]
+> These results return 000 for every shot, which isn't random. This is because the API Validator only checks whether your code can run on Quantinuum hardware, but returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
 
-1. You can then visualize the results using [Matplotlib](https://matplotlib.org/stable/users/installing/index.html).
+### Submit a Quil circuit to Rigetti
 
-    ```python
-    import pylab as pl
-    pl.hist(results["c0"])
-    pl.ylabel("Counts")
-    pl.xlabel("Bitstring")
-    ```
+To submit a Quil job to a Rigetti target, use the `qdk.azure` Python module.
 
-    ![Quantinuum job output](media/quantinuum-results.png)
-
-    Looking at the histogram, you might notice that the random number generator returned 0 every time, which isn't very random. This is because that, while the API Validator ensures that your code will run successfully on Quantinuum hardware, it also returns 0 for every quantum measurement. For a true random number generator, you need to run your circuit on quantum hardware.
-
-1. Before running a job on the QPU, you should estimate how much it will cost to run.
-
-    > [!NOTE]
-    > For the most current pricing details, see [Azure Quantum pricing](xref:microsoft.quantum.providers-pricing#quantinuum), or find your workspace and view pricing options in the "Provider" tab of your workspace via: [aka.ms/aq/myworkspaces](https://aka.ms/aq/myworkspaces).
-
-### Submit a circuit to Rigetti using Quil
-
-The easiest way to submit Quil jobs is using the [pyquil-for-azure-quantum](https://pypi.org/project/pyquil-for-azure-quantum/) package, as it allows you to use the tools and documentation of the [pyQuil](https://pyquil-docs.rigetti.com/en/stable/) library. Without this package, pyQuil can be used to _construct_ Quil programs but not to submit them to Azure Quantum.
-
-You can also construct Quil programs manually and submit them using the `azure-quantum` package directly.
-
-### [Use pyquil-for-azure-quantum](#tab/tabid-pyquil)
-
-1. First, load the required imports.
-
-    ```python
-    from pyquil.gates import CNOT, MEASURE, H
-    from pyquil.quil import Program
-    from pyquil.quilbase import Declare
-    from pyquil_for_azure_quantum import get_qpu, get_qvm
-    ```
-
-1. Use the `get_qvm` or `get_qpu` function to get a connection to the QVM or QPU.
-
-    ```python
-    qc = get_qvm()  # For simulation
-    # qc = get_qpu("Cepheus-1-108Q") for submitting to a QPU
-    ```
-
-1. Create a Quil program. Any valid Quil program is accepted, but the readout **must** be named `ro`.
-
-    ```python
-    program = Program(
-        Declare("ro", "BIT", 2),
-        H(0),
-        CNOT(0, 1),
-        MEASURE(0, ("ro", 0)),
-        MEASURE(1, ("ro", 1)),
-    ).wrap_in_numshots_loop(5)
-    
-    # Optionally pass to_native_gates=False to .compile() to skip the compilation stage
-    
-    result = qc.run(qc.compile(program))
-    data_per_shot = result.readout_data["ro"]
-    ```
-
-1. Here, `data_per_shot` is a `numpy` array, so you can use `numpy` methods.
-
-    ```python
-    assert data_per_shot.shape == (5, 2)
-    ro_data_first_shot = data_per_shot[0]
-    assert ro_data_first_shot[0] == 1 or ro_data_first_shot[0] == 0
-    ```
-
-1. Print out all the data.
-
-    ```python
-    print("Data from 'ro' register:")
-    for i, shot in enumerate(data_per_shot):
-        print(f"Shot {i}: {shot}")
-    ```
-
-### [Use azure-quantum Python SDK](#tab/tabid-azquantum)
-
-1. First, load the required imports.
+1. Load the required imports.
 
     ```python
     from azure.quantum import Workspace
     from azure.quantum.target.rigetti import Result, Rigetti, RigettiTarget, InputParams
     ```
 
-1. Create a `target` object and select the name of the Rigetti's target. For example, the following code selects the `QVM` target.
+1. Create a `target` object and pass the name of the Rigetti target that you want to submit your job to. For example, the following code selects the `QVM` target.
 
     ```python
-    target = Rigetti(
-        workspace=workspace,
-        name=RigettiTarget.QVM,
-    )
+    target = Rigetti(workspace=workspace, name=RigettiTarget.QVM)
     ```
 
-1. Create a Quil program. Any valid Quil program is accepted, but the readout **must** be named `ro`.
+1. Create a Quil program. For your program to be accepted, you must set the readout to `"ro"`.
 
     ```python
     readout = "ro"
@@ -597,7 +482,7 @@ You can also construct Quil programs manually and submit them using the `azure-q
     result = Result(job)  # This throws an exception if the job failed
     ```
 
-1. You can index a Result with the name of the readout. In this case, `ro`. Here, `data_per_shot` is a list of length num_shots, each entry is a list containing the data for the register for that shot.
+1. You can index a Result with the name of the readout. In the following code, `data_per_shot` is a list of length `num_shots`, and each item in the list is another list that contains the data for the register from that shot.
 
     ```python
     data_per_shot = result[readout]
@@ -605,14 +490,14 @@ You can also construct Quil programs manually and submit them using the `azure-q
     ro_data_first_shot = data_per_shot[0]
     ```
 
-    In this case, because the type of the register is BIT, the type will be integer and the value either 0 or 1.
+    In this case, because the type of the register is BIT, the type is integer and the value either 0 or 1.
 
     ```python
     assert isinstance(ro_data_first_shot[0], int)
     assert ro_data_first_shot[0] == 1 or ro_data_first_shot[0] == 0
     ```
 
-1. Print out all the data
+1. Print out all the data.
 
     ```python
     print(f"Data from '{readout}' register:")
@@ -620,10 +505,8 @@ You can also construct Quil programs manually and submit them using the `azure-q
         print(f"Shot {i}: {shot}")
     ```
 
-***
-
 > [!IMPORTANT]
-> You can't submit multiple circuits on a single job. As a workaround you can call the `backend.run` method to submit each circuit asynchronously, then fetch the results of each job. For example:
+> You can't submit multiple circuits on a single job. As a workaround you can call the `backend.run` method to submit each circuit asynchronously, and then fetch the results of each job. For example:
 >
 > ```python
 > jobs = []
