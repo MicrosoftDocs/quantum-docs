@@ -13,7 +13,7 @@ uid: microsoft.quantum.reference.vscode
 
 # Reference: Microsoft Quantum Development Kit extension for Visual Studio Code
 
-The Microsoft Quantum Development Kit (QDK) uses all the standard functionality of Visual Studio Code (VS Code), along with language-specific features when you work with `.qs` or `.qasm` files. This reference guide describes all the QDK commands that you can access in the VS Code Command Palette, along with other features and links to additional content. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
+The Microsoft Quantum Development Kit (QDK) uses the standard functionality of Visual Studio Code (VS Code), along with language-specific features when you work with `.qs` or `.qasm` files. This reference guide describes all the QDK commands that you can access in the VS Code Command Palette, along with other features and links to additional content. For general VS Code guidance, see the [VS Code documentation](https://code.visualstudio.com/docs).
 
 > [!TIP]
 > Most commands from the QDK extension are accessible from the **View > Command Palette** menu. While in a `.qs` or `.qasm` file, open the Command Palette and enter **QDK:** to view a filtered list of commands.

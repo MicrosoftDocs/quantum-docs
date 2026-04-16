@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: This document describes how to set up and use GitHub Copilot's agent mode in VS Code to enhance the QDK user experience.
+description: This document describes how to set up and use GitHub Copilot agent mode in VS Code to enhance the QDK user experience.
 ms.author: quantumdocwriters
 ms.date: 04/16/2026
 ms.service: azure-quantum
@@ -24,13 +24,7 @@ Agent mode is an AI-assisted development experience that helps you write and deb
 - Explain quantum computing concepts
 - Give you information about your Azure Quantum jobs and workspaces
 
-------OLD------
-Although you can use agent mode for the QDK without any setup, follow these tips to get the most out of agent mode in your QDK projects:
-
-1. [Add Copilot instructions for Q# and OpenQASM](#add-copilot-instructions-for-q-and-openqasm)
-1. [Activate the QDK tools for agent mode](#activate-the-qdk-tools-for-agent-mode)
-1. [Try different agent models](#try-different-agent-models)
-------OLD------
+For more information about Agent Skills for GitHub Copilot in VS Code, see [Use Agent Skills in VS Code](https://code.visualstudio.com/docs/copilot/customization/agent-skills) on the VS Code website.
 
 ## Prerequisites
 
