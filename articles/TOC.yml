@@ -118,6 +118,8 @@
       href: qdk-vscode-agent-setup.md
     - name: Explore with Copilot in Microsoft Quantum
       href: get-started-azure-quantum.md
+    - name: VS Code reference for the QDK
+      href: vscode-qdk-reference.md
   - name: Quantum language support in the QDK
     items:
     - name: Q#
@@ -224,12 +226,8 @@
         href: testing-debugging.md
       - name: Visualize Q# circuit diagrams
         href: how-to-visualize-circuits.md
-    - name: Reference guides for Q#
-      items:
-      - name: VS Code reference for Q# programs
-        href: vscode-qsharp-reference.md
-      - name: Language reference for Q#
-        href: user-guide/language/toc.yml
+    - name: Language reference for Q#
+      href: user-guide/language/toc.yml
   - name: Tutorials for the QDK and Q#
     items: 
     - name: Quantum random number generator
