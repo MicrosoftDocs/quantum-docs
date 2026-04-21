@@ -18,7 +18,7 @@ The Microsoft Quantum Development Kit (QDK) includes a molecule visualizer to us
 
 ## Prerequisites
 
-To use the molecule visualizer, you must install the following:
+To use the molecule visualizer, install the following tools:
 
 - Python environment (version 3.11, 3.12, or 3.13) with Python and Pip
 - Visual Studio Code (VS Code) with the Jupyter Notebook extension, or open VS Code for the Web
@@ -119,7 +119,7 @@ MoleculeViewer(molecule_data=structure.to_xyz(), cube_data=cube_data, isoval=0.0
 
 :::image type="content" source="media/molecule-visualizer-mos.png" alt-text="Screenshot of the molecule visualizer with display options for molecular orbitals.":::
 
-When you pass cube data to the `MoleculeViewer` widget, the visualizer has the following additional UI elements:
+When you pass cube data to the `MoleculeViewer` widget, the visualizer has the following other UI elements:
 
 | UI element          | Description                                                                                |
 |---------------------|--------------------------------------------------------------------------------------------|
@@ -127,3 +127,24 @@ When you pass cube data to the `MoleculeViewer` widget, the visualizer has the f
 | **Adjust isovalue** | Set the isovalue of the MO coefficients. The isovalue determines how the MOs are rendered. |
 
 For information on how to generate `.cube` files, see [`qdk_chemistry.utils.cubegen module](https://microsoft.github.io/qdk-chemistry/api/api_autogen/qdk_chemistry.utils.cubegen.html#qdk_chemistry.utils.cubegen.generate_cubefiles_from_orbitals) in the QDK/Chemistry API reference on GitHub.
+
+### Display other MO information
+
+The molecule visualizer can also display custom information about the MOs. To add custom information to the visualizer output, use dictionaries to define the cube data and include the `"info"` key. The value for the `"info"` key is another dictionary that contains the custom information.
+
+For example, the following code displays the energy, symmetry, and electron occupation of each MO:
+
+```python
+from pathlib import Path
+
+cube_data = {
+    "alpha_18": {"data": Path("MO_alpha_18.cube").read_text(),
+                 "info": {"Energy (Ha)": -0.392, "Symmetry": "A1", "Occupation": 1.0}},
+    "alpha_19": {"data": Path("MO_alpha_19.cube").read_text(),
+                 "info": {"Energy (Ha)":  0.581, "Symmetry": "B2", "Occupation": 0.0}}
+}
+
+MoleculeViewer(molecule_data=structure.to_xyz(), cube_data=cube_data, isoval=0.03)
+```
+
+:::image type="content" source="media/molecule-visualizer-mo-info.png" alt-text="Screenshot of the molecule visualizer that displays custom information about the molecular orbitals.":::
