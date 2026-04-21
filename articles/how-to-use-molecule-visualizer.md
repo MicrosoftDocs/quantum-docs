@@ -18,7 +18,7 @@ The Microsoft Quantum Development Kit (QDK) includes a molecule visualizer to us
 
 ## Prerequisites
 
-To use the molecule visualizer, you must install the following:
+To use the molecule visualizer, install the following tools:
 
 - Python environment (version 3.11, 3.12, or 3.13) with Python and Pip
 - Visual Studio Code (VS Code) with the Jupyter Notebook extension, or open VS Code for the Web
@@ -119,7 +119,7 @@ MoleculeViewer(molecule_data=structure.to_xyz(), cube_data=cube_data, isoval=0.0
 
 :::image type="content" source="media/molecule-visualizer-mos.png" alt-text="Screenshot of the molecule visualizer with display options for molecular orbitals.":::
 
-When you pass cube data to the `MoleculeViewer` widget, the visualizer has the following additional UI elements:
+When you pass cube data to the `MoleculeViewer` widget, the visualizer has the following other UI elements:
 
 | UI element          | Description                                                                                |
 |---------------------|--------------------------------------------------------------------------------------------|
