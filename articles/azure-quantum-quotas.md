@@ -28,7 +28,7 @@ Quotas are based on your provider plan selection. If you want to increase your q
 In Azure Quantum, hardware and software providers define and control the quotas of their offerings. For detailed quota information, see each provider reference page.  
 
 - [IonQ quota](xref:microsoft.quantum.providers.ionq#limits-and-quotas)
-- [PASQAL quota](xref:microsoft.quantum.providers.pasqal#limits-and-quotas)
+- [Pasqal quota](xref:microsoft.quantum.providers.pasqal#limits-and-quotas)
 - [Quantinuum quota](xref:microsoft.quantum.providers.quantinuum#limits-and-quotas)
 
 > [!NOTE]
