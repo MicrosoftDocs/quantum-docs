@@ -155,7 +155,7 @@ To submit a QIR-formatted circuit, follow these steps:
 Each Azure Quantum provider has its own format to represent quantum circuits. You can submit circuits to Azure Quantum in provider-specific formats instead of QIR languages, such as Q# or Qiskit.
 
 - [IonQ](#submit-a-circuit-to-ionq-in-json-format)
-- [PASQAL](#submit-a-circuit-to-pasqal-in-pulser-sdk-format)
+- [Pasqal](#submit-a-circuit-to-pasqal-in-pulser-sdk-format)
 - [Quantinuum](#submit-an-openqasm-circuit-to-quantinuum)
 - [Rigetti](#submit-a-quil-circuit-to-rigetti)
 
@@ -203,9 +203,9 @@ The following sample creates a superposition between three qubits in JSON format
     print(results)
     ```
 
-### Submit a circuit to PASQAL in Pulser SDK format
+### Submit a circuit to Pasqal in Pulser SDK format
 
-You can use the Pulser SDK to create pulse sequences and submit them to PASQAL targets.
+You can use the Pulser SDK to create pulse sequences and submit them to Pasqal targets.
 
 #### Install the Pulser SDK
 
@@ -227,13 +227,13 @@ Define both a register and a layout. The register specifies where to arrange the
 
 For details on layouts, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html).
 
-Create a `devices` object to import the PASQAL quantum computer target, [Fresnel](xref:microsoft.quantum.providers.pasqal#fresnel).
+Create a `devices` object to import the Pasqal quantum computer target, [FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1).
 
 ```python
 from pulser_pasqal import PasqalCloud
 
 devices = PasqalCloud().fetch_available_devices()
-QPU = devices["FRESNEL"]
+QPU = devices["FRESNEL_CAN1"]
 ```
 
 ##### Pre-calibrated layouts
@@ -319,7 +319,7 @@ Neutral atoms are controlled with laser pulses. The Pulser SDK allows you to cre
     ```
 
     > [!NOTE]
-    > You can use the `QPU = devices["FRESNEL"]` device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that's less constrained by device specifications, which lets you run on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
+    > You can use the `QPU = devices["FRESNEL_CAN1"]` device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that's less constrained by device specifications, which lets you run on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
 
 1. Add pulses to your sequence. To do so, create and add pulses to the channels that you declared. For example, the following code creates a pulse and adds it to channel `ch0`:
 
@@ -355,7 +355,7 @@ def prepare_input_data(seq):
     return to_send
 ```
 
-#### Submit the pulse sequence to a PASQAL target
+#### Submit the pulse sequence to Pasqal target
 
 1. Set the proper input and output data formats. For example, the following code sets the input data format to `pasqal.pulser.v1` and the output data format to `pasqal.pulser-results.v1`.
 
@@ -366,7 +366,7 @@ def prepare_input_data(seq):
             input_data=prepare_input_data(seq), # Take the JSON string previously defined as input data
             input_data_format="pasqal.pulser.v1",
             output_data_format="pasqal.pulser-results.v1",
-            name="PASQAL sequence",
+            name="Pasqal sequence",
             shots=shots # Number of shots
         )
 
@@ -377,10 +377,10 @@ def prepare_input_data(seq):
     > [!NOTE]
     > The time required to run a job on the QPU depends on current queue times. You can view the average queue time for a target in the **Providers** pane of your workspace.
 
-1. Submit the program to PASQAL. Before you submit your code to real quantum hardware, it's a best practice to test your code on the emulator `pasqal.sim.emu-tn` target.
+1. Submit the program to Pasqal. Before you submit your code to real quantum hardware, it's a best practice to test your code on the emulator `pasqal.sim.emu-mps` target.
 
     ```python
-    target = workspace.get_targets(name="pasqal.sim.emu-tn") # Change to "pasqal.qpu.fresnel" to use Fresnel QPU
+    target = workspace.get_targets(name="pasqal.sim.emu-mps") # Change to "pasqal.qpu.fresnel-can1" to use FRESNEL_CAN1 QPU
     job = submit_job(target, seq, 10)
 
     job.wait_until_completed()

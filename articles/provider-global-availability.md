@@ -168,11 +168,11 @@ IonQ offers a Pay-As-You-Go plan through Azure Quantum. For more information abo
 - Zambia
 - Zimbabwe
 
-## [PASQAL](#tab/tabid-pasqal)
+## [Pasqal](#tab/tabid-pasqal)
 
-PASQAL offers a Pay-As-You-Go plan through Azure Quantum. For more information about PASQAL resources on Azure Quantum, see [PASQAL provider and targets](xref:microsoft.quantum.providers.pasqal).
+Pasqal offers a Pay-As-You-Go plan through Azure Quantum. For more information about Pasqal resources on Azure Quantum, see [Pasqal provider and targets](xref:microsoft.quantum.providers.pasqal).
 
-### PASQAL is available in the following countries/regions:
+### Pasqal is available in the following countries/regions:
 
 - Australia
 - Austria
@@ -213,7 +213,7 @@ PASQAL offers a Pay-As-You-Go plan through Azure Quantum. For more information a
 - United States
 
 
-### PASQAL is unavailable in the following countries/regions:
+### Pasqal is unavailable in the following countries/regions:
 
 - Afghanistan
 - Albania
