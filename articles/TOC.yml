@@ -120,16 +120,14 @@
       href: get-started-azure-quantum.md
   - name: Quantum language support in the QDK
     items:
+    - name: QDK language support overview
+      href: qdk-language-support-overview.md
     - name: Q#
       href: qsharp-overview.md
-    - name: OpenQASM
-      items:
-      - name: Overview of OpenQASM in the QDK
-        href: qdk-openqasm-integration.md
+    - name: OpenQASM in the QDK
+      href: qdk-openqasm-integration.md
     - name: Python interoperability
       items:
-      - name: Python quantum language support in the QDK
-        href: qdk-qiskit-cirq-overview.md
       - name: Qiskit
         items:
         - name: Submit a circuit with Qiskit
