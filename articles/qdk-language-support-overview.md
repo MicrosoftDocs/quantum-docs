@@ -19,7 +19,7 @@ The Microsoft Quantum Development Kit (QDK) supports development in multiple qua
 
 ## Language support in the QDK extension for VS Code
 
-The [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) directly supports development in the Q# and OpenQASM quantum programming languages. When you open a Q# `.qs` file or OpenQASM `.qasm` file in VS Code, you can use all the features of the QDK extension, such as resource estimation, circuit visualization, and job submission to Azure Quantum provider targets. You can also use other VS Code features, such as code completion, IntelliSense, and break point debugging.
+The [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) directly supports development in the Q# and OpenQASM quantum programming languages. When you open a Q# `.qs` file or OpenQASM `.qasm` file in VS Code, you can use all the features of the QDK extension, such as resource estimation, circuit visualization, and job submission to Azure Quantum provider targets. You can also use other VS Code features, such as code completion, IntelliSense, and breakpoint debugging.
 
 The VS Code extension also includes the [QDK circuit editor](xref:microsoft.quantum.how-to.qdk-circuit-editor), a graphical interface to build quantum circuits that you can use in Q# programs.
 
@@ -43,13 +43,13 @@ The QDK library includes modules that let you:
 
 The following table compares the availability of languages and frameworks for the VS Code extension and Python library.
 
-| Language  | QDK VS Code extension | QDK Python library                                                     |
-|-----------|-----------------------|------------------------------------------------------------------------|
-| Q#        | Directly available    | Available through the `qsharp` module and the `%%qsharp` magic command |
-| OpenQASM  | Directly available    | Available through the `openqasm` module                                |
-| Qiskit    | Not available         | Available through the `qiskit` module                                  |
-| Cirq      | Not available         | Available through the `cirq` module                                    |
-| PennyLane | Not available         | Available through conversion to QIR                                    |
+| Language  | QDK VS Code extension | QDK Python library                                                         |
+|-----------|-----------------------|----------------------------------------------------------------------------|
+| Q#        | Directly available    | Available through the `qdk.qsharp` module and the `%%qsharp` magic command |
+| OpenQASM  | Directly available    | Available through the `qdk.openqasm` module                                |
+| Qiskit    | Not available         | Available through the `qdk.qiskit` module                                  |
+| Cirq      | Not available         | Available through the `qdk.cirq` module                                    |
+| PennyLane | Not available         | Available through conversion to QIR                                        |
 
 ## Next steps
 
