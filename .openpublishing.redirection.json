@@ -1168,7 +1168,7 @@
 		},
 		{
 			"source_path": "articles/qdk-qiskit-cirq-overview.md",
-			"redirect_url": "/azure/quantum/qdk-python-interop-overview",
+			"redirect_url": "/azure/quantum/qdk-language-support-overview",
 			"redirect_document_id": false
 		}
 	]
