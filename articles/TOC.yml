@@ -128,14 +128,10 @@
       href: qdk-openqasm-integration.md
     - name: Python interoperability
       items:
-      - name: Qiskit
-        items:
-        - name: Submit a circuit with Qiskit
-          href: quickstart-microsoft-qiskit.md
-      - name: Cirq
-        items:
-        - name: Submit a circuit with Cirq
-          href: quickstart-microsoft-cirq.md
+      - name: Submit a circuit with Qiskit
+        href: quickstart-microsoft-qiskit.md
+      - name: Submit a circuit with Cirq
+        href: quickstart-microsoft-cirq.md
   - name: Simulators and visualizers
     items:
     - name: Sparse simulator
