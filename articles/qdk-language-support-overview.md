@@ -10,7 +10,7 @@ ms.date: 04/22/2026
 no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor"]
 uid: microsoft.quantum.overview.qdk-language-support
 
-#Customer intent: As a developer, I want to know what quantum languages I can use in the QDK and I want to understand how the language support is structured
+#Customer intent: As a developer, I want to know what quantum languages and frameworks I can use in the QDK, and how the language support is structured
 ---
 
 # Quantum programming language support in the QDK
@@ -19,7 +19,7 @@ The Microsoft Quantum Development Kit (QDK) supports development in multiple qua
 
 ## Language support in the QDK extension for VS Code
 
-The [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) directly supports development in the Q# and OpenQASM quantum programming languages. When you open a Q# `.qs` file or OpenQASM `.qasm` file in VS Code, you can use all the features of the QDK extension, such as resource estimation, circuit visualization, and job submission to Azure Quantum provider targets. You can also use other VS Code features, such as code completion, IntelliSense, and breakpoint debugging.
+The [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) directly supports development in the Q# and OpenQASM quantum programming languages. When you open a Q# `.qs` file or OpenQASM `.qasm` file in VS Code, you can use all the features of the QDK extension, such as resource estimation, circuit visualization, and job submission to Azure Quantum provider targets. You can also use other VS Code features, such as code completion, IntelliSense, and debugging.
 
 The VS Code extension also includes the [QDK circuit editor](xref:microsoft.quantum.how-to.qdk-circuit-editor), a graphical interface to build quantum circuits that you can use in Q# programs.
 
