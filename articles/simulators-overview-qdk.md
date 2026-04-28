@@ -29,18 +29,27 @@ The sparse simulator is the default simulator in the QDK. This simulator is avai
 
 The sparse simulator is the only available simulator in the QDK extension for VS Code, so the compiler automatically calls this simulator when you run Q# and OpenQASM programs in VS Code.
 
-For more information, see [The sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator).
+For more information about the sparse simulator, see [The sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator).
 
 ## The neutral atom device simulator
 
-Use the neutral atom device simulator when you plan to run quantum programs on a neutral atom quantum computer. This simulator 
+Use the neutral atom device simulator when you plan to run quantum programs on a neutral atom quantum computer. The neutral atom simulator decomposes your program's quantum gates into the set of gates that exist on neutral atom devices. Noise models for this simulator can include noise that's specific to neutral atom technology, such as atom loss and noise from qubit movement between device zones.
 
-For more information, see [Neutral atom device simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators)
+The QDK offers three implementations of the neutral atom device simulator:
 
-and the QIR simulator are available only in the QDK Python library, and both simulators 
+- **The Clifford simulator:** Fast simulation for programs that contain only Clifford gates
+- **The GPU simulator:** Fast and general simulation for programs with non-Clifford gates and up to 27 qubits
+- **The CPU simulator:** General simulation for programs with non-Clifford gates
 
+The neutral atom device simulator is available only in the QDK Python library. How you call the simulator depends on the quantum language framework that you're using in the QDK library.
+
+For more information on neutral atom device simulation, see [Neutral atom device simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
 
 ## The QIR simulators
+
+QIR is an intermediate representation of your program that quantum hardware uses to 
+
+## What simulator should I use?
 
 ### Adding Pauli noise to Python programs or Jupyter Notebooks
 
