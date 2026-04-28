@@ -140,6 +140,8 @@
           href: quickstart-microsoft-cirq.md
   - name: Simulators and visualizers
     items:
+    - name: Overview of QDK simulators
+      href: simulators-overview-qdk.md
     - name: Sparse simulator
       href: sparse-simulator.md
     - name: Backend simulators
