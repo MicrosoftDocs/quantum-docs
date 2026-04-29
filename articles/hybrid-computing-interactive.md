@@ -25,7 +25,7 @@ To create a session, you need the following prerequisites:
 
 - An Azure account with an active subscription. If you don’t have an Azure account, then register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
 - The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download), with the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed.
 - The `qdk` Python library. To submit Qiskit and Cirq programs, install the `azure`, `qiskit`, and `cirq` extras.
 
