@@ -32,7 +32,7 @@ If you want to submit Q# standalone programs, then you also need the following p
 
 If you want to submit Python and Q# programs, then you also need the following prerequisites:
 
-- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
 - The latest `qdk` Python library with the optional `azure` extra.
 
     ```bash

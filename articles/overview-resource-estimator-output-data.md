@@ -17,7 +17,7 @@ Learn how to interpret and retrieve the output parameters and diagrams of the Mi
 
 ## Prerequisites
 
-- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed (Python version 3.10 or greater).
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed (Python version 3.10 or greater).
 - The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
 - VS Code with the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The latest `qdk` Python library with the `jupyter` extra.  
