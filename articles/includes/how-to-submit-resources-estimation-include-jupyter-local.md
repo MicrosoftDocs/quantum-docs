@@ -10,7 +10,7 @@ no-loc: [target, targets]
 
 ## Prerequisites for Jupyter Notebook in VS Code
 
-- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
 - The latest version of [Visual Studio Code](https://code.visualstudio.com/download) or open [VS Code on the Web](https://vscode.dev/quantum).
 - VS Code with the [QDK](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The latest `qdk` Python library with the optional `jupyter` extra.  
