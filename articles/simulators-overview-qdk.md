@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This article provides an overview of all the quantum simulators in the QDK.
 ms.author: quantumdocwriters
-ms.date: 04/28/2026
+ms.date: 04/29/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: concept-article
@@ -55,3 +55,29 @@ For more information about QIR, see [Quantum intermediate representation](xref:m
 
 ## What simulator should I use?
 
+The available simulators and how to use them depend on the QDK and quantum language that you're using.
+
+### Simulation in the QDK extension in VS Code
+
+The VS Code extension only the sparse simulator with no noise model. To use this simulator, run your Q# or OpenQASM file in VS Code.
+
+### Simulation in the QDK Python library
+
+The QDK Python development environment supports multiple quantum languages and multiple simulators. Not all simulators are compatible with all languages.
+
+The following table shows how to run simulations based on the simulator and quantum language:
+
+| Simulator           | Language          | Python API                      | Supports noise models |
+|---------------------|-------------------|---------------------------------|-----------------------|
+| Sparse              | Q#                | `qdk.qsharp.run`                | Yes                   |
+| Sparse              | OpenQASM          | `qdk.openqasm.run`              | Yes                   |
+| Sparse              | Qiskit            | `qdk.qiskit.QSharpBackend`      | No                    |
+| Neutral atom device | All except Qiskit | `qdk.simulation.run_qir`        | Yes                   |
+| Neutral atom device | Qiskit            | `qdk.qiskit.NeutralAtomBackend` | Yes                   |
+| QIR                 | QIR               | `qdk.simulation.run_qir`        | Yes                   |
+
+## Related content
+
+- [How to install and use the neutral atom device simulators in the QDK](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators)
+- [How to build noise models for neutral atom device simulations](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise)
+- [Backend quantum simulators from quantum providers](xref:microsoft.quantum.machines.overview.backend-simulators)
