@@ -118,26 +118,22 @@
       href: qdk-vscode-agent-setup.md
     - name: Explore with Copilot in Microsoft Quantum
       href: get-started-azure-quantum.md
+    - name: VS Code reference for the QDK
+      href: vscode-qdk-reference.md
   - name: Quantum language support in the QDK
     items:
+    - name: QDK language support overview
+      href: qdk-language-support-overview.md
     - name: Q#
       href: qsharp-overview.md
-    - name: OpenQASM
-      items:
-      - name: Overview of OpenQASM in the QDK
-        href: qdk-openqasm-integration.md
+    - name: OpenQASM in the QDK
+      href: qdk-openqasm-integration.md
     - name: Python interoperability
       items:
-      - name: Python quantum language support in the QDK
-        href: qdk-qiskit-cirq-overview.md
-      - name: Qiskit
-        items:
-        - name: Submit a circuit with Qiskit
-          href: quickstart-microsoft-qiskit.md
-      - name: Cirq
-        items:
-        - name: Submit a circuit with Cirq
-          href: quickstart-microsoft-cirq.md
+      - name: Submit a circuit with Qiskit
+        href: quickstart-microsoft-qiskit.md
+      - name: Submit a circuit with Cirq
+        href: quickstart-microsoft-cirq.md
   - name: Simulators and visualizers
     items:
     - name: Overview of QDK simulators
@@ -226,12 +222,8 @@
         href: testing-debugging.md
       - name: Visualize Q# circuit diagrams
         href: how-to-visualize-circuits.md
-    - name: Reference guides for Q#
-      items:
-      - name: VS Code reference for Q# programs
-        href: vscode-qsharp-reference.md
-      - name: Language reference for Q#
-        href: user-guide/language/toc.yml
+    - name: Language reference for Q#
+      href: user-guide/language/toc.yml
   - name: Tutorials for the QDK and Q#
     items: 
     - name: Quantum random number generator

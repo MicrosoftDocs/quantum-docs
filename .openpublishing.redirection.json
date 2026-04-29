@@ -1165,6 +1165,16 @@
 			"source_path": "articles/how-to-long-running-experiments.md",
 			"redirect_url": "/azure/quantum/",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/qdk-qiskit-cirq-overview.md",
+			"redirect_url": "/azure/quantum/qdk-language-support-overview",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/vscode-qsharp-reference.md",
+			"redirect_url": "/azure/quantum/vscode-qdk-reference",
+			"redirect_document_id": false
 		}
 	]
 }

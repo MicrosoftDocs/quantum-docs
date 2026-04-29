@@ -1,19 +1,19 @@
 ---
 author: azure-quantum-content
-description: This document provides a basic guide to submit and run Azure Quantum using the Azure portal, Python, Jupyter Notebooks, or the Azure CLI.
+description: This document provides a basic guide to submit and run jobs on Azure Quantum using the Azure portal, Python, Jupyter Notebooks, or the Azure CLI.
 ms.author: quantumdocwriters
 ms.date: 01/17/2025
 ms.service: azure-quantum
 ms.subservice: core
 ms.custom: devx-track-azurecli
 ms.topic: how-to
-title: Submit Q# Programs with VS Code
+title: Submit Q# Programs to Azure Quantum
 no-loc: ["Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Azure", "Q#", "Python", "Jupyter Notebook", "Jupyter", "target", "targets"]
 uid: microsoft.quantum.submit-jobs
 zone_pivot_groups: azurequantum-quantumcomputing-ide
 ---
 
-# How to submit Q# programs with Visual Studio Code
+# How to submit Q# programs to Azure Quantum
 
 Learn how to use Visual Studio Code (VS Code) to create and submit Q# programs to real quantum hardware. You can submit quantum computing jobs to Azure Quantum as a standalone Q# program, combine Q# with Python in a Q# project, and run a Jupyter Notebook.
 
