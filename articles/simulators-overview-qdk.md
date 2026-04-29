@@ -25,7 +25,7 @@ The QDK has three main simulators:
 
 The sparse simulator represents qubits states as sparse vectors for fast and efficient simulation. Use this simulator for general program development and to quickly iterate on results.
 
-The sparse simulator is the default simulator in the QDK. This simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library, and supports noise models in both development environments.
+The sparse simulator is the default simulator in the QDK. This simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. You can include noise models with the sparse simulator in the QDK Python library, but not in the VS Code extension.
 
 The sparse simulator is the only available simulator in the QDK extension for VS Code, so the compiler automatically calls this simulator when you run Q# and OpenQASM programs in VS Code.
 
