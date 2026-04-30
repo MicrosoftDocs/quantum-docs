@@ -33,7 +33,7 @@ For more information about the sparse simulator, see [The sparse simulator](xref
 
 The neutral atom device simulator takes the QIR for your program and converts into a set of instructions that are specific to neutral atom qubit devices. Noise models for this simulator apply only to the set of gates that exist on neutral atom devices, and to noise that's specific to neutral atom technology, such as qubit loss and qubit movement between device zones. Use the neutral atom device simulator when you plan to run quantum programs on a neutral atom quantum computer.
 
-The neutral atom device simulator is available only in the QDK Python library. How you call the simulator depends on the quantum language framework that you're using.
+The neutral atom device simulator is available only in the QDK Python library, and is compatible with all quantum programming frameworks. How you call the simulator depends on the framework that you're using.
 
 For more information on neutral atom device simulation in the QDK, see [Neutral atom device simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
 
@@ -41,7 +41,7 @@ For more information on neutral atom device simulation in the QDK, see [Neutral 
 
 The QIR simulator takes the QIR for your program and performs a direct simulation based on the instructions in the QIR. For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
 
-The neutral atom device simulator is available only in the QDK Python library. How you call the simulator is the same for every quantum language framework because the simulator takes direct QIR as input.
+The QIR simulator is available only in the QDK Python library, and is compatible with all quantum programming frameworks that you can convert to QIR. How you call the simulator is the same for all supported frameworks because the simulator takes direct QIR as input.
 
 For more information about the QIR simulator, see [QIR simulator overview](xref:).
 
