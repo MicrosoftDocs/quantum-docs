@@ -23,58 +23,53 @@ The QDK has three simulators:
 
 ## The sparse simulator
 
-The sparse simulator represents qubits states as sparse vectors for fast and efficient simulations, especially for programs that don't generate a lot of qubit superposition. Use the sparse simulator when you want quick simulations of Q# or OpenQASM programs, or when you want to display qubit state vectors at different points in a program.
+The sparse simulator is the default simulator in the QDK. This simulator represents qubit states as sparse vectors for fast and efficient simulations, especially for programs that don't generate a lot of qubit superposition. You can also include noise models in sparse simulations. Use the sparse simulator when you want quick simulations of Q# or OpenQASM programs, or when you want to display qubit state vectors at different points in a program.
 
-The sparse simulator is the default simulator in the QDK. This simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. You can include noise models with the sparse simulator in the QDK Python library, but not in the VS Code extension.
-
-The sparse simulator is the only available simulator in the QDK extension for VS Code, so the compiler automatically calls this simulator when you run Q# and OpenQASM programs in VS Code.
+The sparse simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. The sparse simulator is the only available simulator in the QDK extension, so the compiler automatically calls this simulator when you run Q# and OpenQASM programs in VS Code.
 
 For more information about the sparse simulator, see [The sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator).
 
 ## The neutral atom device simulator
 
-Use the neutral atom device simulator when you plan to run quantum programs on a neutral atom quantum computer. The neutral atom simulator decomposes your program into the set of gates that exist on neutral atom devices. Noise models for this simulator can include noise that's specific to neutral atom technology, such as atom loss and qubit movement between device zones.
-
-The QDK offers three implementations of the neutral atom device simulator:
-
-- **The Clifford simulator:** Fast simulation for programs that contain only Clifford gates
-- **The GPU simulator:** Fast and general simulation for programs with non-Clifford gates and up to 27 qubits
-- **The CPU simulator:** General simulation for programs with non-Clifford gates
+The neutral atom device simulator takes the QIR for your program and converts into a set of instructions that are specific to neutral atom qubit devices. Noise models for this simulator apply only to the set of gates that exist on neutral atom devices, and to noise that's specific to neutral atom technology, such as qubit loss and qubit movement between device zones. Use the neutral atom device simulator when you plan to run quantum programs on a neutral atom quantum computer.
 
 The neutral atom device simulator is available only in the QDK Python library. How you call the simulator depends on the quantum language framework that you're using.
 
 For more information on neutral atom device simulation in the QDK, see [Neutral atom device simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
 
-## The QIR simulators
+## The QIR simulator
 
-Quantum programs get compiled into QIR before they run on quantum computers. QIR is a common representation of quantum program instructions between different quantum languages and hardware devices. With the QDK, you can run simulations directly on QIR.
+The QIR simulator takes the QIR for your program and performs a direct simulation based on the instructions in the QIR. For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
 
-Like the neutral atom device simulator, the QIR simulator has three implementation options: Clifford simulation, GPU simulation, and CPU simulation.
+The neutral atom device simulator is available only in the QDK Python library. How you call the simulator is the same for every quantum language framework because the simulator takes direct QIR as input.
 
-For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir)
+For more information about the QIR simulator, see [QIR simulator overview](xref:).
 
 ## What simulator should I use?
 
 The available simulators and how to use them depend on the QDK and quantum language that you're using.
 
-### Simulation in the QDK extension in VS Code
+### Simulations in the QDK extension for VS Code
 
-The VS Code extension only the sparse simulator with no noise model. To use this simulator, run your Q# or OpenQASM file in VS Code.
+The sparse simulator is the only available simulator in the QDK extension for VS Code. To use the sparse simulator, run your Q# or OpenQASM file in VS Code.
 
-### Simulation in the QDK Python library
+### Simulations in the QDK Python library
 
-The QDK Python development environment supports multiple quantum languages and multiple simulators. Not all simulators are compatible with all languages.
+The QDK Python development environment supports multiple quantum frameworks and all the QDK simulators, but not all simulators are compatible with all frameworks.
 
-The following table shows how to run simulations based on the simulator and quantum language:
+The following table lists the Python APIs to run simulations based on the simulator and quantum framework:
 
-| Simulator           | Language          | Python API                      | Supports noise models |
-|---------------------|-------------------|---------------------------------|-----------------------|
-| Sparse              | Q#                | `qdk.qsharp.run`                | Yes                   |
-| Sparse              | OpenQASM          | `qdk.openqasm.run`              | Yes                   |
-| Sparse              | Qiskit            | `qdk.qiskit.QSharpBackend`      | No                    |
-| Neutral atom device | All except Qiskit | `qdk.simulation.run_qir`        | Yes                   |
-| Neutral atom device | Qiskit            | `qdk.qiskit.NeutralAtomBackend` | Yes                   |
-| QIR                 | QIR               | `qdk.simulation.run_qir`        | Yes                   |
+| Simulator           | Framework | Python API                         | Supports noise models |
+|---------------------|-----------|------------------------------------|-----------------------|
+| Sparse              | Q#        | `qdk.qsharp.run`                   | Yes                   |
+| Sparse              | OpenQASM  | `qdk.openqasm.run`                 | Yes                   |
+| Sparse              | Qiskit    | `qdk.qiskit.QSharpBackend`         | No                    |
+| Neutral atom device | QIR       | `qdk.simulation.NeutralAtomDevice` | Yes                   |
+| Neutral atom device | Qiskit    | `qdk.qiskit.NeutralAtomBackend`    | Yes                   |
+| QIR                 | QIR       | `qdk.simulation.run_qir`           | Yes                   |
+
+> [!NOTE]
+> Qiskit simulations have their own dedicated APIs because Qiskit doesn't compile directly into QIR.
 
 ## Related content
 
