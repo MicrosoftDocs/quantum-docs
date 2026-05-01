@@ -58,5 +58,6 @@ To get started with the quantum programming languages in the QDK, install the QD
 To submit quantum programs to Azure Quantum in different languages, see the following guides:
 
 - [How to submit Q# programs to Azure Quantum](xref:microsoft.quantum.submit-jobs)
-- [How to submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
-- [How to submit a circuit with Cirq to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.cirq).
+- [How to submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [How to submit a circuit with Cirq to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.cirq)
+- [How to submit a PennyLane circuit to Azure Quantum](xref:microsoft.quantum.how-to.submit-pennylane-programs)
