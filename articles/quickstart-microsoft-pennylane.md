@@ -94,7 +94,7 @@ To submit the PennyLane program to Azure Quantum, you need to convert the progra
     qir = compile(qasm_str, target_profile)
     ```
 
-    > [!MOTE]
+    > [!NOTE]
     > The target profile must be compatible with the Azure Quantum target that you submit your job to. For more information about QIR target profiles, see [Different types of target profiles in Azure Quantum](xref:microsoft.quantum.target-profiles).
 
 ### Connect to your Azure Quantum workspace
