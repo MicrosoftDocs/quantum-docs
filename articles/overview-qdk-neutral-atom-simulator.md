@@ -12,9 +12,9 @@ uid: microsoft.quantum.overview.qdk-neutral-atom-simulators
 #customer intent: As a quantum chemistry researcher, I want to understand the tools that the QDK provides to simulate how my quantum programs will run on a neutral atom devices
 ---
 
-# Neutral atom simulator overview
+# Neutral atom device simulator overview
 
-The Microsoft Quantum Development Kit (QDK) provides a suite of simulation tools that allow you to evaluate your quantum programs before you run them on real quantum hardware. The neutral atom simulators model the types of noise that occur when programs run on neutral atom quantum computers, such as qubit loss and qubit movement. If you plan to run your quantum programs on neutral atom hardware, then use the neutral atom simulators to test and refine your code.
+The Microsoft Quantum Development Kit (QDK) provides a suite of simulation tools that allow you to evaluate your quantum programs before you run them on real quantum hardware. The neutral atom device simulators model the types of noise that occur when programs run on neutral atom quantum computers, such as qubit loss and qubit movement. If you plan to run your quantum programs on neutral atom hardware, then use the neutral atom simulators to test and refine your code.
 
 ## How neutral atom quantum computers work
 
