@@ -134,6 +134,8 @@
         href: quickstart-microsoft-qiskit.md
       - name: Submit a circuit with Cirq
         href: quickstart-microsoft-cirq.md
+      - name: Submit a circuit with PennyLane
+        href: quickstart-microsoft-pennylane.md
   - name: Simulators and visualizers
     items:
     - name: Sparse simulator
