@@ -40,7 +40,7 @@ To follow the steps in this article, you need to have:
 
 ## Submit a PennyLane program to Azure Quantum as QIR
 
-The following steps explain how write a PennyLane program, convert the program to QIR, and submit the program to Azure Quantum using the QDK Python library.
+The following steps explain how to write a PennyLane program, convert the program to QIR, and submit the program to Azure Quantum using the QDK Python library.
 
 ### Import the required packages and objects
 
@@ -57,7 +57,7 @@ The following steps explain how write a PennyLane program, convert the program t
 
 ### Create a PennyLane circuit
 
-1. Run the following code in a new cell to create a simple parameterized PennyLane circuit called `small_ansatz`:
+1. Run the following code in a new cell to create a parameterized PennyLane circuit called `small_ansatz`:
 
     ```python
     device = qml.device('default.qubit', wires=2)
@@ -79,7 +79,7 @@ The following steps explain how write a PennyLane program, convert the program t
 
 ### Convert the PennyLane program to QIR
 
-To submit the PennyLane program to Azure Quantum, you need to convert the program to OpenQASM and then convert the OpenQASM to QIR.
+To submit the PennyLane program to Azure Quantum, you need to convert the program to OpenQASM, and then convert the OpenQASM to QIR.
 
 1. Convert the PennyLane program to OpenQASM.
 
