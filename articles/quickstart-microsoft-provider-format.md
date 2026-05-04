@@ -236,27 +236,7 @@ devices = PasqalCloud().fetch_available_devices()
 QPU = devices["FRESNEL_CAN1"]
 ```
 
-##### Pre-calibrated layouts
-
-The device defines a list of [pre-calibrated layouts](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Devices-with-pre-calibrated-layouts). You can build your register from one of these layouts.
-
-Use pre-calibrated layouts when possible because they improve the performance of the QPU.
-
-The following example uses the first pre-calibrated layout on the device:
-
-```python
-# Use the first layout available on the device
-layout = QPU.pre_calibrated_layouts[0]
-
-# Select traps 1, 3 and 5 of the layout to define the register
-traps = [1,v3,v5]
-reg = layout.define_register(*traps)
-
-# Draw the register to verify that it matches your expectations
-reg.draw()
-```
-
-##### Arbitrary layouts
+##### Set up your layout
 
 Use a custom layout when the pre-calibrated layouts don't satisfy the requirements of your experiment.
 
@@ -280,25 +260,7 @@ To create an arbitrary layout, choose one of the following options:
     reg = Register(qubits).with_automatic_layout(device) 
     ```
 
-- Manually define a layout to create your register. For example, create an arbitrary layout with 20 traps that are randomly positioned in a 2D plane:
-
-    ```python
-    import numpy as np
-    from pulser.register.register_layout import RegisterLayout
-
-    # Generate random coordinates
-    np.random.seed(301122)  # Keeps results consistent between runs
-    traps = np.random.randint(0, 30, size=(20, 2))
-    traps = traps - np.mean(traps, axis=0)
-    
-    # Create the layout
-    layout = RegisterLayout(traps, slug="random_20")
-    
-    # Define your register with specific trap IDs
-    trap_ids = [4, 8, 19, 0]
-    reg = layout.define_register(*trap_ids, qubit_ids=["a", "b", "c", "d"])
-    reg.draw()
-    ```
+- Manually define a layout to create your register, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Arbitrary-Layouts).
 
 #### Write a pulse sequence
 
