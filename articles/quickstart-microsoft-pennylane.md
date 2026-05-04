@@ -57,13 +57,13 @@ The following steps explain how to write a PennyLane program, convert the progra
 
 ### Create a PennyLane circuit
 
-1. Run the following code in a new cell to create a parameterized PennyLane circuit called `small_ansatz`:
+1. Run the following code in a new cell to create a parameterized PennyLane circuit called `param_circ`:
 
     ```python
     device = qml.device('default.qubit', wires=2)
     
     @qml.qnode(device)
-    def small_ansatz(theta):
+    def param_circ(theta):
         qml.H(0); qml.CNOT(wires=[0,1])
         qml.RY(theta, wires=1)
         return qml.expval(qml.PauliZ(1))
@@ -74,7 +74,7 @@ The following steps explain how to write a PennyLane program, convert the progra
 1. Draw the circuit for a given value of `theta`, for example `0.3`.
 
     ```python
-    print(qml.draw(small_ansatz)(0.3))
+    print(qml.draw(param_circ)(0.3))
     ```
 
 ### Convert the PennyLane program to QIR
@@ -84,7 +84,7 @@ To submit the PennyLane program to Azure Quantum, you need to convert the progra
 1. Convert the PennyLane program to OpenQASM.
 
     ```python
-    qasm_str = qml.to_openqasm(small_ansatz)(theta)
+    qasm_str = qml.to_openqasm(param_circ)(theta)
     ```
 
 1. Set a QIR target profile and convert the OpenQASM to QIR.
