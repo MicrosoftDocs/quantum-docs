@@ -84,6 +84,7 @@ To submit the PennyLane program to Azure Quantum, you need to convert the progra
 1. Convert the PennyLane program to OpenQASM.
 
     ```python
+    theta = 0.3
     qasm_str = qml.to_openqasm(param_circ)(theta)
     ```
 
