@@ -260,7 +260,7 @@ To create an arbitrary layout, choose one of the following options:
     reg = Register(qubits).with_automatic_layout(device) 
     ```
 
-- Manually define a layout to create your register, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Arbitrary-Layouts).
+- To manually define a layout to create your register, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Arbitrary-Layouts).
 
 #### Write a pulse sequence
 
