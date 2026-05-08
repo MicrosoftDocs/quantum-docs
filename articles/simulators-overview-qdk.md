@@ -54,9 +54,9 @@ The GPU simulator takes QIR or Qiskit as input, and is available through certain
 
 ## The CPU simulator
 
-Like the GPU simulator, the CPU simulator is a full-state simulator that can run programs that contain any type of quantum gate. However, the CPU simulator is slower because it can't run multiple shots in parallel. This simulator scales up to around 25 qubits, but slows down exponentially with more qubits because of memory issues. Use the CPU simulator when your machine doesn't have a GPU, or when your program has a small number of qubits and you aren't running a lot of shots.
+Like the GPU simulator, the CPU simulator is a full-state simulator that can run programs that contain any type of quantum gate. However, the CPU simulator is slower because it can't run multiple shots in parallel. This simulator scales up to around 25 qubits, but slows down exponentially with more qubits because of memory issues. Use the CPU simulator when your machine doesn't have a GPU, or when your program has few qubits and you aren't running a lot of shots.
 
-The CPU simulator takes QIR or Qiskit as input, and is available through certain QDK Python library APIs, but not the VS Code extension. There is also rich support for noise models on any type of quantum gate or operation.
+The CPU simulator takes QIR or Qiskit as input, and is available through certain QDK Python library APIs, but not the VS Code extension. There's also rich support for noise models on any type of quantum gate or operation.
 
 ------------
 
@@ -77,8 +77,8 @@ The following table summarizes the QDK options and quantum programming framework
 |-----------|--------------------------------------|---------------------------|
 | Sparse    | VS Code extension and Python library | Q#, OpenQASM, Qiskit      |
 | Clifford  | Python library                       | Q#, OpenQASM, Qiskit, QIR |
-| GPU       | Python library                       | QIR                       |
-| CPU       | Python library                       | QIR                       |
+| GPU       | Python library                       | Qiskit, QIR               |
+| CPU       | Python library                       | Qiskit, QIR               |
 
 ### Simulations in the QDK extension for VS Code
 
