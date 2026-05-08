@@ -2,11 +2,11 @@
 author: azure-quantum-content
 description: This article provides an overview of all the quantum simulators in the QDK.
 ms.author: quantumdocwriters
-ms.date: 04/29/2026
+ms.date: 05/08/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-no-loc: ["Q#", "OpenQASM", "QIR", "Qiskit", "Microsoft", "Quantum Development Kit", "QDK"]
+no-loc: ["Q#", "OpenQASM", "QIR", "Qiskit", "Microsoft", "Quantum Development Kit", "QDK", "Clifford", "Pauli", "Hadamard", "GPU", "CPU", "Azure Quantum", "Python"]
 title: Overview of quantum simulators in the QDK
 uid: microsoft.quantum.overview.qdk-simulators
 #Customer intent: As a quantum developer or researcher, I want to know about the simulation tools that the QDK provides and their use cases.
@@ -16,56 +16,99 @@ uid: microsoft.quantum.overview.qdk-simulators
 
 The Microsoft Quantum Development Kit (QDK) includes a set of quantum simulators that let you run quantum programs on your local machine. Use the local simulators to iterate on your programs before you submit them to run on Azure Quantum targets.
 
-The QDK has three simulators:
+The QDK has four simulators:
 
 - The sparse simulator
-- The neutral atom device simulator
-- The QIR (quantum intermediate representation) simulator
+- The Clifford simulator
+- The GPU simulator
+- The CPU simulator
 
 ## The sparse simulator
 
-The sparse simulator is the default simulator in the QDK. This simulator represents qubit states as sparse vectors for fast and efficient simulations, especially for programs that don't generate many superposition states. You can also include noise models in sparse simulations. Use the sparse simulator when you want quick simulations of Q# or OpenQASM programs, or when you want to display qubit state vectors at different points in a program.
+The sparse simulator is the default simulator in the QDK. This simulator represents qubit states as sparse vectors to take advantage of sparse matrix algebra for fast simulations, especially for programs that don't generate many superposition states. Use the sparse simulator when you want quick simulations of Q#, OpenQASM, or Qiskit programs, or when you want to display qubit state vectors at different points in a program.
 
-The sparse simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. The sparse simulator is the only available simulator in the QDK extension, so the compiler automatically calls this simulator when you run Q# and OpenQASM programs in VS Code.
+The sparse simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. This simulator is the only available simulator in the QDK extension, so the compiler automatically calls the sparse simulator when you run Q# and OpenQASM programs in VS Code.
+
+Both the VS Code extension and the Python library support noise models for sparse simulations of Q# and OpenQASM programs. Only the Python library supports sparse simulation for Qiskit programs, but without noise model support.
 
 For more information about the sparse simulator, see [The sparse simulator](xref:microsoft.quantum.machines.overview.sparse-simulator).
 
-## The neutral atom device simulator
+## The Clifford simulator
 
-The neutral atom device simulator takes the QIR for your program and converts into a set of instructions that are specific to neutral atom qubit devices. Noise models for this simulator apply only to the set of gates that exist on neutral atom devices, and to noise that's specific to neutral atom technology, such as qubit loss and qubit movement between device zones. Use the neutral atom device simulator when you plan to run quantum programs on a neutral atom quantum computer.
+The Clifford simulator is fast and efficient for quantum programs with up to thousands of qubits, but can only simulate programs that contain only Clifford gates. Clifford gates are common components of error correction circuits, and include the following gates:
 
-The neutral atom device simulator is available only in the QDK Python library, and is compatible with all quantum programming frameworks. How you call the simulator depends on the framework that you're using.
+- Pauli $X$
+- Pauli $Y$
+- Pauli $Z
+- $S$
+- Hadamard, or $H$
+- $\text{CNOT}$
 
-For more information on neutral atom device simulation in the QDK, see [Neutral atom device simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
+The Clifford simulator is available in the QDK Python library for Q#, OpenQASM, Qiskit, and QIR programs, but isn't available in the QDK extension for VS Code.
 
-## The QIR simulator
+## The GPU simulator
 
-The QIR simulator takes the QIR for your program and performs a direct simulation based on the instructions in the QIR. For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
+The GPU simulator is a full-state simulator that uses your machine's GPU to run many shots of your quantum program in parallel. This simulator can run programs that contain any type of gate, but is expensive to run. The simulator can model up to 27 qubits, with optimal performance for programs that have around 20 qubits and lots of shots. Performance is determined by the power of your machine's GPU.
 
-The QIR simulator is available only in the QDK Python library, and is compatible with all quantum programming frameworks that you can convert to QIR. How you call the simulator is the same for all supported frameworks because the simulator takes direct QIR as input.
+The GPU simulator takes QIR or Qiskit as input, and is available through certain QDK Python library APIs, but not the VS Code extension. There is also rich support for noise models on any type of quantum gate or operation.
+
+## The CPU simulator
+
+Like the GPU simulator, the CPU simulator is a full-state simulator that can run programs that contain any type of quantum gate. However, the CPU simulator is slower because it can't run multiple shots in parallel. This simulator scales up to around 25 qubits, but slows down exponentially with more qubits because of memory issues. Use the CPU simulator when your machine doesn't have a GPU, or when your program has a small number of qubits and you aren't running a lot of shots.
+
+The CPU simulator takes QIR or Qiskit as input, and is available through certain QDK Python library APIs, but not the VS Code extension. There is also rich support for noise models on any type of quantum gate or operation.
+
+------------
 
 ## What simulator should I use?
 
-The available simulators and how to use them depend on the QDK and quantum language that you're using.
+The best simulator to use depends on several factors, such as:
+
+- Your development environment (VS Code or Python)
+- The quantum programming framework that you're developing in
+- The complexity of your program and the number of shots
+- The hardware capabilities of your local machine
+- The Azure Quantum targets or other quantum hardware that you want to run your programs on
+- The noise models that you want to build
+
+The following table summarizes the QDK options and quantum programming frameworks that you can use for each simulator:
+
+| Simulator | Availability                         | Supported frameworks      |
+|-----------|--------------------------------------|---------------------------|
+| Sparse    | VS Code extension and Python library | Q#, OpenQASM, Qiskit      |
+| Clifford  | Python library                       | Q#, OpenQASM, Qiskit, QIR |
+| GPU       | Python library                       | QIR                       |
+| CPU       | Python library                       | QIR                       |
 
 ### Simulations in the QDK extension for VS Code
 
-The sparse simulator is the only available simulator in the QDK extension for VS Code. To use the sparse simulator, run your Q# or OpenQASM file in VS Code.
+The sparse simulator is the only available simulator in the QDK extension for VS Code. To use the sparse simulator, run your Q# or OpenQASM file in VS Code. You can add limited noise models to the sparse simulator for Q# programs in VS Code, but not for OpenQASM programs.
 
 ### Simulations in the QDK Python library
 
-The QDK Python development environment supports multiple quantum frameworks and all the QDK simulators, but not all simulators are compatible with all frameworks.
+The QDK Python development environment supports multiple quantum frameworks and all four QDK simulators, but not all simulators are compatible with all frameworks and APIs.
 
-The following table lists the Python APIs to run simulations based on the simulator and quantum framework:
+The following table shows the simulators that you can use for each Python API that calls a QDK simulator:
 
-| Simulator           | Framework | Python API                         | Supports noise models |
-|---------------------|-----------|------------------------------------|-----------------------|
-| Sparse              | Q#        | `qdk.qsharp.run`                   | Yes                   |
-| Sparse              | OpenQASM  | `qdk.openqasm.run`                 | Yes                   |
-| Sparse              | Qiskit    | `qdk.qiskit.QSharpBackend`         | No                    |
-| Neutral atom device | QIR       | `qdk.simulation.NeutralAtomDevice` | Yes                   |
-| Neutral atom device | Qiskit    | `qdk.qiskit.NeutralAtomBackend`    | Yes                   |
-| QIR                 | QIR       | `qdk.simulation.run_qir`           | Yes                   |
+| Python API                      | Sparse | Clifford | GPU | CPU |
+|---------------------------------|------- |----------|-----|-----|
+| `qsharp.run`                    | ✅     | ✅       |     |     |
+| `openqasm.run`                  | ✅     | ✅       |     |     |
+| `qiskit.QSharpBackend`          | ✅     |          |     |     |
+| `simulation.NeutralAtomDevice`  |        | ✅       | ✅  | ✅  |
+| `simulation.NeutralAtomBackend` |        | ✅       | ✅  | ✅  |
+| `simulation.run_qir`            |        | ✅       | ✅  | ✅  |
+
+And this table shows the programming frameworks that each API supports:
+
+| Python API                      | Q# | OpenQASM | Qiskit | QIR |
+|---------------------------------|----|----------|--------|-----|
+| `qsharp.run`                    | ✅ |          |        |     |
+| `openqasm.run`                  |    | ✅       |        |     |
+| `qiskit.QSharpBackend`          |    |          | ✅     |     |
+| `simulation.NeutralAtomDevice`  |    |          |        | ✅  |
+| `simulation.NeutralAtomBackend` |    |          | ✅     |     |
+| `simulation.run_qir`            |    |          |        | ✅  |
 
 ## Related content
 
