@@ -78,6 +78,8 @@
       href: quantum-computing-target-profiles.md
     - name: Azure Quantum provider global availability
       href: provider-global-availability.md
+    - name: Backend simulators
+      href: backend-simulators.md
     - name: IonQ
       items:
       - name: IonQ provider and targets
@@ -142,8 +144,6 @@
       href: simulators-overview-qdk.md
     - name: Sparse simulator
       href: sparse-simulator.md
-    - name: Backend simulators
-      href: backend-simulators.md
     - name: The circuit visualizer
       href: circuit-diagrams-qdk-overview.md
     - name: The circuit editor
@@ -154,7 +154,7 @@
         href: overview-qdk-neutral-atom-simulator.md
       - name: Install the neutral atom simulators
         href: install-qdk-neutral-atom-simulators.md
-      - name: How to use the neutral atom device visualizers
+      - name: How to use the neutral atom device visualizer
         href: how-to-use-neutral-atom-visualizer.md
       - name: Build noise models for neutral atom simulations
         href: qdk-simulator-noise-models.md
