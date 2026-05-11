@@ -25,9 +25,9 @@ The QDK has four simulators:
 
 ## The sparse simulator
 
-The sparse simulator is the default simulator in the QDK. This simulator represents qubit states as sparse vectors to take advantage of sparse matrix algebra for fast simulations, especially for programs that don't generate many superposition states. Use the sparse simulator when you want quick simulations of Q#, OpenQASM, or Qiskit programs, or when you want to display qubit state vectors at different points in a program.
+The sparse simulator is the default simulator in the QDK. This simulator represents qubit states as sparse vectors to take advantage of sparse matrix algebra for fast simulations, especially for programs that don't generate many superposition states. Use the sparse simulator when you want quick simulations of Q#, OpenQASM, or Qiskit programs.
 
-The sparse simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. This simulator is the only available simulator in the QDK extension, so the compiler automatically calls the sparse simulator when you run Q# and OpenQASM programs in VS Code.
+The sparse simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. This simulator is the only available simulator in the QDK extension, so the compiler automatically calls the sparse simulator when you run Q# and OpenQASM programs in VS Code. With the sparse simulator in VS Code, you can use the Q# `DumpMachine` function or the debugger to display qubit state vectors at different points in the simulation.
 
 Both the VS Code extension and the Python library support noise models for sparse simulations of Q# and OpenQASM programs. Only the Python library supports sparse simulation for Qiskit programs, but without noise model support.
 
@@ -57,8 +57,6 @@ The GPU simulator takes QIR or Qiskit as input, and is available through certain
 Like the GPU simulator, the CPU simulator is a full-state simulator that can run programs that contain any type of quantum gate. However, the CPU simulator is slower because it can't run multiple shots in parallel. This simulator scales up to around 25 qubits, but slows down exponentially with more qubits because of memory issues. Use the CPU simulator when your machine doesn't have a GPU, or when your program has few qubits and you aren't running a lot of shots.
 
 The CPU simulator takes QIR or Qiskit as input, and is available through certain QDK Python library APIs, but not the VS Code extension. There's also rich support for noise models on any type of quantum gate or operation.
-
-------------
 
 ## What simulator should I use?
 
