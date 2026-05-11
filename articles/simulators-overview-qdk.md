@@ -39,7 +39,7 @@ The Clifford simulator is fast and efficient for quantum programs with up to tho
 
 - Pauli $X$
 - Pauli $Y$
-- Pauli $Z
+- Pauli $Z$
 - $S$
 - Hadamard, or $H$
 - $\text{CNOT}$
