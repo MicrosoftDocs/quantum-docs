@@ -15,11 +15,9 @@ uid: microsoft.quantum.machines.overview.sparse-simulator
 
 The sparse simulator utilizes a sparse representation of quantum state vectors. A sparse quantum state is a state where most of the amplitude coefficients are zero. Sparse representations allow the sparse simulator to minimize the memory footprint required to represent quantum states, which enables simulations over a larger number of qubits. The sparse simulator is efficient for programs with quantum states that are sparse in the computational basis. The sparse simulator lets users explore larger applications than a full-state simulator because full-state simulators waste memory and time on an exponentially large number of zero-amplitudes.
 
-For more information about the sparse simulator, please see [Jaques and Häner (arXiv:2105.01533)](https://arxiv.org/abs/2105.01533).
+For more information about the sparse simulator, see [Jaques and Häner (arXiv:2105.01533)](https://arxiv.org/abs/2105.01533).
 
 ## Call the sparse simulator
-
-is the default local simulator for the Microsoft Quantum Development Kit (QDK) extension in Visual Studio Code (VS Code), and
 
 The sparse simulator is the default local simulator in the Microsoft Quantum Development Kit (QDK) extension for Visual Studio Code (VS Code). How to use the sparse simulator depends on your development environment.
 
@@ -65,11 +63,11 @@ operation GHzSample(n: Int) : Result[] {
 
 If you add even a 1% bit-flip noise rate, the results start to diffuse. With 25% bit-flip noise, the histogram is indistinguishable from pure noise.
 
-:::image type="content" source="media/noisy-1-25.png" alt-text="Screen sho of the QDK in VS Code that shows histogram results for a program with 1% and 25% bit-flip noise rates.":::
+:::image type="content" source="media/noisy-1-25.png" alt-text="Screen shot of the QDK in VS Code that shows histogram results for a program with 1% and 25% bit-flip noise rates.":::
 
 ### Add Pauli noise to individual Q# programs
 
-Use the `ConfigurePauliNoise` function to set or modify the noise model for individual Q# programs. The `ConfigurePauliNoise` function gives you more granular control over when and where noise occurs in your Q# programs.
+Use the `ConfigurePauliNoise` function to set or modify the noise model for individual Q# programs. The `ConfigurePauliNoise` function gives you control over when and where noise occurs in your Q# programs.
 
 > [!NOTE]
 > If you configure noise in the VS Code settings, the noise is applied to all Q# programs. However, the `ConfigurePauliNoise` function overrides the VS Code noise settings for the program that calls the function.
