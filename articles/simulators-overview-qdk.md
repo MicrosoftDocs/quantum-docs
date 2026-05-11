@@ -25,7 +25,7 @@ The QDK has four simulators:
 
 ## The sparse simulator
 
-The sparse simulator is the default simulator in the QDK. This simulator represents qubit states as sparse vectors to take advantage of sparse matrix algebra for fast simulations, especially for programs that don't generate many superposition states. Use the sparse simulator when you want quick simulations of Q#, OpenQASM, or Qiskit programs.
+The sparse simulator is the default simulator in the QDK. This simulator represents qubit states as sparse vectors to take advantage of sparse matrix algebra for fast simulations, especially for programs that don't generate many superposition states. Use the sparse simulator when you want quick simulations of Q#, OpenQASM, or Qiskit programs, or when you want to display the quantum state of your program during simulation.
 
 The sparse simulator is available in both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. This simulator is the only available simulator in the QDK extension, so the compiler automatically calls the sparse simulator when you run Q# and OpenQASM programs in VS Code. With the sparse simulator in VS Code, you can use the Q# `DumpMachine` function or the debugger to display qubit state vectors at different points in the simulation.
 
@@ -35,14 +35,13 @@ For more information about the sparse simulator, see [The sparse simulator](xref
 
 ## The Clifford simulator
 
-The Clifford simulator is fast and efficient for quantum programs with up to thousands of qubits, but can only simulate programs that contain only Clifford gates. Clifford gates are common components of error correction circuits, and include the following gates:
+The Clifford simulator is fast and efficient for quantum programs with up to thousands of qubits, but can only simulate programs that contain only Clifford gates. Clifford gates are common components of error correction circuits. The set of Clifford gates consists of the H, S, and CX gates, and all of the gates that can be constructed from those three gates. The following Clifford gates are common components of quantum circuits:
 
-- Pauli $X$
-- Pauli $Y$
-- Pauli $Z$
-- $S$
-- Hadamard, or $H$
-- $\text{CNOT}$
+- $X$, $Y$, and $Z$
+- $S$ and $S^\dagger$
+- $H$, or Hadamard
+- $CX$, $CY$, and $CZ$
+- SWAP and iSWAP
 
 The Clifford simulator is available in the QDK Python library for Q#, OpenQASM, Qiskit, and QIR programs, but isn't available in the QDK extension for VS Code.
 
