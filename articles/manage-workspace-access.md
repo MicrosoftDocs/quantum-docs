@@ -5,7 +5,7 @@ ms.author: quantumdocwriters
 ms.date: 01/08/2025
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: conceptual
+ms.topic: article
 no-loc: ['Q#', '$$v']
 title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access
