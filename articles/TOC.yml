@@ -152,8 +152,8 @@
       items:
       - name: Neutral atom simulator overview
         href: overview-qdk-neutral-atom-simulator.md
-      - name: Install the neutral atom simulators
-        href: install-qdk-neutral-atom-simulators.md
+      - name: Install and run quantum simulators in the QDK Python library
+        href: install-qdk-quantum-simulators.md
       - name: How to use the neutral atom device visualizer
         href: how-to-use-neutral-atom-visualizer.md
       - name: Build noise models for neutral atom simulations
