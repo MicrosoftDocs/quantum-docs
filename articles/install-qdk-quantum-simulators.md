@@ -47,7 +47,7 @@ pip install --upgrade "qdk[jupyter]"
 
 The `jupyter` extra isn't required to use the simulators, but does install the `qdk.widgets` module. The `widgets` module lets you create visualizations from your simulation results in Jupyter Notebook.
 
-## Run a simulation in the QDK extension for VS Code
+## Run simulations using the QDK extension for VS Code
 
 The QDK extension for VS Code offers only the sparse simulator. To run your program on the sparse simulator in VS Code, open a Q# (`.qs`) or OpenQASM (`.qasm`) program in VS Code and run the file.
 
@@ -64,7 +64,7 @@ The VS Code terminal shows the output from the simulation.
 > [!NOTE]
 > You can add limited noise models to sparse simulations of Q# programs in the QDK extension. For more information, see [Add Pauli noise to the sparse simulator in VS Code](xref:microsoft.quantum.machines.overview.sparse-simulator#add-pauli-noise-to-the-sparse-simulator-in-vs-code).
 
-### Run simulations from the QDK Python library
+### Run simulations using the QDK Python library
 
 The QDK Python library offers all four simulators. How to call the simulators depends on the simulator and the quantum programming framework.
 

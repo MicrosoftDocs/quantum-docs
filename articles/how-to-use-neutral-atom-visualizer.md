@@ -1,15 +1,15 @@
 ---
 author: azure-quantum-content
-description: This article gives an overview of the neutral atom simulator tools in the QDK, which allow users to simulate and visualize how their quantum programs run on neutral atom quantum computers.
-ms.date: 02/09/2026
+description: This article explains how to use the neutral atom device visualizer from the QDK Python library.
+ms.date: 05/14/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
-title: How to use the neutral atom device visualizer to analyze programs on neutral atom quantum computers
+title: Visualize qubits on a neutral atom device
 uid: microsoft.quantum.how-to.qdk-neutral-atom-visualizer
-#customer intent: As a quantum chemistry researcher, I want to understand the tools that the QDK provides to simulate how my quantum programs run on a neutral atom quantum computers
+# Customer intent: As a quantum researcher or developer, I want to understand the tools that the QDK provides to simulate how my quantum programs run on a neutral atom quantum computers
 ---
 
 # How to use the neutral atom device visualizer
@@ -27,17 +27,13 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
 1. Import the necessary packages and objects. In the first cell, enter and run the following code:
 
     ```python
-    from qdk import init, TargetProfile
     from qdk.openqasm import compile
-    from qdk.simulation import NeutralAtomDevice, NoiseConfig
-    from qdk.widgets import Histogram
+    from qdk.simulation import NeutralAtomDevice
     ```
 
-1. Write your OpenQASM quantum circuit and compile the circuit into QIR. Copy and run the following code in a new cell:
+1. Write your OpenQASM circuit and compile the circuit into QIR. For example, the following circuit entangles two qubits:
 
     ```python
-    init(target_profile=TargetProfile.Base)
-
     qasm_src = """
     include "stdgates.inc";
     qubit[2] qs;
@@ -51,21 +47,19 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
     qir = compile(qasm_src)
     ```
 
-    This simple circuit entangles two qubits.
-
-1. Create a simulator object. In a new cell, enter and run the following code:
+1. Create a simulator object using `NeutralAtomDevice`.
 
     ```python
     simulator = NeutralAtomDevice()
     ```
 
-1. To access the visualizer and create a neutral atom qubit diagram for your program, call the simulator's `show_trace` method and pass the QIR for your quantum program. In a new cell, enter and run the following code:
+1. To access the visualizer, call the `show_trace` method and pass the QIR for your program.
 
     ```python
     simulator.show_trace(qir)
     ```
 
-    The neutral atom qubit diagram renders in the output cell. Note that the visualizer diagrams don't include the effects of noise or qubit loss.
+    The neutral atom qubit diagram renders in the output cell. Note that the visualizer doesn't include the effects of noise or qubit loss.
 
 ## How to interact with the visualizer diagram
 

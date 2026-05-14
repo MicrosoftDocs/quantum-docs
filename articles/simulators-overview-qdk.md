@@ -9,7 +9,7 @@ ms.topic: overview
 no-loc: ["Q#", "OpenQASM", "QIR", "Qiskit", "Microsoft", "Quantum Development Kit", "QDK", "Clifford", "Pauli", "Hadamard", "GPU", "CPU", "Azure Quantum", "Python"]
 title: Overview of quantum simulators in the QDK
 uid: microsoft.quantum.overview.qdk-simulators
-#Customer intent: As a quantum developer or researcher, I want to know about the simulation tools that the QDK provides and their use cases.
+# Customer intent: As a quantum developer or researcher, I want to know about the simulation tools that the QDK provides and their use cases.
 ---
 
 # Overview of quantum simulators in the QDK

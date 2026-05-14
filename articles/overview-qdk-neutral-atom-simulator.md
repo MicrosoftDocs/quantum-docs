@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
-description: This article gives an overview of the neutral atom simulator tools in the QDK, which allow quantum researchers to simulate and visualize how their quantum programs run on neutral atom quantum computers.
-ms.date: 05/08/2026
+description: This article gives an overview of neutral atom device simulation in the QDK, which allows quantum researchers to simulate and visualize how their quantum programs run on neutral atom quantum computers.
+ms.date: 05/14/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
@@ -9,37 +9,62 @@ ms.topic: overview
 no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API, Clifford, GPU, CPU]
 title: Simulate jobs on neutral atom quantum computers in the QDK
 uid: microsoft.quantum.overview.qdk-neutral-atom-simulators
-#customer intent: As a quantum chemistry researcher, I want to understand the tools that the QDK provides to simulate how my quantum programs will run on a neutral atom devices
+# Customer intent: As a quantum chemistry developer or researcher, I want to understand how neutral atom device simulation works in the QDK
 ---
 
-# Neutral atom device simulator overview
+# Simulate quantum programs on neutral atom device hardware
 
-The Microsoft Quantum Development Kit (QDK) provides a suite of simulation tools that allow you to evaluate your quantum programs before you run them on real quantum hardware. The neutral atom device simulator models the types of noise and qubit processing that occurs when programs run on neutral atom quantum computers, such as qubit loss and qubit movement. If you plan to run your quantum programs on neutral atom hardware, then use the neutral atom device simulator to test and refine your code.
+The Microsoft Quantum Development Kit (QDK) provides a set of simulation tools that let you evaluate and iterate on your quantum programs before you run them on real quantum hardware. The neutral atom device simulator models the types of noise and qubit processing that occurs when programs run on neutral atom quantum computers, such as qubit loss and qubit movement. If you plan to run your quantum programs on neutral atom hardware, then use the neutral atom device simulator to test and refine your code.
 
 ## How neutral atom quantum computers work
 
-Neutral atom devices are one of many current quantum computer hardware technologies. Other technologies include superconducting qubits, trapped-ion qubits, and topological qubits. Each technology has its own strengths and drawbacks. For example, neutral atom technology has good potential for scalability, but faces challenges with qubit loss.
+Neutral atom devices are one of many current quantum computer hardware technologies. Other technologies include superconducting qubits, trapped-ion qubits, and topological qubits. Each technology has its own strengths and drawbacks. Neutral atom quantum computers offer good scalability, flexible qubit connectivity, and long coherence times, but face challenges with gate fidelity and laser control complexity.
 
-The exact qubit technology in a neutral atom device depends on the particular architecture, but in general each qubit is a single atom with no electric charge. Lasers are used to trap the atoms and make them transition between different energy states that represent 0 and 1. The qubits tend to be arranged in 2D or 3D arrays.
+The exact qubit technology in a neutral atom device depends on the specific architecture. But in general, each qubit is a single atom with no electric charge. The qubit 0 and 1 states correspond to different energy states of the atoms. The atoms are arranged in 2D or 3D arrays on the device. Lasers trap the atoms in place and move the atoms between different zones on the device for storage, interaction with quantum gates, and measurement.
 
-## Neutral atom device simulation in the QDK
+## Neutral atom device simulation tools in the QDK
 
-Neutral atom device simulation in the QDK is designed to incorporate the unique properties of neutral atom quantum hardware. The QDK Python library has two neutral atom simulation APIs from the `qdk.simulation` module that call one of the QDK quantum simulators to run your program:
+Neutral atom device simulation in the QDK specifically models the following properties of neutral atom quantum hardware:
 
-- The `NeutralAtomDevice` class to run programs from QIR
-- The `NeutralAtomBackend` class to run Qiskit programs
+- Devices contain only $S_X$, $R_Z$, and $CZ$ gates.
+- Qubits physically move between storage, interaction, and measurement zones on the device.
 
-These classes call either the Clifford, GPU, or CPU simulator to simulate how your program runs on a neutral atom device specifically. The simulator converts your program into a new QIR that includes only the set of gates that exist on neutral atom devices. The new QIR also contains instructions for neutral atom movement, and noise models can include qubit loss.
+The QDK Python library has two APIs for neutral atom device simulation, depending on the format of your program:
 
-There's also the `qdk.widgets` module, which includes a neutral atom device visualizer for Jupyter Notebook. This visualizer shows how qubits move and get processed in a basic neutral atom device.
+| API                  | QDK module       | Input format | Supported simulators   |
+|----------------------|------------------|--------------|------------------------|
+| `NeutralAtomDevice`  | `qdk.simulation` | QIR          | Clifford, GPU, and CPU |
+| `NeutralAtomBackend` | `qdk.qiskit`     | Qiskit       | Clifford, GPU, and CPU |
 
-For more information on quantum simulation in the QDK, see [Overview of quantum simulators in the QDK](xref:microsoft.quantum.overview.qdk-simulators)
+Both APIs compile your program into QIR that has qubit movement instructions and contains only the gates that are supported by neutral atom devices.
 
-## The neutral atom device visualizer
+For more information on quantum simulation in the QDK, see [Overview of quantum simulators in the QDK](xref:microsoft.quantum.overview.qdk-simulators).
 
-The neutral atom device visualizer is a QDK tool for Jupyter Notebook. The visualizer creates an interactive animated diagram of the atoms in a basic neutral atom device. The diagram shows how the atoms move and change as your program runs on the simulated hardware. The visualizer is independent of which simulator that you use, and doesn't model noise or qubit loss.
+### Neutral atom device visualizer
 
-The visualizer shows the different zones where qubits are located in a neutral atom device. The qubits move between these zones as your program runs. For example, available qubits are in the storage zone, then move to the interaction zone where quantum gates are applied to them, and then move to the measurement zone when the qubits are ready to be measured.
+The `NeutralAtomDevice` API includes a neutral atom device visualizer for Jupyter Notebook through the `show_trace` method. The visualizer creates an interactive visualization of how qubits move through a basic neutral atom device as your program runs. The visualizer is separate from the simulators, it doesn't include qubit loss or other noise.
+
+:::image type="content" source="media/neutral-atom-visualizer-preview.png" alt-text="Screenshot of the neutral atom device visualizer in Jupyter Notebook.":::
+
+For more information on the neutral atom device visualizer, see [How to use the neutral atom device visualizer](xref:microsoft.quantum.how-to.qdk-neutral-atom-visualizer).
+
+## Types of noise in neutral atom device simulators
+
+In neutral atom devices, lasers physically move the neutral atom qubits between different zones in the device. Noise can occur when programs run on a neutral atom device in the following situations:
+
+- Qubit movements between zones
+- Quantum gate operations on qubits in the interaction zone
+- Qubit measurements in the measurement zone
+
+The neutral atom device simulators in the QDK support noise from the following sources:
+
+| Noise source       | Noise model parameter | Source description                        |
+|--------------------|-----------------------|-------------------------------------------|
+| $S_X$ quantum gate | `sx`                  | Single-qubit gate, half bit flip          |
+| $R_Z$ quantum gate | `rz`                  | Single-qubit gate, general phase rotation |
+| $CZ$ quantum gate  | `cz`                  | Two-qubit gate, controlled-$Z$ phase flip |
+| Qubit movement     | `mov`                 | Qubit movement between device zones       |
+
 
 ## Get started with neutral atom device simulation
 
