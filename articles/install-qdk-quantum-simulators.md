@@ -45,13 +45,13 @@ To use the quantum simulators in Python and Jupyter Notebook, install the latest
 pip install --upgrade "qdk[jupyter]"
 ```
 
-The `jupyter` extra isn't required to use the simulators, but does install the `qdk.widgets` module. The `widgets` module lets you to create visualizations from your simulation results in Jupyter Notebook.
+The `jupyter` extra isn't required to use the simulators, but does install the `qdk.widgets` module. The `widgets` module lets you create visualizations from your simulation results in Jupyter Notebook.
 
-## Run a simulation in the QDX extension for VS Code
+## Run a simulation in the QDK extension for VS Code
 
 The QDK extension for VS Code offers only the sparse simulator. To run your program on the sparse simulator in VS Code, open a Q# (`.qs`) or OpenQASM (`.qasm`) program in VS Code and run the file.
 
-For example, follow these steps to run one of the Q# sample programs that comes with the QDK extension:
+For example, follow these steps to run one of the Q# sample programs that come with the QDK extension:
 
 1. In VS Code, open the **File** menu and select **New Text File**.
 1. Give the file a name that ends with the `.qs` extension.
