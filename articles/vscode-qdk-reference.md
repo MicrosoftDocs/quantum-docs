@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Learn about the features that are included with the QDK extension for VS Code. 
-ms.date: 09/25/2025
+ms.date: 05/15/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core

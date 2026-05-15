@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
-description: Learn how to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm.
-ms.date: 02/13/2026
+description: Learn how to use the resource estimator to estimate the resources needed for future scaled quantum computers to break different encryption algorithms.
+ms.date: 03/31/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -10,15 +10,15 @@ no-loc: ['Q#', '$$v', target, targets]
 title: Use the Microsoft Quantum resource estimator to analyzing cryptography
 uid: microsoft.quantum.resource-estimator-cryptography
 
-#customer intent: As a quantum developer, I want to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm, so that I can analyze the impact of quantum computing on the security of some classical encryption methods and prepare for a quantum-safe future.
+#customer intent: As a quantum developer, I want to use the resource estimator to estimate the resources needed for a future scaled quantum computer to break different encryption algorithms, so that I can analyze the impact of quantum computing on the security of classical encryption methods and prepare for a quantum-safe future.
 ---
 
 # Analyze cryptographic protocols with the resource estimator
 
-The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) to estimate the resources needed for a future scaled quantum computer to break a particular encryption algorithm. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
+The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) is available on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography) to estimate the resources needed for different quantum hardware technologies to break encryption algorithms. This tool helps you to analyze the impact of quantum computing on the security of some classical encryption methods, and prepare for a quantum-safe future.
 
 > [!NOTE]
-> To access the resource estimator on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography), you only need a Microsoft account.
+> To access the resource estimator on the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography), you need a Microsoft account.
 
 The resource estimator for quantum-safe planning takes a set of four target parameters as input. The following table shows the allowed values for each input parameter:
 
@@ -39,14 +39,10 @@ The resource estimator for quantum-safe planning takes a set of four target para
 
 To use the resource estimator for quantum-safe planning, go to the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography).
 
-1. Choose the **arrows** to switch between different selections of preset input parameters. See that the fields are populated for you.
-1. Click **Ask Copilot**  if you want to know more about the resource estimation data.
-1. Click **Download** to download the plot of the resource estimation job.
-1. You can also **customize the parameters** of the encryption algorithm. You need to select *at least* one option for each input parameter. You can select multiple combinations of parameters and compare their security against quantum computers.
-1. The results are displayed in a **plot** that shows the number of qubits and the runtime that a quantum computer with the selected architecture would need to break the encryption algorithm. **Hover over** the points of the plot to see more information about the resource estimates.
-1. At any point, you can **ask Copilot a question** about cryptography, resource estimation, or quantum computing.
-
-    :::image type="content" source="media/quantum-cryptography-qcom.png" alt-text="Screenshot of the quantum cryptography experience in the Microsoft Quantum website. The screenshot displays the input parameters that constitute the encryption algorithm and the plot of the resource estimation job results.":::
+1. Select the **arrows** to switch between different selections of preset input parameters.
+1. Select **Download** to download the plot of the resource estimation results.
+1. To customize the resource estimation parameters, choose at least one option for each input parameter type. You can choose multiple combinations of parameters to compare results for different sets of qubit technologies and encryption algorithms.
+1. The results are displayed in a plot that shows the number of qubits and the run time required to break the encryption algorithms. Hover over the points on the plot to view information about the resource estimates.
 
 ## Next steps
 

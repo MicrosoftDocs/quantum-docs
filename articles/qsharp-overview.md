@@ -261,7 +261,7 @@ Let's break down the steps in the diagram.
 
 ### Choose your development environment
 
-Run your quantum programs in your preferred development environment. You can use the online code editor in the Microsoft Quantum website, a local development environment with Visual Studio Code, or combine Q# code with Python code in Jupyter Notebooks. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
+Run your quantum programs in your preferred development environment. You can use a local development environment with Visual Studio Code, or combine Q# code with Python code in Jupyter Notebook. For more information, see [Different ways to run Q# programs](xref:microsoft.quantum.qsharp-ways-to-work).
 
 ### Write your quantum program
 

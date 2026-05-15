@@ -26,11 +26,7 @@ In this tutorial, you will:
 > - Combine classical and quantum operations to solve a problem.
 > - Work with qubits and superposition to build a quantum random number generator.
 
-[!INCLUDE [Copilot in Microsoft Quantum banner](includes/copilot-banner.md)]
-
 ## Prerequisites
-
-To run the code sample in [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding), you must have a Microsoft (MSA) email account.
 
 To develop and run the code sample in Visual Studio Code (VS Code) and Jupyter Notebook, install the following:
 
@@ -250,83 +246,11 @@ operation GenerateRandomBit() : Result {
 
 ## Run the random number generator program
 
-You can run the program with [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding), and in Visual Studio Code as a standalone Q# application or using a Python host program.
+Choose your preferred development environment, either the QDK extension in VS Code or the QDK Python library in Jupyter Notebook.
 
-### [Copilot in Microsoft Quantum](#tab/tabid-copilot)
+### [Q# file in VS Code](#tab/tabid-vscode)
 
-You can test your Q# code with Copilot in Microsoft Quantum free of charge - all you need is a Microsoft (MSA) email account. For more information about Copilot in Microsoft Quantum, see [Explore Azure Quantum](xref:microsoft.quantum.get-started.azure-quantum).
-
-1. Open [Copilot in Microsoft Quantum](https://quantum.microsoft.com/tools/quantum-coding) in your browser.
-1. Copy and paste the following code into the code editor.
-
-    ```qsharp
-    import Std.Convert.*;
-    import Std.Math.*;
-
-    operation Main() : Int {
-        let max = 100;
-        Message($"Sampling a random number between 0 and {max}: ");
-
-        // Generate random number in the 0..max range.
-        return GenerateRandomNumberInRange(max);
-    }
-
-    /// # Summary
-    /// Generates a random number between 0 and `max`.
-    operation GenerateRandomNumberInRange(max : Int) : Int {
-        // Determine the number of bits needed to represent `max` and store it
-        // in the `nBits` variable. Then generate `nBits` random bits which will
-        // represent the generated random number.
-        mutable bits = [];
-        let nBits = BitSizeI(max);
-        for idxBit in 1..nBits {
-            bits += [GenerateRandomBit()];
-        }
-        let sample = ResultArrayAsInt(bits);
-
-        // Return random number if it is within the requested range.
-        // Generate it again if it is outside the range.
-        return sample > max ? GenerateRandomNumberInRange(max) | sample;
-    }
-
-    /// # Summary
-    /// Generates a random bit.
-    operation GenerateRandomBit() : Result {
-        // Allocate a qubit.
-        use q = Qubit();
-
-        // Set the qubit into superposition of 0 and 1 using the Hadamard 
-        // operation `H`.
-        H(q);
-
-        // At this point the qubit `q` has 50% chance of being measured in the
-        // |0〉 state and 50% chance of being measured in the |1〉 state.
-        // Measure the qubit value using the `M` operation, and store the
-        // measurement value in the `result` variable.
-        let result = M(q);
-
-        // Reset qubit to the |0〉 state.
-        // Qubits must be in the |0〉 state by the time they are released.
-        Reset(q);
-
-        // Return the result of the measurement.
-        return result;
-
-        // Note that Qubit `q` is automatically released at the end of the block.
-    }
-
-    ```
-
-1. Select the number of shots to run, and select **Run**.
-1. The results are displayed in the histogram and in the **Results** fields.
-1. Select **Explain code** to prompt Copilot to explain the code to you.
-
-> [!TIP]
-> From Copilot in Microsoft Quantum, you can open your program in [VS Code for the Web](https://vscode.dev/quantum) by selecting the VS Code logo button in the right-hand corner of the code editor.
-
-### [Q# program in Visual Studio Code](#tab/tabid-vscode)
-
-1. In Visual Studio Code, open the **File** menu and choose **New Text File** to create a new file.
+1. In VS Code, open the **File** menu and choose **New Text File** to create a new file.
 1. Save the file as `RandomNumberGenerator.qs`. This file will contain the Q# code for your program.
 1. Copy the following code in the `RandomNumberGenerator.qs` file.
 
@@ -389,7 +313,7 @@ You can test your Q# code with Copilot in Microsoft Quantum free of charge - all
 
 1. To run your program, choose the **Run** from the list of commands preceding `Main()`, or press **Ctrl + F5**. The program runs the `Main()` operation on the default simulator.
 
-    :::image type="content" source="media/codelens-run-QRNG.png" alt-text="Screenshot of Visual Studio Code showing where to find the run command in the code lens.":::
+    :::image type="content" source="media/codelens-run-QRNG.png" alt-text="Screenshot of Visual Studio Code that shows where to find the run command in the code lens.":::
 
 1. Your output will appear in the debug console.
 1. Run the program again to see a different result.
@@ -403,7 +327,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 
 1. Select **View -> Command Palette** and type **histogram**, which brings up the **QDK: Run file and show histogram** command. You can also select **Histogram** from the list of commands preceding `Main()`. Select this option to open the Q# histogram window.
 
-    :::image type="content" source="media/codelens-histogram-QRNG.png" alt-text="Screenshot of Visual Studio Code showing where to find the histogram command in the code lens.":::
+    :::image type="content" source="media/codelens-histogram-QRNG.png" alt-text="Screenshot of Visual Studio Code that shows where to find the histogram command in the code lens.":::
 
 1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
 1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The number of different results may differ each time you run the histogram.
@@ -416,7 +340,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 1. Select a bar to display the **percentage** of that outcome.
 1. Select the top-left **settings icon** to display options. You can display top 10 results, top 25 results, or all results. You can also sort the results from high to low, or low to high.
 
-    :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot the Q# histogram window in Visual Studio Code showing how to display settings.":::
+    :::image type="content" source="media/histogram-vscode-qrng-tab.png" alt-text="Screenshot of the Q# histogram window in Visual Studio Code that shows how to display settings.":::
 
 ### [Jupyter Notebook in VS Code](#tab/tabid-python)
 
