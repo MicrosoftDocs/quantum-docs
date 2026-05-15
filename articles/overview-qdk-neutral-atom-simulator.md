@@ -42,13 +42,15 @@ For more information on quantum simulation in the QDK, see [Overview of quantum 
 
 ### Neutral atom device visualizer
 
-The `NeutralAtomDevice` API includes a neutral atom device visualizer for Jupyter Notebook through the `show_trace` method. The visualizer creates an interactive visualization of how qubits move through a basic neutral atom device as your program runs. The visualizer is separate from the simulators, it doesn't include qubit loss or other noise.
+The `NeutralAtomDevice` API includes a neutral atom device visualizer for Jupyter Notebook through the `show_trace` method. The visualizer creates an interactive visualization of how qubits move through a basic neutral atom device as your program runs. The visualizer is separate from the QDK simulators, and doesn't include qubit loss or other noise.
 
 :::image type="content" source="media/neutral-atom-visualizer-preview.png" alt-text="Screenshot of the neutral atom device visualizer in Jupyter Notebook.":::
 
 For more information on the neutral atom device visualizer, see [How to use the neutral atom device visualizer](xref:microsoft.quantum.how-to.qdk-neutral-atom-visualizer).
 
-## Types of noise in neutral atom device simulators
+## Noise models for neutral atom device simulations
+
+The quantum simulators in the QDK Python library use the `NoiseConfig` class to add noise models to simulations. When you call a simulator with one o
 
 In neutral atom devices, lasers physically move the neutral atom qubits between different zones in the device. Noise can occur when programs run on a neutral atom device in the following situations:
 
@@ -65,6 +67,7 @@ The neutral atom device simulators in the QDK support noise from the following s
 | $CZ$ quantum gate  | `cz`                  | Two-qubit gate, controlled-$Z$ phase flip |
 | Qubit movement     | `mov`                 | Qubit movement between device zones       |
 
+For more information about noise models, see [](xref:).
 
 ## Get started with neutral atom device simulation
 
