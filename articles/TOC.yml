@@ -78,17 +78,19 @@
       href: quantum-computing-target-profiles.md
     - name: Azure Quantum provider global availability
       href: provider-global-availability.md
+    - name: Backend simulators
+      href: backend-simulators.md
     - name: IonQ
       items:
       - name: IonQ provider and targets
         href: provider-ionq.md
       - name: IonQ support policy
         href: provider-support-ionq.md
-    - name: PASQAL
+    - name: Pasqal
       items:
-      - name: PASQAL provider and targets
+      - name: Pasqal provider and targets
         href: provider-pasqal.md
-      - name: PASQAL support policy
+      - name: Pasqal support policy
         href: provider-support-pasqal.md
     - name: Quantinuum
       items:
@@ -116,32 +118,30 @@
       href: install-overview-qdk.md
     - name: Visual Studio Code agent mode
       href: qdk-vscode-agent-setup.md
+    - name: VS Code reference for the QDK
+      href: vscode-qdk-reference.md
   - name: Quantum language support in the QDK
     items:
+    - name: QDK language support overview
+      href: qdk-language-support-overview.md
     - name: Q#
       href: qsharp-overview.md
-    - name: OpenQASM
-      items:
-      - name: Overview of OpenQASM in the QDK
-        href: qdk-openqasm-integration.md
+    - name: OpenQASM in the QDK
+      href: qdk-openqasm-integration.md
     - name: Python interoperability
       items:
-      - name: Python quantum language support in the QDK
-        href: qdk-qiskit-cirq-overview.md
-      - name: Qiskit
-        items:
-        - name: Submit a circuit with Qiskit
-          href: quickstart-microsoft-qiskit.md
-      - name: Cirq
-        items:
-        - name: Submit a circuit with Cirq
-          href: quickstart-microsoft-cirq.md
+      - name: Submit a circuit with Qiskit
+        href: quickstart-microsoft-qiskit.md
+      - name: Submit a circuit with Cirq
+        href: quickstart-microsoft-cirq.md
+      - name: Submit a circuit with PennyLane
+        href: quickstart-microsoft-pennylane.md
   - name: Simulators and visualizers
     items:
+    - name: Overview of QDK simulators
+      href: simulators-overview-qdk.md
     - name: Sparse simulator
       href: sparse-simulator.md
-    - name: Backend simulators
-      href: backend-simulators.md
     - name: The circuit visualizer
       href: circuit-diagrams-qdk-overview.md
     - name: The circuit editor
@@ -152,7 +152,7 @@
         href: overview-qdk-neutral-atom-simulator.md
       - name: Install the neutral atom simulators
         href: install-qdk-neutral-atom-simulators.md
-      - name: How to use the neutral atom device visualizers
+      - name: How to use the neutral atom device visualizer
         href: how-to-use-neutral-atom-visualizer.md
       - name: Build noise models for neutral atom simulations
         href: qdk-simulator-noise-models.md
@@ -198,8 +198,6 @@
     items:
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
-    - name: Perform long-running experiments
-      href: how-to-long-running-experiments.md
     - name: Hybrid quantum computing (QC)
       items:
       - name: Introduction to hybrid QC
@@ -224,12 +222,8 @@
         href: testing-debugging.md
       - name: Visualize Q# circuit diagrams
         href: how-to-visualize-circuits.md
-    - name: Reference guides for Q#
-      items:
-      - name: VS Code reference for Q# programs
-        href: vscode-qsharp-reference.md
-      - name: Language reference for Q#
-        href: user-guide/language/toc.yml
+    - name: Language reference for Q#
+      href: user-guide/language/toc.yml
   - name: Tutorials for the QDK and Q#
     items: 
     - name: Quantum random number generator
