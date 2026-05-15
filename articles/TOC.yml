@@ -118,8 +118,6 @@
       href: install-overview-qdk.md
     - name: Visual Studio Code agent mode
       href: qdk-vscode-agent-setup.md
-    - name: Explore with Copilot in Microsoft Quantum
-      href: get-started-azure-quantum.md
     - name: VS Code reference for the QDK
       href: vscode-qdk-reference.md
   - name: Quantum language support in the QDK
