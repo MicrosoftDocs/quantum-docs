@@ -34,7 +34,7 @@ With Python support in VS Code, you can embed or call Q# code from your Python p
 
 ### Prerequisites
 
-- Install a Python environment (3.10 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K).
+- Install a Python environment (3.10 or greater, 3.11 recommended) with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z).
 - Install the QDK extension in VS Code.
 
 ### Install the required packages

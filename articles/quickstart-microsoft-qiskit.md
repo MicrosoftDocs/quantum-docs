@@ -26,7 +26,7 @@ In this article, you learn how to run Qiskit programs with the QDK Python librar
 To submit Qiskit jobs to Azure Quantum and to run Qiskit programs on the local sparse simulator, you must have the following:
 
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- A local Python environment (version 3.10 or higher) with [Python and Pip](https://apps.microsoft.com/detail/9NRWMJP3717K) installed.
+- A local Python environment (version 3.10 or higher) with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
 - Visual Studio Code (VS Code) with the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
 - The `qdk` Python library with the `azure` and `qiskit` extras, and the `ipykernel` package.
 

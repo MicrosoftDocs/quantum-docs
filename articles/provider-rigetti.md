@@ -23,8 +23,7 @@ The Rigetti provider makes the following targets available:
 | Target name                                  | Target ID                 | Number of qubits | Description |
 |----------------------------------------------|---------------------------|------------------|-------------|
 | [Quantum Virtual Machine (QVM)](#simulators) | rigetti.sim.qvm           | -                | Open-source simulator for Quil, Q\#, and Qiskit programs. Free of cost. |
-| [Ankaa-3](#ankaa-3)                          | rigetti.qpu.ankaa-3       | 84 qubits        |  |
-| [Cepheus-1-36Q](#cepheus-1-36q)              | rigetti.qpu.cepheus-1-36q | 36 qubits        |  |
+| [Cepheus-1-108Q](#cepheus-1-108q)            | rigetti.qpu.cepheus-1-108q | 108 qubits      |  |
 
 > [!NOTE]
 > Rigetti simulators and hardware targets don't support Cirq programs.
@@ -35,22 +34,13 @@ Rigetti's targets correspond to a **:::no-loc text="QIR Base":::** profile. For 
 
 All of Rigetti's publicly available [QPUs](https://qcs.rigetti.com/qpus) are available through Azure Quantum. This list is subject to change without advance notice.
 
-### Ankaa-3
+### Cepheus-1-108Q
 
-An 84-qubit quantum processor.
-
-- Job Type: `Quantum Program`
-- Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
-- Target ID: `rigetti.qpu.ankaa-3`
-- Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
-
-### Cepheus-1-36Q
-
-A 36-qubit quantum processor built from an array of 9-qubit chips tiled together.
+A 108-qubit quantum processor built from an array of 9-qubit chips tiled together.
 
 - Job Type: `Quantum Program`
 - Data Format: `rigetti.quil.v1`, `rigetti.qir.v1`
-- Target ID: `rigetti.qpu.cepheus-1-36q`
+- Target ID: `rigetti.qpu.cepheus-1-108q`
 - Target Execution Profile: [:::no-loc text="QIR Base":::](xref:microsoft.quantum.target-profiles#create-and-run-applications-for-base-qir-profile-targets)
 
 ## Simulators
