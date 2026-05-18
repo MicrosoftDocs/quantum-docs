@@ -50,7 +50,7 @@ For more information on the neutral atom device visualizer, see [How to use the 
 
 ## Noise models for neutral atom device simulations
 
-The quantum simulators in the QDK Python library use the `NoiseConfig` class to add noise models to simulations. When you call a simulator with one o
+The quantum simulators in the QDK Python library use the `NoiseConfig` class to add noise models to simulations. When you call a simulator with `NeutralAtomDevice` or `NeutralAtomBackend`,
 
 In neutral atom devices, lasers physically move the neutral atom qubits between different zones in the device. Noise can occur when programs run on a neutral atom device in the following situations:
 

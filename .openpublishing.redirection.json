@@ -1180,6 +1180,11 @@
 			"source_path": "articles/install-qdk-neutral-atom-simulators.md",
 			"redirect_url": "/azure/quantum/install-qdk-quantum-simulators",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/get-started-azure-quantum.md",
+			"redirect_url": "/azure/quantum/",
+			"redirect_document_id": false
 		}
 	]
 }
