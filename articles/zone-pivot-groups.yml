@@ -38,14 +38,6 @@ groups:
     title: Copilot for Microsoft Quantum
   - id: ide-local
     title: Local computer
-- id: ide-platforms-copilot-vscode
-  title: Local or online development environments
-  prompt: Select your preferred development environment
-  pivots:
-  - id: ide-azure-copilot
-    title: Copilot for Microsoft Quantum
-  - id: ide-local
-    title: Local computer
 - id: ide-local-portal-jupyter
   title: Local or online development environments
   prompt: Select your preferred development environment
