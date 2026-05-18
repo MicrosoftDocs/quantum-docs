@@ -12,7 +12,7 @@ uid: microsoft.quantum.how-to.neutral-atom-simulators-noise
 #customer intent: As a quantum computing researcher, I want to know what kinds of noise models I can add to my neutral atom device simulations and how to build a noise models
 ---
 
-# How to build noise models for neutral atom device simulations
+# How to build noise models for quantum simulations in the QDK
 
 The neutral atom device simulators in the Microsoft Quantum Development Kit (QDK) can model noise that occurs when you run programs on a neutral atom quantum computer. This article explains the kinds of noise that the neutral atom simulators support and how to include a noise model in your simulation.
 

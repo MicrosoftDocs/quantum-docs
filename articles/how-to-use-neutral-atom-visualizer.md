@@ -59,11 +59,11 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
     simulator.show_trace(qir)
     ```
 
-    The neutral atom qubit diagram renders in the output cell. Note that the visualizer doesn't include the effects of noise or qubit loss.
+    The neutral atom qubit diagram renders in the output cell. The visualizer doesn't include the effects of noise or qubit loss.
 
 ## How to interact with the visualizer diagram
 
-The diagram has interactive elements that let you explore a simulation of how qubits behave as your program runs on a basic neutral atom quantum computer. The diagram is a 2D grid with labeled rows and columns. Each neutral atom qubit is represented by a dot at one of the grid positions.
+The diagram has interactive elements that let you explore a simulation of how qubits behave as your program runs on a basic neutral atom quantum computer. The diagram is a 2D grid with labeled rows and columns. Each dot in a grid position represents one neutral atom qubit on the device.
 
 The diagram contains three zones:
 
