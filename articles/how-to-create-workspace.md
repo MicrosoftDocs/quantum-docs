@@ -51,7 +51,7 @@ To create an Azure Quantum workspace, follow these steps.
 
 1. Select **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum** service.
 
-1. Select **Azure Quantum** and then select  **Create**. This opens a form to create a workspace.
+1. Select **Azure Quantum**, and then select **Create**. The workspace creation form opens.
 
 1. Select a subscription to associate with the new workspace.
 
@@ -96,13 +96,13 @@ Use this option to manually configure your resource group and storage account, s
 1. A list of providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**.
 
    > [!NOTE]
-   > Pricing for Azure Quantum varies by provider. Please consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
+   > Pricing for Azure Quantum varies by provider. Consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
 1. Select **Next**.
 
 1. To add optional tags to your workspace, enter a name/value pair, or select **Next**.
 
-1. Review the settings you've selected and if everything is correct, select **Create** to create your workspace.
+1. Review the settings that you selected and, if everything is correct, select **Create** to create your workspace.
 
 ***
 
@@ -110,8 +110,3 @@ Deployment of your workspace may take a few minutes. The portal updates the stat
 
 > [!NOTE]
 > If you run into any issues, see [Azure Quantum common issues: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
-
-## Next steps
-
-- [Explore Microsoft Quantum](xref:microsoft.quantum.get-started.azure-quantum)
-- [Quickstart: Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)

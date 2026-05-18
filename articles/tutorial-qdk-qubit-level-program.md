@@ -31,8 +31,6 @@ In this tutorial, you learn how to:
 > This lower level view of quantum information processing is often described in terms of [**quantum circuits**](xref:microsoft.quantum.concepts.circuits), which represent the sequential application of gates, or *operations*, to specific qubits of a system. Thus, the single- and multi-qubit operations you sequentially apply can be readily represented in circuit diagrams. For example, the full three-qubit quantum Fourier transform used in this tutorial has the following representation as a circuit:
 > :::image type="content" source="./media/qft_full.png" alt-text="Diagram of a Quantum Fourier Transform circuit." :::
 
-[!INCLUDE [Copilot in Microsoft Quantum banner](includes/copilot-banner.md)]
-
 ## Prerequisites
 
 - The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
@@ -44,7 +42,7 @@ In this tutorial, you learn how to:
     pip install --upgrade "qdk[jupyter]"
     ```
 
-## Create a new Q# file
+## Create a new Q\# file
 
 1. In VS Code, open the **File** menu and choose **New Text File**.
 1. Save the file as **QFTcircuit.qs**. This file contains the Q# code for your program.
@@ -58,7 +56,7 @@ You build the operation step by step. Copy and paste the code in the following s
 
 You can view the [full Q# code](#the-complete-qft-operation) for this section as reference.
 
-### Import required Q# libraries
+### Import required Q\# libraries
 
 Inside your Q# file, import the relevant `Std.*` namespaces.
 
