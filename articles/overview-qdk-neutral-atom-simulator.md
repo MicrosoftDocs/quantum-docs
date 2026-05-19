@@ -52,7 +52,7 @@ For more information on the neutral atom device visualizer, see [How to use the 
 
 The quantum simulators in the QDK Python library use the `NoiseConfig` class from the `qdk.simulation` module to add noise models to simulations. In general, noise models can include any type of noise for any kind of operation, but only noise on neutral atom device gates have an affect on the simulation when you use `NeutralAtomDevice` or `NeutralAtomBackend`. The neutral atom simulation APIs also introduce movement instructions into the QIR, so noise from qubit movement affects simulations that you run through these APIs.
 
-For more information about noise models in the QDK, see [How to build noise models for quantum simulations in the QDK](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise).
+For more information about noise models in the QDK, see [How to build noise models for quantum simulations in the QDK Python library](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise) and [Add Pauli noise to the sparse simulator in VS Code](xref:microsoft.quantum.machines.overview.sparse-simulator#add-puali-noise-to-the-sparse-simulator-in-vs-code).
 
 ## Get started with neutral atom device simulation
 
