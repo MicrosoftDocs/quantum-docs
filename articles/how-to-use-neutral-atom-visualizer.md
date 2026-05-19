@@ -14,9 +14,9 @@ uid: microsoft.quantum.how-to.qdk-neutral-atom-visualizer
 
 # How to use the neutral atom device visualizer
 
-The Microsoft Quantum Development Kit (QDK) offers several quantum simulators, including three simulators and a visualizer for neutral atom quantum computers. The neutral atom device visualizer produces an interactive diagram where you can track how qubits move and get processed when your program runs on a basic neutral atom device. This article explains how to create and interact with neutral atom diagrams from the visualizer.
+The Microsoft Quantum Development Kit (QDK) offers several quantum simulators and a visualizer for neutral atom quantum computers. The neutral atom device visualizer produces an interactive diagram that lets you track how qubits move and get processed when your program runs on a basic neutral atom device. This article explains how to access and use the visualizer in Jupyter Notebook.
 
-For instructions on how to install the simulators and visualizer, see [How to install and use the neutral atom device simulators in the QDK](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
+For instructions on how to install the simulators and visualizer, see [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 ## How to create a neutral atom qubit diagram
 
@@ -59,11 +59,14 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
     simulator.show_trace(qir)
     ```
 
-    The neutral atom qubit diagram renders in the output cell. The visualizer doesn't include the effects of noise or qubit loss.
+    The visualizer renders in the output cell.
 
-## How to interact with the visualizer diagram
+> [!NOTE]
+> The visualizer doesn't include qubit loss or other noise.
 
-The diagram has interactive elements that let you explore a simulation of how qubits behave as your program runs on a basic neutral atom quantum computer. The diagram is a 2D grid with labeled rows and columns. Each dot in a grid position represents one neutral atom qubit on the device.
+## How to interact with the visualizer
+
+The visualizer has interactive elements that let you explore a simulation of how qubits behave as your program runs on a basic neutral atom quantum computer. The device diagram is a 2D grid with labeled rows and columns. Each dot in a grid position represents one neutral atom qubit on the device.
 
 The diagram contains three zones:
 
@@ -75,14 +78,14 @@ The diagram contains three zones:
 
 :::image type="content" source="media/neutral-atom-visualizer-zones.png" alt-text="Screenshot that shows the three zones in the neutral atom device visualizer":::
 
-### Interactive elements in the visualizer diagram
+### Interactive elements in the visualizer
 
-Use the elements at the top of the diagram to interact with the diagram and view a simulation of how your program runs. The diagram contains the following elements:
+To interact with the visualizer, use the elements at the top of the diagram. The diagram contains the following elements:
 
-1. **Play button:** Choose this button to play an animation of your program run. The animation goes through each step of the program until the program ends. During the animation, choose this button again to pause the animation on the current step. When the animation ends, choose this button again to start the animation from the beginning.
-1. **Forward and backward buttons:** Choose these buttons to go through the program one step at a time without playing the full animation.
+1. **Play button:** Select this button to play an animation of your program run. The animation goes through each step of the program until the program ends. During the animation, select this button again to pause the animation on the current step. When the animation ends, select this button again to start the animation from the beginning.
+1. **Forward and backward buttons:** Select these buttons to go through the program one step at a time without playing the full animation.
 1. **Progress slider:** This element shows the current step of the program. Move the slider to go through the program and choose a specific step. At each step, hover over a qubit to see where the qubit moved from in the previous step.
-1. **Resize buttons:** Choose the up arrow button to increase the size of the diagram, and choose the down arrow button to decrease the size of the diagram.
-1. **Information icon:** Hover over this icon to view a list of keyboard shortcuts that let you interact with the diagram. The keyboard shortcut **F** speeds up the animation and **S** slows down the animation when you choose the **Play** button.
+1. **Resize buttons:** Select the up arrow button to increase the size of the diagram, and select the down arrow button to decrease the size of the diagram.
+1. **Information icon:** Hover over this icon to view a list of keyboard shortcuts that let you interact with the diagram. The keyboard shortcut **F** speeds up the animation and **S** slows down the animation when you select the **Play** button.
 
 :::image type="content" source="media/neutral-atom-visualizer-elements.png" alt-text="Screenshot with labeled UI elements of the neutral atom device visualizer.":::

@@ -245,22 +245,22 @@ For single-qubit operations, pass a one-character Pauli string and a noise rate.
 noise.mov.set_pauli_noise('X', 0.01)
 ```
 
-For the two-qubit $CZ$ operation, pass a two-character Pauli string and a noise rate. The first character of the Pauli string corresponds to noise on the control qubit and the second character corresponds to noise on the target qubit. For example, the following code sets correlated phase flips in 1% of $CZ$ operations:
+For the two-qubit $CX$ operation, pass a two-character Pauli string and a noise rate. The first character of the Pauli string corresponds to noise on the control qubit and the second character corresponds to noise on the target qubit. For example, the following code sets correlated phase flips in 1% of $CX$ operations:
 
 ```python
 # Equivalent to: noise.cz.zz = 0.01
-noise.cz.set_pauli_noise('ZZ', 0.01)
+noise.cx.set_pauli_noise('ZZ', 0.01)
 ```
 
 ### Set depolarizing noise
 
-The `set_depolarizing` function sets equal but uncorrelated noise rates for all three types of Pauli noise. For example, the following code sets a 3% chance that Pauli noise occurs in $S_X$ operations, distributed evenly as a 1% chance for each of the three Pauli noise types:
+The `set_depolarizing` function sets equal but uncorrelated noise rates for all three types of Pauli noise. For example, the following code sets a 3% chance that Pauli noise occurs in $H$ operations, distributed evenly as a 1% chance for each of the three Pauli noise types:
 
 ```python
 # Equivalent to:
-#     noise.sx.x = 0.01
-#     noise.sx.y = 0.01
-#     noise.sx.z = 0.01
+#     noise.h.x = 0.01
+#     noise.h.y = 0.01
+#     noise.h.z = 0.01
 noise.sx.set_depolarizing(0.03)
 ```
 
