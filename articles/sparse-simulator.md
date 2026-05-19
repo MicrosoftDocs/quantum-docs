@@ -27,8 +27,8 @@ The sparse simulator is the default local simulator in the Microsoft Quantum Dev
 |In a Python program with the `qdk` library | `qsharp.run`<br>or<br>`openqasm.run`<br>or<br>`qiskit.QSharpBackend`       |
 |In a `%%qsharp` notebook cell              | Call the program entry operation, for example:<br>`Main()`                 |
 
-    ## Add Pauli noise to the sparse simulator in VS Code
-    
+## Add Pauli noise to the sparse simulator in VS Code
+
 The sparse simulator supports the addition of Pauli noise to simulations of your Q# programs with the VS Code extension. This feature allows you to simulate the effects of noise on quantum operations and measurements. To specify a noise model in your Q# program, use the `ConfigurePauliNoise` function. The function sets probabilities for Pauli operators `X`, `Y`, and `Z`, noise to occur. You can also configure global noise models in the extension settings.
 
 ### Add Pauli noise using the VS Code settings
@@ -112,7 +112,7 @@ operation GHzSample(n: Int) : Result[] {
 
 To modify or clear noise configurations at different points in your program, call `ConfigurePauliNoise` multiple times. For example, you can set 5% bit-flip noise to the Hadamard gate and then set no noise for the rest of the program.
 
-```qsharp  
+```qsharp
 operation GHzSample(n: Int) : Result[] {
     use qs = Qubit[n];
 
