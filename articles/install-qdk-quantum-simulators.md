@@ -87,9 +87,9 @@ For example, follow these steps to run the Bell pair Q# program in a Jupyter not
 1. Enter **Create: New Jupyter Notebook**. An empty notebook file opens in a new tab.
 1. In the first cell, import the `qsharp` module from the `qdk` library.
 
-```python
-from qdk import qsharp
-```
+    ```python
+    from qdk import qsharp
+    ```
 
 1. In a new cell, use the `%%qsharp` magic command to write the Q# code.
 
