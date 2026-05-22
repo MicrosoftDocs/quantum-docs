@@ -43,7 +43,7 @@ Each operation or instruction in a quantum program is a potential source of nois
 | $R_{XX}$ gate               | `rxx`                 | Two-qubit gate, analogous to $R_X$                                       |
 | $R_{YY}$ gate               | `ryy`                 | Two-qubit gate, analogous to $R_Y$                                       |
 | $R_{ZZ}$ gate               | `rzz`                 | Two-qubit gate, analogous to $R_Z$                                       |
-| $SWAP$ gate                 | `swap`                | Two-qubit gate, swaps the qubits states                                  |
+| $SWAP$ gate                 | `swap`                | Two-qubit gate, swaps the states of the qubits                           |
 | $CCX$ gate                  | `ccx`                 | Three-qubit gate, two-qubit controlled-$X$ gate                          |
 | Qubit movement              | `mov`                 | Qubit movement between device zones (for neutral atom device simulation) |
 | Qubit measurement           | `mz`                  | Single-qubit measurement in the Pauli-$Z$ basis                          |
@@ -248,23 +248,23 @@ For single-qubit operations, pass a one-character Pauli string and a noise rate.
 noise.mov.set_pauli_noise('X', 0.01)
 ```
 
-For the two-qubit $CX$ operation, pass a two-character Pauli string and a noise rate. The first character of the Pauli string corresponds to noise on the control qubit and the second character corresponds to noise on the target qubit. For example, the following code sets correlated phase flips after 1% of $CX$ operations:
+For two-qubit operations, pass a two-character Pauli string and a noise rate. The first character of the Pauli string corresponds to noise on the control qubit and the second character corresponds to noise on the target qubit. For example, the following code sets correlated phase flips after 1% of $CX$ operations:
 
 ```python
-# Equivalent to: noise.cz.zz = 0.01
+# Equivalent to: noise.cx.zz = 0.01
 noise.cx.set_pauli_noise('ZZ', 0.01)
 ```
 
 ### Set depolarizing noise
 
-The `set_depolarizing` function sets equal but uncorrelated noise rates for all three types of Pauli noise. For example, the following code sets a 3% chance that Pauli noise occurs after $H$ operations, distributed evenly as a 1% chance for each of the three Pauli noise types:
+The `set_depolarizing` function sets equal but uncorrelated noise rates for all three types of Pauli noise. For example, the following code sets a 3% chance that Pauli noise occurs after an $H$ operation, distributed evenly as a 1% chance for each of the three Pauli noise types:
 
 ```python
 # Equivalent to:
 #     noise.h.x = 0.01
 #     noise.h.y = 0.01
 #     noise.h.z = 0.01
-noise.sx.set_depolarizing(0.03)
+noise.h.set_depolarizing(0.03)
 ```
 
 ### Set bit flip noise
@@ -278,9 +278,9 @@ noise.rz.set_bitflip(0.01)
 
 ### Set phase flip noise
 
-To set the noise rate for phase flips in an operation, use the `set_phaseflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs after an $R_Z$ operation:
+To set the noise rate for phase flips in an operation, use the `set_phaseflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs after an $R_Y$ operation:
 
 ```python
-# Equivalent to: noise.rz.z = 0.01
-noise.rz.set_phaseflip(0.01)
+# Equivalent to: noise.ry.z = 0.01
+noise.ry.set_phaseflip(0.01)
 ```
