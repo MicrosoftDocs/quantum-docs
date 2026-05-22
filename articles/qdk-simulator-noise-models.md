@@ -30,7 +30,7 @@ Each operation or instruction in a quantum program is a potential source of nois
 | $H$ gate                    | `h`                   | Single-qubit Hadamard gate, creates equal superposition state            |
 | $S$ gate                    | `s`                   | Single-qubit gate, half-pi phase flip                                    |
 | $S^\dagger$ gate            | `s_adj`               | Single-qubit gate, adjoint of $S$                                        |
-| $T$ gate                    | `t`                   | Single-qubit gate, eighth-pi phase flip                                  |
+| $T$ gate                    | `t`                   | Single-qubit gate, quarter-pi phase lip                                  |
 | $T^\dagger$ gate            | `t_adj`               | Single-qubit gate, adjoint of $T$                                        |
 | $S_X$ gate                  | `sx`                  | Single-qubit gate, half bit flip                                         |
 | $S_X^\dagger$ gate          | `sx_adj`              | Single-qubit gate, adjoint of $S_X$                                      |
@@ -159,16 +159,17 @@ In neutral atom devices, lasers physically move the qubits between different zon
 
 The neutral atom device simulators in the QDK support noise from the following sources:
 
-| Noise source       | Noise model parameter | Source description                        |
-|--------------------|-----------------------|-------------------------------------------|
-| $S_X$ quantum gate | `sx`                  | Single-qubit gate, half bit flip          |
-| $R_Z$ quantum gate | `rz`                  | Single-qubit gate, general phase rotation |
-| $CZ$ quantum gate  | `cz`                  | Two-qubit gate, controlled-$Z$ phase flip |
-| Qubit movement     | `mov`                 | Qubit movement between device zones       |
+| Noise source                | Noise model parameter | Source description                            |
+|-----------------------------|-----------------------|-----------------------------------------------|
+| $S_X$ quantum gate          | `sx`                  | Single-qubit gate, half bit flip              |
+| $R_Z$ quantum gate          | `rz`                  | Single-qubit gate, general phase rotation     |
+| $CZ$ quantum gate           | `cz`                  | Two-qubit gate, controlled-$Z$ phase flip     |
+| Qubit measurement and reset | `mresetz`             | Single-qubit measurement and reset to 0 state |
+| Qubit movement              | `mov`                 | Qubit movement between device zones           |
 
-Your quantum program can contain any type of gate that the QIR target profile supports. But the neutral atom simulation APIs compile the input QIR to decompose the gates in your circuit into the three gates that exist on neutral atom devices: $S_X$, $R_Z$, and $CZ$. The APIs also add qubit movement instructions to your program. Only noise on these gates and on qubit movement affect your simulations through `NeutralAtomDevice` and `NeutralAtomBackend`.
+For these noise sources, you can configure all of the noise types that the QDK simulators support.
 
-For all three gates, you can configure any type of noise.
+Your quantum program can contain any type of gate that the QIR target profile supports. The neutral atom simulation APIs compile the input QIR to decompose the gates in your circuit into the three gates that exist on neutral atom devices: $S_X$, $R_Z$, and $CZ$. Only noise from these three gates affects your simulations through `NeutralAtomDevice` and `NeutralAtomBackend`. These APIs also support noise on `mresetz` because they convert all measurement instructions into measure-and-reset instructions.
 
 ### Build a noise model for simulations on a neutral atom quantum computer
 

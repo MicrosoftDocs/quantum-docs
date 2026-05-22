@@ -20,7 +20,7 @@ The Microsoft Quantum Development Kit (QDK) provides a set of simulation tools t
 
 Neutral atom devices are one of many current quantum computer hardware technologies. Other technologies include superconducting qubits, trapped-ion qubits, and topological qubits. Each technology has its own strengths and drawbacks. Neutral atom quantum computers offer good scalability, flexible qubit connectivity, and long coherence times, but face challenges with gate fidelity and laser control complexity.
 
-The exact qubit technology in a neutral atom device depends on the specific architecture. But in general, each qubit is a single atom with no electric charge. The qubit 0 and 1 states correspond to different energy states of the atoms. The atoms are arranged in 2D or 3D arrays on the device. Lasers trap the atoms in place and move the atoms between different zones on the device for storage, interaction with quantum gates, and measurement.
+The exact qubit technology in a neutral atom device depends on the specific architecture. But in general, each qubit is a single atom with no electric charge. The qubit 0 and 1 states correspond to different energy states of the atoms. The atoms are arranged in 2D or 3D arrays on the device. Lasers trap the atoms in place and move the atoms between different zones on the device for storage, for measurement, and for interactions that perform quantum gates.
 
 ## Neutral atom device simulation tools in the QDK
 
@@ -50,7 +50,7 @@ For more information on the neutral atom device visualizer, see [How to use the 
 
 ## Noise models for neutral atom device simulations
 
-The quantum simulators in the QDK Python library use the `NoiseConfig` class from the `qdk.simulation` module to add noise models to simulations. In general, noise models can include any type of noise for any kind of operation, but only noise on neutral atom device gates fas an effect on the simulation when you use `NeutralAtomDevice` or `NeutralAtomBackend`. The neutral atom simulation APIs also introduce movement instructions into the QIR, so noise from qubit movement affects simulations that you run through these APIs.
+The quantum simulators in the QDK Python library use the `NoiseConfig` class from the `qdk.simulation` module to add noise models to simulations. In general, noise models can include any type of noise for any kind of operation, but only noise on neutral atom device gates has an effect on the simulation when you use `NeutralAtomDevice` or `NeutralAtomBackend`. The neutral atom simulation APIs also introduce movement instructions into the QIR, so noise from qubit movement affects simulations that you run through these APIs.
 
 For more information about noise models in the QDK, see [How to build noise models for quantum simulations in the QDK Python library](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise) and [Add Pauli noise to the sparse simulator in VS Code](xref:microsoft.quantum.machines.overview.sparse-simulator#add-puali-noise-to-the-sparse-simulator-in-vs-code).
 
