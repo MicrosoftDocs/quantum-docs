@@ -108,7 +108,7 @@ operation PrepareBellPair(q1 : Qubit, q2 : Qubit) : Unit {
 }
 ```
 
-1. Create a new cell. To run the Q# program on the sparse simulator, call the `run` function from the `qsharp` module and specify a number of shots.
+1. Create a new cell. To run the Q# program on the sparse simulator, call the `run` function from the `qsharp` module and specify the number of shots.
 
 ```python
 qsharp.run("Main()", shots=10)

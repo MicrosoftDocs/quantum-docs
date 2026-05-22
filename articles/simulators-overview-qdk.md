@@ -35,7 +35,7 @@ For more information about the sparse simulator, see [The sparse simulator](xref
 
 ## The Clifford simulator
 
-The Clifford simulator is fast and efficient for quantum programs with up to thousands of qubits, but can only simulate programs that contain only Clifford gates. Clifford gates are common components of error correction circuits. The set of Clifford gates consists of the H, S, and CX gates, and all of the gates that can be constructed from those three gates. The following Clifford gates are common components of quantum circuits:
+The Clifford simulator is fast and efficient for programs with up to thousands of qubits, but can only simulate programs that contain only Clifford gates. Clifford gates are common components of error correction circuits. The set of Clifford gates consists of the H, S, and CX gates, and all of the gates that can be constructed from those three gates. The following Clifford gates are common components of quantum circuits:
 
 - $X$, $Y$, and $Z$
 - $S$ and $S^\dagger$
@@ -47,7 +47,7 @@ The Clifford simulator is available in the QDK Python library for Q#, OpenQASM, 
 
 ## The GPU simulator
 
-The GPU simulator is a full-state simulator that uses your machine's GPU to run many shots of your quantum program in parallel. This simulator can run programs that contain any type of gate, but is expensive to run. The simulator can model up to 27 qubits, with optimal performance for programs that have around 20 qubits and lots of shots. Performance is determined by the power of your machine's GPU.
+The GPU simulator is a full-state simulator that uses your machine's GPU to run many shots of your quantum program in parallel. This simulator can run programs that contain any type of gate, but is expensive to run. The simulator can model up to 27 qubits. The power of your machine's GPU determines the performance, but performance is optimal for programs that have around 20 qubits and lots of shots.
 
 The GPU simulator takes QIR or Qiskit as input, and is available through certain QDK Python library APIs, but not the VS Code extension. There is also rich support for noise models on any type of quantum gate or operation.
 
