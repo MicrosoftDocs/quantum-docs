@@ -1,22 +1,22 @@
 ---
 author: azure-quantum-content
-description: This article gives an overview of the neutral atom simulator tools in the QDK, which allow users to simulate and visualize how their quantum programs run on neutral atom quantum computers.
-ms.date: 02/09/2026
+description: This article explains how to use the neutral atom device visualizer from the QDK Python library.
+ms.date: 05/14/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
-title: How to use the neutral atom device visualizer to analyze programs on neutral atom quantum computers
+title: Visualize qubits on a neutral atom device
 uid: microsoft.quantum.how-to.qdk-neutral-atom-visualizer
-#customer intent: As a quantum chemistry researcher, I want to understand the tools that the QDK provides to simulate how my quantum programs run on a neutral atom quantum computers
+# Customer intent: As a quantum researcher or developer, I want to understand the tools that the QDK provides to simulate how my quantum programs run on a neutral atom quantum computers
 ---
 
 # How to use the neutral atom device visualizer
 
-The Microsoft Quantum Development Kit (QDK) offers several quantum simulators, including three simulators and a visualizer for neutral atom quantum computers. The neutral atom device visualizer produces an interactive diagram where you can track how qubits move and get processed when your program runs on a basic neutral atom device. This article explains how to create and interact with neutral atom diagrams from the visualizer.
+The Microsoft Quantum Development Kit (QDK) offers several quantum simulators and a visualizer for neutral atom quantum computers. The neutral atom device visualizer produces an interactive diagram that lets you track how qubits move and get processed when your program runs on a basic neutral atom device. This article explains how to access and use the visualizer in Jupyter Notebook.
 
-For instructions on how to install the simulators and visualizer, see [How to install and use the neutral atom device simulators in the QDK](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
+For instructions on how to install the simulators and visualizer, see [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 ## How to create a neutral atom qubit diagram
 
@@ -27,17 +27,13 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
 1. Import the necessary packages and objects. In the first cell, enter and run the following code:
 
     ```python
-    from qdk import init, TargetProfile
     from qdk.openqasm import compile
-    from qdk.simulation import NeutralAtomDevice, NoiseConfig
-    from qdk.widgets import Histogram
+    from qdk.simulation import NeutralAtomDevice
     ```
 
-1. Write your OpenQASM quantum circuit and compile the circuit into QIR. Copy and run the following code in a new cell:
+1. Write your OpenQASM circuit and compile the circuit into QIR. For example, the following circuit entangles two qubits:
 
     ```python
-    init(target_profile=TargetProfile.Base)
-
     qasm_src = """
     include "stdgates.inc";
     qubit[2] qs;
@@ -51,25 +47,26 @@ To create a qubit diagram with the neutral atom visualizer, follow these steps:
     qir = compile(qasm_src)
     ```
 
-    This simple circuit entangles two qubits.
-
-1. Create a simulator object. In a new cell, enter and run the following code:
+1. Create a simulator object using `NeutralAtomDevice`.
 
     ```python
     simulator = NeutralAtomDevice()
     ```
 
-1. To access the visualizer and create a neutral atom qubit diagram for your program, call the simulator's `show_trace` method and pass the QIR for your quantum program. In a new cell, enter and run the following code:
+1. To access the visualizer, call the `show_trace` method and pass the QIR for your program.
 
     ```python
     simulator.show_trace(qir)
     ```
 
-    The neutral atom qubit diagram renders in the output cell. Note that the visualizer diagrams don't include the effects of noise or qubit loss.
+    The visualizer renders in the output cell.
 
-## How to interact with the visualizer diagram
+> [!NOTE]
+> The visualizer doesn't include qubit loss or other noise.
 
-The diagram has interactive elements that let you explore a simulation of how qubits behave as your program runs on a basic neutral atom quantum computer. The diagram is a 2D grid with labeled rows and columns. Each neutral atom qubit is represented by a dot at one of the grid positions.
+## How to interact with the visualizer
+
+The visualizer has interactive elements that let you explore a simulation of how qubits behave as your program runs on a basic neutral atom quantum computer. The device diagram is a 2D grid with labeled rows and columns. Each dot in a grid position represents one neutral atom qubit on the device.
 
 The diagram contains three zones:
 
@@ -81,14 +78,14 @@ The diagram contains three zones:
 
 :::image type="content" source="media/neutral-atom-visualizer-zones.png" alt-text="Screenshot that shows the three zones in the neutral atom device visualizer":::
 
-### Interactive elements in the visualizer diagram
+### Interactive elements in the visualizer
 
-Use the elements at the top of the diagram to interact with the diagram and view a simulation of how your program runs. The diagram contains the following elements:
+To interact with the visualizer, use the elements at the top of the diagram. The diagram contains the following elements:
 
-1. **Play button:** Choose this button to play an animation of your program run. The animation goes through each step of the program until the program ends. During the animation, choose this button again to pause the animation on the current step. When the animation ends, choose this button again to start the animation from the beginning.
-1. **Forward and backward buttons:** Choose these buttons to go through the program one step at a time without playing the full animation.
+1. **Play button:** Select this button to play an animation of your program run. The animation goes through each step of the program until the program ends. During the animation, select this button again to pause the animation on the current step. When the animation ends, select this button again to start the animation from the beginning.
+1. **Forward and backward buttons:** Select these buttons to go through the program one step at a time without playing the full animation.
 1. **Progress slider:** This element shows the current step of the program. Move the slider to go through the program and choose a specific step. At each step, hover over a qubit to see where the qubit moved from in the previous step.
-1. **Resize buttons:** Choose the up arrow button to increase the size of the diagram, and choose the down arrow button to decrease the size of the diagram.
-1. **Information icon:** Hover over this icon to view a list of keyboard shortcuts that let you interact with the diagram. The keyboard shortcut **F** speeds up the animation and **S** slows down the animation when you choose the **Play** button.
+1. **Resize buttons:** Select the up arrow button to increase the size of the diagram, and select the down arrow button to decrease the size of the diagram.
+1. **Information icon:** Hover over this icon to view a list of keyboard shortcuts that let you interact with the diagram. The keyboard shortcut **F** speeds up the animation and **S** slows down the animation when you select the **Play** button.
 
 :::image type="content" source="media/neutral-atom-visualizer-elements.png" alt-text="Screenshot with labeled UI elements of the neutral atom device visualizer.":::

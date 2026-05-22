@@ -41,7 +41,7 @@ The noise settings apply to histogram results for all gates, measurements, and q
 
 For example, a histogram for the following GHz sample program without noise configured shows a result of $\ket{00000}$ for about half the measurements and $\ket{11111}$ for the other half.
 
-```qsharp  
+```qsharp
 import Std.Diagnostics.*;
 import Std.Measurement.*;
 
@@ -112,7 +112,7 @@ operation GHzSample(n: Int) : Result[] {
 
 To modify or clear noise configurations at different points in your program, call `ConfigurePauliNoise` multiple times. For example, you can set 5% bit-flip noise to the Hadamard gate and then set no noise for the rest of the program.
 
-```qsharp  
+```qsharp
 operation GHzSample(n: Int) : Result[] {
     use qs = Qubit[n];
 

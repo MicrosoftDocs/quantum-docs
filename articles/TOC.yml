@@ -140,22 +140,22 @@
     items:
     - name: Overview of QDK simulators
       href: simulators-overview-qdk.md
+    - name: Install and run the QDK quantum simulators
+      href: install-qdk-quantum-simulators.md
     - name: Sparse simulator
       href: sparse-simulator.md
+    - name: Build noise models for simulations
+      href: qdk-simulator-noise-models.md
     - name: The circuit visualizer
       href: circuit-diagrams-qdk-overview.md
     - name: The circuit editor
       href: qdk-circuit-editor.md
-    - name: Neutral atom device simulators
+    - name: Neutral atom device simulation
       items:
-      - name: Neutral atom simulator overview
+      - name: Neutral atom device simulation in the QDK
         href: overview-qdk-neutral-atom-simulator.md
-      - name: Install the neutral atom simulators
-        href: install-qdk-neutral-atom-simulators.md
       - name: How to use the neutral atom device visualizer
         href: how-to-use-neutral-atom-visualizer.md
-      - name: Build noise models for neutral atom simulations
-        href: qdk-simulator-noise-models.md
   - name: "Applications: Chemistry"
     items:
     - name: Welcome to QDK for chemistry
