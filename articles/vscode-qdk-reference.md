@@ -5,7 +5,7 @@ ms.date: 05/15/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: article
 title: QDK features in Visual Studio Code
 uid: microsoft.quantum.reference.vscode
 #customer intent: As a quantum programmer, I want to know how to access the QDK related features in VS Code.
