@@ -18,6 +18,9 @@ This article shows how to customize the target input parameters of the [Microsof
 > [!NOTE]
 > If you experience issues when you work with the resource estimator, then see the [Troubleshooting page](xref:microsoft.quantum.azure.common-issues#azure-quantum-resource-estimator).
 
+> [!WARNING]
+> The Microsoft Quantum resource estimator has been been updated and is now available through the QDK Python library in the `qdk.qre` module. The resource estimator in the QDK extension for VS Code will be deprecated. For more information about the new resource estimator, see the [QRE wiki page](https://github.com/microsoft/qdk/wiki/QREv3) and the [QRE samples](https://github.com/microsoft/qdk/tree/main/samples/qre) on the QDK GitHub repository.
+
 ## Prerequisites
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.

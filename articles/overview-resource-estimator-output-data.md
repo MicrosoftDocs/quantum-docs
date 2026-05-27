@@ -15,6 +15,9 @@ uid: microsoft.quantum.overview.resources-estimator-output.data
 
 Learn how to interpret and retrieve the output parameters and diagrams of the Microsoft Quantum resource estimator. This article explains how to programmatically access the results of the resource estimator in a Jupyter notebook in Visual Studio Code (VS Code).
 
+> [!WARNING]
+> The Microsoft Quantum resource estimator has been been updated and is now available through the QDK Python library in the `qdk.qre` module. The resource estimator in the QDK extension for VS Code will be deprecated. For more information about the new resource estimator, see the [QRE wiki page](https://github.com/microsoft/qdk/wiki/QREv3) and the [QRE samples](https://github.com/microsoft/qdk/tree/main/samples/qre) on the QDK GitHub repository.
+
 ## Prerequisites
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed (Python version 3.10 or greater).
