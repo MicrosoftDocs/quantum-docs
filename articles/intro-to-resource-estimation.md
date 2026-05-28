@@ -18,8 +18,8 @@ The Microsoft Quantum resource estimator is an [open-source](https://aka.ms/AQ/R
 
 The resource estimator calculates the total number of physical and logical qubits, the runtime, and details of the formulas and values used for each estimate. With the Microsoft Quantum resource estimator, you can compare qubit technologies, quantum error correction schemes, and other hardware characteristics to understand how they impact the resources needed to run a quantum program.
 
-> [!TIP]
-> The Microsoft Quantum resource estimator is free of charge and doesn't require an Azure account.
+> [!WARNING]
+> The Microsoft Quantum resource estimator has been been updated and is now available through the QDK Python library in the `qdk.qre` module. The resource estimator in the QDK extension for VS Code will be deprecated. For more information about the new resource estimator, see the [QRE wiki page](https://github.com/microsoft/qdk/wiki/QREv3) and the [QRE samples](https://github.com/microsoft/qdk/tree/main/samples/qre) on the QDK GitHub repository.
 
 ## What features make the resource estimator unique?
 

@@ -16,6 +16,9 @@ uid: microsoft.quantum.quickstarts.computing.resources-estimator
 
 In this quickstart, you learn how to use the Microsoft Quantum resource estimator to estimate the resources of a Q# program.  
 
+> [!WARNING]
+> The Microsoft Quantum resource estimator has been been updated and is now available through the QDK Python library in the `qdk.qre` module. The resource estimator in the QDK extension for VS Code will be deprecated. For more information about the new resource estimator, see the [QRE wiki page](https://github.com/microsoft/qdk/wiki/QREv3) and the [QRE samples](https://github.com/microsoft/qdk/tree/main/samples/qre) on the QDK GitHub repository.
+
 ## Prerequisites
 
 - The latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).

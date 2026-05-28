@@ -18,6 +18,9 @@ In this article, you learn how to work with the [Microsoft Quantum resource esti
 
 The resource estimator is available in Visual Studio Code (VS Code) as part of the Microsoft Quantum Development Kit (QDK) extension. For more information, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
 
+> [!WARNING]
+> The Microsoft Quantum resource estimator has been been updated and is now available through the QDK Python library in the `qdk.qre` module. The resource estimator in the QDK extension for VS Code will be deprecated. For more information about the new resource estimator, see the [QRE wiki page](https://github.com/microsoft/qdk/wiki/QREv3) and the [QRE samples](https://github.com/microsoft/qdk/tree/main/samples/qre) on the QDK GitHub repository.
+
 ::: zone pivot="platform-local"
 
 [!INCLUDE [local-procedure](includes/how-to-submit-resources-estimation-include-qsharp-local.md)]
