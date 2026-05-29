@@ -45,10 +45,10 @@ QDK/Chemistry comes with a suite of code samples to help get started with develo
 
 ## QDK/Chemistry core features and technologies
 
-- Robust SCF calculations and reliable automatic active space selection(LINK TO DEEP DIVE)
-- Efficient quantum circuit preparation with GF2+X sparse isometry (LINK TO DEEP DIVE)
-- Seamless integration with native QDK high-performance simulators and resource estimator
-- VS code and Python extensions for QDK/Chemistry, powered by AI-assisted coding capabilities to help you write and understand quantum workloads
+- [Robust SCF calculations and reliable automatic active space selection](xref:microsoft.quantum.overview.qdk-chem-scf-active-space)
+- [Efficient quantum circuit preparation with GF2+X sparse isometry](xref:microsoft.quantum.overview.qdk-chem-sparse-isometry)
+- Seamless integration with native QDK high-performance [simulators and resource estimator](xref:microsoft.quantum.overview.qdk-simulators)
+- VS code and Python extensions for QDK/Chemistry, [powered by AI-assisted coding capabilities](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup) to help you write and understand quantum workloads
 
 ## QDK: Mapping chemistry to a quantum computer
 
