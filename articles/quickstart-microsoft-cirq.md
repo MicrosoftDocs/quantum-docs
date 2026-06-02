@@ -66,7 +66,7 @@ service = AzureQuantumService(workspace)
 
 ### List all targets
 
-Use the `targets()`method to list all the targets in your workspace that can run your circuit, including the
+Use the `targets()` method to list all the targets in your workspace that can run your circuit, including the
 current queue time and availability.
 
 > [!NOTE]
