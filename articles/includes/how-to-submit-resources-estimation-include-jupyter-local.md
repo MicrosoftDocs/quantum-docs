@@ -557,7 +557,7 @@ The Microsoft Quantum resource estimator allows you to run multiple configuratio
     | Gate-based ns, 10⁻³ | 223            | 3.64M         | 4.70M    | 21            | 19          | 76.30 %            | 829.77k         | 26.55M  | 31 secs          |
     | Majorana ns, 10⁻⁶   | 223            | 3.64M         | 4.70M    | 5             | 19          | 63.02 %            | 79.60k          | 148.67M | 5 secs           |
 
-1. You can also construct a list of estimation parameters by using the [`EstimatorParams` class](xref:qsharp.estimator.EstimatorParams). Run the following code in a new cell:
+1. You can also construct a list of estimation parameters using the `EstimatorParams` class. Run the following code in a new cell:
 
     ```python
     from qsharp.estimator import EstimatorParams, QubitParams, QECScheme, LogicalCounts
