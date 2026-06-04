@@ -100,7 +100,7 @@ For example, expand the **Logical qubit parameter** group to see a table of valu
 | Physical qubits formula    | 2 \* `codeDistance` \* `codeDistance`                                        |
 
 > [!TIP]
-> You can also access the output of the resource estimator as a Python dictionary by using the [result.data()](xref:qsharp.estimator.EstimatorResult) method. For example, to access the physical counts, use `result.data()["physicalCounts"]`.
+> You can also access the output of the resource estimator as a Python dictionary using the `result.data()` method. For example, to access the physical counts, use `result.data()["physicalCounts"]`.
 
 #### Space diagram
 
@@ -164,7 +164,7 @@ You can pass custom values for the following target parameters:
 | `constraints`                    | The component-level constraints                          |
 | `distillationUnitSpecifications` | The specifications for T factory distillation algorithms |
 
-For more information on resource estimator parameters, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) and the `qdk.qsharp.estimator` [API reference](https://learn.microsoft.com/python/qsharp/qsharp.estimator).
+For more information on resource estimator parameters, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters).
 
 #### Change the qubit model
 
