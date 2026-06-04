@@ -164,7 +164,7 @@ You can pass custom values for the following target parameters:
 | `constraints`                    | The component-level constraints                          |
 | `distillationUnitSpecifications` | The specifications for T factory distillation algorithms |
 
-For more information on resource estimator parameters, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters) and the `qdk.qsharp.estimator` [API reference](https://learn.microsoft.com/python/qsharp/qsharp.estimator).
+For more information on resource estimator parameters, see [Target parameters](xref:microsoft.quantum.overview.resources-estimator#target-parameters).
 
 #### Change the qubit model
 
