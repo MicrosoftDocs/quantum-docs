@@ -35,6 +35,9 @@ The resource estimator for quantum-safe planning takes a set of four target para
 | Qubit error rate               | Reasonable                         |
 | Qubit error rate               | Optimistic                         |
 
+> [!WARNING]
+> The Microsoft Quantum resource estimator has been been updated and is now available through the QDK Python library in the `qdk.qre` module. The resource estimator in the QDK extension for VS Code will be deprecated. For more information about the new resource estimator, see the [QRE wiki page](https://github.com/microsoft/qdk/wiki/QREv3) and the [QRE samples](https://github.com/microsoft/qdk/tree/main/samples/qre) on the QDK GitHub repository.
+
 ## Use the resource estimator for quantum-safe planning
 
 To use the resource estimator for quantum-safe planning, go to the [Microsoft Quantum website](https://quantum.microsoft.com/tools/quantum-cryptography).
