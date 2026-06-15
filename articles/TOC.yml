@@ -172,18 +172,22 @@
         href: install-qdk-chemistry.md
       - name: How to use the molecule visualizer
         href: how-to-use-molecule-visualizer.md
-  - name: The Microsoft Quantum resource estimator
+  - name: Resource estimation
     items:
-    - name: Get started with the resource estimator
+    - name: Get started with the quantum resource estimator
       href: intro-to-resource-estimation.md
-    - name: Run your first resource estimate
-      href: quickstart-microsoft-resources-estimator.md
-    - name: Different ways to run the resource estimator
-      href: how-to-submit-re-jobs.md
-    - name: Customize the target parameters for the resource estimator
-      href: overview-resources-estimator.md
-    - name: Get the output of the resource estimator
-      href: overview-resource-estimator-output-data.md
+    - name: Install and run the resource estimator
+      href: install-run-resource-estimator.md
+    - name: Build supported application models
+      href: qre-supported-applications.md
+    - name: Build custom application models
+      href: qre-custom-applications.md
+    - name: Build hardware architecture models
+      href: qre-build-architecture-models.md
+    - name: Build error correction models
+      href: qre-build-error-correction-models.md
+    - name: Access and customize resource estimator results
+      href: qre-estimation-results.md
     - name: How to work with the resource estimator
       items:
       - name: Compare multiple configurations
@@ -234,8 +238,6 @@
       href: tutorial-qdk-grovers-search.md
     - name: Quantum Fourier Transform
       href: tutorial-qdk-qubit-level-program.md
-    - name: Double-factorized chemistry with the resource estimator
-      href: tutorial-resource-estimator-chemistry.md
 - name: Concepts in quantum computing
   items:
   - name: Vectors and matrices

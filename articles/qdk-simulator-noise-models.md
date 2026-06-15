@@ -1,15 +1,15 @@
 ---
 author: azure-quantum-content
-description: This article describes the noise models that the neutral atoms simulators support, and how to include noise in neutral atom device simulations.
+description: This article describes how to add noise models to simulations in the QDK, including for neutral atom device simulation.
 ms.date: 02/24/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, Jupyter, Python, Visual Studio Code, VS Code, "Jupyter Notebook"]
-title: How to build noise models for neutral atom device simulations
+title: How to build noise models for the QDK simulators
 uid: microsoft.quantum.how-to.neutral-atom-simulators-noise
-# Customer intent: As a quantum computing researcher, I want to know what kinds of noise models I can add to my neutral atom device simulations and how to build a noise models
+# Customer intent: As a quantum computing researcher, I want to know what kinds of noise models I can add to my quantum program simulations and how to build the noise models in the QDK
 ---
 
 # How to build noise models for quantum simulations in the QDK Python library

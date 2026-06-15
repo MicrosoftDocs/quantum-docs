@@ -284,16 +284,16 @@ When using `%%qsharp`, keep the following in mind:
 - You can't put a Python statement before or after `%%qsharp`.
 - Q# code that follows `%%qsharp` must adhere to Q# syntax. For example, use `//` instead of `#` to denote comments and `;` to end code lines.
 
-### Estimate resources
+### Estimate resource requirements
 
-Before running on real quantum hardware, you need to figure out whether your program can run on existing hardware, and how many resources it'll consume.
+Before running on real quantum hardware, you need to figure out whether your program can run on existing hardware, and how many resources the program will consume.
 
-The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.resources-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to execute a given quantum algorithm. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model.
+The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources needed to run a given quantum application. You can choose from pre-defined fault-tolerant protocols and specify assumptions of the underlying physical qubit model.
 
-For more information, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+To get started, see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
 
 > [!NOTE]
-> The Microsoft Quantum resource estimator is free of charge and doesn't require an Azure account.
+> The Microsoft Quantum resource estimator is free to use and doesn't require an Azure account.
 
 ### Run your program in simulation
 

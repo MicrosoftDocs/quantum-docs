@@ -48,13 +48,3 @@ groups:
     title: Q# in Jupyter Notebook
   - id: platform-portal-qiskit
     title: Qiskit in Azure portal
-- id: ide-local-jupyter-qiskit
-  title: Quantum programming languages
-  prompt: Select your quantum programming language
-  pivots:
-  - id: platform-local
-    title: Q# in VS Code
-  - id: platform-local-jupyter
-    title: Q# in Jupyter Notebook (Advanced)
-  - id: platform-qiskit
-    title: Qiskit in VS Code
