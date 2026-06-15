@@ -20,6 +20,9 @@ From the QEC code model and magic state factory model, you build an ISA query th
 
 For instructions on how to install and use the resource estimator in the Microsoft Quantum Development Kit (QDK), see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
 
+> [!WARNING]
+> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
+
 ## Build ISA queries from the default QEC code and magic state factory models
 
 The quantum resource estimator includes four default QEC code models and three default magic state factory models.

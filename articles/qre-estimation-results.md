@@ -20,6 +20,9 @@ This article shows how to access and analyze results from the resource estimator
 
 For instructions on how to install and use the resource estimator, see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
 
+> [!WARNING]
+> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
+
 ## Run the resource estimator
 
 To run the resource estimator and work with the estimation results, build an application model, a hardware architecture model, and an error correction model. Then, pass the models to the resource estimator and run an estimate for a given maximum error rate.

@@ -18,8 +18,8 @@ The Microsoft Quantum resource estimator takes one or more quantum programs as i
 
 For instructions on how to install and use the resource estimator in the Microsoft Quantum Development Kit (QDK), see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
 
-> [!NOTE]
-> You can also build custom application models in the quantum resource estimator. For more information, see [How to build custom application models in the quantum resource estimator](xref:microsoft.quantum.how-to.build-custom-applications-qre).
+> [!WARNING]
+> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
 
 ## Build application models for supported frameworks
 

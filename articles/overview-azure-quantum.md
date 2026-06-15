@@ -80,7 +80,7 @@ The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro
 
 To get started, see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
 
-:::image type="content" source="media/quantum-resource-estimator-overview.png" alt-text="Diagram that shows how the resource estimator calculates estimates from an application model and a hardware architecture model. The application model generates application traces, the architecture model generates ISA transforms, and the resource estimator explores all combinations of application trace and ISA transform. The result is a Pareto Frontier plot with the optimal points for resource efficiency.":::
+:::image type="content" source="media/quantum-resource-estimator-overview.png" alt-text="Diagram that shows how the resource estimator calculates estimates from an application model and a hardware architecture model. The application model generates application traces, the architecture model generates instruction sets (ISAs), and the resource estimator explores all combinations of application traces and ISAs. The result is a Pareto Frontier plot with the optimal points for resource efficiency.":::
 
 ### Quantum chemistry simulations with Azure Quantum and the QDK
 
