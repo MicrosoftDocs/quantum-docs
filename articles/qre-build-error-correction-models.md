@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to build error correction models with custom QEC codes and magic state factory models in the quantum resource estimator.
 ms.author: quantumdocwriters
-ms.date: 05/28/2026
+ms.date: 06/15/2026
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: how-to

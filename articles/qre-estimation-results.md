@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: This article explains how to access results from the quantum resource estimator, and how to customize the kinds of results that the resource estimator produces.
-ms.date: 02/13/2026
+ms.date: 06/15/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk

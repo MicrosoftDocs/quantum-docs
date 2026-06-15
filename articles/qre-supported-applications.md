@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to build application models for the quantum resource estimator for the supported quantum programming frameworks.
 ms.author: quantumdocwriters
-ms.date: 05/26/2026
+ms.date: 06/15/2026
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: how-to
