@@ -167,68 +167,6 @@ This pop-up happens because your security token gets reset each time you run the
 
 To resolve this issue, run `az login` from the Azure CLI. For more information, see [az login](/cli/azure/reference-index#az-login()).
 
-## Microsoft Quantum resource estimator issues
-
-The following issues might cause resource estimation jobs to fail.
-
-### Issue: Quantum algorithm must contain at least one T state or measurement
-
-To account for mapping an arbitrary quantum program to a 2D array of logical qubits, the resource estimator assumes that Parallel Synthesis Sequential Pauli Computation (PSSPC) is performed on the input program. In that approach, all Clifford operations are commuted through all T gates, rotation gates, and measurement operations, leaving a single Clifford operation that can be efficiently evaluated classically. Therefore, a quantum program that does not contain T states, for example from T gates or rotation gates, or measurement operations does not require any physical quantum computing resources. For more information about Parallel Synthesis Sequential Pauli Computation, see [arXiv:2211.07629, Appendix D](https://arxiv.org/pdf/2211.07629.pdf#page=25).
-
-```output
-Error message: Algorithm requires at least one T state or measurement to estimate resources
-```
-
-### Issue: Physical T gate error rate is too high
-
-The logical T state error rate depends on the error budget and the number of T states in the quantum program. [T factories](xref:microsoft.quantum.concepts.tfactories) are used to create T states with the required logical T state error rate from physical T gates, which have a physical T gate error rate. Typically, the physical T gate error rate is higher than the required logical T gate error rate. In some scenarios, the
-physical T gate error rate is significantly higher compared to the required logical T state error rate, such that no T factory can be found that can produce logical T states of sufficient quality.
-
-```output
-Error message: No T factory can be found, because the required logical T state error rate is too low
-```
-
-To resolve this issue, do one of the following:
-
-- Increase the error budget, either the total or the part for T states.
-- Reduce the physical T gate error rate in the qubit parameters.
-- Reduce the number of T states in the quantum program by reducing T gates, rotation gates, and Toffoli gates.
-
-### Issue: Physical T gate error rate is too low
-
-When the physical T gate error rate is lower than the required logical T state error rate, you don't need a T factory because the physical T gate error rate is sufficient. However, you still need to consider the impact of transfer units that transfer the physical T states from code distance 1 to the code distance of the algorithm (see [arXiv:2211.07629, Appendix C](https://arxiv.org/pdf/2211.07629.pdf#page=21)). In general, in the presence of T factories, the cost of transfer units is negligible.
-
-```output
-Error message: No T factory can be found, because the required logical T state error rate is too high; transfer units are necessary to perform a resource estimation accurately. One possibility to circumvent this problem is to increase the physical T gate error rate of the qubit parameters.
-```
-
-To resolve this issue, do one of the following:
-
-- Increase the physical T gate error rate in the qubit parameters to the required logical T state error rate.
-- Reduce the error budget or just the part for the T states.
-
-### Issue: Error rate must be a number between 0 and 1
-
-Error rates can only have a value between 0 and 1. For error correction to be effective, the physical error rate for gates and measurements must be below a value that depends on the properties of the error correction code and the required logical error rate.
-
-To resolve this issue, do one of the following:
-
-- Increase the error budget, either total or the part for logical errors.
-- Reduce the physical error rates in the qubit parameters.
-
-### Issue: Constraints maximum runtime and maximum number of physical qubits are mutually exclusive
-
-The resource estimator accepts only one of [`maxDuration`](xref:qsharp.estimator.EstimatorConstraints) or [`maxPhysicalQubits`](xref:qsharp.estimator.EstimatorConstraints) constraints. If you provide both `maxDuration` and `maxPhysicalQubits`constraints for a single job, then the job returns the `BothDurationAndPhysicalQubitsProvided` error.
-
-### Issue: Run QIR estimate counts container: undefined symbol __quantum__rt__result_record_output
-
-You get this error when you generate QIR for Qiskit circuits with the `qiskit_qir` Python package and you don't set the `record_output` parameter to `False`.
-
-To avoid this error, do one of the following:
-
-- Use the `qdk.azure` Python module to submit Qiskit circuits to Azure Quantum (recommended).
-- When you use the `qiskit_qir` Python package, set the `record_output` parameter to `False` before you submit your circuit.
-
 ## Azure Quantum workspace creation issues
 
 You might experience the following issues when you create a Quantum workspace in the Azure portal.

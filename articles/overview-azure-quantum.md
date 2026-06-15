@@ -76,11 +76,11 @@ For more information, see [What is hybrid quantum computing?](xref:microsoft.qua
 
 In quantum computing, resource estimation is a technique to understand the resources that are required to run an algorithm on a quantum computer. When you understand the resource requirements to run your programs on different types of quantum hardware, you can prepare and refine your quantum solutions to run on future scaled quantum machines. For example, resource estimation can help you determine the feasibility of breaking a particular encryption algorithm on a specific type of quantum computer.
 
-The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources that you need to run a specific quantum algorithm. You can choose from pre-defined fault-tolerant protocols, or set your own estimation parameters. The resource estimator computes post-layout physical resource estimates from a set of inputs such as qubit parameters, the quantum error correction (QEC) code, the error budget, and [other parameters](xref:microsoft.quantum.overview.resources-estimator).
+The [Microsoft Quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator) allows you to assess architectural decisions, compare qubit technologies, and determine the resources that you need to run a specific quantum algorithm. You can choose from pre-defined fault-tolerant protocols, or design your own models. The resource estimator computes post-layout physical resource estimates from a set of inputs such as the error budget and models of the quantum application, the hardware architecture, and the quantum error correction (QEC) code.
 
-To get started, see [Run your first resource estimate](xref:microsoft.quantum.quickstarts.computing.resources-estimator).
+To get started, see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
 
-:::image type="content" source="media/Resource-Estimation-component-overview.png" alt-text="Diagram showing components provided by resource estimator and corresponding customizations.":::
+:::image type="content" source="media/quantum-resource-estimator-overview.png" alt-text="Diagram that shows how the resource estimator calculates estimates from an application model and a hardware architecture model. The application model generates application traces, the architecture model generates ISA transforms, and the resource estimator explores all combinations of application trace and ISA transform. The result is a Pareto Frontier plot with the optimal points for resource efficiency.":::
 
 ### Quantum chemistry simulations with Azure Quantum and the QDK
 
