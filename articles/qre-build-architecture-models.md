@@ -16,8 +16,6 @@ uid: microsoft.quantum.how-to.build-architectures-qre
 
 The Microsoft Quantum resource estimator takes a hardware architecture model as one of its inputs to estimate the resources needed to run a program on a quantum computer. The architecture model describes the physical hardware characteristics of the computer. The resource estimator includes default hardware models and lets you build custom models.
 
-For instructions on how to install and use the resource estimator in the Microsoft Quantum Development Kit (QDK), see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
-
 ## Default architecture models
 
 The quantum resource estimator provides three default architecture models:

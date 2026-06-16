@@ -18,8 +18,6 @@ The Microsoft Quantum resource estimator takes a quantum error correction (QEC) 
 
 From the QEC code model and magic state factory model, you build an ISA query that you pass to the resource estimator. The ISA query defines the combinations of QEC codes and magic state factories that the resource estimator explores. Each combination of QEC code and magic state factory determines how the resource estimator converts the physical ISA into a logical ISA. In this article, you learn how to build ISA queries from the default QEC code models and default magic state factory models, and how to build your own custom models.
 
-For instructions on how to install and use the resource estimator in the Microsoft Quantum Development Kit (QDK), see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
-
 ## Build ISA queries from the default QEC code and magic state factory models
 
 The quantum resource estimator includes four default QEC code models and three default magic state factory models.

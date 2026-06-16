@@ -16,8 +16,6 @@ uid: microsoft.quantum.how-to.build-custom-applications-qre
 
 The Microsoft Quantum resource estimator has default application support for several quantum programming frameworks, such as Q# and Cirq. The parameters for these supported application types are predefined by the resource estimator. The resource estimator also lets you build custom applications for when you need finer control over the application parameters.
 
-For instructions on how to install and use the resource estimator in the Microsoft Quantum Development Kit (QDK), see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
-
 ## Custom application model parameters
 
 To build your own applications, use the `Application` subclass. Custom application models consist of two types of parameters:
