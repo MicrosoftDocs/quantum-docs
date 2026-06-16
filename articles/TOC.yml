@@ -188,16 +188,6 @@
       href: qre-build-error-correction-models.md
     - name: Access and customize resource estimator results
       href: qre-estimation-results.md
-    - name: How to work with the resource estimator
-      items:
-      - name: Compare multiple configurations
-        href: resource-estimator-batching.md
-      - name: Use known estimates
-        href: resource-estimator-known-estimates.md
-      - name: Optimize large programs
-        href: resource-estimator-handle-large-programs.md
-      - name: Analyze cryptographic protocols 
-        href: resource-estimator-quantum-safe-planning.md
   - name: Integration with Azure Quantum
     items:
     - name: Submit a circuit in provider-specific format
