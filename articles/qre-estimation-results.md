@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: This article explains how to access results from the quantum resource estimator, and how to customize the kinds of results that the resource estimator produces.
-ms.date: 06/15/2026
+ms.date: 02/13/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -19,9 +19,6 @@ The quantum resource estimator in the Microsoft Quantum Development Kit (QDK) pr
 This article shows how to access and analyze results from the resource estimator, and how to customize the results. The code examples are meant to be run in a Jupyter notebook in the order they appear in the article.
 
 For instructions on how to install and use the resource estimator, see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
-
-> [!WARNING]
-> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
 
 ## Run the resource estimator
 

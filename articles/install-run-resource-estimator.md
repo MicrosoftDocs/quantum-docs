@@ -16,9 +16,6 @@ uid: microsoft.quantum.quickstart.install-use-qre
 
 The Microsoft Quantum resource estimator is part of the Microsoft Quantum Development Kit (QDK). In this article, you learn how to install the quantum resource estimator and run an estimation for a simple Q# program with a default architecture model.
 
-> [!WARNING]
-> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
-
 ## Prerequisites
 
 To follow the steps in this article, you need to have the following installed:

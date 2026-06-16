@@ -65,5 +65,3 @@ The resource estimator allows you to estimate the resources needed to run the sa
 ## Get started with the resource estimator
 
 To get started, see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
-
-For more information and examples, see the [quantum resource estimator samples in the QDK repository on GitHub](https://github.com/microsoft/qdk/tree/main/samples/qre).

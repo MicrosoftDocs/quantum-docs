@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to build error correction models with custom QEC codes and magic state factory models in the quantum resource estimator.
 ms.author: quantumdocwriters
-ms.date: 06/15/2026
+ms.date: 05/28/2026
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: how-to
@@ -17,11 +17,6 @@ uid: microsoft.quantum.how-to.build-error-correction-models-qre
 The Microsoft Quantum resource estimator takes a quantum error correction (QEC) code transform and magic state factory transform model as one of its core inputs. The QEC and factory transforms determine how the physical instruction set (ISA) from the hardware architecture model converts to a logical instruction set for error correction.
 
 From the QEC code model and magic state factory model, you build an ISA query that you pass to the resource estimator. The ISA query defines the combinations of QEC codes and magic state factories that the resource estimator explores. Each combination of QEC code and magic state factory determines how the resource estimator converts the physical ISA into a logical ISA. In this article, you learn how to build ISA queries from the default QEC code models and default magic state factory models, and how to build your own custom models.
-
-For instructions on how to install and use the resource estimator in the Microsoft Quantum Development Kit (QDK), see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
-
-> [!WARNING]
-> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
 
 ## Build ISA queries from the default QEC code and magic state factory models
 
