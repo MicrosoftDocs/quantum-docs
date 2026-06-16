@@ -1185,7 +1185,51 @@
 			"source_path": "articles/get-started-azure-quantum.md",
 			"redirect_url": "/azure/quantum/",
 			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/quickstart-microsoft-resources-estimator.md",
+			"redirect_url": "/azure/quantum/install-run-resource-estimator",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/overview-resource-estimator-output-data.md",
+			"redirect_url": "/azure/quantum/qre-estimation-results",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/how-to-submit-re-jobs.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/overview-resources-estimator.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/resource-estimator-batching.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/resource-estimator-known-estimates.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/resource-estimator-handle-large-programs.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/resource-estimator-quantum-safe-planning.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
+		},
+		{
+			"source_path": "articles/tutorial-resource-estimator-chemistry.md",
+			"redirect_url": "/azure/quantum/intro-to-resource-estimation",
+			"redirect_document_id": false
 		}
 	]
 }
-
