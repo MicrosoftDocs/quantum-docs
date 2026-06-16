@@ -409,4 +409,4 @@ To run estimates with your custom models, pass `custom_query` to the `estimate` 
 
 - [How to build custom application models in the quantum resource estimator](xref:microsoft.quantum.how-to.build-custom-applications-qre)
 - [How to build hardware architecture models in the quantum resource estimator](xref:microsoft.quantum.how-to.build-architectures-qre)
-- Work with estimation results
+- [How to work with results from the quantum resource estimator](xref:microsoft.quantum.how-to.access-customize-results-qre)
