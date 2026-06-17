@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to build hardware architecture models for the quantum resource estimator.
 ms.author: quantumdocwriters
-ms.date: 05/28/2026
+ms.date: 06/17/2026
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: how-to
@@ -15,6 +15,9 @@ uid: microsoft.quantum.how-to.build-architectures-qre
 # How to build hardware architecture models in the quantum resource estimator
 
 The Microsoft Quantum resource estimator takes a hardware architecture model as one of its inputs to estimate the resources needed to run a program on a quantum computer. The architecture model describes the physical hardware characteristics of the computer. The resource estimator includes default hardware models and lets you build custom models.
+
+> [!WARNING]
+> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
 
 ## Default architecture models
 
