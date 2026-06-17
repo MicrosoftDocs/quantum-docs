@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to build custom application models for the quantum resource estimator.
 ms.author: quantumdocwriters
-ms.date: 05/26/2026
+ms.date: 06/17/2026
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: how-to
@@ -15,6 +15,9 @@ uid: microsoft.quantum.how-to.build-custom-applications-qre
 # How to build custom application models in the quantum resource estimator
 
 The Microsoft Quantum resource estimator has default application support for several quantum programming frameworks, such as Q# and Cirq. The parameters for these supported application types are predefined by the resource estimator. The resource estimator also lets you build custom applications for when you need finer control over the application parameters.
+
+> [!WARNING]
+> The resource estimator in the QDK extension for VS Code will be deprecated soon. Use the `qdk.qre` Python module to perform resource estimation.
 
 ## Custom application model parameters
 

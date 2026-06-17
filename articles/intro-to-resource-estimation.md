@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn about the resource estimator, an open-source tool that allows you to estimate the resources needed to run a quantum program on a quantum computer.
 ms.author: quantumdocwriters
-ms.date: 05/22/2026
+ms.date: 06/17/2026
 ms.service: azure-quantum
 ms.subservice: computing
 ms.topic: overview
@@ -65,3 +65,5 @@ The resource estimator allows you to estimate the resources needed to run the sa
 ## Get started with the resource estimator
 
 To get started, see [How to install and use the Microsoft Quantum resource estimator](xref:microsoft.quantum.quickstart.install-use-qre).
+
+For more information and code samples, see the [quantum resource estimator samples in the QDK repository on GitHub](https://github.com/microsoft/qdk/tree/main/samples/qre).
