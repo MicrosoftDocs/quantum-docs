@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: This document explains how to run OpenQASM programs in the Microsoft Quantum Development Kit in VS Code and Jupyter Notebook
 ms.author: quantumdocwriters
-ms.date: 04/09/2026
+ms.date: 06/17/2026
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
@@ -15,12 +15,14 @@ uid: microsoft.quantum.how-to.openqasm-development-qdk
 
 # Develop OpenQASM programs in the Microsoft Quantum Development Kit
 
-The Microsoft Quantum Development Kit (QDK) provides different development environments for OpenQASM programs with Azure Quantum integration. In this article, you learn how to develop and run OpenQASM code in the following QDK environments:
+The Microsoft Quantum Development Kit (QDK) provides different development environments for OpenQASM programs with Azure Quantum integration. In this article, you learn how to develop and run OpenQASM code in:
 
 - The QDK extension in Visual Studio Code (VS Code)
 - The QDK Python library in Jupyter Notebook.
 
-### Prerequisites
+Developer tools like CodeLends, IntelliSense, code completion, and breakpoint debugging are available only in the VS Code extension. Other features are available only in the Python library. For example, you can pass Q# and OpenQASM callables as Python objects, and compile OpenQASM programs that take inputs into QIR.
+
+## Prerequisites
 
 - Install the latest version of [VS Code](https://code.visualstudio.com/download)
 - To work directly with OpenQASM files, install the latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) in VS Code.
@@ -49,10 +51,10 @@ To run your OpenQASM program from VS Code, you can use either the QDK's local si
 
 ### Run your code on the QDK local simulator
 
-To run your OpenQASM code on the local quantum simulator in VS Code, open a `.qasm` file and then select the **Run** command from the code lens at the beginning of the file. The output from your program is displayed in the VS Code terminal.
+To run your OpenQASM code on the local sparse quantum simulator in VS Code, open a `.qasm` file and then select the **Run** command from the code lens at the beginning of the file. The output from your program displays in the VS Code terminal.
 
 > [!NOTE]
-> If you don't choose an appropriate QIR target profile for your program, then you get compiler errors when you run your OpenQASM code. For more information about target profiles, see [Different types of target profiles in Azure Quantum](xref:microsoft.quantum.target-profiles).
+> The QDK automatically attempts to set a QIR target profile that supports your program. If the QIR target profile doesn't support operations in your program, you get compiler errors when you run your OpenQASM code. For more information about target profiles, see [Different types of target profiles in Azure Quantum](xref:microsoft.quantum.target-profiles).
 
 #### Built-in sample programs
 
@@ -68,7 +70,20 @@ In debug mode, you can set breakpoints in your code to help you debug. The state
 
 ### Run your code on Azure Quantum
 
-For instructions on how to submit a job to Azure Quantum from VS Code, see [Connect to Azure Quantum and submit your job](xref:microsoft.quantum.submit-jobs#connect-to-azure-quantum-and-submit-your-job).
+To run OpenQASM programs on Azure Quantum targets, you need to have an Azure Quantum workspace. To create an Azure Quantum workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+
+To submit OpenQASM jobs to Azure Quantum from VS Code, you need to connect to your Azure Quantum workspace. To connect to your workspace from VS Code, see [Connect with a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
+
+To submit an OpenQASM job to Azure Quantum from VS Code, follow these steps:
+
+1. Open the `qasm` file that contains your program in VS Code.
+1. Select the **Microsoft Quantum** icon to open the Microsoft Quantum panel.
+1. Expand the **QUANTUM WORKSPACES** dropdown and select your workspace.
+1. Expand the **Providers** dropdown and choose a provider, and then choose the target that you want to run your job on. For example, submit your job to the `rigetti.svm.sim` target to run your program on Rigetti's backend simulator. For more information on provider and target availability, see [Add or remove a provider in an existing workspace](xref:microsoft.quantum.add-provider).
+1. Select the play icon next to the target name.
+1. To submit the job, enter values for the **Job name** prompt and the **Number of shots** prompt.
+
+To view the times and status of a job, expand the **Jobs** dropdown and hover over the job name. To download the job results, select the histogram or text icons next to the job name.
 
 ## Work with OpenQASM in Python and Jupyter Notebook
 
@@ -79,12 +94,8 @@ With the QDK Python library, you can run OpenQASM code directly and pass OpenQAS
 To run OpenQASM code directly, use the `run` function from the `qdk.openqasm` module. For example, the following code runs 10 shots on the local simulator of a simple OpenQASM program with noise:
 
 ```python
-from qdk import BitFlipNoise, TargetProfile
+from qdk import BitFlipNoise
 from qdk.openqasm import run
-from qdk import qsharp
-
-# Set the QIR target profile
-qsharp.init(target_profile=TargetProfile.Base)
 
 qasm_code = """
     include "stdgates.inc";
@@ -104,12 +115,8 @@ print(results)
 You can use the `import_openqasm` function to store an OpenQASM program as a Python object and then call that object later in your Python code. For example, the following cell stores an OpenQASM circuit in a Python object called `bell`:
 
 ```python
-from qdk import TargetProfile
-from qdk.openqasm import import_openqasm
 from qdk import qsharp
-
-# Set the QIR target profile
-qsharp.init(target_profile=TargetProfile.Base)
+from qdk.openqasm import import_openqasm
 
 qasm_code = """
     include "stdgates.inc";
@@ -139,11 +146,7 @@ You can also use the QDK package functionality with `bell`, such as noisy simula
 The following cell creates an OpenQASM circuit that takes an angle `theta` as input, then calls the circuit as a Python function:
 
 ```python
-from qdk import TargetProfile
 from qdk.openqasm import import_openqasm, ProgramType
-from qdk import qsharp
-
-qsharp.init(target_profile=TargetProfile.Base)
 
 qasm_code = """
     include "stdgates.inc";
@@ -157,7 +160,7 @@ qasm_code = """
 
 import_openqasm(qasm_code, name="parameterized_circuit", program_type=ProgramType.File)
 
-from qsharp.code.qasm_import import parameterized_circuit
+from qdk.code.qasm_import import parameterized_circuit
 
 parameterized_circuit(1.57)
 ```
@@ -167,12 +170,8 @@ parameterized_circuit(1.57)
 With the QDK Python library, you can directly pass an OpenQASM program to a Q# program. For example, the following code creates an OpenQASM program called `Entangle` and then uses `Entangle` as an operation in a Q# program:
 
 ```python
-from qdk import TargetProfile
 from qdk.openqasm import import_openqasm
 from qdk import qsharp
-
-# Set the QIR target profile
-qsharp.init(target_profile=TargetProfile.Base)
 
 qasm_code = """
     include "stdgates.inc";
@@ -198,7 +197,7 @@ qsharp.eval("""
     }
     """)
 
-from qsharp.code import Entangle, TestAntiCorrelation
+from qdk.code import Entangle, TestAntiCorrelation
 
 TestAntiCorrelation(Entangle)
 ```
@@ -228,28 +227,54 @@ qasm_code = """
 
 import_openqasm(qasm_code, name="parameterized_circuit", program_type=ProgramType.File)
 
-from qsharp.code.qasm_import import parameterized_circuit
+from qdk.code.qasm_import import parameterized_circuit
 
 bound_compilation = qsharp.compile(parameterized_circuit, 1.57)
 print(bound_compilation)
 ```
 
 > [!NOTE]
-> You need to use the QDK Python library to compile OpenQASM programs that take input variables into QIR. You can't compile parameterized OpenQASM programs into QIR using the QDK extension in VS Code.
+> To compile OpenQASM programs that take input variables into QIR, you need to use the QDK Python library. You can't compile parameterized OpenQASM programs into QIR using the QDK extension in VS Code.
+
+### Submit OpenQASM programs to Azure Quantum
+
+To submit an OpenQASM program to run on an Azure Quantum target, compile the OpenQASM code into QIR and then submit the QIR to run on Azure Quantum.
+
+For example, compile a simple entanglement circuit into QIR.
+
+```python
+from qdk.openqasm import compile
+
+qasm_code = """
+    include "stdgates.inc";
+    bit[2] c;
+    qubit[2] q;
+    h q[0];
+    cx q[0], q[1];
+    c = measure q;
+"""
+
+qir_compilation = compile(qasm_code)
+```
+
+To run a QIR job to Azure Quantum, connect to your quantum workspace and submit the job to one of the available targets in your workspace. For example, submit the entanglement QIR to run on the IonQ backend simulator.
+
+```python
+from qdk.azure import Workspace 
+
+workspace = Workspace(resource_id="") # Add the resource ID of your workspace
+
+target = workspace.get_targets('ionq.simulator')
+job = target.submit(qir_compilation, shots=100)
+
+print("Job submitted. Waiting for results...")
+
+results = job.get_results()
+print(results)
+```
 
 ## Ongoing OpenQASM development in the QDK
 
 Support for OpenQASM in the QDK is ongoing.
 
 For a list of OpenQASM features that are under development in the QDK, see [Known limitations and issues](https://github.com/microsoft/qdk/wiki/OpenQASM#known-limitations-and-issues) on the QDK GitHub repository wiki.
-
-## Summary
-
-The QDK offers two options to develop and run OpenQASM programs:
-
-- Work directly with `.qasm` files using the QDK extension in VS Code
-- Write OpenQASM programs as Python strings and import the programs using the QDK Python library
-
-Developer tools like CodeLends, IntelliSense, code completion, and breakpoint debugging are available only in the VS Code extension.
-
-Only the Python library allows you to pass Q# and OpenQASM callables as Python objects, and to compile OpenQASM programs that take input variables into QIR.
