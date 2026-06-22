@@ -2,14 +2,13 @@
 author: azure-quantum-content
 description: This document explains how to run OpenQASM programs in the Microsoft Quantum Development Kit in VS Code and Jupyter Notebook
 ms.author: quantumdocwriters
-ms.date: 06/17/2026
+ms.date: 06/22/2026
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
 no-loc: [target, targets, OpenQASM, "Microsoft Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", ".qasm"]
 title: How to run OpenQASM programs in with Microsoft Quantum Development Kit
 uid: microsoft.quantum.how-to.openqasm-development-qdk
-
 # Customer intent: I want to write and run OpenQASM code in the Microsoft Quantum Development Kit
 ---
 
