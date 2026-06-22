@@ -64,7 +64,7 @@ The VS Code terminal shows the output from the simulation.
 > [!NOTE]
 > You can add limited noise models to sparse simulations of Q# programs in the QDK extension. For more information, see [Add Pauli noise to the sparse simulator in VS Code](xref:microsoft.quantum.machines.overview.sparse-simulator#add-pauli-noise-to-the-sparse-simulator-in-vs-code).
 
-### Run simulations using the QDK Python library
+## Run simulations using the QDK Python library
 
 The QDK Python library offers all four simulators. How to call the simulators depends on the simulator and the quantum programming framework.
 
