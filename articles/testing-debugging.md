@@ -1,18 +1,18 @@
 ---
 title: How to Debug and Test Quantum Programs in Azure Quantum
-description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs. 
+description: Learn how to use unit tests, facts and assertions, and dump functions to test and debug quantum programs in the QDK.
 author: azure-quantum-content
 ms.author: quantumdocwriters
-ms.date: 10/09/2025
+ms.date: 06/22/2026
 ms.service: azure-quantum
 ms.subservice: qsharp-guide
 ms.topic: how-to
 uid: microsoft.quantum.user-guide-qdk.overview.testingdebugging
 no-loc: ["Q#", '$$v', Microsoft Quantum Development Kit, target, targets]
-#customer intent: As a quantum developer, I want to understand how to debug and test my quantum programs
+# Customer intent: As a quantum developer, I want to understand how to debug and test my quantum programs in the QDK.
 ---
 
-# How to debug and test your quantum code
+# How to debug and test your quantum code in the QDK
 
 Testing and debugging are just as important in quantum programming as they are in classical programming. This article discusses how to debug and test your quantum programs with the Microsoft Quantum Development Kit (QDK) in Visual Studio Code (VS Code) and Jupyter Notebook.
 
@@ -188,7 +188,7 @@ The following example runs the same program as the previous `DumpMachine` exampl
 
 ### The `dump_operation` function
 
-The `dump_operation` function is a function from the `qsharp.utils` Python package. This function takes two inputs: a Q# operation or operation definition as a string and the number of qubits that are used in the operation. The output from `dump_operation` is a nested list that represents the square matrix of complex numbers that corresponds to the given quantum operation. The matrix values are in the computational basis, and each sublist represents a row of the matrix.
+The `dump_operation` function is available in the `qdk.qsharp` Python module. This function takes two inputs: a Q# operation or operation definition as a string and the number of qubits that are used in the operation. The output from `dump_operation` is a nested list that represents the square matrix of complex numbers that corresponds to the given quantum operation. The matrix values are in the computational basis, and each sublist represents a row of the matrix.
 
 The following example uses `dump_operation` to display information for a 1-qubit and 2-qubit system.
 
@@ -197,8 +197,7 @@ The following example uses `dump_operation` to display information for a 1-qubit
 1. In the first cell, copy and run the following code:
 
    ```python
-   from qdk import qsharp
-   from qsharp.utils import dump_operation
+   from qdk.qsharp import dump_operation
    ```
 
 1. To display the matrix elements of a single-qubit gate, call `dump_operation` and pass 1 for the number of qubits. For example, copy and run the following Python code in a new code cell to get the matrix elements for an identity gate and a Hadamard gate:
