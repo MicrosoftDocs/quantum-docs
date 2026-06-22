@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to submit Qiskit quantum circuits to the Azure Quantum service.
 ms.author: quantumdocwriters
-ms.date: 10/17/2025
+ms.date: 06/22/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -10,6 +10,7 @@ no-loc: ['Python', '$$v', target, targets]
 title: How to submit Qiskit programs to Azure Quantum with the QDK
 zone_pivot_groups: ide-local-simulator
 uid: microsoft.quantum.quickstarts.computing.qiskit
+# Customer intent: As a quantum developer, I want to learn how to submit Qiskit circuits to run on Azure quantum targets.
 --- 
 
 # How to submit Qiskit programs to Azure Quantum with the QDK
@@ -19,7 +20,7 @@ You can submit Qiskit programs to run on Azure Quantum targets with the Microsof
 In this article, you learn how to run Qiskit programs with the QDK Python library from a Jupyter Notebook in Visual Studio Code (VS Code).
 
 > [!NOTE]
-> It's a best practice to run your quantum program on a simulator target before you submit a job to run on a quantum computer target. Each Azure Quantum provider offers one or more free simulator targets.
+> It's a best practice to run your quantum program on a simulator target before you submit a job to run on a quantum computer. Each Azure Quantum provider offers one or more free simulator targets.
 
 ## Prerequisites
 

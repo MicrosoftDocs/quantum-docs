@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Learn how to visually represent Q# and OpenQASM quantum algorithms with circuit diagrams in VS Code, Python, and Jupyter Notebook.
-ms.date: 12/08/2025
+ms.date: 06/22/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -9,7 +9,7 @@ ms.topic: how-to
 no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "azure-quantum", "qdk[jupyter]", "Jupyter", "Jupyter Notebook"]
 title: Visualize Quantum Circuits with the QDK
 uid: microsoft.quantum.how-to.visualize-circuits
-#customer intent: As a quantum programmer, I want to visually represent my quantum algorithms as circuit diagrams.
+# Customer intent: As a quantum programmer, I want to know how to use the QDK to visualize my quantum circuits.
 ---
 
 # How to visualize quantum circuit diagrams with the QDK
@@ -33,7 +33,7 @@ To create circuit diagrams from Python programs in Jupyter Notebook, install the
 - The latest version of the `qdk` Python library with the `jupyter` extra.
 
     ```bash
-    python -m pip install --upgrade "qdk[jupyter]"
+    pip install --upgrade "qdk[jupyter]"
     ```
 
 ## Visualize quantum circuits in VS Code
@@ -78,7 +78,7 @@ To view a circuit diagram for a Q# program in Jupyter Notebook, follow these ste
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
 1. Enter **Create: New Jupyter Notebook**. An empty Jupyter Notebook file opens in a new tab.
-1. In the first cell of the notebook, run the following code to import the `qsharp` module.
+1. In the first cell of the notebook, import the `qdk.qsharp` module.
 
     ```python
     from qdk import qsharp
@@ -120,7 +120,7 @@ To view a circuit diagram for a Q# program in Jupyter Notebook, follow these ste
 
     The circuit diagram looks like this:
 
-    :::image type="content" source="media/circuits-jupyter-notebook-bellstate.png" alt-text="Screenshot of a Jupyter Notebook that shows how to visualize the circuit for a Q# program.":::
+    :::image type="content" source="media/circuits-jupyter-notebook-bellstate.png" alt-text="Screenshot of a Jupyter notebook that shows how to visualize the circuit for a Q# program.":::
 
 #### View circuit diagrams for operations that take qubits as input
 
@@ -162,7 +162,7 @@ To view a circuit diagram for an OpenQASM program in Jupyter Notebook, follow th
 1. In the first cell of the notebook, run the following code to import the necessary objects to create and call OpenQASM functions with the QDK Python library:
 
     ```python
-    from qsharp.openqasm import import_openqasm, ProgramType
+    from qdk.openqasm import import_openqasm, ProgramType
     ```
 
 1. In a new cell, write your OpenQASM program in a Python string and pass the string to the `import_openqasm` function. To call the program in your Python code, give the function a name and set `program_type` to `ProgramType.File`.
@@ -183,7 +183,7 @@ To view a circuit diagram for an OpenQASM program in Jupyter Notebook, follow th
 1. In a new cell, import the OpenQASM program as a Python function and call the program to get the measurement results.
 
     ```python
-    from qsharp.code.qasm_import import bell
+    from qdk.code.qasm_import import bell
 
     bell()
     ```
@@ -208,7 +208,7 @@ To view a circuit diagram for an OpenQASM program in Jupyter Notebook, follow th
 1. To render the circuit diagram as an SVG image, run the following code in a new cell:
 
     ```python
-    from qsharp_widgets import Circuit
+    from qdk.widgets import Circuit
 
     Circuit(qsharp.circuit(bell))
     ```
