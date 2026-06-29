@@ -85,30 +85,19 @@ The sparse simulator is the only available simulator in the QDK extension for VS
 
 The QDK Python development environment supports multiple quantum frameworks and all four QDK simulators, but not all simulators are compatible with all frameworks and APIs.
 
-The following table shows the simulators that you can use for each Python API that calls a QDK simulator:
+This table shows the simulators that you can use for each Python API that calls a QDK simulator, and the programming framework that each API supports:
 
-| Python API                      | Sparse | Clifford | GPU | CPU |
-|---------------------------------|------- |----------|-----|-----|
-| `qsharp.run`                    | ✅     | ✅       |     |     |
-| `openqasm.run`                  | ✅     | ✅       |     |     |
-| `qiskit.QSharpBackend`          | ✅     |          |     |     |
-| `simulation.NeutralAtomDevice`  |        | ✅       | ✅  | ✅  |
-| `simulation.NeutralAtomBackend` |        | ✅       | ✅  | ✅  |
-| `simulation.run_qir`            |        | ✅       | ✅  | ✅  |
-
-And this table shows the programming frameworks that each API supports:
-
-| Python API                      | Q# | OpenQASM | Qiskit | QIR |
-|---------------------------------|----|----------|--------|-----|
-| `qsharp.run`                    | ✅ |          |        |     |
-| `openqasm.run`                  |    | ✅       |        |     |
-| `qiskit.QSharpBackend`          |    |          | ✅     |     |
-| `simulation.NeutralAtomDevice`  |    |          |        | ✅  |
-| `simulation.NeutralAtomBackend` |    |          | ✅     |     |
-| `simulation.run_qir`            |    |          |        | ✅  |
+| Python API                      | Sparse | Clifford | GPU | CPU | Programming framework |
+|---------------------------------|------- |----------|-----|-----|-----------------------|
+| `qsharp.run`                    | ✅     | ✅       |     |     | Q#                    |
+| `openqasm.run`                  | ✅     | ✅       |     |     | OpenQASM              |
+| `qiskit.QSharpBackend`          | ✅     |          |     |     | Qiskit                |
+| `simulation.NeutralAtomDevice`  |        | ✅       | ✅  | ✅  | QIR                   |
+| `simulation.NeutralAtomBackend` |        | ✅       | ✅  | ✅  | Qiskit                |
+| `simulation.run_qir`            |        | ✅       | ✅  | ✅  | QIR                   |
 
 ## Related content
 
-- [How to install and use the neutral atom device simulators in the QDK](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators)
-- [How to build noise models for neutral atom device simulations](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise)
+- [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators)
+- [How to build noise models for quantum simulations in the QDK Python library](xref:microsoft.quantum.how-to.qdk-simulator-noise-models)
 - [Backend quantum simulators from quantum providers](xref:microsoft.quantum.machines.overview.backend-simulators)
