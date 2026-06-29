@@ -190,6 +190,10 @@
       href: qre-build-error-correction-models.md
     - name: Access and customize resource estimator results
       href: qre-estimation-results.md
+  - name: QDK Learning
+    items:
+    - name: Learn quantum computing and Q# with the Katas
+      href: katas-qdk-learning.md
   - name: Integration with Azure Quantum
     items:
     - name: Submit a circuit in provider-specific format
