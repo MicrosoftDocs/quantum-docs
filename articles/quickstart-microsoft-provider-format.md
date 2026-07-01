@@ -363,7 +363,7 @@ def prepare_input_data(seq):
 
 #### Use pulser backends to execute the sequence
 
-With `AzureConnection` from [pulser-azure](https://pypi.org/project/pulser-azure/), you can directly use a [qpu backend](https://docs.pasqal.com/pulser/tutorials/qpu/#3.1.-Executing-on-QPUBackend) or a [remote emulator backend](https://pasqal-io.github.io/pulser-azure/getting-started/#running-on-emulators) to execute the sequence.
+With `AzureConnection` from [pulser-azure](https://pypi.org/project/pulser-azure/), you can directly use a [QPU backend](https://docs.pasqal.com/pulser/tutorials/qpu/#3.1.-Executing-on-QPUBackend) or a [remote emulator backend](https://pasqal-io.github.io/pulser-azure/getting-started/#running-on-emulators) to execute the sequence.
 
 ```python
 from pulser.backends import RemoteMPSBackend, QPUBackend
