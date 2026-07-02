@@ -1,66 +1,98 @@
 ---
 author: azure-quantum-content
-description: This document provides an overview of target profile types available in Azure Quantum and their limitations. 
-ms.date: 10/22/2025
+description: This article provides an overview of the QIR target profiles in the QDK.
+ms.date: 06/30/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [QIR, Base, Adaptive RI, target, targets, full, Adaptive RIF]
-title: Target Profile Types 
+no-loc: ["QDK", "Microsoft", "Quantum Development Kit", "Azure Quantum", "QIR", "Base", "Adaptive RI", "Adaptive RIF", "Adaptive", "Unrestricted"]
+title: Azure Quantum QIR target profiles in the QDK 
 uid: microsoft.quantum.target-profiles
-
-# customer intent: As a quantum developer, I want to understand the different target profile types available in Azure Quantum and their limitations so that I can develop quantum programs that run on the appropriate quantum devices.
+# Customer intent: As a quantum developer, I want to learn about QIR target profiles in the QDK and how to choose the correct target profile for my program and quantum hardware.
 ---
 
-# Different types of target profiles in Azure Quantum
+# Azure Quantum QIR target profiles in the QDK
 
-Quantum devices are still an emerging technology and unfortunately not all of them can run every Q# program. As such, you need to keep some restrictions in mind while you develop quantum programs. The target profile types define the capabilities of the quantum devices that you target with your Q# programs. The Microsoft Quantum Development Kit (QDK) has a set of different target profile types, which together support all the capabilities of the current quantum devices that are available in Azure Quantum.
+Quantum computing is still an emerging technology. Not all quantum hardware can run all quantum programs. For example, only certain hardware can perform mid circuit measurements, which is required to run programs with conditional branches based on qubit measurement results.
 
-This article discusses the different types of target profiles in Azure Quantum, their limitations, and how to configure them in the QDK.
+When you submit a program to run on Azure Quantum, your program is converted to quantum intermediate representation (QIR) format. QIR doesn't depend on the programming language or type of quantum hardware that your program runs on. The Microsoft Quantum Development Kit (QDK) supports several QIR target profiles for different hardware capabilities.
 
-## Target profiles and their limitations
+For more information about QIR, see [Quantum intermediate representation](xref:microsoft.quantum.concepts.qir).
 
-Currently, Azure Quantum and the QDK manage different target profiles, depending on their ability to run [quantum intermediate representation (QIR) programs](xref:microsoft.quantum.concepts.qir).
+## Overview of target profiles
 
-- [**:::no-loc text="Unrestricted":::**:](#create-and-run-programs-for--target-profile) This profile can run any QIR program, and thus any Q# program, within the limits of memory for simulators or the number of qubits for physical quantum computers.
-- [**:::no-loc text="Base":::**:](#create-and-run-programs-for--target-profile-1) This profile can run any Q# program that doesn't require the use of the results from qubit measurements to control the program flow. Within a Q# program that's targeted for this kind of QPU, values of type `Result` don't support equality comparison.
-- [**:::no-loc text="Adaptive RI":::**:](#create-and-run-programs-for--target-profile-2) This profile has limited ability to use the results from qubit measurements to control the program flow. Within a Q# program that's targeted for this kind of QPU, you can compare values of type `Result` as part of conditions within `if` statements in operations, allowing mid-circuit measurement.
-- [**:::no-loc text="Adaptive RIF":::**:](#create-and-run-programs-for--target-profile-3) This profile has the same capabilities as the :::no-loc text="Adaptive RI"::: profile, but also supports floating point operations.
+Azure Quantum and the QDK support several QIR target profiles. The type of target profile that you choose determines which of the following programming constructs your program can use.
 
-## Create and run programs for :::no-loc text="Unrestricted"::: target profile
+- Conditional branches with `if` statements based on qubit measurement results
+- Arithmetic operations on floating point numbers computed from qubit measurement results
+- Fixed and unbounded loops based on qubit measurement results
 
-:::no-loc text="Unrestricted"::: target profiles can run all Q# program, so you can write Q# code without the need to consider functionality restrictions. Azure Quantum doesn't provide any actual device targets that support this profile. However, you can run :::no-loc text="Unrestricted"::: Q# programs that have this profile on the simulators that are provided with the QDK.
+The following table lists all the QIR target profiles in the QDK and the programming constructs that the target profiles support, in order from most to least restrictive.
 
-### Configure :::no-loc text="Unrestricted"::: target profile
+| QIR target profile | Conditional branches | Floating point operations | Loops |
+|--------------------|----------------------|---------------------------|-------|
+| Base               | ❌                   | ❌                        | ❌    |
+| Adaptive RI        | ✅                   | ❌                        | ❌    |
+| Adaptive RIF       | ✅                   | ✅                        | ❌    |
+| Adaptive           | ✅                   | ✅                        | ✅    |
+| Unrestricted       | ✅                   | ✅                        | ✅    |
 
-If you don't manually set your QIR target profile, then the compiler automatically sets the target profile for you. The compiler chooses the most restrictive profile that still allows your program to run on the Azure Quantum device target that you choose.
+## Set target profiles in the QDK
 
-To manually set the QIR target profile to **Unrestricted**, choose one of the following options:
+To run a program on the QDK simulators or Azure Quantum target, you need to set a QIR target profile. If you don't manually set a target profile, the QDK tries to automatically set the appropriate profile for the chosen target.
 
-- If you set up a Q# project, then add the following command to your project's `qsharp.json` file:
+when submitting programs to run through the Azure Quantum service, the QDK tries to automatically select the appropriate profile for the chosen execution target.
+
+### Base QIR profile
+
+The base QIR target profile is the most restrictive one. Use the base profile for simpler programs that don't use classical programming structures like branches and loops. If your quantum hardware target can't perform mid-circuit measurements, then you probably need to use the base profile.
+
+The following Azure Quantum targets can run programs that use the base QIR profile.
+
+| Provider | Simulator         | QPU             |
+|----------|-------------------|-----------------|
+| IonQ     | `ionq.simulator`  | `ionq.qpu.*`    |
+| Rigetti  | `rigetti.sim.*`   | `rigetti.qpu.*` |
+
+To learn more about these Azure Quantum providers, see [IonQ provider](xref:microsoft.quantum.providers.ionq) and [Rigetti provider](xref:microsoft.quantum.providers.rigetti).
+
+#### Set the base profile
+
+To set the base QIR target profile in the QDK extension for Visual Studio Code (VS Code), choose one of the following options.
+
+- If you set up a Q# project, then add the following command to your project's `qsharp.json` file.
 
   ```json
   {
-    "targetProfile": "unrestricted"
+    "targetProfile": "base"
   }
   ```
 
-- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Unrestricted)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, add `@EntryPoint(Base)` on the line before the entrypoint operation in your program.
 
-- In Python, call the `qdk.init` method to set the target profile.
+    ```qsharp
+    @EntryPoint(Base)
+    operation Main() : Unit {
+
+    ...
+
+    }
+    ```
+
+To set the base target profile in the QDK Python library, run the following code.
 
   ```python
   from qdk import init, TargetProfile
 
-  init(target_profile=TargetProfile.Unrestricted) 
+  init(target_profile=TargetProfile.Base) 
   ```
 
-## Create and run programs for :::no-loc text="Base"::: target profile
+#### Limitations on Q# programs with base profile
 
-:::no-loc text="Base"::: target profiles can run a wide variety of Q# applications, with the constraint that they can't use results from qubit measurements to control the program flow. More specifically, values of type `Result` don't support equality comparison.
+The base target profile can run a wide variety of Q# programs. The main constraint is that Q# programs can't perform logical comparisons with `Result` type values from measurement operations.
 
-For example, you can't run the following `FlipQubitOnZero` operation on a :::no-loc text="Base"::: target:
+For example, you can't run the following `FlipQubitOnZero` operation on a base target because the program contains an `if` statement that uses a measurement result.
 
 ```qsharp
     @EntryPoint(Base)
@@ -72,50 +104,11 @@ For example, you can't run the following `FlipQubitOnZero` operation on a :::no-
     }
 ```
 
-The `FlipQubitOnZero` operation fails when you run this code on a :::no-loc text="Base"::: target because the target device can't use the result of a qubit measurement to perform conditional logic while the quantum algorithm is running. If you plan to run algorithms on a :::no-loc text="Base"::: target device, then make sure that your code doesn't contain any `if` blocks for [conditional branching](xref:microsoft.quantum.qsharp.conditionalbranching) that rely on measured qubits to evaluate a logical condition.
+### Adaptive RI QIR profile
 
-### Configure :::no-loc text="Base"::: target profile
+The adaptive RI target profile can run a wider variety of programs than the base profile, but still has some limitations. Adaptive RI targets support programs that use mid-circuit measurements in conditional `if` statements. If your quantum hardware can perform mid-circuit measurements and your program uses `if` statements based on measurement results, then you probably need to use the adaptive RI profile.
 
-To manually set the QIR target profile to **Base**, choose one of the following options:
-
-- If you set up a Q# project, then add the following command to your project's `qsharp.json` file:
-
-  ```json
-  {
-    "targetProfile": "base"
-  }
-  ```
-
-- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Base)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
-
-- In Python, call the `qdk.init` method to set the target profile.
-
-  ```python
-  from qdk import init, TargetProfile
-
-  init(target_profile=TargetProfile.Base) 
-  ```
-
-### Supported targets for :::no-loc text="Base"::: target profile
-
-For now, Azure Quantum provides access to the following :::no-loc text="Base"::: targets:
-
-| Provider | Simulator         | QPU             |
-|----------|-------------------|-----------------|
-| IonQ     | `ionq.simulator`  | `ionq.qpu.*`    |
-| Rigetti  | `rigetti.sim.*`   | `rigetti.qpu.*` |
-
-To learn more about these providers in Azure Quantum, see [IonQ provider](xref:microsoft.quantum.providers.ionq) and [Rigetti provider](xref:microsoft.quantum.providers.rigetti).
-
-## Create and run programs for :::no-loc text="Adaptive RI"::: target profile
-
-:::no-loc text="Adaptive RI"::: target profiles can run a wider variety of Q# applications than :::no-loc text="Base"::: profiles, but still have some limitations. Unlike :::no-loc text="Base"::: target profiles, :::no-loc text="Adaptive RI"::: targets support mid-circuit measurements.
-
-With mid-circuit measurements, you can selectively measure qubits at any point in the quantum program, not just the end. You can then use the measurement results for other operations in your program, like conditional branching with `if` blocks. The qubits that you measure mid-circuit collapse to a classical state (zero or one), but the non-measured qubits remain in their quantum state.
-
-When you measure a qubit in Q#, a value of type `Result` is returned. If you want to use this result in a conditional statement, you have to directly compare in the conditional statement. The corresponding conditional blocks may not contain `return` or `set` statements.
-
-For example, the following Q# code is allowed in a :::no-loc text="Adaptive RI"::: target:
+For example, the following Q# program can run on an adaptive RI target.
 
 ```qsharp
 @EntryPoint(Adaptive_RI)
@@ -128,9 +121,18 @@ operation SetToZero(q : Qubit) : Unit {
 }
 ```
 
-### Configure :::no-loc text="Adaptive RI"::: target profile
+The following Azure Quantum targets can run programs that use the adaptive RI target profile.
 
-To manually set the QIR target profile to **Adaptive RI**, choose one of the following options:
+| Provider   | Simulator              | QPU                   |
+|------------|------------------------|-----------------------|
+| Quantinuum | `quantinuum.sim.h2-1e` | `quantinuum.qpu.h2-1` |
+| Quantinuum | `quantinuum.sim.h2-2e` | `quantinuum.qpu.h2-2` |
+
+For more information on Quantinuum in Azure Quantum, see [Quantinuum provider](xref:microsoft.quantum.providers.quantinuum).
+
+#### Set the adaptive RI profile
+
+To set the adaptive RI QIR target profile in the QDK extension for VS Code, choose one of the following options.
 
 - If you set up a Q# project, then add the following command to your project's `qsharp.json` file:
 
@@ -140,30 +142,30 @@ To manually set the QIR target profile to **Adaptive RI**, choose one of the fol
   }
   ```
 
-- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Adaptive_RI)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, add `@EntryPoint(Adaptive_RI)` on the line before the entrypoint operation in your program.
 
-- In Python, call the `qdk.init` method to set the target profile.
+    ```qsharp
+    @EntryPoint(Adaptive_RI)
+    operation Main() : Unit {
+
+    ...
+
+    }
+    ```
+
+To set the adaptive RI target profile in the QDK Python library, run the following code.
 
   ```python
   from qdk import init, TargetProfile
 
-  init(target_profile=TargetProfile.Adaptive_RI) 
+  init(target_profile=TargetProfile.Adaptive_RI)
   ```
 
-### Supported targets for :::no-loc text="Adaptive RI"::: target profile
+### Adaptive RIF QIR profile
 
-For now, Quantinuum is the only provider in Azure Quantum that has :::no-loc text="Adaptive RI"::: targets.
+The adaptive RIF target profile has the same capabilities as the adaptive RI profile, but also supports programs that contain floating point arithmetic operations. If your quantum hardware can perform mid-circuit measurements, and your program uses `if` statements and floating point numbers computed from measurement results, then you probably need to use the adaptive RIF profile.
 
-- **Emulators:** `quantinuum.sim.h2-1e` and `quantinuum.sim.h2-2e`
-- **QPUs:** `quantinuum.qpu.h2-1` and `quantinuum.qpu.h2-2`
-
-For more information on Quantinuum's offerings in Azure Quantum, see [Quantinuum Emulators](xref:microsoft.quantum.providers.quantinuum).
-
-## Create and run programs for :::no-loc text="Adaptive RIF"::: target profile
-
-:::no-loc text="Adaptive RIF"::: target profiles have all the capabilities of :::no-loc text="Adaptive RI"::: profiles, but also support Q# programs that contain floating point calculations.
-
-For example, the following Q# code is allowed in a :::no-loc text="Adaptive RIF"::: target:
+For example, the following Q# program can run on an adaptive RIF target.
 
 ```qsharp
 @EntryPoint(Adaptive_RIF)
@@ -179,9 +181,11 @@ operation DynamicFloat() : Double {
 }
 ```
 
-### Configure :::no-loc text="Adaptive RIF"::: target profile
+Azure Quantum doesn't have adaptive RIF targets at this time, but you can run programs for adaptive RIF targets on the local QDK simulators. For more information on simulators in the QDK, see [Overview of quantum simulators in the QDK](xref:microsoft.quantum.overview.qdk-simulators).
 
-To manually set the QIR target profile to **Adaptive RIF**, choose one of the following options:
+#### Set the adaptive RIF profile
+
+To set the adaptive RIF QIR target profile in the QDK extension for VS Code, choose one of the following options.
 
 - If you set up a Q# project, then add the following command to your project's `qsharp.json` file:
 
@@ -191,9 +195,18 @@ To manually set the QIR target profile to **Adaptive RIF**, choose one of the fo
   }
   ```
 
-- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, include `@EntryPoint(Adaptive_RIF)` right before the entrypoint operation in your program, even when that operation is the default `Main`.
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, add `@EntryPoint(Adaptive_RIF)` on the line before the entrypoint operation in your program.
 
-- In Python, call the `qdk.init` method to set the target profile.
+    ```qsharp
+    @EntryPoint(Adaptive_RIF)
+    operation Main() : Unit {
+
+    ...
+
+    }
+    ```
+
+To set the adaptive RIF target profile in the QDK Python library, run the following code.
 
   ```python
   from qdk import init, TargetProfile
@@ -201,6 +214,74 @@ To manually set the QIR target profile to **Adaptive RIF**, choose one of the fo
   init(target_profile=TargetProfile.Adaptive_RIF) 
   ```
 
-### Supported targets for :::no-loc text="Adaptive RIF"::: target profile
+### Adaptive QIR profile
 
-For now, Azure Quantum doesn't have :::no-loc text="Adaptive RIF"::: targets. However, you can run programs for :::no-loc text="Adaptive RIF"::: targets on the local simulator in the QDK.
+The adaptive target profile has the same capabilities as the adaptive RIF profile, but also supports programs that use loops based on measurement results. Adaptive programs can use loops with a set number of iterations, and repeat-until-success (RUS) loops.
+
+Azure Quantum doesn't have adaptive targets at this time, but you can run programs for adaptive targets on the local QDK simulators. For more information on simulators in the QDK, see [Overview of quantum simulators in the QDK](xref:microsoft.quantum.overview.qdk-simulators).
+
+#### Set the adaptive profile
+
+To set the adaptive QIR target profile in the QDK extension for VS Code, choose one of the following options.
+
+- If you set up a Q# project, then add the following command to your project's `qsharp.json` file:
+
+  ```json
+  {
+    "targetProfile": "adaptive"
+  }
+  ```
+
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, add `@EntryPoint(Adaptive)` on the line before the entrypoint operation in your program.
+
+    ```qsharp
+    @EntryPoint(Adaptive)
+    operation Main() : Unit {
+
+    ...
+
+    }
+    ```
+
+To set the adaptive target profile in the QDK Python library, run the following code.
+
+  ```python
+  from qdk import init, TargetProfile
+
+  init(target_profile=TargetProfile.Adaptive) 
+  ```
+
+### Unrestricted QIR profile
+
+The unrestricted target profile can run all quantum programs. No current quantum target supports unrestricted QIR, but you can use the unrestricted profile to run complex programs on the QDK simulators for quantum development.
+
+### Set the unrestricted profile
+
+To set the unrestricted QIR target profile in the QDK extension for VS Code, choose one of the following options.
+
+- If you set up a Q# project, then add the following command to your project's `qsharp.json` file:
+
+  ```json
+  {
+    "targetProfile": "unrestricted"
+  }
+  ```
+
+- If you're working in a `.qs` file that isn't part of a Q# project, then set the target profile directly in your Q# code. To do so, add `@EntryPoint(Unrestricted)` on the line before the entrypoint operation in your program.
+
+    ```qsharp
+    @EntryPoint(Unrestricted)
+    operation Main() : Unit {
+
+    ...
+
+    }
+    ```
+
+To set the unrestricted target profile in the QDK Python library, run the following code.
+
+  ```python
+  from qdk import init, TargetProfile
+
+  init(target_profile=TargetProfile.Unrestricted) 
+  ```
