@@ -85,7 +85,7 @@ By making use of optical tweezers we can assemble an adjustable quantum register
 
 ## Pulser SDK
 
-In Pasqal QPU, individual atoms are trapped at well-defined positions in 1D or 2D lattices. [Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences on neutral atoms quantum devices. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
+In Pasqal QPU, individual atoms are trapped at well-defined positions in 1D or 2D lattices. [Pulser](https://github.com/pasqal-io/Pulser) is a  framework for composing, simulating and executing pulse sequences on neutral atoms quantum devices. For more information, see [Pulser documentation](https://docs.pasqal.com/pulser/).
 
 To install Pulser SDK packages, run the following code:
 
