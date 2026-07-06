@@ -209,31 +209,32 @@ You can use the Pulser SDK to create pulse sequences and submit them to Pasqal t
 
 #### Install the Pulser SDK
 
-[Pulser](https://github.com/pasqal-io/Pulser) is a framework that allows you to create, simulate, and run pulse sequences for neutral-atom quantum devices. Pulser is designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see the [Pulser documentation](https://pulser.readthedocs.io/en/latest/).
+[Pulser](https://github.com/pasqal-io/Pulser) is a framework that allows you to create, simulate, and run pulse sequences for neutral-atom quantum devices. Pulser is designed by PASQAL as a pass-through to submit quantum experiments to their quantum processors. For more information, see the [Pulser documentation](https://docs.pasqal.com/pulser/).
 
 To submit the pulse sequences, first install the Pulser SDK packages:
 
 ```python
 try:
     import pulser
-    import pulser_pasqal
+    import pulser_azure
 except ImportError:
-    !pip -q install pulser pulser-pasqal --index-url https://pypi.org/simple
+    !pip -q install pulser pulser-azure --index-url https://pypi.org/simple
 ```
 
 #### Create a quantum register
 
 Define both a register and a layout. The register specifies where to arrange the atoms, and the layout specifies the positions of traps that capture and structure the atoms within the register.
 
-For details on layouts, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html).
+For details on layouts, see the [Pulser documentation](https://docs.pasqal.com/pulser/tutorials/reg_layouts/).
 
 Create a `devices` object to import the Pasqal quantum computer target, [FRESNEL_CAN1](xref:microsoft.quantum.providers.pasqal#fresnel_can1).
 
 ```python
-from pulser_pasqal import PasqalCloud
+from pulser_azure import AzureConnection
 
-devices = PasqalCloud().fetch_available_devices()
-QPU = devices["FRESNEL_CAN1"]
+connection = AzureConnection(resource_id="") # Add your resource ID
+devices = connection.fetch_available_devices()
+QPU = devices["pasqal.qpu.fresnel-can1"]
 ```
 
 ##### Set up your layout
@@ -260,7 +261,7 @@ To create an arbitrary layout, choose one of the following options:
     reg = Register(qubits).with_automatic_layout(device) 
     ```
 
-- To manually define a layout to create your register, see the [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/reg_layouts.html#Arbitrary-Layouts).
+- To manually define a layout to create your register, see the [Pulser documentation](https://docs.pasqal.com/pulser/tutorials/reg_layouts/#Arbitrary-Layouts).
 
 #### Write a pulse sequence
 
@@ -281,7 +282,7 @@ Neutral atoms are controlled with laser pulses. The Pulser SDK allows you to cre
     ```
 
     > [!NOTE]
-    > You can use the `QPU = devices["FRESNEL_CAN1"]` device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that's less constrained by device specifications, which lets you run on an emulator. For more information, see [Pulser documentation](https://pulser.readthedocs.io/en/stable/tutorials/creating.html#2.-Initializing-the-Sequence).
+    > You can use the `QPU = devices["pasqal.qpu.fresnel-can1"]` device or import a virtual device from Pulser for more flexibility. The use of a `VirtualDevice` allows for sequence creation that's less constrained by device specifications, which lets you run on an emulator. For more information, see [Pulser documentation](https://docs.pasqal.com/pulser/tutorials/virtual_devices/).
 
 1. Add pulses to your sequence. To do so, create and add pulses to the channels that you declared. For example, the following code creates a pulse and adds it to channel `ch0`:
 
@@ -353,11 +354,29 @@ def prepare_input_data(seq):
 
     ```output
     {
-        "1000000": 3, 
+        "1000000": 8, 
         "0010000": 1, 
         "0010101": 1
     }
     ```
+
+
+#### Use pulser backends to execute the sequence
+
+With `AzureConnection` from [pulser-azure](https://pypi.org/project/pulser-azure/), you can directly use a [QPU backend](https://docs.pasqal.com/pulser/tutorials/qpu/#3.1.-Executing-on-QPUBackend) or a [remote emulator backend](https://pasqal-io.github.io/pulser-azure/getting-started/#running-on-emulators) to execute the sequence.
+
+```python
+from pulser.backends import RemoteMPSBackend, QPUBackend
+
+backend = RemoteMPSBackend(sequence=seq, connection=connection)  # Replace RemoteMPSBackend with QPUBackend to execute the sequence on the QPU
+results = backend.run(job_params=[{"runs": 10}], wait=True)
+
+print(results.results[0].final_bitstrings)
+```
+
+```output
+Counter({"1000000": 8, "0010000": 1, "0010101": 1})
+```
 
 ### Submit an OpenQASM circuit to Quantinuum
 
