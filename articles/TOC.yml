@@ -74,8 +74,6 @@
     items:
     - name: List of quantum computing providers
       href: qc-target-list.md
-    - name: Types of target profiles
-      href: quantum-computing-target-profiles.md
     - name: Azure Quantum provider global availability
       href: provider-global-availability.md
     - name: Backend simulators
@@ -196,6 +194,8 @@
       href: katas-qdk-learning.md
   - name: Integration with Azure Quantum
     items:
+    - name: QIR target profiles
+      href: quantum-computing-target-profiles.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
     - name: Hybrid quantum computing (QC)
