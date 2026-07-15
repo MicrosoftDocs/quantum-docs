@@ -15,6 +15,10 @@ uid: microsoft.quantum.overview.qdk-landing-page
 
 # Build quantum solutions with the Microsoft Quantum Development Kit
 
+👉 **[Explore the latest QDK updates at quantum.microsoft.com](https://quantum.microsoft.com/en-us/tools/microsoft-quantum-development-kit)**
+
+👉 **[Watch hands-on QDK tutorials](https://www.youtube.com/playlist?list=PLlrxD0HtieHj3mBWaxRbKBGil8Snm6LK2)**
+
 The Microsoft Quantum Development Kit (QDK) is a free open-source software development kit designed specifically for quantum program development. The QDK includes an extension for Microsoft's Visual Studio Code (VS Code) and a set of Python libraries. Install the QDK to get started with state-of-the-art quantum development tools.
 
 ## Overview of the QDK
@@ -49,3 +53,7 @@ Explore the following documentation to learn more about the main features of the
 - [Chemistry applications with QDK for chemistry](xref:microsoft.quantum.overview.qdk-chemistry)
 - [Build circuits with the Circuit Editor](xref:microsoft.quantum.how-to.qdk-circuit-editor)
 - [Copilot integration in VS Code](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup)
+
+👉 **[Explore the latest QDK updates at quantum.microsoft.com](https://quantum.microsoft.com/en-us/tools/microsoft-quantum-development-kit)**
+
+👉 **[Watch hands-on QDK tutorials](https://www.youtube.com/playlist?list=PLlrxD0HtieHj3mBWaxRbKBGil8Snm6LK2)**
