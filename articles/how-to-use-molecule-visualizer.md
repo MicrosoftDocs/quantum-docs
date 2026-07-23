@@ -35,8 +35,8 @@ The molecule visualizer requires a `Structure` object from the `qdk-chemistry` l
 For example, to load a `Structure` object for *p*-benzyne from a `.xyz` file, follow these steps:
 
 1. In VS Code, open the folder where you want to save your files.
-1. Create an empty text file named `para_benzyne.structure.xyz`.
-1. Copy the following text into `para_benzyne.structure.xyz` and save the file.
+1. Create an empty text file named `para-benzyne.structure.xyz`.
+1. Copy the following text into `para-benzyne.structure.xyz` and save the file.
 
     ```plaintext
     10
@@ -75,6 +75,7 @@ To open the molecule visualizer, use the `to_xyz` method to pass an XYZ string t
 from qdk.widgets import MoleculeViewer
 
 viewer = MoleculeViewer(molecule_data=structure.to_xyz())
+
 viewer
 ```
 
