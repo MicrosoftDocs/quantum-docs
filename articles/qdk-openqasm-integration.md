@@ -17,16 +17,16 @@ uid: microsoft.quantum.how-to.openqasm-development-qdk
 The Microsoft Quantum Development Kit (QDK) provides different development environments for OpenQASM programs with Azure Quantum integration. In this article, you learn how to develop and run OpenQASM code in:
 
 - The QDK extension in Visual Studio Code (VS Code)
-- The QDK Python library in Jupyter Notebook.
+- The QDK Python package in Jupyter Notebook.
 
-Developer tools like CodeLends, IntelliSense, code completion, and breakpoint debugging are available only in the VS Code extension. Other features are available only in the Python library. For example, you can pass Q# and OpenQASM callables as Python objects, and compile OpenQASM programs that take inputs into QIR.
+Developer tools like CodeLends, IntelliSense, code completion, and breakpoint debugging are available only in the VS Code extension. Other features are available only in the Python package. For example, you can pass Q# and OpenQASM callables as Python objects, and compile OpenQASM programs that take inputs into QIR.
 
 ## Prerequisites
 
 - Install the latest version of [VS Code](https://code.visualstudio.com/download)
 - To work directly with OpenQASM files, install the latest version of the [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) in VS Code.
 - To work with OpenQASM in Python and Jupyter Notebook, install the latest version of the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and the [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) in VS Code.
-- Install the latest version of the `qdk` Python library with the `jupyter` extra:
+- Install the latest version of the `qdk` Python package with the `jupyter` extra:
 
     ```bash
     pip install --upgrade "qdk[jupyter]"
@@ -86,7 +86,7 @@ To view the times and status of a job, expand the **Jobs** dropdown and hover ov
 
 ## Work with OpenQASM in Python and Jupyter Notebook
 
-With the QDK Python library, you can run OpenQASM code directly and pass OpenQASM circuits as operations to Q# programs. Write your OpenQASM code as a Python string, and then use that string to run, import, or compile your OpenQASM code in the Python environment.
+With the QDK Python package, you can run OpenQASM code directly and pass OpenQASM circuits as operations to Q# programs. Write your OpenQASM code as a Python string, and then use that string to run, import, or compile your OpenQASM code in the Python environment.
 
 ### Run OpenQASM directly in Python
 
@@ -166,7 +166,7 @@ parameterized_circuit(1.57)
 
 ### Pass an OpenQASM program to Q\#
 
-With the QDK Python library, you can directly pass an OpenQASM program to a Q# program. For example, the following code creates an OpenQASM program called `Entangle` and then uses `Entangle` as an operation in a Q# program:
+With the QDK Python package, you can directly pass an OpenQASM program to a Q# program. For example, the following code creates an OpenQASM program called `Entangle` and then uses `Entangle` as an operation in a Q# program:
 
 ```python
 from qdk.openqasm import import_openqasm
@@ -233,7 +233,7 @@ print(bound_compilation)
 ```
 
 > [!NOTE]
-> To compile OpenQASM programs that take input variables into QIR, you need to use the QDK Python library. You can't compile parameterized OpenQASM programs into QIR using the QDK extension in VS Code.
+> To compile OpenQASM programs that take input variables into QIR, you need to use the QDK Python package. You can't compile parameterized OpenQASM programs into QIR using the QDK extension in VS Code.
 
 ### Submit OpenQASM programs to Azure Quantum
 

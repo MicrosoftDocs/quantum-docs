@@ -59,21 +59,21 @@ The following table shows what you can and can't do in VS Code:
 
 ## Jupyter Notebook
 
-The QDK has a rich `qdk` Python library that allows you to develop Q\# programs in `.py` Python files or Jupyter Notebook. The QDK Python library also supports other quantum languages, such as Qiskit, Cirq, and PennyLane.
+The QDK has a rich `qdk` Python package that allows you to develop Q\# programs in `.py` Python files or Jupyter Notebook. The QDK Python package also supports other quantum languages, such as Qiskit, Cirq, and PennyLane.
 
-The `qdk` Python library includes several modules to help you develop quantum programs and manage Azure Quantum jobs. For example, the `qsharp` module lets you write Q# code in Jupyter Notebook, and the `azure` module lets you connect to your quantum workspace and submit jobs to Azure Quantum.
+The `qdk` Python package includes several modules to help you develop quantum programs and manage Azure Quantum jobs. For example, the `qsharp` module lets you write Q# code in Jupyter Notebook, and the `azure` module lets you connect to your quantum workspace and submit jobs to Azure Quantum.
 
-For an overview of the `qdk` Python library and module features, see the [QDK project description](https://pypi.org/project/qdk/) on the PyPi website.
+For an overview of the `qdk` Python package and module features, see the [QDK project description](https://pypi.org/project/qdk/) on the PyPi website.
 
 ### Is Python and Jupyter Notebook right for me?
 
-Jupyter Notebook is convenient to write Python code and visualize output all in one development environment. If you prefer to develop in Python and want support for multiple quantum programming languages, then the QDK Python library and Jupyter Notebook are for you.
+Jupyter Notebook is convenient to write Python code and visualize output all in one development environment. If you prefer to develop in Python and want support for multiple quantum programming languages, then the QDK Python package and Jupyter Notebook are for you.
 
 The following table shows what you can and can't do in Python and Jupyter Notebook:
 
 | You can: | You can't: | You need: |
 | -------- | ---------- | --------- |
-| <ul><li>Develop in multiple quantum programming languages.</li><li>Save your programs and results.</li><li>Connect to your Azure Quantum workspace.</li><li>Visualize quantum circuits.</li><li>Use the resource estimator.</li></ul> | <ul><li>Manage your subscriptions and workspaces.</li><li>Manage your quantum jobs.</li><li>Choose quantum computing providers and plans.</li></ul> | <ul><li>To install [Python and Pip](https://www.python.org/).</li><li>To install [Jupyter Notebook](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).</li><li>To install the [QDK Python library](https://pypi.org/project/qdk/).</li><li> An Azure subscription and a quantum workspace (if you want to run programs on real hardware).</li></ul> |
+| <ul><li>Develop in multiple quantum programming languages.</li><li>Save your programs and results.</li><li>Connect to your Azure Quantum workspace.</li><li>Visualize quantum circuits.</li><li>Use the resource estimator.</li></ul> | <ul><li>Manage your subscriptions and workspaces.</li><li>Manage your quantum jobs.</li><li>Choose quantum computing providers and plans.</li></ul> | <ul><li>To install [Python and Pip](https://www.python.org/).</li><li>To install [Jupyter Notebook](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).</li><li>To install the [QDK Python package](https://pypi.org/project/qdk/).</li><li> An Azure subscription and a quantum workspace (if you want to run programs on real hardware).</li></ul> |
 
 ## Azure portal
 

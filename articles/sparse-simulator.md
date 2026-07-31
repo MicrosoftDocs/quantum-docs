@@ -24,7 +24,7 @@ The sparse simulator is the default local simulator in the Microsoft Quantum Dev
 | Development environment                   | How to call the sparse simulator                                           |
 |-------------------------------------------|----------------------------------------------------------------------------|
 |In a Q# or OpenQASM program in VS Code     | Run the Q# or OpenQASM file                                                |
-|In a Python program with the `qdk` library | `qsharp.run`<br>or<br>`openqasm.run`<br>or<br>`qiskit.QSharpBackend`       |
+|In a Python program with the `qdk` package | `qsharp.run`<br>or<br>`openqasm.run`<br>or<br>`qiskit.QSharpBackend`       |
 |In a `%%qsharp` notebook cell              | Call the program entry operation, for example:<br>`Main()`                 |
 
 ## Add Pauli noise to the sparse simulator in VS Code

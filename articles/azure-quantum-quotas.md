@@ -106,9 +106,9 @@ The `Period` column indicates the period when your quota is renewed.
 - `Monthly`: The usage is reset on the 1st of every month.
 - `Infinite`: The usage is never reset (also referred as **One-Time** in the [Azure portal](https://portal.azure.com) view).
 
-### Track quotas with the QDK Python library
+### Track quotas with the QDK Python package
 
-1. Install the latest version of the [`qdk` Python library](xref:microsoft.quantum.install-qdk.overview).
+1. Install the latest version of the [`qdk` Python package](xref:microsoft.quantum.install-qdk.overview).
 1. Open a new Python file.
 1. Create a `Workspace` object to connect to the workspace that you previously deployed in Azure.
 

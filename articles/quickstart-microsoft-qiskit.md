@@ -17,7 +17,7 @@ uid: microsoft.quantum.quickstarts.computing.qiskit
 
 You can submit Qiskit programs to run on Azure Quantum targets with the Microsoft Quantum Development Kit (QDK). You can also run Qiskit programs on your local machine with the QDK's built-in sparse simulator. The QDK supports both version 1 and version 2 of Qiskit.
 
-In this article, you learn how to run Qiskit programs with the QDK Python library from a Jupyter Notebook in Visual Studio Code (VS Code).
+In this article, you learn how to run Qiskit programs with the QDK Python package from a Jupyter Notebook in Visual Studio Code (VS Code).
 
 > [!NOTE]
 > It's a best practice to run your quantum program on a simulator target before you submit a job to run on a quantum computer. Each Azure Quantum provider offers one or more free simulator targets.
@@ -29,7 +29,7 @@ To submit Qiskit jobs to Azure Quantum and to run Qiskit programs on the local s
 - An Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A local Python environment (version 3.10 or higher) with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
 - Visual Studio Code (VS Code) with the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The `qdk` Python library with the `azure` and `qiskit` extras, and the `ipykernel` package.
+- The `qdk` Python package with the `azure` and `qiskit` extras, and the `ipykernel` package.
 
     ```bash
     pip install --upgrade "qdk[azure,qiskit]" ipykernel

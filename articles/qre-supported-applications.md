@@ -43,7 +43,7 @@ To import a Q# program, you can either load an existing `qs` Q# file or you can 
 
 To write a Q# program directly in Jupyter Notebook and load it into the resource estimator as an application, follow these steps your empty Jupyter notebook:
 
-1. Import the `qsharp` module from the QDK Python library.
+1. Import the `qsharp` module from the QDK Python package.
 
     ```python
     from qdk import qsharp

@@ -33,7 +33,7 @@ To develop and run the code sample in Visual Studio Code (VS Code) and Jupyter N
 - The latest version of [VS Code](https://code.visualstudio.com/download) or open [VS Code for the Web](https://vscode.dev/quantum).
 - The latest version of the [Microsoft Quantum Development Kit (QDK) extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode). For installation details, see [Set up the QDK extension](xref:microsoft.quantum.install-qdk.overview).
 - The [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
-- The latest `qdk` Python library with the `jupyter` extra. To install these, open a terminal and run the following command:
+- The latest `qdk` Python package with the `jupyter` extra. To install these, open a terminal and run the following command:
 
     ```bash
     pip install --upgrade "qdk[jupyter]"
@@ -246,7 +246,7 @@ operation GenerateRandomBit() : Result {
 
 ## Run the random number generator program
 
-Choose your preferred development environment, either the QDK extension in VS Code or the QDK Python library in Jupyter Notebook.
+Choose your preferred development environment, either the QDK extension in VS Code or the QDK Python package in Jupyter Notebook.
 
 ### [Q# file in VS Code](#tab/tabid-vscode)
 
