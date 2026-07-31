@@ -138,7 +138,7 @@ Error code: QIRPreProcessingFailed
 Error message: No match found for output recording set converter from outputrecordingset.v2.labeled to outputrecordingset.v1.nonlabeled
 ```
 
-This error can be caused by a dependency conflict with a previous version of `pyqir` or `qiskit-qir`. Uninstall all versions of `pyqir`, `pyqir-*`, and `qiskit-qir` on your local machine, and then install or update the `qdk` Python library with the `azure` and `qiskit` extras:
+This error can be caused by a dependency conflict with a previous version of `pyqir` or `qiskit-qir`. Uninstall all versions of `pyqir`, `pyqir-*`, and `qiskit-qir` on your local machine, and then install or update the `qdk` Python package with the `azure` and `qiskit` extras:
 
 ```Shell
 pip install --upgrade "qdk[azure,qiskit]"

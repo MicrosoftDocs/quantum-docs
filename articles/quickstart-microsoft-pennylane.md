@@ -20,13 +20,13 @@ For more information about PennyLane, see the [PennyLane website](https://pennyl
 
 ## Prerequisites
 
-To submit a PennyLane program to Azure Quantum using the QDK Python library, you need to have an Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
+To submit a PennyLane program to Azure Quantum using the QDK Python package, you need to have an Azure Quantum workspace in your Azure subscription. To create a workspace, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 
 To follow the steps in this article, you need to have:
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z).
 - VS Code with the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions installed.
-- The latest version of the `qdk` Python library with the `azure` extra.
+- The latest version of the `qdk` Python package with the `azure` extra.
 
     ```bash
     pip install --upgrade "qdk[azure]"
@@ -40,7 +40,7 @@ To follow the steps in this article, you need to have:
 
 ## Submit a PennyLane program to Azure Quantum as QIR
 
-The following steps explain how to write a PennyLane program, convert the program to QIR, and submit the program to Azure Quantum using the QDK Python library.
+The following steps explain how to write a PennyLane program, convert the program to QIR, and submit the program to Azure Quantum using the QDK Python package.
 
 ### Import the required packages and objects
 

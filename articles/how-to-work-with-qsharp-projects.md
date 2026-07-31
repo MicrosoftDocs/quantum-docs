@@ -25,7 +25,7 @@ In this article, you learn how to create, manage, and share Q# projects. A Q# pr
 To run Python programs, you also need:
 
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
-- The `qdk` Python library with the `azure` extra.
+- The `qdk` Python package with the `azure` extra.
 
     ```bash
     python -m pip install --upgrade "qdk[azure]"

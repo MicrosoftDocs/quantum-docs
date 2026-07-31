@@ -39,7 +39,7 @@ You don't need an Azure account to access the resources and information on the M
 
 The Microsoft Quantum Development Kit (QDK) is a software development kit designed specifically for quantum development. With the QDK, you can write programs in different quantum programming languages, debug your code, visualize quantum circuits and results, and submit jobs to quantum hardware providers on Azure Quantum. The QDK supports Microsoft's Q# programming language, along with other languages like Qiskit, Cirq, and OpenQASM.
 
-The QDK is free and open source. To get started, install the QDK extension in Visual Studio Code (VS Code) or install the QDK Python library. For more information, see [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
+The QDK is free and open source. To get started, install the QDK extension in Visual Studio Code (VS Code) or install the QDK Python package. For more information, see [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
 > [!NOTE]
 > To run programs on Azure Quantum, you need to have an Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
