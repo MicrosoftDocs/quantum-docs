@@ -80,7 +80,7 @@ To set the base QIR target profile in the QDK extension for Visual Studio Code (
     }
     ```
 
-To set the base target profile in the QDK Python library, run the following code.
+To set the base target profile in the QDK Python package, run the following code.
 
   ```python
   from qdk import init, TargetProfile
@@ -153,7 +153,7 @@ To set the adaptive RI QIR target profile in the QDK extension for VS Code, choo
     }
     ```
 
-To set the adaptive RI target profile in the QDK Python library, run the following code.
+To set the adaptive RI target profile in the QDK Python package, run the following code.
 
   ```python
   from qdk import init, TargetProfile
@@ -206,7 +206,7 @@ To set the adaptive RIF QIR target profile in the QDK extension for VS Code, cho
     }
     ```
 
-To set the adaptive RIF target profile in the QDK Python library, run the following code.
+To set the adaptive RIF target profile in the QDK Python package, run the following code.
 
   ```python
   from qdk import init, TargetProfile
@@ -243,7 +243,7 @@ To set the adaptive QIR target profile in the QDK extension for VS Code, choose 
     }
     ```
 
-To set the adaptive target profile in the QDK Python library, run the following code.
+To set the adaptive target profile in the QDK Python package, run the following code.
 
   ```python
   from qdk import init, TargetProfile
@@ -278,7 +278,7 @@ To set the unrestricted QIR target profile in the QDK extension for VS Code, cho
     }
     ```
 
-To set the unrestricted target profile in the QDK Python library, run the following code.
+To set the unrestricted target profile in the QDK Python package, run the following code.
 
   ```python
   from qdk import init, TargetProfile

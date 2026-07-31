@@ -21,7 +21,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
 - VS Code with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension installed.
-- The `qdk` Python library with the `azure` extra.
+- The `qdk` Python package with the `azure` extra.
 - [Azure CLI](xref:microsoft.quantum.install-qdk.overview#add-support-for-azure-cli) with the latest Azure Quantum extension installed.
 
 ## Create and import your Q# operations

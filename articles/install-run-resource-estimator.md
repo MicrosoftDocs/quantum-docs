@@ -29,7 +29,7 @@ To follow the steps in this article, you need to have the following installed:
 
 ## Install the quantum resource estimator
 
-The resource estimator is available through the `qdk.qre` Python module. To use the resource estimator, install the latest version of the `qdk` Python library with the `qre` extra:
+The resource estimator is available through the `qdk.qre` Python module. To use the resource estimator, install the latest version of the `qdk` Python package with the `qre` extra:
 
 ```bash
 pip install --upgrade "qdk[qre]"

@@ -30,7 +30,7 @@ To create circuit diagrams from Q# and OpenQASM files in VS Code, install the fo
 To create circuit diagrams from Python programs in Jupyter Notebook, install the following:
 
 - The [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) in VS Code.
-- The latest version of the `qdk` Python library with the `jupyter` extra.
+- The latest version of the `qdk` Python package with the `jupyter` extra.
 
     ```bash
     pip install --upgrade "qdk[jupyter]"
@@ -159,7 +159,7 @@ To view a circuit diagram for an OpenQASM program in Jupyter Notebook, follow th
 
 1. In VS Code, open the **View** menu and choose **Command Palette**.
 1. Enter **Create: New Jupyter Notebook**. An empty Jupyter Notebook file opens in a new tab.
-1. In the first cell of the notebook, run the following code to import the necessary objects to create and call OpenQASM functions with the QDK Python library:
+1. In the first cell of the notebook, run the following code to import the necessary objects to create and call OpenQASM functions with the QDK Python package:
 
     ```python
     from qdk.openqasm import import_openqasm, ProgramType

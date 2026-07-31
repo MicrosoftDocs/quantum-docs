@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: This article explains how to use the neutral atom device visualizer from the QDK Python library.
+description: This article explains how to use the neutral atom device visualizer from the QDK Python package.
 ms.date: 05/14/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum

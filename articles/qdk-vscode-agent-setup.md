@@ -20,7 +20,7 @@ Use agent mode in Visual Studio Code (VS Code), powered by GitHub Copilot, to en
 Agent mode is an AI-assisted development experience that helps you write and debug code, and complete other development tasks in VS Code. The QDK extension includes a `SKILL.md` file that GitHub Copilot agent reads to learn Agent Skills for specific tasks related to development in the QDK. The QDK skills help Copilot to perform the following tasks in agent mode:
 
 - Write, debug, and explain Q# and OpenQASM code
-- Develop with the `qdk` Python library
+- Develop with the `qdk` Python package
 - Explain quantum computing concepts
 - Give you information about your Azure Quantum jobs and workspaces
 

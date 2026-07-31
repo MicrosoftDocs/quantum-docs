@@ -15,7 +15,7 @@ uid: microsoft.quantum.overview.qdk-language-support
 
 # Quantum programming language support in the QDK
 
-The Microsoft Quantum Development Kit (QDK) supports development in multiple quantum programming languages with both the QDK extension for Visual Studio Code (VS Code) and the QDK Python library. With the QDK, you can write quantum programs and submit them to Azure Quantum in your language of choice, or use multiple languages in your development workflow.
+The Microsoft Quantum Development Kit (QDK) supports development in multiple quantum programming languages with both the QDK extension for Visual Studio Code (VS Code) and the QDK Python package. With the QDK, you can write quantum programs and submit them to Azure Quantum in your language of choice, or use multiple languages in your development workflow.
 
 ## Language support in the QDK extension for VS Code
 
@@ -23,9 +23,9 @@ The [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemN
 
 The VS Code extension also includes the [QDK circuit editor](xref:microsoft.quantum.how-to.qdk-circuit-editor), a graphical interface to build quantum circuits that you can use in Q# programs.
 
-## Language support in the QDK Python library
+## Language support in the QDK Python package
 
-The [QDK Python library](https://pypi.org/project/qdk/) supports development in the following quantum programming languages and packages:
+The [QDK Python package](https://pypi.org/project/qdk/) supports development in the following quantum programming languages and packages:
 
 - Q#
 - OpenQASM
@@ -33,7 +33,7 @@ The [QDK Python library](https://pypi.org/project/qdk/) supports development in 
 - Cirq
 - PennyLane
 
-The QDK library includes modules that let you:
+The QDK package includes modules that let you:
 
 - Use Jupyter Notebook features, such as visualization tools and a magic command to write Q# code
 - Convert Q# and OpenQASM structs and callables into Python objects for use in other languages and frameworks
@@ -41,9 +41,9 @@ The QDK library includes modules that let you:
 
 ## Compare QDK language options
 
-The following table compares the availability of languages and frameworks for the VS Code extension and Python library.
+The following table compares the availability of languages and frameworks for the VS Code extension and Python package.
 
-| Language  | QDK VS Code extension | QDK Python library                                                         |
+| Language  | QDK VS Code extension | QDK Python package                                                         |
 |-----------|-----------------------|----------------------------------------------------------------------------|
 | Q#        | Directly available    | Available through the `qdk.qsharp` module and the `%%qsharp` magic command |
 | OpenQASM  | Directly available    | Available through the `qdk.openqasm` module                                |
@@ -53,7 +53,7 @@ The following table compares the availability of languages and frameworks for th
 
 ## Next steps
 
-To get started with the quantum programming languages in the QDK, install the QDK VS Code extension and Python library. For more information, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
+To get started with the quantum programming languages in the QDK, install the QDK VS Code extension and Python package. For more information, see [Set up the QDK](xref:microsoft.quantum.install-qdk.overview).
 
 To submit quantum programs to Azure Quantum in different languages, see the following guides:
 

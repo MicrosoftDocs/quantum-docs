@@ -49,7 +49,7 @@ Explore the following documentation to learn more about the main features of the
 
 - [Microsoft's Q# programming language](xref:microsoft.quantum.qsharp-overview)
 - [The OpenQASM programming language](xref:microsoft.quantum.how-to.openqasm-development-qdk)
-- [Quantum language support in the QDK Python library](xref:microsoft.quantum.overview.qdk-language-support)
+- [Quantum language support in the QDK Python package](xref:microsoft.quantum.overview.qdk-language-support)
 - [Chemistry applications with QDK for chemistry](xref:microsoft.quantum.overview.qdk-chemistry)
 - [Build circuits with the Circuit Editor](xref:microsoft.quantum.how-to.qdk-circuit-editor)
 - [Copilot integration in VS Code](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup)

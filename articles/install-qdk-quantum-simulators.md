@@ -14,7 +14,7 @@ uid: microsoft.quantum.how-to.install-qdk-neutral-atom-simulators
 
 # How to install and run the QDK quantum simulators
 
-The Microsoft Quantum Development Kit (QDK) includes a set of quantum simulators that you can access from the Visual Studio Code (VS Code) extension and the QDK Python library. These simulators let you test how your quantum programs run on real quantum hardware. This article explains how to install the simulators and how to run basic simulations in Jupyter Notebook and VS Code.
+The Microsoft Quantum Development Kit (QDK) includes a set of quantum simulators that you can access from the Visual Studio Code (VS Code) extension and the QDK Python package. These simulators let you test how your quantum programs run on real quantum hardware. This article explains how to install the simulators and how to run basic simulations in Jupyter Notebook and VS Code.
 
 The QDK includes four quantum simulators:
 
@@ -35,11 +35,11 @@ To follow the steps in this article, you need to install the following tools:
 
 ## Install the simulators
 
-All four simulators are available in the QDK Python library, but only the sparse simulator is available in the QDK VS Code extension.
+All four simulators are available in the QDK Python package, but only the sparse simulator is available in the QDK VS Code extension.
 
 To use the sparse simulator in the VS Code extension, install the [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 
-To use the quantum simulators in Python and Jupyter Notebook, install the latest version of the `qdk` Python library with the `jupyter` extra:
+To use the quantum simulators in Python and Jupyter Notebook, install the latest version of the `qdk` Python package with the `jupyter` extra:
 
 ```bash
 pip install --upgrade "qdk[jupyter]"
@@ -64,13 +64,13 @@ The VS Code terminal shows the output from the simulation.
 > [!NOTE]
 > You can add limited noise models to sparse simulations of Q# programs in the QDK extension. For more information, see [Add Pauli noise to the sparse simulator in VS Code](xref:microsoft.quantum.machines.overview.sparse-simulator#add-pauli-noise-to-the-sparse-simulator-in-vs-code).
 
-## Run simulations using the QDK Python library
+## Run simulations using the QDK Python package
 
-The QDK Python library offers all four simulators. How to call the simulators depends on the simulator and the quantum programming framework.
+The QDK Python package offers all four simulators. How to call the simulators depends on the simulator and the quantum programming framework.
 
 ### Call the sparse simulator
 
-You can call the sparse simulator for Q#, OpenQASM, and Qiskit programs. The following table shows how to call the sparse simulator from the `qdk` library for 10 shots in each supported quantum programming framework.
+You can call the sparse simulator for Q#, OpenQASM, and Qiskit programs. The following table shows how to call the sparse simulator from the `qdk` package for 10 shots in each supported quantum programming framework.
 
 | Programming framework | Python API             | Example call                                       |
 |-----------------------|------------------------|----------------------------------------------------|
@@ -85,7 +85,7 @@ For example, follow these steps to run the Bell pair Q# program in a Jupyter not
 
 1. In VS Code, open the **View** menu and select **Command Palette**.
 1. Enter **Create: New Jupyter Notebook**. An empty notebook file opens in a new tab.
-1. In the first cell, import the `qsharp` module from the `qdk` library.
+1. In the first cell, import the `qsharp` module from the `qdk` package.
 
     ```python
     from qdk import qsharp
@@ -116,7 +116,7 @@ For example, follow these steps to run the Bell pair Q# program in a Jupyter not
 
 ### Call the Clifford simulator
 
-You can call the Clifford simulator for Q#, OpenQASM, Qiskit, and QIR programs. The following table shows how to call the Clifford simulator from the `qdk` library for 10 shots in each supported quantum programming framework.
+You can call the Clifford simulator for Q#, OpenQASM, Qiskit, and QIR programs. The following table shows how to call the Clifford simulator from the `qdk` package for 10 shots in each supported quantum programming framework.
 
 | Programming framework | Python API                      | Example call                                                                                   |
 |-----------------------|---------------------------------|------------------------------------------------------------------------------------------------|
@@ -148,7 +148,7 @@ run(qasm_code, type='clifford', shots=10)
 
 ### Call the GPU and CPU simulators
 
-You can call the GPU and CPU simulators for Qiskit and QIR programs. The following table shows how to call the GPU simulator from the `qdk` library for 10 shots in each of the supported quantum programming frameworks. To call the CPU simulator, replace `'gpu'` with `'cpu'` for the simulator type parameters.
+You can call the GPU and CPU simulators for Qiskit and QIR programs. The following table shows how to call the GPU simulator from the `qdk` package for 10 shots in each of the supported quantum programming frameworks. To call the CPU simulator, replace `'gpu'` with `'cpu'` for the simulator type parameters.
 
 | Programming framework | Python API                      | Example call                                                                             |
 |-----------------------|---------------------------------|------------------------------------------------------------------------------------------|

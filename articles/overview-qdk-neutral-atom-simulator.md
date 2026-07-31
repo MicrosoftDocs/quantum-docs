@@ -29,7 +29,7 @@ Neutral atom device simulation in the QDK models the following properties of neu
 - Devices contain only $S_X$, $R_Z$, and $CZ$ gates.
 - Qubits physically move between storage, interaction, and measurement zones on the device.
 
-The QDK Python library has two APIs for neutral atom device simulation, depending on the format of your program:
+The QDK Python package has two APIs for neutral atom device simulation, depending on the format of your program:
 
 | API                  | QDK module       | Input format | Supported simulators   |
 |----------------------|------------------|--------------|------------------------|
@@ -50,7 +50,7 @@ For more information on the neutral atom device visualizer, see [How to use the 
 
 ## Noise models for neutral atom device simulations
 
-The quantum simulators in the QDK Python library use the `NoiseConfig` class from the `qdk.simulation` module to add noise models to simulations. When you perform simulations with the `NeutralAtomDevice` or `NeutralAtomBackend` APIs, your noise models only include noise from neutral atom device gates, qubit movement, and measurement.
+The quantum simulators in the QDK Python package use the `NoiseConfig` class from the `qdk.simulation` module to add noise models to simulations. When you perform simulations with the `NeutralAtomDevice` or `NeutralAtomBackend` APIs, your noise models only include noise from neutral atom device gates, qubit movement, and measurement.
 
 For more information on neutral atom device noise models in the QDK, see [How to build noise models for neutral atom device simulations in the QDK](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise).
 

@@ -26,7 +26,7 @@ To connect to your workspace with the `qdk.azure` module, you must have the foll
 
 - An Azure account with an active subscription. If you don’t have an Azure account, then you can register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go).
 - An Azure Quantum workspace. If you don't have a workspace, then see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
-- The latest version of the `qdk` python library with the `azure` extra.
+- The latest version of the `qdk` python package with the `azure` extra.
 
     ```bash
     pip install --upgrade "qdk[azure]"

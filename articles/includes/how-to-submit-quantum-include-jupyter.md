@@ -20,7 +20,7 @@ For installation details, see [Set up the QDK extension](xref:microsoft.quantum.
   see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
 - VS Code with the [Microsoft Quantum Development Kit (QDK)](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)  extensions installed.
-- The `qdk` Python library with the `azure` and `jupyter` extras, and the `ipykernel` package.
+- The `qdk` Python package with the `azure` and `jupyter` extras, and the `ipykernel` package.
 
     ```bash
     python -m pip install --upgrade "qdk[azure,jupyter]" ipykernel

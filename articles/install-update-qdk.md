@@ -30,7 +30,7 @@ By default, VS Code automatically updates extensions. After an extension is upda
 > [!IMPORTANT]
 > If you're updating from a previous Qiskit environment, then see [Update the `qdk.azure` module with Qiskit support in a virtual Python environment (recommended)](#update-the-qdkazure-module-with-qiskit-support-in-a-virtual-python-environment-recommended).
 
-1. Update to the latest `qdk` Python library with the `azure` extra:
+1. Update to the latest `qdk` Python package with the `azure` extra:
   
     ```bash
     pip install --upgrade "qdk[azure]"
@@ -91,7 +91,7 @@ To update the `qdk.azure` and `qdk.qiskit` modules in your current environment, 
     pip uninstall -y "qdk[azure,qiskit]" qiskit qiskit-terra qiskit-qir
     ```
 
-1. Reinstall the `qdk` library with the `qiskit` extra:
+1. Reinstall the `qdk` package with the `qiskit` extra:
 
     ```bash
     pip install "qdk[qiskit]"
