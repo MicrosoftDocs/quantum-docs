@@ -13,7 +13,8 @@ uid: microsoft.quantum.install-qdk.overview
 ---
 
 # Set up the Microsoft Quantum Development Kit
-In this article, you learn how to install the Microsoft Quantum Development Kit (QDK) extension for Visual Studio Code (VS Code) and add support for Python, Jupyter Notebook, and the Azure CLI.
+
+In this article, you learn how to install the Microsoft Quantum Development Kit (QDK) extension for Visual Studio Code (VS Code), the QDK Python package with Jupyter Notebook support, and the Azure CLI.
 
 ## Prerequisites
 
@@ -28,9 +29,9 @@ You can now write, debug, and run Q# programs against the built-in quantum simul
 
 To test your setup, see [Submit Q# jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs?pivots=ide-qsharp).
 
-## Add support for Python and Jupyter Notebook
+## Install the QDK Python package
 
-With Python support in VS Code, you can embed or call Q# code from your Python programs or Jupyter notebooks, and run them on the built-in quantum simulator. You can also connect to your Azure Quantum workspace and submit your jobs to run on real quantum hardware.
+With Python support in VS Code, you can embed or call Q# code from your Python programs or Jupyter notebooks, and run them on the built-in quantum simulators. You can also connect to your Azure Quantum workspace and submit your jobs to run on real quantum hardware.
 
 ### Prerequisites
 
@@ -43,13 +44,17 @@ To add Python and Jupyter Notebook support:
 
 1. Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
 1. Open the command line.
+<<<<<<< HEAD
+1. Install the `qdk` Python library with the `azure` extra.
+=======
 1. Install the `qdk` Python package with the `azure` extra:
+>>>>>>> 217fbf974038734898471c940f563cae5dc3d2e1
 
    ```cmd
    python -m pip install "qdk[azure]"
    ```
 
-1. For Qiskit version 1 and version 2 support, install the `qiskit` extra:
+1. For Qiskit version 1 and version 2 support, install the `qiskit` extra.
 
    ```cmd
    python -m pip install "qdk[qiskit]"
