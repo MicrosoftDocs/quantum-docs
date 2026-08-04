@@ -20,5 +20,6 @@
         "Quickstart",
         "qutip"
     ],
-    "npm.fetchOnlinePackageInfo": true
+    "npm.fetchOnlinePackageInfo": true,
+    "LearnAuthoringAIAssistant.feature.enableBrandingCorrectionOnlyMode": true
 }
