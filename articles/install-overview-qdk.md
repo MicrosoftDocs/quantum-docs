@@ -44,11 +44,7 @@ To add Python and Jupyter Notebook support:
 
 1. Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions for VS Code.
 1. Open the command line.
-<<<<<<< HEAD
-1. Install the `qdk` Python library with the `azure` extra.
-=======
 1. Install the `qdk` Python package with the `azure` extra:
->>>>>>> 217fbf974038734898471c940f563cae5dc3d2e1
 
    ```cmd
    python -m pip install "qdk[azure]"
