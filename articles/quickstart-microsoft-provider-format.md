@@ -258,7 +258,7 @@ To create an arbitrary layout, choose one of the following options:
         "q5": (-8, 5),
     }
 
-    reg = Register(qubits).with_automatic_layout(device) 
+    reg = Register(qubits).with_automatic_layout(QPU) 
     ```
 
 - To manually define a layout to create your register, see the [Pulser documentation](https://docs.pasqal.com/pulser/tutorials/reg_layouts/#Arbitrary-Layouts).
@@ -354,9 +354,11 @@ def prepare_input_data(seq):
 
     ```output
     {
-        "1000000": 8, 
-        "0010000": 1, 
-        "0010101": 1
+        "counter": {
+            "1000000": 8, 
+            "0010000": 1, 
+            "0010101": 1
+        }
     }
     ```
 
