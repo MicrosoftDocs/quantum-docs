@@ -70,7 +70,7 @@ When you set your target profile to **Adaptive RI**, you can submit your Q# prog
 
 1. Open the **View** menu and choose **Command Palette**, enter **QDK: Connect to an Azure Quantum workspace**, and then press **Enter**.
 1. Select **Azure account**, and follow the prompts to connect to your preferred directory, subscription, and workspace.
-1. After you're connected, in the **Explorer** pane, expand **Quantum Workspaces**.
+1. After you're connected, to view your Azure Quantum workspaces, select the **Microsoft Quantum panel** icon (bottom left).
 1. Expand your workspace and expand the **Quantinuum** provider.
 1. Select any Quantinuum available target, for example **quantinuum.sim.h2-1e**.
 1. Select the play icon to the right of the target name to start submitting the current Q# program.

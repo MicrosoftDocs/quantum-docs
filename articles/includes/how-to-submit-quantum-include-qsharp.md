@@ -78,7 +78,7 @@ You can connect and submit jobs directly from VS Code. For this example, you sub
     > [!NOTE]
     > If you have a connection string, then you can select **Connection string** and paste the connection string corresponding to your Azure Quantum workspace. For more information, see [Connect to a Quantum workspace using a connection string](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
 
-1. Once you are connected, in the **Explorer** pane, expand **Quantum Workspaces**.
+1. Once connected, select the **Microsoft Quantum panel** icon (bottom left) to view your Azure Quantum workspace.
 1. Expand your workspace and expand the **Rigetti** provider.
 
    > [!NOTE]
@@ -86,16 +86,9 @@ You can connect and submit jobs directly from VS Code. For this example, you sub
 
 1. Select **rigetti.sim.qvm** as your target.
 
-    :::image type="content" source="../media/vscode-add-rigetti.png" alt-text="Screenshot of Visual Studio Code showing how to select Rigetti simulator as target.":::
-
 1. Select the play icon to the right of the target name to start submitting the current Q# program.
-
-    :::image type="content" source="../media/vscode-run-rigetti.png" alt-text="Screenshot of Visual Studio Code showing how to run Rigetti simulator as target.":::
-
 1. Add a name to identify the job.
 1. Add the number of shots, or number of times that the program is run.
 1. Press **Enter** to submit the job. The job status will display at the bottom of the screen.
 1. Expand **Jobs** and hover over your job, which displays the times and status of your job.
 1. To view the results, select the cloud icon next to the job name to download the results from your workspace storage and display it in VS Code.
-
-    :::image type="content" source="../media/vscode-show-azure-quantum-results.png" alt-text="Screenshot of Visual Studio Code showing how to download and view the results of your quantum job.":::
