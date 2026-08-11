@@ -105,9 +105,9 @@ Create a `Workspace` object to connect to your Azure Quantum workspace. There ar
 1. Choose **Connection string**.
 1. Paste the connection string that you copied from the Azure portal and press **Enter**.
 
-Your Azure Quantum workspace appears in the **Explorer** pane, under **QUANTUM WORKSPACES**. Expand the workspace to see the targets that are available in your workspace and the list of jobs.
+To view your Azure Quantum workspace, select the **Microsoft Quantum panel** icon (bottom left).
 
-:::image type="content" source="media/quantum-workspace-explorer-vscode.png" alt-text="Screenshot of Visual Studio Code showing how to expand the Quantum Workspace pane.":::
+:::image type="content" source="media/vscode-microsoft-quantum-panel-icon.png" alt-text="Screenshot of Microsoft Quantum panel icon.":::
 
 ***
 
