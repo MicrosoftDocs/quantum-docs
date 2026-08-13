@@ -136,7 +136,7 @@ To find your workspace parameters, follow these steps:
 1. Copy the parameters in their corresponding fields.
 
 > [!NOTE]
-> Make sure that you log into the correct tenant before you connect to your workspace. For more information about tenants, see [How to manage Azure subscriptions with the Azure CLI](https://learn.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest&tabs=bash).
+> Make sure that you log into the correct tenant before you connect to your workspace. For more information about tenants, see [How to manage Azure subscriptions with the Azure CLI](/cli/azure/manage-azure-subscriptions-azure-cli#change-the-active-tenant).
 
 ### Use workspace parameters to connect to your Azure Quantum workspace
 
