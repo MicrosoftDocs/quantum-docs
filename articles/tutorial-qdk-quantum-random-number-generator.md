@@ -421,7 +421,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 ***
 
 > [!NOTE]
-> This code snippet does not currently run on any available Azure Quantum hardware targets, as the callable `ResultArrayAsInt` requires a QPU with a [full computation profile](/azure/quantum/concepts-targets-in-azure-quantum#quantum-processing-units-qpu-different-profiles).
+> This code snippet does not currently run on any available Azure Quantum hardware targets, as the callable `ResultArrayAsInt` requires a QPU with a [full computation profile](quantum-computing-target-profiles.md).
 
 ## Related content
 

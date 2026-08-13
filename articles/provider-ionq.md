@@ -73,7 +73,7 @@ IonQ Aria is the flagship of IonQ's trapped-ion quantum computers, with a 25-qub
 
 \* State Preparation and Measurement (SPAM): This measurement determines how accurately a quantum computer can set a qubit into its initial state and then measure the result at the end.
 
-IonQ Aria is available through Pay As You Go plan. For more information, see [Azure Quantum pricing](/azure/quantum/pricing?tabs=tabid-aria%2Ctabid-AQcreditsQ%2Ctabid-payasgo%2Ctabid-learndevelop&pivots=ide-computing#ionq).
+IonQ Aria is available through Pay As You Go plan. For more information, see [Azure Quantum pricing](pricing.md?tabs=tabid-paygo#ionq).
 
 ## IonQ Forte quantum computer
 
