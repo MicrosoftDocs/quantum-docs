@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Learn how to manually manage your jobs using sessions, what are the job failure policies, and how to avoid session timeouts.
-ms.date: 10/24/2024
+ms.date: 08/13/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -9,7 +9,7 @@ ms.topic: how-to
 no-loc: ["AI", "azure-quantum", "Azure Quantum", "Microsoft Quantum Development Kit", "Circuit Editor", "cirq", "Cirq", "CodeLens", "Copilot", "Google", "IBM", "IntelliSense", "Jupyter", "Jupyter Notebook", "Microsoft", "Microsoft's", "OpenQASM", "Python", "Q#", "QDK", "QDK's", "qiskit", "Qiskit", "SDK", "Visual Studio Code", "VS Code"]
 title: Manage your Sessions
 uid: microsoft.quantum.hybrid.interactive.how-to-sessions
-#customer intent: As a quantum developer, I want understand how to work with multiple sessions. 
+# Customer intent: As a quantum developer, I want understand how to work with sessions in Azure Quantum. 
 ---
 
 # How to manage your sessions
@@ -23,13 +23,13 @@ In this article, you learn how use sessions to manually manage your jobs. You al
 - An Azure account with an active subscription. If you don’t have an Azure account, register for free and sign up for a [pay-as-you-go subscription](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - An Azure Quantum workspace. For more information, see [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace).
 - A Python environment with [Python and Pip](https://apps.microsoft.com/detail/9pnrbtzxmb4z) installed.
-- The latest version of the `qdk` Python package.
+- The latest version of the `qdk` Python package with the `azure` extra.
 
     ```bash
-    pip install --upgrade "qdk[azure,qiskit]"
+    pip install --upgrade "qdk[azure]"
     ```
 
-     If you want to use Qiskit and Cirq, then you need to install the `azure`, `qiskit`, and `cirq` extras.
+     If you want to use Qiskit and Cirq, then you need to install the `qiskit` and `cirq` extras.
 
     ```bash
     pip install --upgrade "qdk[azure,qiskit,cirq]"
@@ -40,20 +40,25 @@ In this article, you learn how use sessions to manually manage your jobs. You al
 
 ## Monitor your sessions
 
-You can use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
+To view and manage your submitted sessions, follow these steps.
 
-1. Choose the **Job management** blade in your Quantum workspace.
-1. Identify the jobs of type **Session**. In this view, you can find the Unique ID of a session in the **Id** column and monitor the session's **Status**. Sessions can have the following statuses:
-   - **Waiting**: Jobs within the session are currently running.
-   - **Succeeded**: Session has ended successfully.
-   - **TimeOut**: If no new job is submitted within the session for 10 minutes, then that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
-   - **Failed**: If a job within a session fails, then that session ends and reports a status of **Failed**. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
-1. Click on a session's name for more details.
-1. You can see the list of **All jobs** within the session and monitor their statuses.
+In the [Azure portal](https://portal.azure.com), use the **Job management** blade in your Quantum workspace to view all top-level submitted items, including sessions and individual jobs that aren't associated with any session.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Go to your Quantum workspace.
+1. Expand the **Operations** dropdown and select **Job management** to view a table of your submitted jobs and sessions. Sessions have a value of **Session** in the **Type** column.
+1. To view details about a session, including a list of **All jobs** in the session, select the session **Name**.
+
+Each session has a unique ID and status. Sessions can have the following statuses.
+
+- **Waiting**: Jobs within the session are currently running.
+- **Succeeded**: The session ended successfully.
+- **TimeOut**: If no new job is submitted within the session for 10 minutes, then that session times out. For more information, see [Session timeouts](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#session-timeouts).
+- **Failed**: If a job within a session fails, then that session ends and reports a status of **Failed**. For more information, see [Job failure policy within sessions](xref:microsoft.quantum.hybrid.interactive.how-to-sessions#job-failure-policy-within-sessions).
 
 ## Retrieve and list sessions
 
-The following table shows the Python commands to get the list of all sessions and all jobs for a given session.
+The following table shows the Python commands to get the list of all sessions and all jobs for a given session. To connect to your workspace through the `qdk.azure` module, see [Connect to your Azure Quantum workspace with the QDK or Azure CLI](xref:microsoft.quantum.how-to.connect-workspace).
 
 | Command                                                                                                            | Description                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
@@ -82,7 +87,7 @@ for job in session_jobs[0:10]:
 
 ## Manually open or close sessions
 
-To create a new session, it's a best practice to follow the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions). If you want to manually create sessions instead, then choose the tab for your development environment.
+To create a new session, it's a best practice to follow the steps in [Get started with sessions](xref:microsoft.quantum.hybrid.interactive#get-started-with-sessions). To manually create sessions instead, choose the tab for your development environment.
 
 ### [Q# + Python](#tab/tabid-pythonsdk)
 
@@ -188,7 +193,7 @@ To create a new session, it's a best practice to follow the steps in [Get starte
 
 ## Pass arguments in Q\#  
 
-If your Q# operation takes input arguments, then those arguments are passed during job submission, which is Python code. This means that you need to format your arguments as Q# objects.
+If your Q# operation takes input arguments, pass those arguments as Q# objects when you submit jobs through Python.
 
 When you pass arguments as parameters to the job, the arguments are formatted as Q# code when `qsharp.compile` is called, so the values from Python need to be formatted into a string as valid Q# syntax.
 
@@ -238,16 +243,16 @@ A session times out if no new job is submitted within the session for 10 minutes
 The following code snippets show an example of a session that times out after 10 minutes because no new jobs are submitted. To avoid that, the next code snippet shows how to use a `with` block to create a session.
 
 ```python
-#Example of a session that times out 
+# Example of a session that times out 
 
 session = backend.open_session(name="Qiskit circuit session") # Session times out because only contains one job
 backend.run(circuit=circuit, shots=100, job_name="Job 1")
 ```
 
 ```python
-#Example of a session that includes a with block to avoid timeout
+# Example of a session that includes a with block to avoid timeout
 
-with backend.open_session(name="Qiskit circuit session") as session:  # Use a with block to submit multiple jobs within a session
+with backend.open_session(name="Qiskit circuit session") as session: # Use a with block to submit multiple jobs within a session
     job1 = backend.run(circuit=circuit, shots=100, job_name="Job 1") # First job submission
     job1.wait_for_final_state()
     job2 = backend.run(circuit=circuit, shots=100, job_name="Job 2") # Second job submission
