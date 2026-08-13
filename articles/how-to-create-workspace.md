@@ -27,7 +27,7 @@ You need a workspace to submit quantum programs to quantum hardware.
 You need to have an Azure account with an active subscription to create an Azure Quantum workspace. If you don't have one, you can choose from one of the following subscriptions, or for a full list see [Microsoft Azure Offer Details](https://azure.microsoft.com/support/legal/offer-details/).
 
 | Azure subscription          | Description |
-|-----------------------------|-------------|
+|-----------------------------|------------ |
 | Pay-as-you-go (recommended) | You pay for the services you use, and you can cancel anytime. |
 | Enterprise Agreement        | If your organization has an Enterprise Agreement (EA) purchasing contract with Microsoft, your organization's Account Owners can create [Enterprise Dev/Test subscriptions](https://azure.microsoft.com/offers/ms-azr-0148p/) for active Visual Studio subscribers under the EA. |
 <!-- 
@@ -49,7 +49,7 @@ To create an Azure Quantum workspace, follow these steps.
 
 1. Sign in to the [Azure portal](https://portal.azure.com), using the credentials for your Azure subscription.
 
-1. Select **Create a resource** and then search for **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum** service.
+1. From the Azure portal homepage, select **Create a resource** and then in **Search the Marketplace** enter **Azure Quantum**. On the results page, you should see a tile for the **Azure Quantum** service.
 
 1. Select **Azure Quantum**, and then select **Create**. The workspace creation form opens.
 
@@ -78,6 +78,8 @@ Use this option to manually configure your resource group and storage account, s
 > [!NOTE]
 > If you're unable to create or select a resource group or storage account as described in the following steps, then you may not have the access required at the subscription, resource group, or storage account level. For more information on authorization, see [Role requirements for creating a workspace](xref:microsoft.quantum.how-to.manage-workspace-access#role-requirements-for-creating-a-workspace).
 
+1. Choose a subscription from the Subscription dropdown list, and then select ***Select***.
+
 1. Select an existing [resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) or create a new one.
 
 1. Enter a name for the workspace.
@@ -91,22 +93,25 @@ Use this option to manually configure your resource group and storage account, s
    > [!NOTE]
    >The storage account you select must be enabled for public internet access. For more information, see [Authorization failure](xref:microsoft.quantum.azure.common-issues#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation).
 
-1. Select **Next**.
+1. Select **Next : Providers >**.
 
-1. A list of providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**.
+1. A list of providers are automatically added to the workspace. To add another available provider, select **Add** on that provider's tile. To modify the pricing plan for any of the selected providers, select **Modify**. To remove a provider select **Remove**.
 
    > [!NOTE]
    > Pricing for Azure Quantum varies by provider. Consult the information in the Providers tab of your Azure Quantum workspace in the Azure portal for the most up-to-date pricing information, or visit the [Azure Quantum pricing page](https://azure.microsoft.com/pricing/details/azure-quantum/).
 
-1. Select **Next**.
+1. Select **Next : Tags >** (optional).
 
-1. To add optional tags to your workspace, enter a name/value pair, or select **Next**.
+    > [!TIP]
+    > If tags are not needed you can select **Review + create**, then **Create** if validation passes (green check Validation passed on upper left).
 
-1. Review the settings that you selected and, if everything is correct, select **Create** to create your workspace.
+1. To add optional tags to your workspace, enter a name/value pair then select **Next : Review >**.
+
+1. Review the settings that you selected and, if everything is correct and validation passes (green check Validation passed on upper left), select **Create** to create your workspace.
 
 ***
 
-Deployment of your workspace may take a few minutes. The portal updates the status and deployment details.
+Deployment of your workspace may take a few minutes. The portal updates the status and deployment details. When the **Your deployment is complete** message appears, view the **Deployment details** or select **Go to resource**.
 
 > [!NOTE]
 > If you run into any issues, see [Azure Quantum common issues: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
