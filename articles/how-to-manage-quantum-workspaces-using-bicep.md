@@ -151,7 +151,7 @@ output tenant_id string = subscription().tenantId
 The following Azure resources are created by the template:
 
 - [**Azure Storage Account**](/azure/storage/blobs/): storage account for storing input and output data for quantum jobs.
-- [**Azure Quantum workspace**](/azure/quantum/how-to-create-workspace): a collection of assets associated with running quantum applications.
+- [**Azure Quantum workspace**](xref:microsoft.quantum.how-to.workspace): a collection of assets associated with running quantum applications.
 
 The template also grants the quantum workspace **Contributor** permission to the storage account. This step is needed so that the workspace can read and write job data.
 

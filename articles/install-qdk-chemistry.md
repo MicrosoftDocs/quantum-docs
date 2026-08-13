@@ -23,7 +23,7 @@ In this article, you learn how to install QDK for chemistry (QDK/Chemistry), a P
 - Install a Python interpreter (version 3.11, 3.12 or 3.13).
 
 > [!IMPORTANT]
-> Windows support for QDK/Chemistry is provided through the Windows Subsystem for Linux (WSL). To use QDK/Chemistry on Windows machines, you must [install WSL](https://learn.microsoft.com/windows/wsl/install). To use VS Code in WSL, [install the WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
+> Windows support for QDK/Chemistry is provided through the Windows Subsystem for Linux (WSL). To use QDK/Chemistry on Windows machines, you must [install WSL](/windows/wsl/install). To use VS Code in WSL, [install the WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
 
 ## Install the `qdk-chemistry` library
 
