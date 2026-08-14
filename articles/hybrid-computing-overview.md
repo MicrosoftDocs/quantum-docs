@@ -15,7 +15,7 @@ uid: microsoft.quantum.overview.hybrid
 
 # What is hybrid quantum computing?
 
-*Hybrid quantum computing* refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. With the latest generation of hybrid quantum computing architecture available in Azure Quantum you can start programming quantum computers by mixing classical and quantum instructions together.
+Hybrid quantum computing refers to the processes and architecture of a classical computer and a quantum computer working together to solve a problem. With the latest generation of hybrid quantum computing architecture available in Azure Quantum you can start programming quantum computers by mixing classical and quantum instructions together.
 
 Azure Quantum embodies a forward-looking vision for hybrid quantum computing, where certain architectures are already operational, while others are actively being developed. This article describes the different approaches to hybrid quantum computing and how they can be used to optimize certain problems.
 
@@ -36,7 +36,7 @@ In this architecture, the state of the qubits is lost between each circuit submi
 
 Sessions allow you to organize multiple quantum computing jobs with the ability to run classical code between quantum jobs. You'll be able to run complex algorithms to better organize and track your individual quantum computing jobs. Plus, jobs grouped in sessions are prioritized over non-session jobs.
 
-In this model, the client compute resource is moved to the cloud, resulting in lower latency and repeated execution of the quantum circuit with different parameters.   Although sessions allow for shorter queue times and longer running problems, the qubit states don't persist between each iteration. Examples of problems that can use this approach are :::no-loc text="Variational Quantum Eigensolvers"::: (VQE) and :::no-loc text="Quantum Approximate Optimization Algorithms":::  (QAOA).
+In this model, the client compute resource is moved to the cloud, resulting in lower latency and repeated execution of the quantum circuit with different parameters. Although sessions allow for shorter queue times and longer running problems, the qubit states don't persist between each iteration. Examples of problems that can use this approach are :::no-loc text="Variational Quantum Eigensolvers"::: (VQE) and :::no-loc text="Quantum Approximate Optimization Algorithms":::  (QAOA).
 
 For more information, see [Get started with sessions](xref:microsoft.quantum.hybrid.interactive).
 

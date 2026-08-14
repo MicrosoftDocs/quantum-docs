@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: Understand the architecture of sessions in hybrid quantum computing and learn how to create a new session.
-ms.date: 02/24/2026
+ms.date: 08/13/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -15,9 +15,10 @@ uid: microsoft.quantum.hybrid.interactive
 
 # Get started with sessions
 
-Sessions are a key feature of hybrid quantum computing that allow you to group multiple quantum computing jobs together. A session is a logical grouping of one or more jobs that you submit to a single target. Each session has a unique ID attached to each job in that session. Sessions are useful when you want to run multiple quantum computing jobs in sequence, and run classical code between quantum jobs.
+Sessions are a key feature of hybrid quantum computing. A session is a logical grouping of one or more jobs that you submit to a single target. Each session has a unique ID attached to each job in that session. Sessions are useful when you want to run multiple quantum computing jobs in sequence, and run classical code between quantum jobs.
 
-This article explains the architecture of sessions in hybrid quantum computing and how to create a new session in Azure Quantum.
+> [!NOTE]
+> Sessions group jobs for submission from Azure Quantum to a provider, but jobs in a session aren't batched on the provider's side.
 
 ## Prerequisites
 
