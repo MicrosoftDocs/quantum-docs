@@ -144,6 +144,8 @@
       href: sparse-simulator.md
     - name: Build noise models for simulations
       href: qdk-simulator-noise-models.md
+    - name: Multi-qubit gate noise models
+      href: qdk-multi-qubit-noise-models.md
     - name: The circuit visualizer
       href: circuit-diagrams-qdk-overview.md
     - name: The circuit editor

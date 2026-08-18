@@ -16,7 +16,7 @@ uid: microsoft.quantum.how-to.neutral-atom-simulators-noise
 
 The Microsoft Quantum Development Kit (QDK) includes a set of neutral atom device simulation APIs that you can use to model how your program runs on a neutral atom quantum computer. These APIs model the types of noise that occur specifically on neutral atom hardware. The QDK Python package lets you noise models for simulations with the `NoiseConfig` class.
 
-For more information on noise models in QDK simulations, see [How to build noise models for quantum simulations in the QDK Python package](xref:microsoft.quantum.how-to.qdk-simulator-noise-models).
+For more information on noise models in QDK simulations, see [How to build noise models for quantum simulations in the QDK](xref:microsoft.quantum.how-to.qdk-simulator-noise-models).
 
 For instructions on how to install and use the QDK simulators, see [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
