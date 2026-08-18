@@ -99,5 +99,5 @@ This table shows the simulators that you can use for each Python API that calls 
 ## Related content
 
 - [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators)
-- [How to build noise models for quantum simulations in the QDK Python package](xref:microsoft.quantum.how-to.qdk-simulator-noise-models)
+- [How to build noise models for quantum simulations in the QDK](xref:microsoft.quantum.how-to.qdk-simulator-noise-models)
 - [Backend quantum simulators from quantum providers](xref:microsoft.quantum.machines.overview.backend-simulators)

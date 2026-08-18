@@ -1,6 +1,6 @@
 ---
 author: azure-quantum-content
-description: This article explains noise models in the QDK and describes how to add noise models to simulations.
+description: This article explains how to build noise models in the QDK and how to add noise models to simulations.
 ms.date: 06/23/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
@@ -12,15 +12,15 @@ uid: microsoft.quantum.how-to.qdk-simulator-noise-models
 # Customer intent: As a quantum computing researcher, I want to know what kinds of noise models I can add to my quantum program simulations and how to build the noise models in the QDK.
 ---
 
-# How to build noise models for quantum simulations in the QDK Python package
+# How to build noise models for quantum simulations in the QDK
 
-The Microsoft Quantum Development Kit (QDK) includes a set of quantum simulators that model how your program runs on a quantum computer. Programs that you run on a real quantum computer always include some type and degree of noise. The QDK Python package lets you build custom noise models to use in your simulations through the `NoiseConfig` API.
+The Microsoft Quantum Development Kit (QDK) includes a set of quantum simulators that model how your program runs on a quantum computer. Programs that you run on a quantum computer always include some type and degree of noise. The QDK Python package lets you build custom noise models to use in your simulations through the `NoiseConfig` API.
 
 For instructions on how to install and use the QDK simulators, see [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 ## Types of noise
 
-Each operation or instruction in a quantum program is a potential source of noise. The following table lists all of the operations and instructions that you can set noise for with specific probabilities.
+Each operation or instruction in a quantum program can introduce noise. The following table lists all the operations and instructions that you can set noise for.
 
 | Noise source                | Noise model parameter | Source description                                                       |
 |-----------------------------|-----------------------|--------------------------------------------------------------------------|
@@ -51,15 +51,15 @@ Each operation or instruction in a quantum program is a potential source of nois
 
 With `NoiseConfig`, you can apply four different kinds of noise to the preceding operations with specific probabilities. The following table lists the noise type parameters that you can set with `NoiseConfig`, including a parameter for no noise.
 
-| Noise type      | Noise model parameter | Noise description             | Example use             | Example description                                                                      |
-|-----------------|-----------------------|-------------------------------|-------------------------|------------------------------------------------------------------------------------------|
-| Pauli $X$ noise | `x`                   | Bit flip                      | `noise.z.x = 0.03`      | Bit flip occurs in 3% of $Z$ operations                                                  |
-| Pauli $Y$ noise | `y`                   | Bit flip and phase flip       | `noise.sx.y = 0.01`     | Bit flip and phase flip occurs in 1% of $S_X$ operations                                 |
-| Pauli $Z$ noise | `z`                   | Phase flip                    | `noise.h.z = 0.02`      | Phase flip occurs in 2% of $H$ operations                                                |
-| No noise        | `i`                   | Identity operation, no effect | `noise.cz.ix = 0.02`    | Bit flip on only the target qubit occurs in 2% of $CZ$ operations                        |
-| Qubit loss      | `loss`                | Qubit is lost from the device | `noise.mov.loss = 0.03` | Qubit is lost in 3% of movements between device zones on a neutral atom quantum computer |
+| Noise type      | Noise model parameter | Noise description             | Example use          | Example description                                                                      |
+|-----------------|-----------------------|-------------------------------|----------------------|------------------------------------------------------------------------------------------|
+| Pauli $X$ noise | `x`                   | Bit flip                      | `noise.z.x = 0.03`   | Bit flip occurs in 3% of $Z$ operations                                                  |
+| Pauli $Y$ noise | `y`                   | Bit flip and phase flip       | `noise.sx.y = 0.01`  | Bit flip and phase flip occurs in 1% of $S_X$ operations                                 |
+| Pauli $Z$ noise | `z`                   | Phase flip                    | `noise.h.z = 0.02`   | Phase flip occurs in 2% of $H$ operations                                                |
+| No noise        | `i`                   | Identity operation, no effect | `noise.cz.ix = 0.02` | Bit flip on only the target qubit occurs in 2% of $CZ$ operations                        |
+| Qubit loss      | `l`                   | Qubit is lost from the device | `noise.mov.l = 0.03` | Qubit is lost in 3% of movements between device zones on a neutral atom quantum computer |
 
-The noise occurs after the source operation, not instead of the source operation. For example, `noise.z.x` means that the program applies the intended $Z$ gate to the qubit, and then an unintended $X$ gate applies to the qubit. Because the noise applies after the source, you can configure noise that has the same effect as the source. For example, `noise.x.x` applies an unintended bit flip after the intended bit flip, which undoes the intended operation.
+The noise occurs after the source operation, not instead of the source operation. For example, `noise.z.x` means that the program applies the intended $Z$ gate to the qubit, and then applies an unintended $X$ gate to the qubit. Because the noise applies after the source, you can configure noise that has the same effect as the source. For example, `noise.x.x` applies an unintended bit flip after the intended bit flip.
 
 > [!NOTE]
 > The neutral atom device simulation APIs support noise from a limited number of sources. For more information, see [How to build noise models for neutral atom device simulations in the QDK](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise).
@@ -129,37 +129,14 @@ To build a noise model for a simulation and view the effects of that noise on th
 
 ## Set multiple types of noise on the same source
 
-You can model different types of noise on the same source, with different probabilities for each type of noise. For example, the following code sets a 1% chance that a bit flip occurs after a Hadamard gate and a 3% chance that a phase flip occurs.
+You can model different types of noise on the same source, with different probabilities for each type of noise. For example, the following code sets a 1% chance that a bit flip occurs and a 3% chance that a phase flip occurs after a Hadamard gate.
 
 ```python
 noise.h.x = 0.01
 noise.h.z = 0.03
 ```
 
-When you configure multiple noise types for the same operation, only one noise type applies to each operation in your program. For example, each Hadamard gate can have either $X$ noise or $Z$ noise. The simulator can't apply both $X$ noise and $Z$ noise to the same Hadamard gate.
-
-## Correlated noise
-
-Multi-qubit gates can produce correlated noise, where the same noise pattern applies to all qubits that the gate operates on. To set correlated noise on multi-qubit gates, specify a noise parameter for each qubit. For example, the following code sets correlated bit flips on $CX$ gates with a 2% probability.
-
-```python
-noise.cx.xx = 0.02
-```
-
-When noise occurs on a $CX$ gate, an $X$ gate applies to both the control qubit and the target qubit. The noise is correlated because the noise always applies to both qubits. To make the noise uncorrelated, set multiple noise types with the identity parameter.
-
-```python
-noise.cx.xi = 0.02 # Bit flip on control qubit, do nothing to target qubit
-noise.cx.ix = 0.02 # Do nothing to control qubit, bit flip on target qubit
-```
-
-In the uncorrelated model, each noise setting occurs independently with 2% probability. Because only one noise setting can apply to an individual gate, this noise model can't apply $X$ noise to both qubits in the same gate. To model the possibility of noise on both qubits, configure another noise setting for both qubits.
-
-```python
-noise.cx.xi = 0.02 # Bit flip on control qubit, do nothing to target qubit
-noise.cx.ix = 0.02 # Do nothing to control qubit, bit flip on target qubit
-noise.cx.xx = 0.02 # Bit flip on both qubits
-```
+When you configure multiple noise types for the same operation, only one noise type can apply to each operation in your program. For example, each Hadamard gate can have either $X$ noise or $Z$ noise, but not both.
 
 ## Noise model functions
 
@@ -213,131 +190,7 @@ To set the noise rate for phase flips in an operation, use the `set_phaseflip` f
 noise.ry.set_phaseflip(0.01)
 ```
 
-## Custom noise intrinsics
+## Related content
 
-To build more complex noise models, the QDK has custom noise intrinsics for Q# and OpenQASM programs. Noise intrinsics behave like custom gates that you insert into your program to model correlated noise. You can use custom intrinsics to model noise on the gates that `NoiseConfig` supports, or on custom gates.
-
-The following examples show how to build a custom noise intrinsic that models crosstalk between three qubits. The noise intrinsic applies correlated bit flips to two of the qubits after a $CNOT$ gate is applied.
-
-### Add noise intrinsics to a Q\# program
-
-In Q# programs, use`@NoiseIntrinsic()` to declare a noise intrinsic. Then, use the `intrinsic` method from `NoiseConfig` to configure the noise intrinsic.
-
-To configure and use the example noise intrinsic, follow these steps in a Jupyter notebook.
-
-1. Import the required objects and set the QIR target profile.
-
-    ```python
-    from qdk import init, TargetProfile
-    from qdk import qsharp
-    from qdk.simulation import run_qir, NoiseConfig
-
-    init(target_profile=TargetProfile.Adaptive_RIF)
-    ```
-
-1. Write a Q# program called `GHZ` that calls a noise intrinsic called `Crosstalk3Q` after each $CNOT$ gate.
-
-    ```qsharp
-    %%qsharp
-    
-    // A noise intrinsic representing crosstalk on 3 qubits.
-    // In the ideal circuit this is a no-op; the simulator injects
-    // Pauli errors according to the NoiseConfig.
-    @NoiseIntrinsic()
-    operation Crosstalk3Q(q0: Qubit, q1: Qubit, q2: Qubit) : Unit {
-        body intrinsic;
-    }
-    
-    // Prepare a GHZ state on 3 qubits, with crosstalk after each CNOT.
-    operation GHZ() : Result[] {
-        use qs = Qubit[3];
-        H(qs[0]);
-        CNOT(qs[0], qs[1]);
-        Crosstalk3Q(qs[0], qs[1], qs[2]);  // crosstalk hits all 3 qubits
-        CNOT(qs[1], qs[2]);
-        Crosstalk3Q(qs[0], qs[1], qs[2]);  // crosstalk again
-        MResetEachZ(qs)
-    }
-    ```
-
-1. Configure the noise table for the intrinsic. Set the number of qubits, the types of noise, and the probability for each noise type.
-
-    ```python
-    noise = NoiseConfig()
-    table = noise.intrinsic("Crosstalk3Q", num_qubits=3)
-    table.ixx = 0.10  # 10% XX on qubits 1-2
-    table.xxi = 0.05  #  5% XX on qubits 0-1
-    ```
-  
-1. Compile the program to QIR.
-
-    ```python
-    qir = qsharp.compile("GHZ()")
-    ```
-  
-1. Run the simulation and plot of histogram of the results.
-
-    ```python
-    result = run_qir(qir, shots=1000, noise=noise)
-    Histogram(result)
-    ```
-
-1. To compare the result to a simulation without noise, run the simulation again with no noise model.
-
-    ```python
-    result = run_qir(qir, shots=1000)
-    Histogram(result)
-    ```
-
-### Add noise intrinsics to an OpenQASM program
-
-In OpenQASM programs, use `@qdk.qir.noise_intrinsic` to create a noise intrinsic as a custom gate definition. Then, use the `intrinsic` method from `NoiseConfig` to configure the noise intrinsic.
-
-To write an OpenQASM program with a noise intrinsic called `crosstalk_3q` and compile the program into QIR, run the following code in a Jupyter notebook.
-
-```python
-from qdk.openqasm import compile, OutputSemantics
-from qdk import TargetProfile
-from qdk.simulation import run_qir, NoiseConfig
-from qdk.widgets import Histogram
-
-qasm_source = """
-OPENQASM 3.0;
-include "stdgates.inc";
-
-// A noise intrinsic representing crosstalk on 3 qubits.
-// In the ideal circuit this is a no-op; the simulator injects
-// Pauli errors according to the NoiseConfig.
-@qdk.qir.noise_intrinsic
-gate crosstalk_3q q0, q1, q2 {}
-
-qubit[3] qs;
-
-// Prepare a GHZ state on 3 qubits, with crosstalk after each CNOT.
-h qs[0];
-cx qs[0], qs[1];
-crosstalk_3q qs[0], qs[1], qs[2];  // crosstalk hits all 3 qubits
-cx qs[1], qs[2];
-crosstalk_3q qs[0], qs[1], qs[2];  // crosstalk again
-
-bit[3] res = measure qs;
-"""
-
-qir_qasm = compile(
-    qasm_source,
-    output_semantics=OutputSemantics.OpenQasm,
-    target_profile=TargetProfile.Base,
-)
-```
-
-To configure the noise intrinsic and run the simulation, run the following code.
-
-```python
-noise = NoiseConfig()
-table = noise.intrinsic("crosstalk_3q", num_qubits=3)
-table.ixx = 0.10  # 10% XX on qubits 1-2
-table.xxi = 0.05  #  5% XX on qubits 0-1
-
-result = run_qir(qir_qasm, shots=1000, noise=noise)
-Histogram(result)
-```
+- [Build noise models for multi-qubit gates](xref:microsoft.quantum.how-to.multi-qubit-noise-models)
+- [How to build noise models for neutral atom device simulations in the QDK](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise)
