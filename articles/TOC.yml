@@ -144,7 +144,7 @@
       href: sparse-simulator.md
     - name: Build noise models for simulations
       href: qdk-simulator-noise-models.md
-    - name: Multi-qubit gate noise models
+    - name: Noise models for multi-qubit gates
       href: qdk-multi-qubit-noise-models.md
     - name: The circuit visualizer
       href: circuit-diagrams-qdk-overview.md
@@ -198,6 +198,8 @@
     items:
     - name: QIR target profiles
       href: quantum-computing-target-profiles.md
+    - name: Connect to your Azure Quantum workspace
+      href: how-to-connect-workspace.md
     - name: Submit a circuit in provider-specific format
       href: quickstart-microsoft-provider-format.md
     - name: Hybrid quantum computing (QC)
