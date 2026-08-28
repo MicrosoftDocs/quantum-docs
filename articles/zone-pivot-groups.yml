@@ -18,16 +18,6 @@ groups:
     title: Jupyter Notebooks
   - id: ide-python
     title: Python
-- id: azurequantum-quantumcomputing-ide
-  title: IDE for submitting quantum computing jobs to AQ 
-  prompt: Select the type of program you are submitting
-  pivots:
-  - id: ide-qsharp
-    title: Q# programs
-  - id: ide-jupyter
-    title: Jupyter Notebooks
-  - id: ide-python
-    title: Python programs
 - id: ide-platforms
   title: Local or online development environments
   prompt: Select your preferred development environment

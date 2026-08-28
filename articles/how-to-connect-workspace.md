@@ -32,7 +32,7 @@ To connect to your workspace with the `qdk.azure` module, you need the following
     pip install --upgrade "qdk[azure]"
     ```
 
-- If you use Azure CLI, update to the latest version. For installation instructions, see:
+If you use Azure CLI, update to the latest version. For installation instructions, see:
 
 - [Install Azure CLI on Windows](/cli/azure/install-azure-cli-windows)
 - [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)

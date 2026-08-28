@@ -28,6 +28,8 @@
         href: migration-guide.md
     - name: Work with jobs
       href: how-to-work-with-jobs.md
+    - name: Submit jobs with Azure CLI
+      href: how-to-submit-jobs-azure-cli.md
     - name: Work with Azure Quantum using the Azure CLI
       href: how-to-manage-quantum-workspaces-with-the-azure-cli.md
     - name: Azure CLI commands >>
@@ -126,14 +128,6 @@
       href: qsharp-overview.md
     - name: OpenQASM in the QDK
       href: qdk-openqasm-integration.md
-    - name: Python interoperability
-      items:
-      - name: Submit a circuit with Qiskit
-        href: quickstart-microsoft-qiskit.md
-      - name: Submit a circuit with Cirq
-        href: quickstart-microsoft-cirq.md
-      - name: Submit a circuit with PennyLane
-        href: quickstart-microsoft-pennylane.md
   - name: Simulators and visualizers
     items:
     - name: Overview of QDK simulators
@@ -196,6 +190,14 @@
       href: katas-qdk-learning.md
   - name: Integration with Azure Quantum
     items:
+    - name: Submit jobs to Azure Quantum
+      items:
+      - name: Job submission overview
+        href: how-to-submit-jobs.md
+      - name: Submit a job with the QDK extension for VS Code
+        href: how-to-submit-jobs-vscode.md
+      - name: Submit a job with the QDK Python package
+        href: how-to-submit-jobs-python.md
     - name: QIR target profiles
       href: quantum-computing-target-profiles.md
     - name: Connect to your Azure Quantum workspace
@@ -218,8 +220,6 @@
         href: qsharp-quickstart.md
       - name: Ways to run Q# programs
         href: qsharp-ways-to-work.md
-      - name: Submit jobs with Q# and VS Code
-        href: how-to-submit-jobs.md
       - name: Work with Q# projects
         href: how-to-work-with-qsharp-projects.md
       - name: Debug and test your Q# code
