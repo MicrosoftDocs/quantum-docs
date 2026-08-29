@@ -267,7 +267,7 @@ Run your quantum programs in your preferred development environment. You can use
 
 You can write quantum programs in Q# using the QDK. To get started, see [Quickstart: Create your first Q# program](xref:microsoft.quantum.qsharp-quickstart).
 
-Besides Q#, the QDK offers support for other languages for quantum computing, such as [Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit) and [Cirq](xref:microsoft.quantum.quickstarts.computing.cirq).
+Besides Q#, the QDK offers support for other languages for quantum computing, such as Qiskit and Cirq. For more information, see [Submit jobs with the QDK Python package](xref:microsoft.quantum.how-to.submit-jobs-python).
 
 ### Integrate with Python
 

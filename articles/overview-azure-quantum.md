@@ -122,4 +122,4 @@ To start using Azure Quantum, explore the following links:
 - [Create an Azure Quantum workspace](xref:microsoft.quantum.how-to.workspace)
 - [Get started with Q# and Visual Studio Code](xref:microsoft.quantum.submit-jobs)
 - [Install the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
-- [Run a Qiskit circuit in Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit)
+- [How to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs)

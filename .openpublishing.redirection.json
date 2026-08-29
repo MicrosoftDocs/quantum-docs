@@ -1225,6 +1225,21 @@
       "source_path": "articles/tutorial-resource-estimator-chemistry.md",
       "redirect_url": "/azure/quantum/intro-to-resource-estimation",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/quickstart-microsoft-qiskit.md",
+      "redirect_url": "/azure/quantum/how-to-submit-jobs-python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/quickstart-microsoft-cirq.md",
+      "redirect_url": "/azure/quantum/how-to-submit-jobs-python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/quickstart-microsoft-pennylane.md",
+      "redirect_url": "/azure/quantum/how-to-submit-jobs-python",
+      "redirect_document_id": false
     }
   ]
 }

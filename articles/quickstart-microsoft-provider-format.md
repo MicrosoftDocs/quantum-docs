@@ -503,5 +503,5 @@ To submit a Quil job to a Rigetti target, use the `qdk.azure` Python module.
 
 ## Related content
 
-- [Submit a circuit with Qiskit to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.qiskit).
-- [Submit a circuit with Cirq to Azure Quantum](xref:microsoft.quantum.quickstarts.computing.cirq).
+- [How to submit jobs to Azure Quantum](xref:microsoft.quantum.submit-jobs)
+- [Work with Azure Quantum jobs](xref:microsoft.quantum.work-with-jobs)
