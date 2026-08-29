@@ -287,7 +287,7 @@ backend = provider.get_backend("ionq.qpu.aria-1", gateset="native")
 |----------------|--------|----------|-------------|
 | `gateset`      | string | No       | Specifies the set of gates that will be used to define a circuit. A value of `qis` corresponds to the abstract gates (default behavior) and `native` to the [IonQ hardware native gates](https://docs.ionq.com/guides/getting-started-with-native-gates#introducing-the-native-gates). |
 
-For more information about Qiskit jobs, see [Submit a circuit with Qiskit](xref:microsoft.quantum.quickstarts.computing.qiskit).
+For more information about Qiskit jobs, see [Submit jobs with the QDK Python package](xref:microsoft.quantum.how-to.submit-jobs-python).
 
 ### Noise model simulation
 
