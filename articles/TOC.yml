@@ -104,6 +104,8 @@
         href: provider-rigetti.md
       - name: Rigetti support policy
         href: provider-support-rigetti.md
+  - name: Azure Quantum preview API lifecycle
+    href: azure-quantum-api-lifecycle.md
   - name: Troubleshooting Azure Quantum
     href: azure-quantum-common-issues.md
   - name: Azure Quantum release notes
