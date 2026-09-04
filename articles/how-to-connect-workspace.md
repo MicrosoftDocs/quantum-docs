@@ -38,7 +38,27 @@ If you use Azure CLI, update to the latest version. For installation instruction
 - [Install Azure CLI on Linux](/cli/azure/install-azure-cli-linux)
 - [Install Azure CLI on macOS](/cli/azure/install-azure-cli-macos)
 
+## Connect with an Azure account
+
+Use an Azure account to connect to your Azure Quantum workspace with the QDK extension in Visual Studio Code.
+
+1. Open VS Code.
+1. Open the **View** menu and choose **Command Palette**.
+1. Enter and select **QDK: Connect to an Azure Quantum workspace**.
+1. Choose **Azure account**.
+1. A VS Code message appears stating that QDK wants to sign in, press **Allow**.
+1. Choose the account to use.
+1. Select a **tenant**.
+1. Select the **subscription**.
+
+To view your Azure Quantum workspace, select the **Microsoft Quantum panel** icon (bottom left).
+
+:::image type="content" source="media/vscode-microsoft-quantum-panel-icon.png" alt-text="Screenshot of Microsoft Quantum panel icon.":::
+
 ## Connect with a connection string
+
+> [!NOTE]
+> Connecting using connection strings is less secure than using an Azure account.
 
 Use a connection string to specify the connection parameters to an Azure Quantum workspace. Connection strings are useful in the following scenarios:
 
