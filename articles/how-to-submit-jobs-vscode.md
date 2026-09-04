@@ -76,15 +76,18 @@ Choose the tab for the language of your source file.
 
 ## Connect to your Azure Quantum workspace
 
-You can connect with a workspace connection string.
+You can connect to a workspace using an Azure account.
 
 1. In VS Code, select **View** > **Command Palette**.
 1. Enter **QDK: Connect to an Azure Quantum workspace**.
-1. Use a connection string to [connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace#connect-with-a-connection-string).
+1. Choose **Azure account**.
+1. A VS Code message appears stating that QDK wants to sign in, press **Allow**.
+1. Choose an account to use.
+1. Select a **tenant**.
+1. Select the **subscription**.
 1. Confirm that your workspace appears under **Quantum Workspaces**.
 
-> [!IMPORTANT]
-> Treat a workspace connection string as a secret. Don't store it in source control or share it in plain text.
+For more information about connecting to workspaces, see [Connect to your Azure Quantum workspace](xref:microsoft.quantum.how-to.connect-workspace).
 
 ## Select an Azure Quantum target
 
