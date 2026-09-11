@@ -146,6 +146,8 @@
       href: circuit-diagrams-qdk-overview.md
     - name: The circuit editor
       href: qdk-circuit-editor.md
+    - name: The Bloch sphere visualizer
+      href: how-to-use-bloch-sphere-visualizer.md
     - name: Neutral atom device simulation
       items:
       - name: Neutral atom device simulation in the QDK
