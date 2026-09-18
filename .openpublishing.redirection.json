@@ -1240,6 +1240,11 @@
       "source_path": "articles/quickstart-microsoft-pennylane.md",
       "redirect_url": "/azure/quantum/how-to-submit-jobs-python",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/katas-qdk-learning.md",
+      "redirect_url": "/azure/quantum/qdk-learning-katas",
+      "redirect_document_id": false
     }
   ]
 }

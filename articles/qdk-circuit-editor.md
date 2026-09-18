@@ -9,8 +9,7 @@ ms.topic: how-to
 no-loc: ['circuit editor', 'Q#', '$$v', '$$', "$$", '$', "$", $, $$, '\cdots', 'bmatrix', '\ddots', '\equiv', '\sum', '\begin', '\end', '\sqrt', '\otimes', '{', '}', '\text', '\phi', '\kappa', '\psi', '\alpha', '\beta', '\gamma', '\delta', '\omega', '\bra', '\ket', '\boldone', '\mathbf{1}', '\\\\', '\\', '=', '\frac', '\text', '\mapsto', '\dagger', '\to', '\begin{cases}', '\end{cases}', '\operatorname', '\braket', '\id', '\expect', '\defeq', '\variance', '\dd', '&', '\begin{align}', '\end{align}', '\Lambda', '\lambda', '\Omega', '\mathrm', '\left', '\right', '\qquad', '\times', '\big', '\langle', '\rangle', '\bigg', '\Big', '|', '\mathbb', '\vec', '\in', '\texttt', '\ne', '<', '>', '\leq', '\geq', '~~', '~', '\begin{bmatrix}', '\end{bmatrix}', '\_']
 title: How to use the circuit editor in the Quantum Development Kit
 uid: microsoft.quantum.how-to.qdk-circuit-editor
-
-#Customer intent: I want to learn how to use the circuit editor from the QDK to build quantum circuits and use them in my Q# program.
+# Customer intent: I want to learn how to use the circuit editor from the QDK to build quantum circuits and use them in my Q# program.
 ---
 
 # Create and visualize circuits with the circuit editor
