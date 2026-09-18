@@ -7,6 +7,7 @@ ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
 no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Azure Quantum", "Visual Studio Code", "VS Code", "qdk", "qdk[jupyter]", "Jupyter", "Jupyter Notebook", "BlochSphere", "Clifford+T"]
+ai-usage: ai-assisted
 title: How to use the Bloch sphere visualizer in the QDK
 uid: microsoft.quantum.how-to.qdk-bloch-sphere-visualizer
 # Customer intent: As a quantum developer, I want to use the Bloch sphere visualizer to explore the effects of quantum gates on a single-qubit state.
@@ -132,13 +133,13 @@ The trace lists the initial state and one row for each gate in the sequence. Eac
 
 Use the playback controls to animate or step through the gate program.
 
-| Control | Action |
-|---------|--------|
-| **Start** | Select the initial state. |
-| **Back** | Move back one step. |
+| Control                            | Action                                                                                |
+|------------------------------------|---------------------------------------------------------------------------------------|
+| **Start**                          | Select the initial state.                                                             |
+| **Back**                           | Move back one step.                                                                   |
 | **Play**, **Pause**, or **Replay** | Play the sequence, pause on the current step, or replay after the animation finishes. |
-| **Forward** | Move forward one step. |
-| **End** | Select the final state. |
+| **Forward**                        | Move forward one step.                                                                |
+| **End**                            | Select the final state.                                                               |
 
 When you expand the trace, move the playback speed control to choose an animation speed.
 
