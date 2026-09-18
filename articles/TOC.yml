@@ -190,8 +190,12 @@
       href: qre-estimation-results.md
   - name: QDK Learning
     items:
-    - name: Learn quantum computing and Q# with the Katas
-      href: katas-qdk-learning.md
+    - name: Develop your skills with QDK Learning
+      href: qdk-learning-overview.md
+    - name: Learn about quantum computing and Q# with the Quantum Katas
+      href: qdk-learning-katas.md
+    - name: Learn about quantum chemistry with QDK Learning
+      href: qdk-learning-quantum-chemistry.md
   - name: Integration with Azure Quantum
     items:
     - name: Submit jobs to Azure Quantum

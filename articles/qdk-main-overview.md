@@ -1,15 +1,15 @@
 ---
-title: Build Quantum Solutions with the Microsoft Quantum Development Kit
-description: This document is the main landing page for the Microsoft Quantum Development Kit (QDK), and gives a high level overview of the QDK and links to documentation on its features.
 author: azure-quantum-content
+description: This document is the main landing page for the Microsoft Quantum Development Kit (QDK), and gives a high level overview of the QDK and links to documentation on its features.
+ms.date: 08/03/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: overview
-ms.date: 08/03/2026
 no-loc: ["Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "IntelliSense", "CodeLens", "Jupyter Notebook", "AI", "Copilot", "Microsoft's", "Q#", "OpenQASM", "Qiskit", "Cirq", "Python", "Circuit Editor"]
+ai-usage: ai-assisted
+title: Build Quantum Solutions with the Microsoft Quantum Development Kit
 uid: microsoft.quantum.overview.qdk-landing-page
-
 # Customer intent: As a quantum developer, I want to learn about what the QDK has to offer and how to use the QDK.
 ---
 
@@ -35,7 +35,7 @@ Explore the following documentation to learn more about the main features of the
 - [The quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator)
 - [Quantum error correction](https://github.com/microsoft/qdk-ec)
 - [Chemistry and materials science applications with QDK/Chemistry](xref:microsoft.quantum.overview.qdk-chemistry)
-- [Learn quantum computing with QDK Learning](xref:microsoft.quantum.overview.qdk-learning-katas-vscode)
+- [Learn quantum computing with QDK Learning](xref:microsoft.quantum.overview.qdk-learning)
 - [Copilot integration in VS Code](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup)
 
 ## Get started with the QDK
