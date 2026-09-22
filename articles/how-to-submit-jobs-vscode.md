@@ -6,9 +6,10 @@ ms.date: 08/25/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
+no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "QIR", target, targets]
+ai-usage: ai-assisted
 title: Submit jobs to Azure Quantum with the QDK extension for VS Code
 uid: microsoft.quantum.how-to.submit-jobs-vscode
-no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "QIR", target, targets]
 # Customer intent: As a quantum developer who writes Q# or OpenQASM programs in VS Code, I want to use the QDK extension to submit my programs to Azure Quantum.
 ---
 
