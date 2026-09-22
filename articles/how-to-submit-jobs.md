@@ -7,9 +7,10 @@ ms.service: azure-quantum
 ms.subservice: core
 ms.custom: devx-track-azurecli
 ms.topic: overview
+ai-usage: ai-assisted
+no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "Qiskit", "Cirq", "PennyLane", "Python", "Azure CLI", "QIR", target, targets]
 title: Submit jobs to Azure Quantum
 uid: microsoft.quantum.submit-jobs
-no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "Qiskit", "Cirq", "PennyLane", "Python", "Azure CLI", "QIR", target, targets]
 # Customer intent: As a quantum developer, I want to understand the available job submission methods so I can choose the method that fits my program and workflow.
 ---
 

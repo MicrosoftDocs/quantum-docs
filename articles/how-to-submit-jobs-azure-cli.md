@@ -6,9 +6,10 @@ ms.date: 08/25/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
+ai-usage: ai-assisted
+no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "QIR", target, targets]
 title: Submit jobs to Azure Quantum with Azure CLI
 uid: microsoft.quantum.how-to.submit-jobs-azure-cli
-no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "QIR", target, targets]
 # Customer intent: As a quantum developer, I want to know how to use Azure CLI to submit QIR as a job to Azure Quantum.
 ---
 
