@@ -6,9 +6,10 @@ ms.date: 08/25/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
+no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "Qiskit", "Cirq", "PennyLane", "Python", "Jupyter Notebook", "QIR", target, targets]
+ai-usage: ai-assisted
 title: Submit jobs with the QDK Python package
 uid: microsoft.quantum.how-to.submit-jobs-python
-no-loc: ["Microsoft Quantum Development Kit", "QDK", "Visual Studio Code", "VS Code", "Azure Quantum", "Q#", "OpenQASM", "Qiskit", "Cirq", "PennyLane", "Python", "Jupyter Notebook", "QIR", target, targets]
 # Customer intent: As a quantum developer who uses Python, I want to know how to use the QDK Python package to submit a quantum program to an Azure Quantum target in my preferred language or framework.
 ---
 

@@ -9,7 +9,7 @@ ms.topic: how-to
 no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
 title: How to use the molecule visualizer with QDK for chemistry
 uid: microsoft.quantum.how-to.qdk-molecule-visualizer
-#customer intent: As a quantum chemistry researcher, I want to know how to use the QDK's molecule visualizer to examine the structure and molecular orbitals of my molecule
+# Customer intent: As a quantum chemistry researcher, I want to know how to use the QDK's molecule visualizer to examine the structure and molecular orbitals of my molecule
 ---
 
 # How to use the molecule visualizer with QDK for chemistry
@@ -21,12 +21,14 @@ The Microsoft Quantum Development Kit (QDK) includes a molecule visualizer to us
 To use the molecule visualizer, install the following tools:
 
 - Python environment (version 3.11, 3.12, or 3.13) with Python and Pip
-- Visual Studio Code (VS Code) with the Jupyter Notebook extension, or open VS Code for the Web
+- Visual Studio Code (VS Code) with the [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 - The latest version of the `qdk` Python package with the `jupyter` extra, and the `qdk-chemistry` library with all extras:
 
     ```bash
     pip install --upgrade "qdk[jupyter]" "qdk-chemistry[all]"
     ```
+
+For more details on QDK/Chemistry installation, see [How to install QDK for chemistry](xref:microsoft.quantum.how-to.install-qdk-chemistry).
 
 ## Create a `Structure` object
 
@@ -93,7 +95,7 @@ To change the visual representation, open the **Visualization Style** dropdown a
 
 ### Interact with the molecule visualizer
 
-Use the following mouse and keyboard controls to interact with the molecule visualizer
+Use the following mouse and keyboard controls to interact with the molecule visualizer.
 
 | Input                           | Action                                    |
 |---------------------------------|-------------------------------------------|
@@ -103,7 +105,7 @@ Use the following mouse and keyboard controls to interact with the molecule visu
 
 ## View the molecular orbitals
 
-If you have `.cube` files that store the MO data for your molecule, then you can load these files into the molecule visualizer to view the MOs overlaid on the molecule structure. Store the cube data in a Python dictionary with MO labels as keys, then pass the dictionary to `MoleculeViewer`.
+If you have `.cube` files that store the MO data for your molecule, you can load these files into the molecule visualizer to view the MOs overlaid on the molecule structure. Store the cube data in a Python dictionary with MO labels as keys, and then pass the dictionary to `MoleculeViewer`.
 
 For example, the following code renders MOs for two active space orbitals in *p*-benzyne when you have the cube files in your working directory:
 
@@ -120,14 +122,14 @@ MoleculeViewer(molecule_data=structure.to_xyz(), cube_data=cube_data, isoval=0.0
 
 :::image type="content" source="media/molecule-visualizer-mos.png" alt-text="Screenshot of the molecule visualizer with display options for molecular orbitals.":::
 
-When you pass cube data to the `MoleculeViewer` widget, the visualizer has the following other UI elements:
+When you pass cube data to the `MoleculeViewer` widget, the visualizer displays the following UI elements.
 
 | UI element          | Description                                                                                |
 |---------------------|--------------------------------------------------------------------------------------------|
 | **Cube selection**  | Choose the MO that the visualizer displays. You can view only one MO at a time.                |
 | **Adjust isovalue** | Set the isovalue of the MO coefficients. The isovalue determines how the MOs are rendered. |
 
-For information on how to generate `.cube` files, see [`qdk_chemistry.utils.cubegen module](https://microsoft.github.io/qdk-chemistry/api/api_autogen/qdk_chemistry.utils.cubegen.html#qdk_chemistry.utils.cubegen.generate_cubefiles_from_orbitals) in the QDK/Chemistry API reference on GitHub.
+For information on how to generate `.cube` files, see [`qdk_chemistry.utils.cubegen` module](https://microsoft.github.io/qdk-chemistry/api/api_autogen/qdk_chemistry.utils.cubegen.html#qdk_chemistry.utils.cubegen.generate_cubefiles_from_orbitals) in the QDK/Chemistry API reference on GitHub.
 
 ### Display other MO information
 
