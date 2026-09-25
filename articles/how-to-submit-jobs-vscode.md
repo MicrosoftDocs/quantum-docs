@@ -77,6 +77,9 @@ Choose the tab for the language of your source file.
 
 ## Connect to your Azure Quantum workspace
 
+> [!WARNING]
+> Starting January 11, 2027, Azure Quantum will require users in a Quantum workspace to have the **Quantum Workspace Data Reader** or **Quantum Workspace Data Contributor** role to access job results. The **Quantum Workspace Data Contributor** role will be required to submit jobs. To avoid interruptions to your Azure Quantum workflows, assign these roles to the appropriate users before the deadline. For more information, see [Assign data access roles for users in the workspace](xref:microsoft.quantum.how-to.workspace#assign-data-access-roles-for-users-in-the-workspace).
+
 You can connect to a workspace using an Azure account.
 
 1. In VS Code, select **View** > **Command Palette**.

@@ -115,3 +115,25 @@ Deployment of your workspace may take a few minutes. The portal updates the stat
 
 > [!NOTE]
 > If you run into any issues, see [Azure Quantum common issues: Creating an Azure Quantum workspace](xref:microsoft.quantum.azure.common-issues#creating-an-azure-quantum-workspace).
+
+## Assign data access roles for users in the workspace
+
+> [!WARNING]
+> Starting January 11, 2027, Azure Quantum will require users in a Quantum workspace to have the **Quantum Workspace Data Reader** or **Quantum Workspace Data Contributor** role to access job results. The **Quantum Workspace Data Contributor** role will be required to submit jobs. To avoid interruptions to your Azure Quantum workflows, assign these roles to the appropriate users before the deadline.
+
+Azure Quantum workspaces have the following roles that you can assign to users in the workspace.
+
+| Role                               | Description                                                             |
+|------------------------------------|-------------------------------------------------------------------------|
+| Quantum Workspace Data Contributor | Create, read, and modify jobs and other workspace data.                 |
+| Quantum Workspace Data Reader      | Read jobs and other workspace data.                                     |
+
+To submit a job to Azure Quantum, a user needs to have the **Quantum Workspace Data Contributor** role. To assign these roles, complete the following steps as a user with the **Owner** role.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Go to your Quantum workspace.
+1. In the navigation pane, select **Access control (IAM)**.
+1. Select **Add**, and then select **Add role assignment**.
+1. Search for the user that you want to assign a role to.
+1. Select the **Quantum Workspace Data Contributor** or **Quantum WOrkspace Data Reader** role, and then select **Next**.
+1. Select the user to assign the role, and then select **Review + assign**.
