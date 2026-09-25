@@ -20,6 +20,9 @@ ms.custom:
 
 If you have an Azure Quantum workspace, you can connect to your workspace and submit your code with the `qdk.azure` Python module. The `qdk.azure` module provides a [`Workspace` class](xref:azure.quantum.Workspace) that represents an Azure Quantum workspace.
 
+> [!WARNING]
+> Starting January 11, 2027, Azure Quantum will require users in a Quantum workspace to have the **Quantum Workspace Data Reader** or **Quantum Workspace Data Contributor** role to access job results. The **Quantum Workspace Data Contributor** role will be required to submit jobs. To avoid interruptions to your Azure Quantum workflows, assign these roles to the appropriate users before the deadline. For more information, see [Assign data access roles for users in the workspace](xref:microsoft.quantum.how-to.workspace#assign-data-access-roles-for-users-in-the-workspace).
+
 ## Prerequisites
 
 To connect to your workspace with the `qdk.azure` module, you need the following:
