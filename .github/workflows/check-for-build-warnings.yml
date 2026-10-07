@@ -7,7 +7,7 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@main
+      uses: step-security/harden-runner@351661ca32ac09a36dc5ee2d536e3128f2a3c8ed # v2.22.0
       with:
         egress-policy: audit
     - uses: MicrosoftDocs/quantum-docs-private/.github/actions/status-checker@main
