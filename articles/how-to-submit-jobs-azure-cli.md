@@ -2,7 +2,7 @@
 author: azure-quantum-content
 description: Learn how to submit QIR programs to Azure Quantum with Azure CLI.
 ms.author: quantumdocwriters
-ms.date: 08/25/2026
+ms.date: 10/07/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: how-to
@@ -15,11 +15,13 @@ uid: microsoft.quantum.how-to.submit-jobs-azure-cli
 
 # Submit jobs to Azure Quantum with Azure CLI
 
-Use Azure CLI when you already have an input file that's compiled to QIR and you want to submit the job from a terminal, shell script, or CI/CD workflow. Azure CLI manages the Azure Quantum workspace, target, job metadata, and input file, but doesn't compile programs into QIR for you.
+Azure CLI is for advanced Azure Quantum users who already compile their programs to QIR and submit jobs from a terminal, shell script, or CI/CD workflow. To submit jobs with Azure CLI, you need detailed knowledge of job input and output formats, QIR entry points, and provider-specific parameters.
 
-The exact method to submit a job with Azure CLI depends on the Azure Quantum target. The following steps are a general example of how to submit a QIR job with Azure CLI.
+For most scenarios, submit jobs with the [QDK extension for VS Code](xref:microsoft.quantum.how-to.submit-jobs-vscode) or the [QDK Python package](xref:microsoft.quantum.how-to.submit-jobs-python). These tools compile your programs and handle these details for you.
 
-### Install Azure CLI support
+Azure CLI manages the Azure Quantum workspace, target, job metadata, and input file, but doesn't compile programs into QIR for you. The exact method to submit a job depends on the Azure Quantum target. The following steps are a general example of how to submit a QIR job with Azure CLI.
+
+## Install Azure CLI support
 
 1. Install [Azure CLI](/cli/azure/install-azure-cli).
 1. Install or update the Azure Quantum extension.
@@ -28,7 +30,7 @@ The exact method to submit a job with Azure CLI depends on the Azure Quantum tar
     az extension add --upgrade --name quantum
     ```
 
-### Connect to your workspace
+## Connect to your workspace
 
 1. Sign in to Azure.
 
@@ -56,7 +58,7 @@ The exact method to submit a job with Azure CLI depends on the Azure Quantum tar
     az quantum target list --output table
     ```
 
-### Submit a compiled input file
+## Submit a compiled input file
 
 For a QIR job, specify the target, job name, QIR input format, input file, and QIR entry point.
 
@@ -74,7 +76,7 @@ The command returns the job ID. Save the ID so that you can monitor the job and 
 > [!NOTE]
 > This example shows common QIR parameters. A provider-native job can require different input and output formats or additional parameters. See the documentation for the selected target and the [`az quantum job` command reference](/cli/azure/quantum/job).
 
-### Monitor the job and get the output
+## Monitor the job and get the output
 
 To check the job status, run the following command.
 
