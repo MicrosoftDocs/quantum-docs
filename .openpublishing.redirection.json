@@ -1245,6 +1245,11 @@
       "source_path": "articles/katas-qdk-learning.md",
       "redirect_url": "/azure/quantum/qdk-learning-katas",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/sparse-simulator.md",
+      "redirect_url": "/azure/quantum/qdk-simulator-vscode",
+      "redirect_document_id": false
     }
   ]
 }

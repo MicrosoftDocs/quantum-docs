@@ -1,26 +1,27 @@
 ---
 author: azure-quantum-content
 description: This article explains how to build noise models in the QDK and how to add noise models to simulations.
-ms.date: 06/23/2026
+ms.date: 10/06/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, Jupyter, Python, Visual Studio Code, VS Code, "Jupyter Notebook"]
-title: How to build noise models for the QDK simulators
+ai-usage: ai-assisted
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "Q#", OpenQASM, QIR, Jupyter, Python, Visual Studio Code, VS Code, "Jupyter Notebook", Stabilizer, Clifford, Pauli, Hadamard]
+title: Build noise models for the QDK simulators
 uid: microsoft.quantum.how-to.qdk-simulator-noise-models
 # Customer intent: As a quantum computing researcher, I want to know what kinds of noise models I can add to my quantum program simulations and how to build the noise models in the QDK.
 ---
 
-# How to build noise models for quantum simulations in the QDK
+# Build noise models for quantum simulations in the QDK
 
 The Microsoft Quantum Development Kit (QDK) includes a set of quantum simulators that model how your program runs on a quantum computer. Programs that you run on a quantum computer always include some type and degree of noise. The QDK Python package lets you build custom noise models to use in your simulations through the `NoiseConfig` API.
 
-For instructions on how to install and use the QDK simulators, see [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
+For instructions on how to install and use the QDK simulators, see [Run quantum simulations with the QDK Python package](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 ## Types of noise
 
-Each operation or instruction in a quantum program can introduce noise. The following table lists all the operations and instructions that you can set noise for.
+Each operation or instruction in a quantum program can introduce noise. This table lists all the operations and instructions that you can set noise for.
 
 | Noise source                | Noise model parameter | Source description                                                       |
 |-----------------------------|-----------------------|--------------------------------------------------------------------------|
@@ -28,11 +29,11 @@ Each operation or instruction in a quantum program can introduce noise. The foll
 | $Y$ gate                    | `y`                   | Single-qubit Pauli gate, bit flip and phase flip                         |
 | $Z$ gate                    | `z`                   | Single-qubit Pauli gate, phase flip                                      |
 | $H$ gate                    | `h`                   | Single-qubit Hadamard gate, creates equal superposition state            |
-| $S$ gate                    | `s`                   | Single-qubit gate, half-pi phase flip                                    |
+| $S$ gate                    | `s`                   | Single-qubit gate, half-pi phase shift                                   |
 | $S^\dagger$ gate            | `s_adj`               | Single-qubit gate, adjoint of $S$                                        |
-| $T$ gate                    | `t`                   | Single-qubit gate, quarter-pi phase lip                                  |
+| $T$ gate                    | `t`                   | Single-qubit gate, quarter-pi phase shift                                |
 | $T^\dagger$ gate            | `t_adj`               | Single-qubit gate, adjoint of $T$                                        |
-| $S_X$ gate                  | `sx`                  | Single-qubit gate, half bit flip                                         |
+| $S_X$ gate                  | `sx`                  | Single-qubit gate, half bit-flip rotation                                |
 | $S_X^\dagger$ gate          | `sx_adj`              | Single-qubit gate, adjoint of $S_X$                                      |
 | $R_X$ gate                  | `rx`                  | Single-qubit gate, general phase rotation about $x$ axis                 |
 | $R_Y$ gate                  | `ry`                  | Single-qubit gate, general phase rotation about $y$ axis                 |
@@ -49,7 +50,7 @@ Each operation or instruction in a quantum program can introduce noise. The foll
 | Qubit measurement           | `mz`                  | Single-qubit measurement in the Pauli-$Z$ basis                          |
 | Qubit measurement and reset | `mresetz`             | Single-qubit measurement and reset to 0 state                            |
 
-With `NoiseConfig`, you can apply four different kinds of noise to the preceding operations with specific probabilities. The following table lists the noise type parameters that you can set with `NoiseConfig`, including a parameter for no noise.
+With `NoiseConfig`, you can apply four different kinds of noise to the preceding operations with specific probabilities. This table lists the noise type parameters that you can set with `NoiseConfig`. It also includes a parameter for no noise.
 
 | Noise type      | Noise model parameter | Noise description             | Example use          | Example description                                                                      |
 |-----------------|-----------------------|-------------------------------|----------------------|------------------------------------------------------------------------------------------|
@@ -59,10 +60,18 @@ With `NoiseConfig`, you can apply four different kinds of noise to the preceding
 | No noise        | `i`                   | Identity operation, no effect | `noise.cz.ix = 0.02` | Bit flip on only the target qubit occurs in 2% of $CZ$ operations                        |
 | Qubit loss      | `l`                   | Qubit is lost from the device | `noise.mov.l = 0.03` | Qubit is lost in 3% of movements between device zones on a neutral atom quantum computer |
 
-The noise occurs after the source operation, not instead of the source operation. For example, `noise.z.x` means that the program applies the intended $Z$ gate to the qubit, and then applies an unintended $X$ gate to the qubit. Because the noise applies after the source, you can configure noise that has the same effect as the source. For example, `noise.x.x` applies an unintended bit flip after the intended bit flip.
+The noise occurs after the source operation, not instead of the source operation. For example, `noise.z.x` means that the program applies the intended $Z$ gate to the qubit and then applies an unintended $X$ gate. Because the noise applies after the source, you can configure noise that has the same effect as the source. For example, `noise.x.x` applies an unintended bit flip after the intended bit flip.
 
 > [!NOTE]
 > The neutral atom device simulation APIs support noise from a limited number of sources. For more information, see [How to build noise models for neutral atom device simulations in the QDK](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise).
+
+## Noise and stabilizer branching
+
+The stabilizer simulator supports Pauli noise and qubit loss during simulations of non-Clifford operations through stabilizer branching. The simulator applies the ideal operation first and then samples the configured noise.
+
+Stabilizer branching is an exact simulation method rather than a Clifford approximation. However, each non-Clifford operation can increase the number of branches, so memory usage and shot time can grow exponentially. Use the stabilizer simulator when the circuit is mostly composed of Clifford operations and contains a limited number of non-Clifford operations.
+
+When an API exposes a simulator selector, both `"stabilizer"` and `"clifford"` select the stabilizer simulator.
 
 ## Build a noise model
 
@@ -90,6 +99,7 @@ To build a noise model for a simulation and view the effects of that noise on th
     bit[2] r;
     
     h qs[0];
+    t qs[0];
     cx qs[0], qs[1];
     r = measure qs;
     """
@@ -102,34 +112,34 @@ To build a noise model for a simulation and view the effects of that noise on th
     ```python
     noise = NoiseConfig()
 
-    noise.h.x = 0.01
+    noise.t.z = 0.01
     noise.cx.zi = 0.02
     ```
 
-    This code produces the following noise model, where the noise rate is the probability that the source causes the corresponding type of noise.
+    This code produces this noise model, where the noise rate is the probability that the source causes the corresponding type of noise.
 
     | Noise source   | Noise type                              | Noise rate |
     |----------------|-----------------------------------------|------------|
-    | $H$ gate       | Bit flip                                | 1%         |
+    | $T$ gate       | Phase flip                              | 1%         |
     | $CX$ gate      | Phase flip on control qubit             | 2%         |
 
-1. Run the simulator with the noise model and view a histogram of measurement results. For example, run the following code to simulate 1,000 shots of your program on the Clifford simulator.
+1. Run the simulator with the noise model and view a histogram of measurement results. This code simulates 1,000 shots on the stabilizer simulator. The $T$ gate causes stabilizer branching, and the configured $Z$ fault is sampled after the $T$ gate.
 
     ```python
-    results = run_qir(qir, shots=1000, noise=noise, type="clifford")
+    results = run_qir(qir, shots=1000, noise=noise, type="stabilizer")
     Histogram(results, labels="kets")
     ```
 
 1. To compare the noisy results with a noiseless simulation, run the simulation again with no noise model.
 
     ```python
-    results = run_qir(qir, shots=1000, type="clifford")
+    results = run_qir(qir, shots=1000, type="stabilizer")
     Histogram(results, labels="kets")
     ```
 
 ## Set multiple types of noise on the same source
 
-You can model different types of noise on the same source, with different probabilities for each type of noise. For example, the following code sets a 1% chance that a bit flip occurs and a 3% chance that a phase flip occurs after a Hadamard gate.
+You can model different types of noise on the same source, with different probabilities for each type of noise. For example, this code sets a 1% chance that a bit flip occurs and a 3% chance that a phase flip occurs after a Hadamard gate.
 
 ```python
 noise.h.x = 0.01
@@ -140,20 +150,20 @@ When you configure multiple noise types for the same operation, only one noise t
 
 ## Noise model functions
 
-Instead of noise model parameters, you can use the following set of noise functions to build your noise model.
+Instead of noise model parameters, you can use these noise functions to build your noise model.
 
 ### Set Pauli noise
 
 To include Pauli noise in your model, call the `set_pauli_noise` function on a gate or movement operation.
 
-For single-qubit operations, pass a one-character Pauli string and a noise rate. For example, the following code sets a 1% chance that a bit flip occurs during qubit movement.
+For single-qubit operations, pass a one-character Pauli string and a noise rate. For example, this code sets a 1% chance that a bit flip occurs during qubit movement.
 
 ```python
 # Equivalent to: noise.mov.x = 0.01
 noise.mov.set_pauli_noise('X', 0.01)
 ```
 
-For two-qubit operations, pass a two-character Pauli string and a noise rate. The first character of the Pauli string corresponds to noise on the control qubit and the second character corresponds to noise on the target qubit. For example, the following code sets correlated phase flips after 1% of $CX$ operations.
+For two-qubit operations, pass a two-character Pauli string and a noise rate. The first character of the Pauli string corresponds to noise on the control qubit and the second character corresponds to noise on the target qubit. For example, this code sets correlated phase flips after 1% of $CX$ operations.
 
 ```python
 # Equivalent to: noise.cx.zz = 0.01
@@ -162,7 +172,7 @@ noise.cx.set_pauli_noise('ZZ', 0.01)
 
 ### Set depolarizing noise
 
-The `set_depolarizing` function sets equal but uncorrelated noise rates for all three types of Pauli noise. For example, the following code sets a 3% chance that Pauli noise occurs after an $H$ operation, distributed evenly as a 1% chance for each of the three Pauli noise types.
+The `set_depolarizing` function sets equal rates for all three types of Pauli noise. For example, this code sets a 3% chance that Pauli noise occurs after an $H$ operation, distributed evenly as a 1% chance for each of the three Pauli noise types.
 
 ```python
 # Equivalent to:
@@ -174,7 +184,7 @@ noise.h.set_depolarizing(0.03)
 
 ### Set bit flip noise
 
-To set the noise rate for bit flips, use the `set_bitflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs after an $R_Z$ operation.
+To set the noise rate for bit flips, use the `set_bitflip` function on a gate or movement operation. For example, this code sets a 1% chance that a bit flip occurs after an $R_Z$ operation.
 
 ```python
 # Equivalent to: noise.rz.x = 0.01
@@ -183,7 +193,7 @@ noise.rz.set_bitflip(0.01)
 
 ### Set phase flip noise
 
-To set the noise rate for phase flips in an operation, use the `set_phaseflip` function on a gate or movement operation. For example, the following code sets a 1% chance that a phase flip occurs after an $R_Y$ operation.
+To set the noise rate for phase flips in an operation, use the `set_phaseflip` function on a gate or movement operation. For example, this code sets a 1% chance that a phase flip occurs after an $R_Y$ operation.
 
 ```python
 # Equivalent to: noise.ry.z = 0.01
