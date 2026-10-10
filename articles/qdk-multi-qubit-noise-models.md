@@ -1,12 +1,13 @@
 ---
 author: azure-quantum-content
 description: This article explains how to build noise models for multi-qubit gates in the QDK.
-ms.date: 08/17/2026
+ms.date: 10/07/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, Jupyter, Python, Visual Studio Code, VS Code, "Jupyter Notebook"]
+ai-usage: ai-assisted
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "Q#", OpenQASM, QIR, Jupyter, Python, Visual Studio Code, VS Code, "Jupyter Notebook", Stabilizer, Clifford, CNOT]
 title: Build noise models for multi-qubit gates
 uid: microsoft.quantum.how-to.multi-qubit-noise-models
 # Customer intent: As a quantum computing researcher, I want to know how to build advanced noise models for multi-qubit gates.
@@ -20,7 +21,7 @@ For more information on noise models in the QDK, see [How to build noise models 
 
 ## Prerequisites
 
-To build noise models in the QDK, install the following tools.
+To build noise models in the QDK, install these tools.
 
 - Visual Studio Code (VS Code) with [QDK extension](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) and [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) installed.
 - The latest version of the `qdk` Python package with the `jupyter` extra.
@@ -33,7 +34,7 @@ pip install --upgrade "qdk[jupyter]"
 
 Multi-qubit gates can produce correlated noise, where the same noise pattern applies to all qubits that the gate operates on. To set correlated noise on multi-qubit gates, specify a noise parameter for each qubit.
 
-For example, the following Python code sets correlated bit flips on $CX$ gates with a 2% probability. When noise occurs on a $CX$ gate, an $X$ gate applies to both the control qubit and the target qubit. The noise is correlated because the noise always applies to both qubits.
+For example, this Python code sets correlated bit flips on $CX$ gates with a 2% probability. When noise occurs on a $CX$ gate, an $X$ gate applies to both the control qubit and the target qubit. The noise is correlated because the noise always applies to both qubits.
 
 ```python
 from qdk.simulation import NoiseConfig
@@ -50,7 +51,7 @@ noise.cx.xi = 0.02 # Bit flip on control qubit, do nothing to target qubit
 noise.cx.ix = 0.02 # Do nothing to control qubit, bit flip on target qubit
 ```
 
-In the uncorrelated model, each noise setting occurs independently with 2% probability. Because only one noise setting can apply to an individual gate, this noise model can't apply $X$ noise to both qubits in the same gate.
+In this model, each noise entry has a 2% probability. Because the simulator samples at most one configured noise entry for each gate operation, this model can't apply $X$ noise to both qubits during the same $CX$ operation.
 
 To model the possibility of noise on both qubits, configure another noise setting that applies noise to both qubits.
 
@@ -60,21 +61,27 @@ noise.cx.ix = 0.02 # Do nothing to control qubit, bit flip on target qubit
 noise.cx.xx = 0.02 # Bit flip on both qubits
 ```
 
+## Noise on non-Clifford multi-qubit rotations
+
+The stabilizer simulator supports arbitrary-angle $R_{XX}$, $R_{YY}$, and $R_{ZZ}$ rotations through stabilizer branching. Noise configured on `rxx`, `ryy`, or `rzz` is applied after the ideal rotation. This behavior doesn't change if the rotation creates additional stabilizer branches.
+
+Each non-Clifford rotation can increase the number of branches, so memory usage and shot time can grow exponentially. Use the stabilizer simulator for circuits with a limited number of non-Clifford rotations, and use the CPU or GPU full-state simulator when non-Clifford operations make up a substantial part of the circuit.
+
 ## Qubit loss policies
 
-Qubit loss is a type of noise where qubits are lost from the device. Loss policies define the behavior of a multi-qubit gate when one or more of the qubits is missing when the operation begins. The QDK supports the following loss policies.
+Qubit loss is a type of noise where qubits are lost from the device. Loss policies define the behavior of a multi-qubit gate when one or more of the qubits is missing when the operation begins. The QDK supports these loss policies.
 
 | Loss policy         | Gates the policy can apply to | Effect on remaining qubits                         |
 |---------------------|-------------------------------|----------------------------------------------------|
 | `SKIP`              | All gates                     | The gate has no effect on the remaining qubits     |
 | `PROPAGATE`         | All gates                     | The other qubits are also lost                     |
-| `DEGRADE`           | `rxx` ,`ryy`, and `rzz`       | Apply as single-qubit gate to remaining qubit      |
-| `RESIDUAL_S_DAGGER` | All gates                     | Apply `s_sdj` gate to remaining qubits             |
+| `DEGRADE`           | `rxx`, `ryy`, and `rzz`       | Apply as single-qubit gate to remaining qubit      |
+| `RESIDUAL_S_DAGGER` | All gates                      | Apply `s_adj` gate to remaining qubits             |
 | `APPLY_ANYWAY`      | `swap`                        | Remaining qubit still swaps states with lost qubit |
 
-For loss policies to affect your simulation, you need to include qubit loss in your noise model. Lost qubits are tracked during the simulation. Loss policies apply when a gate operates on at least one lost qubit.
+For loss policies to affect your simulation, include qubit loss in your noise model. The simulation tracks lost qubits. Loss policies apply when a gate operates on at least one lost qubit.
 
-To include loss policies in your noise model, use `LossPolicy` from the `qdk.simulation` module. The following code shows examples to set each policy.
+To include loss policies in your noise model, use `LossPolicy` from the `qdk.simulation` module. This code shows examples to set each policy.
 
 ```python
 from qdk.simulation import NoiseConfig, LossPolicy
@@ -90,7 +97,7 @@ noise.ryy.on_loss  = LossPolicy.RESIDUAL_S_DAGGER  # Apply S-adjoint to remainin
 noise.swap.on_loss = LossPolicy.APPLY_ANYWAY       # Perform swap anyway
 ```
 
-For all loss policies, configured noise can still affect the remaining qubits. For example, the following code can still apply bit flip noise on CZ gates even when one of the qubits in a CZ gate is missing.
+For all loss policies, configured noise can still affect the remaining qubits. For example, this code can still apply bit flip noise on CZ gates even when one of the qubits in a CZ gate is missing.
 
 ```python
 noise.z.l = 0.01 # Introduce qubit loss
@@ -103,11 +110,11 @@ noise.cz.on_loss = LossPolicy.SKIP
 
 To build more complex noise models, the QDK has custom noise intrinsics for Q# and OpenQASM programs. Noise intrinsics behave like custom gates that you insert into your program to model correlated noise. You can use custom intrinsics to model noise on the gates that `NoiseConfig` supports, or on custom gates.
 
-The following examples show how to build a custom noise intrinsic that models crosstalk between three qubits. The noise intrinsic applies correlated bit flips to two of the qubits after a $CNOT$ gate is applied.
+These examples show how to build a custom noise intrinsic that models crosstalk between three qubits. The noise intrinsic applies correlated bit flips to two of the qubits after a $CNOT$ gate is applied.
 
 ### Add noise intrinsics to a Q\# program
 
-In Q# programs, use`@NoiseIntrinsic()` to declare a noise intrinsic. Then, use the `intrinsic` method from `NoiseConfig` to configure the noise intrinsic.
+In Q# programs, use `@NoiseIntrinsic()` to declare a noise intrinsic. Then, use the `intrinsic` method from `NoiseConfig` to configure the noise intrinsic.
 
 To configure and use the example noise intrinsic, follow these steps in a Jupyter notebook.
 
@@ -117,6 +124,7 @@ To configure and use the example noise intrinsic, follow these steps in a Jupyte
     from qdk import init, TargetProfile
     from qdk import qsharp
     from qdk.simulation import run_qir, NoiseConfig
+    from qdk.widgets import Histogram
 
     init(target_profile=TargetProfile.Adaptive_RIF)
     ```
@@ -126,7 +134,7 @@ To configure and use the example noise intrinsic, follow these steps in a Jupyte
     ```qsharp
     %%qsharp
     
-    // A noise intrinsic representing crosstalk on 3 qubits.
+    // A noise intrinsic that represents crosstalk on 3 qubits.
     // In the ideal circuit this is a no-op; the simulator injects
     // Pauli errors according to the NoiseConfig.
     @NoiseIntrinsic()
@@ -161,17 +169,17 @@ To configure and use the example noise intrinsic, follow these steps in a Jupyte
     qir = qsharp.compile("GHZ()")
     ```
   
-1. Run the simulation and plot of histogram of the results.
+1. Run the simulation on the stabilizer simulator and plot a histogram of the results.
 
     ```python
-    result = run_qir(qir, shots=1000, noise=noise)
+    result = run_qir(qir, shots=1000, noise=noise, type="stabilizer")
     Histogram(result)
     ```
 
 1. To compare the result to a simulation without noise, run the simulation again with no noise model.
 
     ```python
-    result = run_qir(qir, shots=1000)
+    result = run_qir(qir, shots=1000, type="stabilizer")
     Histogram(result)
     ```
 
@@ -179,7 +187,7 @@ To configure and use the example noise intrinsic, follow these steps in a Jupyte
 
 In OpenQASM programs, use `@qdk.qir.noise_intrinsic` to create a noise intrinsic as a custom gate definition. Then, use the `intrinsic` method from `NoiseConfig` to configure the noise intrinsic.
 
-To write an OpenQASM program with a noise intrinsic called `crosstalk_3q` and compile the program into QIR, run the following code in a Jupyter notebook.
+To write an OpenQASM program with a noise intrinsic called `crosstalk_3q` and compile the program into QIR, run this code in a Jupyter notebook.
 
 ```python
 from qdk.openqasm import compile, OutputSemantics
@@ -191,7 +199,7 @@ qasm_source = """
 OPENQASM 3.0;
 include "stdgates.inc";
 
-// A noise intrinsic representing crosstalk on 3 qubits.
+// A noise intrinsic that represents crosstalk on 3 qubits.
 // In the ideal circuit this is a no-op; the simulator injects
 // Pauli errors according to the NoiseConfig.
 @qdk.qir.noise_intrinsic
@@ -216,7 +224,7 @@ qir_qasm = compile(
 )
 ```
 
-To configure the noise intrinsic and run the simulation, run the following code.
+To configure the noise intrinsic and run the simulation, run this code.
 
 ```python
 noise = NoiseConfig()
@@ -224,6 +232,11 @@ table = noise.intrinsic("crosstalk_3q", num_qubits=3)
 table.ixx = 0.10  # 10% XX on qubits 1-2
 table.xxi = 0.05  #  5% XX on qubits 0-1
 
-result = run_qir(qir_qasm, shots=1000, noise=noise)
+result = run_qir(
+    qir_qasm,
+    shots=1000,
+    noise=noise,
+    type="stabilizer",
+)
 Histogram(result)
 ```

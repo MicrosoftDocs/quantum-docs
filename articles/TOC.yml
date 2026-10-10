@@ -136,8 +136,8 @@
       href: simulators-overview-qdk.md
     - name: Install and run the QDK quantum simulators
       href: install-qdk-quantum-simulators.md
-    - name: Sparse simulator
-      href: sparse-simulator.md
+    - name: Quantum simulations in the QDK extension for VS Code
+      href: qdk-simulator-vscode.md
     - name: Build noise models for simulations
       href: qdk-simulator-noise-models.md
     - name: Noise models for multi-qubit gates

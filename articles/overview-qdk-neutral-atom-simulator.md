@@ -1,12 +1,13 @@
 ---
 author: azure-quantum-content
 description: This article gives an overview of neutral atom device simulation in the QDK, which allows quantum researchers to simulate and visualize how their quantum programs run on neutral atom quantum computers.
-ms.date: 05/14/2026
+ms.date: 10/07/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API, Clifford, GPU, CPU]
+ai-usage: ai-assisted
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", QIR, Qiskit, Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API, Stabilizer, Clifford, GPU, CPU]
 title: Simulate jobs on neutral atom quantum computers in the QDK
 uid: microsoft.quantum.overview.qdk-neutral-atom-simulators
 # Customer intent: As a quantum chemistry developer or researcher, I want to understand how neutral atom device simulation works in the QDK
@@ -14,7 +15,7 @@ uid: microsoft.quantum.overview.qdk-neutral-atom-simulators
 
 # Simulate quantum programs on neutral atom device hardware
 
-The Microsoft Quantum Development Kit (QDK) provides a set of simulation tools that let you evaluate and iterate on your quantum programs before you run them on real quantum hardware. The neutral atom device simulation APIs model the types of noise and qubit processing that occurs when programs run on neutral atom quantum computers, such as qubit loss and qubit movement. If you plan to run your quantum programs on neutral atom hardware, then use the neutral atom device simulation APIs to test and refine your code.
+The Microsoft Quantum Development Kit (QDK) provides a set of simulation tools that you can use to evaluate and iterate on your quantum programs before you run them on real quantum hardware. The neutral atom device simulation APIs model the types of noise and qubit operations that occur when programs run on neutral atom quantum computers, such as qubit loss and qubit movement. If you plan to run your quantum programs on neutral atom hardware, use the neutral atom device simulation APIs to test and refine your code.
 
 ## How neutral atom quantum computers work
 
@@ -24,19 +25,21 @@ The exact qubit technology in a neutral atom device depends on the specific arch
 
 ## Neutral atom device simulation tools in the QDK
 
-Neutral atom device simulation in the QDK models the following properties of neutral atom quantum hardware:
+Neutral atom device simulation in the QDK models these properties of neutral atom quantum hardware:
 
 - Devices contain only $S_X$, $R_Z$, and $CZ$ gates.
 - Qubits physically move between storage, interaction, and measurement zones on the device.
 
-The QDK Python package has two APIs for neutral atom device simulation, depending on the format of your program:
+The format of your program determines which neutral atom device simulation API to use:
 
-| API                  | QDK module       | Input format | Supported simulators   |
-|----------------------|------------------|--------------|------------------------|
-| `NeutralAtomDevice`  | `qdk.simulation` | QIR          | Clifford, GPU, and CPU |
-| `NeutralAtomBackend` | `qdk.qiskit`     | Qiskit       | Clifford, GPU, and CPU |
+| API                  | QDK module       | Input format | Supported simulators    |
+|----------------------|------------------|--------------|-------------------------|
+| `NeutralAtomDevice`  | `qdk.simulation` | QIR          | Stabilizer, GPU, and CPU |
+| `NeutralAtomBackend` | `qdk.qiskit`     | Qiskit       | Stabilizer, GPU, and CPU |
 
 Both APIs compile your program into QIR that has qubit movement instructions and contains only the gates that neutral atom devices support.
+
+Both `"stabilizer"` and `"clifford"` select the stabilizer backend. When you select this backend for a neutral atom device simulation, the compiled $R_Z$ rotations must have Clifford-compatible angles. Use the CPU or GPU simulator for neutral atom circuits that contain other $R_Z$ angles.
 
 For more information on quantum simulation in the QDK, see [Overview of quantum simulators in the QDK](xref:microsoft.quantum.overview.qdk-simulators).
 
@@ -56,6 +59,6 @@ For more information on neutral atom device noise models in the QDK, see [How to
 
 ## Get started with neutral atom device simulation
 
-To get started with quantum simulation in the QDK, see [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
+To get started with quantum simulation in the QDK Python package, see [Run quantum simulations with the QDK Python package](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 To learn how to use the neutral atom device visualizer, see [How to use the neutral atom device visualizer](xref:microsoft.quantum.how-to.qdk-neutral-atom-visualizer).
