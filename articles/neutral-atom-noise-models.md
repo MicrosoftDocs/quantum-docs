@@ -1,24 +1,25 @@
 ---
 author: azure-quantum-content
 description: This article describes how to build noise models for neutral atom device simulations in the QDK.
-ms.date: 06/23/2026
+ms.date: 10/02/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
 ms.topic: how-to
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, Jupyter, Python, Visual Studio Code, VS Code, "Jupyter Notebook"]
-title: How to build noise models for neutral atom device simulations in the QDK
+ai-usage: ai-assisted
+no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, OpenQASM, QIR, Jupyter, Python, Visual Studio Code, VS Code, "Jupyter Notebook", Stabilizer, Clifford, GPU, CPU]
+title: Build noise models for neutral atom device simulations in the QDK
 uid: microsoft.quantum.how-to.neutral-atom-simulators-noise
 # Customer intent: As a quantum computing researcher, I want to know how to include noise models for simulations of programs on neutral atom devices.
 ---
 
-# How to build noise models for neutral atom device simulations in the QDK
+# Build noise models for neutral atom device simulations in the QDK
 
-The Microsoft Quantum Development Kit (QDK) includes a set of neutral atom device simulation APIs that you can use to model how your program runs on a neutral atom quantum computer. These APIs model the types of noise that occur specifically on neutral atom hardware. The QDK Python package lets you noise models for simulations with the `NoiseConfig` class.
+The Microsoft Quantum Development Kit (QDK) includes a set of neutral atom device simulation APIs that you can use to model how your program runs on a neutral atom quantum computer. These APIs model the types of noise that occur specifically on neutral atom hardware. The QDK Python package lets you build noise models for simulations with the `NoiseConfig` class.
 
 For more information on noise models in QDK simulations, see [How to build noise models for quantum simulations in the QDK](xref:microsoft.quantum.how-to.qdk-simulator-noise-models).
 
-For instructions on how to install and use the QDK simulators, see [How to install and run the QDK quantum simulators](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
+For instructions on how to install and use the QDK simulators, see [Run quantum simulations with the QDK Python package](xref:microsoft.quantum.how-to.install-qdk-neutral-atom-simulators).
 
 ## The neutral atom device simulation APIs
 
@@ -26,13 +27,13 @@ The QDK includes two neutral atom device simulation APIs, `NeutralAtomDevice` an
 
 ## Types of noise in neutral atom device simulators
 
-In neutral atom devices, lasers physically move the qubits between different zones in the device. Noise can occur in neutral atom devices in the following situations:
+In neutral atom devices, lasers physically move the qubits between different zones in the device. Noise can occur in these situations:
 
 - Qubit movements between zones
 - Quantum gate operations on qubits in the interaction zone
 - Qubit measurements in the measurement zone
 
-Neutral atom devices have a limited set of quantum gates. Neutral atom device simulations in the QDK support noise from the following sources.
+Neutral atom devices have a limited set of quantum gates. Neutral atom device simulations in the QDK support noise from these sources.
 
 | Noise source                | Noise model parameter | Source description                            |
 |-----------------------------|-----------------------|-----------------------------------------------|
@@ -48,11 +49,13 @@ Your quantum program can contain any type of gate that the QIR target profile su
 
 The neutral atom simulation APIs convert all measurements in your program into measure-and-reset instructions. To include measurement noise, configure the noise on `mresetz`. Noise on `mz` isn't included in the simulation.
 
+When you use the stabilizer backend, the compiled $R_Z$ rotations must have Clifford-compatible angles. Use the CPU or GPU backend for neutral atom simulations that contain other $R_Z$ angles.
+
 ## Build a noise model for a neutral atom device simulation
 
 To build a noise model for a neutral atom device simulation, follow these steps.
 
-1. In VS Code, open the **View** menu and choose **Command Palette**.
+1. In Visual Studio Code, open the **View** menu and choose **Command Palette**.
 1. Enter **Create: New Jupyter Notebook**. An empty Jupyter Notebook file opens in a new tab.
 1. In the first cell of the notebook, import the required Python objects.
 
@@ -81,7 +84,7 @@ To build a noise model for a neutral atom device simulation, follow these steps.
     qir = compile(qasm_src)
     ```
 
-1. Create a `NoiseConfig` object and build your noise model. For example, run the following code in a new cell.
+1. Create a `NoiseConfig` object and build your noise model. For example, run this code in a new cell.
 
     ```python
     noise = NoiseConfig()
@@ -89,10 +92,10 @@ To build a noise model for a neutral atom device simulation, follow these steps.
     noise.sx.x = 0.01
     noise.rz.z = 0.01
     noise.cz.iy = 0.02
-    noise.mov.loss = 0.005
+    noise.mov.l = 0.005
     ```
 
-    This code produces the following noise model, where the noise rate is the probability that the source causes the corresponding type of noise.
+    This code produces this noise model, where the noise rate is the probability that the source causes the corresponding type of noise.
 
     | Noise source   | Noise type                              | Noise rate |
     |----------------|-----------------------------------------|------------|
@@ -101,11 +104,19 @@ To build a noise model for a neutral atom device simulation, follow these steps.
     | $CZ$ gate      | Bit flip and phase flip on target qubit | 2%         |
     | Qubit movement | Qubit loss                              | 0.5%       |
 
-1. Run the simulator with the noise model and view a histogram of measurement results. For example, run the following code in a new cell to run 1,000 shots of your program on the Clifford simulator.
+1. Run the simulator with the noise model and view a histogram of measurement results. For example, run this code in a new cell to run 1,000 shots on the stabilizer simulator.
 
     ```python
     device = NeutralAtomDevice()
 
-    results = device.simulate(qir, shots=1000, noise=noise, type="clifford")
+    results = device.simulate(
+        qir,
+        shots=1000,
+        noise=noise,
+        type="stabilizer",
+    )
     Histogram(results, labels="kets")
     ```
+
+> [!NOTE]
+> Both `type="stabilizer"` and `type="clifford"` select the stabilizer simulator.
