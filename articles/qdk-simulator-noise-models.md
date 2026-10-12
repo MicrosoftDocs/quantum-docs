@@ -65,14 +65,6 @@ The noise occurs after the source operation, not instead of the source operation
 > [!NOTE]
 > The neutral atom device simulation APIs support noise from a limited number of sources. For more information, see [How to build noise models for neutral atom device simulations in the QDK](xref:microsoft.quantum.how-to.neutral-atom-simulators-noise).
 
-## Noise and stabilizer branching
-
-The stabilizer simulator supports Pauli noise and qubit loss during simulations of non-Clifford operations through stabilizer branching. The simulator applies the ideal operation first and then samples the configured noise.
-
-Stabilizer branching is an exact simulation method rather than a Clifford approximation. However, each non-Clifford operation can increase the number of branches, so memory usage and shot time can grow exponentially. Use the stabilizer simulator when the circuit is mostly composed of Clifford operations and contains a limited number of non-Clifford operations.
-
-When an API exposes a simulator selector, both `"stabilizer"` and `"clifford"` select the stabilizer simulator.
-
 ## Build a noise model
 
 To build a noise model for a simulation and view the effects of that noise on the results of your quantum program, follow these steps.
