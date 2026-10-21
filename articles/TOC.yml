@@ -130,6 +130,8 @@
       href: qsharp-overview.md
     - name: OpenQASM in the QDK
       href: qdk-openqasm-integration.md
+    - name: Stim support for quantum error correction
+      href: qdk-stim-overview.md
   - name: Simulators and visualizers
     items:
     - name: Overview of QDK simulators
