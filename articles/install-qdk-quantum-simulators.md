@@ -108,7 +108,10 @@ The stabilizer simulator supports Q#, OpenQASM, Qiskit, and QIR programs. This t
 | QIR                   | `simulation.NeutralAtomDevice`  | `simulation.NeutralAtomDevice().simulate(my_qir, type="stabilizer", shots=10)`       |
 | QIR                   | `simulation.run_qir`            | `simulation.run_qir(my_qir, type="stabilizer", shots=10)`                            |
 
-> The `NeutralAtomDevice` and `NeutralAtomBackend` APIs are for simulations on neutral atom quantum computers specifically. For more information, see [Neutral atom device simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
+> [!NOTE]
+> You can also use `simulation.run_qir` to run logical programs through a quantum error correction protocol. This workflow has additional protocol and decoder requirements. For more information, see [Run and decode logical programs](xref:microsoft.quantum.how-to.run-decode-logical-programs).
+
+The `NeutralAtomDevice` and `NeutralAtomBackend` APIs are for simulations on neutral atom quantum computers specifically. For more information, see [Neutral atom device simulator overview](xref:microsoft.quantum.overview.qdk-neutral-atom-simulators).
 
 For example, this Python code runs an OpenQASM program with a non-Clifford $T$ gate on the stabilizer simulator:
 
@@ -138,11 +141,11 @@ The $T$ gate creates stabilizer branches. The final measurement samples the inte
 
 The GPU and CPU simulators support Qiskit and QIR programs. This table shows how to run 10 shots on the GPU simulator with the `qdk` package in each framework. To use the CPU simulator, replace `gpu` with `cpu` in the simulator type parameter.
 
-| Programming framework | Python API                      | Example call                                                                             |
-|-----------------------|---------------------------------|------------------------------------------------------------------------------------------|
-| Qiskit                | `qiskit.NeutralAtomBackend`     | `NeutralAtomBackend().run(my_qiskit_program, simulator_type="gpu", shots=10)`             |
-| QIR                   | `simulation.NeutralAtomDevice`  | `simulation.NeutralAtomDevice().simulate(my_qir, type="gpu", shots=10)`                  |
-| QIR                   | `simulation.run_qir`            | `simulation.run_qir(my_qir, type="gpu", shots=10)`                                       |
+| Programming framework | Python API                      | Example call                                                                  |
+|-----------------------|---------------------------------|-------------------------------------------------------------------------------|
+| Qiskit                | `qiskit.NeutralAtomBackend`     | `NeutralAtomBackend().run(my_qiskit_program, simulator_type="gpu", shots=10)` |
+| QIR                   | `simulation.NeutralAtomDevice`  | `simulation.NeutralAtomDevice().simulate(my_qir, type="gpu", shots=10)`       |
+| QIR                   | `simulation.run_qir`            | `simulation.run_qir(my_qir, type="gpu", shots=10)`                            |
 
 For example, this Python code converts a simple OpenQASM program to QIR and runs the QIR on the GPU simulator:
 
@@ -162,3 +165,8 @@ qasm_code = """
 qir = compile(qasm_code)
 run_qir(qir, type="gpu", shots=10)
 ```
+
+## Related content
+
+- [Set up the Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview)
+- [How to install QDK for error correction](xref:microsoft.quantum.how-to.install-qdk-error-correction)

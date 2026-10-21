@@ -92,12 +92,12 @@ Lastly, you encode the single qubit into a joint state of three qubits, by apply
 
 You send all three qubits. Assuming only one-bit flip errors can occur, the received qubits are in one of the following states:
 
-|State | Error |
-|---|---|
-|$\alpha \ket{000} + \beta \ket{111}$ | No error|
-|$\alpha \ket{100} + \beta\ket{011}$ | Qubit 1|
-|$\alpha \ket{010} + \beta\ket{101}$ | Qubit 2|
-|$\alpha \ket{001} + \beta\ket{110}$ | Qubit 3|
+| State                               | Error    |
+|-------------------------------------|----------|
+|$\alpha \ket{000} + \beta \ket{111}$ | No error |
+|$\alpha \ket{100} + \beta\ket{011}$  | Qubit 1  |
+|$\alpha \ket{010} + \beta\ket{101}$  | Qubit 2  |
+|$\alpha \ket{001} + \beta\ket{110}$  | Qubit 3  |
 
 ### Adding auxiliary qubits
 
@@ -105,12 +105,12 @@ First, you introduce two more qubits, prepared in the state $\ket{00}$. This aux
 
 Next, you carry out four CNOT operations: the first two operations use the first and second received qubits as control and act on the first auxiliary qubit, and last two operations use the first and third received qubits as control and act on the second auxiliary bit. The total state of all five qubits is now:
 
-|State | Error |
-|---|---|
-|$(\alpha \ket{000} + \beta \ket{111})\ket{00}$ | No error|
-|$(\alpha \ket{100} + \beta\ket{011})\ket{11}$ | Qubit 1|
-|$(\alpha \ket{010} + \beta\ket{101})\ket{10}$ | Qubit 2|
-|$(\alpha \ket{001} + \beta\ket{110})\ket{01}$ | Qubit 3|
+| State                                         | Error    |
+|-----------------------------------------------|----------|
+|$(\alpha \ket{000} + \beta \ket{111})\ket{00}$ | No error |
+|$(\alpha \ket{100} + \beta\ket{011})\ket{11}$  | Qubit 1  |
+|$(\alpha \ket{010} + \beta\ket{101})\ket{10}$  | Qubit 2  |
+|$(\alpha \ket{001} + \beta\ket{110})\ket{01}$  | Qubit 3  |
 
 ### Retrieving the error syndrome
 
@@ -129,9 +129,13 @@ For example, if the error syndrome is $\ket{00}$, then the received qubits are i
 
 ### Extracting the original qubit
 
-Finally, to extract the single qubit you wanted to transmit originally, you apply two CNOT operations: one uses the first qubit as control and acts on the second qubit, and other uses the first qubit as control and acts on the third one. 
+Finally, to extract the single qubit you wanted to transmit originally, you apply two CNOT operations: one uses the first qubit as control and acts on the second qubit, and other uses the first qubit as control and acts on the third one.
 
 The state of the first qubit is now $\alpha \ket{0} + \beta \ket{1}$, which is the original qubit you wanted to transmit.
 
 > [!IMPORTANT]
 > The QEC code doesn't gain any information regarding the coefficients $\alpha$ and $\beta$, hence superpositions of the computational state remain intact during correction.
+
+## Next steps
+
+To learn more about quantum error correction in the Microsoft Quantum Development Kit, see [Get started with QDK for error correction](xref:microsoft.quantum.overview.qdk-for-error-correction).

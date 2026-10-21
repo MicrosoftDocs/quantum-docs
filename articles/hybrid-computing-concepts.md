@@ -9,8 +9,7 @@ ms.topic: concept-article
 no-loc: ['Q#', '$$v', Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm]
 title: Hybrid Quantum Computing Concepts
 uid: microsoft.quantum.concepts.hybrid
-
-#customer intent: As a quantum developer, I want to understand the concepts of hybrid quantum computing so that I can design and implement quantum algorithms that take advantage of both classical and quantum processors.
+# Customer intent: As a quantum developer, I want to understand the concepts of hybrid quantum computing so that I can design and implement quantum algorithms that take advantage of both classical and quantum processors.
 ---
 
 # Hybrid quantum computing concepts
