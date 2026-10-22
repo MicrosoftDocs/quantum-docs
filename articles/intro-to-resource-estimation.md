@@ -20,6 +20,9 @@ The Microsoft Quantum resource estimator is an [open-source](https://github.com/
 
 With the quantum resource estimator, you can compare qubit technologies, quantum error correction schemes, and hardware technologies to understand the impact on the resources needed to run a quantum program.
 
+> [!NOTE]
+> The resource estimator uses quantum error correction models to estimate the resources needed to run fault-tolerant quantum applications. To develop error correction protocols and circuits, use the `qdk.ec` module. For more information, see [Get started with QDK for error correction](xref:microsoft.quantum.overview.qdk-for-error-correction).
+
 ## How does the quantum resource estimator work?
 
 The resource estimator is designed around a layered modeling approach to be flexible and composable. You construct models for the application, the hardware, and the error correction scheme. You also specify how these models interact. All the models and instructions are independent of each other, so you can combine and compare different combinations of models.

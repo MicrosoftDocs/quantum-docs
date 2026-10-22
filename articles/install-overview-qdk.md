@@ -2,14 +2,14 @@
 author: azure-quantum-content
 description: Learn how to set up the Microsoft Quantum Development Kit VS Code extension and set up your environment for different languages and platforms.
 ms.author: quantumdocwriters
-ms.date: 09/12/2024
+ms.date: 10/19/2026
 ms.service: azure-quantum
 ms.subservice: qdk
 ms.topic: install-set-up-deploy
 no-loc: ['Q#', '$$v', Quantum Development Kit, target, targets]
 title: Set up the Quantum Development Kit Extension
 uid: microsoft.quantum.install-qdk.overview
-#customer intent: As a quantum developer, I want to configure my environment with the latest Microsoft Quantum tools. 
+# Customer intent: As a quantum developer, I want to configure my environment with the latest Microsoft Quantum tools. 
 ---
 
 # Set up the Microsoft Quantum Development Kit
@@ -64,6 +64,14 @@ To add Python and Jupyter Notebook support:
     ```cmd
     python -m pip install "qdk[jupyter]" ipykernel ipympl jupyterlab
     ```
+
+1. For quantum error correction features, install the `ec` extra (requires Python 3.11 or later).
+
+   ```cmd
+   python -m pip install "qdk[ec]"
+   ```
+
+    For more information on how to install and use the `qdk.ec` module, see [How to install QDK for error correction](xref:microsoft.quantum.how-to.install-qdk-error-correction).
 
 To test your setup, see [Submit Q# jobs with Python](xref:microsoft.quantum.submit-jobs?pivots=ide-python) or [Submit Q# jobs with Jupyter Notebooks](xref:microsoft.quantum.submit-jobs?pivots=ide-jupyter).
 

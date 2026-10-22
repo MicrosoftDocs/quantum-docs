@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: This document is the main landing page for the Microsoft Quantum Development Kit (QDK), and gives a high level overview of the QDK and links to documentation on its features.
-ms.date: 08/03/2026
+ms.date: 10/19/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: qdk
@@ -33,7 +33,7 @@ Explore the following documentation to learn more about the main features of the
 - [Quantum simulators and noise models](xref:microsoft.quantum.overview.qdk-simulators)
 - [The circuit editor](xref:microsoft.quantum.how-to.qdk-circuit-editor)
 - [The quantum resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator)
-- [Quantum error correction](https://github.com/microsoft/qdk-ec)
+- [Quantum error correction](xref:microsoft.quantum.overview.qdk-for-error-correction)
 - [Chemistry and materials science applications with QDK/Chemistry](xref:microsoft.quantum.overview.qdk-chemistry)
 - [Learn quantum computing with QDK Learning](xref:microsoft.quantum.overview.qdk-learning)
 - [Copilot integration in VS Code](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup)
@@ -47,7 +47,6 @@ The QDK consists of the following components.
 | The QDK extension for Visual Studio Code | General quantum development                 | [VS Code marketplace](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode) |
 | The `qdk` Python package                 | General quantum development                 | [Python Package Index](https://pypi.org/project/qdk/)                                                 |
 | The `qdk-chemistry` Python library       | Chemistry and material science applications | [Python Package Index](https://pypi.org/project/qdk-chemistry/)                                       |
-| The QDK-EC software suite                | Quantum error correction research           | [GitHub](https://github.com/microsoft/qdk-ec)                                                         |
 
 To get started with the QDK, install the VS Code extension and Python libraries. You can use each component individually, or use them together for the same project. For example, you can quickly write and run Q# or OpenQASM programs in VS Code, then import the programs in Python to perform resource estimation for your program.
 
