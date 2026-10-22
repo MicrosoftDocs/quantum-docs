@@ -190,6 +190,16 @@
       href: qre-build-error-correction-models.md
     - name: Access and customize resource estimator results
       href: qre-estimation-results.md
+  - name: Error correction
+    items:
+    - name: Get started with QDK for error correction
+      href: qdk-error-correction-overview.md
+    - name: Install QDK for error correction
+      href: install-qdk-error-correction.md
+    - name: Develop and validate a QEC protocol
+      href: develop-validate-qec-protocol.md
+    - name: Run and decode logical programs
+      href: run-decode-logical-programs.md
   - name: QDK Learning
     items:
     - name: Develop your skills with QDK Learning
