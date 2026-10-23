@@ -46,6 +46,8 @@
       href: azure-quantum-job-cost-billing.md
   - name: Authentication and security
     items:
+    - name: Azure Quantum workspace and storage security boundaries
+      href: security-workspace-storage-boundaries.md
     - name: Authenticate using a service principal
       href: optimization-authenticate-service-principal.md
     - name: Authenticate using a managed identity

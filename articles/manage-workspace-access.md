@@ -9,8 +9,7 @@ ms.topic: article
 no-loc: ['Q#', '$$v']
 title: Understanding workspace access
 uid: microsoft.quantum.how-to.manage-workspace-access
-
-#customer intent: As a quantum developer, I want to understand the roles and access to my Azure Quantum workspace.
+# Customer intent: As a quantum developer, I want to understand the roles and access to my Azure Quantum workspace.
 ---
 
 # Understanding role-based access to your Azure Quantum workspace
@@ -42,6 +41,9 @@ When you grant access to a security principal, you assign a [built-in role](/azu
 |[Contributor](/azure/role-based-access-control/built-in-roles/privileged#contributor)|Grants full access to manage all resources, but doesn't allow you to assign roles in Azure RBAC.|
 |[Quantum Workspace Data Contributor](/azure/role-based-access-control/built-in-roles/compute#quantum-workspace-data-contributor)|Grants access to submit and view jobs in the workspace, but doesn't allow you to create, delete, or modify a workspace.|
 |[Reader](/azure/role-based-access-control/built-in-roles/general#reader)|View all resources, but doesn't allow you to make any changes.|
+
+> [!IMPORTANT]
+> A role that grants workspace data access also grants access to every job in the workspace and the data in the associated storage account. Azure Quantum doesn't support job-specific access control lists (ACLs). For more information, see [Understand Azure Quantum workspace and storage security boundaries](xref:microsoft.quantum.security.workspace-storage-boundaries).
 
 ### Scope
 
