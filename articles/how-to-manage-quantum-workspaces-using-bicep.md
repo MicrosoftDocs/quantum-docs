@@ -155,6 +155,9 @@ The following Azure resources are created by the template:
 
 The template also grants the quantum workspace **Contributor** permission to the storage account. This step is needed so that the workspace can read and write job data.
 
+> [!IMPORTANT]
+> The storage account becomes part of the workspace security boundary. Use a dedicated storage account when another workspace, user group, or application requires different access to the data. For more information, see [Understand Azure Quantum workspace and storage security boundaries](xref:microsoft.quantum.security.workspace-storage-boundaries).
+
 The template generates the following output. You can use these values later to identify the generated quantum workspace and authenticate to it:
 
 - **Subscription ID** hosting all the deployed resources.

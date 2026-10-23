@@ -26,6 +26,9 @@ To use the Azure Quantum service, you need:
 - The [Azure CLI](/cli/azure/install-azure-cli).
 - The [Microsoft Quantum Development Kit](xref:microsoft.quantum.install-qdk.overview).
 
+> [!IMPORTANT]
+> Although multiple workspaces can use the same storage account, don't share a storage account across workspaces that require different access. Each workspace can provide another path to the account's data. For more information, see [Understand Azure Quantum workspace and storage security boundaries](xref:microsoft.quantum.security.workspace-storage-boundaries).
+
 ## Environment setup
 
 1. Install the Azure CLI `quantum` extension. Open a command prompt and run the following command, which also upgrades the extension if a previous version is already installed:
