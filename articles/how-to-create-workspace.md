@@ -90,8 +90,12 @@ Use this option to manually configure your resource group and storage account, s
 
    - To have Azure automatically create a storage account, select **Use a managed storage account with default settings (recommended)**.
    - To use an existing storage account in your subscription or to create a new one manually, select **Customize storage account settings (advanced)**.
+
    > [!NOTE]
    >The storage account you select must be enabled for public internet access. For more information, see [Authorization failure](xref:microsoft.quantum.azure.common-issues#issue-authorizationfailure---this-request-is-not-authorized-to-perform-this-operation).
+
+   > [!IMPORTANT]
+   > The storage account is part of the workspace security boundary in both storage modes. Users and applications with workspace data access can access all jobs and the data in the associated storage account. Don't use an existing account for data that needs a different access boundary. For more information, see [Understand Azure Quantum workspace and storage security boundaries](xref:microsoft.quantum.security.workspace-storage-boundaries).
 
 1. Select **Next : Providers >**.
 

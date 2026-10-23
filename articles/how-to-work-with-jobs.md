@@ -42,6 +42,9 @@ This diagram shows the basic workflow after you submit your job:
 
 First, Azure Quantum uploads the job to the Azure Storage account that you configured in the workspace. Then, the job is added to the job queue for the provider that you specified in the job. Azure Quantum then downloads your program and translates it for the provider. The provider processes the job and returns the output to Azure Storage, where it is available for download.
 
+> [!IMPORTANT]
+> All principals with workspace data access can access every job and its stored inputs and outputs. Azure Quantum doesn't support job-specific access control lists. For more information, see [Understand Azure Quantum workspace and storage security boundaries](xref:microsoft.quantum.security.workspace-storage-boundaries).
+
 ## Monitoring jobs
 
 Once you submit a job, you can monitor the status of the job. Jobs have the following possible states:
