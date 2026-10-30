@@ -541,7 +541,7 @@ The Quantinuum quantum computers are designed to be continuously upgraded, which
 
 Quantinuum hardware cycles through commercial periods and development periods. During commercial periods, the hardware is available to process jobs via a queue system. During development periods, the hardware is offline as upgrades are applied.
 
-Every month, a calendar is sent to Quantinuum users with information on the commercial and development periods. If you have not received this calendar, please email [QCsupport@quantinuum.com](mailto:QCsupport@quantinuum.com).
+Every month, a calendar is sent to Quantinuum users with information on the commercial and development periods. If you have not received this calendar, please email [support@quantinuum.com](mailto:support@quantinuum.com).
 
 A target's status indicates its current ability to process jobs. The possible states of a target include:
 
