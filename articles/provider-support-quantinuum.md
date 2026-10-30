@@ -17,7 +17,7 @@ This article describes the Microsoft support policy that applies when you use th
 
 If you're using the Quantinuum provider and hit unexpected issues, you can contact the Azure Support team for help by [creating an Azure support case](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
-In some situations, the Azure Support team needs to redirect you to Quantinuum's support team. You may receive a quicker response by reaching out to Quantinuum directly at <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>.
+In some situations, the Azure Support team needs to redirect you to Quantinuum's support team. You may receive a quicker response by reaching out to Quantinuum directly at <a href="mailto:support@quantinuum.com">support@quantinuum.com</a>.
 
 ## Quantinuum support policy - Public Preview
 
@@ -25,13 +25,13 @@ The goal of support is to identify and remedy defects or malfunctions causing th
 
 ### Contacting technical support within Quantinuum
 
-To create a support request with Quantinuum, submit an incident report via email to <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). The Quantinuum team only receives incident reports that contain all of the following information and have the appropriate SLA resolution window. Reports without the necessary information don't trigger this response. All requests must be provided in the English language and are answered in the English language.
+To create a support request with Quantinuum, submit an incident report via email to <a href="mailto:support@quantinuum.com">support@quantinuum.com</a>. The on-call engineer will respond within the appropriate SLA (Table 2). The Quantinuum team only receives incident reports that contain all of the following information and have the appropriate SLA resolution window. Reports without the necessary information don't trigger this response. All requests must be provided in the English language and are answered in the English language.
 
 _Table 1: Support contact information and standard operating hours_
 
 | Email | Standard operating hours |
 | - | - |
-| <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a> | 8am – 5pm MST on business days<sup>1</sup> |
+| <a href="mailto:support@quantinuum.com">support@quantinuum.com</a> | 8am – 5pm MST on business days<sup>1</sup> |
 
 _<sup>1</sup> “Business days” means Monday to Friday but excluding national, legal, or bank holidays._
 
@@ -45,7 +45,7 @@ Once a report is filed, the Quantinuum team is notified and responds within the 
 
 During Reserved (dedicated) Sessions, Quantinuum provides at least one quantum specialist available to you for customer support for the entirety of your dedicated session. Quantinuum reserves the right to change out the specialist during your session, but will use commercially reasonable efforts to ensure the new specialist is prepared to continue providing support.
 
-During queued runs, if your job is running in the general queue and you encounter an issue, you may submit your issue request online at: <a href="mailto:QCsupport@quantinuum.com">QCsupport@quantinuum.com</a>. You can expect to receive an answer within three (3) business days.
+During queued runs, if your job is running in the general queue and you encounter an issue, you may submit your issue request online at: <a href="mailto:support@quantinuum.com">support@quantinuum.com</a>. You can expect to receive an answer within three (3) business days.
 
 ### Quantinuum severity index and response SLA
 
