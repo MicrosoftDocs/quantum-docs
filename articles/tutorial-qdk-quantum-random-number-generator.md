@@ -9,7 +9,7 @@ ms.topic: tutorial
 no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
 title: 'Tutorial: Create a Quantum Random Number Generator'
 uid: microsoft.quantum.tutorial-qdk.random-number
-#customer intent: As a quantum programmer, I want to generate random numbers on a real quantum computer.
+# Customer intent: As a quantum programmer, I want to generate random numbers on a real quantum computer.
 ---
 
 # Tutorial: Implement a quantum random number generator in Q\#
@@ -430,4 +430,4 @@ Explore other Q# tutorials:
 - [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
 - [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
 - [Quantum Fourier Transforms](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The [Quantum Katas](xref:microsoft.quantum.how-to.qdk-learning-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
