@@ -9,7 +9,7 @@ ms.subservice: qdk
 uid: microsoft.quantum.tutorial-qdk.circuit
 ms.topic: tutorial
 no-loc: ['Q#', '$$v', Microsoft Quantum Development Kit, target, targets]
-#customer intent: As a quantum programmer, I want to understand how to work with the Quantum Fourier Transform.
+# Customer intent: As a quantum programmer, I want to understand how to work with the Quantum Fourier Transform.
 ---
 
 # Tutorial: Implement the Quantum Fourier Transform in Q\#
@@ -577,4 +577,4 @@ Explore other Q# tutorials:
 - [Quantum random number generator](xref:microsoft.quantum.tutorial-qdk.random-number) shows how to write a Q# program that generates random numbers out of qubits in superposition.
 - [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
 - [Quantum entanglement](xref:microsoft.quantum.tutorial-qdk.entanglement) shows how to write a Q# program that manipulates and measures qubits and demonstrates the effects of superposition and entanglement.
-- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.
+- The [Quantum Katas](xref:microsoft.quantum.how-to.qdk-learning-katas) are self-paced tutorials and programming exercises aimed at teaching the elements of quantum computing and Q# programming at the same time.

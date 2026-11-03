@@ -9,8 +9,7 @@ ms.topic: tutorial
 no-loc: ["Q#", "$$v"]
 title: 'Tutorial: Quantum Entanglement with Q#'
 uid: microsoft.quantum.tutorial-qdk.entanglement
-
-# customer intent: As a quantum programmer, I want to learn how to write an entanglement program in Q#
+# Customer intent: As a quantum programmer, I want to learn how to write an entanglement program in Q#
 ---
 
 # Tutorial: Explore quantum entanglement with Q\#
@@ -332,4 +331,4 @@ Explore other Q# tutorials:
 
 - [Grover's search algorithm](xref:microsoft.quantum.tutorial-qdk.grovers) shows how to write a Q# program that uses Grover's search algorithm.
 - [Quantum Fourier Transform](xref:microsoft.quantum.tutorial-qdk.circuit) explores how to write a Q# program that directly addresses specific qubits.
-- The [Quantum Katas](https://quantum.microsoft.com/tools/quantum-katas) are self-paced tutorials and programming exercises that teach the elements of quantum computing and Q# programming at the same time.
+- The [Quantum Katas](xref:microsoft.quantum.how-to.qdk-learning-katas) are self-paced tutorials and programming exercises that teach the elements of quantum computing and Q# programming at the same time.
