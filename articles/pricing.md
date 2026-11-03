@@ -9,8 +9,7 @@ ms.topic: concept-article
 no-loc: [target, targets]
 title: Pricing Plans for Azure Quantum Providers
 uid: microsoft.quantum.providers-pricing
-
-#customer intent: As a quantum developer, I want to understand the pricing plans for Azure Quantum providers, so that I can choose the best plan for my needs.
+# Customer intent: As a quantum developer, I want to understand the pricing plans for Azure Quantum providers, so that I can choose the best plan for my needs.
 ---
 
 # Pricing plans for Azure Quantum providers
@@ -122,19 +121,20 @@ Quantinuum provides two subscription plans: **Standard** and **Premium**. Quanti
 
 Subscriptions are monthly subscription plans available through queued access.
 
-|Plans and Pricing|Includes access to|
-|---|---|
-|**Standard Plan**: USD125,000/Month + Azure infrastructure costs | <ul><li>Monthly standard subscription plan with 10k HQCs of standard priority access / month with unlimited credits at a basic tier 2 priority on Quantinuum System Model H2. </li><li>100k eHQCs of premium priority access / month on and unlimited credits at basic tier 2 priority for use on the Quantinuum System Model H2 emulator</li></ul>|
-|**Premium Plan**: USD175,000/Month + Azure infrastructure costs  | <ul><li>Monthly premium subscription plan with 17k HQCs of premium priority access / month with unlimited credits at a basic tier 1 priority on Quantinuum System Model H2. </li><li>170k eHQCs of premium priority access / month and unlimited credits at basic tier 1 priority for use on the Quantinuum System Model H2 emulators</li></ul>|
+| Plan              | Pricing                                       | Includes access to                                                                                                                                                                                                                                                                                                                                  |
+|-------------------|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Standard Plan** | USD125,000/Month + Azure infrastructure costs | <ul><li>Monthly standard subscription plan with 10k HQCs of standard priority access / month with unlimited credits at a basic tier 2 priority on Quantinuum System Model H2. </li><li>100k eHQCs of premium priority access / month on and unlimited credits at basic tier 2 priority for use on the Quantinuum System Model H2 emulator</li></ul> |
+| **Premium Plan**  | USD175,000/Month + Azure infrastructure costs | <ul><li>Monthly premium subscription plan with 17k HQCs of premium priority access / month with unlimited credits at a basic tier 1 priority on Quantinuum System Model H2. </li><li>170k eHQCs of premium priority access / month and unlimited credits at basic tier 1 priority for use on the Quantinuum System Model H2 emulators</li></ul>     |
+
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ### [Pay as You Go](#tab/tabid-PAYG)
 
 The Pay as You Go plan provides queued access to the H2 series quantum computers and is charged per HQC usage. To get additional information on Pay as You Go pricing please contact Quantinuum sales at Sales@Quantinuum.com.
 
-|PAYG Pricing| Includes access to |
-|---|---|
-|**System Model H2** Per HQC usage + Azure infrastructure costs | <ul><li>System Model H2 quantum computers and emulator|
+| PAYG Pricing | Includes access to |
+|--------------|--------------------|
+| **System Model H2** Per HQC usage + Azure infrastructure costs | System Model H2 quantum computers and emulator |
 
 For more information about Azure infrastructure costs, see [Azure Blob Storage pricing](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
