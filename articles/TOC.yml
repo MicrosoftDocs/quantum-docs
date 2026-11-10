@@ -244,6 +244,8 @@
         href: qsharp-ways-to-work.md
       - name: Work with Q# projects
         href: how-to-work-with-qsharp-projects.md
+      - name: How to use Q# callables in Python
+        href: how-to-use-qsharp-callables-python.md
       - name: Debug and test your Q# code
         href: testing-debugging.md
       - name: Visualize Q# circuit diagrams
