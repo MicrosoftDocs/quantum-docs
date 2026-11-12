@@ -124,6 +124,12 @@
       href: qdk-vscode-agent-setup.md
     - name: VS Code reference for the QDK
       href: vscode-qdk-reference.md
+  - name: Test and debug
+    items:
+    - name: Test quantum programs
+      href: test-quantum-code.md
+    - name: Debug quantum programs
+      href: debug-quantum-code.md
   - name: Quantum language support in the QDK
     items:
     - name: QDK language support overview
@@ -246,8 +252,6 @@
         href: how-to-work-with-qsharp-projects.md
       - name: How to use Q# callables in Python
         href: how-to-use-qsharp-callables-python.md
-      - name: Debug and test your Q# code
-        href: testing-debugging.md
       - name: Visualize Q# circuit diagrams
         href: how-to-visualize-circuits.md
     - name: Language reference for Q#

@@ -1250,6 +1250,11 @@
       "source_path": "articles/sparse-simulator.md",
       "redirect_url": "/azure/quantum/qdk-simulator-vscode",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/testing-debugging.md",
+      "redirect_url": "/azure/quantum/debug-quantum-code",
+      "redirect_document_id": false
     }
   ]
 }
