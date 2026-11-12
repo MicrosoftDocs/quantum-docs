@@ -39,7 +39,7 @@ The [QDK Python package](https://pypi.org/project/qdk/) supports development wit
 The QDK package includes modules that let you:
 
 - Use Jupyter Notebook features, such as visualization tools and a magic command to write Q# code.
-- Convert Q# and OpenQASM structs and callables into Python objects for use in other languages and frameworks.
+- Convert Q# and OpenQASM structs and callables into Python objects for use in other languages and frameworks. For more information about Q# callables, see [How to use Q# callables in Python](xref:microsoft.quantum.how-to.qsharp-callables-python).
 - Connect to your Azure Quantum workspace and submit supported programs.
 
 ## Compare QDK language options

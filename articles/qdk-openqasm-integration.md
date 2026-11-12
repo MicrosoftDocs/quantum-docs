@@ -19,7 +19,7 @@ The Microsoft Quantum Development Kit (QDK) provides different development envir
 - The QDK extension in Visual Studio Code (VS Code)
 - The QDK Python package in Jupyter Notebook.
 
-Developer tools like CodeLends, IntelliSense, code completion, and breakpoint debugging are available only in the VS Code extension. Other features are available only in the Python package. For example, you can pass Q# and OpenQASM callables as Python objects, and compile OpenQASM programs that take inputs into QIR.
+Developer tools like CodeLends, IntelliSense, code completion, and breakpoint debugging are available only in the VS Code extension. Other features are available only in the Python package. For example, you can pass Q# and OpenQASM callables as Python objects, and compile OpenQASM programs that take inputs into QIR. For more information about Q# callables, see [How to use Q# callables in Python](xref:microsoft.quantum.how-to.qsharp-callables-python).
 
 ## Prerequisites
 
