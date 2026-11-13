@@ -1,63 +1,65 @@
 ---
+title: Overview of QDK for Chemistry
+description: Explore QDK/Chemistry tools for molecular electronic structure, quantum state preparation, simulation, and resource estimation.
 author: azure-quantum-content
-description: This article gives an overview of the features and benefits that QDK/Chemistry offers to quantum chemistry researchers.
-ms.date: 01/23/2026
 ms.author: quantumdocwriters
+ms.date: 11/03/2026
+ms.topic: overview
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
-title: Overview of QDK for Chemistry
+no-loc: ["Microsoft", "Microsoft Quantum Development Kit", "QDK", "QDK/Chemistry", "Python", "C++", "Jupyter Notebook", "Visual Studio Code", "VS Code", "GitHub Copilot", "QDK Learning", "Azure Quantum", "SCF", "SOSSA", "Ising", "Heisenberg", "Hubbard", "API"]
+ai-usage: ai-assisted
 uid: microsoft.quantum.overview.qdk-chemistry
-#customer intent: As a quantum chemistry researcher, I want know what QDK for chemistry offers me for my research
+# Customer intent: As a quantum chemistry researcher, I want to understand how QDK/Chemistry can support my research and where to start.
 ---
 
 # Welcome to QDK for chemistry
 
 > [!div class="nextstepaction"]
-> [Get started here](xref:microsoft.quantum.how-to.install-qdk-chemistry)
+> [How to install QDK for chemistry](xref:microsoft.quantum.how-to.install-qdk-chemistry)
 
-QDK for chemistry (QDK/Chemistry) is an open-source Python package within the Microsoft Quantum Development Kit (QDK). It provides a set of tools and libraries to enable cutting-edge quantum chemistry workflows on quantum computers by bridging the gap between classical electronic structure calculations and quantum circuit execution.  
+QDK for chemistry (QDK/Chemistry) is an open-source toolkit in the Microsoft Quantum Development Kit (QDK). Use it to model molecules and materials, build quantum circuits, and evaluate quantum algorithms for chemistry and materials research.
 
-Quantum applications pipelines depend on robust, efficient classical data preparation and post-processing. QDK/Chemistry addresses these needs through a modular architecture that separates data representations from computational methods. This modularity allows researchers to compose flexible workflows from interchangeable components. The toolkit provides native implementations of key quantum-classical algorithms and integrates seamlessly with widely used open-source quantum chemistry packages and quantum computing frameworks via a plugin system. By offering a unified interface to diverse methods and tools, QDK/Chemistry serves as a platform for innovation and a foundation for reproducible, scalable quantum chemistry experiments.
+QDK/Chemistry connects the stages of a quantum chemistry workflow, from classical data preparation to circuit execution and analysis. Its modular design lets you choose methods for each stage and combine them in a single workflow. You can use native methods or integrate external packages through plugins.
+
+The following diagram shows how QDK/Chemistry maps a chemistry problem to a quantum computer.
+
+:::image type="content" source="media/qdk-libraries-infographic.png" alt-text="Diagram that shows how QDK libraries map quantum chemistry problems to a quantum computer.":::
 
 ## Why use QDK for chemistry?
 
-### Integration / Familiarity
+### Compose and reuse workflows
 
-QDK/Chemistry is seamlessly integrated with first- and third-party quantum chemistry tools and quantum programming languages, enabling flexible use of preferred tools and environments. AI-assisted coding and debugging can be carried out in VS Code, while development with Python can be performed in Jupyter Notebook.
+Choose methods for each stage of your workflow. For example, compare self-consistent field (SCF) solvers, select dense or sparse state preparation, and choose standard or iterative quantum phase estimation. You can compare energy estimates and resource requirements, reuse intermediate data, and adapt the workflow to a different molecule or model.
 
-### Accessibility
+### Use resource-efficient algorithms
 
-QDK/Chemistry is accessible to quantum chemistry researchers of every level. For beginners, the toolkit offers tools and algorithms with robust default settings and parameters that you can use to get results for a large variety of molecular systems right out of the box. Advanced users can take advantage of the extensive capabilities and customizability of QDK/Chemistry tools to tackle more complex research questions.
+QDK/Chemistry combines classical processing with resource-efficient quantum algorithms. Classical processing steps, such as active space selection and Hamiltonian factorization, reduce the size of a molecular model and provide a compact Hamiltonian representation. Quantum algorithms, such as sparse-isometry state preparation and sum-of-squares spectral amplification (SOSSA) block encoding, reduce the quantum operations needed to prepare wavefunctions and simulate Hamiltonians.
 
-### Modularity
+### Work with familiar tools
 
-QDK/Chemistry simplifies the development process with a modular toolset. Each part of the quantum chemistry workflow functions independently, so the same tools can be reused across different workflows and molecules.
-
-### Implementation  
-
-QDK/Chemistry offers a fast, intuitive, and seamless end-to-end solution for every stage of the quantum chemistry workflow. The toolset leverages state-of-the-art optimization techniques that maximizes performance, minimizes resource requirements, and scales to harness the power of next-generation quantum hardware.
-
-### Documentation and samples
-
-QDK/Chemistry comes with a suite of code samples to help get started with development. Samples include a variety of molecular systems, quantum programming languages, and tutorials that walk through end-to-end workflows from molecular structure to quantum algorithm execution. The documentation also includes a comprehensive API reference that explains how every tool and algorithm works, along with examples of how to use the tools.
+Build Python workflows in Jupyter Notebook, and use Visual Studio Code (VS Code) for quantum development. Plugins connect QDK/Chemistry to external chemistry and quantum tools. The toolkit also provides chemistry tools and guidance for AI-assisted workflows with GitHub Copilot.
 
 ## QDK/Chemistry core features and technologies
 
-- [Robust SCF calculations and reliable automatic active space selection](xref:microsoft.quantum.overview.qdk-chem-scf-active-space)
-- [Efficient quantum circuit preparation with GF2+X sparse isometry](xref:microsoft.quantum.overview.qdk-chem-sparse-isometry)
-- Seamless integration with native QDK high-performance [simulators](xref:microsoft.quantum.overview.qdk-simulators) and [resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator)
-- VS code and Python extensions for QDK/Chemistry, [powered by AI-assisted coding capabilities](xref:microsoft.quantum.how-to.qdk-vscode-agent-setup) to help you write and understand quantum workloads
+| Task                                  | What QDK/Chemistry provides                                                                             |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------|
+| Compose workflows                     | Interchangeable methods, shared data structures, and plugins for external packages.                     |
+| Prepare inputs with classical methods | SCF calculations, active space selection, and Hamiltonian factorization.                                |
+| Build quantum algorithms              | Sparse-isometry state preparation, SOSSA block encoding, and standard and iterative phase estimation.   |
+| Model molecules and materials         | Molecular Hamiltonians alongside spin and fermionic lattice models.                                     |
+| Evaluate and run quantum circuits     | Integration with the QDK resource estimator, supported simulators, and Azure Quantum hardware backends. |
 
-## QDK: Mapping chemistry to a quantum computer
+To learn more about the electronic structure and state preparation steps, see [Construct molecular orbitals with SCF calculations in QDK Chemistry](xref:microsoft.quantum.overview.qdk-chem-scf-active-space) and [Use sparse isometry to efficiently generate simplified state preparation circuits for quantum chemistry calculations](xref:microsoft.quantum.overview.qdk-chem-sparse-isometry).
 
-:::image type="content" source="media/qdk-libraries-infographic.png" alt-text="Diagram that shows how you can use QDK libraries to map quantum chemistry problems to a quantum computer.":::
+To learn how to evaluate quantum programs, see [Overview of quantum simulators in the QDK](xref:microsoft.quantum.overview.qdk-simulators) and [Introduction to the resource estimator](xref:microsoft.quantum.overview.intro-resource-estimator).
 
 ## QDK/Chemistry resources
 
-To get started with QDK/Chemistry, see [How to install QDK for chemistry](xref:microsoft.quantum.how-to.install-qdk-chemistry).
+- [How to install QDK for chemistry](xref:microsoft.quantum.how-to.install-qdk-chemistry): Set up the Python library in your environment.
+- [Quickstart](https://microsoft.github.io/qdk-chemistry/user/quickstart.html): Complete a workflow from molecular structure to an energy estimate.
+- [Learn quantum chemistry with QDK Learning](xref:microsoft.quantum.how-to.qdk-learning-ground-state-energy): Work through the ground state molecular energy course with Python notebooks and quantum phase estimation.
+- [SOSSA resource estimation example](https://github.com/microsoft/qdk-chemistry/blob/v2.3.0/examples/sossa_qre.ipynb): Explore simulation and resource estimation for a spectral amplification workflow.
+- [Working with AI Assistants](https://microsoft.github.io/qdk-chemistry/user/agents.html): Use chemistry tools and guidance with GitHub Copilot.
 
-For an end-to-end example of a quantum chemistry state preparation circuit workflow, see the [Quickstart guide](https://microsoft.github.io/qdk-chemistry/user/quickstart.html) in the QDK/Chemistry documentation on GitHub.
-
-For detailed information on the available tools in QDK/Chemistry, see the [Python API](https://microsoft.github.io/qdk-chemistry/api/python_api.html) and [C++ API](https://microsoft.github.io/qdk-chemistry/api/cpp_api.html) references.
+For detailed class and method documentation, see the [Python API](https://microsoft.github.io/qdk-chemistry/api/python_api.html) and [C++ API](https://microsoft.github.io/qdk-chemistry/api/cpp_api.html) references.

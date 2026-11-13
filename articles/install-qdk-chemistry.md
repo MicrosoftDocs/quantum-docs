@@ -1,7 +1,7 @@
 ---
 author: azure-quantum-content
 description: This article describes how to install the QDK/Chemistry Python library for different operating systems
-ms.date: 09/22/2026
+ms.date: 11/05/2026
 ms.author: quantumdocwriters
 ms.service: azure-quantum
 ms.subservice: core
@@ -20,7 +20,7 @@ In this article, you learn how to install QDK for chemistry (QDK/Chemistry), a P
 
 - Install the latest version of [Visual Studio Code (VS Code)](https://code.visualstudio.com/download).
 - Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions in VS Code.
-- Install a Python interpreter (version 3.11, 3.12, or 3.13).
+- Install a Python interpreter (version 3.11, 3.12, 3.13, or 3.14).
 
 ## Install the `qdk-chemistry` library
 
