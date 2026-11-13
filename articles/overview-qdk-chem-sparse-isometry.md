@@ -1,28 +1,33 @@
 ---
+title: Use sparse isometry to efficiently generate simplified state preparation circuits for quantum chemistry calculations
+description: Learn how sparse isometry in QDK/Chemistry uses sparse molecular wavefunctions to reduce the resources required for state preparation.
 author: azure-quantum-content
-description: This article gives an overview of sparse isometry, which is a technique created by Microsoft Quantum to efficiently generate simplified state preparation circuits for quantum chemistry calculations on a real quantum computer.
-ms.date: 01/23/2026
 ms.author: quantumdocwriters
+ms.date: 11/02/2026
+ms.topic: overview
 ms.service: azure-quantum
 ms.subservice: core
-ms.topic: overview
-no-loc: [Azure, Microsoft, Azure Quantum, Microsoft Quantum, Microsoft Quantum Development Kit, QDK, "QDK/Chemistry", Jupyter, MOs, Python, Pip, Visual Studio Code, VS Code, p-benzyne, "Jupyter Notebook", GitHub, API]
-title: Use sparse isometry to efficiently generate simplified state preparation circuits for quantum chemistry calculations
+no-loc: ["Microsoft", "Microsoft Quantum Development Kit", "QDK", "QDK/Chemistry", "QPE"]
+ai-usage: ai-assisted
 uid: microsoft.quantum.overview.qdk-chem-sparse-isometry
-#customer intent: As a quantum chemistry researcher, I want to understand what sparse isometry is and why I should use it to build state preparation quantum circuits for my quantum chemistry calculations
+# Customer intent: As a quantum chemistry researcher, I want to understand when sparse isometry can reduce the resources required to prepare a molecular wavefunction on a quantum computer.
 ---
 
 # Build state preparation circuits for quantum chemistry calculations with sparse isometry
 
-State preparation is a central subroutine in many quantum algorithms for quantum chemistry calculations, such as Quantum Phase Estimation (QPE).
+State preparation is a key subroutine in many quantum chemistry algorithms used to solve quantum chemistry problems, like quantum phase estimation (QPE).
 
-The state preparation circuit puts the qubit system on the quantum computer into a state that represents the real quantum state of your molecule. Isometry techniques are used to create the state preparation circuit from the wavefunction that you calculate for your molecule. Typical isometry approaches usually result in deep circuits that contain a lot of quantum gates. Each gate in a circuit has the potential to introduce noise into the calculation on the quantum computer, so the ideal circuit is one that performs an accurate computation with the fewest gates.
+A state preparation circuit puts a qubit register into a state that represents a target wavefunction for your molecule. Isometry techniques build this circuit from your calculated wavefunction.
+
+A circuit that prepares an arbitrary dense state can require a number of quantum gates that grows exponentially with the number of qubits. Sparse isometry can reduce circuit depth and the number of gates compared with dense state preparation.
 
 ## Sparse isometry circuit generation with the QDK chemistry libraries
 
-QDK for chemistry (QDK/Chemistry) in the Microsoft Quantum Development Kit (QDK) includes a novel sparse isometry technique that uses a small number of dense qubits to efficiently build an optimal state preparation circuit with less depth and fewer gates than traditional isometry encoding techniques. The circuit from sparse isometry prepares the same initial state as the larger circuit from regular isometry, but the sparse isometry circuit is less computationally expensive and introduces less noise into the calculation on the quantum computer.
+QDK for chemistry (QDK/Chemistry) in the Microsoft Quantum Development Kit (QDK) includes a novel sparse isometry method for wavefunctions. The method first prepares a compact state on a smaller qubit register, then applies additional gates to produce the target wavefunction. Compared with dense state preparation, this approach can prepare the same wavefunction with substantially fewer quantum gates and lower circuit depth.
 
-The sparse isometry implementation in QDK/Chemistry allows you to encode ab initio wavefunctions in a consistent linear workflow to help you build optimal state preparation circuits for a wide variety of molecules and systems. To get started, see [How to install QDK for chemistry](xref:microsoft.quantum.how-to.install-qdk-chemistry).
+The wavefunction that you use for state preparation approximates the molecular state that you want to study. Sparse isometry builds a circuit that prepares this wavefunction.
+
+To get started with QDK/Chemistry, see [How to install QDK for chemistry](xref:microsoft.quantum.how-to.install-qdk-chemistry).
 
 ## Learn more
 

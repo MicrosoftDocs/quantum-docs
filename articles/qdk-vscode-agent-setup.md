@@ -1,23 +1,23 @@
 ---
-author: azure-quantum-content
+title: How to set up and use agent mode in VS Code for the QDK
 description: This document describes how to set up and use GitHub Copilot agent mode in VS Code to enhance the QDK user experience.
+author: azure-quantum-content
 ms.author: quantumdocwriters
-ms.date: 04/16/2026
+ms.date: 11/03/2026
+ms.topic: how-to
 ms.service: azure-quantum
 ms.subservice: qdk
-ms.topic: how-to
-no-loc: ["Visual Studio Code", "VS Code", "Quantum Development Kit", "QDK", "Microsoft", "Copilot", "GitHub", "Q#", "OpenQASM", "Agent Skills"]
-title: How to set up and use agent mode in VS Code for the QDK
+no-loc: ["Visual Studio Code", "VS Code", "Microsoft Quantum Development Kit", "Quantum Development Kit", "QDK", "QDK/Chemistry", "Microsoft", "Copilot", "GitHub", "GitHub Copilot", "Azure Quantum", "Q#", "OpenQASM", "Agent Skills", "CLI", "Model Context Protocol", "MCP"]
+ai-usage: ai-assisted
 uid: microsoft.quantum.how-to.qdk-vscode-agent-setup
-
-#Customer intent: I want to use GitHub Copilot's agent mode in VS Code to help me build my QDK projects.
+# Customer intent: I want to use GitHub Copilot's agent mode in VS Code to help me build my QDK projects.
 ---
 
 # How to use agent mode in VS Code for the QDK
 
-Use agent mode in Visual Studio Code (VS Code), powered by GitHub Copilot, to enhance your builder experience with the Microsoft Quantum Development Kit (QDK).
+Use agent mode in Visual Studio Code (VS Code), powered by GitHub Copilot, to improve how you build with the Microsoft Quantum Development Kit (QDK).
 
-Agent mode is an AI-assisted development experience that helps you write and debug code, and complete other development tasks in VS Code. The QDK extension includes a `SKILL.md` file that GitHub Copilot agent reads to learn Agent Skills for specific tasks related to development in the QDK. The QDK skills help Copilot to perform the following tasks in agent mode:
+Agent mode is an AI-assisted development experience that helps you write code, debug code, and perform other development tasks in VS Code. The QDK extension includes a `SKILL.md` file that GitHub Copilot agent reads to learn Agent Skills for specific tasks related to development in the QDK. The QDK skills help Copilot to perform the following tasks in agent mode:
 
 - Write, debug, and explain Q# and OpenQASM code
 - Develop with the `qdk` Python package
@@ -26,6 +26,8 @@ Agent mode is an AI-assisted development experience that helps you write and deb
 
 For more information about Agent Skills for GitHub Copilot in VS Code, see [Use Agent Skills in VS Code](https://code.visualstudio.com/docs/copilot/customization/agent-skills) on the VS Code website.
 
+For instructions on the chemistry-specific command-line interface (CLI), Model Context Protocol (MCP) server, and Copilot plugin for QDK/Chemistry workflows, see [Working with AI Assistants](https://microsoft.github.io/qdk-chemistry/user/agents.html).
+
 ## Prerequisites
 
 - Install the latest version of [VS Code](https://code.visualstudio.com/download).
@@ -33,10 +35,10 @@ For more information about Agent Skills for GitHub Copilot in VS Code, see [Use 
 
 ## Set up Agent Skills from the QDK
 
-To get started with the QDK Agent Skills for agent mode in VS Code, follow these steps:
+To use the QDK Agent Skills in agent mode in VS Code, follow these steps:
 
-1. Open a Q# (`.qs`) or (`.qasm`) file in VS Code.
-1. Open the Copilot Chat window in VS Code.
+1. Open a Q# (`.qs`) or OpenQASM (`.qasm`) file in VS Code.
+1. Open the Copilot chat window.
 1. In the chat box, select the **Set Agent** icon and choose **Agent**.
 
     :::image type="content" source="media/set-agent-mode-vscode.png" alt-text="Screenshot that shows the Set Agent icon in the Copilot chat box in Visual Studio Code.":::
@@ -45,27 +47,27 @@ To get started with the QDK Agent Skills for agent mode in VS Code, follow these
 
     :::image type="content" source="media/vscode-copilot-configure-tools.png" alt-text="Screenshot that shows the Configure Tools icon in the Copilot chat box in Visual Studio Code.":::
 
-1. Select all the tools in the **Microsoft Quantum Development Kit (QDK)** dropdown section, and then select the **OK** button.
+1. Select all the tools in the **Microsoft Quantum Development Kit (QDK)** section, and then select **OK**.
 
-    :::image type="content" source="media/qdk-agent-tools-list.png" alt-text="Screenshot that shows the all the QDK tools selected in the Configure Tools window in Visual Studio Code.":::
+    :::image type="content" source="media/qdk-agent-tools-list.png" alt-text="Screenshot that shows all the QDK tools selected in the Configure Tools window in Visual Studio Code.":::
 
-1. Enter a prompt for Copilot agent. For example, if your file already contains a program, ask what the code does. Or, if your file is empty, tell Copilot to write a teleportation algorithm.
+1. Enter a prompt for the Copilot agent. For example, if your file already has a program, ask what the code does. If your file is empty, ask Copilot to write a teleportation algorithm.
 
 Copilot reads the Agent Skills from the QDK and responds to your prompts with specialized knowledge about the QDK, Azure Quantum, and quantum computing.
 
 ## Try different agent models
 
-Copilot lets you choose from a set of different language models to use in agent mode. Different models have different strengths, so the best model for you depends on your use case.
+Copilot lets you choose from different language models in agent mode. Each model has different strengths, so the best model depends on your use case.
 
-To explore different models, select the **Pick Model** icon in the Copilot chat box and choose one of the available models from the list.
+To explore different models, select the **Pick Model** icon in the Copilot chat box, and then choose a model from the list.
 
 :::image type="content" source="media/pick-agent-model-vscode.png" alt-text="Screenshot that shows the Pick Model icon in the Copilot chat box in Visual Studio Code.":::
 
 ### Try some prompts
 
-Now that you're set up to leverage AI in your QDK projects, try out some prompts in the Copilot Chat.
+Now that you're set up to use AI in your QDK projects, try some prompts in Copilot Chat.
 
-To get started, here are a few example prompts:
+Here are a few example prompts to get started:
 
 > Simulate this program for 1,000 shots and show me a histogram.
 
