@@ -124,12 +124,6 @@
       href: qdk-vscode-agent-setup.md
     - name: VS Code reference for the QDK
       href: vscode-qdk-reference.md
-  - name: Test and debug
-    items:
-    - name: Test quantum programs
-      href: test-quantum-code.md
-    - name: Debug quantum programs
-      href: debug-quantum-code.md
   - name: Quantum language support in the QDK
     items:
     - name: QDK language support overview
