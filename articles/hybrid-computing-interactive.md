@@ -66,7 +66,7 @@ This example shows how to create a session with Q# inline code in a Jupyter note
     workspace = Workspace(resource_id="") # add your resource ID
     ```
 
-1. Add a new cell in the notebook and import the `qsharp` Python package:
+1. Add a new cell in the notebook and import the `qdk.qsharp` Python module:
 
     ```python
     from qdk import qsharp

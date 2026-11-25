@@ -222,7 +222,7 @@ For now, the `Main` operation doesn't return any value - the operation returns `
 ### [Jupyter Notebook](#tab/tabid-python)
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. In the first cell, import the `qsharp` package:
+1. In the first cell, import the `qdk.qsharp` module:
 
     ```python
     from qdk import qsharp

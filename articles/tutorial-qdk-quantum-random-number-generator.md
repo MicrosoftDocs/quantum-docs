@@ -313,7 +313,7 @@ Choose your preferred development environment, either the QDK extension in VS Co
 
 1. To run your program, choose the **Run** from the list of commands preceding `Main()`, or press **Ctrl + F5**. The program runs the `Main()` operation on the default simulator.
 
-    :::image type="content" source="media/codelens-run-QRNG.png" alt-text="Screenshot of Visual Studio Code that shows where to find the run command in the code lens.":::
+    :::image type="content" source="media/codelens-run-QRNG.png" alt-text="Screenshot of Visual Studio Code that shows where to find the run code lens command.":::
 
 1. Your output will appear in the debug console.
 1. Run the program again to see a different result.
@@ -327,7 +327,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 
 1. Select **View -> Command Palette** and type **histogram**, which brings up the **QDK: Run file and show histogram** command. You can also select **Histogram** from the list of commands preceding `Main()`. Select this option to open the Q# histogram window.
 
-    :::image type="content" source="media/codelens-histogram-QRNG.png" alt-text="Screenshot of Visual Studio Code that shows where to find the histogram command in the code lens.":::
+    :::image type="content" source="media/codelens-histogram-QRNG.png" alt-text="Screenshot of Visual Studio Code that shows where to find the histogram code lens command.":::
 
 1. Enter a number of **shots** to execute the program, for example, 100 shots, and press **Enter**. The histogram will display in the Q# histogram window.
 1. Each bar in the histogram corresponds to a possible outcome, and its height represents the number of times that outcome is observed. The number of different results may differ each time you run the histogram.
@@ -345,7 +345,7 @@ Let's visualize the distribution of results obtained from running the quantum pr
 ### [Jupyter Notebook in VS Code](#tab/tabid-python)
 
 1. In VS Code, select **View > Command palette** and select **Create: New Jupyter Notebook**.
-1. In the first cell, import the `qsharp` package in your Python code:
+1. In the first cell, import the `qdk.qsharp` module in your Python code:
 
     ```python
     from qdk import qsharp

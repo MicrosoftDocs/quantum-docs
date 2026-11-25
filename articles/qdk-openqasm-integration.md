@@ -50,7 +50,7 @@ To run your OpenQASM program from VS Code, you can use either the QDK's local si
 
 ### Run your code on the QDK local simulator
 
-To run your OpenQASM code on the local sparse quantum simulator in VS Code, open a `.qasm` file and then select the **Run** command from the code lens at the beginning of the file. The output from your program displays in the VS Code terminal.
+To run your OpenQASM code on the local sparse quantum simulator in VS Code, open a `.qasm` file and then select the **Run** code lens command from the beginning of the file. The output from your program displays in the VS Code terminal.
 
 > [!NOTE]
 > The QDK automatically attempts to set a QIR target profile that supports your program. If the QIR target profile doesn't support operations in your program, you get compiler errors when you run your OpenQASM code. For more information about target profiles, see [Different types of target profiles in Azure Quantum](xref:microsoft.quantum.target-profiles).
@@ -63,7 +63,7 @@ The QDK comes with several built-in quantum algorithm samples for OpenQASM. To t
 
 The QDK includes a debugger for OpenQASM. The debugger supports breakpoint-style debugging and can render the program state.
 
-To start the debugger, select the **Debug** command from the code lens.
+To start the debugger, select the **Debug** code lens command.
 
 In debug mode, you can set breakpoints in your code to help you debug. The state of your program is displayed in the **RUN AND DEBUG** pane. For example, you can view your local variable states and qubit states.
 
