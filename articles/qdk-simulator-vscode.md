@@ -28,7 +28,7 @@ The performance benefit depends on whether the quantum state remains sparse in t
 
 1. Install the [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.qsharp-lang-vscode).
 1. Open a Q# (`.qs`) or OpenQASM (`.qasm`) file.
-1. Select **Run** from the code lens at the start of the file or above the Q# `Main` operation.
+1. Select the **Run** code lens at the start of the file or above the Q# `Main` operation.
 
 The simulation output appears in the VS Code terminal. For Q# programs, select **Debug** to inspect the program's quantum state as it runs.
 
