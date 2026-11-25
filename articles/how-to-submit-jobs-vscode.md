@@ -49,7 +49,7 @@ Choose the tab for the language of your source file.
     }
     ```
 
-1. Select **Run** from the code lens above the `Main` operation to test the program on the local simulator.
+1. Select the **Run** code lens for `Main` operation to test the program on the local simulator.
 
 ### [OpenQASM](#tab/openqasm)
 

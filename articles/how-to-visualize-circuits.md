@@ -43,7 +43,7 @@ With the QDK extension in VS Code, you can create circuit diagrams for Q# (`.qs`
 To view a circuit diagram in VS Code, follow these steps:
 
 1. Open a Q# or OpenQASM file in VS Code, or [load one of the quantum samples from the QDK](xref:microsoft.quantum.submit-jobs#load-a-q-sample-program).
-1. Choose the **Circuit** command from the code lens that precedes your program.
+1. Choose the **Circuit** code lens command that precedes your program.
 
 The **QDK Circuit** window opens and displays the circuit diagram for your program. For example, the following circuit diagram corresponds to a program that produces a random bit. The circuit puts the qubit into a superposition state and then measures the qubit.
 
@@ -62,7 +62,7 @@ To visualize the quantum circuit for an individual operation in a Q# file, choos
 
 When you use the VS Code debugger in a Q# program, you can visualize the quantum circuit based on the state of the program at the current debugger breakpoint.
 
-1. Choose the **Debug** command from the code lens that precedes your entry point operation.
+1. Choose the **Debug** code lens command that precedes your entry point operation.
 1. In the **Run and Debug** pane, expand the **Quantum Circuit** dropdown in the **VARIABLES** menu. The **QDK Circuit** panel opens, which shows the circuit while you step through the program.
 1. Set breakpoints and step through your code to see how the circuit updates as your program runs.
 

@@ -177,7 +177,7 @@ operation Main() : (Int, Int, Int, Int) {
 }
 ```
 
-To run the program, choose the **Run** command from the code lens that precedes the `Main` operation, or enter **Ctrl + F5**. The program runs the `Main` operation on the default simulator.
+To run the program, choose the **Run** code lens command that precedes the `Main` operation, or enter **Ctrl + F5**. The program runs the `Main` operation on the default simulator.
 
 Your output appears in the debug console.
 
@@ -309,7 +309,7 @@ To plot a frequency histogram that shows the distribution of results when you ru
 
 1. Open your `CreateBellStates.qs` file in VS Code.
 1. Open the **View** menu and choose **Command Palette**.
-1. Enter **histogram** to bring up the **QDK: Run file and show histogram** option. Or, choose the **Histogram** command from the code lens option that precedes the `Main` operation. Then, enter a number of shots (for example, 100). The Q# histogram opens in a new tab.
+1. Enter **histogram** to bring up the **QDK: Run file and show histogram** option. Or, choose the **Histogram** code lens command from option that precedes the `Main` operation. Then, enter a number of shots (for example, 100). The Q# histogram opens in a new tab.
 
     Each bar in the histogram corresponds to a possible outcome when the entanglement circuit runs 1000 times. The height of a bar represents the number of times that outcome occurs. For example, the following histogram shows a distribution with 50 unique results. Note that for each outcome, the measurement results for the first and the second qubit are always the same.
 
